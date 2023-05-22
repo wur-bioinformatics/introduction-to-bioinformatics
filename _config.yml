@@ -3,7 +3,7 @@
 
 title: BIF20806 reader
 author: Kupczok, Anne; Holmer, Rens; Bakker, Freek; Hooft, Justin vander; Risse, Judith; Navarro, Jorge
-logo: logo.png
+logo: BIF logo.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
