@@ -1,0 +1,280 @@
+# Biological background
+
+Bioinformatics deals with the analysis of biological sequences.
+These sequences originate from organic macromolecules that play important roles in cells.
+In this section, we describe these sequences and the biological processes involved in generating and maintaining them.
+This section provides important background material of the course.
+
+## Proteins
+
+Proteins are large, complex macromolecules that play many important roles in the body.
+They are critical to most of the work done by cells and are required for the structure, function and regulation of the body’s tissues and organs.
+The basic building blocks of proteins are amino acids.
+
+### Amino acids
+
+An amino acid contains a central carbon atom (called α-carbon, or C<sub>α</sub>) (Fig. {numref}`aminoacid`).
+The α-carbon is bound to an amino group (NH<sub>2</sub>), a carboxyl group (COOH), and a hydrogen atom. In addition, each amino acid has a specific residue (R) group.
+
+:::{figure} images/Week1/aminoacid.jpg
+:alt:Structure of an amino acid
+:width: 100%
+:name: aminoacid
+
+The structure of an amino acid. Four groups are connected to the α-carbon:
+an amino group, a hydrogen atom, a carboxyl group, and a side chain (R group).
+Credits: Rice University, CC BY 4.0 https://creativecommons.org/licenses/by/4.0, via OpenStax.
+:::
+
+:::{important}
+Amino acids differ in their chemical properties, which are determined by their R groups. It is important to know the amino acids, their one-letter and three-letter abbreviation, and their fundamental properties as given in the table.
+:::
+
+| Amino acid | One-letter code | Three-letter code | Property |
+| --- | --- | --- | --- |
+| Arginine | Arg | R | Positively charged |
+| Histidine | His | H | Positively charged |
+| Lysine | Lys | K | Positively charged |
+| Aspartic acid | Asp | D | Negatively charged |
+| Glutamic acid | Glu | E | Negatively charged |
+| Serine | Ser | S | Polar uncharged |
+| Threonine | Thr | T | Polar uncharged |
+| Asparagine | Asn | N | Polar uncharged |
+| Glutamine | Gln | Q | Polar uncharged |
+| Alanine | Ala | A | Hydrophobic |
+| Valine | Val | V | Hydrophobic |
+| Isoleucine | Ile | I | Hydrophobic |
+| Leucine | Leu | L | Hydrophobic |
+| Methionine | Met | M | Hydrophobic |
+| Phenylalanine | Phe | F | Hydrophobic and aromatic |
+| Tyrosine | Tyr | Y | Hydrophobic and aromatic |
+| Trypotophan | Trp | W | Hydrophobic and aromatic |
+| Glycine | Gly | G | Special (only H as side chain) |
+| Proline | Pro | P | Special (side chain bound to backbone nitrogen) |
+| Cysteine | Cys | C | Special (forms disulfide bonds) |
+
+**TODO**: thick lines between categories
+
+Some amino acids have non-polar side chains, and these are generally **hydrophobic**, i.e., they do not like water.
+Thus, they can often be found in the interior of proteins together with other hydrophobic amino acids.
+**Aromatic** amino acids contain aromatic rings, and often stabilize folded protein structures.
+
+In contrast, the charged and the polar amino acids are **hydrophilic**, i.e., they like water and can interact with it.
+They can often be found on the surface of proteins or in the interior, when they can interact with another oppositely charged amino acid.
+**Positively charged** amino acids, are also called basic amino acids and **negatively charged** amino acids are also called acidic amino acids.
+
+Although amino acids can be classified into these groups based on their properties, some amino acids stand out.
+The smallest amino acid is glycine, which provides great flexibility due to its small size.
+In contrast, proline is an amino acid, where the side chain is bonded to the backbone nitrogen atom, which makes it very rigid.  
+
+### Protein structure
+
+A protein is made up of one or more long, folded chains of amino acids (each called a **polypeptide**).
+The 3D structure of a protein is also called its **conformation**.
+The protein conformation is described on four levels - primary to quaternary structure (Fig. {numref}`struclevels`).
+
+:::{figure} images/Week1/struclevels.jpg
+:alt:The four levels of protein structure
+:width: 100%
+:name: struclevels
+
+The four levels of protein structure.
+Credits: Rao, A. Ryan, K. and Tag, A. Department of Biology, Texas A&M University.
+:::
+
+The structure of a protein is critical for its function.
+For example, in an enzyme, the active site must be in the correct structure to be able to bind the substrate.
+Other proteins might bind proteins (and influence their activity) or bind DNA (and regulate gene expression).
+Additionally, some proteins are secreted from the cell or might function within the cell membrane.
+Finally, proteins are often modified after protein synthesis (see translation), called post-translational modification.
+These modifications can be important for protein function.
+
+
+
+#### Primary structure
+
+In a protein, amino acids are connected by covalent bonds, called peptide bonds.
+A peptide bond connects one amino acid's carobxyl group and the next amino acid's amino group (Fig. {numref}`peptidebond`).
+The sequence of amino acids linked by peptide bonds is called the **primary structure**.
+The protein sequence is determined by the gene sequence encoding the protein.
+The continuous chain of atoms along the protein is also called the **backbone**, it consists of the three backbone atoms (nitrogen, C<sub>α</sub>, carbon).
+
+:::{figure} images/Week1/peptidebond.jpg
+:alt:Peptide bond
+:width: 100%
+:name: peptidebond
+
+A peptide bond connecting two amino acids.
+Credits: Rice University, CC BY 4.0 https://creativecommons.org/licenses/by/4.0, via OpenStax.
+:::
+
+Each protein has a free amino group on one end, called the **N terminus**.
+The other end has a free carboxyl group, called the **C terminus**.
+
+:::{note}
+As there are 20 distinct amino acids, there can be a huge number of different polypeptide chains, i.e., 20<sup>n</sup> for a polypeptide of length n.
+Most of these potential sequences do not adopt a stable conformation, thus only a tiny fraction of these possibilities exist in nature.
+:::
+
+#### Secondary structure
+
+Secondary structures are local conformations in the protein that are stabilized by hydrogen bonds between backbone atoms.
+We distinguish the regular helices (i.e., α-helix) and sheet structures (i.e., β-sheet) (Fig. {numref}`secstructure`) and irregular turns.
+
+**α-helices** are stabilized by hydrogen bonds between the oxygen atom in the C group in one amino acid and the hydrogen in the N group of the amino acids that is four amino acids farther along the chain.
+Every helical turn has 3.6 amino acids residues and the side chains stick out of the helix.
+
+β-pleated sheets (short: **β-sheets**) consist of β-strands, where the R groups extend above and below the strands.
+The strands have a direction determined by the N- and C-terminus of the protein and are usually depicted as an arrow pointing towards the C-terminus.
+Depending on the direction, strands can align parallel or antiparallel to each other.
+
+:::{figure} images/Week1/secstructure.jpg
+:alt:Secondary structure elements
+:width: 100%
+:name: secstructure
+
+α-helices and β-sheets are stablized by hydrogen bonds between the backbone of proteins, i.e., the side chains are not involved.
+The hydrogen bonds form between the oxygen atom in the C group in one amino acid and the hydrogen in the N group.
+Black = carbon, White = hydrogen, Blue = nitrogen, and Red = oxygen. Credit:
+Credits: Rao, A., Tag, A. Ryan, K. and Fletcher, S. Department of Biology, Texas A&M University.
+:::
+
+**Turns** are short secondary structure elements that are stabilized by hydrogen bonds between amino acids that are 1 to 5 peptide bonds away.
+The most common form are β-turns, which connect antiparallel β-strands.
+
+:::{note}
+Although secondary structure elements are formed by hydrogen bonds between the backbone, certain amino acids are favoured in secondary structures and others are disfavoured.
+For example, methionine, alanine, leucine, and glutamic acid are favoured in α-helices, whereas proline, glycine, and tyrosine are disfavoured.
+Also, valine, isoleucine, tyrosine, cysteine, tryptophan, phenylalanine, and threonine are more frequently found in β-sheets, compared to α-helices.
+In turns, glycine, asparagine, proline, and serine are preferred.
+These preferences are used to predict secondary structure elements in proteins (see Week 4).
+:::
+
+The peptide bond is very rigid and planar, i.e., it cannot rotate to form the elements of protein structure.
+However, the N-C<sub>α</sub> and the C<sub>α</sub>-C bonds can freely rotate, being only limited by the size and properties of the R-groups.
+The 3D shape of the polypeptide backbone is thus determined by two **torsion angles**:
+phi (φ) between N and C<sub>α</sub> and psi (ψ) between C<sub>α</sub> and C (Fig. {numref}`phipsi`A).
+Although φ and ψ can rotate in principle, steric hindrance prevents certain combinations of angles, i.e., the bulkiness of the R-groups restricts the possible conformations.
+Thus, certain combinations of φ and ψ are preferred.
+We can plot the combinations of φ and ψ in a protein, called the **Ramachandran plot** (Fig. {numref}`phipsi`B).
+
+The regular secondary structure elements (α-helix and β-sheet) contain consecutive amino acids with similar (φ,ψ) values.
+These regions are typically highly populated in a Ramachandran plot.
+Thus, the Ramachandran plot can be used to assess how plausible a predicted protein structure is.
+
+:::{figure} images/Week1/phipsi.jpg
+:alt:Phi, psi, and Ramachandran plot
+:width: 100%
+:name: phipsi
+
+A) Peptide bond, φ, and ψ.
+B) A typical Ramachandran plot. The regions marked "core" do not have any steric hindrance.
+Yellow areas are generally allowed.
+White areas represent conformations that are generally sterically unfavorable.
+Credits: Choudhuri (2014). Bioinformatics for Beginners. doi: 10.1016/B978-0-12-410471-6.00008-6.
+:::
+
+:::{seealso}
+You can find an illustrative animation on φ and ψ [here](https://www.youtube.com/watch?v=Q1ftYq13XKk).
+:::
+
+#### Tertiary structure
+
+In contrast to the secondary structure, the tertiary structure of a protein involves interactions between the side chains (Fig. {numref}`terstructure`).
+Thus, the chemical properties of the amino acids are very important for the tertiary structure. Different types of interactions stabilize the tertiary structure:
+
+* Hydrogen bonds involving polar amino acids,
+* ionic bonds between positively and negatively charged amino acids,
+* hydrophobic R groups that tend to lie in the protein's interior, stabilized by hydrophobic interactions, and
+* disulfide bonds (i.e., covalent bonds between cysteines).
+
+:::{figure} images/Week1/terstructure.jpg
+:alt:Tertiary structure interactions
+:width: 100%
+:name: terstructure
+
+Chemical interactions that stabilize the tertiary structure of proteins.
+Credits: Rice University, CC BY 4.0 https://creativecommons.org/licenses/by/4.0, via OpenStax.
+:::
+
+
+:::{admonition} Denaturation
+:class: note
+The noncovalent bonds that stabilize the protein structure are broken at high temperature.
+Thus, most proteins unfold above about 60°C.
+This process is called denaturation and is generally irreversible.
+When proteins denature, they loose their function.
+:::
+
+**Domains** are distinct functional and/or structural units in a protein and are typically 50 to 350 amino acids long.
+Usually, a domain is responsible for a particular function or interaction, contributing to the overall role of a protein.
+A domain can exist in different contexts with other domains (Fig. {numref}`domains`).
+In a multidomain protein, each domain folds independently of the others.
+
+:::{figure} images/Week1/domains.jpg
+:alt:Domain examples
+:width: 100%
+:name: domains
+
+A) Example of a Src homology 3 (SH3) domain that is involved in protein-protein interaction. SH3 domains occur in a diverse range of proteins with different functions.
+B) The cytoplasmic protein Nck contains multiple SH3 domains.
+C) Domain composition of phospholipase D1, which has multiple functional domains that contribute to its overall function.
+Credits: EMBL-EBI, CC BY 4.0 https://creativecommons.org/licenses/by/4.0.
+:::
+
+<!--- domain examples taken from https://www.ebi.ac.uk/training/online/courses/protein-classification-intro-ebi-resources/protein-classification/what-are-protein-domains/ --->
+
+
+#### Quaternary structure
+
+Finally, individual folded polypeptides can interact to form **protein complexes**, also called quaternary structures.
+Quaternary structure is stabilized by the same types of interactions as the tertiary structure.
+The difference is that the amino acids involved belong to different polypeptides.
+
+Many functional proteins are composed of multiple subunits, they are also called **oligomers** (Fig. {numref}`oligomers`).
+The subunits can originate from the same protein sequence (called a homomer) or from different sequences (called a heteromer).
+Proteins consisting of two subunits are also called dimer.
+
+:::{figure} images/Week1/oligomers.jpg
+:alt:Examples of oligomers
+:width: 100%
+:name: oligomers
+
+Examples of oligomers.
+A) Myoglobin, a heteromer of four subunits (PDB structure 1HV4 colored by chain).
+B) UDP-galactose 4-epimerase, a homodimer (PDB structure 1EK5 colored by secondary structure).
+:::
+
+#### Substitutions
+
+Mutations in the gene sequence can lead to changes in the primary structure of the protein, e.g., a substitution of one amino acid by a different one.
+Often, such substitutions still lead to highly similar protein structures that perform the similar or even the same function, especially when the exchanged amino acids have similar chemical properties.
+Nevertheless, single amino acid substitutions can have severe consequences.
+A prominent example is sickle cell anemia, where a substitution of valine to glutamic acid in hemoglobin β results in a structural change that leads to a distortion in red blood cells (Fig. {numref}`sicklecell`).
+
+:::{figure} images/Week1/sicklecell.jpg
+:alt:Sickle cell anemia
+:width: 100%
+:name: sicklecell
+
+Consequences of a substitution in  hemoglobin β resulting in sickle cell anemia.
+Credits: Rao, A., Tag, A. Ryan, K. and Fletcher, S. Department of Biology, Texas A&M University.
+:::
+
+#### Visualization
+
+There are many styles to view molecular structures.
+You can see some examples in Fig. {numref}`protrep`.
+
+:::{figure} images/Week1/protrep.jpg
+:alt:Protein representation
+:width: 100%
+:name: protrep
+
+Different representations of the PDB structure 5PEP generated with NGL.
+:::
+
+
+:::{seealso}
+Most of the figures in this section are taken from [OpenStax](https://openstax.org/books/biology-2e/pages/3-4-proteins), where you can also find more information on proteins.
+:::
