@@ -274,7 +274,158 @@ You can see some examples in Fig. {numref}`protrep`.
 Different representations of the PDB structure 5PEP generated with NGL.
 :::
 
-
 :::{seealso}
 Most of the figures in this section are taken from [OpenStax](https://openstax.org/books/biology-2e/pages/3-4-proteins), where you can also find more information on proteins.
 :::
+
+## The flow of genetic information
+
+### Nucleic acids
+
+Deoxyribonucleic acid (DNA) carries the genetic information of organisms and ribonucleic acid (RNA) is involved in the protein expression and is also the genetic material of some viruses.
+Thus, these molecules are highly important as the basis of life on Earth.
+The **genome** denotes the cell's entire genetic content and **genomics** is the study of genomes.
+
+DNA and RNA are comprised of monomers called **nucleotides**, which are comprised of three components (Fig. {numref}`nucleotide`):
+* A **pentose** sugar, where carbon residues are numbered 1' to 5' (read 1' as "one prime"). The type of pentose distinguishes RNA and DNA: the sugar is deoxyribose in DNA and ribose in RNA.
+They are similar in structure, but deoxyribose has an H instead of an OH at the 2′ position.
+* A **phosphate** group that is attached to the 5' position of the sugar.
+* A **base** that is attached to the 1' position of the sugar.
+
+:::{figure} images/Week1/nucleotide.jpg
+:alt:Nucleotide overview
+:width: 100%
+:name: nucleotide
+
+The components of a nucleotide.
+Credits: Rice University, CC BY 4.0 https://creativecommons.org/licenses/by/4.0, via OpenStax.
+:::
+
+The bases can be divided into two categories: purines (with a double ring structure) and pyrimidines (with a single ring structure) (Fig. {numref}`nucleotide`). DNA contains A, T, C, and G; whereas RNA contains A, U, C, and G.
+
+:::{important}
+Nucleotides are central molecules of life. You do not need to remember the exact chemical structure, but you need to know the difference between DNA and RNA, the different bases and their category (purines or pyrimidines).
+:::
+
+### The DNA double helix
+
+The DNA molecule is a polymer of deoxyribonucleotides and forms a right-handed double helix.
+The sugar and phosphate are on the outside forming the helix's backbone and the bases are stacked in the interior and bind each other by hydrogen bonds.
+Thereby A pairs with T via two hydrogen bonds and C pairs with G via three hydrogen bonds, they are **complementary** bases.
+These pairings are also called Watson-Crick base-pairing, named after the discoverers of DNA.
+
+:::{figure} images/Week1/dna.jpg
+:alt:DNA structure
+:width: 100%
+:name: dna
+
+The DNA structure.
+Credits: Nature Education.
+:::
+
+<!---
+figure sources
+https://openstax.org/books/biology-2e/pages/3-5-nucleic-acids
+https://www-nature-com.ezproxy.library.wur.nl/scitable/topicpage/discovery-of-dna-structure-and-function-watson-397/
+--->
+
+The two strands of the helix run in opposite directions, also called anti-parallel, i.e., one goes from 5' to 3' and the other from 3' to 5' (Fig. {numref}`nucleotide`).
+The nucleotide sequence is typically written in 5' to 3' direction.
+Due to the complementarity, the base sequence of a strand can be deduced from the base sequence from the other strand.
+This is called the **reverse complement**.
+For example, the reverse complement of AAGT is ACTT, where both strands are given in 5' to 3' direction.
+
+### DNA replication
+
+As the two DNA strands are only connected via hydrogen bonds, they can be separated relatively easily, for example during DNA replication.
+The separated strands each serve as a template on which a new complementary strand is synthesized by the enzyme DNA polymerase in 5' to 3' direction.
+This mode of replication is called semiconservative .
+
+:::{figure} images/Week1/replication.jpg
+:alt:Replication
+:width: 100%
+:name: replication
+
+A) The process of DNA replication.
+Credits: Medprime, CC BY SA 1.0 https://creativecommons.org/publicdomain/zero/1.0/deed.en, via Wikimedia.
+B) Semiconservative DNA replication, where the two copies each contain on original strand and one new strand.
+Credits: modified from Rgranit, CC BY SA 2.5 https://creativecommons.org/licenses/by-sa/2.5/deed.en, via Wikimedia.
+:::
+
+The error rate of DNA replication is remarkably low, about one erroneous base in 10<sup>9</sup> bases.
+This property preserves the genetic information during cell division, and also over generations.
+
+
+### RNA
+
+In contrast to DNA, RNA does not form a stable double helix.
+RNA is mainly single stranded, but most RNAs show intramolecular base pairing between complementary bases.
+There are four major types of RNA: messenger RNA (mRNA), ribosomal RNA (rRNA), transfer RNA (tRNA), and microRNA (miRNA).
+
+### The central dogma of molecular biology
+
+According to the central dogma of molecular biology, the flow of genetic information is essentially in one direction: from DNA via RNA to proteins (Fig. {numref}`dogma`).
+Nevertheless, there are also genes that do not code for proteins, but where functional RNA is the end product. Furthermore, mobile genetic elements and viruses can encode reverse transcriptases (which can synthesize DNA from an RNA template) or RNA dependent RNA polymerases (which can replicate RNA).
+
+:::{figure} images/Week1/dogma.jpg
+:alt:Central dogma
+:width: 100%
+:name: dogma
+
+The centra dogma of molecular biology.
+Credits: Dhorspool, CC BY SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/deed.en, via Wikimedia.
+:::
+
+During **transcription**, RNA polymerase reads the template strand (also called noncoding strand) in the 3' to 5' direction (Fig. {numref}`transcription`). This produces an RNA molecule from 5' to 3', a copy of the coding strand (where thymine is replaced by uracil).
+
+:::{figure} images/Week1/transcription.jpg
+:alt:Transcription
+:width: 100%
+:name: transcription
+
+Transcription.
+Credits: public domain, via Wikimedia.
+:::
+
+During protein **translation**, ribosomes synthesize polypeptides from messenger RNA (mRNA) (Fig. {numref}`translation`).
+Thereby tRNAs decode the information on the RNA into amino acids, where a codon consisting of three nucleotides encodes the information for one amino acid.
+
+:::{figure} images/Week1/translation.jpg
+:alt:Translation
+:width: 100%
+:name: translation
+
+Overview of translation.
+:::
+
+:::{seealso}
+The details of transcription and translation differ between prokaryotes and eukaryotes. You can look up Chapters 15 and 16 of [Biology 2e](https://openstax.org/details/books/biology-2e) to learn more.
+:::
+
+
+### The genetic code
+
+The **genetic code** shows the correspondence between codons and amino acids.
+Since 64 possible codons code for 20 different amino acids, the genetic code is degenerate, i.e., most amino acids are specified by more than one codon.
+Thus, the protein sequence can be deduced from the DNA or RNA sequence but not vice versa.
+There are three codons that do not encode for an amino acid, but instead signal the end of the protein sequence, called **stop codons**.
+Furthermore, translation generally starts with the start codon AUG encoding methionine.
+More information of how protein information is encoded in genomes can be found in the section on [genome annotation](annotation).
+
+:::{figure} images/Week1/geneticcode.jpg
+:alt:The genetic code
+:width: 100%
+:name: geneticcode
+
+The universal genetic code. Note that exceptions to this code exist, for example the vertebrate mitochondrial code.
+Credits: SrhGreenwood, CC BY 4.0 https://creativecommons.org/licenses/by/4.0, via Wikimedia.
+:::
+
+(annotation)=
+# Genome annotation
+
+Anne: I suggest to mention this first, since it links well with the previous sections. So far, transcription is not well described in the background.
+
+# Databases
+
+# Reproducible research
