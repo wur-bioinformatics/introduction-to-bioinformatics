@@ -1,0 +1,6 @@
+#aminoacidtable tbody tr:nth-child(n+1):nth-child(-n+3){
+    background-color:rgb(236, 242, 157)
+}
+#aminoacidtable tbody tr:nth-child(n+4):nth-child(-n+5){
+    background-color:rgb(44, 174, 109)
+}
