@@ -1,4 +1,4 @@
-# Week 1
+# Week 1 - Genes, Proteins, Databases, Genome annotation
 
 ## Biological background
 
