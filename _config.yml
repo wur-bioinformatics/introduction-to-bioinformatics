@@ -4,11 +4,12 @@
 title: BIF20806 reader
 author: Kupczok, Anne; Holmer, Rens; Bakker, Freek; Hooft, Justin vander; Risse, Judith; Navarro, Jorge
 logo: BIF logo.png
+only_build_toc_files: true
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: 'off'
+  execute_notebooks: "off"
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -18,7 +19,6 @@ latex:
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
   - references.bib
-
 # Information about where the book exists on the web
 # repository:
 #  url: https://git.wur.nl/bioinformatics/bif20806-reader  # Online location of your book
@@ -28,5 +28,5 @@ bibtex_bibfiles:
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 #html:
-  #use_issues_button: true
-  #use_repository_button: true
+#use_issues_button: true
+#use_repository_button: true
