@@ -21,17 +21,17 @@ The text is decorated with different types of boxes that show additional informa
 
 ```{admonition} Important information
 :class: important
-A yellow box indicates important information that you should remember and is definitely exam material
+A yellow box indicates important information that you should remember and is definitely exam material.
 ```
 
 ```{admonition} Note 1: Noteworthy information
 :class: note
-Highlighted information that is considered exam material. Notes are numbered for easy reference
+Highlighted information that is considered exam material. Notes are numbered for easy reference.
 ```
 
 ```{admonition} Box 1: Additional information
 :class: tip
-Additional information, often times provides extra examples to material mentioned in the main text. Not exam material, but might make exam material more clear. Boxes are numbered for easy reference
+Additional information, often times provides extra examples to material mentioned in the main text. Not exam material, but might make exam material more clear. Boxes are numbered for easy reference.
 ```
 
 ```{admonition} See also
