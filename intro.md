@@ -1,4 +1,4 @@
-# Welcome to BIF20806 reader
+# Welcome to BIF20306 reader
 
 This is the official reader material for the Introduction to Bioinformatics (BIF20306) course.
 
@@ -34,23 +34,23 @@ We hope that you find it useful!
 
 The Reader is devided into chapters that each cover a different week of the course. All information provided in the Reader is considered exam material, unless it clearly states otherwise.
 
---
+---
 
 The text is decorated with different types of boxes that show additional information or are used to highlight and clarify important aspects.
 
 ```{admonition} Important information
 :class: important
-A yellow box indicates important information that you should remember and is definitely exam material.
+A yellow box indicates important information that you should remember and is definitely part of the exam material.
 ```
 
 ```{admonition} Note 1: Noteworthy information
 :class: note
-Highlighted information that is considered exam material. Notes are numbered for easy reference.
+Highlighted information that is considered part of the exam material. Notes are numbered for easy reference.
 ```
 
 ```{admonition} Box 1: Additional information
 :class: tip
-Additional information, often times provides extra examples to material mentioned in the main text. Not exam material, but might make exam material more clear. Boxes are numbered for easy reference.
+Additional information, often times provides extra examples to material mentioned in the main text. Not part of the exam material, but might make exam material more clear. Boxes are numbered for easy reference.
 ```
 
 ```{admonition} See also

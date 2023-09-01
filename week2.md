@@ -1,4 +1,4 @@
-# Week 2
+# Week 2 - Alignment, sequence search, and primer design
 
 In week 2 of Introduction to Bioinformatics, you will study sequence alignment.
 In this week, we use public reading material.
