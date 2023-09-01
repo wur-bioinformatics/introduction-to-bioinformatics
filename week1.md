@@ -2,12 +2,176 @@
 
 ## Biological background
 
-Bioinformatics deals with the analysis of biological sequences.
+A large part of bioinformatics deals with the analysis of biological sequences.
 These sequences originate from organic macromolecules that play important roles in cells.
-In this section, we describe these macromolecules, their sequences, and the biological processes involved in generating their active structures and maintaining these.
-This section provides important background material to the contents of this course.
+In the first section of this chapter, we describe these macromolecules, their sequences, and the biological processes involved in generating their active structures and maintaining these.
+
+As such, this section provides important background material for the entire course. Depending on your background, parts of this section might seem redundant, in which case this section can function as a refresher. Later chapters assume you are familiar with this section.
 
 ---
+
+### Nucleic acids
+
+Deoxyribonucleic acid (DNA) carries the genetic information of organisms. Ribonucleic acid (RNA) is involved in the protein expression and is also the genetic material of some viruses.
+Thus, these molecules are highly important as the basis of life on Earth.
+The **genome** denotes the cell's entire genetic content and **genomics** is the study of genomes.
+
+DNA and RNA are comprised of monomers called **nucleotides**, which are comprised of three components ({numref}`nucleotide`):
+
+- A **pentose** sugar, where carbon residues are numbered 1' to 5' (read 1' as "one prime"). The type of pentose distinguishes RNA and DNA: the sugar is deoxyribose in DNA and ribose in RNA.
+  They are similar in structure, but deoxyribose has an H instead of an OH at the 2′ position.
+- A **phosphate** group that is attached to the 5' position of the sugar.
+- A **base** that is attached to the 1' position of the sugar.
+
+:::{figure} images/Week1/nucleotide.jpg
+:alt: Nucleotide overview
+:width: 90%
+:name: nucleotide
+
+The components of a nucleotide.
+Credits: Rice University, CC BY 4.0 https://creativecommons.org/licenses/by/4.0, via OpenStax.
+:::
+
+The bases can be divided into two categories: purines (with a double ring structure) and pyrimidines (with a single ring structure) ({numref}`nucleotide`). DNA contains A, T, C, and G; whereas RNA contains A, U, C, and G.
+
+:::{important}
+Nucleotides are central molecules in all life. You do not need to remember the exact chemical structure, but you need to know the difference between DNA and RNA, the different bases and their category (purines or pyrimidines).
+:::
+
+---
+
+### The DNA double helix
+
+The DNA molecule is a polymer of deoxyribonucleotides and forms a right-handed double helix.
+The sugar and phosphate are on the outside forming the helix's backbone and the bases are stacked in the interior and bind each other by hydrogen bonds.
+Thereby A pairs with T via two hydrogen bonds and C pairs with G via three hydrogen bonds, they are **complementary** bases.
+These pairings are also called Watson-Crick base-pairing, named after the discoverers of DNA.
+
+:::{figure} images/Week1/dna.jpg
+:alt: DNA structure
+:width: 70%
+:name: dna
+
+The DNA structure.
+Credits: Nature Education.
+:::
+
+[comment]: # "figure sources
+https://openstax.org/books/biology-2e/pages/3-5-nucleic-acids
+https://www-nature-com.ezproxy.library.wur.nl/scitable/topicpage/discovery-of-dna-structure-and-function-watson-397/"
+
+The two strands of the helix run in opposite directions, also called anti-parallel, i.e., one goes from 5' to 3' and the other from 3' to 5' ({numref}`nucleotide`).
+The nucleotide sequence is typically written in 5' to 3' direction.
+Due to the complementarity, the base sequence of a strand can be deduced from the base sequence from the other strand.
+This is called the **reverse complement**.
+For example, the reverse complement of AAGT is ACTT, where both strands are given in 5' to 3' direction.
+
+---
+
+### DNA replication
+
+As the two DNA strands are only connected via hydrogen bonds, they can be separated relatively easily, for example during DNA replication.
+The separated strands each serve as a template on which a new complementary strand is synthesized by the enzyme DNA polymerase in 5' to 3' direction.
+This mode of replication is called semiconservative .
+
+:::{figure} images/Week1/replication.jpg
+:alt: Replication
+:width: 50%
+:name: replication
+
+A) The process of DNA replication.
+Credits: Medprime, CC BY SA 1.0 https://creativecommons.org/publicdomain/zero/1.0/deed.en, via Wikimedia.
+B) Semiconservative DNA replication, where the two copies each contain on original strand and one new strand.
+Credits: modified from Rgranit, CC BY SA 2.5 https://creativecommons.org/licenses/by-sa/2.5/deed.en, via Wikimedia.
+:::
+
+The error rate of DNA replication is remarkably low, about one erroneous base in 10<sup>9</sup> bases.
+This property preserves the genetic information during cell division, and also over generations.
+
+---
+
+### RNA, transcription, and splicing
+
+During transcription, RNA polymerase reads the template strand (also called noncoding strand) in the 3' to 5' direction ({numref}`transcription`). This produces an RNA molecule from 5' to 3', which is a copy of the coding strand. During transcription thymine is replaced by uracil. In contrast to DNA, RNA does not form a stable double helix. RNA is mainly single stranded, but most RNAs show intramolecular base pairing between complementary bases.
+
+There are four major types of RNA:
+
+- Messenger RNA (mRNA): RNA molecules that will later be translated into proteins and therefore serve as a 'messenger' in protein production.
+- Ribosomal RNA (rRNA): the primary component of ribosomes (the 'powerplants' of a cell).
+- Transfer RNA (tRNA): function as 'adapter molecule' that serve as the physical link between mRNA and the amino acid sequence of a protein during translation.
+- MicroRNA (miRNA): non-coding RNA molecules of 21-23 nucleotides involved in RNA silencing and post-transcriptional regulation of gene expression.
+
+:::{figure} images/Week1/transcription.png
+:alt: Transcription
+:width: 70%
+:name: Transcription
+
+RNA is produced by transcribing DNA: as such it is a direct copy of the information contained in the DNA. Where DNA contains thymine (T, indicated in blue), RNA contains uracil (U, indicated in purple).
+:::
+
+In eukaryotes, some mRNA molecules undergo splicing. During RNA splicing, the spliceosome protein complex removes introns: specific non-coding parts of an mRNA molecule that are not used during translation ({numref}`splicing`). Most introns are characterized by a GU and AG dinucleotide motif in the 5' and 3' end respectively.
+
+:::{figure} images/Week1/splicing.jpg
+:alt: Splicing
+:width: 50%
+:name: Splicing
+During splicing, introns are removed from precursor mRNA moleculus to create mature mRNA. Most introns contain several canonical elements that help in recognition by the spliceosome and in creating a specific secondary structure of the intronic RNA that facilitates removal: **(1)** 3' splice site, **(2)** Poly pyrimidine tract, **(3)** Branch site, **(4)** 5' splice site'
+:::
+
+---
+
+### Translation
+
+During protein translation, ribosomes synthesize polypeptides from messenger RNA (mRNA) ({numref}`translation`).
+During this process tRNAs decode the information on the RNA into amino acids, where a codon consisting of three nucleotides encodes the information for one amino acid.
+
+:::{figure} images/Week1/translation.jpg
+:alt: Translation
+:width: 70%
+:name: translation
+
+Overview of translation.
+:::
+
+:::{seealso}
+The details of transcription and translation differ between prokaryotes and eukaryotes. You can look up Chapters 15 and 16 of [Biology 2e](https://openstax.org/details/books/biology-2e) to learn more.
+:::
+
+### The genetic code
+
+The genetic code shows the correspondence between codons and amino acids ({numref}`geneticcode`).
+Since 64 possible codons code for 20 different amino acids, the genetic code is degenerate, i.e., most amino acids are specified by more than one codon.
+Thus, the protein sequence can be deduced from the DNA or RNA sequence but not vice versa.
+There are three codons that do not encode for an amino acid, but instead signal the end of the protein sequence, called **stop codons**.
+Furthermore, translation generally starts with the start codon AUG encoding methionine.
+More information of how protein information is encoded in genomes can be found in the section on [genome annotation](sec_annotation).
+
+:::{figure} images/Week1/geneticcode.jpg
+:alt: The genetic code
+:width: 80%
+:name: geneticcode
+
+The universal genetic code. Note that exceptions to this code exist, for example the vertebrate mitochondrial code.
+Credits: SrhGreenwood, CC BY 4.0 https://creativecommons.org/licenses/by/4.0, via Wikimedia.
+:::
+
+:::{important}
+The universal genetic code is very important to understand how information flows from genes to proteins. Nevertheless, you do not need to recall it, but can always look it up. When needed, it will also be provided in the exam.
+:::
+
+### The central dogma of molecular biology
+
+According to the central dogma of molecular biology, the flow of genetic information is essentially in one direction: from DNA via RNA to proteins ({numref}`dogma`).
+Nevertheless, there are also genes that do not code for proteins, but where functional RNA is the end product. Furthermore, mobile genetic elements and viruses can encode reverse transcriptases (which can synthesize DNA from an RNA template) or RNA dependent RNA polymerases (which can replicate RNA).
+
+:::{figure} images/Week1/dogma.jpg
+:alt: Central dogma
+:width: 35%
+:name: dogma
+
+The centra dogma of molecular biology.
+Credits: Dhorspool, CC BY SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/deed.en, via Wikimedia.
+:::
 
 ### Proteins
 
@@ -24,7 +188,7 @@ The α-carbon is bound to an amino group (NH<sub>2</sub>), a carboxyl group (COO
 
 :::{figure} images/Week1/aminoacid.jpg
 :alt: Structure of an amino acid
-:width: 100%
+:width: 40%
 :name: aminoacid
 
 The structure of an amino acid. Four groups are connected to the α-carbon:
@@ -150,7 +314,7 @@ The protein conformation is described on four levels - primary to quaternary str
 
 :::{figure} images/Week1/struclevels.jpg
 :alt: The four levels of protein structure
-:width: 100%
+:width: 90%
 :name: struclevels
 
 The four levels of protein structure.
@@ -176,7 +340,7 @@ The continuous chain of atoms along the protein is also called the **backbone**,
 
 :::{figure} images/Week1/peptidebond.jpg
 :alt: Peptide bond
-:width: 100%
+:width: 30%
 :name: peptidebond
 
 A peptide bond connecting two amino acids.
@@ -207,7 +371,7 @@ Depending on the direction, strands can align parallel or antiparallel to each o
 
 :::{figure} images/Week1/secstructure.jpg
 :alt: Secondary structure elements
-:width: 100%
+:width: 80%
 :name: secstructure
 
 α-helices and β-sheets are stablized by hydrogen bonds between the backbone of proteins, i.e., the side chains are not involved.
@@ -241,7 +405,7 @@ Thus, the Ramachandran plot can be used to assess how plausible a predicted prot
 
 :::{figure} images/Week1/phipsi.jpg
 :alt: Phi, psi, and Ramachandran plot
-:width: 100%
+:width: 70%
 :name: phipsi
 
 A) Peptide bond, φ, and ψ.
@@ -269,7 +433,7 @@ Thus, the chemical properties of the amino acids are very important for the tert
 
 :::{figure} images/Week1/terstructure.jpg
 :alt: Tertiary structure interactions
-:width: 100%
+:width: 80%
 :name: terstructure
 
 Chemical interactions that stabilize the tertiary structure of proteins.
@@ -291,7 +455,7 @@ In a multidomain protein, each domain folds independently of the others.
 
 :::{figure} images/Week1/domains.jpg
 :alt: Domain examples
-:width: 100%
+:width: 50%
 :name: domains
 
 A) Example of a Src homology 3 (SH3) domain that is involved in protein-protein interaction. SH3 domains occur in a diverse range of proteins with different functions.
@@ -316,7 +480,7 @@ Proteins consisting of two subunits are also called dimer.
 
 :::{figure} images/Week1/oligomers.jpg
 :alt: Examples of oligomers
-:width: 100%
+:width: 70%
 :name: oligomers
 
 Examples of oligomers.
@@ -326,7 +490,7 @@ B) UDP-galactose 4-epimerase, a homodimer (PDB structure 1EK5 colored by seconda
 
 ---
 
-##### Substitutions
+#### Substitutions
 
 Mutations in the gene sequence can lead to changes in the primary structure of the protein, e.g., a substitution of one amino acid by a different one.
 Often, such substitutions still lead to highly similar protein structures that perform the similar or even the same function, especially when the exchanged amino acids have similar chemical properties.
@@ -335,7 +499,7 @@ A prominent example is sickle cell anemia, where a substitution of valine to glu
 
 :::{figure} images/Week1/sicklecell.jpg
 :alt: Sickle cell anemia
-:width: 100%
+:width: 70%
 :name: sicklecell
 
 Consequences of a substitution in hemoglobin β resulting in sickle cell anemia.
@@ -344,14 +508,14 @@ Credits: Rao, A., Tag, A. Ryan, K. and Fletcher, S. Department of Biology, Texas
 
 ---
 
-##### Visualization
+#### Visualization
 
-There are many styles to view molecular structures.
-You can see some examples in {numref}`protrep`.
+There are many styles to view protein molecular structures. Some styles focus on detailed chemical structure, others are targeted at the protein surface.
+For some examples see {numref}`protrep`.
 
 :::{figure} images/Week1/protrep.jpg
 :alt: Protein representation
-:width: 100%
+:width: 60%
 :name: protrep
 
 Different representations of the PDB structure 5PEP generated with NGL.
@@ -363,167 +527,18 @@ Most of the figures in this section are taken from [OpenStax](https://openstax.o
 
 ---
 
-### The flow of genetic information
-
-#### Nucleic acids
-
-Deoxyribonucleic acid (DNA) carries the genetic information of organisms and ribonucleic acid (RNA) is involved in the protein expression and is also the genetic material of some viruses.
-Thus, these molecules are highly important as the basis of life on Earth.
-The **genome** denotes the cell's entire genetic content and **genomics** is the study of genomes.
-
-DNA and RNA are comprised of monomers called **nucleotides**, which are comprised of three components ({numref}`nucleotide`):
-
-- A **pentose** sugar, where carbon residues are numbered 1' to 5' (read 1' as "one prime"). The type of pentose distinguishes RNA and DNA: the sugar is deoxyribose in DNA and ribose in RNA.
-  They are similar in structure, but deoxyribose has an H instead of an OH at the 2′ position.
-- A **phosphate** group that is attached to the 5' position of the sugar.
-- A **base** that is attached to the 1' position of the sugar.
-
-:::{figure} images/Week1/nucleotide.jpg
-:alt: Nucleotide overview
-:width: 100%
-:name: nucleotide
-
-The components of a nucleotide.
-Credits: Rice University, CC BY 4.0 https://creativecommons.org/licenses/by/4.0, via OpenStax.
-:::
-
-The bases can be divided into two categories: purines (with a double ring structure) and pyrimidines (with a single ring structure) ({numref}`nucleotide`). DNA contains A, T, C, and G; whereas RNA contains A, U, C, and G.
-
-:::{important}
-Nucleotides are central molecules of life. You do not need to remember the exact chemical structure, but you need to know the difference between DNA and RNA, the different bases and their category (purines or pyrimidines).
-:::
-
----
-
-#### The DNA double helix
-
-The DNA molecule is a polymer of deoxyribonucleotides and forms a right-handed double helix.
-The sugar and phosphate are on the outside forming the helix's backbone and the bases are stacked in the interior and bind each other by hydrogen bonds.
-Thereby A pairs with T via two hydrogen bonds and C pairs with G via three hydrogen bonds, they are **complementary** bases.
-These pairings are also called Watson-Crick base-pairing, named after the discoverers of DNA.
-
-:::{figure} images/Week1/dna.jpg
-:alt: DNA structure
-:width: 100%
-:name: dna
-
-The DNA structure.
-Credits: Nature Education.
-:::
-
-[comment]: # "figure sources
-https://openstax.org/books/biology-2e/pages/3-5-nucleic-acids
-https://www-nature-com.ezproxy.library.wur.nl/scitable/topicpage/discovery-of-dna-structure-and-function-watson-397/"
-
-The two strands of the helix run in opposite directions, also called anti-parallel, i.e., one goes from 5' to 3' and the other from 3' to 5' ({numref}`nucleotide`).
-The nucleotide sequence is typically written in 5' to 3' direction.
-Due to the complementarity, the base sequence of a strand can be deduced from the base sequence from the other strand.
-This is called the **reverse complement**.
-For example, the reverse complement of AAGT is ACTT, where both strands are given in 5' to 3' direction.
-
----
-
-#### DNA replication
-
-As the two DNA strands are only connected via hydrogen bonds, they can be separated relatively easily, for example during DNA replication.
-The separated strands each serve as a template on which a new complementary strand is synthesized by the enzyme DNA polymerase in 5' to 3' direction.
-This mode of replication is called semiconservative .
-
-:::{figure} images/Week1/replication.jpg
-:alt: Replication
-:width: 100%
-:name: replication
-
-A) The process of DNA replication.
-Credits: Medprime, CC BY SA 1.0 https://creativecommons.org/publicdomain/zero/1.0/deed.en, via Wikimedia.
-B) Semiconservative DNA replication, where the two copies each contain on original strand and one new strand.
-Credits: modified from Rgranit, CC BY SA 2.5 https://creativecommons.org/licenses/by-sa/2.5/deed.en, via Wikimedia.
-:::
-
-The error rate of DNA replication is remarkably low, about one erroneous base in 10<sup>9</sup> bases.
-This property preserves the genetic information during cell division, and also over generations.
-
----
-
-#### RNA
-
-In contrast to DNA, RNA does not form a stable double helix.
-RNA is mainly single stranded, but most RNAs show intramolecular base pairing between complementary bases.
-There are four major types of RNA: messenger RNA (mRNA), ribosomal RNA (rRNA), transfer RNA (tRNA), and microRNA (miRNA).
-
----
-
-#### The central dogma of molecular biology
-
-According to the central dogma of molecular biology, the flow of genetic information is essentially in one direction: from DNA via RNA to proteins ({numref}`dogma`).
-Nevertheless, there are also genes that do not code for proteins, but where functional RNA is the end product. Furthermore, mobile genetic elements and viruses can encode reverse transcriptases (which can synthesize DNA from an RNA template) or RNA dependent RNA polymerases (which can replicate RNA).
-
-:::{figure} images/Week1/dogma.jpg
-:alt: Central dogma
-:width: 100%
-:name: dogma
-
-The centra dogma of molecular biology.
-Credits: Dhorspool, CC BY SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/deed.en, via Wikimedia.
-:::
-
-During **transcription**, RNA polymerase reads the template strand (also called noncoding strand) in the 3' to 5' direction ({numref}`transcription`). This produces an RNA molecule from 5' to 3', a copy of the coding strand (where thymine is replaced by uracil).
-
-:::{figure} images/Week1/transcription.jpg
-:alt: Transcription
-:width: 100%
-:name: transcription
-
-Transcription.
-Credits: public domain, via Wikimedia.
-:::
-
-During protein **translation**, ribosomes synthesize polypeptides from messenger RNA (mRNA) ({numref}`translation`).
-Thereby tRNAs decode the information on the RNA into amino acids, where a codon consisting of three nucleotides encodes the information for one amino acid.
-
-:::{figure} images/Week1/translation.jpg
-:alt: Translation
-:width: 100%
-:name: translation
-
-Overview of translation.
-:::
-
-:::{seealso}
-The details of transcription and translation differ between prokaryotes and eukaryotes. You can look up Chapters 15 and 16 of [Biology 2e](https://openstax.org/details/books/biology-2e) to learn more.
-:::
-
----
-
-#### The genetic code
-
-The **genetic code** shows the correspondence between codons and amino acids ({numref}`geneticcode`).
-Since 64 possible codons code for 20 different amino acids, the genetic code is degenerate, i.e., most amino acids are specified by more than one codon.
-Thus, the protein sequence can be deduced from the DNA or RNA sequence but not vice versa.
-There are three codons that do not encode for an amino acid, but instead signal the end of the protein sequence, called **stop codons**.
-Furthermore, translation generally starts with the start codon AUG encoding methionine.
-More information of how protein information is encoded in genomes can be found in the section on [genome annotation](sec_annotation).
-
-:::{figure} images/Week1/geneticcode.jpg
-:alt: The genetic code
-:width: 100%
-:name: geneticcode
-
-The universal genetic code. Note that exceptions to this code exist, for example the vertebrate mitochondrial code.
-Credits: SrhGreenwood, CC BY 4.0 https://creativecommons.org/licenses/by/4.0, via Wikimedia.
-:::
-
-:::{important}
-The universal genetic code is very important to understand how information flows from genes to proteins. Nevertheless, you do not need to recall it, but can always look it up. When needed, it will also be provided in the exam.
-:::
-
----
-
 (sec_annotation)=
 
 ## Genome annotation
 
 Anne: I suggest to mention this first, since it links well with the previous sections. So far, transcription is not well described in the background.
+
+Genome annotation is the process of deciphering what information is encoded in an organism's DNA. Given the large size of any genome, automated procedures are used to identify various genomic elements such as genes, regulatory regions, transposable elements, or other non-coding elements. These bioinformatic procedures mostly focus on identifying one type of element, and as such a complete genome annotation project can be thought of as a pipeline of various procedures.
+
+:::{Admonition} Prokaryotic VS eukaryotic genes and genomes
+:class: important
+not the same
+:::
 
 ### Gene models
 
@@ -634,7 +649,7 @@ UniProt contains three databases ({numref}`uniprot`):
 
 :::{figure} images/Week1/uniprot.jpg
 :alt: Overview of UniProt
-:width: 100%
+:width: 70%
 :name: uniprot
 
 The information flow in Uniprot.
@@ -739,15 +754,15 @@ You can click on each of these accessions to get to the entry information.
 You may have noticed a colored letter before each InterPro accession, e.g., F before IPR011835 or D before IPR001296 ({numref}`interpro-prot`).
 These icons denote the different InterPro entry types:
 
+- (Homologous) Superfamily - a large diverse family, usually with shared protein structure
 - Family - a group of proteins sharing a common evolutionary origin, reflected by their related functions and similarities in sequence or structure.
-- Superfamily - a large diverse family, usually with shared protein structure
 - Domain - a distinct functional or structural unit in a protein, usually responsible for a particular function or interaction
-- Site - a group of amino acids with certain characteristics that may be important for protein function, e.g., active sites or binding sites
 - Repeat - typically a short amino acid sequence that is repeated within a protein
+- Site - a group of amino acids with certain characteristics that may be important for protein function, e.g., active sites or binding sites
 
 :::{figure} images/Week1/interpro-types.png
 :alt: Interpro types
-:width: 100%
+:width: 40%
 :name: interpro-types
 
 The icons for the different InterPro entries (homologous superfamily, family, domain, repeat or site).
@@ -789,6 +804,8 @@ Ontologies play a crucial role in bioinformatics because they facilitate:
 2.  **interoperability**: Ontologies facilitate the sharing and integration of data and knowledge across different research groups, institutions, and databases. They enable computers systems process data more accurately, leading to more meaningful analyses and discoveries.
 3.  **scientific reasoning**: By organizing information in a logical and structured way, ontologies help researchers generate hypotheses, design experiments, and validate findings more effectively.
 
+Ontologies typically form a hierarchy, where specific terms point to more generic terms. More generally, most ontologies are represented as a graph, where ontology terms are the nodes and relationships between terms are edges. As such, one ontology term may have more than one parent term.
+
 A variety of ontologies are frequently used in the life sciences, some of which are discussed in greater detail below.
 
 (sec_go)=
@@ -808,13 +825,13 @@ The [Gene ontology](http://geneontology.org/) (GO) is a knowledgebase for the fu
 A biological process is not equivalent to a pathway. At present, the gene ontology does not represent the dynamics or dependencies that would be required to fully describe a pathway.
 :::
 
-Each GO-term is embedded into the GO hierarchy, where specific terms point to more generic terms. More generally, the GO is represented as a graph, where GO terms are the nodes and relationships between GO terms are edges. As such, one GO term may have more than one parent term. For example, the biological process [hexose biosynthetic process](http://amigo.geneontology.org/amigo/term/GO:0019319) has two parents: [hexose metabolic process](http://amigo.geneontology.org/amigo/term/GO:0019318) and [monosaccharide biosynthetic process](http://amigo.geneontology.org/amigo/term/GO:0046364). This reflects that biosynthetic process is a subtype of metabolic process and a hexose is a subtype of monosaccharide. ({numref}`go`).
+A good example of how ontologies are represented as graphs is the biological process [hexose biosynthetic process](http://amigo.geneontology.org/amigo/term/GO:0019319), which has two parents: [hexose metabolic process](http://amigo.geneontology.org/amigo/term/GO:0019318) and [monosaccharide biosynthetic process](http://amigo.geneontology.org/amigo/term/GO:0046364). This reflects that biosynthetic process is a subtype of metabolic process and a hexose is a subtype of monosaccharide. ({numref}`go`).
 
 Edges between GO terms in the GO hierarchy can represent various relationships between genes and gene products. The four main relationship types used in the gene ontology are 'is a', 'part of', 'has part', and 'regulates'.
 
 :::{figure} images/Week1/go.png
 :alt: Go hierarchy
-:width: 50%
+:width: 55%
 :name: go
 
 An extract of the Gene Ontology hierarchy.
@@ -824,7 +841,22 @@ An extract of the Gene Ontology hierarchy.
 
 ### Sequence Ontology
 
-[Sequence ontology](http://sequenceontology.org) describes biological sequence elements such as genes or repeats.
+The [Sequence ontology](http://sequenceontology.org) (SO) describes biological sequence elements such as genes or repeats, along with their features and attributes.
+
+The sequence ontology is organized on four main levels:
+
+- Attribute: an attribute describes a certain quality of a given sequence, for example the sequence source (i.e. how it was generated).
+- Collection: multiple disontiguous sequences together, for example the chromosomes of a complete genome.
+- Feature: the most general top-level entry that describes any extent of a continuous biological sequence, for example a [gene](http://sequenceontology.org/browser/current_release/term/SO:0000704) is a [region](http://sequenceontology.org/browser/current_release/term/SO:0000001), which in turn is a sequence feature.
+- Variant: intended to describe genetic variation. The definition of a sequence variant is composed of other entries in the sequence ontology: "A [sequence_variant](http://sequenceontology.org/browser/current_release/term/SO:0001060) is a non-exact copy of a [sequence_feature](http://sequenceontology.org/browser/current_release/term/SO:0000110) or [genome](http://sequenceontology.org/browser/current_release/term/SO:0001026) exhibiting one or more [sequence_alteration](http://sequenceontology.org/browser/current_release/term/SO:0001059)s"
+
+:::{figure} images/Week1/sequence_ontology.png
+:alt: SO hierarchy example
+:width: 40%
+:name: so
+
+An extract of the Sequence Ontology hierarchy.
+:::
 
 (seq_other)=
 
