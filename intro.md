@@ -8,7 +8,7 @@ This is the official reader material for the Introduction to Bioinformatics (BIF
 
 ## Bioinformatics
 
-The field ofbBioinformatics deals with research, development, or application of tools and
+The field of Bioinformatics deals with research, development, or application of tools and
 approaches for expanding the use of biological, medical, behavorial or health
 data. It also includes all aspects necessary to acquire, store, organize, archive, analyze or visualize such data.
 
