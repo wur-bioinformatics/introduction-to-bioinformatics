@@ -350,7 +350,8 @@ Credits: Rice University, CC BY 4.0 https://creativecommons.org/licenses/by/4.0,
 Each protein has a free amino group on one end, called the **N terminus**.
 The other end has a free carboxyl group, called the **C terminus**.
 
-:::{note}
+:::{admonition} Note 1: possible polypeptide chains
+:class: note
 As there are 20 distinct amino acids, there can be a huge number of different polypeptide chains, i.e., 20<sup>n</sup> for a polypeptide of length n.
 Most of these potential sequences do not adopt a stable conformation, thus only a tiny fraction of these possibilities exist in nature.
 :::
@@ -383,7 +384,8 @@ Credits: Rao, A., Tag, A. Ryan, K. and Fletcher, S. Department of Biology, Texas
 **Turns** are short secondary structure elements that are stabilized by hydrogen bonds between amino acids that are 1 to 5 peptide bonds away.
 The most common form are β-turns, which connect antiparallel β-strands.
 
-:::{note}
+:::{admonition} Note 2: Secondary structure amino acid preference
+:class: note
 Although secondary structure elements are formed by hydrogen bonds between the backbone, certain amino acids are favoured in secondary structures and others are disfavoured.
 For example, methionine, alanine, leucine, and glutamic acid are favoured in α-helices, whereas proline, glycine, and tyrosine are disfavoured.
 Also, valine, isoleucine, tyrosine, cysteine, tryptophan, phenylalanine, and threonine are more frequently found in β-sheets, compared to α-helices.
@@ -440,7 +442,7 @@ Chemical interactions that stabilize the tertiary structure of proteins.
 Credits: Rice University, CC BY 4.0 https://creativecommons.org/licenses/by/4.0, via OpenStax.
 :::
 
-:::{admonition} Denaturation
+:::{admonition} Note 3: Denaturation
 :class: note
 The noncovalent bonds that stabilize the protein structure are broken at high temperature.
 Thus, most proteins unfold above about 60°C.
@@ -531,20 +533,68 @@ Most of the figures in this section are taken from [OpenStax](https://openstax.o
 
 ## Genome annotation
 
-Anne: I suggest to mention this first, since it links well with the previous sections. So far, transcription is not well described in the background.
+Genome annotation is the process of deciphering what information is encoded in an organism's DNA. It is an ongoing effort in organisms with known genome sequences. Even moreso, genome annotation is a critical step in acquiring biological insights from newly sequences genomes. Given the large size of any genome, automated procedures are used to identify various genomic elements such as genes, regulatory regions, transposable elements, or other non-coding elements. Each of these bioinformatic procedures typically focuses on identifying one type of element, and as such a complete genome annotation project can be thought of as a pipeline of various procedures. The following section describes the most common steps in genome annotation.
 
-Genome annotation is the process of deciphering what information is encoded in an organism's DNA. Given the large size of any genome, automated procedures are used to identify various genomic elements such as genes, regulatory regions, transposable elements, or other non-coding elements. These bioinformatic procedures mostly focus on identifying one type of element, and as such a complete genome annotation project can be thought of as a pipeline of various procedures.
-
-:::{Admonition} Prokaryotic VS eukaryotic genes and genomes
-:class: important
-not the same
+:::{admonition} Note 4: Alignment algorithms
+:class: note
+Several steps in the genome annotation process make use of algorithms that can search or align biological sequences, for example the BLAST algorithm. Week 2 covers sequence alignment and search in greater detail. For now it is sufficient to know that these algorithms can quickly search very large collections of biological sequences to identify sequences that look similar (what we mean _exactly_ by 'similar' is also part of week 2).
 :::
 
-### Gene models
+### Repeat masking
 
-Prokaryatic vs Eukaryotic
+Repeat masking involves the identification and masking (hiding) of repetitive sequences within a genome. It is an essential first step in annotating most genomes because repetitive sequences can pose significant challenges in genome annotation. Masking repeats generally improves:
 
-### Genome browsers
+- Accuracy: Repetitive elements can be mistakenly annotated as genes or other functional elements, leading to inaccurate predictions and interpretations of the genome.
+- Computational Efficiency: Identifying and processing repetitive sequences can be computationally intensive. However, masking these repetitive regions reduces the computation time of all downstream analyses.
+- Biological Relevance: Repetitive sequences are usually not involved in the coding of proteins of interest. Therefore, focusing on non-repetitive regions is a smart choice in understanding the genes and regulatory elements that drive biological processes.
+
+Most repeat masking workflows work by first compiling (or using a precompiled) 'repeat library': a collection of known repetitive elements that have previously been characterized. Subsequently, the genome to be annotated is compared against this repeat library using various computational algorithms, such as BLAST or RepeatMasker. When a match is found, the corresponding region in the genome is 'masked' or annotated as a repetitive element. This means that these regions are excluded from further analysis or labeled as repetitive.
+
+### Gene prediction
+
+The process of finding protein coding genes differs between prokaryotic and eukaryotic genomes. In both cases the aim is to find open reading frames: contiguous stretches of DNA encoding proteins. However, since RNA splicing ({numref}`splicing`) is almost absent in prokaryotic genomes, prokaryotic ORFs can be found directly in the genomic DNA. As a result, simply enumerating all possible ORFs in a genome is a common step in prokaryotic genome annotation. In contrast, ORFs in eukaryotic genomes are found on _mature_ mRNAs. As such, all eukaryotic gene prediction methods take splicing into account, thereby greatly increasing their computational complexity. Both prokaryotic and eukaryotic gene prediction typically can be classified as either evidence based prediction or ab initio prediction.
+
+#### Evidence based prediction
+
+This data-driven approach uses existing and newly generated data to get hints on what regions of a genome encode genes. Depending on the type of data, these predictions have more or less predictive power. Some commonly used evidence types are:
+
+- RNA-sequencing data: the most direct form of evidence for what regions of the genome are transcribed. As such, RNA-sequencing 'reads' often provide the best form of evidence in identifying splice sites in eukaryotes. Note that not all transcribed RNA will be translated into protein, and that therefore not all RNA-sequencing reads are evidence for protein coding genes. Distinguishing between protein-coding and non-coding RNA is not always trivial.
+- Homology evidence: Aligning DNA or protein sequences of known genes (from other organisms) is valuable evidence in finding coding regions of the genome. Due to the redundancy in the genetic code, it is not trivial to correctly identify splice sites when aligning protein sequences to a genome. Homology evidence from closely related organisms leads to higher quality predictions than evidence from distantly related organisms.
+- Whole-genome alignments: this approach uses the annotated genome of a closely related organism to directly identify coding regions in a novel genome. For example: Whole-genome alignment of mouse and human genomes reveals that large parts of mouse chromosome 2 are homologous to human chromosome 20. The alignment procedure results in a direct 1-to-1 mapping of mouse and human genome coordinates, and as such annotation coordinates can be transferred between genomes.
+
+#### Ab initio prediction
+
+> _Ab initio_ (latin): from first principles, from the beginning
+
+These methods rely on statistics to learn a predictive model from a known annotated genome. Various forms of ab-initio models exist, and whereas implementation details differ, most follow a similar line of reasoning. For now, we will stick to a high level description. All ab-initio models scan through a DNA sequence and at each position give a score for a specific type of annotation. In addition, they often take their genomic context into account. For example, the probility of a protein-coding annotation on a nucleotide A is high when the next two observed nucleotides are T and G, producing the ATG start-codon methionine. In addition, most methods also take the _predicted annotation_ of the genomic context into account. For example: the probibility that ATG actually codes for a start codon is much higher if we can predict an in-frame stop codon. In eukaryotic genome prediction these models become quite complex because they have to include splice sites in all three reading frames. How _exactly_ a model decides what annotation score to give to which nucleotide is part of the model architecture and parameterization. In all cases, the model parameters are chosen to accurately reproduce a known genome annotation. If sufficient data is used to learn the model parameters, it is assumed that these models can be used to predict annotations on novel genome sequences. Like homology-based prediction, this model-based approach works best for closely related organisms.
+
+:::{Admonition} Note 5: Hidden Markov Models
+Several ab-initio gene predictors that use the statistical procedure described above fall in a broader category of models called Hidden Markov Models (HMMs). HMMs are designed to model sequence characteristics, and as such they find widespread adoption in bioinformatics. Week 2 covers HMMs in greater detail.
+:::
+
+### Evidence/prediction integration
+
+From the previous sections it has now become clear there are several ways of predicting what the genes in a genome look like. Since these various approaches almost never agree exactly in their predictions, a final step in genome annotation is evidence and prediction integration. Typically a weighted consensus approach is used: each individual source of evidence is given a weight representing how much it should influence the final decision, after which a majority vote decides what the annotation should look like. Typically RNA-seq evidence gets a high weight, and various forms of homology evidence can be weighted depending on how closely related they are to the genome of interest.
+
+### Functional annotation
+
+So far, all described steps in the genome annotation process have dealt with what genes look like on a structural level. To gain biological insight, the next step is to assign functional annotations to the predicted genes. This functional annotation step consists of using various sequence alignment and search tools to find sequences with a known function/description and to transfer the information of the known gene to the predicted gene. Several databases of high-quality known functions are often used, which are described in more detail in the next section of this chapter.
+
+:::{admonition} Note 6: Visualising gene structure
+:class: note
+**Gene models**: the genomic structure of a gene (often referred to as a gene 'model') is typically visualised by a set of lines and rectangles with predefined meaning.
+
+```{figure} images/Week1/genemodel.png
+An example gene model. Various visualization conventions can be identified: boxes represent genomic regions that are transcribed. Boxes are exons, lines between boxes are introns. Narrow boxes (sometimes with a lighter color) are untranscribed regions (UTRs), wider boxes (sometimes darker colored) are coding sequence regions (CDS). The arrow indicates the direction of transcription. In this example a gene on chromosome 1 with two splice variants is shown, where the first variant has a slightly longer 5' UTR and an additional CDS exon in between the first and last exons.
+```
+
+**Genome browsers** facilitate interactive visualisation of annotations and evidence alignments on genome sequences. Various implementations exist, but all genome browsers typically provide a linear view of a chromosome that can be scrolled and zoomed. In addition, various annotation 'tracks' can often be toggled, to display for instance known gene structures, RNA sequencing alignments, or homologous protein sequence alignments. Most visualization elements can be clicked to open pop-up windows with additional information.
+
+```{figure} images/Week1/jbrowse.png
+A screenshot of the JBrowse genome browser showing _Arabidopsis thaliana_ chromosome 1 with a gene that has multiple splice variants.
+```
+
+:::
 
 ---
 
@@ -578,7 +628,9 @@ For example, NC_003070.9 is the latest version for Arabidopsis thaliana chromoso
 
 Database entries often link to each other via **cross links**.
 
-**TODO** mention flat/binary files, the knowledge clip could also be included.
+:::{seealso}
+[Ten Simple Rules for Developing Public Biological Databases](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5104318/) contains additional reading material on what it takes to properly maintain a public database service.
+:::
 
 ---
 
@@ -597,12 +649,20 @@ The complete database is available for download via FTP, but the most convenient
 A screenshot of the GenBank website.
 :::
 
-:::{note}
-These days it is required for publication that scientists submit their sequence data to GenBank or an associated database.
+:::{admonition} Additional information
+:class: tip
+These days it is required for publication in most peer-reviewed journals that scientists submit their sequence data to GenBank or an associated database, alongside sufficiently informative meta-data that describes how the data was generated.
 :::
 
 Since data is directly submitted to GenBank, the information for some loci can be highly redundant.
 The sequence records are owned by the original submitter and cannot be altered by someone else.
+
+:::{admonition} Note 7: Database redundancy
+:class: note
+'Redundancy' in the context of a database refers to identical data that is present more than once. Typically, _metadata_ is not taken into account when determining redundancy. Example: two different labs have determined the DNA sequence of a bacterial gene involved in some disease. The metadata will be different, but the sequence data will be identical, so these two database records are redundant.
+
+NCBI hosts several databases that are classified as 'non-redundant', for example [RefSeq non-redundant proteins](https://www.ncbi.nlm.nih.gov/refseq/about/nonredundantproteins/). Here, redundancy is defined so that a 'Non-redundant protein record always represents one exact sequence that has been observed once or many times in different strains or species'.
+:::
 
 Genbank is part of the [INSDC](https://www.insdc.org/) (International Nucleotide Sequence Database Collaboration).
 The other two member databases are [ENA](https://www.ebi.ac.uk/ena/browser/home) (European Nucleotide ARchive) and [DDBJ](https://www.ddbj.nig.ac.jp/index-e.html) (DNA Data Bank of Japan).
@@ -796,13 +856,18 @@ The Pfam logo for PF12924.
 
 ## Ontologies
 
-An ontology as a comprehensive and structured vocabulary for a particular domain, such as biology, genetics, or medicine. It defines the various terms used in a domain, along with their meanings and interconnections. As such, ontologies serve as standardized frameworks for organizing and categorizing information in a way that enables effective communication and reasoning among researchers, practitioners, and computer systems. For example, the terms in an ontology can encompass biological entities like genes, proteins, and cells, as well as processes, functions, and interactions that occur within living organisms.
+An ontology is a comprehensive and structured vocabulary for a particular domain, such as biology, genetics, or medicine. It defines the various terms used in a domain, along with their meanings and interconnections. As such, ontologies serve as standardized frameworks for organizing and categorizing information in a way that enables effective communication and reasoning among researchers, practitioners, and computer systems. For example, the terms in an ontology can encompass biological entities like genes, proteins, and cells, as well as processes, functions, and interactions that occur within living organisms. Most of the databases mentioned mentioned in this chapter use ontologies in some way to describe their data.
 
 Ontologies play a crucial role in bioinformatics because they facilitate:
 
 1.  **standardization and consistency**: Ontologies provide a common language and consistent framework for researchers and professionals, ensuring that everyone understands and uses terms in the same way.
 2.  **interoperability**: Ontologies facilitate the sharing and integration of data and knowledge across different research groups, institutions, and databases. They enable computers systems process data more accurately, leading to more meaningful analyses and discoveries.
 3.  **scientific reasoning**: By organizing information in a logical and structured way, ontologies help researchers generate hypotheses, design experiments, and validate findings more effectively.
+
+:::{admonition} Note 8: FAIR principles
+:class: note
+As described above, ontologies facilitate scientific reproducibility. A key concept in scientific reproducibility are the FAIR principles, with FAIR standing for Findable, Accessible, Interoperable, and Reusable. This reader does not describe the FAIR principles in detail, but you should familiarize yourself with them by reading the following online resource: https://www.go-fair.org/fair-principles/
+:::
 
 Ontologies typically form a hierarchy, where specific terms point to more generic terms. More generally, most ontologies are represented as a graph, where ontology terms are the nodes and relationships between terms are edges. As such, one ontology term may have more than one parent term.
 
@@ -812,17 +877,15 @@ A variety of ontologies are frequently used in the life sciences, some of which 
 
 ### Gene Ontology
 
-TODO: Check practical assignment that makes students read about three main GO categories, better to include a good description here.
-
 The [Gene ontology](http://geneontology.org/) (GO) is a knowledgebase for the function of genes and gene products (e.g. proteins). It is organised into three different domains covering various aspects:
 
 - Molecular Function: Molecular-level functions performed by gene products (e.g. proteins), such as "catalysis" or "transport". Most molecular functions can ben performed by individual gene products, but some functions are performed by complexes consisting of multiple (possible differing) gene products. GO molecular functions are often include the word “activity” (an _amylase_ enzyme would have the GO molecular function _amylase activity_).
 - Cellular Component: The cellular structures (or location relative to them) in which a gene product performs its function. Can be cellular compartments (e.g., [mitochondrion](http://amigo.geneontology.org/amigo/term/GO:0005739)) or macromolecular complexes of which they are part (e.g., the [ribosome](http://amigo.geneontology.org/amigo/term/GO:0005840)).
 - Biological Process: The larger biological programs composed of multiple molecular activities, for example [DNA repair](http://amigo.geneontology.org/amigo/term/GO:0006281) or [signal transduction](http://amigo.geneontology.org/amigo/term/GO:0007165).
 
-:::{admonition} Biological process != Molecular pathway
+:::{admonition} Note 9: Molecular pathway?
 :class: note
-A biological process is not equivalent to a pathway. At present, the gene ontology does not represent the dynamics or dependencies that would be required to fully describe a pathway.
+A biological process is not equivalent to a molecular pathway. At present, the gene ontology does not represent the dynamics or dependencies that would be required to fully describe a pathway.
 :::
 
 A good example of how ontologies are represented as graphs is the biological process [hexose biosynthetic process](http://amigo.geneontology.org/amigo/term/GO:0019319), which has two parents: [hexose metabolic process](http://amigo.geneontology.org/amigo/term/GO:0019318) and [monosaccharide biosynthetic process](http://amigo.geneontology.org/amigo/term/GO:0046364). This reflects that biosynthetic process is a subtype of metabolic process and a hexose is a subtype of monosaccharide. ({numref}`go`).
@@ -862,10 +925,6 @@ An extract of the Sequence Ontology hierarchy.
 
 ### Other ontologies
 
-[Plant ontology]()
-
-[Disease ontology]()
+Many more ontologies exist and are relevant to biomedical research. The European Bioinformatics Institure (EBI) provides an [ontology lookup service](https://www.ebi.ac.uk/ols4/) that facilitates searching for ontologies. Examples of other ontologies are the [plant ontology](https://www.ebi.ac.uk/ols/ontologies/po) that describes various anatomical structures in plants, and the [human disease ontology](https://disease-ontology.org/).
 
 ---
-
-## Reproducible research
