@@ -207,8 +207,8 @@ It is important to know the amino acids, their one-letter and three-letter abbre
 :name: aminoacidtable
 
 * - Amino acid
-  - One-letter code
   - Three-letter code
+  - One-letter code
   - Property
 * - Arginine
   - Arg
