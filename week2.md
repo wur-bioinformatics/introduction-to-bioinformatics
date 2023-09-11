@@ -20,6 +20,7 @@ Sequence Comparisons and Sequence-Based Database Searches available from [here](
 All material of Chapter 3 is relevant for this course.
 Therefore, you are required to study the whole chapter.
 Unfortunately, the chapter contains some errors:
+* p. 36 first paragraph: "convergent evolution" and "divergent evolution" should be swapped.
 * p. 37 Fig 3.1: in the panel “Insertions and Deletion” W is matched with Q. There should not be a line between these 2 amino acids.
 * p. 38 Fig 3.2: There are many errors in the BLOSUM62 matrix, you can find the correct matrix in ({numref}`blosum62`). The scores with the correct matrix are 68 for the green alignment and 12 for the red alignment.
 * p. 42 “The evolutionary distances correspond to the length of the horizontal branches.” The word horizontal should be removed. All branches correspond to evolutionary distances.
