@@ -34,7 +34,7 @@ These individuals can represent genes, species or higher taxa, but they are neve
 Branches and nodes collectively build the *tree topology*, i.e. the structure of the tree.
 
 One of the most important aspects of a phylogenetic tree is whether it is rooted, meaning whether we can distinguish which nodes are old and which are more recent, and also what clades are present. 
-Rooting is done by selecting an *outgroup*, which is a reference taxon outside the group of interest (this will be dealt with here in section 3.1 below). 
+Rooting is done by selecting an *outgroup*, which is a reference taxon outside the group of interest (this will be dealt with in section [Rooting & clades](rootingandclades)). 
 It is important to realise that most phylogenetic reconstruction methods actually produce unrooted trees, which are then rooted using an outgroup.
 
 ### Related, diverged
@@ -86,7 +86,7 @@ For example, proteins from a gene family with different functions in the same sp
 Fig. 2.5 illustrates both the taxic (speciation, indicated by stars) and genic (duplication) dimensions of gene trees. 
 If speciation would keep track with gene duplication, a perfect multi-copy "full" gene tree would be the result, in which the species tree topology can be easily recognised. 
 
-In this tree, for instance A1, A2 and A3 would be paralogs, all in species A, and A1, B1 and C1 would be ortologs. 
+In this tree, for instance A1, A2 and A3 would be paralogs, all in species A, and A1, B1 and C1 would be orthologs. 
 On the other hand A1, B2 and C3 would be paralogs: "non-corresponding" genes, as a result of gene duplication.
 
 In Figure 2.6 a sequence of events is given involving two duplication and one speciation event that can lead to a set of homologous genes in two species. 
@@ -124,14 +124,15 @@ Such analysis is beyond the scope of this course, but it is of course important 
 Not all parts of a phylogenetic tree will be equally well-supported or strong, given our character data (MSA). 
 In experimental science, usually some statistic measure is used to quantify uncertainty, for instance the mean and standard deviation of outcomes of repeated experiments. 
 Phylogenetics is not experimental but rather seeks to reconstruct historic patterns that were driven/shaped by evolution. 
-As outlined at the beginning of this chapter, the implication is that we cannot *prove* phylogenetic trees nor repeat them, or even know whether we reconstructed the correct one.
+As outlined at the beginning of this section, the implication is that we cannot *prove* phylogenetic trees nor repeat them, or even know whether we reconstructed the correct one.
 
 What we *can* do is measure the support for the nodes in our phylogenetic tree, given our MSA. 
 To do this, rather than producing several replicates of our MSA (which will most likely all be identical), we can draw random samples from the MSA and use these *pseudo-replicate data sets* to build trees (Fig. 2.10). 
 Repeating this process many times (hundreds or thousands) and summarizing the variation among the trees thus reconstructed, provides insight in the structure of our data and how it supports the nodes in a tree. 
 It actually measures the sampling *variance about the estimate* of the phylogeny. 
-This process is called bootstrap analysis and will be further discussed in section 6, after we have covered the characters underlying our trees in the next chapter.
+This process is called bootstrap analysis and will be further discussed in [Maximum likelihood tree building](MLtreebuilding), after we have covered the characters underlying our trees in the next section.
 
+(charactersandtrees)=
 ## Characters & trees
 
 As outlined above, phylogenetic trees are not directly observed but *inferred*, and represent hypotheses of evolutionary relationship, grouping individuals on the basis of shared history. 
@@ -152,15 +153,16 @@ For instance, when studying a gene family in which duplications have occurred du
 Only adding more characters may amplify errors or artefacts caused by taxic under-sampling. 
 This can lead to incorrectly inferred long branches with seemingly high support for their position and nodes.
 
-In Chapter 5 we will focus on the estimation of branch lengths using modelling of nucleotide or amino acid changes. 
+In the section [Estimating sequence divergence](estimatingsequencedivergence) we will focus on the estimation of branch lengths using modelling of nucleotide or amino acid changes. 
 In the parsimony approach each substitution leads to an extra "step" on the tree, i.e. makes the tree one step longer. 
 Simulation studies have shown that, especially in the case of the combination of short internal branches and long terminal branches, the parsimony approach can give wrong topologies. 
 The reason for this is that in such long-branch cases *false* synapomorphies can form, producing wrong clades. 
 After all, long branches mean "many changes" and with a nucleotide alphabet of "only" A, C, G and T the same nucleotides can easily occur in one MSA position by change. 
 This phenomenon has become known as *long branch attraction* and has been especially challenging in, for instance, the placement of early land plant lineages. 
 These lineages (i.e. *Amborella*, *Nymphea*) are on long branches in isolated positions in the phylogenetic tree and have proven difficult to place with confidence. 
-Applying models of nucleotide substitution in sequence divergence estimation and modelling of branch lengths (Chapter 5) has been shown to overcome parts of this problem.
+Applying models of nucleotide substitution in sequence divergence estimation and modelling of branch lengths ([Estimating sequence divergence](estimatingsequencedivergence)) has been shown to overcome parts of this problem.
 
+(rootingandclades)=
 ### Rooting & clades
 
 A *clade* is an ancestral node together with all its descendants, which is also referred to as a *monophyletic group*. 
@@ -200,12 +202,13 @@ Fig 3.6 shows an example of an unrooted tree with additive branch lengths; notic
 
 ### Newick tree notation
 
-Phylogenetic trees are graphical structures ("graphs") that are the outcome of phylogenetic reconstruction of sometimes hundreds or thousands of sequences, and especially when using character-based tree search (see below Chapter 4) there can be enormous amounts of "best trees" that all will have to be taken into account, for instance by calculating a consensus tree (see 4.1.1). 
+Phylogenetic trees are graphical structures ("graphs") that are the outcome of phylogenetic reconstruction of sometimes hundreds or thousands of sequences, and especially when using character-based tree search (see below [Main approaches to tree building](mainapproachestotreebuilding)) there can be enormous amounts of "best trees" that all will have to be taken into account, for instance by calculating a consensus tree (see 4.1.1). 
 In any case, handling large numbers of trees in phylogenetical and bioinformatic analytical pipelines requires the tree graphs to be in a format that can be easily read and produced, as a linear statement. 
 For this, the Newick notation is commonly used in which brackets describe the structure of the tree. 
 For instance, the rooted tree in Fig 3.4 above would look like `((((H,C)G)O)B)` in Newick notation. 
 In case the tree has branch lengths, they can be indicated in this notation as well (see also the Newick tree Activity suggested in the Reading guide).
 
+(mainapproachestotreebuilding)=
 ## Main approaches to tree building
 
 ### Character based
@@ -219,7 +222,7 @@ This is then repeated with another tree, and again another etc. -*the better the
 
 #### Tree space and heuristic search methods
 
-The number of possible bifurcating trees increases astronomically with increasing numbers of included taxa (terminals or sequences in your MSA) and cannot be calculated analytically (see Box 1). 
+The number of possible bifurcating trees increases astronomically with increasing numbers of included taxa (terminals or sequences in your MSA) and cannot be calculated analytically (see [Box 1](w3box1)). 
 For instance, the total number of unrooted bifurcating trees for 10 and for 30 sequences is $2,027,025$ and $4.95 × 10^{38}$ respectively. 
 In fact, it quickly becomes practically impossible to compare all possible trees and find the *exact* best one. 
 To overcome this problem, random trees are generated that serve as starting points for tree search in remote and differently placed parts of the tree space (see below). 
@@ -261,12 +264,12 @@ DE occurs only ones and gets 33%, which is below the majority of 50% and therefo
 #### Parsimony analysis
 
 The simplest method for character-based tree building is *parsimony analysis* in which, character-by-character, the fit (of each character) onto a candidate tree is counted (see Fig 4.3). 
-Some characters may have changed only once but did so in multiple sequences (*synapomorphies*, see above, chapter 3), whereas others may have changed several times independently (*homoplasies*). 
+Some characters may have changed only once but did so in multiple sequences (*synapomorphies*, see above, [Characters & trees](charactersandtrees)), whereas others may have changed several times independently (*homoplasies*). 
 Some characters may have changed only in one of the sequences (*autapomorphy*). 
 When all characters in the MSA have been evaluated, the overall score of the fit of the data with that candidate tree is calculated by adding up the changes across all characters (as in Figure 4.3). 
 Then, another candidate tree is assumed and the process is carried out again. 
 More and more trees are compared this way until either a single best or a group of *equally most parsimonious* reconstructions remains. 
-Given the vastness of tree spaces for even moderate numbers of terminals (see Box 1) this process may take some time to complete. 
+Given the vastness of tree spaces for even moderate numbers of terminals (see [Box 1](w3box1)) this process may take some time to complete. 
 Usually only heuristic search methods (see 4.1.1) are applied in case of >15 terminals.
 
 Each character change can be considered an *ad hoc* assumption, each of them associated with their type I error, or the chance of having a *false positive*. 
@@ -281,13 +284,13 @@ Maximum parsimony methods are included in the software (MEGA11) used in this pra
 
 Two other important character-based methods for tree building exist: *maximum likelihood* (ML) analysis and *Bayesian Inference* (BI). 
 Both differ from parsimony analysis in that they do not merely count differences (as in parsimony analysis) but are based on explicit models of character evolution and operate in a probability framework. 
-ML will be discussed in Chapter 6 below; BI is beyond the scope of this course and will therefore not be treated here. 
+ML will be discussed in section [Maximum likelihood tree building](MLtreebuilding) below; BI is beyond the scope of this course and will therefore not be treated here. 
 
 ### Distance-based
 
 The other main approach to tree building is *clustering*, which is distance-based, and is widely used in several applications, for instance in visualising BLAST searches as Neighbor Joining trees. 
 Distance-based means that instead of comparing one character at a time across all sequences in the MSA, only pairwise comparisons of entire sequences are made (i.e. all characters are compared at once), for all possible sequence pairs in the MSA (Fig 4.3 below). 
-Pairwise comparisons yield pairwise distances, which can be ultrametric or Euclidean (see Box 2). 
+Pairwise comparisons yield pairwise distances, which can be ultrametric or Euclidean (see [Box 2](w3box2)). 
 Keep in mind that the relation between Distance ($D$) and Similarity ($S$) is
 
 $$
@@ -344,9 +347,10 @@ It is good to keep in mind that NJ is a clustering method, i.e. it groups sequen
 Therefore, for phylogenetic studies, character-based analysis is preferred and NJ analysis can be used in addition, to check for possible incongruencies between the two. 
 If these are found, it could mean that the data (the synapomorphies accumulated in the MSA) are not metric for that part of the tree, which could warrant additional analysis methods (such as phylogenetic network reconstruction) which is beyond the scope of this course.
 
+(estimatingsequencedivergence)=
 ## Estimating sequence divergence
 
-As outlined in Chapter3, phylogenetic reconstruction in case of long terminal branches combined with short internal ones usually poses a problem when using parsimony analysis, where each substitution occurring in the MSA results in one extra step of treelength. 
+As outlined in the section [Characters & trees](charactersandtrees), phylogenetic reconstruction in case of long terminal branches combined with short internal ones usually poses a problem when using parsimony analysis, where each substitution occurring in the MSA results in one extra step of treelength. 
 This so-called *long branch attraction* artefact has been shown to be mitigated to some extent by *modelling branch lengths* (rather than merely counting differences as branch length). 
 For the accurate estimation of branch lengths in a phylogenetic tree we need accurate *sequence divergence estimation*. 
 Evolutionary divergence (or distance) between homologous sequences is reflected in substitutions between them since splitting-off from their MRCA. 
@@ -388,6 +392,7 @@ Once these are determined they can be rooted using outgroup rooting.
 
 For amino acid sequence comparisons, instead of estimating parameter values from the data, amino acid substitution models are based on (pre-defined) *substitution cost matrices* that are based on observations of amino acid substitutions found in over 30,000 protein sequences (i.e. the JTT, Blosum, Dayhoff, LG and WAG matrices).
 
+(MLtreebuilding)=
 ## Maximum likelihood tree building
 
 For character-based approaches these substitution models, as they are based on probabilities, allow us to calculate the *likelihood* of our data supporting a particular tree and model. 
