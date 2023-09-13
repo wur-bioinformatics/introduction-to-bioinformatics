@@ -264,51 +264,63 @@ The structure model can be used to validate the protein’s predicted function a
 Source: https://alphafold.ebi.ac.uk/entry/A3B9A0
 :::
  
+:::{Test your knowledge now!}
 
-## Further reading  
+Have you read the above? Test yourself directly by answering the questions first and then revealing the answer by clicking on the question. Correct? Great! If not, you are encouraged to reread the part of the above section that deals with the questioned topic.
+
+:::{dropdown} Which type of information from a contact map that we cannot read from a protein primary sequence directly is relevant for protein 3D structure prediction?...
+...The amino acid residues that are in close contact with each other even if they are not adjacent to each other in the primary sequence.
+:::
+
+:::{dropdown} How is a MSA relevant for protein 3D structure prediction?...
+...An MSA will reveal conserved regions that indicate parts of the protein sequence that are important for its function. These parts are often represented by specific folds, i.e., stretches with presence of secondary structure elements in a specific configuration.
+:::
+
+:::{dropdown} What does RMSE stands for and where is it used?...
+...Root Mean Square Error. This error is used in assessing the quality of 3D models by comparing distance between atoms in the predicted model and an experimental structure.
+:::
+
+:::
+
+:::{See also}  
 
 Please find below several links with further information about AlphaFold. 
 Please note that these are not part of the exam material, which is covered above in this reader. 
 A number of these resources were used as an inspiration for the reader material. 
 
-% Jorge: add some video? https://www.youtube.com/results?search_query=alphafold
+Video introduction by the AlphaFold team:
+
+https://youtu.be/gg7WjuFs8F4?si=a8ebksOpRFin7VXa
 
 Brief AlphaFold introduction by Deepmind: 
 
 https://www.deepmind.com/blog/alphafold-a-solution-to-a-50-year-old-grand-challenge-in-biology 
 
- 
-
 History of AlphaFold: 
 
 https://www.deepmind.com/research/highlighted-research/alphafold/timeline-of-a-breakthrough 
-
- 
 
 AlphaFold most recent update: 
 
 https://www.deepmind.com/blog/alphafold-reveals-the-structure-of-the-protein-universe 
 
- 
-
 AlphaFold Nature publication: 
 
 https://www.nature.com/articles/s41586-021-03819-2 
 
- 
-
 A blogpost on AlphaFold 2: 
 
 https://www.blopig.com/blog/2021/07/alphafold-2-is-here-whats-behind-the-structure-prediction-miracle/ 
-
  
-
 Good pointers on confidence in protein models: 
 
 https://alphafold.ebi.ac.uk/faq#faq-5 
 
- 
-
 Taken inspiration and figures from: 
 
 https://elearning.bits.vib.be/courses/alphafold/lessons/introduction-to-alphafold/ (CC-BY 4.0)  
+
+Fold2Seek publication:
+
+https://www.nature.com/articles/s41587-023-01773-0
+:::
