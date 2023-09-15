@@ -216,7 +216,7 @@ Phylogenetics is not experimental but rather seeks to reconstruct historic patte
 As outlined at the beginning of this section, the implication is that we cannot *prove* phylogenetic trees nor repeat them, or even know whether we reconstructed the correct one.
 
 What we *can* do is measure the support for the nodes in our phylogenetic tree, given our MSA. 
-To do this, rather than producing several replicates of our MSA (which will most likely all be identical), we can draw random samples from the MSA and use these *pseudo-replicate data sets* to build trees ({numref}`2.9`). 
+To do this, rather than producing several replicates of our MSA (which will most likely all be identical), we can draw random samples from the MSA and use these *pseudo-replicate data sets* to build trees ({numref}`w3f2.9`). 
 Repeating this process many times (hundreds or thousands) and summarizing the variation among the trees thus reconstructed, provides insight in the structure of our data and how it supports the nodes in a tree. 
 It actually measures the sampling *variance about the estimate* of the phylogeny. 
 This process is called bootstrap analysis and will be further discussed in [Maximum likelihood tree building](MLtreebuilding), after we have covered the characters underlying our trees in the next section.
