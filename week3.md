@@ -11,7 +11,7 @@
 :alt: The tree of Life
 :align: center
 :name: w3f1.1a
-The tree of Life. Date in millions of years; rooted with Eubacteria (from timetree.org).
+The tree of Life. Dated in millions of years; rooted with Eubacteria (from timetree.org).
 :::
 
 Why should we study phylogenetics and what is it about? 
@@ -264,7 +264,7 @@ In the section [Estimating sequence divergence](estimatingsequencedivergence) we
 In the parsimony approach each substitution leads to an extra "step" on the tree, i.e. makes the tree one step longer. 
 Simulation studies have shown that, especially in the case of the combination of short internal branches and long terminal branches, the parsimony approach can give wrong topologies. 
 The reason for this is that in such long-branch cases *false* synapomorphies can form, producing wrong clades. 
-After all, long branches mean "many changes" and with a nucleotide alphabet of "only" A, C, G and T the same nucleotides can easily occur in one MSA position by change. 
+After all, long branches mean "many changes" and with a nucleotide alphabet of "only" A, C, G and T the same nucleotides can easily occur in one MSA position by chance. 
 This phenomenon has become known as *long branch attraction* and has been especially challenging in, for instance, the placement of early land plant lineages. 
 These lineages (i.e. *Amborella*, *Nymphea*) are on long branches in isolated positions in the phylogenetic tree and have proven difficult to place with confidence. 
 Applying models of nucleotide substitution in sequence divergence estimation and modelling of branch lengths ([Estimating sequence divergence](estimatingsequencedivergence)) has been shown to overcome parts of this problem.
@@ -279,7 +279,7 @@ At deep divergences (i.e. herring *versus* fruit fly), homology and resolution o
 
 Information contained in phylogenetic trees is *hierarchical*, with structures being part of other, more inclusive, ones. 
 Clades are indeed usually nested into each other, i.e. a clade is a subset of a larger clade. 
-Apart from being nested, clades can also be each other's *sisters*, which means they share an exclusive most recent common ancestor (MRCA) with no other clades included (Fig 3.3). 
+Apart from being nested, clades can also be each other's *sisters*, which means they share an exclusive most recent common ancestor (MRCA) with no other clades included ({numref}`w3f3.3`). 
 Such *sister groups* are highly useful in, for instance, evolutionary and comparative studies, as they represent lineages of exact equal age.
 Again, a MRCA together with *all* its descendants is considered to form a clade. 
 Such a clade can then be the basis of further analysis or classification. 
@@ -291,28 +291,79 @@ When studying gene families and their evolution, it is useful to make comparison
 Any differences between them, in terms of substitution rates, sequence bias in composition, or the number of lineages per clade, is then not due to different age of the clades. 
 In order to make these comparisons it is important to compare monophyletic and not paraphyletic groups as the latter are not directly-comparable or of equal age.
 
+:::{figure} images/Week3/w3_03_2.jpg
+:alt: 
+:align: center
+:name: w3f3.2
+Rooting phylogenetic trees. 
+(Left) Unrooted tree depicting phylogenetic relationships among a set of yellow and brown bird species; external nodes represent the extant (living, observed) species, each with their morphological synapo- or autapomorphies, the internal nodes represent inferred (unobserved) ancestors. 
+The tree is fully resolved, as each internal node is connected to three branches. 
+Looking at the brown and yellow birds at adjacent internal nodes, it is not clear in what direction evolution proceeded and whether brown yielded yellow or rather the other way round. 
+This becomes possible upon rooting the tree, usually based on comparison with an external reference species. 
+(Right) Rooted tree; external evidence (not shown) was apparently convincing in placing the root between the yellow and brown birds. 
+Thus, a new, internally-placed, brown bird is inferred as MRCA, making the brown birds paraphyletic with regards to the yellow birds, which are now monophyletic. 
+The grey arrows indicate the time lines, from the brown bird ("root") which is now the MRCA of the entire tree, to the tips where observed species are located. (From Zvelebil & Baum 2008)
+:::
+
 Rooting a tree is polarising it, making a distinction in what are old and younger nodes. 
-When a tree is properly rooted, usually with an outgroup reference taxon outside the group of interest, it is therefore directed in terms of ancestry and clades can be inferred (see Fig. 3.2; Note that unrooted trees, which are non-polarised, in principle do not contain clades but "clans"). 
-In the example in Fig. 3.2 we see that the rooted version of the bird phylogenetic tree seems to contain one extra brown bird. 
+When a tree is properly rooted, usually with an outgroup reference taxon outside the group of interest, it is therefore directed in terms of ancestry and clades can be inferred (see {numref}`w3f3.2`; Note that unrooted trees, which are non-polarised, in principle do not contain clades but "clans"). 
+In the example in {numref}`w3f3.2` we see that the rooted version of the bird phylogenetic tree seems to contain one extra brown bird. 
 External evidence (which is not shown in the Figure, only the vertical branch on top leading to the outgroup) was apparently convincing in placing the root between the yellow and brown birds. 
 Thus, a new, internally-placed, brown bird is inferred as MRCA, to which the outgroup branch can attach. 
 This however makes the brown birds paraphyletic with regards to the yellow birds, because not all descendants from the brown MRCA are brown, some are yellow. 
 The yellow birds themselves are now monophyletic.
 
-In Fig 3.4 an example is given illustrating how improper rooting affects clades and the overall structure of the tree. 
-The correct rooting of this tree is indicated in Fig 3.4, which is undisputed and based on external evidence for these species. 
-Placing the root at the seven possible different positions in the unrooted tree of five terminals shows that only in three cases the (correct) human-chimp-gorilla monophyly is maintained (Fig 3.5). 
+:::{figure} images/Week3/w3_03_3.png
+:alt: 
+:align: center
+:name: w3f3.3
+Nested clades and sister clades. 
+Left, the same rooted tree as in {numref}`w3f3.2`, now with nested clades indicated by orange shapes: the small orange clade is nested in the lager orange one; it is also a sister clade of the green clade; as are the blue and large orange shapes (From Zvelebil & Baum 2008). 
+Right, nested and sister clades with LCA (last common anvestor, = MRCA) indicated. (From Ateto 2014)
+:::
+
+In {numref}`w3f3.4` an example is given illustrating how improper rooting affects clades and the overall structure of the tree. 
+The correct rooting of this tree is indicated in {numref}`w3f3.4`, which is undisputed and based on external evidence for these species. 
+Placing the root at the seven possible different positions in the unrooted tree of five terminals shows that only in three cases the (correct) human-chimp-gorilla monophyly is maintained ({numref}`w3f3.5`). 
 The other four topologies show extensive conflict, both with each other and with the correct topology. 
 This indicates that care should be taken in selecting and assigning a suitable outgroup, which can be problematic in the case of isolated long phylogenetic branches (for instance, in protists or zooplankton lineages) or in the case of reconstructing a gene tree. 
 In that case, one usually considers a copy of the gene of interest with sufficient similarity to be considered homologous, in a far-related evolutionary lineage (such as *Amborella*, for angiosperm plants) as a suitable outgroup for rooting that gene tree. 
-Fig 3.6 shows an example of an unrooted tree with additive branch lengths; notice that in such a tree there are no "connectors" (see Fig 2.1) needed.
+{numref}`w3f3.6` shows an example of an unrooted tree with additive branch lengths; notice that in such a tree there are no "connectors" (see {numref}`w3f2.1`) needed.
+
+:::{figure} images/Week3/w3_03_4.png
+:alt: 
+:align: center
+:name: w3f3.4
+Rooting phylogenetic trees. 
+With human (H), chimp (C), gorilla (G), orang-utan (O) and gibbon (B) indicated, the rooted tree (top) represents the correct tree topology based on external evidence. 
+The position of this root is indicated with a white circle, both in the rooted and unrooted tree (From Page & Holmes 1998)
+:::
+
+:::{figure} images/Week3/w3_03_5.png
+:alt: 
+:align: center
+:name: w3f3.5
+Rooting phylogenetic trees. 
+The seven rooted trees that can be derived from the unrooted tree for five sequences in {numref}`w3f3.4`. 
+Each rooted tree 1-7 corresponds to placing the root on a different branch of the unrooted tree. 
+Terminal labels as for {numref}`w3f3.4`; the orange shape indicates monophyly of human, chimp and gorilla, when present (From Page & Holmes 1998)
+:::
+
+:::{figure} images/Week3/w3_03_6.png
+:alt: 
+:align: center
+:name: w3f3.6
+An example of an unrooted tree (of a group of alphaproteobacteria).
+Colour marks indicate groups that may be clades, depending on how the tree may become rooted.
+The scale bar indicates substitutions per site (from Zevelebil & Baum 2008)
+:::
 
 ### Newick tree notation
 
-Phylogenetic trees are graphical structures ("graphs") that are the outcome of phylogenetic reconstruction of sometimes hundreds or thousands of sequences, and especially when using character-based tree search (see below [Main approaches to tree building](mainapproachestotreebuilding)) there can be enormous amounts of "best trees" that all will have to be taken into account, for instance by calculating a consensus tree (see 4.1.1). 
+Phylogenetic trees are graphical structures ("graphs") that are the outcome of phylogenetic reconstruction of sometimes hundreds or thousands of sequences, and especially when using character-based tree search (see below [Main approaches to tree building](mainapproachestotreebuilding)) there can be enormous amounts of "best trees" that all will have to be taken into account, for instance by calculating a consensus tree (see [Tree space and heuristic search methods](treespaceandheuristicsearchmethods)). 
 In any case, handling large numbers of trees in phylogenetical and bioinformatic analytical pipelines requires the tree graphs to be in a format that can be easily read and produced, as a linear statement. 
 For this, the Newick notation is commonly used in which brackets describe the structure of the tree. 
-For instance, the rooted tree in Fig 3.4 above would look like `((((H,C)G)O)B)` in Newick notation. 
+For instance, the rooted tree in {numref}`w3f3.4` above would look like `((((H,C)G)O)B)` in Newick notation. 
 In case the tree has branch lengths, they can be indicated in this notation as well (see also the Newick tree Activity suggested in the Reading guide).
 
 (mainapproachestotreebuilding)=
@@ -327,6 +378,7 @@ The task is then to find the tree the with best overall score *across all charac
 This score, which is also known as an *optimality criterion*, is a measure of how well the data (the characters in your MSA) fit on to a particular tree under consideration. 
 This is then repeated with another tree, and again another etc. -*the better the fit, the better the tree*. 
 
+(treespaceandheuristicsearchmethods)=
 #### Tree space and heuristic search methods
 
 The number of possible bifurcating trees increases astronomically with increasing numbers of included taxa (terminals or sequences in your MSA) and cannot be calculated analytically (see [Box 1](w3box1)). 
@@ -344,9 +396,11 @@ Answers represent estimates, and whether or not the "best tree" is actually foun
 This number increases very rapidly with increasing *n*.
 Note: the number of unrooted ("unordered") trees follows that of rooted trees.
 
+![figure box 1](images/Week3/w3_box1.png)
+
 Having to assess that large numbers of trees falls under the category of "NP complete" problems which cannot be solved in a lifetime even with unlimited resources.
 
-**REF** Introduction to Bioinformatics, Helsinki CS 2006
+(Introduction to Bioinformatics, Helsinki CS 2006)
 :::
 
 These *character-based tree building* methods (as opposed to distance-based methods, see below) are attractive in that trees are made directly from sequence characters, enabling detailed analysis of what characters contribute where in the tree, or reconstructing what ancestral characters (and hence sequences) would have looked like. 
@@ -364,26 +418,48 @@ Trees 1, 2 and 3 are incongruent (i.e. they contain clades that contradict those
 As this is not the case (AB,C is present in Trees 1 and 3, but not in 2; note that "AB,C" means there is a clade AB and C is its sister), this part of the strict consensus collapses into the trichotomy (A,B,C). 
 Likewise, D and E are monophyletic only in Tree 3, therefore this part of the tree collapses in a "deep" trichotomy (D,E, the rest). 
 For the *50% majority-rule* consensus, the amount of (in)congruence among a set of trees is actually quantified, based on the occurrence of each nodes in the entire set of trees, and applying a majority-rule threshold. 
-Thus, in Fig 4.1 clade AB occurs in Tree 1 and Tree 3 and its group frequency is therefore ⅔ or 67% in the 50% majority-rule consensus tree. 
+Thus, in {numref}`w3f4.1` clade AB occurs in Tree 1 and Tree 3 and its group frequency is therefore ⅔ or 67% in the 50% majority-rule consensus tree. 
 Clade ABC is present in all trees and gets 100%. 
 DE occurs only ones and gets 33%, which is below the majority of 50% and therefore does not occur in the 50% majority-rule consensus tree. 
 
+:::{figure} images/Week3/w3_04_1.png
+:alt: 
+:align: center
+:name: w3f4.1
+Consensus trees.
+Three primary trees are shown on top, their strict and 50% majority-rule consensus trees in the bottom (From Page & Holmes 1998)
+:::
+
 #### Parsimony analysis
 
-The simplest method for character-based tree building is *parsimony analysis* in which, character-by-character, the fit (of each character) onto a candidate tree is counted (see Fig 4.3). 
+The simplest method for character-based tree building is *parsimony analysis* in which, character-by-character, the fit (of each character) onto a candidate tree is counted (see {numref}`w3f4.2`). 
 Some characters may have changed only once but did so in multiple sequences (*synapomorphies*, see above, [Characters & trees](charactersandtrees)), whereas others may have changed several times independently (*homoplasies*). 
 Some characters may have changed only in one of the sequences (*autapomorphy*). 
-When all characters in the MSA have been evaluated, the overall score of the fit of the data with that candidate tree is calculated by adding up the changes across all characters (as in Figure 4.3). 
+When all characters in the MSA have been evaluated, the overall score of the fit of the data with that candidate tree is calculated by adding up the changes across all characters (as in {numref}`w3f4.2`). 
 Then, another candidate tree is assumed and the process is carried out again. 
 More and more trees are compared this way until either a single best or a group of *equally most parsimonious* reconstructions remains. 
 Given the vastness of tree spaces for even moderate numbers of terminals (see [Box 1](w3box1)) this process may take some time to complete. 
-Usually only heuristic search methods (see 4.1.1) are applied in case of >15 terminals.
+Usually only heuristic search methods (see [Tree space and heuristic search methods](treespaceandheuristicsearchmethods)) are applied in case of >15 terminals.
+
+:::{figure} images/Week3/w3_04_2.png
+:alt: 
+:align: center
+:name: w3f4.2
+Parsimony analysis (same data and trees as in {numref}`w3f3.1`).  Character state changes for all characters in the MSA shown left are indicated on the trees and exemplar syn- and autapomorphies are indicated. Note that character 6 is invariant and therefore does not contribute to any tree. Also note that each substitution occurring in the MSA results in one extra step on the  tree.
+:::
 
 Each character change can be considered an *ad hoc* assumption, each of them associated with their type I error, or the chance of having a *false positive*. 
 This would be a character change (substitution) inferred on the tree where no change took place. 
 The tree that minimises the number of changes also minimises the number of *ad hoc* assumptions, and hence the type I error. 
-This is the parsimony criterion, that was already described in the 14th century by the Franciscan friar *William of Ockham* (Fig 4.2) and has become known as "Occam's razor". 
+This is the parsimony criterion, that was already described in the 14th century by the Franciscan friar *William of Ockham* ({numref}`w3f4.3`) and has become known as "Occam's razor". 
 In other words: when presented with competing hypotheses about the same prediction, one should select the solution with the fewest assumptions (Wikipedia 2022). 
+
+:::{figure} images/Week3/w3_04_3.png
+:alt: 
+:align: center
+:name: w3f4.3
+William of Ockham, "father of parsimony", from the 14{sup}`th` century (Wikipedia)
+:::
 
 Is nature parsimonious? 
 This is a commonly-heard question but it is good to keep in mind that the parsimony criterion is applied to *choosing between hypotheses* (trees) and does not assume anything about nature and evolution! 
@@ -409,13 +485,38 @@ Which one is used can usually easily be inferred from the resulting pairwise dis
 There will be all 0's in case of a Distance matrix and 1's in case of a similarity matrix.
 
 If the sequences would have accumulated substitutions in a clock-like manner (i.e. like radio-active decay) the resulting pairwise distances may even be ultrametric. 
-This would mean that the distances in the triangular pairwise distance matrix are identical with the distances as measured over the resulting distance tree (Fig 4.4). 
+This would mean that the distances in the triangular pairwise distance matrix are identical with the distances as measured over the resulting distance tree ({numref}`w3f4.4`).
+
+:::{figure} images/Week3/w3_04_4.png
+:alt: 
+:align: center
+:name: w3f4.4
+Character-based versus distance-based. 
+The same data set (MSA) of 7 characters observed over 4 terminals (sequenced) analysed using a character-based approach (left, ‘parsimony’) and (right), using a distance-based approach. 
+In the parsimony analysis state changes (indicated by the cross-bars) were optimized for each character separately. 
+Pairwise distances (right) are calculated from the MSA by counting the number of differences in each possible pair of sequences. 
+This yields a triangular pairwise distance matrix ("distances") and the MSA is not further used in the analysis. 
+Pairwise distance values are then used to build a distance tree, for instance using Neighbor Joining. 
+In this case the distance values perfectly fit the distance tree. 
+
+Note that both trees have the same topology, but the parsimony tree contains more information: in addition to the branching pattern and branch lengths it also contains information on what character changed where on the tree (From Page & Holmes 1998)
+:::
 
 However, such clean data is hardly ever found, and the distances measured over the tree may differ from the observed distances in the pairwise matrix. 
-This is illustrated in Fig 4.5 in which two trees are depicted: an ultrametric one (left) and an additive tree (right) containing unequal sister branch lengths (to $a$ and $b$). 
-In the additive distance matrix (4.5b), due to the difference in length towards $a$ and $b$, the most similar sequences may actually not be the most closely related.
+This is illustrated in {numref}`w3f4.5` in which two trees are depicted: an ultrametric one (left) and an additive tree (right) containing unequal sister branch lengths (to $a$ and $b$). 
+In the additive distance matrix ({numref}`w3f4.5`, right), due to the difference in length towards $a$ and $b$, the most similar sequences may actually not be the most closely related.
 
-Once these pairwise distances have been calculated, the MSA is not further used and trees are built directly from the distances (Fig 4.4). 
+:::{figure} images/Week3/w3_04_5.png
+:alt: 
+:align: center
+:name: w3f4.5
+Ultrametric distance matrix between four sequences a-d and the corresponding ultrametric tree (left). 
+Additive distance matrix between four sequences a-d and the corresponding additive tree (right). 
+Values in the distance matrix correspond to the sum of the branch lengths along the path between the two sequences on the tree, therefore this data is metric. 
+Note that for the additive matrix the most similar sequences (b and c) are not the most closely related, whereas in the ultrametric matrix a and b are most similar and closest-related (From Page & Holmes 1998)
+:::
+
+Once these pairwise distances have been calculated, the MSA is not further used and trees are built directly from the distances ({numref}`w3f4.4`). 
 Unlike for the character-based trees, in distance-based trees it is not possible to assess what character contributed where on the tree, as all individual characters have been combined into one overall pairwise distance value. 
 Moreover, invariant characters (MSA positions containing no variation) *do contribute* to the pairwise distance values. 
 This is a main difference with the character-based approach where only variant characters contribute to the tree. 
@@ -428,13 +529,17 @@ Clustering usually produces one tree, no alternative "equally good" trees are sh
 (w3box2)=
 :::{admonition} Box 2: Distance measures and their qualities
 :class: tip
-A) Euclidean or metric distance requires observed distances to be *non-negative*, *symmetrical*, *distinct* and to obey the *triangle inequality* (B): the distance between any pair of sequences a and b cannot exceed the sum of the distances between those sequences and a third sequence c. 
+![distance measures and their qualities](images/Week3/w3_box2.png)
 
-Ultrametric distances are characterised by *ultrametric inequality* (C): the two largest distances – when comparing three sequences – are equal (in this case 6 = 6). 
+Euclidean or metric distance requires observed distances to be *non-negative*, *symmetrical*, *distinct* and to obey the *triangle inequality* (below, left): the distance between any pair of sequences $a$ and $b$ cannot exceed the sum of the distances between those sequences and a third sequence c. 
+
+![distance measures and their qualities](images/Week3/w3_box2left-right.png)
+
+Ultrametric distances are characterised by *ultrametric inequality* (above, right): the two largest distances –when comparing three sequences– are equal (in this case 6 = 6). 
 Ultrametric distances have the attractive characteristic that they evolve clock-like, and hence that the most similar sequences will also be most closely related. 
-In fact, the ultrametric tree (**Fig xa**) perfectly describes the observed distances as shown in the distance matrix. 
+In fact, the ultrametric tree ({numref}`w3f4.5`) perfectly describes the observed distances as shown in the distance matrix. 
 
-When distances are additive, the additive tree perfectly describes them (Fig 4.3b). However, here sequences b and c have the smallest distance ($d(\text{b,c})=3$), but are not most closely related. 
+When distances are additive, the additive tree perfectly describes them ({numref}`w3f4.5`, right). However, here sequences b and c have the smallest distance ($d(\text{b,c})=3$), but are not most closely related. 
 :::
 
 #### Neighbor Joining
@@ -442,17 +547,35 @@ When distances are additive, the additive tree perfectly describes them (Fig 4.3
 Probably the most commonly used distance tree building method is Neighbor Joining (NJ), which is fast and effective, especially for large MSAs (with hundreds of sequences). 
 NJ tree building starts with a fully unresolved tree, containing all sequences in an MSA, and calculates a total tree length (or overall starting distance) by summing all pairwise distances. 
 Subsequently, a pair of sequences is chosen and combined to start a small cluster ("neighbors") and the total tree length is updated, now replacing the two original by the joined taxa. 
-This step is repeated until all sequences and pairs are joined, whilst minimising the overall distance (tree length) between them (Fig 4.6). 
+This step is repeated until all sequences and pairs are joined, whilst minimising the overall distance (tree length) between them ({numref}`w3f4.6`). 
 
 Neighbor Joining produces unrooted trees and therefore, if needed, outgroup rooting should be applied in order to root the tree. 
 There is no molecular clock assumption, which allows i) differences in branch lengths between neighbors (sisters) to be reconstructed. 
 NJ is implemented in MEGA11 and used in the practical.
+
+:::{figure} images/Week3/w3_04_6.png
+:alt: 
+:align: center
+:name: w3f4.6
+Neighbor Joining. 
+An illustration of the computational process. 
+Tree length $S$, the sum of all branch lengths, is minimised (F) by iteratively joining neighbors, starting from the star tree (A) (From Kimura 2004)
+:::
 
 NJ is highly popular as it can generate trees with hundreds of terminals in a very short time. 
 This makes it a great tool for quickly assessing the (phylogenetic) structure in a data set (MSA) without having to explore wide tree spaces (as in the character-based approach). 
 It is good to keep in mind that NJ is a clustering method, i.e. it groups sequences on the basis of overall similarity, not on shared ancestry or synapomorphy. 
 Therefore, for phylogenetic studies, character-based analysis is preferred and NJ analysis can be used in addition, to check for possible incongruencies between the two. 
 If these are found, it could mean that the data (the synapomorphies accumulated in the MSA) are not metric for that part of the tree, which could warrant additional analysis methods (such as phylogenetic network reconstruction) which is beyond the scope of this course.
+
+:::{figure} images/Week3/w3_04_7mod.jpg
+:alt: 
+:align: center
+:name: w3f4.7
+Neighbor Joining.
+An unrooted NJ tree based on Myosin amino acid sequences.
+The scale bar indicates 5% sequence divergence (from Wikipedia)
+:::
 
 (estimatingsequencedivergence)=
 ## Estimating sequence divergence
@@ -476,15 +599,29 @@ $$
 d = -\frac{3}{4} \log{\left(1 - \frac{4}{3}p\right)}
 $$
 
-Fig 5.1 shows how the JC formula is applied in a *model of substitution*, the JC model. 
+{numref}`w3f5.1` shows how the JC formula is applied in a *model of substitution*, the JC model. 
 There is a matrix defining the six possible substitution types among the 4 nucleotide bases, i.e. T↔C, A↔G, A↔T, T↔G, C↔G, and C↔A. 
 In this case the relative rates for all six substitution types are assumed to be equal and denoted by one shared parameter, named "a". 
 Another assumption in this model is that the base composition across the MSA is equal, assuming a 25% probability of finding of each base at each position in each sequence. 
 The JC model is considered a fairly simple, one parameter, model.
 
+:::{figure} images/Week3/w3_05_1.png
+:alt: 
+:align: center
+:name: w3f5.1
+The Jukes Cantor model (left), transitions (blue) and transversions (red) and how they accumulate differently during evolutionary time (right) (From Zvelebil & Baum 2008)
+:::
+
+:::{figure} images/Week3/w3_05_2.jpg
+:alt: 
+:align: center
+:name: w3f5.2
+Building a Neighbor Joining tree on pairwise distances that have been corrected with a best-fitting model of nucleotide substitutions.
+:::
+
 The first two substitution types listed above are *transitions* (substitutions among the pyrimidines T and C, and among the purines A and G), whereas the other four occur between purines and pyrimidines and are referred to as *transversions*. 
-The rate of transitions ($ti$) has a different dynamic, and hence build-up of substitutions, compared with the rate of transversions ($tv$) (see Fig. 5.1). 
-In the Kimura 2 Parameter (K2P) model this is accounted for by adding an extra parameter $b$. 
+The rate of transitions ($ti$) has a different dynamic, and hence build-up of substitutions, compared with the rate of transversions ($tv$) (see {numref}`w3f5.1`). 
+In the Kimura 2 Parameter (K2P) model ({numref}`w3f5.3`) this is accounted for by adding an extra parameter $b$. 
 Parameter $a$ now estimates $ti$ (P) and parameter $b$ estimates $tv$ (Q); in the Kimura 2 Parameter formula, P and Q are the proportions of $ti$ and $tv$, respectively:
 
 $$
@@ -496,6 +633,14 @@ The most complex models, with many parameters, will consist of combinations of a
 There are up to 220 different models to choose from. 
 It is good to realise that these models are reversible and therefore allow the reconstruction of unrooted trees only. 
 Once these are determined they can be rooted using outgroup rooting.
+
+:::{figure} images/Week3/w3_05_3.png
+:alt: 
+:align: center
+:name: w3f5.3
+The Kimura 2 Parameter substitution model with transitions indicated in orange (parameter a) and transversions in blue (parameter b).
+Note that base frequencies f{sub}`N` are considered equal in this model.
+:::
 
 For amino acid sequence comparisons, instead of estimating parameter values from the data, amino acid substitution models are based on (pre-defined) *substitution cost matrices* that are based on observations of amino acid substitutions found in over 30,000 protein sequences (i.e. the JTT, Blosum, Dayhoff, LG and WAG matrices).
 
@@ -546,7 +691,18 @@ The idea is that the more synapomorphies a node has, the higher its bootstrap va
 Unfortunately, there no simple linear relationship between character support and bootstrap values. 
 Generally, bootstrap values <90% are considered poor support for that node, and values <50% (or even <60%) as "no support". 
 Bootstrap values of 62% are usually obtained for MSAs containing one synapomorphy, meaning that such nodes should probably be ignored and collapsed. 
-Fig 6.2 illustrates what happens to bootstrap consensus trees when poorly supported nodes are collapsed: the tree topology becomes less well resolved but what is left is strong.
+{numref}`w3f6.1` illustrates what happens to bootstrap consensus trees when poorly supported nodes are collapsed: the tree topology becomes less well resolved but what is left is strong.
+
+:::{figure} images/Week3/w3_06_1.jpg
+:alt: 
+:align: center
+:name: w3f6.1
+Bootstrap analysis. 
+A) A maximum likelihood tree with bootstrap values indicated at nodes. 
+Note that not all nodes show a bootstrap value, which is probably because values <50% are ignored. 
+B) The same analysis, but this time all nodes with bootstrap values <50% collapsed. 
+Note the introduction of a polytomy containing four lineages resulting from collapsing weak nodes, and the change from additive tree to cladogram style in the collapsed tree.
+:::
 
 The MLE pipeline for phylogenetic reconstruction is implemented in the software package IQ-TREE, which includes i) model testing, ii) ML tree search, and iii) bootstrapping for both nucleotide and amino acid sequences. 
 IQ-TREE will be demonstrated and used in the practical.
@@ -595,7 +751,7 @@ Bootstrap
   A method for measuring support
 
 Branch length
-  The length, either in steps, distances or 
+  The length, either in steps (parsimony), distances (clustering) or substitutions per site (maximum likelihood) 
 
 Clade
   Monophyletic group, MRCA with all descendants
@@ -639,3 +795,9 @@ Root
 Synapomorphy
   Shared derived character state
 ```
+
+## References
+
+* Ateto AA. 2014. Bioinformatics for Beginners, Genes, Genome, Molecular Evolution, Databases and Analytical Tools. Academic Press. 
+* Page RD and Holmes EC 1998. Molecular Evolution : A Phylogenetic Approach. Blackwell Publishing Ltd
+* Zvelebil MJ & Baum JO 2008. Understanding Bioinformatics. Garland Science.
