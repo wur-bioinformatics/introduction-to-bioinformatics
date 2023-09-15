@@ -81,7 +81,7 @@ Tree topology informs relatedness, branch lengths correspond to divergence (from
 
 In a rooted phylogenetic tree, terminals sharing a more recent common ancestor are more closely related than terminals sharing a less recent common ancestor. 
 Thus, in {numref}`w3f2.2`, dog and bear are more related than dog and sea lion, because dog and bear share a more recent common ancestor. 
-On the other hand, monkey and dog are as related as monkey and cat, because they all share the same *most recent common ancestor* (MRCA, and see 3.1 below). 
+On the other hand, monkey and dog are as related as monkey and cat, because they all share the same *most recent common ancestor* (MRCA, and see [Rooting & clades](rootingandclades) below). 
 Being *related* is not the same as being *diverged*, as divergence means the amount of change accumulated since the split of two lineages, which is reflected in the branch lengths. 
 Raccoon and dog would be more diverged than raccoon and bear, but not more closely related.
 
@@ -207,6 +207,7 @@ Such analysis is beyond the scope of this course, but it is of course important 
 Gene trees, in colour, embedded in the species tree (black lines); Western pocket gophers (Geomyidae, Thomomys). (from Heled *et al.* Mol. Biol. Evol. 2010).
 :::
 
+(nodalsupportthebootstrap)=
 ### Nodal support in phylogenetic trees: the bootstrap
 
 Not all parts of a phylogenetic tree will be equally well-supported or strong, given our character data (MSA). 
@@ -215,7 +216,7 @@ Phylogenetics is not experimental but rather seeks to reconstruct historic patte
 As outlined at the beginning of this section, the implication is that we cannot *prove* phylogenetic trees nor repeat them, or even know whether we reconstructed the correct one.
 
 What we *can* do is measure the support for the nodes in our phylogenetic tree, given our MSA. 
-To do this, rather than producing several replicates of our MSA (which will most likely all be identical), we can draw random samples from the MSA and use these *pseudo-replicate data sets* to build trees (Fig. 2.10). 
+To do this, rather than producing several replicates of our MSA (which will most likely all be identical), we can draw random samples from the MSA and use these *pseudo-replicate data sets* to build trees ({numref}`2.9`). 
 Repeating this process many times (hundreds or thousands) and summarizing the variation among the trees thus reconstructed, provides insight in the structure of our data and how it supports the nodes in a tree. 
 It actually measures the sampling *variance about the estimate* of the phylogeny. 
 This process is called bootstrap analysis and will be further discussed in [Maximum likelihood tree building](MLtreebuilding), after we have covered the characters underlying our trees in the next section.
@@ -223,7 +224,7 @@ This process is called bootstrap analysis and will be further discussed in [Maxi
 :::{figure} images/Week3/w3_02_9.png
 :alt: 
 :align: center
-:name: w3f
+:name: w3f2.9
 Bootstrap resampling analysis in phylogeny reconstruction. 
 In case of unlimited data (A), not realistic, a summary of sample-based trees yields sampling variance *about the true phylogeny*. 
 In case of limited data (B), realistic, only pseudo-samples are available, that summarise sampling variance about the *estimate of true phylogeny*.
@@ -410,7 +411,7 @@ This is a powerful feature of character-based tree building methods, which have 
 
 Following the character-based tree building approach does usually not result in just one best tree, but rather a set of trees that all score best under the optimality criterion applied. 
 In such case a consensus tree will have to be calculated to efficiently communicate the outcome of the analysis. 
-In Fig 4.1 three trees are shown, along with their so-called *strict* consensus and *50% majority-rule* consensus trees which are explained below. 
+In {numref}`w3f4.1` three trees are shown, along with their so-called *strict* consensus and *50% majority-rule* consensus trees which are explained below. 
 Congruence among trees means that the same nodes (and hence clades) can be found in each tree. 
 There may be differences, but these do not contradict the other tree topologies. 
 Trees 1, 2 and 3 are incongruent (i.e. they contain clades that contradict those in the other trees), therefore it is important to apply the right consensus approach in order to visualise the differences between the trees. 
@@ -677,14 +678,14 @@ Subsequently, a candidate tree is considered and the likelihood $L_D$ of observi
 Then, another tree is considered whilst the same best-fitting model remains selected and its parameter values are estimated again. 
 The likelihood $L_D$ of observing the data (your MSA) is calculated again and this time the likelihood may actually be better. 
 More trees are evaluated and more model parameter values are considered, all the time keeping track of $L_D$ until no further increase $L_D$ can be obtained. 
-This is usually achieved by using the heuristic tree search approaches as outlined in 4.1.1 and depending on the tree space, determined by the number of sequences in the MSA. 
+This is usually achieved by using the heuristic tree search approaches as outlined in [Tree space and heuristic search methods](treespaceandheuristicsearchmethods) and depending on the tree space, determined by the number of sequences in the MSA. 
 The end result is the MLE: the combination of a tree and model parameter values that maximizes the likelihood of the data. 
 This tree, which may not be the exact best MLE (it is after all heuristics), is then usually referred to as the ML tree. 
 
 ### Model-testing, ML tree search, Bootstrapping
 
 After a ML tree with branch lengths has been obtained, there is still no information on how nodes in the ML tree may differ in terms of support by the data (MSA). 
-Therefore a bootstrap analysis is carried out, repeating the MLE process a number of times, based on pseudo-replicate data sets drawn from the MSA (see 2.5). 
+Therefore a bootstrap analysis is carried out, repeating the MLE process a number of times, based on pseudo-replicate data sets drawn from the MSA (see [Nodal support in phylogenetic trees: the bootstrap](nodalsupportthebootstrap)). 
 After a ML tree is obtained for each pseudo-replicate data set, a 50% majority-rule consensus tree is calculated in order to see the group frequencies (the proportion of replicates in which each node is occurring). 
 These frequencies are also referred to as *bootstrap values*. 
 The idea is that the more synapomorphies a node has, the higher its bootstrap value will be. 
