@@ -11,7 +11,7 @@
 :alt: The tree of Life
 :align: center
 :name: w3f1.1a
-The tree of Life. Date in millions of years; rooted with Eubacteria (from timetree.org).
+The tree of Life. Dated in millions of years; rooted with Eubacteria (from timetree.org).
 :::
 
 Why should we study phylogenetics and what is it about? 
@@ -264,7 +264,7 @@ In the section [Estimating sequence divergence](estimatingsequencedivergence) we
 In the parsimony approach each substitution leads to an extra "step" on the tree, i.e. makes the tree one step longer. 
 Simulation studies have shown that, especially in the case of the combination of short internal branches and long terminal branches, the parsimony approach can give wrong topologies. 
 The reason for this is that in such long-branch cases *false* synapomorphies can form, producing wrong clades. 
-After all, long branches mean "many changes" and with a nucleotide alphabet of "only" A, C, G and T the same nucleotides can easily occur in one MSA position by change. 
+After all, long branches mean "many changes" and with a nucleotide alphabet of "only" A, C, G and T the same nucleotides can easily occur in one MSA position by chance. 
 This phenomenon has become known as *long branch attraction* and has been especially challenging in, for instance, the placement of early land plant lineages. 
 These lineages (i.e. *Amborella*, *Nymphea*) are on long branches in isolated positions in the phylogenetic tree and have proven difficult to place with confidence. 
 Applying models of nucleotide substitution in sequence divergence estimation and modelling of branch lengths ([Estimating sequence divergence](estimatingsequencedivergence)) has been shown to overcome parts of this problem.
@@ -355,7 +355,7 @@ Terminal labels as for {numref}`w3f3.4`; the orange shape indicates monophyly of
 :name: w3f3.6
 An example of an unrooted tree (of a group of alphaproteobacteria).
 Colour marks indicate groups that may be clades, depending on how the tree may become rooted.
-The scale bar indicates substitutions per site (from Zevelebiil & Baum 2008)
+The scale bar indicates substitutions per site (from Zevelebil & Baum 2008)
 :::
 
 ### Newick tree notation
@@ -599,15 +599,29 @@ $$
 d = -\frac{3}{4} \log{\left(1 - \frac{4}{3}p\right)}
 $$
 
-Fig 5.1 shows how the JC formula is applied in a *model of substitution*, the JC model. 
+{numref}`w3f5.1` shows how the JC formula is applied in a *model of substitution*, the JC model. 
 There is a matrix defining the six possible substitution types among the 4 nucleotide bases, i.e. T↔C, A↔G, A↔T, T↔G, C↔G, and C↔A. 
 In this case the relative rates for all six substitution types are assumed to be equal and denoted by one shared parameter, named "a". 
 Another assumption in this model is that the base composition across the MSA is equal, assuming a 25% probability of finding of each base at each position in each sequence. 
 The JC model is considered a fairly simple, one parameter, model.
 
+:::{figure} images/Week3/w3_05_1.png
+:alt: 
+:align: center
+:name: w3f5.1
+The Jukes Cantor model (left), transitions (blue) and transversions (red) and how they accumulate differently during evolutionary time (right) (From Zvelebil & Baum 2008)
+:::
+
+:::{figure} images/Week3/w3_05_2.jpg
+:alt: 
+:align: center
+:name: w3f5.2
+Building a Neighbor Joining tree on pairwise distances that have been corrected with a best-fitting model of nucleotide substitutions.
+:::
+
 The first two substitution types listed above are *transitions* (substitutions among the pyrimidines T and C, and among the purines A and G), whereas the other four occur between purines and pyrimidines and are referred to as *transversions*. 
-The rate of transitions ($ti$) has a different dynamic, and hence build-up of substitutions, compared with the rate of transversions ($tv$) (see Fig. 5.1). 
-In the Kimura 2 Parameter (K2P) model this is accounted for by adding an extra parameter $b$. 
+The rate of transitions ($ti$) has a different dynamic, and hence build-up of substitutions, compared with the rate of transversions ($tv$) (see {numref}`w3f5.1`). 
+In the Kimura 2 Parameter (K2P) model ({numref}`w3f5.3`) this is accounted for by adding an extra parameter $b$. 
 Parameter $a$ now estimates $ti$ (P) and parameter $b$ estimates $tv$ (Q); in the Kimura 2 Parameter formula, P and Q are the proportions of $ti$ and $tv$, respectively:
 
 $$
@@ -619,6 +633,14 @@ The most complex models, with many parameters, will consist of combinations of a
 There are up to 220 different models to choose from. 
 It is good to realise that these models are reversible and therefore allow the reconstruction of unrooted trees only. 
 Once these are determined they can be rooted using outgroup rooting.
+
+:::{figure} images/Week3/w3_05_3.png
+:alt: 
+:align: center
+:name: w3f5.3
+The Kimura 2 Parameter substitution model with transitions indicated in orange (parameter a) and transversions in blue (parameter b).
+Note that base frequencies f{sub}`N` are considered equal in this model.
+:::
 
 For amino acid sequence comparisons, instead of estimating parameter values from the data, amino acid substitution models are based on (pre-defined) *substitution cost matrices* that are based on observations of amino acid substitutions found in over 30,000 protein sequences (i.e. the JTT, Blosum, Dayhoff, LG and WAG matrices).
 
@@ -669,7 +691,18 @@ The idea is that the more synapomorphies a node has, the higher its bootstrap va
 Unfortunately, there no simple linear relationship between character support and bootstrap values. 
 Generally, bootstrap values <90% are considered poor support for that node, and values <50% (or even <60%) as "no support". 
 Bootstrap values of 62% are usually obtained for MSAs containing one synapomorphy, meaning that such nodes should probably be ignored and collapsed. 
-Fig 6.2 illustrates what happens to bootstrap consensus trees when poorly supported nodes are collapsed: the tree topology becomes less well resolved but what is left is strong.
+{numref}`w3f6.1` illustrates what happens to bootstrap consensus trees when poorly supported nodes are collapsed: the tree topology becomes less well resolved but what is left is strong.
+
+:::{figure} images/Week3/w3_06_1.jpg
+:alt: 
+:align: center
+:name: w3f6.1
+Bootstrap analysis. 
+A) A maximum likelihood tree with bootstrap values indicated at nodes. 
+Note that not all nodes show a bootstrap value, which is probably because values <50% are ignored. 
+B) The same analysis, but this time all nodes with bootstrap values <50% collapsed. 
+Note the introduction of a polytomy containing four lineages resulting from collapsing weak nodes, and the change from additive tree to cladogram style in the collapsed tree.
+:::
 
 The MLE pipeline for phylogenetic reconstruction is implemented in the software package IQ-TREE, which includes i) model testing, ii) ML tree search, and iii) bootstrapping for both nucleotide and amino acid sequences. 
 IQ-TREE will be demonstrated and used in the practical.
@@ -718,7 +751,7 @@ Bootstrap
   A method for measuring support
 
 Branch length
-  The length, either in steps, distances or 
+  The length, either in steps (parsimony), distances (clustering) or substitutions per site (maximum likelihood) 
 
 Clade
   Monophyletic group, MRCA with all descendants
@@ -762,3 +795,9 @@ Root
 Synapomorphy
   Shared derived character state
 ```
+
+## References
+
+* Ateto AA. 2014. Bioinformatics for Beginners, Genes, Genome, Molecular Evolution, Databases and Analytical Tools. Academic Press. 
+* Page RD and Holmes EC 1998. Molecular Evolution : A Phylogenetic Approach. Blackwell Publishing Ltd
+* Zvelebil MJ & Baum JO 2008. Understanding Bioinformatics. Garland Science.
