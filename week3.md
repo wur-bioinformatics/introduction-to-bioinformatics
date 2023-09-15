@@ -103,9 +103,9 @@ It therefore has artificial (equal) branch lengths, including for terminal branc
 ### Tree resolution
 
 The resolution of a phylogenetic tree is the extent to which nodes (clades) can be inferred/observed from the tree. 
-Trees can be *fully resolved*, in which case each internal node is connected to three branches: the ancestral branch and two subtending branches. 
+Trees can be *fully-resolved*, in which case each internal node is connected to three branches: the ancestral branch and two subtending branches. 
 Such trees are called *bi-furcating* or *dichotomous*, meaning that each branch splits into two and there are no uncertainties on branching order or resolution of nodes. 
-Frequently however, phylogenetic trees will be *partly resolved* and contain *polytomies*, which are nodes connected to (many) more than three branches. 
+Frequently however, phylogenetic trees will be *partly-plresolved* and contain *polytomies*, which are nodes connected to (many) more than three branches. 
 Polytomies represent parts of the phylogenetic tree that are uncertain in terms of branching order of the lineages involved. 
 This can be due to there being insufficient information in the MSA for resolving the lineages, or ample but conflicting signal. 
 Polytomies are usually interpreted as *soft*, meaning that the data used does not allow to resolve the lineages at hand. 
@@ -254,7 +254,7 @@ Note that character 6 is invariant and therefore does not contribute to any tree
 When observing substitutions in an MSA we cannot say which ones are ancestral (occurring already in "deep" ancestors) and which ones are derived (occurring more recently). 
 But placed in the context of a rooted phylogenetic tree, shared substitutions can actually be shared derived (SD) substitutions, which are known as *synapomorphies* (*syn*=shared, *apo*=derived, *morphy*=character), whereas uniquely derived substitutions are called *autapomorphies* (see {numref}`w3f3.1`).
 
-When designing a phylogenetic study, involving the compilation of one or more MSAs there is usually a choice between adding more *characters* versus adding more *taxa* (sequences). 
+When designing a phylogenetic study, involving the compilation of one or more MSAs, there is usually a choice between adding more *characters* versus adding more *taxa* (sequences). 
 Whereas the former is tempting, it is often more useful to add taxa as this allows extra synapomorphies to be realised. 
 After all, synapomorphies are relative (not absolute) entities: only in the context of other sequences can you actually "see" them. 
 For instance, when studying a gene family in which duplications have occurred during the evolution of its lineages, many taxa should be included in the MSA in order to capture the duplication events. 
@@ -266,7 +266,7 @@ In the parsimony approach each substitution leads to an extra "step" on the tree
 Simulation studies have shown that, especially in the case of the combination of short internal branches and long terminal branches, the parsimony approach can give wrong topologies. 
 The reason for this is that in such long-branch cases *false* synapomorphies can form, producing wrong clades. 
 After all, long branches mean "many changes" and with a nucleotide alphabet of "only" A, C, G and T the same nucleotides can easily occur in one MSA position by chance. 
-This phenomenon has become known as *long branch attraction* and has been especially challenging in, for instance, the placement of early land plant lineages. 
+This phenomenon has become known as *long-branch attraction* and has been especially challenging in, for instance, the placement of early land plant lineages. 
 These lineages (i.e. *Amborella*, *Nymphea*) are on long branches in isolated positions in the phylogenetic tree and have proven difficult to place with confidence. 
 Applying models of nucleotide substitution in sequence divergence estimation and modelling of branch lengths ([Estimating sequence divergence](estimatingsequencedivergence)) has been shown to overcome parts of this problem.
 
@@ -320,7 +320,7 @@ The yellow birds themselves are now monophyletic.
 :name: w3f3.3
 Nested clades and sister clades. 
 Left, the same rooted tree as in {numref}`w3f3.2`, now with nested clades indicated by orange shapes: the small orange clade is nested in the lager orange one; it is also a sister clade of the green clade; as are the blue and large orange shapes (From Zvelebil & Baum 2008). 
-Right, nested and sister clades with LCA (last common anvestor, = MRCA) indicated. (From Ateto 2014)
+Right, nested and sister clades with LCA (last common ancestor = MRCA) indicated. (From Ateto 2014)
 :::
 
 In {numref}`w3f3.4` an example is given illustrating how improper rooting affects clades and the overall structure of the tree. 
@@ -337,7 +337,7 @@ In that case, one usually considers a copy of the gene of interest with sufficie
 :name: w3f3.4
 Rooting phylogenetic trees. 
 With human (H), chimp (C), gorilla (G), orang-utan (O) and gibbon (B) indicated, the rooted tree (top) represents the correct tree topology based on external evidence. 
-The position of this root is indicated with a white circle, both in the rooted and unrooted tree (From Page & Holmes 1998)
+The position of this root is indicated, both in the rooted and unrooted tree (From Page & Holmes 1998)
 :::
 
 :::{figure} images/Week3/w3_03_5.png
@@ -426,6 +426,7 @@ DE occurs only ones and gets 33%, which is below the majority of 50% and therefo
 :::{figure} images/Week3/w3_04_1.png
 :alt: 
 :align: center
+:width: 80%
 :name: w3f4.1
 Consensus trees.
 Three primary trees are shown on top, their strict and 50% majority-rule consensus trees in the bottom (From Page & Holmes 1998)
@@ -492,6 +493,7 @@ This would mean that the distances in the triangular pairwise distance matrix ar
 :alt: 
 :align: center
 :name: w3f4.4
+
 Character-based versus distance-based. 
 The same data set (MSA) of 7 characters observed over 4 terminals (sequenced) analysed using a character-based approach (left, ‘parsimony’) and (right), using a distance-based approach. 
 In the parsimony analysis state changes (indicated by the cross-bars) were optimized for each character separately. 
@@ -499,7 +501,6 @@ Pairwise distances (right) are calculated from the MSA by counting the number of
 This yields a triangular pairwise distance matrix ("distances") and the MSA is not further used in the analysis. 
 Pairwise distance values are then used to build a distance tree, for instance using Neighbor Joining. 
 In this case the distance values perfectly fit the distance tree. 
-
 Note that both trees have the same topology, but the parsimony tree contains more information: in addition to the branching pattern and branch lengths it also contains information on what character changed where on the tree (From Page & Holmes 1998)
 :::
 
@@ -582,7 +583,7 @@ The scale bar indicates 5% sequence divergence (from Wikipedia)
 ## Estimating sequence divergence
 
 As outlined in the section [Characters & trees](charactersandtrees), phylogenetic reconstruction in case of long terminal branches combined with short internal ones usually poses a problem when using parsimony analysis, where each substitution occurring in the MSA results in one extra step of treelength. 
-This so-called *long branch attraction* artefact has been shown to be mitigated to some extent by *modelling branch lengths* (rather than merely counting differences as branch length). 
+This so-called *long-branch attraction* artefact has been shown to be mitigated to some extent by *modelling branch lengths* (rather than merely counting differences as branch length). 
 For the accurate estimation of branch lengths in a phylogenetic tree we need accurate *sequence divergence estimation*. 
 Evolutionary divergence (or distance) between homologous sequences is reflected in substitutions between them since splitting-off from their MRCA. 
 Intuitively, when comparing two sequences, one would just take the proportion of differing sites as sequence divergence, for instance, for a sequence of 1000 positions, having 10 differences would yield 0.01 or 1% difference. 
@@ -719,10 +720,10 @@ Bayesian Inference, in which probabilities for nodes are calculated, and differe
 :header-rows: 1
 :widths: auto
 
-* - Data 
+* - Data →
   - Distances (pairwise)
   - Sites (characters)
-* - Approach
+* - **Approach** ↴
   - 
   -
 * - Explicit model of character evolution
