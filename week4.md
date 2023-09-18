@@ -113,8 +113,8 @@ However, it was not built from scratch: it heavily builds on previously develope
 The most recent AlphaFold implementation can be summarized in three key steps that are recognizable modules linking to previous concepts and knowledge. 
 
 The first module processes the protein sequences into so-called numeric “representations” that can be used as input for the machine learning model. 
-To create these representations, first a database search is performed ({doc}`02.week2`). 
-Following that, two representations are created (i.e., the two paths in {numref}`w4f4`): a multiple sequence alignment (MSA – a concept introduced and used in {doc}`02.week2` and {doc}`03.week3`), which captures sequence variation; and a representation of how likely all residues interact with each other (i.e., that are close to each other in the 3D structure), in the form of a contact map. 
+To create these representations, first a database search is performed ({doc}`week2`). 
+Following that, two representations are created (i.e., the two paths in {numref}`w4f4`): a multiple sequence alignment (MSA – a concept introduced and used in {doc}`week2` and {doc}`week3`), which captures sequence variation; and a representation of how likely all residues interact with each other (i.e., that are close to each other in the 3D structure), in the form of a contact map. 
 The database search is also used to find if there are any suitable “templates” in the PDB database. 
 Up to 4 top templates can be chosen to serve as a starting position for the prediction models. 
 Please note that this is the first step in homology modelling as well, and that AlphaFold can make “good” predictions on a good quality multiple sequence alignment (MSA) alone; hence, there is no need for templates to be there. 
@@ -126,7 +126,7 @@ The concept of co-evolution implies that if two interacting residues are importa
 In other words, if one of them changes into a different amino acid, the other will likely have to change as well to maintain the interaction to support the protein’s 3D structure. 
 Such genomic signals can only be extracted when we compare many protein sequences with each other. 
 Therefore, a deep MSA of high quality is essential for good predictions. 
-During the BIF20306 course, you have learned how to create an MSA ({doc}`02.week2`), and how it is used for phylogenetic reconstruction ({doc}`03.week3`). 
+During the BIF20306 course, you have learned how to create an MSA ({doc}`week2`), and how it is used for phylogenetic reconstruction ({doc}`week3`). 
 Here, AlphaFold uses MSA to extract evolutionary signals and predict co-evolution of residues. 
 
 The second module uses the representations and aims to find restrictions in how the protein sequence folds into its 3D structure. 
@@ -136,7 +136,7 @@ The model passes information back and forth between the sequence-residue (MSA) a
 This part requires a lot of computation time and effort and thus needs a good infrastructure that is not available to all laboratories. 
 The DeepMind team had the powerful resources needed to train the extensive machine learning model. 
 
-The third and final module is the structure builder where the actual folding and refinement of the structure model takes place using the phi, psi, and omega angles (see also {doc}`01.week1`). 
+The third and final module is the structure builder where the actual folding and refinement of the structure model takes place using the phi, psi, and omega angles (see also {doc}`week1`). 
 Furthermore, local and global Confidence Scores are determined. 
 Several prediction cycles usually take place where the predicted 3D structure model serves as a new input (i.e., template) for the structure prediction to allow for further fine-tuning. 
 The structure builder takes input from several independently trained models. 
@@ -214,7 +214,7 @@ In this way, it is easier to observe which parts of the structure model are more
 You will study these two different error scores more during a practical assignment. 
 
 As you may have started to realize when using databases, they can also contain erratic entries. 
-To investigate the quality of both known and predicted 3D protein structures, the Ramachandran plot can be used ({doc}`01.week1`). 
+To investigate the quality of both known and predicted 3D protein structures, the Ramachandran plot can be used ({doc}`week1`). 
 You will work with the Ramachandran plot during the practical assignments. 
 It is important to note here that some disordered proteins only come into orderly arrangement in the presence of their various protein partners; and other proteins never have ordered structures under any conditions, a property that may be essential to their function. 
 How to model the behavior of such proteins is still an area of active research. 
@@ -255,7 +255,6 @@ Akin to the mobile phone - smartphone development, we may be surprised by its ca
 :alt: Auxin Response Factor 16 structural prediction
 :align: center
 :name: w4f7
-
 Left: AlphaFold 3D protein structure model of Auxin Response Factor 16. 
 The amino acid residues are colored according to the local confidence score (see AlphaFold-PSD and practical assignment for further explanation). 
 Right: the AlphaFold global error confidence score overview. 
@@ -264,7 +263,8 @@ The structure model can be used to validate the protein’s predicted function a
 Source: https://alphafold.ebi.ac.uk/entry/A3B9A0
 :::
  
-:::{Test your knowledge now!}
+::::{admonition} Test your knowledge now!
+:class: warning
 
 Have you read the above? Test yourself directly by answering the questions first and then revealing the answer by clicking on the question. Correct? Great! If not, you are encouraged to reread the part of the above section that deals with the questioned topic.
 
@@ -280,9 +280,9 @@ Have you read the above? Test yourself directly by answering the questions first
 ...Root Mean Square Error. This error is used in assessing the quality of 3D models by comparing distance between atoms in the predicted model and an experimental structure.
 :::
 
-:::
+::::
 
-:::{See also}  
+:::{seealso}  
 
 Please find below several links with further information about AlphaFold. 
 Please note that these are not part of the exam material, which is covered above in this reader. 
