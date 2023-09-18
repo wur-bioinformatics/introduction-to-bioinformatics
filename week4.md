@@ -10,17 +10,17 @@
 
 Proteins are essential for life on earth. 
 They have many kinds of functions in organisms such as supporting its structure (i.e., keratin in our skin), performing enzymatic reactions (i.e., Ribulose-1,5-bisphosphate carboxylase-oxygenase, a.k.a. Rubisco, in plants), or receptors for transduction of signals that mediate cell-to-cell communication. 
-Intriguingly, a relatively small amount of amino acid building blocks forms the basis of a structurally very diverse protein repertoire. 
+Intriguingly, a relatively small amount of amino acid building blocks forms the basis of a structurally very diverse protein repertoire that exert a wide range of functions of which only some are mentioned before. 
 To understand the function of proteins, knowing their structures is key. 
 Proteins are created as a long chain of amino acids that then folds into a three-dimensional (3D) structure, based on various types of interactions between amino acid side groups. 
 Interestingly, whereas the amino acid sequence of proteins may differ, their folding may still result in comparable 3D structures – with comparable or even similar functionality (see {numref}`w4f1`). 
-Thus, the protein folding process is important, as it determines the final 3D structure and misfolding can lead to misfunctioning of the protein, for example causing a disease in humans.  
+Thus, the protein folding process is important, as it determines the final 3D structure and misfolding can lead to misfunctioning of the protein, for example causing a disease in humans or resulting in a loss of function in plants.  
 
-The sequence-structure-function paradigm states that in principle, all information to predict the folding of a protein, and thus its 3D structure and ultimately its function, is stored in its primary sequence. 
+The sequence-structure-function paradigm states that, in principle, all information to predict the folding of a protein, and thus its 3D structure and ultimately its function, is stored in its primary sequence. 
 In practice, however, predicting structure from sequence turned out to be a very hard and challenging task. 
 In the various protein structure levels, the primary structure is the amino acid sequence, and the secondary structure refers to local shapes such as sheets, helices, and coils. 
 Subsequent interactions between sheets and helices typically form anchor points upon which the tertiary (3D) structure is based. 
-This reader introduces the most recent approach to predicting tertiary (3D) structure directly from amino acid sequences: AlphaFold. 
+This chapter introduces the most recent approach to predicting tertiary (3D) structure directly from amino acid sequences: AlphaFold. 
 
 :::{figure} images/Week4/w4f1_myoglobin-1.png
 :alt: Different protein structures
@@ -29,7 +29,7 @@ This reader introduces the most recent approach to predicting tertiary (3D) stru
 
 Protein structures of human myoglobin (top left), African elephant myoglobin (top right, 80% sequence identity to human structure analogue), blackfin tuna myoglobin (bottom right, 45% sequence identity to human analogue) and pigeon myoglobin (bottom left, 25% sequence identity to human analogue). 
 Myoglobin can be found in muscles and its main function is to supply oxygen to muscle cells. 
-The figures illustrate how structure can be largely the same even for sequences that are quite different.  
+The protein structure figures illustrate how structure can be largely the same even for sequences that are quite different.  
 Image source: https://www.blopig.com/blog/2021/07/alphafold-2-is-here-whats-behind-the-structure-prediction-miracle/ 
 :::
 
@@ -43,7 +43,7 @@ Various approaches including ab initio, threading (also called fragment-based mo
 Very recently, the DeepMind team of Google introduced a machine learning-based approach called AlphaFold. 
 This reader describes how AlphaFold builds on previous approaches and has had substantial impact in biochemistry and bioinformatics. 
 An analogy could be made to the introduction of the smartphone: whereas previously, one needed to go to the library to find a computer and connect to the internet to get to a weather forecast, one now simply takes the phone and looks up the weather. 
-It is described why AlphaFold could be developed and work only now, how it was compared to other approaches in a fair manner, how it relies on database search and multiple sequence alignment, and what the introduction of the AlphaFoldDB-database that contains AlphaFold-predicted structure models means for discovery pipelines. 
+In the following sections, it is described why AlphaFold could be developed and work only now, how it was compared to other approaches in a fair manner, how it relies on database search and multiple sequence alignment, and what the introduction of the AlphaFoldDB-database that contains AlphaFold-predicted structure models means for discovery pipelines. 
 
 
 ## AlphaFold ingredients: experimentally derived 3D structures & computational advances 
@@ -59,7 +59,7 @@ Source: https://www.rcsb.org/stats/
 :::
 
 It is good to realize why AlphaFold could work in the first place. 
-It is based on machine learning, i.e., computer algorithms that fit a predictive model based on training data. 
+The AlphaFold approach is based on machine learning, i.e., computer algorithms that fit a predictive model based on training data. 
 Such a model can then predict the structure, when given a sequence that it has not seen before. 
 DeepMind made use of very large neural network models, so-called deep learning. 
 The training data for such models ideally consists of many known examples for very complex problems such as protein structure prediction. 
@@ -159,7 +159,7 @@ The computation of AlphaFold predictive models costs a lot of computation time a
 To avoid running AlphaFold over and over on the same protein sequences and to facilitate the dissemination and inspection of AlphaFold protein structure models, the DeepMind team collaborated with EMBL’s European Bioinformatics Institute (EMBL-EBI) to create the AlphaFold Protein Structure Database (AlphaFold DB), https://alphafold.ebi.ac.uk/. 
 Currently, the resource contains over 200,000,000 structure models. 
 The first AlphaFold DB release covered the human proteome, along with several other key organisms such as *Arabidopsis thaliana* and *Escherichia coli*. 
-For these species, most protein sequences in their UniProt reference proteome were folded. 
+Actually, for these species, most protein sequences in their UniProt reference proteome were folded by AlphaFold. 
 The second release more than doubled the size of the database by adding most of Swiss-Prot (the subset of the UniProt protein database that is manually curated by experts), for all species. 
 The third release focused on organisms with a UniProt reference proteome that are relevant to Neglected Tropical Disease or antimicrobial resistance. 
 The selection was based on priority lists compiled by the World Health Organisation. 
@@ -169,7 +169,7 @@ This will then – for example – also include viral proteins that are currentl
 
 AlphaFold DB can be searched based on protein name, gene name, UniProt accession, or organism name. 
 In one of the practical assignments, you will learn how to work with AlphaFold DB and how you could incorporate it in your biological discovery pipeline. 
-One remaining question is: how do we know if we can trust the predictions? 
+One important remaining question is: how do we know if we can trust the predictions? 
 In other words, how do we know if we can be confident in the 3D structure models that AlphaFold predicts and that AlphaFold DB contains? 
 
 :::{figure} images/Week4/w4f5_alphafold_num_prot_structures.svg
@@ -217,7 +217,7 @@ As you may have started to realize when using databases, they can also contain e
 To investigate the quality of both known and predicted 3D protein structures, the Ramachandran plot can be used ({doc}`week1`). 
 You will work with the Ramachandran plot during the practical assignments. 
 It is important to note here that some disordered proteins only come into orderly arrangement in the presence of their various protein partners; and other proteins never have ordered structures under any conditions, a property that may be essential to their function. 
-How to model the behavior of such proteins is still an area of active research. 
+How to best model the behavior of such proteins is still an area of active research. 
 
 The above-described confidence measures are also useful in highlighting limitations of a predictive approach. 
 In the AlphaFold-related practical assignment, you will see some examples of this. 
@@ -236,10 +236,10 @@ In other words, you can start to form hypotheses that can be experimentally test
 You can also start to make predictions of protein-protein interactions. 
 Since such interactions are typically driven by 3D structural elements (clefts, pockets, etc.), predicting such 3D structure elements from sequences will contribute to more confidently predicting protein-protein interactions. 
 Furthermore, you have seen how comparing protein sequences in multiple sequence alignments helps to gain insight into their relationships; by using 3D structure models as an input, a similar comparison could be done at the structural level. 
-As we are increasingly aware, sequences may deviate more than structural elements; thus, (multiple) structure alignments may give a different view on protein relationships.  
+As we are increasingly aware, sequences may deviate more than structural elements; thus, (multiple) structure alignments at the level of folds or subunits may give a different view on protein relationships.  
 
-A recent tool that allows to do structure-based alignments based on either protein sequence or structure input in a reasonable timeframe is Fold2Seek: https://search.foldseek.com/. 
-By designing a novel 3D-interactions (3Di) alphabet, the team behind Fold2Seek overcame the mounting task of doing structure-based comparisons at the very large scale that the availability of >200 million structures requires. 
+A recent tool that allows to do structure-based alignments based on protein structure input in a reasonable timeframe is Fold2Seek: https://search.foldseek.com/. 
+By designing a novel 3D-interactions (3Di) alphabet, the team behind Fold2Seek overcame the mounting task of doing structure-based comparisons at the very large scale that the availability of >200 million structures, sparked by AlphaFold, requires. 
 For example, a traditional structure-based alignment tool would take ~1 month to compare on structure to 100 million ones in the database. 
 During the practical assignments, you will explore how the combination of AlphaFold and Fold2Seek can be used to explore possible functions for a protein sequence of interest.  
 
