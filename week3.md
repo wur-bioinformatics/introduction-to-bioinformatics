@@ -131,19 +131,23 @@ For instance, human beta and chimp beta globin are orthologs.
 Usually, these genes will have the same function in different species, but this doesn't need to be the case.
 *Paralogy* is the occurrence of similar genes resulting from gene duplication. 
 For example, proteins from a gene family with different functions in the same species. 
-{numref}`w3f2.4` illustrates both the taxic (speciation, indicated by stars) and genic (duplication) dimensions of gene trees. 
-If speciation would keep track with gene duplication, a perfect multi-copy "full" gene tree would be the result, in which the species tree topology can be easily recognised. 
+{numref}`w3f2.4` illustrates the process of gene duplication followed by speciation (which represents an ideal case) and the challenge with resulting paralogs in phylogenetic analysis, especially when not all members of a gene family have been sampled.
 
-:::{figure} images/Week3/w3_02_4.jpg
+:::{figure} images/Week3/w3_02_4v2.png
 :alt: Gene trees evolving in genic and taxic dimensions
 :align: center
 :name: w3f2.4
-Gene trees evolve in both a genic dimension (gene duplicaiton, indicated by stars), yielding orthologs A, B and C, as well as in a taxic dimension (speciation, indicated by circled numbers). 
-If speciation and gene duplication would keep track with each other (i.e., if they would be synchronous), a full gene tree would result, congruent with the species tree topology.
+The challenge of paralogues: (a) Paralogous genes are created by gene duplication events. 
+Gene X is duplicated in a common ancestor (RCA) to species A and B resulting in two paralogous genes, X and X’. 
+All subsequent species inherit both copies of the gene (unless one or the other is lost somewhere along the way). 
+(b) Phylogenetic analysis of the X/X’ gene family gives two parallel phylogenies. 
+All sequences of gene X are orthologues of each other, and all the sequences of gene X’ are orthologues of each other. 
+However, X and X’ are paralogues. 
+Both the X and X’ subtrees show the true relationships among the three species. 
+The subtrees are also each other’s natural outgroup, and as a result each subtree is rooted with the other (reciprocally rooting). 
+(c) A tree of the X/X’ gene family can be misleading if not all the sequences are included (because of incomplete sampling or gene loss). 
+If the broken branches are missing, then the true species relationships are misrepresented (From Baldauf 2003)
 :::
-
-In this tree, for instance A1, A2 and A3 would be paralogs, all in species A, and A1, B1 and C1 would be orthologs. 
-On the other hand A1, B2 and C3 would be paralogs: "non-corresponding" genes, as a result of gene duplication.
 
 :::{figure} images/Week3/w3_02_5.png
 :alt: Evolutionary history of a gene after duplication and speciation events.
