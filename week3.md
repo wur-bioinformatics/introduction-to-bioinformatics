@@ -48,13 +48,13 @@ The leaves are then the individuals (or sequences) that are observed and compare
 The branches and nodes are the _lineages_ or _clades_ (see below) that are inferred –i.e. not observed.
 They are the horizontal lines connecting the OTUs and HTUs (_hypothetical taxonomic units_) in your phylogenetic tree, as for instance shown in {numref}`w3f2.1`.
 
-:::{figure} images/Week3/w3_02_1.png
+:::{figure} images/Week3/w3*02_1.png
 :alt: Additive and Ultrametric examples of phylogenetic trees, and a Cladogram
 :align: center
 :name: w3f2.1
 A rooted phylogenetic tree with its main parts and characteristics indicated.
 The OTUs are here GenBank plant chloroplast gene accessions, the names of which have been condensed.
-For the same data, the tree is given as _additive_ tree (top), and as an _ultrametric_ tree (bottom left) with branch lengths corresponding to time.
+For the same data, the tree is given as \_additive* tree (top), and as an _ultrametric_ tree (bottom left) with branch lengths corresponding to time.
 On the right, flipped, the same tree as _cladogram_, with branch lengths only indicating the structure of the tree (see text).
 :::
 
@@ -123,16 +123,15 @@ Hard and soft polytomies in a phylogenetic tree.
 The soft polytomy can imply different tree resolutions (from Page & Holmes, 1998).
 :::
 
-### Orthologues & paralogues
+### Orthologs & paralogs
 
-When the terminals included are actually _gene_ or _protein sequences_, the tree will be a _gene tree_, likely containing _homologues_ (derived from a common ancestor gene), possibly also _orthologues_ and _paralogues_, the latter visualising gene duplications as multiple occurrences of particular terminals on the tree.
+When the terminals included are actually _gene_ or _protein sequences_, the tree will be a _gene tree_, likely containing _homologs_ (derived from a common ancestor gene), possibly also _orthologs_ and _paralogs_, the latter visualising gene duplications as multiple occurrences of particular terminals on the tree.
 _Orthology_ is the occurrence of corresponding, homologous (and mostly similar), genes in lineages resulting from speciation.
-For instance, human beta and chimp beta globin are orthologues.
+For instance, human beta and chimp beta globin are orthologs.
 Usually, these genes will have the same function in different species, but this doesn't need to be the case.
 _Paralogy_ is the occurrence of similar genes resulting from gene duplication.
 For example, proteins from a gene family with different functions in the same species.
-{numref}`w3f2.4` illustrates both the taxic (speciation, indicated by stars) and genic (duplication) dimensions of gene trees.
-If speciation would keep track with gene duplication, a perfect multi-copy "full" gene tree would be the result, in which the species tree topology can be easily recognised.
+{numref}`w3f2.4` illustrates the process of gene duplication followed by speciation (which represents an ideal case) and the challenge with resulting paralogs in phylogenetic analysis, especially when not all members of a gene family have been sampled.
 
 :::{figure} images/Week3/w3_02_4.jpg
 :alt: Gene trees evolving in genic and taxic dimensions
@@ -155,7 +154,7 @@ The evolutionary history of a gene that has undergone two separate duplication e
 :::
 
 In {numref}`w3f2.5`, a sequence of events is given involving two duplication and one speciation event that can lead to a set of homologous genes in two species.
-Some of these are _orthologues_ and some are _paralogues_ that have acquired new functions.
+Some of these are _orthologs_ and some are _paralogs_ that have acquired new functions.
 A species tree is depicted by the pale blue cylinders, with the branch points (nodes) in the cylinders representing speciation events.
 In the ancestral species a gene is present as a single copy and has function α (blue).
 At some time, a gene duplication event occurs within the genome, producing two identical gene copies, one of which subsequently evolves a different function, identified as β (red).
@@ -165,17 +164,17 @@ Gene Bα (in species B) subsequently undergoes another duplication event, which 
 The Bα gene is still functionally very similar to the original gene.
 At the end of this period of evolution, all five genes in both species are homologous, with three orthologous pairs: Aβ/Bβ, Aα/Bα, and Aα/Bγ.
 The Bα and Bγ genes are paralogous, as are any other combinations except the orthologous pairs.
-Note that Aα and Bγ are orthologues despite their different functions, and so if the intention is to study the evolution of a particular functional product, such as the α function, we need to be able to distinguish the Aα/Bα pair from the Aα/Bγ pair.
+Note that Aα and Bγ are orthologs despite their different functions, and so if the intention is to study the evolution of a particular functional product, such as the α function, we need to be able to distinguish the Aα/Bα pair from the Aα/Bγ pair.
 This can be done using sequence similarity, which would be expected to be greater for the Aα/Bα pair as they will be evolving under almost identical evolutionary pressures.
 Errors in functional orthology assignment can easily occur, depending on sequence and functional similarity and whether all related genes have been discovered.
 The gene tree inferred from these 5 genes has multiple occurrences of both species A and B ({numref}`w3f2.5`B).
 
 Consider the trees in {numref}`w3f2.6`, a species tree and a gene tree.
 There are multiple occurrences of the terminals from the species tree (bovine, sheep, pig etc.) in the gene tree, each grouped with a different Interleukin sequence type.
-These are the paralogues, that probably resulted from gene duplication events during the proliferation of the IL clade.
+These are the paralogs, that probably resulted from gene duplication events during the proliferation of the IL clade.
 In fact, we can deduce that 4 gene duplication events must have happened, to explain the occurrence of for instance "human" at three positions in the gene tree (indicated with green highlight in {numref}`w3f2.6`), namely i) in the IL-1α clade, ii) in the IL-1rα clade, and iii) as a sister pair in the IL-1β clade.
 The fourth duplication event would be necessary to assume to explain the IL-1β versus IL-1βm copies.
-All gene copies in this tree are homologues, some are orthologues (for instance Human IL-1β and Mouse IL-1β), and some are paralogues (for instance Human IL-1β and Human IL-1βm).
+All gene copies in this tree are homologs, some are orthologs (for instance Human IL-1β and Mouse IL-1β), and some are paralogs (for instance Human IL-1β and Human IL-1βm).
 
 :::{figure} images/Week3/w3_02_6.png
 :alt:
@@ -200,11 +199,11 @@ When our individuals are meant to represent species, it would in principle be a 
 {numref}`w3f2.8` shows an example of multiple gene trees (in colour) contributing to the species tree (indicated by black lines) as a result of _species tree estimation_ analysis.
 Such analysis is beyond the scope of this course, but it is of course important to always keep in mind at what level your phylogenetic reconstruction is, whether at the species, gene, or even biogeographic area level.
 
-:::{figure} images/Week3/w3_02_8.png
+:::{figure} images/Week3/w3*02_8.png
 :alt:
 :align: center
 :name: w3f2.8
-Gene trees, in colour, embedded in the species tree (black lines); Western pocket gophers (Geomyidae, Thomomys). (from Heled _et al._ Mol. Biol. Evol. 2010).
+Gene trees, in colour, embedded in the species tree (black lines); Western pocket gophers (Geomyidae, Thomomys). (from Heled \_et al.* Mol. Biol. Evol. 2010).
 :::
 
 (nodalsupportthebootstrap)=
@@ -222,12 +221,12 @@ Repeating this process many times (hundreds or thousands) and summarizing the va
 It actually measures the sampling _variance about the estimate_ of the phylogeny.
 This process is called bootstrap analysis and will be further discussed in [Maximum likelihood tree building](MLtreebuilding), after we have covered the characters underlying our trees in the next section.
 
-:::{figure} images/Week3/w3_02_9.png
+:::{figure} images/Week3/w3*02_9.png
 :alt:
 :align: center
 :name: w3f2.9
 Bootstrap resampling analysis in phylogeny reconstruction.
-In case of unlimited data (A), not realistic, a summary of sample-based trees yields sampling variance _about the true phylogeny_.
+In case of unlimited data (A), not realistic, a summary of sample-based trees yields sampling variance \_about the true phylogeny*.
 In case of limited data (B), realistic, only pseudo-samples are available, that summarise sampling variance about the _estimate of true phylogeny_.
 :::
 
