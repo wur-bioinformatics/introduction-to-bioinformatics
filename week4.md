@@ -238,10 +238,10 @@ Since such interactions are typically driven by 3D structural elements (clefts, 
 Furthermore, you have seen how comparing protein sequences in multiple sequence alignments helps to gain insight into their relationships; by using 3D structure models as an input, a similar comparison could be done at the structural level.
 As we are increasingly aware, sequences may deviate more than structural elements; thus, (multiple) structure alignments at the level of folds or subunits may give a different view on protein relationships.
 
-A recent tool that allows to do structure-based alignments based on protein structure input in a reasonable timeframe is Fold2Seek: https://search.foldseek.com/.
-By designing a novel 3D-interactions (3Di) alphabet, the team behind Fold2Seek overcame the mounting task of doing structure-based comparisons at the very large scale that the availability of >200 million structures, sparked by AlphaFold, requires.
+A recent tool that allows to do structure-based alignments based on protein structure input in a reasonable timeframe is Foldseek: https://search.foldseek.com/.
+By designing a novel 3D-interactions (3Di) alphabet, the team behind Foldseek overcame the mounting task of doing structure-based comparisons at the very large scale that the availability of >200 million structures, sparked by AlphaFold, requires.
 For example, a traditional structure-based alignment tool would take ~1 month to compare on structure to 100 million ones in the database.
-During the practical assignments, you will explore how the combination of AlphaFold and Fold2Seek can be used to explore possible functions for a protein sequence of interest.
+During the practical assignments, you will explore how the combination of AlphaFold and Foldseek can be used to explore possible functions for a protein sequence of interest.
 
 It can be expected that the AlphaFold model will continue to develop.
 For example, the most recent addition is a multimer model that predicts if and how several polypeptide chains are interacting.
@@ -322,7 +322,7 @@ Taken inspiration and figures from:
 
 https://elearning.bits.vib.be/courses/alphafold/lessons/introduction-to-alphafold/ (CC-BY 4.0)
 
-Fold2Seek publication:
+Foldseek publication:
 
 https://www.nature.com/articles/s41587-023-01773-0
 :::
