@@ -4,7 +4,7 @@
 
 ---
 
-**~omics**
+## **~omics**
 
 Etymology (from Wikipedia)
 
@@ -26,7 +26,8 @@ Transcriptomics on the other hand focuses on the parts of the genome that are tr
 :width: 200px
 :name: w5f1
 
-Information flow in the cell. Credits: [Narayanese at English Wikipedia - Own work, Public Domain](https://commons.wikimedia.org/w/index.php?curid=36890617)
+Information flow in the cell. \
+Credits: [Narayanese at English Wikipedia](https://commons.wikimedia.org/w/index.php?curid=36890617)
 :::
 
 DNA is the starting point in the chain of biological information flow.
@@ -41,16 +42,20 @@ Our understanding of genes has expanded to a more complex concept, focused on st
 The term genome was originally used to describe all genes in an organism or cell, but now refers to the full DNA content of a cell.
 
 (w5box1)=
-:::{admonition} Box 1: The Human Genome Project
+::::{admonition} Box 1: The Human Genome Project
 :class: tip
-The goal of the Human Genome Project (HGP) was to sequence and annotate all genes in the human genome.
+The goal of the Human Genome Project (HGP) was to sequence and annotate all genes in the human genome. 
+```{image} images/Week5/Fig_Box1_VitruvianMan.jpg
+:width: 150px
+:align: right
+```
 The project formally started in 1988, although sequencing did not start until around 1990.
 During the first stages, technology development played an important part and led to the development of techniques such as PCR (polymerase chain reaction), gel electrophoresis and other radically new lab protocols.
 The human genome was completely sequenced with Sanger sequencing technology (which is described below) and a first draft genome, covering 90% of the estimated 3.2 billion base pairs) was published in Nature in 2001, with a final genome in 2003.
 One of the most surprising findings was that the human genome only contained roughly 20,000 genes, far less than the estimated 50,000-140,000.
 The entire project is estimated to have cost [\$3 billion](https://www.genome.gov/about-genomics/educational-resources/fact-sheets/human-genome-project).
 In 2021 the first true telomere-to-telomere assembly of the human genome was assembled using the third generation technologies described below: PacBio, Oxford Nanopore and Hi-C.
-:::
+::::
 
 ## The history of genome sequencing
 
@@ -73,6 +78,11 @@ In comparison, it is nowadays possible to sequence all variants between a human 
 
 ## Genomes
 
+
+
+With the rapid evolution of sequencing technology, our understanding of genomes and their content has grown as well.
+We now know that genomes vary greatly in terms of size, chromosome numbers, and ploidy ({numref}`w5f3`), as well as gene content ({numref}`w5f4`).
+Genome sizes range from 100kb in bacteria to more than 100Gb (Giga basepairs) in plants.
 :::{figure} images/Week5/Fig_03_specific_genome_sizes.jpg
 :alt: Gene content table
 :align: center
@@ -80,10 +90,6 @@ In comparison, it is nowadays possible to sequence all variants between a human 
 
 Gene content in some representative species. From: Greg Gibson, A Primer of Genome Science, 3rd ed.
 :::
-
-With the rapid evolution of sequencing technology, our understanding of genomes and their content has grown as well.
-We now know that genomes vary greatly in terms of size, chromosome numbers, and ploidy ({numref}`w5f3`), as well as gene content ({numref}`w5f4`).
-Genome sizes range from 100kb in bacteria to more than 100Gb (Giga basepairs) in plants.
 Humans have a genome size of 3.2Gb.
 Not only the genome size varies greatly, in eukaryotes the number of chromosomes and chromosomal copies (ploidy) do too.
 Chromosome numbers range from 4 in fruitfly (_Drosophila_) to 23 in human to 50 in goldfish and 100+ in some ferns. Similarly, ploidy ranges from haploid (single set of chromosome(s), ploidy of N) and diploid (two copies, ploidy of 2N) to polyploid (more than 3 copies), with at the extreme end ferns with ploidy levels of over 100.
@@ -94,11 +100,12 @@ Gene numbers also vary per species; at the low end, bacterial endosymbionts have
 :align: center
 :name: w5f4
 
-Left, variety of genome sizes [Abizar at English Wikipedia, CC BY-SA 3.0](https://commons.wikimedia.org/w/index.php?curid=19537795); right, examples of ploidy [Haploid_vs_diploid.svg: Ehambergderivative work: Ehamberg (talk) - Haploid_vs_diploid.svg, CC BY-SA 3.0](https://commons.wikimedia.org/w/index.php?curid=13308417)
+Left, variety of genome sizes [Abizar at English Wikipedia, CC BY-SA 3.0](https://commons.wikimedia.org/w/index.php?curid=19537795); right, examples of ploidy [Ehamberg (talk) - Haploid_vs_diploid.svg, CC BY-SA 3.0](https://commons.wikimedia.org/w/index.php?curid=13308417)
 :::
 
 (w5box2)=
 :::{admonition} Box 2: Size does(n’t) matter?
+:class: tip
 Genomes come in all shapes and sizes.
 The smallest known (non-viral) genome is that of the bacterial endosymbiont _Nasuia deltocephalinicola_, which only consists of 112,091 nucleotides encoding 137 proteins.
 The largest genomes known to date are marbled lungfish and the plant _Fritillaria assyriaca_ with 130,000,000,000 nucleotides (130Gb), although the amoeboid _Polychaos dubium_ is purported to have a genome size of 670Gb.
@@ -273,12 +280,16 @@ Moreover, what we sequence is not always what we originally intended to sequence
 :align: right
 :name: w5f11
 
-Causes for contaminated sequencing samples, using as example the tardigrade and surrounding bacteria
+Causes for contaminated sequencing \
+samples, using as example the \
+tardigrade and surrounding bacteria
 :::
 
 Sources of errors related to sequencing itself are base calling errors (substitution errors), uncalled bases (indels), GC bias, homopolymers, a drop of quality towards the 3’end of a read, and duplicates (amplification bias).
 Additional error sources are contamination of the input sample, remnants of adapters and sequencing vectors.
 It is therefore important to assess the quality of the sequencing itself and the output data before further analysis.
+
+
 
 ### Genome assembly
 
@@ -292,12 +303,12 @@ Finally, genome annotation and detection of structural variation are discussed.
 
 :::{figure} images/Week5/Fig_12_Picture9.svg
 :alt: Co-segregation of alleles
-:align: center
+:width: 300px
+:align: right
 :name: w5f12
 
 Co-segregation of alleles
 :::
-
 Genomes can be reconstructed with different aims, which influence the required quality of the final assembly.
 The human genome, for example, has been assembled as far as possible and in 2021 the first telomere-to-telomere assembly was published {cite:p}`t2t_human_genome`, adding the final 5% of bases.
 It has taken enormous effort, both in terms of finance and labour, to get to this stage.
@@ -428,22 +439,26 @@ Chromosome-level assemblies also allow us to study genome evolution itself, the 
 :align: center
 :name: w5f17
 
-Shows the protein-coding gene _FRG1_ and its 23 paralogs in CHM13. Only 9 were found in the previous assembly (GRCh38). Genes are drawn larger than their actual size, and the "_FRG1_" prefix is omitted fro brevity. All paralogs are found near satellite arrays. _FRG1_ is involved in acioscapulohumeral muscular dystrophy (FSHD). Adapted from ...
+Shows the protein-coding gene _FRG1_ and its 23 paralogs in CHM13. Only 9 were found in the previous assembly (GRCh38). Genes are drawn larger than their actual size, and the "_FRG1_" prefix is omitted fro brevity. All paralogs are found near satellite arrays. _FRG1_ is involved in acioscapulohumeral muscular dystrophy (FSHD). [](https://doi.org/10.1126/science.abj6987) Figure 5A
 :::
 
 ## Variants
 
 (w5box3)=
-:::{admonition} Box 3: Phenotypic variation
-Small variants can have large phenotypic effects.
+::::{admonition} Box 3: Phenotypic variation
+:class: tip
+Small variants can have large phenotypic effects. 
+```{image} images/Week5/Fig_Box_3_final.jpg
+:alt: carrot phenotypic diversity
+:width: 200px
+:align: right
+```
 They account for the large variation in things all around us.
 In food products, variants have been actively selected for to create the wide varieties of shapes, colour and taste we see in our food items today.
 Historically, variants have been selected purely on these visible phenotypes and new ones have been created mainly by chance in large-scale crosses.
 
-![Carrot phenotypic diversity](images/Week5/Fig_Box_3_final.jpg){w=200px align=right}
-
 Nowadays genetic information obtained through genome sequencing and variant calling is used more and more in plant and animal breeding and selection.
-:::
+::::
 
 Mapping reads to a reference is a means to an end.
 As stated above, one of the main goals is to detect genomic variation.
@@ -515,11 +530,14 @@ Different types of structural variants on chromosome level
 
 (w5box4)=
 :::{admonition} Box 4: Cri du chat syndrome
-
+:class: tip
+```{image} images/Week5/Fig_Box_4_cri_du_chat_image001.png
+:alt: cri du chat mutation and phenotype
+:align: right
+:width: 200px
+```
 Cri du chat syndrome is a genetic disorder that is caused by the partial deletion of the short arm of chromosome 5.
 Babies suffering from the condition have a high pitched cry that sounds similar to a cat, which has given the condition its name.
-
-![From ...](images/Week5/Fig_Box_4_cri_du_chat_image001.png)
 
 Furthermore, they suffer a.o. from delayed growth and poor reflexes.
 :::
@@ -576,7 +594,7 @@ One example of a within-species inversion yielding large phenotypic differences 
 :align: center
 :name: w5f23
 
-At least two genetic inversions are associated with the _Heliconius numata_ supergene. The ancestral gene order, which matches that in _H. melpomene_ and _H. erato_ is shown on the left and is associated with ancestral phenotypes such as _H. n. silvana_. Two sequentially derived inversions are associated with dominant alleles and are shown in the middle and right. Adapted from ...
+At least two genetic inversions are associated with the _Heliconius numata_ supergene. The ancestral gene order, which matches that in _H. melpomene_ and _H. erato_ is shown on the left and is associated with ancestral phenotypes such as _H. n. silvana_. Two sequentially derived inversions are associated with dominant alleles and are shown in the middle and right. Redrawn from (Joron _et al._ 2011).
 :::
 
 Another example is the acquisition of an inversion containing genes for wing color patterns in different species of Heliconius butterflies ({numref}`w5f23`).
@@ -587,7 +605,7 @@ Copy number variation can also affect phenotypic traits with an example being fl
 :align: center
 :name: w5f24
 
-Gene CNV contributes to wheat phenotypic diversity. a) CNV of _Vrn-A1_ gene controls flowering time by affecting vernalization requirement; b) CNV of _Ppd-B1_ controls flowering time by affecting photoperiod sensitivity; c) CNV of _Rht-D1b_ gene (a truncated version of _Rht-D1a_) determines severity of plant dwarfism phenotype. In all three cases, the impact of gene copy number on observed phenotype has been verified experimentally. Sources: ...
+Gene CNV contributes to wheat phenotypic diversity. a) CNV of _Vrn-A1_ gene controls flowering time by affecting vernalization requirement; b) CNV of _Ppd-B1_ controls flowering time by affecting photoperiod sensitivity; c) CNV of _Rht-D1b_ gene (a truncated version of _Rht-D1a_) determines severity of plant dwarfism phenotype. In all three cases, the impact of gene copy number on observed phenotype has been verified experimentally. Source data: a, b, Díaz et al. (2012); c, Li et al. (2012), from [](https://doi.org/10.1007/s00122-013-2177-7).
 :::
 
 ## Transcriptomics
@@ -600,23 +618,19 @@ This section of the reader mainly focuses on measuring and counting transcripts 
 
 (w5box5)=
 :::{admonition} Box 5: The RNA world
+:class: tip
 Many other types of RNA exist in the cell and they perform important regulatory functions:
 
 - miRNA (micro RNA): Small (20-21nt) pieces of RNA that are cut from a longer pre-miRNA hairpin.
   miRNAs bind to target sites in mRNA and prevent binding of the messenger.
-
 - siRNA (short interfering RNA): are generally 20-24nt long pieces of RNA that work similar to miRNAs but instead of actively preventing translation, the targeted mRNA is cut into pieces and destroyed.
 
 ![](images/Week5/Fig_Box_5_Picture18.png)
 
 - snoRNA (small nucleolar RNA): Guide the methylation and pseudouridylation of ribosomal RNA required in the mature rRNA.
-
 - lncRNA (long non-coding RNA): >200not long stretches of RNA that arise from transcription but (appear to) have no open reading frame.
-  How many of these lncRNAs have a specific function and what that function might be is not clear.
-  Most might simple be the result of pervasive transcription.
-
-- piRNA (piwi interacting RNA): Found in animals and slightly longer than miRNAs (26-31nt), they interact with piwi proteins.
-  piRNAs are implicated in epigenetic gene silencing, but not much is known.
+  How many of these lncRNAs have a specific function and what that function might be is not clear. Most might simple be the result of pervasive transcription. 
+- piRNA (piwi interacting RNA): Found in animals and slightly longer than miRNAs (26-31nt), they interact with piwi proteins. piRNAs are implicated in epigenetic gene silencing, but not much is known.
   :::
 
 For the understanding of transcriptome analysis it is important to remember that in eukaryotes most genes contain introns and that one gene can have many transcripts.
@@ -642,8 +656,7 @@ Differential expression: we can compare expression patterns between conditions, 
 Time series analysis: we can follow changes over time (i.e.
 time series experiments).
 
-Clustering: we can group genes or samples based on similarity in expression (e.g.
-to learn about shared function).
+Clustering: we can group genes or samples based on similarity in expression (e.g. to learn about shared function).
 
 Classification: we can find which gene(s) are predictive of a certain phenotype (e.g.
 a disease).
@@ -665,15 +678,32 @@ mRNA levels:
 ### How to measure mRNAs?
 
 Just like the study of genomes, transcriptomics has greatly benefitted from technological developments that allowed an increase in throughput and sensitivity of measurements.
-Early methods of detecting transcripts and expression levels are northern blots and differential display (Figure 25).
+:::{figure} images/Week5/Fig_25_differentialGel.jpg
+:alt: Differential display gel
+:align: right
+:name: w5f25
+Example of differential display gel. 
+From: [](https://doi.org/10.1152/physiolgenomics.00013.2001)
+:::
+Early methods of detecting transcripts and expression levels are northern blots and differential display ({numref}`w5f25`).
 Both are gel-based methods that are low throughput and not very accurate.
-
+:::{figure} images/Week5/Fig_26_qPCR.jpg
+:alt: qPCR amplification graph
+:align: right
+:name: w5f26
+Amplification plot of a DNA
+fragment in a qPCR reaction. 
+Cq corresponds to the cycle 
+were fluorescence passes the 
+detection threshold. 
+From: BioRAD website
+:::
 Northern blots and differential displays were superseded by qPCR (quantitative PCR) and microarrays.
 qPCR is a form of PCR with the formal name of quantitative real-time PCR (abbreviated as qPCR, whereas RT-PCR stands for reverse transcription PCR and when using RNA as input is sometimes called RT-qPCR, reverse transcription qPCR).
 The real-time assessment of the PCR product allows the quantification of the number of input materials.
 The abundance of each DNA molecule is measured by adding a fluorescent reporter, either a dye that binds DNA or fluorescent probes.
 The level of fluorescence increases with the number of amplified fragments, which in turn is detected.
-When the reaction passes a threshold at a given cycle, the cycle number is used to deduce the original amount of template fragments in the reaction (Figure 26).
+When the reaction passes a threshold at a given cycle, the cycle number is used to deduce the original amount of template fragments in the reaction ({numref}`w5f26`).
 qPCR is often used to validate results obtained by other quantitative methods.
 
 ### Microarrays
@@ -689,7 +719,7 @@ RNAseq is untargeted: all RNA in a sample can in principle be sequenced and it i
 While RNAseq is mainly used to study transcript abundance, it can also be used to detect transcript isoforms (and their abundance), as well as variants (see Variants above).
 
 :::{admonition} Box 6: Ever more detail
-
+:class: tip
 Until now, most RNAseq experiments have been performed on groups of cells, as sequencing devices require large amounts of DNA.
 This means that cells of different cell types or different life stages are included in a single sample.
 While detection of differentially expressed genes is clearly possible with this method, weak or more nuanced variation is averaged out across all cells.
@@ -733,10 +763,16 @@ The following points summarize the strength and weaknesses of RNAseq for the mea
 
 In principle, sequencing reads from an RNAseq experiment do not differ from reads sequenced from genomic DNA in that they can be mapped to a reference sequence.
 The same algorithms apply when mapping RNAseq reads to an assembled transcriptome (a reference sequence that only contains RNA sequences) or to prokaryotic genomes.
-Mapping eukaryotic mRNA sequences to a genomic reference is more cumbersome, as most genes have introns, which are no longer present in the mature mRNA (Figure 27).
+Mapping eukaryotic mRNA sequences to a genomic reference is more cumbersome, as most genes have introns, which are no longer present in the mature mRNA ({numref}`w5f27`).
+:::{figure} images/Week5/Fig_27_spliced_alignment.svg
+:alt: Spiced read alignment
+:align: right
+:name: w5f27
+Mapping of mRNA reads to genomic reference with splice aware aligner.
+:::
 This means that reads might contain an exon-exon junction, which means they should be split along the reference.
 Most aligners will not consider this a valid option.
-Special splice aware aligners have been developed for this reason, that are able to map normal reads that map contiguously to the reference sequence as well as reads that are split across splice sites (Figure 27).
+Special splice aware aligners have been developed for this reason, that are able to map normal reads that map contiguously to the reference sequence as well as reads that are split across splice sites ({numref}`w5f27`).
 They also take into account known intron exon boundaries to determine the point within a read where it has to be split and whether the split alignment is correct.
 
 ### Transcript quantification
@@ -761,6 +797,11 @@ CPM stands for counts per million (reads).
 It represents a relative measure for the read counts corrected for the total number of reads of a sample.
 It assigns each read a value that corresponds to the proportion of the total number of reads that single read represents.
 This tiny fraction is then multiplied by a million to make it more readable.
+:::{figure} images/Week5/Fig_28_quantification.svg
+:alt: Counting reads
+:align: right
+:name: w5f28
+:::
 
 #### Comparing between transcripts
 
@@ -770,6 +811,11 @@ When comparing expression of two different transcripts, we also have to take int
 RPKM and FPKM (Reads/Fragments per kilobase transcript per million) normalise the counts per feature length and the total number of reads.
 TPM (transcripts per million transcripts) normalises per transcript.
 TPM uses a calculation to give a measurement of which proportion of the total number of transcripts in the original sample is represented by each transcript.
+:::{figure} images/Week5/Fig_29_comparing_transcripts.svg
+:alt: Comparing transcript levels
+:align: right
+:name: w5f29
+:::
 
 #### Which method to use?
 
@@ -781,10 +827,22 @@ when comparing one transcript between two samples.
 
 RNAseq is performed as part of an experiment with the aim of finding genes responding differently to two or more experimental conditions.
 Such experiments are set up to exclude as much variation as possible, but there will still be differences in expression levels detected that are not the result of the treatment but rather measurement noise.
-To distinguish clearly between real differences and noise, repeated measures of the same condition are important (Figure 28).
+To distinguish clearly between real differences and noise, repeated measures of the same condition are important ({numref}`w5f30`).
 These are called replicates.
 Underlying the variation in repeated measurements are both biological and technical variation.
-In Figure 29 this comparison is made for all transcripts detected in the samples, for two replicates (left) and two different conditions (middle and right).
+In {numref}`w5f31` this comparison is made for all transcripts detected in the samples, for two replicates (left) and two different conditions (middle and right).
+:::{figure} images/Week5/Fig_30_compare_conditions.svg
+:alt: comparing expression between conditions
+:align: right
+:name: w5f30
+Difference in expression of gene X between two conditions and two possible distributions the measurement could have come from.
+:::
+:::{figure} images/Week5/Fig_31_error_vs_conditions.svg
+:alt: Comparison of differences between replicates and conditions
+:align: right
+:name: w5f31
+Comparison of FPKM values between 2 replicates (left) and two conditions (middle and right). The correlation between replicates should be very high, the differences between two conditions can be small (middle) or large (right).
+:::
 
 ### ChIPseq and other protocols
 
@@ -793,10 +851,14 @@ The trick is to first translate the mRNA into DNA, measure the DNA, and then rec
 Many more such protocols have been developed to measure other molecule levels and interactions of interest.
 Three well-known protocols are:
 
-ChIPseq, for chromatin immunoprecipitation sequencing: for a given protein – for example, a transcription factor or a histone – this can detect where it binds DNA.
-Figure 30 illustrates this.
+- ChIPseq, for chromatin immunoprecipitation sequencing: for a given protein – for example, a transcription factor or a histone – this can detect where it binds DNA.
+{numref}`w5f31` illustrates this.
 After sequencing, the DNA can be mapped against the genome: peaks of mapped reads indicate regions where the protein of interest binds.
-
-Hi-C, to study 3D proximity of chromosome parts in the nucleus.
-
-bisulfite sequencing, to assess methylation of DNA.
+- Hi-C, to study 3D proximity of chromosome parts in the nucleus.
+- bisulfite sequencing, to assess methylation of DNA.
+:::{figure} images/Week5/Fig_32_ChipSeq.png
+:alt: ChipSeq protocol
+:align: right
+:name: w5f32
+The chromatin immunoprecipitation (ChIP) protocol. Proteins are cross-linked to DNA, after which genomic DNA is isolated and sheared. Using an antibody, only the protein of interest is selected (the immunoprecipitation step), after which the cross-linking is reversed and the DNA can be sequenced by PCR (ChIP-PCR) or NGS (ChIPseq). Similar protocols are available for protein-RNA and protein-protein interactions, the latter using two antibodies. From DOI: 10.1677/JOE-08-0526
+:::

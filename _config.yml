@@ -30,3 +30,25 @@ bibtex_bibfiles:
 #html:
 #use_issues_button: true
 #use_repository_button: true
+
+#######################################################################################
+# Parse and render settings
+parse:
+  myst_enable_extensions:  # default extensions to enable in the myst parser. See https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
+    - colon_fence
+    - dollarmath
+    - html_admonition
+    - html_image
+    - linkify
+    - replacements
+    - smartquotes
+    - substitution
+    - tasklist
+
+#######################################################################################
+# Advanced and power-user settings
+sphinx:
+  config: 
+    language: en
+  extra_extensions: 
+    - sphinx_subfigure
