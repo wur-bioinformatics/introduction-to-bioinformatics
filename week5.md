@@ -1,15 +1,11 @@
-# Week 5 - -Omics data analysis
+# Week 5 - Omics data analysis
 
-<!--- TODO: create better figure including epigenomics --->
-
-:::{figure} images/Week5/Cover_Picture10.svg
+:::{figure} images/Week5/w5f0.png
 :alt: -Omics levels
 :align: center
 :name: w5f0
 
-Different levels -omics data. Taken from: P.M. Selzer, R.J. Marhöfe and O
-Koch. “Applied Bioinformatics, an introduction”, 2nd ed. Springer, ISBN
-978-3-319-68299-0.
+Different -ome levels, here illustrated with numbers for *Arabidopsis thaliana*.
 :::
 
 ---
@@ -27,12 +23,12 @@ Koch. “Applied Bioinformatics, an introduction”, 2nd ed. Springer, ISBN
 This chapter discusses what we call -omics measurements: genomics,
 transcriptomics (gene expression), proteomics and metabolomics.  Omics
 technologies measure the presence, levels and/or interactions of different
-types of molecules in the cell, all molecules at once (see figure
-{numref}`w5f0`).  Genomics focuses on the entirety of information that can
-be derived from genomes (structure, function, evolution, etc.). 
-Transcriptomics, proteomics and metabolomics focus on gene expression,
-protein and metabolite levels, respectively.  Finally, phenomics measures
-the outward appearance and behaviour of cells and organisms.
+types of molecules in the cell, all molecules at once (see {numref}`w5f0`). 
+Genomics focuses on the entirety of information that can be derived from
+genomes (structure, function, evolution, etc.).  Transcriptomics, proteomics
+and metabolomics focus on gene expression, protein and metabolite levels,
+respectively.  Finally, phenomics measures the outward appearance and
+behaviour of cells and organisms.
 
 The concept of genes is central to the dogma of molecular biology: it
 therefore makes sense that much early research was invested in sequencing
@@ -871,7 +867,15 @@ a, b, Díaz et al.  (2012); c, Li et al.  (2012), from
 
 ## Functional genomics and systems biology
 
-<!--- FIGURE OF DIFFERENT CELL TYPES? --->
+:::{figure} images/Week5/w5bf2.svg
+:alt: Different human cell types
+:align: center
+:name: w5bf2
+
+With the same genome, human stem cells differentiate into a wide range of shapes.
+Source: Haileyfournier, CC-BY-SA 4.0,
+[Wikimedia](https://commons.wikimedia.org/wiki/File:Final_stem_cell_differentiation_(1).svg).
+:::
 
 ### The need for functional genomics
 
@@ -885,30 +889,46 @@ behaviour.  Still, each cell contains the same genome, so there must be
 differences in the way the genes are used.  In other words, if the genome is
 the book of life, it must also contain the information on how to read it.
 
-<!--- EPIGENETICS FIGURE? https://en.wikipedia.org/wiki/File:Epigenetic_mechanisms.png
---->
+(w5box5)=
+::::{admonition} Box 5: Epigenetics
+:class: tip
+```{image} images/Week5/w5bf3.png
+:width: 75%
+:align: center
+```
+Epigenetic mechanisms are affected by several factors and processes
+including development, environmental chemicals, drugs and pharmaceuticals,
+aging, and nutrition.  DNA methylation is what occurs when methyl groups, an
+epigenetic factor found in some dietary sources, can tag DNA and activate or
+repress genes.  Histones are proteins around which DNA can wind for
+compaction and gene regulation.  Histone modification occurs when the
+binding of epigenetic factors to histone “tails” alters the extent to which
+DNA is wrapped around histones and the availability of genes in the DNA to
+be activated. At a coarser level, the 3D organization of the DNA (“chromatin
+structure”) also influences which regions of the genome are accessible for
+transcription. In humans, all of these factors and processes can have an effect on
+health and disruption can result in cancer,
+autoimmune disease, mental disorders or diabetes, among other illnesses. 
+Source: [National Institutes of
+Health](http://commonfund.nih.gov/epigenomics/figure.aspx).
+::::
 
-A part of the explanation lies in what is called *epigenetics*.  This is a
-container term for mechanisms that alter the genome without changing the DNA
-sequence and thereby influence when and at what level genes are transcribed
-into RNA, i.e.  that regulate how genes are expressed.  Such epigenetics can
-be passed on through cell division and, in some cases, can even be
-inherited.  Well-known examples include methylation, the addition of methyl
-groups to specific nucleotides; modification of histones around which the
-DNA is spooled; and chromatin structure, the 3D organization of the genome
-in the cell.  These mechanisms all influence which parts of the genome are
-accessible for transcription, and thus how cells behave.
 
-There are however more mechanisms besides epigenetics that control how genes
-are expressed, and how the resulting proteins eventually fulfill their
-function in the cell.  The most well-known ones are interactions between
-proteins and DNA (transcription factors and enhancers, influencing
-expression); interactions between proteins, to form complexes or to pass
-signals; and catalysis of metabolic reactions by enzymes.  The field of
-research that studies how genes are used is called *functional genomics*. 
-The most prominent functional genomics project started immediately following
-the completion of the human genome: the ENCODE (“Encyclopedia of DNA
-elements”) project (2005-2015), aiming to identify all functional parts of the genome.
+A part of the explanation lies in what is called *epigenetics*,
+modifications of the genome that do not change the DNA sequence but do
+influence gene expression [Box 5](w5box5). There are other mechanisms besides
+epigenetics that control how genes are expressed, and how the resulting
+proteins eventually fulfill their function in the cell.  The most well-known
+ones are interactions between proteins and DNA (transcription factors and
+enhancers, influencing expression); interactions between proteins, to form
+complexes or to pass signals; and catalysis of metabolic reactions by
+enzymes.
+
+The field of research that studies how genes are used is called *functional
+genomics*.  The most prominent functional genomics project started
+immediately following the completion of the human genome: the ENCODE
+(“Encyclopedia of DNA elements”) project (2005-2015), aiming to identify all
+functional parts of the genome.
 
 #### The role of -omics data
 
@@ -919,13 +939,14 @@ attempting to measure all molecules of a certain type at once, these are
 called *-omics* measurements. The technology to measure such -omics data is
 usually *high-throughput*, which means that little manual work or repetition
 of experiments are needed. We generally distinguish five main levels of -omics
-measurements as illustrated in figure {numref}`w5f0`, although many new -omics terms are
+measurements as illustrated in {numref}`w5f0`, although many new -omics terms are
 still being introduced. Next to genomics, the following -omics measure:
 - Epigenomics: all epigenetic modifications of the genome
 - Transcriptomics: the expression levels of all genes
 - Proteomics: the presence/quantity of all proteins 
 - Metabolomics: the presence/quantity of all metabolites
 - Phenomics: the eventual phenotype(s), i.e. form or behaviour, of a cell or organism
+
 Such measurements are increasingly also applied on mixed samples, mostly
 bacterial/fungal/viral communities such as found in the human gut and in the soil.
 As a kind of ‘meta’ analysis, this has been labeled metagenomics,
@@ -981,6 +1002,7 @@ experimentally introduced, for example by:
 - knocking out genes (ensuring they are no longer expressed)
 - knocking down genes (removing the transcripts)
 - knocking in genes (introducing new genes)  
+
 The effects of such interventions at a specific -omics level then provide
 information on the function of the manipulated gene(s).  Ideally we would
 measure different -omics levels at the same time (multi-omics) and even in
@@ -1002,7 +1024,16 @@ scientific approach in which the main goal is to construct models of living
 systems, that are increasingly refined by hypothesis formation,
 experimentation and model extension or modification. 
 
-<!--- Figure Kitano --->
+:::{figure} images/Week5/w5bf4.png
+:alt: The systems biology cycle
+:align: center
+:name: w5bf4
+
+The systems biology cycle, aiming to iteratively improve models of living
+systems. Image taken from: H. Kitano, “[Systems biology: a brief
+overview](https://www.science.org/doi/10.1126/science.1069492)”,
+*Science* 295(5560):1662-1664, 2002.
+:::
 
 Eventually, the hope of systems biology is to arrive at systems-level
 understanding of life that will allow us to simulate the effects of
@@ -1017,10 +1048,10 @@ Transcriptomics is concerned with measuring the expression of genes (i.e.
 the levels of transcription of genes on the genome to RNA).  RNA and its
 role in the cell has already been discussed in week 1.  If you want to know
 what other types of RNA exist outside the common mRNA, tRNA and rRNA, read
-box 5.  This section of the reader mainly focuses on measuring and counting
+[Box 6](w5box6).  This section of the reader mainly focuses on measuring and counting
 transcripts (mRNA).
 
-(w5box5)=
+(w5box6)=
 :::{admonition} Box 5: The RNA world
 :class: tip
 Many other types of RNA exist in the cell and they perform important regulatory functions:
@@ -1143,7 +1174,6 @@ expression of the corresponding gene.
 Taken from: H. van Bakel, F.C.P. Holstege, “A tutorial on DNA microarray
 expression profiling”, in: D. Zuk (editor), “Evaluating techniques in biochemical research”,
 Cell Press, 2008.
-
 :::
 
 There are two main competing types of microarrays: cDNA and oligonucleotide
@@ -1178,7 +1208,9 @@ low expression levels, as they do not provide enough fluorescence
 signal. Data normalization is therefore also an important step, to remove
 non-relevant variation between different microarray measurements. For cDNA
 microarrays, careful experimental design - deciding which samples to compare
-on the same array - is also essential. Given the introduction of RNAseq
+on the same array - is also essential. 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0ATUjAxNf6U" title="DNA Microarray Methodology" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ##### Repositories
 
@@ -1407,23 +1439,34 @@ presence/absence and levels of proteins) and functional proteomics
 
 #### Quantitative proteomics
 
-<!--- FIGURE OF WESTERN BLOT + SDS PAGE GEL --->
-
 ##### Blots and gels
 
-As for DNA, gels are traditional means to measure the presence/absence of
-proteins (Western blots), denaturing proteins, tagging proteins of interest
-with a specific labeled antibody and separating them by size (molecular
-weight).  After separation, the labeled antibodies can be imaged and used to
-infer presence (and to some extent, level) of the protein of interest.  2D
-versions are also used, that separate proteins by both size and isoelectric
-point or pH value.  Such experiments can be repeated on different samples to
-look for spots with different intensities, that may point to expression
-level differences.  One would still have to perform extract these spots and
-perform further measurements to learn more about these proteins, such as
-their sequence. One method of sequencing proteins is Edman degradation, but
-this is limited to short peptides (~30 amino acids) and requires large
-amounts of starting material.
+:::{figure} images/Week5/w5bf5.png
+:alt: Western blot and 2D gel
+:align: center
+:name: w5bf5
+An example Western blot (left) and two 2D gels (right), separating proteins
+found in two different strains of *Brucella*. Investigating the difference
+between the two figures on the right can give insight in what proteins are
+differentially expressed between the two strains. Taken from: G. Wareth, 
+M. Pletz, H. Neubauer, J. Murugaiyan, “[Proteomics of Brucella: technologies and their applications for basic
+research and medical microbiology](https://www.mdpi.com/2076-2607/8/5/766)”, 
+*Microorganisms* 8(5):766, 2020.
+:::
+
+As for DNA, gels ({numref}`w5bf5`) are traditional means to measure the
+presence/absence of proteins (Western blots), denaturing proteins, tagging
+proteins of interest with a specific labeled antibody and separating them by
+size (molecular weight).  After separation, the labeled antibodies can be
+imaged and used to infer presence (and to some extent, level) of the protein
+of interest.  2D versions are also used, that separate proteins by both size
+and isoelectric point or pH value.  Such experiments can be repeated on
+different samples to look for spots with different intensities, that may
+point to expression level differences.  One would still have to perform
+extract these spots and perform further measurements to learn more about
+these proteins, such as their sequence.  One method of sequencing proteins
+is Edman degradation, but this is limited to short peptides (~30 amino
+acids) and requires large amounts of starting material.
 
 ##### Protein arrays
 
@@ -1436,7 +1479,15 @@ specific interactions.
 
 ##### Mass spectrometry
 
-<!--- TODO: FIGURES OF MAIN MS SETUPS (NAT REV DRUG DISC 2003, SEE SLIDES) + MS/MS --->
+:::{figure} images/Week5/w5bf10.png
+:alt: Three mass spectrometry setups
+:align: center
+:name: w5bf10
+Three mass spectrometry setups, from top to bottom: time-of-flight, 
+sector field and quadrupole. Taken from: G.L. Glish, R.W. Vachet, 
+[“The basics of mass spectrometry in the twenty-first century”](https://www.nature.com/articles/nrd1011)
+*Nature Reviews Drug Discovery* 2:140-150, 2003.
+:::
 
 Currently the most widely used technology for proteomics (and metabolomics)
 is mass spectrometry (MS).  MS devices have been in constant development and
@@ -1454,12 +1505,20 @@ ion.
 
 For each step, different technologies are available which are best suited to
 detection of specific mixtures, compounds of interest (proteins, metabolites),
-and compound size ranges. Figure X illustrates a number of widely used
+and compound size ranges. {numref}`w5bf10` illustrates a number of widely used
 separation steps, i.e. by measuring time-of-flight or susceptibility to
 deflection by magnetic fields or by tuning an oscillating electrical field
 to allow only specific masses to pass through.
 
-<!--- TODO: FIGURE OF MASS SPECTROGRAM --->
+<iframe width="560" height="420" src="https://www.youtube.com/embed/J-wao0O0_qM" title="Mass Spectrometry MS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+:::{figure} images/Week5/w5bf11.png
+:alt: Example mass spectrum
+:align: center
+:name: w5bf11
+Left: an example mass spectrum measured on toluene. The various peaks
+correspond to fragments of the original molecule (right).
+:::
 
 The output of any metabolomics experiment is a mass spectogram, with m/z
 ratios on the x-axis and peaks indicating how many molecules of a certain
@@ -1473,7 +1532,16 @@ smaller molecules of interest may even have identical masses (e.g.
 isoforms) and so cannot be distinguished, which is particularly hard in
 complex mixtures. A number of approaches try to solve this problem:
 
-<!--- TODO: FIGURE OF SHOTGUN PROTEOMICS LIKE SELZER 6.7 --->
+:::{figure} images/Week5/w5bf12.jpg
+:alt: Schematic overview of shotgun proteomics
+:align: center
+:name: w5bf12
+A schematic overview of shotgun proteomics. Taken from:
+A.I. Nesvizhskii, [“Protein identification by tandem mass spectrometry and
+sequence database searching”](https://link.springer.com/protocol/10.1385/1-59745-275-0:87)
+in: Mass spectrometry data analysis in proteomics 367:87-119, series Methods in
+molecular biology, 2007.
+:::
 
 - Chromatography: moving the sample through a separation column before entering the MS
 device, filled with an inert gas (gas chromatography, GC) or liquid
@@ -1637,7 +1705,25 @@ Comparison of FPKM values between 2 replicates (left) and two conditions (middle
 
 #### Visualization
 
-<!--- TODO: FIGURE WITH HEATMAP AND PCA PLOT --->
+:::{figure} images/Week5/w5bf6.png
+:alt: PCA plot and heatmap of simple bacterial transcriptomics dataset
+:align: center
+:name: w5bf6
+Visualization of the expression of 2,135 genes in *Streptococcus parauberis*
+after 1, 2 and 4 hours of growth in two different media, fish serum and
+broth.  Each condition has been measured on 3 replicates.  Left: a Principal
+Component Analysis (PCA) that the major separation (44% of the variance) is
+betwen the two media and that there is clear progression along time.  On
+serum, there is not much expression difference after 2 and 4 hours of
+growth.  Right: a heatmap visualizes the entire dataset, with colors
+indicating z-score normalized expression values: green is low, black is
+medium and red is high expression.  Rows are genes, columns indicate growth
+condition, both are clustered. Taken from
+Y. Lee, N. Kim, H. Roh et al. “[Transcriptome analysis unveils survival strategies of
+*Streptococcus parauberis* against fish
+serum](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0252200)”,
+*PLoS ONE* 16(5):e0252200, 2021.
+:::
 
 While -omics data can be analyzed in for example Microsoft Excel, it is very
 hard to make sense of a data matrix with tens of thousands of genes and
@@ -1650,18 +1736,29 @@ interesting patterns may be easy to spot. A second approach often used in
 initial data exploration is Principal Component Analysis (PCA), which plots
 samples (or genes) along the main axes of variation in the data. If color or
 markers are added, a PCA plot serves very well to detect outliers and
-groups.
+groups. Both visualizations are illustrated in {numref}`w5bf6`.
 
 #### Differential expression
 
-<!--- TODO: FIGURE WITH T-TEST + FORMULA (SLIDE 38 RECAP) --->
+:::{figure} images/Week5/w5bf7.png
+:alt: T-test
+:align: center
+:name: w5bf7
+The simplest test for differential expression of a gene between two
+conditions is the *t*-test. The *t*-statistic is a measure for the
+difference between the means *x* of two distributions, corrected by the
+uncertainty expressed in terms of their standard deviation *s*. A *p*-value,
+the probability that we find a *t*-statistic as large or larger by chance, 
+can be calculated using the *t*-distribution.
+:::
 
 Perhaps the most widely used analysis on -omics data, the goal here is to
 compare expression levels between two classes, conditions, strains, cell
 types etc.  - for example, healthy vs.  diseased tissue, with or without a
 certain drug, in different growth conditions etc.  The simplest approach is
 to collect a number of replicate measurements under both conditions and, for
-each gene perform a simple statistical test such as the *t*-test.  Each test
+each gene perform a simple statistical test such as the *t*-test
+({numref}`w5bf7`).  Each test
 gives a *p*-value, and genes with a *p*-value below a certain
 threshold, say 5%, could then called significantly differentially expressed. 
 There are two caveats:
@@ -1670,7 +1767,7 @@ There are two caveats:
 threshold of 5% you would still incorrectly call many hundreds to thousands
 genes differentially expressed.  To solve this, *p*-values are generally
 *adjusted* for multiple testing, i.e.  made larger.
-2. If the variation (standard deviation *s* in the figure) is low enough, a
+2. If the variation (standard deviation *s* in {numref}`w5bf7`) is low enough, a
 small difference can become significant even if the actual expression
 difference is small. Therefore, in many experiments an additional
 requirement to select genes is that the fold change is large enough. Often,
@@ -1693,7 +1790,21 @@ but are also used to distinguish different cell types, growth stages etc.
 
 #### Time series analysis
 
-<!--- TODO: FIGURE WITH TIME SERIES --->
+:::{figure} images/Week5/w5bf8.png
+:alt: Transcriptomics of various stages of T-cell development.
+:align: center
+:name: w5bf8
+Transcriptomics of various stages of T-cell development, i.e.  a time
+series analysis.  Left: heatmap of the 446 genes with most variable gene
+expression levels, clustered into 15 clusters.  Right: average expression
+profiles of each cluster show that different groups of genes peak in
+expression in different development stages. These genes may be regulated in
+the same way and be active in similar biological processes. Taken from: 
+W.A.  Dik, K.  Pike-Overzet, F.  Weerkamp et al., [“New insights on human T
+cell development by quantitative T cell receptor gene rearrangement studies
+and gene expression profiling”](https://rupress.org/jem/article/201/11/1715/52356/New-insights-on-human-T-cell-development-by), 
+*Journal of Experimental Medicine* 201(11):1715-1723, 2005.
+:::
 
 Often it is more interesting to follow expression over time rather than
 compare it at one specific timepoint, e.g. when tracking the response to a
@@ -1701,9 +1812,9 @@ drug, a change in growth conditions, regulation of organ development and so
 on. Given the cost of -omics measurements, a major challenge is to select
 optimal time points for sampling, balancing the information obtained with
 the investment. Subsequent analyses include clustering to find similarly
-regulated genes (see below) and more advanced methods that try to identify
+regulated genes (see below and ) and more advanced methods that try to identify
 regulatory interactions by seeing which gene increase/decrease precedes that
-of another (set of) gene(s).
+of another (set of) gene(s). {numref}`w5bf8` provides an example.
 
 #### Clustering
 
@@ -1717,19 +1828,29 @@ also has function F”).  This can help identify genes involved in similar
 processes or pathways.  For samples, it can help identify for example
 disease subtypes, different genotypes etc.  that may be helpful to learn
 about different outcomes.  Clustering is often used to order the rows and
-columns of a heatmap (see above), after which obvious clusters should become
-visible as large color blocks.
+columns of a heatmap (as in {numref}`w5bf6` and {numref}`w5bf8`), after 
+which obvious clusters should become visible as large color blocks.
 
 #### Enrichment
 
-<!--- TODO: FIGURE WITH PART OF GO TREE --->
+:::{figure} images/Week5/w5bf9.png
+:alt: A part of the Gene Ontology
+:align: center
+:name: w5bf9
+An example part of the Gene Ontology (GO), in the biological process category.
+Lower-level terms are specific instantiations of the higher-level ones. In
+this figure, GO terms are colored according to the *p*-value in an
+enrichment test. Taken from: Z. Du, X. Zhou, Y. Ling et al., [“agriGO: a GO analysis toolkit for the agricultural
+community”](http://dx.doi.org/10.1093/nar/gkq310), *Nucleic Acids Research*
+38(S2):W64-70, 2010.
+:::
 
 A final often used analysis is enrichment, in which we use gene functional
 annotation to learn about a set of genes, such as a list of differentially
 expressed genes or a cluster.  The most widely used annotation for genes is
 the Gene Ontology, a structured dictionary of terms that describe the
 molecular functions of genes and their involvement in biological processes
-or cellular components at different levels of detail.  A statistical test
+or cellular components at different levels of detail ({numref}`w5bf9`).  A statistical test
 then assesses how significantly often (more than by chance) we find a
 certain annotaton in our list of genes. Like differential expression, the
 *p*-values produced should be adjusted for multiple testing. The resulting
@@ -1745,5 +1866,6 @@ single-cell and spatial omics analysis, where molecules are measured in
 individual cells or at grid points in tissues, and accompanying developments
 in deep learning that promise to provide foundation models to capitalize on
 the large volumes of -omics data in order to solve specific tasks. The end
-goal, a systems biology simulation of the living cell, is still far from
+goal, [a systems biology simulation of the living
+cell](https://www.wholecellviz.org/viz.php#replication), is still far from
 reality, but may be reached sooner than we now believe possible.
