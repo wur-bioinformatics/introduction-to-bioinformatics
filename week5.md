@@ -20,7 +20,7 @@ Different -ome levels, here illustrated with numbers for *Arabidopsis thaliana*.
 >
 > (chiefly biology) Forms nouns meaning “a study of the totality of something”.
 
-This chapter discusses what we call -omics measurements: genomics,
+This chapter discusses what we call omics measurements: genomics,
 transcriptomics (gene expression), proteomics and metabolomics.  Omics
 technologies measure the presence, levels and/or interactions of different
 types of molecules in the cell, all molecules at once (see {numref}`w5f0`). 
@@ -41,7 +41,7 @@ after sequencing the first genomes it became clear that the DNA tells only
 part of the story: the expression of genes and proteins and their
 interactions in processes within and between cells govern how cells and
 organisms behave.  This led to research in functional genomics and systems
-biology, for which computational data analysis of other -omics level data
+biology, for which computational data analysis of other omics level data
 became indispensable.
 
 Below, genomics will first be introduced along with the most relevant
@@ -372,7 +372,7 @@ base.
 Oxford Nanopore MinION sequencer (left) and a nanopore with DNA and the generated signal (right)
 :::
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/RcP85JHLmnI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe align="middle" width="560" height="315" src="https://www.youtube.com/embed/RcP85JHLmnI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 The newest technology is nanopore sequencing, currently provided by Oxford
 Nanopore on the MinION and related devices ({numref}`w5f10`).  This
@@ -930,17 +930,17 @@ immediately following the completion of the human genome: the ENCODE
 (“Encyclopedia of DNA elements”) project (2005-2015), aiming to identify all
 functional parts of the genome.
 
-#### The role of -omics data
+#### The role of omics data
 
 Functional genomics research mostly measures cellular activities in terms of
 the expression of genes, proteins and metabolites, and the interaction
 between these molecules. When performed at a cell-wide level, i.e.
 attempting to measure all molecules of a certain type at once, these are
-called *-omics* measurements. The technology to measure such -omics data is
+called *omics* measurements. The technology to measure such omics data is
 usually *high-throughput*, which means that little manual work or repetition
-of experiments are needed. We generally distinguish five main levels of -omics
-measurements as illustrated in {numref}`w5f0`, although many new -omics terms are
-still being introduced. Next to genomics, the following -omics measure:
+of experiments are needed. We generally distinguish five main levels of omics
+measurements as illustrated in {numref}`w5f0`, although many new omics terms are
+still being introduced. Next to genomics, the following omics measure:
 - Epigenomics: all epigenetic modifications of the genome
 - Transcriptomics: the expression levels of all genes
 - Proteomics: the presence/quantity of all proteins 
@@ -952,7 +952,7 @@ bacterial/fungal/viral communities such as found in the human gut and in the soi
 As a kind of ‘meta’ analysis, this has been labeled metagenomics,
 metatranscriptomics etc.
 
-The introduction of -omics technologies over the last 25 years has broadened
+The introduction of omics technologies over the last 25 years has broadened
 the field of bioinformatics and made it increasingly relevant to all areas
 of biology. Very large measurement datasets are now routinely produced and
 should be cleaned and checked for quality, processed.
@@ -962,15 +962,15 @@ visualization of the data is essential to allow biologists to infer
 biological functions. Bioinformatics delivers the tools and databases to
 support all these steps.
 
-Even though -omics measurements provide highly detailed overviews of
+Even though omics measurements provide highly detailed overviews of
 cellular states and reactions to perturbations, there are a number of
 important limitations:
-- Cost: -omics devices are often expensive to acquire, and each experiment requires
+- Cost: omics devices are often expensive to acquire, and each experiment requires
 labour and consumables. Experimental costs (time, money) are therefore often
-limiting, especially when studying multiple -omics levels or investigating
+limiting, especially when studying multiple omics levels or investigating
 the effects of all combinations of interventions.
 - Technical noise: all measurements come with inherent variation and
-measurement noise.  Moreover, -omics measurements are often indirect,
+measurement noise.  Moreover, omics measurements are often indirect,
 measuring the effects of certain molecules or interactions through other
 readouts (for example, by imaging fluorescent markers, or by translating RNA
 to DNA for subsequent sequencing) or measuring only parts of molecules. Such
@@ -983,7 +983,7 @@ environmental influence. Similarly, molecule levels and interactions are
 dynamics: molecules are produced, transported, modified and degraded
 continuously, and a measurement at a specific time point is only a
 snapshot.
-- Bias and coverage: most -omics technologies are most efficient for
+- Bias and coverage: most omics technologies are most efficient for
 measuring specific types of molecules or interactions, or work best for
 certain ranges of levels.  It is often also hard to take the many different
 functional forms of a molecule, such as modified proteins, into account. 
@@ -993,8 +993,8 @@ analyzing the resulting data; in particular, *not* measuring something does
 not mean it is not there.
 
 Typically, functional genomics experiments then involve studying the effect
-of genetic variation on certain -omics levels.  Such variation can be
-natural, for example comparing -omics data measured on two organisms with
+of genetic variation on certain omics levels.  Such variation can be
+natural, for example comparing omics data measured on two organisms with
 known (limited) genetic differences due to evolution.  It can also be
 experimentally introduced, for example by:
 - changing the environment (temperature, nutrients, drugs etc.)
@@ -1003,11 +1003,11 @@ experimentally introduced, for example by:
 - knocking down genes (removing the transcripts)
 - knocking in genes (introducing new genes)  
 
-The effects of such interventions at a specific -omics level then provide
+The effects of such interventions at a specific omics level then provide
 information on the function of the manipulated gene(s).  Ideally we would
-measure different -omics levels at the same time (multi-omics) and even in
+measure different omics levels at the same time (multi-omics) and even in
 the same sample (paired omics), but this is often experimentally too complex
-and costly. Some -omics technologies are more acccessible than
+and costly. Some omics technologies are more acccessible than
 others, in terms of cost, data quality and interpretation and are therefore
 most widely used - in particular, gene expression levels (transcriptomics)
 are often measured and assumed to reflect the overall state of a cell.
@@ -1015,7 +1015,7 @@ However, as discussed below, we should be careful with this.
 
 #### From functional genomics to systems biology
 
-Where functional genomics uses -omics measurements to learn about the role
+Where functional genomics uses omics measurements to learn about the role
 of genes and proteins in the cell, individual experiments and measurements
 generally only provide individual pieces of the puzzle, which often do not
 make much sense without understanding other cellular processes. Recognizing
@@ -1039,7 +1039,7 @@ Eventually, the hope of systems biology is to arrive at systems-level
 understanding of life that will allow us to simulate the effects of
 interventions (mutations, drug treatments etc.) or even (re)design genes and
 proteins to improve certain behaviour, such as production levels of desired
-compounds in biotechnology. While we still have a long way to go, -omics
+compounds in biotechnology. While we still have a long way to go, omics
 data analysis is an essential element in systems biology.
 
 ### Transcriptomics
@@ -1522,7 +1522,7 @@ correspond to fragments of the original molecule (right).
 
 The output of any metabolomics experiment is a mass spectogram, with m/z
 ratios on the x-axis and peaks indicating how many molecules of a certain
-mass have been detected (Figure X).  In theory, if a database of known
+mass have been detected ({numref}`w5bf11`).  In theory, if a database of known
 molecule structures (e.g.  proteins or peptides) and their calculated masses
 would be available, one could look up each mass and identify the
 corresponding molecule.  A major challenge in interpreting such a
@@ -1531,17 +1531,6 @@ certain peak can still be caused by many different types of molecules.  Some
 smaller molecules of interest may even have identical masses (e.g. 
 isoforms) and so cannot be distinguished, which is particularly hard in
 complex mixtures. A number of approaches try to solve this problem:
-
-:::{figure} images/Week5/w5bf12.jpg
-:alt: Schematic overview of shotgun proteomics
-:align: center
-:name: w5bf12
-A schematic overview of shotgun proteomics. Taken from:
-A.I. Nesvizhskii, [“Protein identification by tandem mass spectrometry and
-sequence database searching”](https://link.springer.com/protocol/10.1385/1-59745-275-0:87)
-in: Mass spectrometry data analysis in proteomics 367:87-119, series Methods in
-molecular biology, 2007.
-:::
 
 - Chromatography: moving the sample through a separation column before entering the MS
 device, filled with an inert gas (gas chromatography, GC) or liquid
@@ -1556,9 +1545,20 @@ places, we can get more information from the combination of the overall mass
 and the masses of the fragments in breaks into.
 - Shotgun proteomics: specifically for proteins, a protocol in which an enzyme is first used to
 cut the protein at specific places (for example, trypsin cleaves the protein
-into peptides at arginines and lysines) (Figure X). The peptide masses are then
+into peptides at arginines and lysines) ({numref}`w5bf12`). The peptide masses are then
 measured and compared to the mass spectra of predicted peptides resulting from a
 database of known proteins, to identify the protein likely being measured.  
+
+:::{figure} images/Week5/w5bf12.jpg
+:alt: Schematic overview of shotgun proteomics
+:align: center
+:name: w5bf12
+A schematic overview of shotgun proteomics. Taken from:
+A.I. Nesvizhskii, [“Protein identification by tandem mass spectrometry and
+sequence database searching”](https://link.springer.com/protocol/10.1385/1-59745-275-0:87)
+in: Mass spectrometry data analysis in proteomics 367:87-119, series Methods in
+molecular biology, 2007.
+:::
 
 More complex protocols have also been developed to compare two protein
 samples in a single experiment, for example by adding known weighgs (using natural isotopes or
@@ -1566,9 +1566,15 @@ modified amino acids) and investigating relative differences in shifted mass spe
 
 #### Functional proteomics
 
-<!--- FIGURE Y2H/TAP --->
-
-<!--- FIGURE PROTEIN INTERACTION NETWORK? --->
+:::{figure} images/Week5/w5bf13.png
+:alt: Experimental protein interaction detection
+:align: center
+:name: w5bf13
+Experimental methods to detect proteins. Top: high-throughput, bottom:
+low-throughput. Taken from: P. Aloy, R.B. Russell, 
+[“Structural systems biology: modelling protein interactions”](https://www.nature.com/articles/nrm1859), 
+*Nature Reviews Molecular Cell Biology* 7:188-197, 2006.
+:::
 
 Next to protein levels, we are also interested in what proteins do in the
 cell: their functions and interactions.  Many protocols and analyses have
@@ -1581,7 +1587,8 @@ cannot replace experimental validation.
 For protein-DNA interaction, the already mentioned ChIPseq method is widely
 used to learn how proteins modify DNA, initiate replication and repair and
 regulate expression as transcription factors or enhancers. For
-protein-protein interactions, the main high-throughput protocols are:
+protein-protein interactions, the main high-throughput protocols ({numref}`w5bf13`,
+top) are:
 
 - Yeast two-hybrid, in which one of the two proteins is attached to a DNA-binding
   domain and the other to an expression activating domain. Only if the two
@@ -1591,12 +1598,26 @@ expressed.
 “bait” protein are purified and subsequently measured using MS.
 
 These protocols are noisy and have many false positives and negatives, so
-further experimental validation is often necessary.  Nevertheless, like
-transcriptomics data, “interactomics” measurements are stored in databases,
-such as [IntAct]{https://www.ebi.ac.uk/intact/home} and can be used to
-obtain insights into cell-wide protein interaction networks.  Groups of
-highly connected proteins, i.e.  with many interactions, can indicate e.g. 
-protein complexes or signalling pathways within or between cells.
+further experimental validation using low-throughput methods, essentially
+measuring the structure of protein complexes, is often necessary
+({numref}`w5bf13`, bottom).  Nevertheless, like transcriptomics data,
+“interactomics” measurements are stored in databases, such as
+[IntAct]{https://www.ebi.ac.uk/intact/home} and can be used to obtain
+insights into cell-wide protein interaction networks ({numref}`w5bf14`). 
+Groups of highly connected proteins, i.e.  with many interactions, can
+indicate e.g.  protein complexes or signalling pathways within or between
+cells.
+
+:::{figure} images/Week5/w5bf14.jpg
+:alt: Example protein interaction network
+:align: center
+:name: w5bf14
+A protein interaction network (4,927 proteins, 209,912 interactions found by
+tandem affinity purification) for *Drosophila melanogaster*, with
+clusters corresponding to protein complexes indicated in color. Taken from: 
+K.G. Guruharsha, J.-F. Rual, B. Zhai et al., [“A protein complex network of Drosophila melanogaster”](https://doi.org/10.1016/j.cell.2011.08.047),
+*Cell* 147(3):690-703, 2011.
+:::
 
 The methods mentioned measure *physical* interactions between proteins, as
 opposed to *functional* interactions.  Such interactions occur when two
@@ -1610,7 +1631,14 @@ etc.  [STRING]{https://string-db.org/} and
 
 ### Metabolomics
 
-<!--- METABOLIC NETWORK (KEGG, BOEHRINGER?) --->
+:::{figure} images/Week5/w5bf15.png
+:alt: Metabolic network
+:align: center
+:name: w5bf15
+The Roche biochemical pathway chart: global overview of metabolic processes
+(left) and a close-up of part of the citrate cycle (right). Obtained from
+[biochemical-pathways.com](http://biochemical-pathways.com/#/map/1).
+:::
 
 Many cells produce a wide range of metabolites - small compounds.  Many of
 these, so-called primary metabolites, serve as building blocks for essential
@@ -1628,7 +1656,8 @@ For measuring metabolites, mostly the MS technologies described above are
 employed, in particular GC-MS and LC-MS.  As the range of metabolite sizes
 and characteristics is large and many metabolites are still unknown,
 identifying them from mass spectra is still very challenging.  An advantage
-is that known metabolic reactions, collected in metabolic networks, can
+is that known metabolic reactions, collected in metabolic networks
+({numref}`w5bf15`), can
 support systems biology approaches, specifically in microbes.
 
 ### Phenomics
@@ -1643,7 +1672,7 @@ scientific areas, including medicine.
 
 The set of potential phenotypes for different organisms is enormous, and
 there is no standardized approach to phenomics as there is for the other
--omics levels. Exceptions include structured databases of human diseases such as
+omics levels. Exceptions include structured databases of human diseases such as
 [MalaCards]{https://www.malacards.org/}, and of genetic disorders such as
 [OMIM]{https://www.omim.org/}. Similar approaches are starting to find their
 way into other areas of biology (ecology, plant development and breeding,
@@ -1725,7 +1754,7 @@ serum](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0252200
 *PLoS ONE* 16(5):e0252200, 2021.
 :::
 
-While -omics data can be analyzed in for example Microsoft Excel, it is very
+While omics data can be analyzed in for example Microsoft Excel, it is very
 hard to make sense of a data matrix with tens of thousands of genes and
 dozens to hundreds of samples. It is therefore wise to first use methods to
 visualize or summarize the data to see whether major patterns or outliers
@@ -1752,7 +1781,7 @@ the probability that we find a *t*-statistic as large or larger by chance,
 can be calculated using the *t*-distribution.
 :::
 
-Perhaps the most widely used analysis on -omics data, the goal here is to
+Perhaps the most widely used analysis on omics data, the goal here is to
 compare expression levels between two classes, conditions, strains, cell
 types etc.  - for example, healthy vs.  diseased tissue, with or without a
 certain drug, in different growth conditions etc.  The simplest approach is
@@ -1809,7 +1838,7 @@ and gene expression profiling”](https://rupress.org/jem/article/201/11/1715/52
 Often it is more interesting to follow expression over time rather than
 compare it at one specific timepoint, e.g. when tracking the response to a
 drug, a change in growth conditions, regulation of organ development and so
-on. Given the cost of -omics measurements, a major challenge is to select
+on. Given the cost of omics measurements, a major challenge is to select
 optimal time points for sampling, balancing the information obtained with
 the investment. Subsequent analyses include clustering to find similarly
 regulated genes (see below and ) and more advanced methods that try to identify
@@ -1859,13 +1888,13 @@ higher level than that of individual genes.
 
 ### Outlook
 
-This section of the reader on -omics data analysis is likely the most prone
+This section of the reader on omics data analysis is likely the most prone
 to obsolescence.  We have only touched upon or even left out recent
 developments in single-molecule measurements of DNA, RNA and proteins, of
 single-cell and spatial omics analysis, where molecules are measured in
 individual cells or at grid points in tissues, and accompanying developments
 in deep learning that promise to provide foundation models to capitalize on
-the large volumes of -omics data in order to solve specific tasks. The end
+the large volumes of omics data in order to solve specific tasks. The end
 goal, [a systems biology simulation of the living
 cell](https://www.wholecellviz.org/viz.php#replication), is still far from
 reality, but may be reached sooner than we now believe possible.
