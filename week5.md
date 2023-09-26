@@ -933,7 +933,7 @@ functional parts of the genome.
 #### The role of omics data
 
 Functional genomics research mostly measures cellular activities in terms of
-the expression of genes, proteins and metabolites, and the interaction
+the abundance of genes, proteins and metabolites, and the interaction
 between these molecules. When performed at a cell-wide level, i.e.
 attempting to measure all molecules of a certain type at once, these are
 called *omics* measurements. The technology to measure such omics data is
@@ -1427,7 +1427,7 @@ variants can be found in a cell.
 membrane; such structures often have to be removed to allow accurate measurements.
 - Proteins lack properties that make DNA and RNA easy to multiply (PCR) and measure:
 replication and binding to complementary strands.
-- The dynamic range of protein expression is enormous: some protein
+- The dynamic range of protein abundances is enormous: some protein
 concentrations are a million-fold higher than that of others. This would
 not be a problem if we had a protocol to make copies of low-abundant
 proteins (like PCR for DNA), but such a protocol is not available.
@@ -1462,7 +1462,7 @@ imaged and used to infer presence (and to some extent, level) of the protein
 of interest.  2D versions are also used, that separate proteins by both size
 and isoelectric point or pH value.  Such experiments can be repeated on
 different samples to look for spots with different intensities, that may
-point to expression level differences.  One would still have to perform
+point to abundance differences.  One would still have to perform
 extract these spots and perform further measurements to learn more about
 these proteins, such as their sequence.  One method of sequencing proteins
 is Edman degradation, but this is limited to short peptides (~30 amino
@@ -1625,7 +1625,7 @@ proteins have similar functions - even though they may never actually
 physically interact, for example when they are two alternative transcription
 factors for the same gene.  Such functional interactions can be measured to
 some extent, but are mostly predicted by bioinformatics tools that combine
-various pieces of evidence: literature, sequence similarity, co-expression
+various pieces of evidence: literature, sequence similarity, gene co-expression
 etc.  [STRING]{https://string-db.org/} and
 [GeneMania]{https://genemania.org/} are the most well-known examples.
 
@@ -1688,11 +1688,11 @@ in various ways, to answer different questions. The main approaches
 are:
 - Visualization, to facilitate inspection of experimental outcomes and
   identifying large patterns
-- Differential expression, to compare expression levels between
+- Differential abundance, to compare abundance levels between
 conditions, cell types or strains
 - Time series analysis, to follow changes over time (i.e. time series
 experiments)
-- Clustering, grouping genes or samples based on similarity in expression
+- Clustering, grouping genes or samples based on similarity in abundance
 (e.g. to learn about shared function)
 - Classification, finding which gene(s) are predictive of a certain
 phenotype (e.g. a disease)
@@ -1709,7 +1709,7 @@ technical and biological variation that is not relevant.  As an example,
 RNAseq is often performed as part of an experiment with the aim of finding
 genes responding differently to two or more experimental conditions.  Such
 experiments are set up to exclude as much variation as possible, but there
-will still be differences in expression levels detected that are not the
+will still be differences in abundance levels detected that are not the
 result of the treatment but rather measurement noise.  To distinguish
 clearly between real differences and noise, repeated measures of the same
 condition are important ({numref}`w5f30`).  These are called *replicates*. 
@@ -1719,7 +1719,7 @@ transcripts detected in the samples, for two replicates (left) and two
 different conditions (middle and right).
 
 :::{figure} images/Week5/Fig_30_compare_conditions.svg
-:alt: comparing expression between conditions
+:alt: Comparing expression between conditions
 :align: right
 :name: w5f30
 Difference in expression of gene X between two conditions and two possible distributions the measurement could have come from.
@@ -1767,13 +1767,13 @@ samples (or genes) along the main axes of variation in the data. If color or
 markers are added, a PCA plot serves very well to detect outliers and
 groups. Both visualizations are illustrated in {numref}`w5bf6`.
 
-#### Differential expression
+#### Differential abundance
 
 :::{figure} images/Week5/w5bf7.png
 :alt: T-test
 :align: center
 :name: w5bf7
-The simplest test for differential expression of a gene between two
+The simplest test for differential abundance of a gene between two
 conditions is the *t*-test. The *t*-statistic is a measure for the
 difference between the means *x* of two distributions, corrected by the
 uncertainty expressed in terms of their standard deviation *s*. A *p*-value,
@@ -1782,7 +1782,7 @@ can be calculated using the *t*-distribution.
 :::
 
 Perhaps the most widely used analysis on omics data, the goal here is to
-compare expression levels between two classes, conditions, strains, cell
+compare abundance levels between two classes, conditions, strains, cell
 types etc.  - for example, healthy vs.  diseased tissue, with or without a
 certain drug, in different growth conditions etc.  The simplest approach is
 to collect a number of replicate measurements under both conditions and, for
@@ -1797,7 +1797,7 @@ threshold of 5% you would still incorrectly call many hundreds to thousands
 genes differentially expressed.  To solve this, *p*-values are generally
 *adjusted* for multiple testing, i.e.  made larger.
 2. If the variation (standard deviation *s* in {numref}`w5bf7`) is low enough, a
-small difference can become significant even if the actual expression
+small difference can become significant even if the actual abundance
 difference is small. Therefore, in many experiments an additional
 requirement to select genes is that the fold change is large enough. Often,
 this is expressed as log2(fold change), where +1 means that a gene is 2x
@@ -1810,7 +1810,7 @@ reader.
 
 #### Classification
 
-Classification is related to differential expression analysis, in that it
+Classification is related to differential abundance analysis, in that it
 tries to find genes that best explain the difference between conditions. 
 However, here the goal is actually to predict the condition of new sample
 based on a limited set of gene expression levels, as accurately as possible. 
@@ -1835,7 +1835,7 @@ and gene expression profiling”](https://rupress.org/jem/article/201/11/1715/52
 *Journal of Experimental Medicine* 201(11):1715-1723, 2005.
 :::
 
-Often it is more interesting to follow expression over time rather than
+Often it is more interesting to follow abundance over time rather than
 compare it at one specific timepoint, e.g. when tracking the response to a
 drug, a change in growth conditions, regulation of organ development and so
 on. Given the cost of omics measurements, a major challenge is to select
@@ -1848,12 +1848,13 @@ of another (set of) gene(s). {numref}`w5bf8` provides an example.
 #### Clustering
 
 Clustering methods attempt to find groups of genes that have similar
-expression profiles over all samples, or (vice versa) samples that have
-similar expression profiles over all genes.  We call such genes or samples
-co-expressed.  Based on the guilt-by-association principle, co-expression
-can be used to learn about the function of genes (“if the expression of gene
+abundance profiles over all samples, or (vice versa) samples that have
+similar abundance profiles over all genes.  We call such genes or samples
+co-expressed.  Based on the guilt-by-association principle, correlation
+(also known as ‘co-expression’ when applied to transcriptomics)
+can be used to learn about the function of genes - “if the expression of gene
 A is similar to that of gene B with a certain function F, then gene A likely
-also has function F”).  This can help identify genes involved in similar
+also has function F”.  This can help identify genes involved in similar
 processes or pathways.  For samples, it can help identify for example
 disease subtypes, different genotypes etc.  that may be helpful to learn
 about different outcomes.  Clustering is often used to order the rows and
@@ -1881,7 +1882,7 @@ the Gene Ontology, a structured dictionary of terms that describe the
 molecular functions of genes and their involvement in biological processes
 or cellular components at different levels of detail ({numref}`w5bf9`).  A statistical test
 then assesses how significantly often (more than by chance) we find a
-certain annotaton in our list of genes. Like differential expression, the
+certain annotaton in our list of genes. Like differential abundance, the
 *p*-values produced should be adjusted for multiple testing. The resulting
 significant annotations can help interpret the outcome of an experiment at a
 higher level than that of individual genes.
