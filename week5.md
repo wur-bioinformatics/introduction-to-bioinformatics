@@ -23,7 +23,7 @@ Different -ome levels, here illustrated with numbers for *Arabidopsis thaliana*.
 This chapter discusses what we call omics measurements: genomics,
 transcriptomics (gene expression), proteomics and metabolomics.  Omics
 technologies measure the presence, levels and/or interactions of different
-types of molecules in the cell, all molecules at once (see {numref}`w5f0`). 
+types of molecules in the cell, obtaining data for all molecules at once (see {numref}`w5f0`). 
 Genomics focuses on the entirety of information that can be derived from
 genomes (structure, function, evolution, etc.).  Transcriptomics, proteomics
 and metabolomics focus on gene expression, protein and metabolite levels,
@@ -38,11 +38,11 @@ the first decades of bioinformatics, leading to the development of the
 databases and tools for sequence alignment, phylogeny and sequence-based
 prediction of structure that were discussed in earlier chapters.  However,
 after sequencing the first genomes it became clear that the DNA tells only
-part of the story: the expression of genes and proteins and their
+part of the entire story: the expression of genes and proteins and their
 interactions in processes within and between cells govern how cells and
 organisms behave.  This led to research in functional genomics and systems
 biology, for which computational data analysis of other omics level data
-became indispensable.
+have become indispensable.
 
 Below, genomics will first be introduced along with the most relevant
 technology, sequencing, which is also used for transcriptomics.  This will
@@ -1640,12 +1640,12 @@ The Roche biochemical pathway chart: global overview of metabolic processes
 [biochemical-pathways.com](http://biochemical-pathways.com/#/map/1).
 :::
 
-Many cells produce a wide range of metabolites - small compounds.  Many of
+Many cells produce a wide range of metabolites - small molecules or compounds that are part of metabolism.  Many of
 these, so-called primary metabolites, serve as building blocks for essential
 molecules such as DNA and proteins and provide energy for reactions.  Other
 metabolites, specialized metabolites, function in many organisms for
 communication, regulation (hormones), defense (antibiotics) and symbiosis. 
-Some metabolites also regulate relevant phenotypes.  As such, measuring the
+Some metabolites also regulate relevant phenotypes.  As such, solving the structures of all molecules circulating in cells and measuring the
 concentrations of metabolites as so-called “end points” of cellular
 organization seems highly relevant in studying growth and development of
 organisms and communities.  Metabolomics is also important in medicine and
