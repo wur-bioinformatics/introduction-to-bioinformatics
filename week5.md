@@ -869,6 +869,7 @@ a, b, Díaz et al.  (2012); c, Li et al.  (2012), from
 
 :::{figure} images/Week5/w5bf2.svg
 :alt: Different human cell types
+:width: 400px
 :align: center
 :name: w5bf2
 
@@ -916,7 +917,7 @@ Health](http://commonfund.nih.gov/epigenomics/figure.aspx).
 
 A part of the explanation lies in what is called *epigenetics*,
 modifications of the genome that do not change the DNA sequence but do
-influence gene expression [Box 5](w5box5). There are other mechanisms besides
+influence gene expression ([Box 5](w5box5)). There are other mechanisms besides
 epigenetics that control how genes are expressed, and how the resulting
 proteins eventually fulfill their function in the cell.  The most well-known
 ones are interactions between proteins and DNA (transcription factors and
@@ -1553,12 +1554,13 @@ database of known proteins, to identify the protein likely being measured.
 :alt: Schematic overview of shotgun proteomics
 :align: center
 :name: w5bf12
-A schematic overview of shotgun proteomics. Taken from:
-A.I. Nesvizhskii, [“Protein identification by tandem mass spectrometry and
-sequence database searching”](https://link.springer.com/protocol/10.1385/1-59745-275-0:87)
-in: Mass spectrometry data analysis in proteomics 367:87-119, series Methods in
-molecular biology, 2007.
+A schematic overview of shotgun proteomics. Taken from: 
+A.I. Nesvizhskii, [“Protein identification by tandem mass 
+spectrometry and sequence database searching”](https://link.springer.com/protocol/10.1385/1-59745-275-0:87)
+in: Mass spectrometry data analysis in proteomics 367:87-119, 
+series Methods in molecular biology, 2007.
 :::
+
 
 More complex protocols have also been developed to compare two protein
 samples in a single experiment, for example by adding known weighgs (using natural isotopes or
