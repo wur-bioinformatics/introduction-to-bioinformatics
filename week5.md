@@ -1150,8 +1150,8 @@ The first widely used high-throughput method to study expression of genes
 was the microarray.  DNA microarrays are based on the principle that
 complementary strands of DNA tend to bind to each other.  Microarrays are
 typically flat surfaces (slides of glass or some other material) that
-contain microscopic spots of single-strand DNA sequences - so-called probes
-- fixated at known locations, ranging from a few thousand to millions.  Each
+contain microscopic spots of single-strand DNA sequences - so-called probes - 
+fixated at known locations, ranging from a few thousand to millions.  Each
 DNA sequence is chosen to as best as possible represent a specific gene,
 i.e.  a unique subsequence.  This means that microarrays can only be
 designed to detect known genes and are organism-specific, and that gene
