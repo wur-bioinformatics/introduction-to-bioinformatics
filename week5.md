@@ -1288,7 +1288,8 @@ measurement of transcripts compared to microarrays:
 
 ❌ Produces large raw datasets.
 
-❌ Different methods for analysis exist; there is not one standard protocol.
+❌ Analysis is less straightforward than for microarray data; there is not
+yet one standard protocol.
 
 ##### Mapping
 
