@@ -1470,9 +1470,9 @@ these proteins, such as their sequence.  One method of sequencing proteins
 is Edman degradation, but this is limited to short peptides (~30 amino
 acids) and requires large amounts of starting material.
 
-##### Protein arrays
+##### Protein microarrays
 
-Like microarrays, arrays have also been developed for proteins.  This
+Like DNA microarrays, arrays have also been developed for proteins.  This
 requires antibodies for all proteins that have to be distinguished, which
 makes designing and performing a protein microarray experiment far more
 cumbersome than a DNA microarray experiment.  Arrays are therefore mostly
@@ -1522,7 +1522,7 @@ Left: an example mass spectrum measured on toluene. The various peaks
 correspond to fragments of the original molecule (right).
 :::
 
-The output of any metabolomics experiment is a mass spectogram, with m/z
+The output of any MS experiment is a mass spectogram, with m/z
 ratios on the x-axis and peaks indicating how many molecules of a certain
 mass have been detected ({numref}`w5bf11`).  In theory, if a database of known
 molecule structures (e.g.  proteins or peptides) and their calculated masses
@@ -1549,7 +1549,10 @@ and the masses of the fragments in breaks into.
 cut the protein at specific places (for example, trypsin cleaves the protein
 into peptides at arginines and lysines) ({numref}`w5bf12`). The peptide masses are then
 measured and compared to the mass spectra of predicted peptides resulting from a
-database of known proteins, to identify the protein likely being measured.  
+database of known proteins, to identify the protein likely being measured.
+This approach can also be used to measure posttranslation modifications,
+as they lead to small (known) shifts in the measured spectra for the modified
+peptides.
 
 :::{figure} images/Week5/w5bf12.jpg
 :alt: Schematic overview of shotgun proteomics
@@ -1561,7 +1564,6 @@ spectrometry and sequence database searching”](https://link.springer.com/proto
 in: Mass spectrometry data analysis in proteomics 367:87-119, 
 series Methods in molecular biology, 2007.
 :::
-
 
 More complex protocols have also been developed to compare two protein
 samples in a single experiment, for example by adding known weighgs (using natural isotopes or
@@ -1858,7 +1860,8 @@ co-expressed.  Based on the guilt-by-association principle, correlation
 can be used to learn about the function of genes - “if the expression of gene
 A is similar to that of gene B with a certain function F, then gene A likely
 also has function F”.  This can help identify genes involved in similar
-processes or pathways.  For samples, it can help identify for example
+processes or pathways: co-expressed genes can be co-regulated, code for
+interacting proteins etc. For samples, it can help identify for example
 disease subtypes, different genotypes etc.  that may be helpful to learn
 about different outcomes.  Clustering is often used to order the rows and
 columns of a heatmap (as in {numref}`w5bf6` and {numref}`w5bf8`), after 
