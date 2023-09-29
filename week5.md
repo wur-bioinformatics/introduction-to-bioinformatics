@@ -23,7 +23,7 @@ Different -ome levels, here illustrated with numbers for *Arabidopsis thaliana*.
 This chapter discusses what we call omics measurements: genomics,
 transcriptomics (gene expression), proteomics and metabolomics.  Omics
 technologies measure the presence, levels and/or interactions of different
-types of molecules in the cell, all molecules at once (see {numref}`w5f0`). 
+types of molecules in the cell, obtaining data for all molecules at once (see {numref}`w5f0`). 
 Genomics focuses on the entirety of information that can be derived from
 genomes (structure, function, evolution, etc.).  Transcriptomics, proteomics
 and metabolomics focus on gene expression, protein and metabolite levels,
@@ -38,11 +38,11 @@ the first decades of bioinformatics, leading to the development of the
 databases and tools for sequence alignment, phylogeny and sequence-based
 prediction of structure that were discussed in earlier chapters.  However,
 after sequencing the first genomes it became clear that the DNA tells only
-part of the story: the expression of genes and proteins and their
+part of the entire story: the expression of genes and proteins and their
 interactions in processes within and between cells govern how cells and
 organisms behave.  This led to research in functional genomics and systems
 biology, for which computational data analysis of other omics level data
-became indispensable.
+have become indispensable.
 
 Below, genomics will first be introduced along with the most relevant
 technology, sequencing, which is also used for transcriptomics.  This will
@@ -866,6 +866,7 @@ a, b, Díaz et al.  (2012); c, Li et al.  (2012), from
 
 :::{figure} images/Week5/w5bf2.svg
 :alt: Different human cell types
+:width: 400px
 :align: center
 :name: w5bf2
 
@@ -913,7 +914,7 @@ Health](http://commonfund.nih.gov/epigenomics/figure.aspx).
 
 A part of the explanation lies in what is called *epigenetics*,
 modifications of the genome that do not change the DNA sequence but do
-influence gene expression [Box 5](w5box5). There are other mechanisms besides
+influence gene expression ([Box 5](w5box5)). There are other mechanisms besides
 epigenetics that control how genes are expressed, and how the resulting
 proteins eventually fulfill their function in the cell.  The most well-known
 ones are interactions between proteins and DNA (transcription factors and
@@ -1151,8 +1152,8 @@ The first widely used high-throughput method to study expression of genes
 was the microarray.  DNA microarrays are based on the principle that
 complementary strands of DNA tend to bind to each other.  Microarrays are
 typically flat surfaces (slides of glass or some other material) that
-contain microscopic spots of single-strand DNA sequences - so-called probes
-- fixated at known locations, ranging from a few thousand to millions.  Each
+contain microscopic spots of single-strand DNA sequences - so-called probes - 
+fixated at known locations, ranging from a few thousand to millions.  Each
 DNA sequence is chosen to as best as possible represent a specific gene,
 i.e.  a unique subsequence.  This means that microarrays can only be
 designed to detect known genes and are organism-specific, and that gene
@@ -1291,7 +1292,8 @@ measurement of transcripts compared to microarrays:
 
 ❌ Produces large raw datasets.
 
-❌ Different methods for analysis exist; there is not one standard protocol.
+❌ Analysis is less straightforward than for microarray data; there is not
+yet one standard protocol.
 
 ##### Mapping
 
@@ -1472,9 +1474,9 @@ these proteins, such as their sequence.  One method of sequencing proteins
 is Edman degradation, but this is limited to short peptides (~30 amino
 acids) and requires large amounts of starting material.
 
-##### Protein arrays
+##### Protein microarrays
 
-Like microarrays, arrays have also been developed for proteins.  This
+Like DNA microarrays, arrays have also been developed for proteins.  This
 requires antibodies for all proteins that have to be distinguished, which
 makes designing and performing a protein microarray experiment far more
 cumbersome than a DNA microarray experiment.  Arrays are therefore mostly
@@ -1524,7 +1526,7 @@ Left: an example mass spectrum measured on toluene. The various peaks
 correspond to fragments of the original molecule (right).
 :::
 
-The output of any metabolomics experiment is a mass spectogram, with m/z
+The output of any MS experiment is a mass spectogram, with m/z
 ratios on the x-axis and peaks indicating how many molecules of a certain
 mass have been detected ({numref}`w5bf11`).  In theory, if a database of known
 molecule structures (e.g.  proteins or peptides) and their calculated masses
@@ -1551,17 +1553,20 @@ and the masses of the fragments in breaks into.
 cut the protein at specific places (for example, trypsin cleaves the protein
 into peptides at arginines and lysines) ({numref}`w5bf12`). The peptide masses are then
 measured and compared to the mass spectra of predicted peptides resulting from a
-database of known proteins, to identify the protein likely being measured.  
+database of known proteins, to identify the protein likely being measured.
+This approach can also be used to measure posttranslation modifications,
+as they lead to small (known) shifts in the measured spectra for the modified
+peptides.
 
 :::{figure} images/Week5/w5bf12.jpg
 :alt: Schematic overview of shotgun proteomics
 :align: center
 :name: w5bf12
-A schematic overview of shotgun proteomics. Taken from:
-A.I. Nesvizhskii, [“Protein identification by tandem mass spectrometry and
-sequence database searching”](https://link.springer.com/protocol/10.1385/1-59745-275-0:87)
-in: Mass spectrometry data analysis in proteomics 367:87-119, series Methods in
-molecular biology, 2007.
+A schematic overview of shotgun proteomics. Taken from: 
+A.I. Nesvizhskii, [“Protein identification by tandem mass 
+spectrometry and sequence database searching”](https://link.springer.com/protocol/10.1385/1-59745-275-0:87)
+in: Mass spectrometry data analysis in proteomics 367:87-119, 
+series Methods in molecular biology, 2007.
 :::
 
 More complex protocols have also been developed to compare two protein
@@ -1644,12 +1649,12 @@ The Roche biochemical pathway chart: global overview of metabolic processes
 [biochemical-pathways.com](http://biochemical-pathways.com/#/map/1).
 :::
 
-Many cells produce a wide range of metabolites - small compounds.  Many of
+Many cells produce a wide range of metabolites - small molecules or compounds that are part of metabolism.  Many of
 these, so-called primary metabolites, serve as building blocks for essential
 molecules such as DNA and proteins and provide energy for reactions.  Other
 metabolites, specialized metabolites, function in many organisms for
 communication, regulation (hormones), defense (antibiotics) and symbiosis. 
-Some metabolites also regulate relevant phenotypes.  As such, measuring the
+Some metabolites also regulate relevant phenotypes.  As such, solving the structures of all molecules circulating in cells and measuring the
 concentrations of metabolites as so-called “end points” of cellular
 organization seems highly relevant in studying growth and development of
 organisms and communities.  Metabolomics is also important in medicine and
@@ -1859,7 +1864,8 @@ co-expressed.  Based on the guilt-by-association principle, correlation
 can be used to learn about the function of genes - “if the expression of gene
 A is similar to that of gene B with a certain function F, then gene A likely
 also has function F”.  This can help identify genes involved in similar
-processes or pathways.  For samples, it can help identify for example
+processes or pathways: co-expressed genes can be co-regulated, code for
+interacting proteins etc. For samples, it can help identify for example
 disease subtypes, different genotypes etc.  that may be helpful to learn
 about different outcomes.  Clustering is often used to order the rows and
 columns of a heatmap (as in {numref}`w5bf6` and {numref}`w5bf8`), after 
