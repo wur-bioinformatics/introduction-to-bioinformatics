@@ -953,7 +953,7 @@ metatranscriptomics etc.
 The introduction of omics technologies over the last 25 years has broadened
 the field of bioinformatics and made it increasingly relevant to all areas
 of biology. Very large measurement datasets are now routinely produced and
-should be cleaned and checked for quality, processed.
+should be cleaned, checked for quality and processed.
 Moreover, the data should be stored in databases to make it accessible and
 re-usable for further research. Finally, careful analysis, interpretation and
 visualization of the data is essential to allow biologists to infer
@@ -1046,8 +1046,7 @@ Transcriptomics is concerned with measuring the expression of genes (i.e.
 the levels of transcription of genes on the genome to RNA).  RNA and its
 role in the cell has already been discussed in week 1.  If you want to know
 what other types of RNA exist outside the common mRNA, tRNA and rRNA, read
-[Box 6](w5box6).  This section of the reader mainly focuses on measuring and counting
-transcripts (mRNA).
+[Box 6](w5box6). Here we focus on measuring and counting transcripts (mRNA)
 
 (w5box6)=
 :::{admonition} Box 5: The RNA world
@@ -1087,7 +1086,7 @@ Despite its limitations, we can address a number of very relevant questions
 based on transcriptomics measurements.  Three general analyses will be
 discussed below, but note that to detect relationships between experimental
 conditions and mRNA expression patterns, it is important to be aware what
-can cause variation in mRNA levels.  Some of thease causes may be intended
+can cause variation in mRNA levels.  Some of these causes may be intended
 variation, some will cause noise.
 
 mRNA levels:
@@ -1221,11 +1220,8 @@ While popular in the 1990s and early 2000s, microarrays haves now been
 mostly superseded by RNAseq as a cheaper and better quality alternative (see
 below).  However, there are many microarray samples still available for
 re-use in databases, as submission of measurement data to such databases is
-compulsory upon publication of a scientific paper.  Tthe most well-known
-repositories are the NCBI Gene Expression Omnibus (GEO), with as of
-September 2023 6.7 million samples, and EBI ArrayExpress.  If you are
-interested in a certain question that may be answered using transcriptomics,
-it makes sense to look here first to see what experimental data is already
+compulsory upon publication of a scientific paper.  The most well-known
+repositories are the NCBI Gene Expression Omnibus ([GEO](https://www.ncbi.nlm.nih.gov/geo/)), with as of September 2023 6.7 million samples, and [EBI ArrayExpress](https://www.ebi.ac.uk/biostudies/arrayexpress). If you are interested in a certain question that may be answered using transcriptomics, it makes sense to look here first to see what experimental data is already
 available.
 
 #### RNAseq
@@ -1262,7 +1258,7 @@ dx.doi.org/10.1186/s13059-016-0927-y.
 :name: w5f26a
 Standard RNAseq protocol
 :::
-The standard protocol of an RNAseq experiment is shown in {numref}`w5f26a`.First, all RNA (total RNA) is extracted from a biological sample.  Next, mRNA is selected using a polyT oligo to select RNA with a polyA tail. The RNA is then converted to stable double stranded cDNA. The resulting cDNA library is then sequenced, usually as paired end reads of 100-150bp.  A standard sequencing run results in 30 million or more reads per sample.
+The standard protocol of an RNAseq experiment is shown in {numref}`w5f26a`. First, all RNA (total RNA) is extracted from a biological sample.  Next, mRNA is selected using a polyT oligo to select RNA with a polyA tail. The RNA is then converted to stable double stranded cDNA. The resulting cDNA library is then sequenced, usually as paired end reads of 100-150bp.  A standard sequencing run results in 30 million or more reads per sample.
 
 The read lengths currently used are relatively short and complicated models
 are used to assign reads to exons and isoforms.  New developments in this
@@ -1397,7 +1393,7 @@ After sequencing, the DNA can be mapped against the genome: peaks of mapped
 reads indicate regions where the protein of interest binds.
 - Hi-C, to study 3D proximity of chromosome parts in the nucleus.
 - bisulfite sequencing, to assess methylation of DNA.
-:::{figure} images/Week5/Fig_32_ChipSeq.png
+:::{figure} images/Week5/Fig_32_ChipSeq.jpeg
 :alt: ChIPseq protocol
 :align: right
 :name: w5f32
@@ -1407,13 +1403,13 @@ an antibody, only the protein of interest is selected (the
 immunoprecipitation step), after which the cross-linking is reversed and the
 DNA can be sequenced by PCR (ChIP-PCR) or NGS (ChIPseq).  Similar protocols
 are available for protein-RNA and protein-protein interactions, the latter
-using two antibodies.  From DOI: 10.1677/JOE-08-0526
+using two antibodies.  From [Journal of Endocrinology, 201(1), 1-13](https://doi.org/10.1677/JOE-08-0526)
 :::
 
 ### Proteomics
 
 As mentioned earlier, transcriptomics is widely applied but does not reflect
-the overall cellular state well. The resulting proteins are the workhorses
+the overall cellular state accurately. The resulting proteins are the workhorses
 of the cell, and knowing their concentrations, modifications and
 interactions provides more insight than gene expression can provide.
 Unfortunately, while major advances have been made in proteomics
@@ -1611,7 +1607,7 @@ further experimental validation using low-throughput methods, essentially
 measuring the structure of protein complexes, is often necessary
 ({numref}`w5bf13`, bottom).  Nevertheless, like transcriptomics data,
 “interactomics” measurements are stored in databases, such as
-[IntAct]{https://www.ebi.ac.uk/intact/home} and can be used to obtain
+[IntAct](https://www.ebi.ac.uk/intact/home) and can be used to obtain
 insights into cell-wide protein interaction networks ({numref}`w5bf14`). 
 Groups of highly connected proteins, i.e.  with many interactions, can
 indicate e.g.  protein complexes or signalling pathways within or between
@@ -1635,8 +1631,8 @@ physically interact, for example when they are two alternative transcription
 factors for the same gene.  Such functional interactions can be measured to
 some extent, but are mostly predicted by bioinformatics tools that combine
 various pieces of evidence: literature, sequence similarity, gene co-expression
-etc.  [STRING]{https://string-db.org/} and
-[GeneMania]{https://genemania.org/} are the most well-known examples.
+etc.  [STRING](https://string-db.org/) and
+[GeneMania](https://genemania.org/) are the most well-known examples.
 
 ### Metabolomics
 
@@ -1682,8 +1678,8 @@ scientific areas, including medicine.
 The set of potential phenotypes for different organisms is enormous, and
 there is no standardized approach to phenomics as there is for the other
 omics levels. Exceptions include structured databases of human diseases such as
-[MalaCards]{https://www.malacards.org/}, and of genetic disorders such as
-[OMIM]{https://www.omim.org/}. Similar approaches are starting to find their
+[MalaCards](https://www.malacards.org/), and of genetic disorders such as
+[OMIM](https://www.omim.org/). Similar approaches are starting to find their
 way into other areas of biology (ecology, plant development and breeding,
 animal behaviour), with (standardized) repositories for image, video and tracking 
 data. Reliable, high-throughput phenomics data will prove indispensable to
@@ -1821,10 +1817,7 @@ reader.
 
 Classification is related to differential abundance analysis, in that it
 tries to find genes that best explain the difference between conditions. 
-However, here the goal is actually to predict the condition of new sample
-based on a limited set of gene expression levels, as accurately as possible. 
-Applications are mainly found in medicine, such as diagnosis and prognosis,
-but are also used to distinguish different cell types, growth stages etc.
+However, here the goal is actually to predict the condition of a new (additional) sample based on a limited set of gene expression levels, as accurately as possible. Applications are mainly found in medicine, such as diagnosis and prognosis, but are also used to distinguish different cell types, growth stages etc.
 
 #### Time series analysis
 
