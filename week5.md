@@ -50,6 +50,9 @@ be followed by an introduction to functional genomics and systems biology
 and overviews of transcriptomics, proteomics, metabolomics and phenomics and
 the main types of data analysis involved.
 
+
+
+## Genomics and sequencing
 :::{figure} images/Week5/Fig_01_Centraldogma_nodetails.png
 :alt: Central dogma
 :align: right
@@ -59,9 +62,6 @@ the main types of data analysis involved.
 Information flow in the cell. \
 Credits: [Narayanese at English Wikipedia](https://commons.wikimedia.org/w/index.php?curid=36890617)
 :::
-
-## Genomics and sequencing
-
 DNA is the starting point in the chain of biological information flow.  The
 central dogma of molecular biology was postulated by Francis Crick 1958:
 cellular processes allow information flow away from DNA to RNA and then to
@@ -406,10 +406,6 @@ the International Space Station.
 
 ##### Quality control
 
-As discussed above, sequencing technology is not perfect and errors will be
-present in the output.  Moreover, what we sequence is not always what we
-originally intended to sequence ({numref}`w5f11`).
-
 :::{figure} images/Week5/Fig_11_from_Doc_Picture8.png
 :alt: Sequencing contamination
 :align: right
@@ -419,6 +415,10 @@ Causes for contaminated sequencing \
 samples, using as example the \
 tardigrade and surrounding bacteria
 :::
+As discussed above, sequencing technology is not perfect and errors will be
+present in the output.  Moreover, what we sequence is not always what we
+originally intended to sequence ({numref}`w5f11`).
+
 
 Sources of errors related to sequencing itself are base calling errors
 (substitution errors), uncalled bases (indels), GC bias, homopolymers, a
@@ -439,29 +439,26 @@ process and its challenges are introduced.  Finally, genome annotation and
 detection of structural variation are discussed.
 
 ##### Reference genome quality
-
-:::{figure} images/Week5/Fig_12_Picture9.svg
+```{figure} images/Week5/Fig_12_Picture9.svg
 :alt: Co-segregation of alleles
 :width: 300px
+:height: 100px
 :align: right
 :name: w5f12
-
 Co-segregation of alleles
-:::
+```
 Genomes can be reconstructed with different aims, which influence the
 required quality of the final assembly.  The human genome, for example, has
 been assembled as far as possible and in 2021 the first telomere-to-telomere
-assembly was published {cite:p}`t2t_human_genome`, adding the final 5% of
-bases.  It has taken enormous effort, both in terms of finance and labour,
+assembly was published , adding the final 5% of
+bases. It has taken enormous effort, both in terms of finance and labour,
 to get to this stage.  This is neither feasible nor strictly necessary for
-each genome assembly project.  Hence, most genome assemblies currently
-available are so-called draft assemblies, and most fully completed genomes
+each genome assembly project. Hence, most genome assemblies currently available are so-called draft assemblies, and most fully completed genomes
 are from bacteria and other species with small genomes.  In terms of the
 assembly process, for eukaryotic genomes the euchromatic regions assemble
 easiest.  Fortunately, these regions contain most of the genes, making draft
-assemblies useful for studying mutations or expression patterns.  When we
-want to study larger features of the genome itself however, such as
-co-segregation of alleles ({numref}`w5f12`) or gene order ({numref}`w5f13`),
+assemblies useful for studying mutations or expression patterns. When we
+want to study larger features of the genome itself however, such as co-segregation of alleles ({numref}`w5f12`) or gene order ({numref}`w5f13`),
 we need more contiguous assemblies.  3rd generation sequencing, scaffolding
 and newer technologies such as chromatin conformation capture (Hi-C) etc. 
 make chromosome-level assemblies increasingly attainable.
@@ -1105,15 +1102,15 @@ mRNA levels:
 
 #### How to measure mRNAs?
 
-Just like the study of genomes, transcriptomics has greatly benefitted from
-technological developments that allowed an increase in throughput and
-sensitivity of measurements.
+
 :::{figure} images/Week5/Fig_25_differentialGel.jpg
 :alt: Differential display gel
+:width: 150px
+:height: 300px
 :align: right
 :name: w5f25
-Example of differential display gel. 
-From: [](https://doi.org/10.1152/physiolgenomics.00013.2001)
+Example of differential display gel. \
+From: [Physiological Genomics](https://doi.org/10.1152/physiolgenomics.00013.2001)
 :::
 Early methods of detecting transcripts and expression levels are northern
 blots and differential display ({numref}`w5f25`).  Both are gel-based
@@ -1122,13 +1119,18 @@ methods that are low throughput and not very accurate.
 :alt: qPCR amplification graph
 :align: right
 :name: w5f26
-Amplification plot of a DNA
-fragment in a qPCR reaction. 
-Cq corresponds to the cycle 
-were fluorescence passes the 
-detection threshold. 
+Amplification plot of a DNA \
+fragment in a qPCR reaction. \
+Cq corresponds to the cycle \
+were fluorescence passes the \
+detection threshold. \
 From: BioRAD website
 :::
+Just like the study of genomes, transcriptomics has greatly benefitted from
+technological developments that allowed an increase in throughput and
+sensitivity of measurements.
+
+
 Northern blots and differential displays were superseded by qPCR
 (quantitative PCR) and microarrays.  qPCR is a form of PCR with the formal
 name of quantitative real-time PCR (abbreviated as qPCR, whereas RT-PCR
@@ -1252,12 +1254,14 @@ dx.doi.org/10.1186/s13059-016-0927-y.
 
 ##### Protocol
 
-The standard protocol of an RNAseq experiment follows the steps until
-creation of cDNA as described in Section 4.3 in the book.  First, all RNA
-(total RNA) is extracted from a biological sample.  Next, mRNA is selected
-and converted to stable cDNA.  The resulting cDNA library is then sequenced,
-usually as paired end reads of 100-150bp.  A standard sequencing run results
-in 30 million or more reads per sample.
+:::{figure} images/Week5/Fig_w5f26a_RNAseq.png
+:alt: RNAseq protocol
+:align: right
+:width: 350px
+:name: w5f26a
+Standard RNAseq protocol
+:::
+The standard protocol of an RNAseq experiment is shown in {numref}`w5f26a`.First, all RNA (total RNA) is extracted from a biological sample.  Next, mRNA is selected using a polyT oligo to select RNA with a polyA tail. The RNA is then converted to stable double stranded cDNA. The resulting cDNA library is then sequenced, usually as paired end reads of 100-150bp.  A standard sequencing run results in 30 million or more reads per sample.
 
 The read lengths currently used are relatively short and complicated models
 are used to assign reads to exons and isoforms.  New developments in this
