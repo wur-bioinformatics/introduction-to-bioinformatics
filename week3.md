@@ -810,3 +810,9 @@ Synapomorphy
 - Ateto AA. 2014. Bioinformatics for Beginners, Genes, Genome, Molecular Evolution, Databases and Analytical Tools. Academic Press.
 - Page RD and Holmes EC 1998. Molecular Evolution : A Phylogenetic Approach. Blackwell Publishing Ltd
 - Zvelebil MJ & Baum JO 2008. Understanding Bioinformatics. Garland Science.
+
+# References
+
+```{bibliography}
+:filter: docname in docnames
+```

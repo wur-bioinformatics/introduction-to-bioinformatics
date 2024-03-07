@@ -1902,3 +1902,9 @@ the large volumes of omics data in order to solve specific tasks. The end
 goal, [a systems biology simulation of the living
 cell](https://www.wholecellviz.org/viz.php#replication), is still far from
 reality, but may be reached sooner than we now believe possible.
+
+# References
+
+```{bibliography}
+:filter: docname in docnames
+```

@@ -29,7 +29,7 @@ DNA and RNA are comprised of monomers called **nucleotides**, which are comprise
 :name: nucleotide
 
 The components of a nucleotide.
-Credits: Rice University, CC BY 4.0 https://creativecommons.org/licenses/by/4.0, via OpenStax.
+Credits: Rice University, CC BY 4.0 https://creativecommons.org/licenses/by/4.0, via OpenStax {cite}`nucleotide_2018`.
 :::
 
 The bases can be divided into two categories: purines (with a double ring structure) and pyrimidines (with a single ring structure) ({numref}`nucleotide`). DNA contains A, T, C, and G; whereas RNA contains A, U, C, and G.
@@ -53,10 +53,10 @@ These pairings are also called Watson-Crick base-pairing, named after the discov
 :name: dna
 
 The DNA structure.
-Credits: Nature Education.
+Credits: Nature Education {cite}`dna_2008`.
 :::
 
-[comment]: # "figure sources
+[comment_1]: # "figure sources
 https://openstax.org/books/biology-2e/pages/3-5-nucleic-acids
 https://www-nature-com.ezproxy.library.wur.nl/scitable/topicpage/discovery-of-dna-structure-and-function-watson-397/"
 
@@ -72,7 +72,7 @@ For example, the reverse complement of AAGT is ACTT, where both strands are give
 
 As the two DNA strands are only connected via hydrogen bonds, they can be separated relatively easily, for example during DNA replication.
 The separated strands each serve as a template on which a new complementary strand is synthesized by the enzyme DNA polymerase in 5' to 3' direction.
-This mode of replication is called semiconservative .
+This mode of replication is called semiconservative.
 
 :::{figure} images/Week1/replication.jpg
 :alt: Replication
@@ -80,9 +80,9 @@ This mode of replication is called semiconservative .
 :name: replication
 
 A) The process of DNA replication.
-Credits: Medprime, CC BY SA 1.0 https://creativecommons.org/publicdomain/zero/1.0/deed.en, via Wikimedia.
-B) Semiconservative DNA replication, where the two copies each contain on original strand and one new strand.
-Credits: modified from Rgranit, CC BY SA 2.5 https://creativecommons.org/licenses/by-sa/2.5/deed.en, via Wikimedia.
+Credits: Madeleine Price Ball, CC0 1.0 https://creativecommons.org/publicdomain/zero/1.0/deed.en, via Wikimedia {cite}`replication_a_2013`.
+B) Semiconservative DNA replication, where the two copies each contain one original strand and one new strand.
+Credits: modified from Mike Jones, CC BY-SA 2.5 https://creativecommons.org/licenses/by-sa/2.5/deed.en, via Wikimedia {cite}`replication_b_2005`.
 :::
 
 The error rate of DNA replication is remarkably low, about one erroneous base in 10<sup>9</sup> bases.
@@ -98,7 +98,7 @@ There are four major types of RNA:
 
 - Messenger RNA (mRNA): RNA molecules that will later be translated into proteins and therefore serve as a 'messenger' in protein production.
 - Ribosomal RNA (rRNA): the primary component of ribosomes (the 'powerplants' of a cell).
-- Transfer RNA (tRNA): function as 'adapter molecule' that serve as the physical link between mRNA and the amino acid sequence of a protein during translation.
+- Transfer RNA (tRNA): functions as 'adapter molecule' that serve as the physical link between mRNA and the amino acid sequence of a protein during translation.
 - MicroRNA (miRNA): non-coding RNA molecules of 21-23 nucleotides involved in RNA silencing and post-transcriptional regulation of gene expression.
 
 :::{figure} images/Week1/transcription.png
@@ -106,7 +106,7 @@ There are four major types of RNA:
 :width: 70%
 :name: Transcription
 
-RNA is produced by transcribing DNA: as such it is a direct copy of the information contained in the DNA. Where DNA contains thymine (T, indicated in blue), RNA contains uracil (U, indicated in purple).
+RNA is produced by transcribing DNA: as such, it is a direct copy of the information contained in the DNA. Where DNA contains thymine (T, indicated in blue), RNA contains uracil (U, indicated in purple).
 :::
 
 In eukaryotes, some mRNA molecules undergo splicing. During RNA splicing, the spliceosome protein complex removes introns: specific non-coding parts of an mRNA molecule that are not used during translation ({numref}`splicing`). Most introns are characterized by a GU and AG dinucleotide motif in the 5' and 3' end respectively.
@@ -152,7 +152,7 @@ More information of how protein information is encoded in genomes can be found i
 :name: geneticcode
 
 The universal genetic code. Note that exceptions to this code exist, for example the vertebrate mitochondrial code.
-Credits: SrhGreenwood, CC BY 4.0 https://creativecommons.org/licenses/by/4.0, via Wikimedia.
+Credits: Sarah Greenwood, CC BY 4.0 https://creativecommons.org/licenses/by/4.0, via Wikimedia {cite}`geneticcode_2018`.
 :::
 
 :::{important}
@@ -169,8 +169,8 @@ Nevertheless, there are also genes that do not code for proteins, but where func
 :width: 35%
 :name: dogma
 
-The centra dogma of molecular biology.
-Credits: Dhorspool, CC BY SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/deed.en, via Wikimedia.
+The central dogma of molecular biology.
+Credits: Daniel Horspool, CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/deed.en, via Wikimedia {cite}`dogma_2008`.
 :::
 
 ### Proteins
@@ -184,7 +184,7 @@ The basic building blocks of proteins are amino acids.
 #### Amino acids
 
 An amino acid contains a central carbon atom (called α-carbon, or C<sub>α</sub>) ({numref}`aminoacid`).
-The α-carbon is bound to an amino group (NH<sub>2</sub>), a carboxyl group (COOH), and a hydrogen atom. In addition, each amino acid has a specific residue (R) group.
+The α-carbon is bound to an amino group (NH<sub>2</sub>), a carboxyl group (COOH), and a hydrogen atom. In addition, each amino acid has a specific residue \(R) group.
 
 :::{figure} images/Week1/aminoacid.jpg
 :alt: Structure of an amino acid
@@ -193,7 +193,7 @@ The α-carbon is bound to an amino group (NH<sub>2</sub>), a carboxyl group (COO
 
 The structure of an amino acid. Four groups are connected to the α-carbon:
 an amino group, a hydrogen atom, a carboxyl group, and a side chain (R group).
-Credits: Rice University, CC BY 4.0 https://creativecommons.org/licenses/by/4.0, via OpenStax.
+Credits: Rice University, CC BY 4.0 https://creativecommons.org/licenses/by/4.0, via OpenStax {cite}`aminoacid_2018`.
 :::
 
 :::{important}
@@ -344,7 +344,7 @@ The continuous chain of atoms along the protein is also called the **backbone**,
 :name: peptidebond
 
 A peptide bond connecting two amino acids.
-Credits: Rice University, CC BY 4.0 https://creativecommons.org/licenses/by/4.0, via OpenStax.
+Credits: Rice University, CC BY 4.0 https://creativecommons.org/licenses/by/4.0, via OpenStax {cite}`peptidebond_2018`.
 :::
 
 Each protein has a free amino group on one end, called the **N terminus**.
@@ -377,8 +377,7 @@ Depending on the direction, strands can align parallel or antiparallel to each o
 
 α-helices and β-sheets are stablized by hydrogen bonds between the backbone of proteins, i.e., the side chains are not involved.
 The hydrogen bonds form between the oxygen atom in the C group in one amino acid and the hydrogen in the N group.
-Black = carbon, White = hydrogen, Blue = nitrogen, and Red = oxygen. Credit:
-Credits: Rao, A., Tag, A. Ryan, K. and Fletcher, S. Department of Biology, Texas A&M University.
+Black = carbon, White = hydrogen, Blue = nitrogen, and Red = oxygen. Credits: Rao, A., Tag, A. Ryan, K. and Fletcher, S. Department of Biology, Texas A&M University.
 :::
 
 **Turns** are short secondary structure elements that are stabilized by hydrogen bonds between amino acids that are 1 to 5 peptide bonds away.
@@ -414,7 +413,7 @@ A) Peptide bond, φ, and ψ.
 B) A typical Ramachandran plot. The regions marked "core" do not have any steric hindrance.
 Yellow areas are generally allowed.
 White areas represent conformations that are generally sterically unfavorable.
-Credits: Choudhuri (2014). Bioinformatics for Beginners. doi: 10.1016/B978-0-12-410471-6.00008-6.
+Credits: Choudhuri (2014). Bioinformatics for Beginners {cite}`phipsi_2014`.
 :::
 
 :::{seealso}
@@ -425,7 +424,7 @@ You can find an illustrative animation on φ and ψ [here](https://www.youtube.c
 
 ##### Tertiary structure
 
-The tertiary structure of a protein describes the complete folding of an entire polypeptide chain. In contrast to the secondary structure, the tertiary structure of a protein involves interactions between the amonino acid's side chains that can occur at short-range and long-range ({numref}`terstructure`).
+The tertiary structure of a protein describes the complete folding of an entire polypeptide chain. In contrast to the secondary structure, the tertiary structure of a protein involves interactions between the amino acid's side chains that can occur at short-range and long-range ({numref}`terstructure`).
 Thus, the chemical properties of the amino acids are very important for the tertiary structure. Different types of interactions stabilize the tertiary structure:
 
 - Hydrogen bonds involving polar amino acids,
@@ -439,7 +438,7 @@ Thus, the chemical properties of the amino acids are very important for the tert
 :name: terstructure
 
 Chemical interactions that stabilize the tertiary structure of proteins.
-Credits: Rice University, CC BY 4.0 https://creativecommons.org/licenses/by/4.0, via OpenStax.
+Credits: Rice University, CC BY 4.0 https://creativecommons.org/licenses/by/4.0, via OpenStax {cite}`terstructure_2018`.
 :::
 
 :::{admonition} Note 3: Denaturation
@@ -463,10 +462,10 @@ In a multidomain protein, each domain folds independently of the others.
 A) Example of a Src homology 3 (SH3) domain that is involved in protein-protein interaction. SH3 domains occur in a diverse range of proteins with different functions.
 B) The cytoplasmic protein Nck contains multiple SH3 domains.
 C) Domain composition of phospholipase D1, which has multiple functional domains that contribute to its overall function.
-Credits: EMBL-EBI, CC BY 4.0 https://creativecommons.org/licenses/by/4.0.
+Credits: EMBL-EBI, CC BY 4.0 https://creativecommons.org/licenses/by/4.0 {cite}`domains_2023`.
 :::
 
-[comment]: # "domain examples taken from https://www.ebi.ac.uk/training/online/courses/protein-classification-intro-ebi-resources/protein-classification/what-are-protein-domains/"
+[comment_2]: # "domain examples taken from https://www.ebi.ac.uk/training/online/courses/protein-classification-intro-ebi-resources/protein-classification/what-are-protein-domains/"
 
 ---
 
@@ -691,7 +690,7 @@ The current release is 218 from 5 May 2023 and contains ~261 million proteins fr
 The RefSeq accessions directly provide information on [molecule types](https://www.ncbi.nlm.nih.gov/books/NBK21091/table/ch18.T.refseq_accession_numbers_and_mole/?report=objectonly).
 For example, `NC_` accessions denote complete genomes, `NP_` accessions denote proteins in one genome, and `WP_` accessions denote proteins in multiple genomes.
 
-[comment]: # "sources:
+[comment_3]: # "sources:
   https://www.ncbi.nlm.nih.gov/books/NBK50679/#RefSeqFAQ.what_is_the_difference_between_1
   https://www.ncbi.nlm.nih.gov/refseq/about/"
 
@@ -761,7 +760,7 @@ Notably, profiles cover the structural relationships of domains, but they might 
 To include that information, **ProRule** contains additional information about Prosite profiles, such as the position of structurally or functionally important amino acids.
 ProRule is used to guide curated annotation of UniProtKB/Swiss-Prot.
 
-[comment]: # "source: https://academic.oup.com/bib/article/3/3/265/239712 https://academic.oup.com/bioinformatics/article/21/21/4060/226654
+[comment_4]: # "source: https://academic.oup.com/bib/article/3/3/265/239712 https://academic.oup.com/bioinformatics/article/21/21/4060/226654
   example: https://prosite.expasy.org/rule/PRU01217"
 
 ### InterPro
@@ -832,7 +831,7 @@ The icons for the different InterPro entries (homologous superfamily, family, do
 You can find more information on InterPro entry types with examples [here](https://www.ebi.ac.uk/training/online/courses/interpro-functional-and-structural-analysis/what-is-an-interpro-entry/interpro-entry-types/).
 :::
 
-[comment]: # "source: https://www.ebi.ac.uk/training/online/courses/interpro-functional-and-structural-analysis/ https://academic.oup.com/nar/article/51/D1/D418/6814474"
+[comment_5]: # "source: https://www.ebi.ac.uk/training/online/courses/interpro-functional-and-structural-analysis/ https://academic.oup.com/nar/article/51/D1/D418/6814474"
 
 (sec_pfam)=
 
@@ -928,3 +927,9 @@ An extract of the Sequence Ontology hierarchy.
 Many more ontologies exist and are relevant to biomedical research. The European Bioinformatics Institure (EBI) provides an [ontology lookup service](https://www.ebi.ac.uk/ols4/) that facilitates searching for ontologies. Examples of other ontologies are the [plant ontology](https://www.ebi.ac.uk/ols/ontologies/po) that describes various anatomical structures in plants, and the [human disease ontology](https://disease-ontology.org/).
 
 ---
+
+# References
+
+```{bibliography}
+:filter: docname in docnames
+```
