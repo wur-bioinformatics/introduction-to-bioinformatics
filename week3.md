@@ -10,13 +10,13 @@
 :::{figure} images/Week3/w3_01_1a.jpg
 :alt: The tree of Life
 :align: center
-:name: w3f1.1a
-The tree of Life. Dated in millions of years; rooted with Eubacteria (from timetree.org).
+:name: tree_of_life
+The Tree of Life. Dated in millions of years; rooted with Eubacteria (from timetree.org {cite}`tree_of_life_2022`).
 :::
 
 Why should we study phylogenetics and what is it about?
-Ever since Darwin we know that all living things are connected in a _tapestry of life_, forming a phylogenetic tree of everything ({numref}`w3f1.1a`).
-Phylogenetics aims at understanding evolutionary relationships among genes, species and higher taxa and as such it is relevant to almost all biological questions.
+Ever since Darwin we know that all living things are connected in a _tapestry of life_, forming a phylogenetic tree of everything ({numref}`tree_of_life`).
+Phylogenetics aims at understanding evolutionary relationships among genes, species, and higher taxa and as such it is relevant to almost all biological questions.
 Why? Because an evolutionary context (rather than a "snap-shot" perspective) allows identifying evolutionary lineages and their origins, and can provide information on how living forms and sequences change and adapt across millions of years.
 Examples are the evolution of gene families within genomes, the build-up of species relationships in a lineage, studying Covid-19 and other pathogen outbreaks ({numref}`w3f1.1b`), studying molecular evolution and the accumulation of substitutions in a multiple sequence alignment (MSA), studying population history within a species, reconstructing historical biogeography: in all these cases having an _accurate phylogenetic tree_ is crucial, because we want to be able to reconstruct evolutionary lineages (the branches in phylogenetic trees) and how they evolved, changed, duplicated or went extinct.
 
@@ -48,7 +48,7 @@ The leaves are then the individuals (or sequences) that are observed and compare
 The branches and nodes are the _lineages_ or _clades_ (see below) that are inferred –i.e. not observed.
 They are the horizontal lines connecting the OTUs and HTUs (_hypothetical taxonomic units_) in your phylogenetic tree, as for instance shown in {numref}`w3f2.1`.
 
-:::{figure} images/Week3/w3*02_1.png
+:::{figure} images/Week3/w3_02_1.png
 :alt: Additive and Ultrametric examples of phylogenetic trees, and a Cladogram
 :align: center
 :name: w3f2.1
@@ -199,7 +199,7 @@ When our individuals are meant to represent species, it would in principle be a 
 {numref}`w3f2.8` shows an example of multiple gene trees (in colour) contributing to the species tree (indicated by black lines) as a result of _species tree estimation_ analysis.
 Such analysis is beyond the scope of this course, but it is of course important to always keep in mind at what level your phylogenetic reconstruction is, whether at the species, gene, or even biogeographic area level.
 
-:::{figure} images/Week3/w3*02_8.png
+:::{figure} images/Week3/w3_02_8.png
 :alt:
 :align: center
 :name: w3f2.8
@@ -221,7 +221,7 @@ Repeating this process many times (hundreds or thousands) and summarizing the va
 It actually measures the sampling _variance about the estimate_ of the phylogeny.
 This process is called bootstrap analysis and will be further discussed in [Maximum likelihood tree building](MLtreebuilding), after we have covered the characters underlying our trees in the next section.
 
-:::{figure} images/Week3/w3*02_9.png
+:::{figure} images/Week3/w3_02_9.png
 :alt:
 :align: center
 :name: w3f2.9
