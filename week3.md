@@ -4,12 +4,12 @@
 
 -- Freek T. Bakker (WUR Biosystematics Group), Wageningen, 2023
 ```
-
+%#% Main remark about this week is that a lot of information is presented, which is repeated or further explained in many different sections (same for abbreviations). This makes it rather difficult to find a coherent story and makes it incredibly difficult for students to link a definition to a concept. Some sections could do with a rewrite to make this chapter more congruent (merging paragraphs and explaining a concept once and not adding more on to its definition throughout the chapter). - When reading through this chapter there should be a clear separation between what should be considered exam material and what is not.
 ## Rationale
 
-:::{figure} images/Week3/w3_01_1a.jpg
-:alt: The tree of Life
-:align: center
+:::{figure} images/Week3/tree_of_life.jpg
+:alt: The Tree of Life
+:width: 80%
 :name: tree_of_life
 The Tree of Life. Dated in millions of years; rooted with Eubacteria (from timetree.org {cite}`tree_of_life_2022`).
 :::
@@ -17,70 +17,74 @@ The Tree of Life. Dated in millions of years; rooted with Eubacteria (from timet
 Why should we study phylogenetics and what is it about?
 Ever since Darwin we know that all living things are connected in a _tapestry of life_, forming a phylogenetic tree of everything ({numref}`tree_of_life`).
 Phylogenetics aims at understanding evolutionary relationships among genes, species, and higher taxa and as such it is relevant to almost all biological questions.
-Why? Because an evolutionary context (rather than a "snap-shot" perspective) allows identifying evolutionary lineages and their origins, and can provide information on how living forms and sequences change and adapt across millions of years.
-Examples are the evolution of gene families within genomes, the build-up of species relationships in a lineage, studying Covid-19 and other pathogen outbreaks ({numref}`w3f1.1b`), studying molecular evolution and the accumulation of substitutions in a multiple sequence alignment (MSA), studying population history within a species, reconstructing historical biogeography: in all these cases having an _accurate phylogenetic tree_ is crucial, because we want to be able to reconstruct evolutionary lineages (the branches in phylogenetic trees) and how they evolved, changed, duplicated or went extinct.
-
-:::{figure} images/Week3/w3_01_1b2023.png
+Why? Because an evolutionary context (rather than a "snapshot" perspective) allows identifying evolutionary lineages and their origins, and can provide information on how lifeforms and sequences change and adapt across millions of years.
+Examples are the evolution of gene families within genomes, the build-up of species relationships in a lineage, studying Covid-19 and other pathogen outbreaks ({numref}`sars-cov-2`), studying molecular evolution and the accumulation of substitutions in a multiple sequence alignment (MSA), studying population history within a species, reconstructing historical biogeography. In all these cases having an _accurate phylogenetic tree_ is crucial, because we want to be able to reconstruct evolutionary lineages (the branches in phylogenetic trees) and how they evolved, changed, duplicated or went extinct.
+%#% Many examples are given in the above section, perhaps a shorter list is sufficient to get the point across?
+:::{figure} images/Week3/sars-cov-2.svg
 :alt: The SARS-CoV-2 phylogenetic tree
-:align: center
-:name: w3f1.1b
-The SARS-CoV-2 phylogenetic tree (from nextstrain.org September 2023).
-:::
+:width: 100%
+:name: sars-cov-2
 
+The SARS-CoV-2 phylogenetic tree, March 2024. Credits: nextstrain.org, CC-BY 4.0 https://creativecommons.org/licenses/by/4.0/ {cite}`sars-cov-2_2018`.
+:::
+%#% Figure sars-cov-2 replaced with an updated SVG.
 By _accurate_ we mean estimating relationships that are as close as possible to the actual (historic) relationships, which we cannot know for sure.
 As they happened in the past we cannot _prove_ them, but they are hypotheses (of relationships) that we can only _corroborate_ (confirm, seek support for).
+%#% This paragraph is a continuation of the previous one. Perhaps more concise to move it to the previous paragraph?
+When a phylogenetic tree is known for a specific group, and it is properly rooted, the ancestral states for its characters can in principle be reconstructed (for instance the ancestral amino acid residues in a protein sequence).
+With that, evolutionary trends (towards current conditions) can be inferred, enabling the study of character evolution, i.e. how things change over time ({numref}`ancestral_states`).
 
-When a phylogenetic tree is known for a specific group, and it is properly-rooted, the ancestral states for its characters can in principle be reconstructed (for instance the ancestral amino acid residues in a protein sequence).
-With that, evolutionary trends (towards current conditions) can be inferred, enabling the study of character evolution, i.e. how things change over time ({numref}`w3f1.2`).
-
-:::{figure} images/Week3/w3_01_2.png
+:::{figure} images/Week3/ancestral-states.png
 :alt: A phylogenetic tree with ancestral states
-:align: center
-:name: w3f1.2
+:width: 100%
+:name: ancestral_states
+
 Comparing species (or genes) in a phylogenetic tree allows inference of ancestral states and evolutionary trends.
 :::
-
+%#% Figure ancestral_states is rather blurry. - Self created image? If so, reupload in higher resolution.
 ## Phylogenetic trees: structure & interpretation
 
 Like all trees, phylogenetic trees come with a stem, branches, leaves and ideally a root.
 What makes phylogenetic trees special however is that they are actually hypotheses of evolutionary relationships, as outlined in the previous section.
 The leaves are then the individuals (or sequences) that are observed and compared, which are also referred to as _operational taxonomic units_ (OTUs) or terminals.
-The branches and nodes are the _lineages_ or _clades_ (see below) that are inferred –i.e. not observed.
-They are the horizontal lines connecting the OTUs and HTUs (_hypothetical taxonomic units_) in your phylogenetic tree, as for instance shown in {numref}`w3f2.1`.
+The branches and nodes are the _lineages_ or _clades_ (see below) that are inferred, i.e. not observed.
+They are the horizontal lines connecting the OTUs and HTUs (_hypothetical taxonomic units_) in your phylogenetic tree, as for instance shown in {numref}`tree_types`.
+%#% lineages and clades is referred to as (see below). Unclear to me what specific section this refers to.
+:::{figure} images/Week3/tree-types.png
+:alt: Examples of Additive and Ultrametric phylogenetic trees and a Cladogram
+:width: 100%
+:name: tree_types
 
-:::{figure} images/Week3/w3_02_1.png
-:alt: Additive and Ultrametric examples of phylogenetic trees, and a Cladogram
-:align: center
-:name: w3f2.1
 A rooted phylogenetic tree with its main parts and characteristics indicated.
-The OTUs are here GenBank plant chloroplast gene accessions, the names of which have been condensed.
-For the same data, the tree is given as \_additive* tree (top), and as an _ultrametric_ tree (bottom left) with branch lengths corresponding to time.
+Here, the OTUs are GenBank plant chloroplast gene accessions, the names of which have been condensed.
+For the same data, the tree is given as _additive_ tree (top) and as an _ultrametric_ tree (bottom left) with branch lengths corresponding to time.
 On the right, flipped, the same tree as _cladogram_, with branch lengths only indicating the structure of the tree (see text).
 :::
-
-Whereas the horizontal lines represent the actual branches, the vertical lines do not have a meaning and are just there to connect the branches and clades; they will get longer when more terminals are included but do not have a relation with the data (i.e. the multiple sequence alignment or MSA).
+%#% Figure tree_types is self created image? - Instead of refering to (see text) refer to a specific section? - Figure contains concepts that are not explained in the accompanying text or figure description (connector, early/late-branching). The connector concept comes back much later in the document just above figure 47 - This figure contains more information than the accompanying text, as the text describes the components of a phylogenetic tree and not the different types of trees. Perhaps it would be more clear to first show a figure of just one type of tree that visualizes the concepts described in the text?
+Whereas the horizontal lines represent the actual branches, the vertical lines do not have a meaning and are just there to connect the branches and clades; they will get longer when more terminals are included but do not have a relation with the data (i.e., the multiple sequence alignment or MSA).
 Branches are connected via _nodes_, that can be internal or external, with _internal nodes_ representing _hypothetical ancestors_ (also known as HTUs), that are not observed or sequenced but inferred or reconstructed.
 As outlined above, _external nodes_ are the actual _individuals_ observed; they are never connected directly to each other, only through internal nodes.
 These individuals can represent genes, species or higher taxa, but they are never categories (or averages), as characters and states are indivisible observations scored on individuals (see below).
 Branches and nodes collectively build the _tree topology_, i.e. the structure of the tree.
-
+%#% This paragraph repeats information that was given before, section could benefit from merging this paragraph with the previous one above the figure.
 One of the most important aspects of a phylogenetic tree is whether it is rooted, meaning whether we can distinguish which nodes are old and which are more recent, and also what clades are present.
-Rooting is done by selecting an _outgroup_, which is a reference taxon outside the group of interest (this will be dealt with in section [Rooting & clades](rootingandclades)).
+Rooting is done by selecting an _outgroup_, which is a reference taxon outside the group of interest (this is described in more detail in section [Rooting & clades](rootingandclades)).
 It is important to realise that most phylogenetic reconstruction methods actually produce unrooted trees, which are then rooted using an outgroup.
-
+%#% Maybe stress that unrooted trees are rooted using an outgroup because of the aformentioned reasons (distinguish between old and recent nodes and clades).
 ### Related, diverged
 
-:::{figure} images/Week3/w3_02_2.png
+:::{figure} images/Week3/MRCA-mammals.png
 :alt: An additive phylogenetic tree rooted at monkey
-:align: center
-:name: w3f2.2
+:width: 100%
+:name: MRCA_mammals
+
 Additive phylogenetic tree of mammalian species, rooted on monkey.
 The MRCA of monkey, cat and dog is indicated.
-Tree topology informs relatedness, branch lengths correspond to divergence (from Zvelebil & Baum, 2008)
+Tree topology informs relatedness, branch lengths correspond to divergence. Credits: modified from {cite}`bioinformatics_2007`.
 :::
-
+%#% Include labels MRCA labels for all the species whose relatedness is compared, not just dog and bear? - Imagery from this source is also used by Rice University in their courses: https://www.cs.rice.edu/~nakhleh/COMP571/.
 In a rooted phylogenetic tree, terminals sharing a more recent common ancestor are more closely related than terminals sharing a less recent common ancestor.
-Thus, in {numref}`w3f2.2`, dog and bear are more related than dog and sea lion, because dog and bear share a more recent common ancestor.
+Thus, in {numref}`MRCA_mammals`, dog and bear are more related than dog and sea lion, because dog and bear share a more recent common ancestor.
 On the other hand, monkey and dog are as related as monkey and cat, because they all share the same _most recent common ancestor_ (MRCA, and see [Rooting & clades](rootingandclades) below).
 Being _related_ is not the same as being _diverged_, as divergence means the amount of change accumulated since the split of two lineages, which is reflected in the branch lengths.
 Raccoon and dog would be more diverged than raccoon and bear, but not more closely related.
@@ -91,73 +95,76 @@ Phylogenetic trees come in three flavours: _ultrametric_, _additive_, and _clado
 When all paths starting from the root to each external node are of equal length, you could interpret the length of a path through the tree as proportional to time and thus equally old as other paths; the ages of nodes can then in principle be inferred.
 Such a tree is known as an _ultrametric_ tree, which can be easily recognised by its topology in which all terminal branches line up.
 Another, more common type of phylogenetic tree is the _additive_ tree, in which branch lengths are proportional not to time but to the amount of change occurring in your data set (the MSA).
-Therefore, the more changes (i.e. substitutions, insertions, deletions) occur for an individual, the longer the branch to its MRCA will be in the additive tree.
+Therefore, the more changes (i.e., substitutions, insertions, deletions) occur for an individual, the longer the branch to its MRCA will be in the additive tree.
 Most phylogenetic and tree building platforms or software packages produce additive trees.
 Producing ultrametric trees usually requires taking extra steps, with each step introducing uncertainty.
 You could argue that ultrametric trees are _one extra step away from the data_ compared to additive trees.
-Only when the data accumulates substitutions in a strictly clock-like manner (i.e. like radio-active decay) would the ultrametric and additive tree version be the same.
+Only when the data accumulates substitutions in a strictly clock-like manner (i.e., like radio-active decay) would the ultrametric and additive tree version be the same.
 However, such strict molecular clocks are never encountered in real data.
 Finally, a _cladogram_-style tree is a "schematic tree" meant to only show the topology of your tree.
 It therefore has artificial (equal) branch lengths, including for terminal branches.
-
+%#% This is the section that could use Figure tree_types, or a modified version of that figure.
 ### Tree resolution
 
 The resolution of a phylogenetic tree is the extent to which nodes (clades) can be inferred/observed from the tree.
 Trees can be _fully-resolved_, in which case each internal node is connected to three branches: the ancestral branch and two subtending branches.
 Such trees are called _bi-furcating_ or _dichotomous_, meaning that each branch splits into two and there are no uncertainties on branching order or resolution of nodes.
-Frequently however, phylogenetic trees will be _partly-plresolved_ and contain _polytomies_, which are nodes connected to (many) more than three branches.
+Frequently however, phylogenetic trees will be _partially-resolved_ and contain _polytomies_, which are nodes connected to (many) more than three branches.
 Polytomies represent parts of the phylogenetic tree that are uncertain in terms of branching order of the lineages involved.
 This can be due to there being insufficient information in the MSA for resolving the lineages, or ample but conflicting signal.
 Polytomies are usually interpreted as _soft_, meaning that the data used does not allow to resolve the lineages at hand.
-In contrast, the _hard_ interpretation would be: instantaneous speciation, i.e. an ancestral species lineage split up so fast that the new lineages do not have sufficient unique substitutions to "mark" them and to assign them an internal node in the tree.
+In contrast, the _hard_ interpretation would be: instantaneous speciation, i.e., an ancestral species lineage split up so fast that the new lineages do not have sufficient unique substitutions to "mark" them and to assign them an internal node in the tree.
 An example is the late-Tertiary radiation of mammalian orders, after the fairly quick establishment of cold water around the Earth's poles, combined with that of the hot tropics.
 Several published mammalian phylogenetic trees contain unresolved spines or backbones.
 On the other hand, _gene trees_ (used for studying gene families, see below) may also contain polytomies and they are usually considered as soft (the data is not decisive enough to infer a branching order).
-_Whole genome duplications_ (auto-polyploidisations) are fairly well known in the evolution of plants and following such an event pairs of genes can be expected to form instantaneously, i.e. without accumulating unique substitutions, and may result in hard polytomies.
-
-:::{figure} images/Week3/w3_02_3.png
+_Whole genome duplications_ (auto-polyploidisations) are fairly well known in the evolution of plants and following such an event pairs of genes can be expected to form instantaneously, i.e., without accumulating unique substitutions, and may result in hard polytomies.
+%#% Replace (see below) with a referral to a specific section.
+:::{figure} images/Week3/polytomies.png
 :alt: Hard and soft polytomies
-:align: center
-:name: w3f2.3
-Hard and soft polytomies in a phylogenetic tree.
-The soft polytomy can imply different tree resolutions (from Page & Holmes, 1998).
-:::
+:width: 60%
+:name: polytomies
 
+Hard and soft polytomies in a phylogenetic tree.
+The soft polytomy can imply different tree resolutions. Credits: {cite}`phylogenetic_approach_1998`.
+:::
+%#% Figure polytomies is quite blurry. Easily able to redraw ourselves?
 ### Orthologs & paralogs
 
 When the terminals included are actually _gene_ or _protein sequences_, the tree will be a _gene tree_, likely containing _homologs_ (derived from a common ancestor gene), possibly also _orthologs_ and _paralogs_, the latter visualising gene duplications as multiple occurrences of particular terminals on the tree.
 _Orthology_ is the occurrence of corresponding, homologous (and mostly similar), genes in lineages resulting from speciation.
-For instance, human beta and chimp beta globin are orthologs.
+For instance, human beta globin and chimp beta globin are orthologs.
 Usually, these genes will have the same function in different species, but this doesn't need to be the case.
 _Paralogy_ is the occurrence of similar genes resulting from gene duplication.
 For example, proteins from a gene family with different functions in the same species.
-{numref}`w3f2.4` illustrates the process of gene duplication followed by speciation (which represents an ideal case) and the challenge with resulting paralogs in phylogenetic analysis, especially when not all members of a gene family have been sampled.
+{numref}`genic_taxic` illustrates the process of gene duplication followed by speciation (which represents an ideal case) and the challenge with resulting paralogs in phylogenetic analysis, especially when not all members of a gene family have been sampled.
 
-:::{figure} images/Week3/w3_02_4.jpg
+:::{figure} images/Week3/genic-taxic.jpg
 :alt: Gene trees evolving in genic and taxic dimensions
-:align: center
-:name: w3f2.4
-Gene trees evolve in both a genic dimension (gene duplicaiton, indicated by stars), yielding orthologs A, B and C, as well as in a taxic dimension (speciation, indicated by circled numbers).
-If speciation and gene duplication would keep track with each other (i.e., if they would be synchronous), a full gene tree would result, congruent with the species tree topology.
+:width: 60%
+:name: genic_taxic
+
+Gene trees evolve in both a genic dimension (gene duplication, indicated by stars), yielding orthologs A, B, and C, as well as in a taxic dimension (speciation, indicated by circled numbers).
+If speciation and gene duplication would keep track with each other (i.e., if they would be synchronous), the full gene tree would be congruent with the species tree topology.
 :::
+%#% Figure genic_taxic is self created image?
+In this tree, for instance A1, A2, and A3 would be paralogs, all in species A, and A1, B1, and C1 would be orthologs.
+On the other hand A1, B2, and C3 would be paralogs: "non-corresponding" genes, as a result of gene duplication.
 
-In this tree, for instance A1, A2 and A3 would be paralogs, all in species A, and A1, B1 and C1 would be orthologs.
-On the other hand A1, B2 and C3 would be paralogs: "non-corresponding" genes, as a result of gene duplication.
-
-:::{figure} images/Week3/w3_02_5.png
+:::{figure} images/Week3/gene-duplication-speciation.png
 :alt: Evolutionary history of a gene after duplication and speciation events.
-:align: center
-:name: w3f2.5
+:width: 100%
+:name: gene_duplication_speciation
+
 The evolutionary history of a gene that has undergone two separate duplication events.
 (A) The species tree (large blue cylinders) comprising species A and B and with indicated gene duplication and neo-functionalisation events leading to β and γ functions.
-(B) The phylogenetic tree that would be drawn for the resulting 5 genes in (A), here drawn as a cladogram (from Zvelebil & Baum 2008).
+(B) The phylogenetic tree that would be drawn for the resulting 5 genes in (A), here drawn as a cladogram. Credits: {cite}`bioinformatics_2007`.
 :::
-
-In {numref}`w3f2.5`, a sequence of events is given involving two duplication and one speciation event that can lead to a set of homologous genes in two species.
+%#% Like the comment at the top of this markdown, it should be more clearly defined what is exam material here (specifically the terms used here, like neo-functionalisation).
+In {numref}`gene_duplication_speciation`, a sequence of events is given involving two duplications and one speciation event that can lead to a set of homologous genes in two species.
 Some of these are _orthologs_ and some are _paralogs_ that have acquired new functions.
 A species tree is depicted by the pale blue cylinders, with the branch points (nodes) in the cylinders representing speciation events.
 In the ancestral species a gene is present as a single copy and has function α (blue).
-At some time, a gene duplication event occurs within the genome, producing two identical gene copies, one of which subsequently evolves a different function, identified as β (red).
+At a specfic moment, a gene duplication event occurs within the genome, producing two identical gene copies, one of which subsequently evolves a different function, identified as β (red).
 These are paralogous genes.
 Later a speciation event occurs, resulting in two species (A and B) both containing genes α and β.
 Gene Bα (in species B) subsequently undergoes another duplication event, which after further divergent evolution results in genes Bα and Bγ, the latter with a new function γ (green).
@@ -167,43 +174,46 @@ The Bα and Bγ genes are paralogous, as are any other combinations except the o
 Note that Aα and Bγ are orthologs despite their different functions, and so if the intention is to study the evolution of a particular functional product, such as the α function, we need to be able to distinguish the Aα/Bα pair from the Aα/Bγ pair.
 This can be done using sequence similarity, which would be expected to be greater for the Aα/Bα pair as they will be evolving under almost identical evolutionary pressures.
 Errors in functional orthology assignment can easily occur, depending on sequence and functional similarity and whether all related genes have been discovered.
-The gene tree inferred from these 5 genes has multiple occurrences of both species A and B ({numref}`w3f2.5`B).
+The gene tree inferred from these five genes has multiple occurrences of both species A and B ({numref}`gene_duplication_speciation`B).
 
-Consider the trees in {numref}`w3f2.6`, a species tree and a gene tree.
+Consider the trees in {numref}`IL_tree`, a species tree and a gene tree.
 There are multiple occurrences of the terminals from the species tree (bovine, sheep, pig etc.) in the gene tree, each grouped with a different Interleukin sequence type.
-These are the paralogs, that probably resulted from gene duplication events during the proliferation of the IL clade.
-In fact, we can deduce that 4 gene duplication events must have happened, to explain the occurrence of for instance "human" at three positions in the gene tree (indicated with green highlight in {numref}`w3f2.6`), namely i) in the IL-1α clade, ii) in the IL-1rα clade, and iii) as a sister pair in the IL-1β clade.
+These are the paralogs that probably resulted from gene duplication events during the proliferation of the IL clade.
+In fact, we can deduce that 4 gene duplication events must have happened, to explain the occurrence of for instance "human" at three positions in the gene tree (indicated with green in {numref}`IL_tree`), namely I) in the IL-1α clade, II) in the IL-1rα clade, and III) as a sister pair in the IL-1β clade.
 The fourth duplication event would be necessary to assume to explain the IL-1β versus IL-1βm copies.
 All gene copies in this tree are homologs, some are orthologs (for instance Human IL-1β and Mouse IL-1β), and some are paralogs (for instance Human IL-1β and Human IL-1βm).
 
-:::{figure} images/Week3/w3_02_6.png
-:alt:
-:align: center
-:name: w3f2.6
+:::{figure} images/Week3/IL-tree.png
+:alt: Species tree and a gene tree of mammalian Interleukin-1 genes.
+:width: 100%
+:name: IL_tree
+
 A species tree based on external evidence (left) and a gene tree based on a comparison of mammalian Interleukin-1 genes (right).
-In the gene tree, both alpha and beta copies can be seen, which are probably the result of gene duplications (see {numref}`w3f2.5`)
+In the gene tree, both alpha and beta copies can be seen, which are probably the result of gene duplications (see {numref}`gene_duplication_speciation`)
 :::
 
-The tree in {numref}`w3f2.7` is a so-called _reconciled tree_, which has been inferred as an extended tree that would be necessary to assume in order to explain the position and distribution of all IL sequence types in the gene tree.
-Apart from four gene duplications (marked δ{sub}`1`, δ{sub}`2`, δ{sub}`3` and δ{sub}`4`), several _gene losses_ too would need to be assumed to explain the pattern in the gene tree in {numref}`w3f2.6`.
+The tree in {numref}`IL_reconciled` is a so-called _reconciled tree_, which has been inferred as an extended tree that would be necessary to assume in order to explain the position and distribution of all IL sequence types in the gene tree.
+Apart from four gene duplications (marked δ{sub}`1`, δ{sub}`2`, δ{sub}`3` and δ{sub}`4`), several _gene losses_ too would need to be assumed to explain the pattern in the gene tree in {numref}`IL_tree`.
 
-:::{figure} images/Week3/w3_02_7.png
-:alt: A reconciled tree
-:align: center
-:name: w3f2.7
-Reconciled tree for the mammalian interleukin-1 gene tree shown in {numref}`w3f2.6`.
-Gene losses are indicated in light grey. Of the four duplications required, three are supported by the presence of multiple copies of IL in the same mammal species, and one (δ{sub}`3`) is required to explain the incongruence between IL-1 and mammalian phylogeny (from Page & Holms 1998)
+:::{figure} images/Week3/IL-reconciled.png
+:alt: A reconciled tree of the species tree and gene tree of mammalian Interleukin-1 genes.
+:width: 100%
+:name: IL_reconciled
+
+Reconciled tree for the mammalian interleukin-1 gene tree shown in {numref}`IL_tree`.
+Gene losses are indicated in light grey. Of the four duplications required, three are supported by the presence of multiple copies of IL in the same mammal species, and one (δ{sub}`3`) is required to explain the incongruence between IL-1 and mammalian phylogeny. Credits: {cite}`phylogenetic_approach_1998`.
 :::
 
 When our individuals are meant to represent species, it would in principle be a _species tree_.
-{numref}`w3f2.8` shows an example of multiple gene trees (in colour) contributing to the species tree (indicated by black lines) as a result of _species tree estimation_ analysis.
+{numref}`embedded_tree` shows an example of multiple gene trees (in colour) contributing to the species tree (indicated by black lines) as a result of _species tree estimation_ analysis.
 Such analysis is beyond the scope of this course, but it is of course important to always keep in mind at what level your phylogenetic reconstruction is, whether at the species, gene, or even biogeographic area level.
 
-:::{figure} images/Week3/w3_02_8.png
-:alt:
-:align: center
-:name: w3f2.8
-Gene trees, in colour, embedded in the species tree (black lines); Western pocket gophers (Geomyidae, Thomomys). (from Heled \_et al.* Mol. Biol. Evol. 2010).
+:::{figure} images/Week3/embedded-tree.png
+:alt: Gene trees embedded in a species tree of western pocket gophers (Geomyidae, Thomomys).
+:width: 100%
+:name: embedded_tree
+
+Gene trees, in colour, embedded in the species tree (black lines) of western pocket gophers (_Geomyidae, Thomomys_). Credits: {cite}`embedded_tree_2009` CC-BY-NC 2.5 http://creativecommons.org/licenses/by-nc/2.5.
 :::
 
 (nodalsupportthebootstrap)=
@@ -213,47 +223,49 @@ Gene trees, in colour, embedded in the species tree (black lines); Western pocke
 Not all parts of a phylogenetic tree will be equally well-supported or strong, given our character data (MSA).
 In experimental science, usually some statistic measure is used to quantify uncertainty, for instance the mean and standard deviation of outcomes of repeated experiments.
 Phylogenetics is not experimental but rather seeks to reconstruct historic patterns that were driven/shaped by evolution.
-As outlined at the beginning of this section, the implication is that we cannot _prove_ phylogenetic trees nor repeat them, or even know whether we reconstructed the correct one.
+As outlined earlier in this chapter, the implication is that we cannot _prove_ phylogenetic trees nor repeat them, or even know whether we reconstructed the correct one.
 
 What we _can_ do is measure the support for the nodes in our phylogenetic tree, given our MSA.
-To do this, rather than producing several replicates of our MSA (which will most likely all be identical), we can draw random samples from the MSA and use these _pseudo-replicate data sets_ to build trees ({numref}`w3f2.9`).
+To do this, rather than producing several replicates of our MSA (which will most likely all be identical), we can draw random samples from the MSA and use these _pseudo-replicate data sets_ to build trees ({numref}`bootstrap_resampling`).
 Repeating this process many times (hundreds or thousands) and summarizing the variation among the trees thus reconstructed, provides insight in the structure of our data and how it supports the nodes in a tree.
 It actually measures the sampling _variance about the estimate_ of the phylogeny.
 This process is called bootstrap analysis and will be further discussed in [Maximum likelihood tree building](MLtreebuilding), after we have covered the characters underlying our trees in the next section.
 
-:::{figure} images/Week3/w3_02_9.png
-:alt:
-:align: center
-:name: w3f2.9
+:::{figure} images/Week3/bootstrap-resampling.png
+:alt: Comparison between an unlimited and limited data bootstrap resampling analysis approach.
+:width: 100%
+:name: bootstrap_resampling
+
 Bootstrap resampling analysis in phylogeny reconstruction.
-In case of unlimited data (A), not realistic, a summary of sample-based trees yields sampling variance \_about the true phylogeny*.
+In case of unlimited data (A), not realistic, a summary of sample-based trees yields sampling variance about the _true phylogeny_.
 In case of limited data (B), realistic, only pseudo-samples are available, that summarise sampling variance about the _estimate of true phylogeny_.
 :::
-
+%#% Unable to find the original source for Figure bootstrap_resampling.
 (charactersandtrees)=
 
 ## Characters & trees
 
 As outlined above, phylogenetic trees are not directly observed but _inferred_, and represent hypotheses of evolutionary relationship, grouping individuals on the basis of shared history.
-The data used for comparison are the homologous sites among a set of sequences (amino acid or nucleotide) that have been aligned in a multiple sequence alignment (MSA) in which substitutions are made visible ({numref}`w3f3.1`).
+The data used for comparison are the homologous sites among a set of sequences (amino acid or nucleotide) that have been aligned in a multiple sequence alignment (MSA) in which substitutions are made visible ({numref}`MSA`).
 All nucleotide or amino acid substitutions in the MSA, both unique ones (occurring in only a single individual or sequence) and shared ones (occurring in at least two sequences), are used to build the phylogenetic tree.
 Invariant characters however, showing no substitutions, are not expected to contribute to the tree building process as they do not contain comparative signal.
 Shared substitutions are informative for building the branches of your tree, as they connect individuals (_grouping power_) and hence add to the length of internal branches.
 Unique substitutions on the other hand only contribute to the _twigs_ or external branch lengths and have no grouping power.
 The more shared substitutions occur for a set of sequences in your MSA, the stronger the resulting node in the phylogenetic tree will be supported.
 
-:::{figure} images/Week3/w3_03_1.png
-:alt:
-:align: center
-:name: w3f3.1
+:::{figure} images/Week3/MSA.png
+:alt: Multiple sequence alignments and autapomorphies and synapomorphies.
+:width: 100%
+:name: MSA
+
 Characters and trees.
-A) Multiple sequence alignment (MSA, nucleotides) with examples of shared-derived (S), unique (U) as well as invariant (I) characters indicated; B) MSA containing S, U and I characters; the number of steps per character plus total tree length is indicated when assuming the two trees on the right (C).
+A) Multiple sequence alignment (MSA, nucleotides) with examples of shared-derived (S), unique (U) as well as invariant (I) characters indicated; B) MSA containing S, U and I characters; the number of steps per character plus total tree length is indicated when assuming the two trees on the right \(C).
 Character state changes for all characters are indicated on the trees and exemplar syn- and autapomorphies are indicated.
 Note that character 6 is invariant and therefore does not contribute to any tree.
 :::
-
+%#% Figure MSA is quite small and difficult to read. Perhaps rearrange image to display panels underneath each other instead of next to each other? - If shared-derived, unique, and invariant characters are exam material, move to the main body of the text. - Self created figure?
 When observing substitutions in an MSA we cannot say which ones are ancestral (occurring already in "deep" ancestors) and which ones are derived (occurring more recently).
-But placed in the context of a rooted phylogenetic tree, shared substitutions can actually be shared derived (SD) substitutions, which are known as _synapomorphies_ (_syn_=shared, _apo_=derived, _morphy_=character), whereas uniquely derived substitutions are called _autapomorphies_ (see {numref}`w3f3.1`).
+But placed in the context of a rooted phylogenetic tree, shared substitutions can actually be shared derived (SD) substitutions, which are known as _synapomorphies_ (_syn_=shared, _apo_=derived, _morphy_=character), whereas uniquely derived substitutions are called _autapomorphies_ (see {numref}`MSA`).
 
 When designing a phylogenetic study, involving the compilation of one or more MSAs, there is usually a choice between adding more _characters_ versus adding more _taxa_ (sequences).
 Whereas the former is tempting, it is often more useful to add taxa as this allows extra synapomorphies to be realised.
@@ -261,16 +273,16 @@ After all, synapomorphies are relative (not absolute) entities: only in the cont
 For instance, when studying a gene family in which duplications have occurred during the evolution of its lineages, many taxa should be included in the MSA in order to capture the duplication events.
 Only adding more characters may amplify errors or artefacts caused by taxic under-sampling.
 This can lead to incorrectly inferred long branches with seemingly high support for their position and nodes.
-
+%#% Maybe a short description of the difference between characters and taxa would be fitting here?
 In the section [Estimating sequence divergence](estimatingsequencedivergence) we will focus on the estimation of branch lengths using modelling of nucleotide or amino acid changes.
-In the parsimony approach each substitution leads to an extra "step" on the tree, i.e. makes the tree one step longer.
+In the parsimony approach each substitution leads to an extra "step" on the tree, i.e. it makes the tree one step longer.
 Simulation studies have shown that, especially in the case of the combination of short internal branches and long terminal branches, the parsimony approach can give wrong topologies.
 The reason for this is that in such long-branch cases _false_ synapomorphies can form, producing wrong clades.
 After all, long branches mean "many changes" and with a nucleotide alphabet of "only" A, C, G and T the same nucleotides can easily occur in one MSA position by chance.
 This phenomenon has become known as _long-branch attraction_ and has been especially challenging in, for instance, the placement of early land plant lineages.
-These lineages (i.e. _Amborella_, _Nymphea_) are on long branches in isolated positions in the phylogenetic tree and have proven difficult to place with confidence.
+These lineages (e.g., _Amborella_, _Nymphea_) are on long branches in isolated positions in the phylogenetic tree and have proven difficult to place with confidence.
 Applying models of nucleotide substitution in sequence divergence estimation and modelling of branch lengths ([Estimating sequence divergence](estimatingsequencedivergence)) has been shown to overcome parts of this problem.
-
+%#% The parsimony approach is introduced here but lacks motivation (why is parsimony introduced here? What is the relation between characters and parsimony).
 (rootingandclades)=
 
 ### Rooting & clades
@@ -278,87 +290,92 @@ Applying models of nucleotide substitution in sequence divergence estimation and
 A _clade_ is an ancestral node together with all its descendants, which is also referred to as a _monophyletic group_.
 We usually refer to the ancestral node of a clade as the inferred _most recent common ancestor_ (MRCA).
 Of course, there will always be less recent ("deeper") ancestors but they will probably not be informative for recognising and inferring a clade and its relationships, as they are also the ancestor of other clades.
-At deep divergences (i.e. herring _versus_ fruit fly), homology and resolution of the characters used may not be clear and sufficient.
+At deep divergences (e.g., herring _versus_ fruit fly), homology and resolution of the characters used may not be clear and sufficient.
 
-Information contained in phylogenetic trees is _hierarchical_, with structures being part of other, more inclusive, ones.
+Information contained in phylogenetic trees is _hierarchical_, with structures being part of other, more inclusive ones.
 Clades are indeed usually nested into each other, i.e. a clade is a subset of a larger clade.
-Apart from being nested, clades can also be each other's _sisters_, which means they share an exclusive most recent common ancestor (MRCA) with no other clades included ({numref}`w3f3.3`).
+Apart from being nested, clades can also be each other's _sisters_, which means they share an exclusive most recent common ancestor (MRCA) with no other clades included ({numref}`nested_clades`).
 Such _sister groups_ are highly useful in, for instance, evolutionary and comparative studies, as they represent lineages of exact equal age.
-Again, a MRCA together with _all_ its descendants is considered to form a clade.
+Again, an MRCA together with _all_ its descendants is considered to form a clade.
 Such a clade can then be the basis of further analysis or classification.
 It is good to realise that the clade is based on observations (synapomorphies) and therefore represents _evidence_, whereas classification is in principle subjective (opinion) and an interpretation and use of the clade.
-For instance, when any descendant of a clade is left out in a classification, for example _Vertebrates_ being left out from the _Invertebrates_, or birds left out from dinosaurs, the proposed taxon or classification is not monophyletic anymore and is considered a _paraphyletic group_ (i.e. a MRCA and not _all_ its descendants).
+For instance, when any descendant of a clade is left out in a classification, for example _Vertebrates_ being left out from the _Invertebrates_, or birds left out from dinosaurs, the proposed taxon or classification is not monophyletic anymore and is considered a _paraphyletic group_ (i.e., an MRCA and not _all_ its descendants).
 Paraphyletic groups (also referred to as _non-natural groups_) are still in use but not considered to be a proper basis for classification.
 
 When studying gene families and their evolution, it is useful to make comparisons among clades in the gene tree, especially among sister clades, as they are of exactly the same age.
 Any differences between them, in terms of substitution rates, sequence bias in composition, or the number of lineages per clade, is then not due to different age of the clades.
 In order to make these comparisons it is important to compare monophyletic and not paraphyletic groups as the latter are not directly-comparable or of equal age.
 
-:::{figure} images/Week3/w3_03_2.jpg
-:alt:
-:align: center
-:name: w3f3.2
+:::{figure} images/Week3/rooted-trees.jpg
+:alt: Unrooted and rooted tree depictions.
+:width: 100%
+:name: rooted_trees
+
 Rooting phylogenetic trees.
 (Left) Unrooted tree depicting phylogenetic relationships among a set of yellow and brown bird species; external nodes represent the extant (living, observed) species, each with their morphological synapo- or autapomorphies, the internal nodes represent inferred (unobserved) ancestors.
 The tree is fully resolved, as each internal node is connected to three branches.
 Looking at the brown and yellow birds at adjacent internal nodes, it is not clear in what direction evolution proceeded and whether brown yielded yellow or rather the other way round.
 This becomes possible upon rooting the tree, usually based on comparison with an external reference species.
 (Right) Rooted tree; external evidence (not shown) was apparently convincing in placing the root between the yellow and brown birds.
-Thus, a new, internally-placed, brown bird is inferred as MRCA, making the brown birds paraphyletic with regards to the yellow birds, which are now monophyletic.
-The grey arrows indicate the time lines, from the brown bird ("root") which is now the MRCA of the entire tree, to the tips where observed species are located. (From Zvelebil & Baum 2008)
+Thus, a new, internally-placed, brown bird is inferred as the MRCA, making the brown birds paraphyletic with regards to the yellow birds, which are now monophyletic.
+The grey arrows indicate the time lines, from the brown bird ("root") which is now the MRCA of the entire tree, to the tips where observed species are located. Credits: {cite}`bioinformatics_2007`
 :::
 
 Rooting a tree is polarising it, making a distinction in what are old and younger nodes.
-When a tree is properly rooted, usually with an outgroup reference taxon outside the group of interest, it is therefore directed in terms of ancestry and clades can be inferred (see {numref}`w3f3.2`; Note that unrooted trees, which are non-polarised, in principle do not contain clades but "clans").
-In the example in {numref}`w3f3.2` we see that the rooted version of the bird phylogenetic tree seems to contain one extra brown bird.
+When a tree is properly rooted, usually with an outgroup reference taxon outside the group of interest, it is therefore directed in terms of ancestry and clades can be inferred (see {numref}`rooted_trees`; Note that unrooted trees, which are non-polarised, in principle do not contain clades but "clans").
+In the example in {numref}`rooted_trees` we see that the rooted version of the bird phylogenetic tree seems to contain one extra brown bird.
 External evidence (which is not shown in the Figure, only the vertical branch on top leading to the outgroup) was apparently convincing in placing the root between the yellow and brown birds.
 Thus, a new, internally-placed, brown bird is inferred as MRCA, to which the outgroup branch can attach.
 This however makes the brown birds paraphyletic with regards to the yellow birds, because not all descendants from the brown MRCA are brown, some are yellow.
 The yellow birds themselves are now monophyletic.
 
-:::{figure} images/Week3/w3_03_3.png
-:alt:
-:align: center
-:name: w3f3.3
+:::{figure} images/Week3/nested-clades.png
+:alt: A depiction of a rooted nested tree and nested and sister clades with MRCA.
+:width: 100%
+:name: nested_clades
+
 Nested clades and sister clades.
-Left, the same rooted tree as in {numref}`w3f3.2`, now with nested clades indicated by orange shapes: the small orange clade is nested in the lager orange one; it is also a sister clade of the green clade; as are the blue and large orange shapes (From Zvelebil & Baum 2008).
-Right, nested and sister clades with LCA (last common ancestor = MRCA) indicated. (From Ateto 2014)
+Left, the same rooted tree as in {numref}`nested_clades`, now with nested clades indicated by orange shapes: the small orange clade is nested in the lager orange one; it is also a sister clade of the green clade; as are the blue and large orange shapes. Credits: {cite}`bioinformatics_2007`.
+Right, nested and sister clades with LCA (last common ancestor = MRCA) indicated. Credits: {cite}`nested_clades_2014`.
 :::
 
-In {numref}`w3f3.4` an example is given illustrating how improper rooting affects clades and the overall structure of the tree.
-The correct rooting of this tree is indicated in {numref}`w3f3.4`, which is undisputed and based on external evidence for these species.
-Placing the root at the seven possible different positions in the unrooted tree of five terminals shows that only in three cases the (correct) human-chimp-gorilla monophyly is maintained ({numref}`w3f3.5`).
+In {numref}`hcgob` an example is given illustrating how improper rooting affects clades and the overall structure of the tree.
+The correct rooting of this tree is indicated in {numref}`hcgob`, which is undisputed and based on external evidence for these species.
+Placing the root at the seven possible different positions in the unrooted tree of five terminals shows that only in three cases the (correct) human-chimp-gorilla monophyly is maintained ({numref}`hcgob_roots`).
 The other four topologies show extensive conflict, both with each other and with the correct topology.
 This indicates that care should be taken in selecting and assigning a suitable outgroup, which can be problematic in the case of isolated long phylogenetic branches (for instance, in protists or zooplankton lineages) or in the case of reconstructing a gene tree.
 In that case, one usually considers a copy of the gene of interest with sufficient similarity to be considered homologous, in a far-related evolutionary lineage (such as _Amborella_, for angiosperm plants) as a suitable outgroup for rooting that gene tree.
-{numref}`w3f3.6` shows an example of an unrooted tree with additive branch lengths; notice that in such a tree there are no "connectors" (see {numref}`w3f2.1`) needed.
+{numref}`alphaproteobacteria` shows an example of an unrooted tree with additive branch lengths; notice that in such a tree there are no "connectors" (see {numref}`tree_types`) needed.
 
-:::{figure} images/Week3/w3_03_4.png
-:alt:
-:align: center
-:name: w3f3.4
+:::{figure} images/Week3/hcgob.png
+:alt: A properly rooted tree and an unrooted version of the same tree, with the proper root indicated.
+:width: 60%
+:name: hcgob
+
 Rooting phylogenetic trees.
-With human (H), chimp (C), gorilla (G), orang-utan (O) and gibbon (B) indicated, the rooted tree (top) represents the correct tree topology based on external evidence.
-The position of this root is indicated, both in the rooted and unrooted tree (From Page & Holmes 1998)
+With human (H), chimp \(C), gorilla (G), orang-utan (O) and gibbon (B) indicated, the rooted tree (top) represents the correct tree topology based on external evidence.
+The position of this root is indicated, both in the rooted and unrooted tree. Credits: {cite}`phylogenetic_approach_1998`.
 :::
 
-:::{figure} images/Week3/w3_03_5.png
-:alt:
-:align: center
-:name: w3f3.5
+:::{figure} images/Week3/hcgob-roots.png
+:alt: Seven rooted trees derived from placing the root on a different branch of the unrooted tree.
+:width: 100%
+:name: hcgob_roots
+
 Rooting phylogenetic trees.
-The seven rooted trees that can be derived from the unrooted tree for five sequences in {numref}`w3f3.4`.
+The seven rooted trees that can be derived from the unrooted tree for five sequences in {numref}`hcgob`.
 Each rooted tree 1-7 corresponds to placing the root on a different branch of the unrooted tree.
-Terminal labels as for {numref}`w3f3.4`; the orange shape indicates monophyly of human, chimp and gorilla, when present (From Page & Holmes 1998)
+Terminal labels as for {numref}`hcgob`; the orange shape indicates monophyly of human, chimp, and gorilla, when present. Credits: {cite}`phylogenetic_approach_1998`.
 :::
 
-:::{figure} images/Week3/w3_03_6.png
-:alt:
-:align: center
-:name: w3f3.6
+:::{figure} images/Week3/alphaproteobacteria.png
+:alt: An unrooted tree of a group of alphaproteobacteria.
+:width: 100%
+:name: alphaproteobacteria
+
 An example of an unrooted tree (of a group of alphaproteobacteria).
 Colour marks indicate groups that may be clades, depending on how the tree may become rooted.
-The scale bar indicates substitutions per site (from Zevelebil & Baum 2008)
+The scale bar indicates substitutions per site. Credits: {cite}`bioinformatics_2007`
 :::
 
 ### Newick tree notation
@@ -366,9 +383,9 @@ The scale bar indicates substitutions per site (from Zevelebil & Baum 2008)
 Phylogenetic trees are graphical structures ("graphs") that are the outcome of phylogenetic reconstruction of sometimes hundreds or thousands of sequences, and especially when using character-based tree search (see below [Main approaches to tree building](mainapproachestotreebuilding)) there can be enormous amounts of "best trees" that all will have to be taken into account, for instance by calculating a consensus tree (see [Tree space and heuristic search methods](treespaceandheuristicsearchmethods)).
 In any case, handling large numbers of trees in phylogenetical and bioinformatic analytical pipelines requires the tree graphs to be in a format that can be easily read and produced, as a linear statement.
 For this, the Newick notation is commonly used in which brackets describe the structure of the tree.
-For instance, the rooted tree in {numref}`w3f3.4` above would look like `((((H,C)G)O)B)` in Newick notation.
-In case the tree has branch lengths, they can be indicated in this notation as well (see also the Newick tree Activity suggested in the Reading guide).
-
+For instance, the rooted tree in {numref}`hcgob` above would look like `((((H,C)G)O)B)` in Newick notation.
+In case the tree has branch lengths, they can be indicated in this notation as well (see also the [Newick tree Activity](https://brightspace.wur.nl/d2l/le/content/240303/viewContent/1022481/View) suggested in the Reading guide).
+%#% The Newick tree Activity link points to a document, which starts with "In this wee", rather than "in this week".
 (mainapproachestotreebuilding)=
 
 ## Main approaches to tree building
@@ -377,7 +394,7 @@ In case the tree has branch lengths, they can be indicated in this notation as w
 
 Tree building is about finding clades and reconstructing phylogenetic relationships among a group of individuals.
 These individuals can represent genes, species or higher taxa, but they are never categories (or averages), as _characters_ and _states_ are observations on individuals.
-Considering one character (i.e. a MSA position, or column) at a time, _character-based_ methods (for instance maximum parsimony (MP), maximum likelihood (ML) and Bayesian Inference (BI)) simultaneously _compare all sequences_ in a MSA, in order to calculate a score for each character.
+Considering one character (i.e., an MSA position, or column) at a time, _character-based_ methods (for instance maximum parsimony (MP), maximum likelihood (ML) and Bayesian Inference (BI)) simultaneously _compare all sequences_ in an MSA, in order to calculate a score for each character.
 The task is then to find the tree the with best overall score _across all characters_.
 This score, which is also known as an _optimality criterion_, is a measure of how well the data (the characters in your MSA) fit on to a particular tree under consideration.
 This is then repeated with another tree, and again another etc. -_the better the fit, the better the tree_.
@@ -451,7 +468,7 @@ Usually only heuristic search methods (see [Tree space and heuristic search meth
 :alt:
 :align: center
 :name: w3f4.2
-Parsimony analysis (same data and trees as in {numref}`w3f3.1`). Character state changes for all characters in the MSA shown left are indicated on the trees and exemplar syn- and autapomorphies are indicated. Note that character 6 is invariant and therefore does not contribute to any tree. Also note that each substitution occurring in the MSA results in one extra step on the tree.
+Parsimony analysis (same data and trees as in {numref}`MSA`). Character state changes for all characters in the MSA shown left are indicated on the trees and exemplar syn- and autapomorphies are indicated. Note that character 6 is invariant and therefore does not contribute to any tree. Also note that each substitution occurring in the MSA results in one extra step on the tree.
 :::
 
 Each character change can be considered an _ad hoc_ assumption, each of them associated with their type I error, or the chance of having a _false positive_.
