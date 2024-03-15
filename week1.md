@@ -639,7 +639,7 @@ Database entries often link to each other via **cross links**.
 ### GenBank
 
 [GenBank](https://www.ncbi.nlm.nih.gov/genbank/) is a popular primary database for nucleotide sequences and is based at the [NCBI](https://www.ncbi.nlm.nih.gov/) (National Center for Biotechnology Information).
-A GenBank release occurs every two months and the most recent [release](https://www.ncbi.nlm.nih.gov/genbank/release/current/) from 15 December 2023 contains ~250 million sequences and additionally ~3.7 billion WGS (whole genome shotgun) records.
+A GenBank release occurs every two months and the most recent [release](https://www.ncbi.nlm.nih.gov/genbank/release/current/) from the 15{sup}`th` of December 2023 contains ~250 million sequences and additionally ~3.7 billion WGS (whole genome shotgun) records.
 The latter are genome assemblies or genomes that were not yet completed.
 The complete database is available for download via FTP, but the most convenient way to access individual entries is via the search on the GenBank website ({numref}`genbank`).
 
@@ -688,7 +688,7 @@ RefSeq genomes are copies of selected assembled genomes in GenBank. Additionally
 - Transfer of information from annotated genomes in GenBank.
 %#% The eukaryotic and prokaryotic RefSeq links lead to soon to be redundant pages.
 In contrast to GenBank, RefSeq records are owned by NCBI and can be updated to maintain annotation.
-The current release is 222 from January 8, 2024 and contains ~305 million proteins from ~145,000 organisms.
+The current release is 222 from the 8{sup}`th` of January 2024 and contains ~305 million proteins from ~145,000 organisms.
 
 The RefSeq accessions directly provide information on [molecule types](https://www.ncbi.nlm.nih.gov/books/NBK21091/table/ch18.T.refseq_accession_numbers_and_mole/?report=objectonly).
 For example, `NC_` accessions denote complete genomes, `NP_` accessions denote proteins in one genome, and `WP_` accessions denote proteins in multiple genomes.
@@ -735,7 +735,7 @@ Some regions in protein families are more conserved than others because they are
 Prosite contains motifs and profiles specific for many protein families or domains.
 Searching motifs in new proteins can provide a first hint for protein function.
 
-The current release of Prosite from 24 Jan 2024 contains 1311 patterns, 1386 profiles, and 1400 ProRule entries.
+The current release of Prosite from the 24{sup}`th` of January 2024 contains 1311 patterns, 1386 profiles, and 1400 ProRule entries.
 
 A Prosite **pattern** is typically 10 to 20 amino acids in length.
 These short patterns are usually located in short well-conserved regions, such as catalytic sites in enzymes or binding sites.
@@ -771,7 +771,7 @@ Additionally, one InterPro entry can integrate entries from the member databases
 InterPro entries are also linked to [Gene Ontology](sec_go).
 They are curated before being released.
 
-InterPro is updated every 8 weeks. The current release from 25 Jan 2024 contains ~41,000 entries, which represent different types:
+InterPro is updated every 8 weeks. The current release from the 25{sup}`th` of January 2024 contains ~41,000 entries, which represent different types:
 
 As an example, look at the [InterPro entry](https://www.ebi.ac.uk/interpro/entry/InterPro/IPR010945/) for the type 2 malate dehydrogenase protein family.
 The entry has a name (malate dehydrogenase, type 2) and accession (IPR010945).
