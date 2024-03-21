@@ -29,6 +29,9 @@ As they happened in the past we cannot _prove_ them, but they are hypotheses (of
 
 The SARS-CoV-2 phylogenetic tree, March 2024. Credits: nextstrain.org, CC BY 4.0 https://creativecommons.org/licenses/by/4.0/ {cite}`sars-cov-2_2018`.
 :::
+
+---
+
 %#% Figure sars-cov-2 replaced with an updated SVG. If the file size is too large, can be converted to PNG or JPG.
 ## Phylogenetic trees: structure & interpretation
 
@@ -67,6 +70,9 @@ With that, evolutionary trends (towards current conditions) can be inferred, ena
 Comparing species (or genes) in a phylogenetic tree allows inference of ancestral states and evolutionary trends.
 :::
 %#% Figure ancestral_states is rather blurry. - Self created image? If so, reupload in higher resolution.
+
+---
+
 ### Related, diverged
 
 :::{figure} images/Week3/MRCA-mammals.png
@@ -86,8 +92,9 @@ Being _related_ is not the same as being _diverged_, as divergence means the amo
 Raccoon and dog would be more diverged than raccoon and bear, but not more closely related.
 %#% Perhaps it would be nice to include that divergence is also expressed as (dis)similarity to help understand this wording in later sections (if that is indeed what is meant)?
 
-(trees)=
+---
 
+(trees)=
 ### Cladogram, additive and ultrametric
 
 Phylogenetic trees come in three flavours: _ultrametric_, _additive_, and _cladogram_.
@@ -113,6 +120,9 @@ For the same data, the tree is given as _additive_ tree (top) and as an _ultrame
 On the right, flipped, the same tree as _cladogram_, with branch lengths only indicating the structure of the trees.
 :::
 %#% Moved Figure tree_types to this section. - This figure could be much clearer in depicting additive trees and cladograms.
+
+---
+
 ### Tree resolution
 
 The resolution of a phylogenetic tree is the extent to which nodes and branches (clades) can be inferred/observed from the tree.
@@ -137,8 +147,10 @@ Hard and soft polytomies in a phylogenetic tree.
 The soft polytomy can imply different tree resolutions. Credits: {cite}`phylogenetic_approach_1998`.
 :::
 %#% Figure polytomies is quite blurry. Could be reuploaded in higher resolution (I don't have access to the book). Alternatively, easily able to redraw ourselves?
-(orthologsandparalogs)=
 
+---
+
+(orthologsandparalogs)=
 ### Orthologs & paralogs
 
 When the terminals included are actually _gene_ or _protein sequences_, the tree will be a _gene tree_, likely containing _homologs_ (derived from a common ancestor gene), possibly also _orthologs_ and _paralogs_, the latter visualising gene duplications as multiple occurrences of particular terminals on the tree.
@@ -224,8 +236,10 @@ Such analysis is beyond the scope of this course, but it is of course important 
 Gene trees, in colour, embedded in the species tree (black lines) of western pocket gophers (_Geomyidae, Thomomys_). Credits: {cite}`embedded_tree_2009` CC BY-NC 2.5 http://creativecommons.org/licenses/by-nc/2.5.
 ```
 :::
-(nodalsupportthebootstrap)=
 
+---
+
+(nodalsupportthebootstrap)=
 ### Nodal support in phylogenetic trees: the bootstrap
 
 Not all parts of a phylogenetic tree will be equally well-supported or strong, given our character data (MSA).
@@ -249,8 +263,10 @@ In case of unlimited data (A), not realistic, a summary of sample-based trees yi
 In case of limited data (B), realistic, only pseudo-samples are available, that summarise sampling variance about the _estimate of true phylogeny_.
 :::
 %#% Unable to find the original source for Figure bootstrap_resampling.
-(charactersandtrees)=
 
+---
+
+(charactersandtrees)=
 ## Characters & trees
 
 As outlined above, phylogenetic trees are not directly observed but _inferred_, and represent hypotheses of evolutionary relationship, grouping individuals on the basis of shared history.
@@ -283,8 +299,10 @@ Only adding more characters may amplify errors or artefacts caused by taxic unde
 This can lead to incorrectly inferred long branches with seemingly high support for their position and nodes.
 %#% Maybe a short description of the difference between characters and taxa would be fitting here? - Added this description.
 %#% The parsimony approach wass introduced here but lacked explanation. - Moved this paragraph to the [Parsimony analysis] section.
-(rootingandclades)=
 
+---
+
+(rootingandclades)=
 ### Rooting & clades
 
 A _clade_ is an ancestral node together with all its descendants, which is also referred to as a _monophyletic group_.
@@ -378,6 +396,8 @@ Colour marks indicate groups that may be clades, depending on how the tree may b
 The scale bar indicates substitutions per site. Credits: {cite}`bioinformatics_2007`
 :::
 
+---
+
 ### Newick tree notation
 
 Phylogenetic trees are graphical structures ("graphs") that are the outcome of phylogenetic reconstruction of sometimes hundreds or thousands of sequences, and especially when using character-based tree search (see below [Main approaches to tree building](mainapproachestotreebuilding)) there can be enormous amounts of "best trees" that all will have to be taken into account, for instance by calculating a consensus tree (see [Tree space and heuristic search methods](treespaceandheuristicsearchmethods)).
@@ -398,6 +418,8 @@ Considering one character (i.e., an MSA position, or column) at a time, _charact
 The task is then to find the tree with the best overall score _across all characters_.
 This score, which is also known as an _optimality criterion_, is a measure of how well the data (the characters in your MSA) fit on to a particular tree under consideration.
 This is then repeated with another tree, and again another etc. -_the better the fit, the better the tree_.
+
+---
 
 (treespaceandheuristicsearchmethods)=
 #### Tree space and heuristic search methods
@@ -431,6 +453,8 @@ Having to assess such large numbers of trees falls under the category of "NP com
 These _character-based_ tree building methods (as opposed to [_distance-based_](distancebased) methods, are attractive in that trees are made directly from sequence characters, enabling detailed analysis of what characters contribute where in the tree, or reconstructing what ancestral characters (and hence sequences) would have looked like.
 This is a powerful feature of character-based tree building methods, which have become dominant in recent years.
 
+---
+
 #### Consensus trees
 
 Following the character-based tree building approach does usually not result in just one best tree, but rather a set of trees that all score best under the optimality criterion applied.
@@ -455,6 +479,9 @@ DE occurs only once and gets 33%, which is below the majority of 50% and therefo
 Consensus trees.
 Three primary trees are shown on top, their strict and 50% majority-rule consensus trees on the bottom. Credits: {cite}`phylogenetic_approach_1998`.
 :::
+
+---
+
 (parsimonyanalysis)=
 #### Parsimony analysis
 
@@ -504,6 +531,9 @@ Maximum parsimony methods are included in the software ([MEGA11](https://www.meg
 Two other important character-based methods for tree building exist: _maximum likelihood_ (ML) analysis and _Bayesian Inference_ (BI).
 Both differ from parsimony analysis in that they do not merely count differences (as in parsimony analysis) but are based on explicit models of character evolution and operate in a probability framework.
 ML will be discussed in section [Maximum likelihood tree building](MLtreebuilding) below; BI is beyond the scope of this course and will therefore not be treated here.
+
+---
+
 (distancebased)=
 ### Distance-based
 
@@ -587,6 +617,9 @@ In fact, the ultrametric tree ({numref}`ultrametric_distance`) perfectly describ
 When distances are additive, the additive tree perfectly describes them ({numref}`ultrametric_distance`, right). However, here sequences b and c have the smallest distance ($d(\text{b,c})=3$), but are not most closely related.
 ```
 :::
+
+---
+
 (neighborjoining)=
 #### Neighbor Joining
 
@@ -625,6 +658,9 @@ An unrooted NJ tree based on Myosin amino acid sequences.
 The scale bar indicates 5% sequence divergence. Credits: {cite}`neighbor_joining_aa_2000`.
 :::
 %#% Figure neighbor_joining-aa is not refered to anywhere in the text. Do we want to keep this figure in?
+
+---
+
 (estimatingsequencedivergence)=
 ## Estimating sequence divergence
 
@@ -637,6 +673,8 @@ However, this so-called _$p$-difference_ does not necessarily consider _all_ sub
 Estimating all substitutions that historically happened means that we need to find substitutions that _did_ happen but are not visible in your MSA.
 Variable sites can actually keep on changing during evolution, causing multiple substitutions to occur at the same position, which can lead to saturation of change.
 In this way several substitutions may go unnoticed and a mere $p$-difference will underestimate actual sequence divergence.
+
+---
 
 ### Substitution models
 
@@ -695,8 +733,9 @@ Note that base frequencies f{sub}`N` are considered equal in this model.
 %#% Unable to find the original source for this image. - The resolution of the image is quite low. Maybe recreate this image ourselves?
 For amino acid sequence comparisons, instead of estimating parameter values from the data, amino acid substitution models are based on (pre-defined) _substitution cost matrices_ that are based on observations of amino acid substitutions found in over 30,000 protein sequences (e.g., the JTT, Blosum, Dayhoff, LG and WAG matrices).
 
-(MLtreebuilding)=
+---
 
+(MLtreebuilding)=
 ## Maximum likelihood tree building
 
 For character-based approaches these substitution models, as they are based on probabilities, allow us to calculate the _likelihood_ of our data supporting a particular tree and model.
@@ -733,6 +772,8 @@ This is usually achieved by using the heuristic tree search approaches as outlin
 The end result is the MLE: the combination of a tree and model parameter values that maximizes the likelihood of the data.
 This tree, which may not be the exact best MLE (it is after all heuristics), is then usually referred to as the ML tree.
 
+---
+
 ### Model-testing, ML tree search, Bootstrapping
 
 After an ML tree with branch lengths has been obtained, there is still no information on how nodes in the ML tree may differ in terms of support by the data (MSA).
@@ -759,6 +800,8 @@ Note the introduction of a polytomy containing four lineages resulting from coll
 
 The MLE pipeline for phylogenetic reconstruction is implemented in the software package [IQ-TREE](http://www.iqtree.org/){cite}`iqtree_2020`, which includes I) model testing, II) ML tree search, and III) bootstrapping for both nucleotide and amino acid sequences.
 IQ-TREE will be demonstrated and used in the [practical](https://brightspace.wur.nl/d2l/le/content/240303/viewContent/1022425/View).
+
+---
 
 ## Recap tree building methods
 
@@ -787,6 +830,8 @@ Bayesian Inference, in which probabilities for nodes are calculated, and differe
   - Clustering
   - Optimality criterion
 ```
+
+---
 
 ## Glossary
 This glossary contains the most important terms from this week.
@@ -851,6 +896,8 @@ Synapomorphy
   Shared derived character state
 ```
 :::
+
+---
 
 # References
 
