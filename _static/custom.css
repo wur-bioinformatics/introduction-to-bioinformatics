@@ -22,3 +22,6 @@ p {
 #aminoacidtable tbody tr:nth-child(n+18):nth-child(-n+20){
     background-color:#D6CDEA;
 }
+div.citation p {
+    text-align: left;
+}
