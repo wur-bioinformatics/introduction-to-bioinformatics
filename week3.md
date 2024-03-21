@@ -4,7 +4,7 @@
 
 -- Freek T. Bakker (WUR Biosystematics Group), Wageningen, 2024
 ```
-%#% Main remark about this week is that a lot of concepts are presented, which are repeated or further explained in many different sections (same for abbreviations). I have tried to amend this as much as I could. Some sections could do with a rewrite to make this chapter more congruent (merging paragraphs and explaining a concept once and not adding more on to its definition throughout the chapter). Also tried to do this wherever deemed necessary. - When reading through this chapter there should be a clear separation between what should be considered exam material and what is not. - When converting the markdown files into html, it throws the warning that the label Cho14 is sued for two separate keys. This is because the author and year is the same, but I refer to different sections of the book. Doesn't have to be a problem because one of references is only used in week 1 and the other only in week 3. 
+%#% Main remark about this week is that a lot of concepts are presented, which are repeated or further explained in many different sections (same for abbreviations). I have tried to amend this as much as I could. Some sections could do with a rewrite to make this chapter more congruent (merging paragraphs and explaining a concept once and not adding more on to its definition throughout the chapter). Also tried to do this wherever deemed necessary. - When reading through this chapter there should be a clear separation between what should be considered exam material and what is not.
 ## Rationale
 
 :::{figure} images/Week3/tree-of-life.png
@@ -856,4 +856,5 @@ Synapomorphy
 
 ```{bibliography}
 :filter: docname in docnames
+:labelprefix: 3W
 ```
