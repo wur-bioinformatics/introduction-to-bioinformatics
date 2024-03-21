@@ -55,7 +55,7 @@ These pairings are also called Watson-Crick base-pairing, named after the discov
 The DNA structure.
 Credits: Nature Education {cite}`dna_2008`.
 :::
-%#% Figures nucleotide and dna sources: https://openstax.org/books/biology-2e/pages/3-5-nucleic-acids, https://www-nature-com.ezproxy.library.wur.nl/scitable/topicpage/discovery-of-dna-structure-and-function-watson-397/
+%#% Figures nucleotide and dna sources: https://openstax.org/books/biology-2e/pages/3-5-nucleic-acids, https://www-nature-com.ezproxy.library.wur.nl/scitable/topicpage/discovery-of-dna-structure-and-function-watson-397/. - Old comment
 The two strands of the helix run in opposite directions, also called anti-parallel, i.e., one goes from 5' to 3' and the other from 3' to 5' ({numref}`nucleotide`).
 The nucleotide sequence is typically written in 5' to 3' direction.
 Due to the complementarity, the base sequence of a strand can be deduced from the base sequence from the other strand.
@@ -104,7 +104,7 @@ There are four major types of RNA:
 RNA is produced by transcribing DNA: as such, it is a direct copy of the information contained in the DNA. Where DNA contains thymine (T, indicated in blue), RNA contains uracil (U, indicated in purple).
 :::
 %#% Figure transcription created by Rens Holmer. How to properly attribute? Discussion point for everyone/library.
-In eukaryotes, some mRNA molecules undergo splicing. During RNA splicing, the spliceosome protein complex removes introns: specific non-coding parts of an mRNA molecule that are not used during translation ({numref}`splicing`). Most introns are characterized by a GU and AG dinucleotide motif in the 5' and 3' end respectively.
+In eukaryotes, precursor mRNA molecules undergo splicing. During RNA splicing, the spliceosome protein complex removes introns: specific non-coding parts of an mRNA molecule that are not used during translation ({numref}`splicing`), to create mature mRNA. Most introns are characterized by a GU and AG dinucleotide motif in the 5' and 3' end respectively.
 
 :::{figure} images/Week1/splicing.jpg
 :alt: Splicing
@@ -112,7 +112,7 @@ In eukaryotes, some mRNA molecules undergo splicing. During RNA splicing, the sp
 :name: splicing
 During splicing, introns are removed from precursor mRNA moleculus to create mature mRNA. Most introns contain several canonical elements that help in recognition by the spliceosome and in creating a specific secondary structure of the intronic RNA that facilitates removal: **(1)** 3' splice site, **(2)** Poly pyrimidine tract, **(3)** Branch site, **(4)** 5' splice site'
 :::
-%#% Figure splicing missing original source, replace image? - Figure description is the first time the terms precursor mRNA and mature mRNA get mentioned. Move these concepts to main body of the text? - Crop figure slightly bigger to improve readability for dark mode users. 
+%#% Figure splicing missing original source, replace image? - Figure description is the first time the terms precursor mRNA and mature mRNA get mentioned. Moved these concepts to main body of the text. - Cropped the figure slightly bigger to improve readability for dark mode users. 
 ---
 
 ### Translation
@@ -125,9 +125,9 @@ During this process tRNAs decode the information on the RNA into amino acids, wh
 :width: 70%
 :name: translation
 
-Overview of translation.
+The translation process, where ribosomes with tRNA molecules "read" codons on the mRNA using anticodons, which then get translated into their corresponding amino acids. These amino acids are linked together by peptide bonds to form a polypeptide chain.
 :::
-%#% Figure translation missing original source, replace image? - Figure description could be more descriptive.
+%#% Figure translation missing original source, replace image? - Made figure description more descriptive.
 :::{seealso}
 The details of transcription and translation differ between prokaryotes and eukaryotes. You can look up Chapters 15 and 16 of [Biology 2e](https://openstax.org/details/books/biology-2e) to learn more.
 :::
@@ -190,12 +190,11 @@ The structure of an amino acid. Four groups are connected to the α-carbon:
 an amino group, a hydrogen atom, a carboxyl group, and a side chain (R group).
 Credits: Rice University, CC BY 4.0 https://creativecommons.org/licenses/by/4.0, via OpenStax {cite}`aminoacid_2018`.
 :::
-%#% Figure aminoacid could be cropped slightly bigger to improve readability for dark mode users.
+%#% Figure aminoacid was cropped slightly bigger to improve readability for dark mode users.
 :::{important}
 Amino acids differ in their chemical properties, which are determined by their R groups.
 It is important to know the amino acids, their one-letter and three-letter abbreviation, and their fundamental properties as given in the table.
 :::
-
 ```{list-table}
 :header-rows: 1
 :widths: auto
@@ -286,15 +285,15 @@ It is important to know the amino acids, their one-letter and three-letter abbre
   - C
   - Special (forms disulfide bonds)
 ```
-%#% Table aminoacidtable is difficult to read in dark mode. Adjust _static directory css file or overall jupyter book css itself.
-Some amino acids have non-polar side chains, and these are generally **hydrophobic**, i.e., they do not like water.
+%#% Table aminoacidtable was difficult to read in dark mode. Adjusted custom css file to make it easier to read.
+Some amino acids have non-polar side chains, and these are generally **hydrophobic**, i.e., water cannot form hydrogen bonds with these molecules.
 Thus, they can often be found in the interior of proteins together with other hydrophobic amino acids.
 **Aromatic** amino acids contain aromatic rings, and often stabilize folded protein structures.
-%#% Description of hydrophobic amino acids is rather informal ("they do not like water").
-In contrast, the charged and the polar amino acids are **hydrophilic**, i.e., they like water and can interact with it.
+%#% Description of hydrophobic amino acids was rather informal ("they do not like water").
+In contrast, the charged and the polar amino acids are **hydrophilic**, i.e., water can form hydrogen bonds with these molecules.
 They can often be found on the surface of proteins or in the interior, when they can interact with another oppositely charged amino acid.
 **Positively charged** amino acids, are also called basic amino acids and **negatively charged** amino acids are also called acidic amino acids.
-%#% Description of hydrophylic amino acids is rather informal ("they like water").
+%#% Description of hydrophylic amino acids was rather informal ("they like water").
 Although amino acids can be classified into these groups based on their properties, some amino acids stand out.
 The smallest amino acid is glycine, which provides great flexibility due to its small size.
 In contrast, proline is an amino acid, where the side chain is bonded to the backbone nitrogen atom, which makes it very rigid.
@@ -460,7 +459,7 @@ C) Domain composition of phospholipase D1, which has multiple functional domains
 Credits: EMBL-EBI, CC BY 4.0 https://creativecommons.org/licenses/by/4.0 {cite}`domains_2023`.
 :::
 
-%#% Figure domains example taken from https://www.ebi.ac.uk/training/online/courses/protein-classification-intro-ebi-resources/protein-classification/what-are-protein-domains/
+%#% Figure domains example taken from https://www.ebi.ac.uk/training/online/courses/protein-classification-intro-ebi-resources/protein-classification/what-are-protein-domains/. - Old comment
 
 ---
 
@@ -480,10 +479,10 @@ Proteins consisting of two subunits are also called dimer.
 :name: oligomers
 
 Examples of oligomers.
-A) Myoglobin, a heteromer of four subunits (PDB structure 1HV4 colored by chain) {cite}`oligomers_a_2001,ngl_2018,rcsb_2000`.
-B) UDP-galactose 4-epimerase, a homodimer (PDB structure 1EK5 colored by secondary structure) {cite}`oligomers_b_2000,ngl_2018,rcsb_2000`.
+A) Myoglobin, a heteromer of four subunits (PDB structure 1HV4 colored by chain) {cite}`rcsb_2000,oligomers_a_2001,ngl_2018`.
+B) UDP-galactose 4-epimerase, a homodimer (PDB structure 1EK5 colored by secondary structure) {cite}`rcsb_2000,oligomers_b_2000,ngl_2018`.
 :::
-%#% PDB imagery of structures (Figure oligomers) needs three separate citations (protein doi, NGL viewer, and RSCB). They are sorted alphabetically by default. Do we want to change this?
+%#% PDB imagery of structures (Figure oligomers) needs three separate citations (protein doi, NGL viewer, and RSCB).
 ---
 
 #### Substitutions
@@ -514,9 +513,9 @@ For some examples see {numref}`protrep`.
 :width: 60%
 :name: protrep
 
-Different representations of the PDB structure 5PEP generated with NGL {cite}`protrep_1990,ngl_2018,rcsb_2000`.
+Different representations of the PDB structure 5PEP generated with NGL {cite}`rcsb_2000,protrep_1990,ngl_2018`.
 :::
-
+%#% The citation above does not end up in alphabetical order. This is probably caused by ngl_2018 being referenced earlier in the markdown than protrep_1990. Not sure how to fix without adopting a custom inline citation reference style.
 :::{seealso}
 Most of the figures in this section are taken from [OpenStax](https://openstax.org/books/biology-2e/pages/3-4-proteins), where you can also find more information on proteins.
 :::
@@ -546,13 +545,13 @@ Most repeat masking workflows work by first compiling (or using a precompiled) '
 
 ### Gene prediction
 
-The process of finding protein coding genes differs between prokaryotic and eukaryotic genomes. In both cases the aim is to find open reading frames: contiguous stretches of DNA that encode proteins. However, since RNA splicing ({numref}`splicing`) is almost absent in prokaryotic genomes, prokaryotic ORFs can be found directly in the genomic DNA. As a result, simply enumerating all possible ORFs in a genome is a common step in prokaryotic genome annotation. In contrast, ORFs in eukaryotic genomes are found on _mature_ mRNAs. As such, all eukaryotic gene prediction methods take splicing into account, thereby greatly increasing their computational complexity. Both prokaryotic and eukaryotic gene prediction typically can be classified as either evidence based prediction or ab initio prediction.
-%#% The abbreviation ORFs is used in this section but not previously attributed to unabbreviated word.
+The process of finding protein coding genes differs between prokaryotic and eukaryotic genomes. In both cases the aim is to find open reading frames (ORFs): contiguous stretches of DNA that encode proteins. However, since RNA splicing ({numref}`splicing`) is almost absent in prokaryotic genomes, prokaryotic ORFs can be found directly in the genomic DNA. As a result, simply enumerating all possible ORFs in a genome is a common step in prokaryotic genome annotation. In contrast, ORFs in eukaryotic genomes are found on _mature_ mRNAs. As such, all eukaryotic gene prediction methods take splicing into account, thereby greatly increasing their computational complexity. Both prokaryotic and eukaryotic gene prediction typically can be classified as either evidence based prediction or ab initio prediction.
+%#% The abbreviation ORFs was used in this section but not previously attributed to unabbreviated word.
 #### Evidence based prediction
 
 This data-driven approach uses existing and newly generated data to get hints on what regions of a genome encode genes. Depending on the type of data, these predictions have more or less predictive power. Some commonly used evidence types are:
 
-- RNA-sequencing data: the most direct form of evidence for what regions of the genome are transcribed. As such, RNA-sequencing 'reads' often provide the best form of evidence in identifying splice sites in eukaryotes. Note that not all transcribed RNA will be translated into proteins, and that therefore not all RNA-sequencing reads are evidence for protein coding genes. Distinguishing between protein-coding and non-coding RNA is not always trivial.
+- RNA-sequencing data: the most direct form of evidence for what regions of the genome are transcribed. As such, RNA-sequencing (often abbreviated to RNA-seq) 'reads' often provide the best form of evidence in identifying splice sites in eukaryotes. Note that not all transcribed RNA will be translated into proteins, and that therefore not all RNA-sequencing reads are evidence for protein coding genes. Distinguishing between protein-coding and non-coding RNA is not always trivial.
 - Homology evidence: Aligning DNA or protein sequences of known genes (from other organisms) is valuable evidence in finding coding regions of the genome. Due to the redundancy in the genetic code, it is not trivial to correctly identify splice sites when aligning protein sequences to a genome. Homology evidence from closely related organisms leads to higher quality predictions than evidence from distantly related organisms.
 - Whole-genome alignments: this approach uses the annotated genome of a closely related organism to directly identify coding regions in a novel genome. For example: whole-genome alignment of mouse and human genomes reveals that large parts of mouse chromosome 2 are homologous to human chromosome 20. The alignment procedure results in a direct 1-to-1 mapping of mouse and human genome coordinates, and as such annotation coordinates can be transferred between genomes.
 
@@ -569,7 +568,7 @@ Several ab initio gene predictors that use the statistical procedure described a
 ### Evidence/prediction integration
 
 From the previous sections it has now become clear there are several ways of predicting what the genes in a genome look like. Since these various approaches almost never agree exactly in their predictions, a final step in genome annotation is evidence and prediction integration. Typically a weighted consensus approach is used: each individual source of evidence is given a weight representing how much it should influence the final decision, after which a majority vote decides what the annotation should look like. Typically RNA-seq evidence gets a high weight, and various forms of homology evidence can be weighted depending on how closely related they are to the genome of interest.
-%#% The abbreviation RNA-seq is used in this section but not previously attributed to unabbreviated word.
+%#% The abbreviation RNA-seq was used in this section but not previously attributed to unabbreviated word.
 ### Functional annotation
 
 So far, all described steps in the genome annotation process have dealt with what genes look like on a structural level. To gain biological insight, the next step is to assign functional annotations to the predicted genes. This functional annotation step consists of using various sequence alignment and search tools to find sequences with a known function/description and to transfer the information of the known gene to the predicted gene. Several databases of high-quality known functions are often used, which are described in more detail in the next section of this chapter.
@@ -686,13 +685,13 @@ RefSeq genomes are copies of selected assembled genomes in GenBank. Additionally
 - Computation via the [eukaryotic](https://www.ncbi.nlm.nih.gov/genome/annotation_euk/) or [prokaryotic](https://www.ncbi.nlm.nih.gov/genome/annotation_prok/) annotation pipeline.
 - Manual curation.
 - Transfer of information from annotated genomes in GenBank.
-%#% The eukaryotic and prokaryotic RefSeq links lead to soon to be redundant pages.
+%#% The eukaryotic and prokaryotic RefSeq links lead to soon to be redundant pages. Not sure what to replace this with.
 In contrast to GenBank, RefSeq records are owned by NCBI and can be updated to maintain annotation.
 The current release is 222 from the 8{sup}`th` of January 2024 and contains ~305 million proteins from ~145,000 organisms.
 
 The RefSeq accessions directly provide information on [molecule types](https://www.ncbi.nlm.nih.gov/books/NBK21091/table/ch18.T.refseq_accession_numbers_and_mole/?report=objectonly).
 For example, `NC_` accessions denote complete genomes, `NP_` accessions denote proteins in one genome, and `WP_` accessions denote proteins in multiple genomes.
-%#% Sources: https://www.ncbi.nlm.nih.gov/books/NBK50679/#RefSeqFAQ.what_is_the_difference_between_1, https://www.ncbi.nlm.nih.gov/refseq/about/
+%#% Sources: https://www.ncbi.nlm.nih.gov/books/NBK50679/#RefSeqFAQ.what_is_the_difference_between_1, https://www.ncbi.nlm.nih.gov/refseq/about/. - Old comment.
 ---
 
 ### UniProt
@@ -759,7 +758,7 @@ Notably, profiles cover the structural relationships of domains, but they might 
 To include that information, **ProRule** contains additional information about Prosite profiles, such as the position of structurally or functionally important amino acids.
 ProRule is used to guide curated annotation of UniProtKB/Swiss-Prot.
 
-%#% Source: https://academic.oup.com/bib/article/3/3/265/239712 https://academic.oup.com/bioinformatics/article/21/21/4060/226654 example: https://prosite.expasy.org/rule/PRU01217"
+%#% Source: https://academic.oup.com/bib/article/3/3/265/239712 https://academic.oup.com/bioinformatics/article/21/21/4060/226654 example: https://prosite.expasy.org/rule/PRU01217". - Old comment.
 
 ### InterPro
 
@@ -888,7 +887,7 @@ A biological process is not equivalent to a molecular pathway. At present, the g
 A good example of how ontologies are represented as graphs is the biological process [hexose biosynthetic process](http://amigo.geneontology.org/amigo/term/GO:0019319), which has two parents: [hexose metabolic process](http://amigo.geneontology.org/amigo/term/GO:0019318) and [monosaccharide biosynthetic process](http://amigo.geneontology.org/amigo/term/GO:0046364). This reflects that biosynthetic process is a subtype of metabolic process and a hexose is a subtype of monosaccharide. ({numref}`go`).
 
 Edges between GO terms in the GO hierarchy can represent various relationships between genes and gene products. The four main relationship types used in the gene ontology are 'is a', 'part of', 'has part', and 'regulates'.
-%#% The four main relationships in gene ontology are listed above but are not visually represented until after the next figure (Figure so).
+%#% The four main relationships in gene ontology are listed above but are not visually represented until after the next figure (Figure so). Either move the text to the next figure or add the main relationships to the first figure.
 :::{figure} images/Week1/go.png
 :alt: Go hierarchy
 :width: 55%
@@ -930,4 +929,5 @@ Many more ontologies exist and are relevant to biomedical research. The European
 
 ```{bibliography}
 :filter: docname in docnames
+:labelprefix: 1W
 ```
