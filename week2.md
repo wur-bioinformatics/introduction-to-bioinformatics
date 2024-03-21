@@ -128,4 +128,5 @@ After reading, you should be able to explain the basics of primer design and to 
 
 ```{bibliography}
 :filter: docname in docnames
+:labelprefix: 2W
 ```
