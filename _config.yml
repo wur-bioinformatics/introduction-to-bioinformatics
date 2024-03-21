@@ -49,6 +49,7 @@ parse:
 # Advanced and power-user settings
 sphinx:
   config: 
+    bibtex_default_style: unsrt
     bibtex_reference_style: author_year
     language: en
   extra_extensions: 
