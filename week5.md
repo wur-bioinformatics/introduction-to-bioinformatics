@@ -1326,9 +1326,9 @@ mostly superseded by RNAseq as a cheaper and better quality alternative (see
 [below](rnaseq)). However, there are many microarray samples still available for
 re-use in databases, as submission of measurement data to such databases is
 compulsory upon publication of a scientific paper. The most well-known
-repositories are the NCBI Gene Expression Omnibus ([GEO](https://www.ncbi.nlm.nih.gov/geo/)), 
-with as of March 2024 ~7.1 million samples, and [EBI ArrayExpress](https://www.ebi.ac.uk/biostudies/arrayexpress). 
-If you are interested in a certain question that may be answered using transcriptomics, 
+repositories are the NCBI Gene Expression Omnibus ([GEO](https://www.ncbi.nlm.nih.gov/geo/)),
+with as of March 2024 ~7.1 million samples, and [EBI ArrayExpress](https://www.ebi.ac.uk/biostudies/arrayexpress).
+If you are interested in a certain question that may be answered using transcriptomics,
 it makes sense to look here first to see what experimental data is already available.
 
 ---
@@ -1819,11 +1819,11 @@ support systems biology approaches, specifically in microbes.
 
 ### Phenomics
 
-The final outcome of cellular regulation is the phenotype, i.e. the
+The final outcome of cellular regulation is the phenotype, i.e., the
 set of observable characteristics or behaviours of a cell or organism at
 macro-scale. These phenotypes often depend in complex ways on levels and
 interactions of a (large) number of molecules in the cell. Uncovering the
-genotype-phenotype relation, i.e. what variation at the genomic level
+genotype-phenotype relation, i.e., what variation at the genomic level
 underlies (disrupted) phenotypes, is one of the most important goals in many
 scientific areas, including medicine.
 
@@ -1832,8 +1832,8 @@ there is no standardized approach to phenomics as there is for the other
 omics levels. Exceptions include structured databases of human diseases such as
 [MalaCards](https://www.malacards.org/), and of genetic disorders such as
 [OMIM](https://www.omim.org/). Similar approaches are starting to find their
-way into other areas of biology (ecology, plant development and breeding,
-animal behaviour), with (standardized) repositories for image, video and tracking
+way into other areas of biology (ecology, plant development and breeding, and
+animal behaviour), with (standardized) repositories for image, video, and tracking
 data. Reliable, high-throughput phenomics data will prove indispensable to
 make sense of the genetic variation we find.
 
@@ -1843,21 +1843,22 @@ make sense of the genetic variation we find.
 ### -Omics data analysis
 
 Transcriptomics, proteomics and metabolomics (can) all provide quantitative
-measurements on molecule levels present. The resulting data can be analysed
+measurements on molecule levels present. The resulting data can be analyzed
 in various ways, to answer different questions. The main approaches
 are:
 - Visualization, to facilitate inspection of experimental outcomes and
-identifying large patterns
+identifying large patterns.
 - Differential abundance, to compare abundance levels between
-conditions, cell types or strains
-- Time series analysis, to follow changes over time (i.e. time series
-experiments)
+conditions, cell types or strains.
+- Time series analysis, to follow changes over time (i.e., time series
+experiments).
 - Clustering, grouping genes or samples based on similarity in abundance
-(e.g. to learn about shared function)
+(e.g., to learn about shared function).
 - Classification, finding which gene(s) are predictive of a certain
-phenotype (e.g. a disease)
+phenotype (e.g., a disease).
 - Enrichment, learning which biological functions/processes are most found
-in a given set of genes
+in a given set of genes.
+
 We will discuss each of these below. Most examples will be provided for
 transcriptomics data and we will use the term “genes” throughout, but the
 approaches can without change be applied to quantitative proteomics
@@ -1872,48 +1873,49 @@ experiments are set up to exclude as much variation as possible, but there
 will still be differences in abundance levels detected that are not the
 result of the treatment but rather measurement noise. To distinguish
 clearly between real differences and noise, repeated measures of the same
-condition are important ({numref}`w5f30`). These are called *replicates*.
+condition are important ({numref}`compare_conditions`). These are called *replicates*.
 Underlying the variation in repeated measurements are both biological and
-technical variation; in {numref}`w5f31` this comparison is made for all
+technical variation; in {numref}`error_vs_conditions` this comparison is made for all
 transcripts detected in the samples, for two replicates (left) and two
 different conditions (middle and right).
 
-:::{figure} images/Week5/Fig_30_compare_conditions.svg
+:::{figure} images/Week5/compare-conditions.svg
 :alt: Comparing expression between conditions
-:align: right
-:name: w5f30
+:align: center
+:name: compare_conditions
+
 Difference in expression of gene X between two conditions and two possible distributions the measurement could have come from.
 :::
-
-:::{figure} images/Week5/Fig_31_error_vs_conditions.svg
+%#% Figure compare_conditions is self-created image?
+:::{figure} images/Week5/error-vs-conditions.svg
 :alt: Comparison of differences between replicates and conditions
-:align: right
-:name: w5f31
-Comparison of FPKM values between 2 replicates (left) and two conditions (middle and right). The correlation between replicates should be very high, the differences between two conditions can be small (middle) or large (right).
+:align: center
+:name: error_vs_conditions
+
+Comparison of FPKM values between 2 replicates (left) and two conditions (middle and right).
+The correlation between replicates should be very high, the differences between two conditions can be small (middle) or large (right).
 :::
+%#% Figure error_vs_conditions is self-created image?
 
 ---
 
 #### Visualization
 
-:::{figure} images/Week5/w5bf6.png
+:::{figure} images/Week5/streptococcus-pca-heatmap.png
 :alt: PCA plot and heatmap of simple bacterial transcriptomics dataset
 :align: center
-:name: w5bf6
+:name: streptococcus_pca_heatmap
+
 Visualization of the expression of 2,135 genes in *Streptococcus parauberis*
-after 1, 2 and 4 hours of growth in two different media, fish serum and
+after 1, 2, and 4 hours of growth in two different media: fish serum and
 broth. Each condition has been measured on 3 replicates. Left: a Principal
-Component Analysis (PCA) that the major separation (44% of the variance) is
-betwen the two media and that there is clear progression along time. On
-serum, there is not much expression difference after 2 and 4 hours of
-growth. Right: a heatmap visualizes the entire dataset, with colors
+Component Analysis (PCA) that shows there is a major separation (44% of the variance)
+between the two media and that there is clear progression along time.
+Note that there is not much expression difference after 2 and 4 hours of
+growth on serum. Right: a heatmap visualizes the entire dataset, with colors
 indicating z-score normalized expression values: green is low, black is
 medium and red is high expression. Rows are genes, columns indicate growth
-condition, both are clustered. Taken from
-Y. Lee, N. Kim, H. Roh et al. “[Transcriptome analysis unveils survival strategies of
-*Streptococcus parauberis* against fish
-serum](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0252200)”,
-*PLoS ONE* 16(5):e0252200, 2021.
+condition, both are clustered. Credits: {cite}`streptococcus_pca_heatmap_2021`.
 :::
 
 While omics data can be analyzed in for example Microsoft Excel, it is very
@@ -1922,21 +1924,22 @@ dozens to hundreds of samples. It is therefore wise to first use methods to
 visualize or summarize the data to see whether major patterns or outliers
 can already be detected. A widely used visualization is the so-called
 heatmap, an image of the matrix (genes-by-samples) where each measurement is represented by a
-color. If the data is clustered along both genes and samples (see below),
+color. If the data is clustered along both genes and samples,
 interesting patterns may be easy to spot. A second approach often used in
 initial data exploration is Principal Component Analysis (PCA), which plots
 samples (or genes) along the main axes of variation in the data. If color or
 markers are added, a PCA plot serves very well to detect outliers and
-groups. Both visualizations are illustrated in {numref}`w5bf6`.
+groups. Both visualizations are illustrated in {numref}`streptococcus_pca_heatmap`.
 
 ---
 
 #### Differential abundance
 
-:::{figure} images/Week5/w5bf7.png
+:::{figure} images/Week5/t-test.png
 :alt: T-test
 :align: center
-:name: w5bf7
+:name: t_test
+
 The simplest test for differential abundance of a gene between two
 conditions is the *t*-test. The *t*-statistic is a measure for the
 difference between the means *x* of two distributions, corrected by the
@@ -1944,14 +1947,14 @@ uncertainty expressed in terms of their standard deviation *s*. A *p*-value,
 the probability that we find a *t*-statistic as large or larger by chance,
 can be calculated using the *t*-distribution.
 :::
-
+%#% Figure t_test is self-created image?
 Perhaps the most widely used analysis on omics data, the goal here is to
 compare abundance levels between two classes, conditions, strains, cell
-types etc. - for example, healthy vs. diseased tissue, with or without a
-certain drug, in different growth conditions etc. The simplest approach is
+types, etc. - for example, healthy vs. diseased tissue, with or without a
+certain drug, in different growth conditions, etc. The simplest approach is
 to collect a number of replicate measurements under both conditions and, for
 each gene perform a simple statistical test such as the *t*-test
-({numref}`w5bf7`). Each test
+({numref}`t_test`). Each test
 gives a *p*-value, and genes with a *p*-value below a certain
 threshold, say 5%, could then called significantly differentially expressed.
 There are two caveats:
@@ -1959,8 +1962,8 @@ There are two caveats:
 1. If you perform an individual test for each of thousands of genes, at a
 threshold of 5% you would still incorrectly call many hundreds to thousands
 genes differentially expressed. To solve this, *p*-values are generally
-*adjusted* for multiple testing, i.e. made larger.
-2. If the variation (standard deviation *s* in {numref}`w5bf7`) is low enough, a
+*adjusted* for multiple testing, i.e., made larger.
+2. If the variation (standard deviation *s* in {numref}`t_test`) is low enough, a
 small difference can become significant even if the actual abundance
 difference is small. Therefore, in many experiments an additional
 requirement to select genes is that the fold change is large enough. Often,
@@ -1978,40 +1981,41 @@ reader.
 
 Classification is related to differential abundance analysis, in that it
 tries to find genes that best explain the difference between conditions.
-However, here the goal is actually to predict the condition of a new (additional) sample based on a limited set of gene expression levels, as accurately as possible. Applications are mainly found in medicine, such as diagnosis and prognosis, but are also used to distinguish different cell types, growth stages etc.
+However, here the goal is actually to predict the condition of a new (additional)
+sample based on a limited set of gene expression levels, as accurately as possible.
+Applications are mainly found in medicine, such as diagnosis and prognosis,
+but are also used to distinguish different cell types, growth stages, etc.
 
 ---
 
 #### Time series analysis
 
-:::{figure} images/Week5/w5bf8.png
+:::{figure} images/Week5/time-series.png
 :alt: Transcriptomics of various stages of T-cell development.
 :align: center
-:name: w5bf8
-Transcriptomics of various stages of T-cell development, i.e. a time
+:name: time_series
+
+Transcriptomics of various stages of T-cell development, i.e., a time
 series analysis. Left: heatmap of the 446 genes with most variable gene
 expression levels, clustered into 15 clusters. Right: average expression
 profiles of each cluster show that different groups of genes peak in
 expression in different development stages. These genes may be regulated in
-the same way and be active in similar biological processes. Taken from:
-W.A. Dik, K. Pike-Overzet, F. Weerkamp et al., [“New insights on human T
-cell development by quantitative T cell receptor gene rearrangement studies
-and gene expression profiling”](https://rupress.org/jem/article/201/11/1715/52356/New-insights-on-human-T-cell-development-by),
-*Journal of Experimental Medicine* 201(11):1715-1723, 2005.
+the same way and be active in similar biological processes. Credits: {cite}`time_series_2005`.
 :::
 
 Often it is more interesting to follow abundance over time rather than
-compare it at one specific timepoint, e.g. when tracking the response to a
-drug, a change in growth conditions, regulation of organ development and so
+compare it at one specific timepoint, e.g., when tracking the response to a
+drug, a change in growth conditions, regulation of organ development, and so
 on. Given the cost of omics measurements, a major challenge is to select
 optimal time points for sampling, balancing the information obtained with
 the investment. Subsequent analyses include clustering to find similarly
-regulated genes (see below and ) and more advanced methods that try to identify
+regulated genes (see [below](clustering)) and more advanced methods that try to identify
 regulatory interactions by seeing which gene increase/decrease precedes that
-of another (set of) gene(s). {numref}`w5bf8` provides an example.
+of another (set of) gene(s). {numref}`time_series` provides an example.
 
 ---
 
+(clustering)=
 #### Clustering
 
 Clustering methods attempt to find groups of genes that have similar
@@ -2023,26 +2027,25 @@ can be used to learn about the function of genes - “if the expression of gene
 A is similar to that of gene B with a certain function F, then gene A likely
 also has function F”. This can help identify genes involved in similar
 processes or pathways: co-expressed genes can be co-regulated, code for
-interacting proteins etc. For samples, it can help identify for example
-disease subtypes, different genotypes etc. that may be helpful to learn
+interacting proteins, etc. For samples, it can help identify for example
+disease subtypes, different genotypes, etc. that may be helpful to learn
 about different outcomes. Clustering is often used to order the rows and
-columns of a heatmap (as in {numref}`w5bf6` and {numref}`w5bf8`), after
+columns of a heatmap (as in {numref}`streptococcus_pca_heatmap` and {numref}`time_series`), after
 which obvious clusters should become visible as large color blocks.
 
 ---
 
 #### Enrichment
 
-:::{figure} images/Week5/w5bf9.png
+:::{figure} images/Week5/GO-enrichment.png
 :alt: A part of the Gene Ontology
 :align: center
-:name: w5bf9
+:name: go_enrichment
+
 An example part of the Gene Ontology (GO), in the biological process category.
 Lower-level terms are specific instantiations of the higher-level ones. In
 this figure, GO terms are colored according to the *p*-value in an
-enrichment test. Taken from: Z. Du, X. Zhou, Y. Ling et al., [“agriGO: a GO analysis toolkit for the agricultural
-community”](http://dx.doi.org/10.1093/nar/gkq310), *Nucleic Acids Research*
-38(S2):W64-70, 2010.
+enrichment test. Credits: {cite}`go_enrichment_2010`.
 :::
 
 A final often used analysis is enrichment, in which we use gene functional
@@ -2050,7 +2053,7 @@ annotation to learn about a set of genes, such as a list of differentially
 expressed genes or a cluster. The most widely used annotation for genes is
 the Gene Ontology, a structured dictionary of terms that describe the
 molecular functions of genes and their involvement in biological processes
-or cellular components at different levels of detail ({numref}`w5bf9`). A statistical test
+or cellular components at different levels of detail ({numref}`go_enrichment`). A statistical test
 then assesses how significantly often (more than by chance) we find a
 certain annotaton in our list of genes. Like differential abundance, the
 *p*-values produced should be adjusted for multiple testing. The resulting
@@ -2063,7 +2066,7 @@ higher level than that of individual genes.
 
 This section of the reader on omics data analysis is likely the most prone
 to obsolescence. We have only touched upon or even left out recent
-developments in single-molecule measurements of DNA, RNA and proteins, of
+developments in single-molecule measurements of DNA, RNA, and proteins, of
 single-cell and spatial omics analysis, where molecules are measured in
 individual cells or at grid points in tissues, and accompanying developments
 in deep learning that promise to provide foundation models to capitalize on
