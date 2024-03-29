@@ -123,3 +123,10 @@ Unfortunately, there is a typo in the Tm formula on p. 91 in the book.
 The correct formula is Tm=4(G+C)+2(A+T)
 
 After reading, you should be able to explain the basics of primer design and to name which factors influence primer design.
+
+# References
+
+```{bibliography}
+:filter: docname in docnames
+:labelprefix: 2W
+```

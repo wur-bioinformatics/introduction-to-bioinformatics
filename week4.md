@@ -326,3 +326,10 @@ Foldseek publication:
 
 https://www.nature.com/articles/s41587-023-01773-0
 :::
+
+# References
+
+```{bibliography}
+:filter: docname in docnames
+:labelprefix: 4W
+```

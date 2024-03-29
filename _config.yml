@@ -18,7 +18,7 @@ latex:
 
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
-  - references.bib
+    - references.bib
 # Information about where the book exists on the web
 # repository:
 #  url: https://git.wur.nl/bioinformatics/bif20806-reader  # Online location of your book
@@ -49,6 +49,8 @@ parse:
 # Advanced and power-user settings
 sphinx:
   config: 
+    bibtex_default_style: unsrt
+    bibtex_reference_style: author_year
     language: en
   extra_extensions: 
     - sphinx_subfigure
