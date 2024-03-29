@@ -226,14 +226,14 @@ Gene losses are indicated in light grey. Of the four duplications required, thre
 
 :::{admonition} Box 1: Species tree estimation analysis.
 :class: tip
-{numref}`embedded_tree` shows an example of multiple gene trees (in colour) contributing to the species tree (indicated by black lines) as a result of _species tree estimation_ analysis.
+{numref}`embedded_tree` shows an example of multiple gene trees (in color) contributing to the species tree (indicated by black lines) as a result of _species tree estimation_ analysis.
 Such analysis is beyond the scope of this course, but it is of course important to always keep in mind at what level your phylogenetic reconstruction is, whether at the species, gene, or even biogeographic area level.
 ```{figure} images/Week3/embedded-tree.png
 :alt: Gene trees embedded in a species tree of western pocket gophers (Geomyidae, Thomomys).
 :width: 100%
 :name: embedded_tree
 
-Gene trees, in colour, embedded in the species tree (black lines) of western pocket gophers (_Geomyidae, Thomomys_). Credits: {cite}`embedded_tree_2009` CC BY-NC 2.5 http://creativecommons.org/licenses/by-nc/2.5.
+Gene trees, in color, embedded in the species tree (black lines) of western pocket gophers (_Geomyidae, Thomomys_). Credits: {cite}`embedded_tree_2009` CC BY-NC 2.5 http://creativecommons.org/licenses/by-nc/2.5.
 ```
 :::
 
@@ -392,7 +392,7 @@ Terminal labels as for {numref}`hcgob`; the orange shape indicates monophyly of 
 :name: alphaproteobacteria
 
 An example of an unrooted tree (of a group of alphaproteobacteria).
-Colour marks indicate groups that may be clades, depending on how the tree may become rooted.
+color marks indicate groups that may be clades, depending on how the tree may become rooted.
 The scale bar indicates substitutions per site. Credits: {cite}`bioinformatics_2007`
 :::
 
