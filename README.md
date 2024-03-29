@@ -1,3 +1,3 @@
 # BIF20306 reader
 
-Information for contributers
+Information for contributors

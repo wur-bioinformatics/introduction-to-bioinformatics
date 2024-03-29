@@ -1,22 +1,27 @@
 p {
     text-align: justify;
 }
-
+#aminoacidtable tbody tr td p:nth-child(n+1):nth-child(-n+3){
+    color:#000000;
+}
 #aminoacidtable tbody tr:nth-child(n+1):nth-child(-n+3){
-    background-color:#CBE4F9
+    background-color:#CBE4F9;
 }
 #aminoacidtable tbody tr:nth-child(n+4):nth-child(-n+5){
-    background-color:#CDF5F6
+    background-color:#CDF5F6;
 }
 #aminoacidtable tbody tr:nth-child(n+6):nth-child(-n+9){
-    background-color:#EFF9DA
+    background-color:#EFF9DA;
 }
 #aminoacidtable tbody tr:nth-child(n+10):nth-child(-n+14){
-    background-color:#F9EBDF
+    background-color:#F9EBDF;
 }
 #aminoacidtable tbody tr:nth-child(n+15):nth-child(-n+17){
-    background-color:#F9D8D6
+    background-color:#F9D8D6;
 }
 #aminoacidtable tbody tr:nth-child(n+18):nth-child(-n+20){
-    background-color:#D6CDEA
+    background-color:#D6CDEA;
+}
+div.citation p {
+    text-align: left;
 }
