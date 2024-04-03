@@ -67,7 +67,7 @@ By now, ~218,000 PDB entries are available of ~150,000 unique protein sequences 
 The latter number is important, as a sufficiently diverse set of examples will ensure that there are enough examples in the training data to recognize relevant patterns of various protein folds and other structural features.
 
 As input for their most recent machine learning model, the DeepMind team predicted the structure of 100,000 protein sequences and added those to the training data, a technique called data augmentation.
-Thus, at the time of model training, the team could use around 300,000 protein sequences - 3D structure combinations to train their AlphaFold model that uses a FASTA file as input and outputs a 3D structure model that is described in section {ref}`model_quality`.
+Thus, at the time of model training, the team could use around 300,000 protein sequences - 3D structure combinations to train their AlphaFold model that uses a FASTA file as input and outputs a 3D structure model that is described in the [Assessing a protein structure model quality](model_quality) section.
 
 (alphafold_impact)=
 
@@ -79,24 +79,24 @@ CASP is a community-wide competition where research groups are required to predi
 More than 100 research groups worldwide join the CASP competition every two years.
 Using all sequence and structure data available at the present time, they predict structures for protein sequences with newly derived (yet unreleased) structures, specifically withheld from the public for the purpose of this competition.
 
-:::{figure} images/Week4/w4f3.png
+:::{figure} images/Week4/casp.png
 :alt: AlphaFold progress; Amino acid residue in protein backbone
 :align: center
-:name: w4f3
+:name: casp
 
 Left: Average GDT tests of the contest winners.
-Right: Schematic view of amino acid residue in protein backbone with key atoms labelled, including the alpha carbon used for GDT-TS (image sources: Nature news - https://www.nature.com/articles/d41586-020-03348-4, and FolditWiki - https://foldit.fandom.com/wiki/Alpha_carbon.)
+Right: Schematic view of amino acid residue in protein backbone with key atoms labelled, including the alpha carbon used for GDT-TS. Credits: {cite}`GDT_2020` and [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) {cite}`alpha_carbon_2018`.
 :::
 
-{numref}`w4f3` left side shows both the progress the subsequent AlphaFold models have made, as well as the general impact on the field.
+The left side of {numref}`casp` shows both the progress the subsequent AlphaFold models have made, as well as the general impact on the field.
 On the y-axis, the main evaluation metric that CASP uses is plotted: the Global Distance Test – Total Score (GDT-TS), as an average over the challenges (i.e., protein sequences with no publicly known 3D structures).
-It measures what percentage of α-carbons ({numref}`w4f3`, right) of the amino acids in the predicted structure are within a threshold distance in Ångstroms (to be precise, the average of four thresholds: 1, 2, 4, 8 Å) of the known structure, for the best possible alignment of the two.
-{numref}`w4f3` shows how after years of stagnation, in 2018 AlphaFold clearly made a substantial improvement over the results of earlier years.
+It measures what percentage of α-carbons ({numref}`casp`, right) of the amino acids in the predicted structure are within a threshold distance in Ångstroms (to be precise, the average of four thresholds: 1, 2, 4, 8 Å) of the known structure, for the best possible alignment of the two.
+{numref}`casp` shows how after years of stagnation, in 2018 AlphaFold clearly made a substantial improvement over the results of earlier years.
 In 2020, the prediction results of their updated system, AlphaFold 2.0, were so good that the structure prediction problem has been dubbed as solved by some, although there is still some room for further improvement.
 It is good to note that a score of 100 is not feasible by any predictive method, since there are areas in the protein structure that are inherently difficult to model, i.e., very flexible parts or transitions between, e.g., helix and a random coil.
 Hence, a score between 90-95% is considered equally well as an experimentally derived 3D structure, a score that AlphaFold2 nearly reached.
 
-With the above in mind, let us look at {numref}`w4f3` again.
+With the above in mind, let us look at {numref}`casp` again.
 The maximum average GDT-TS score in 2020 has more than doubled since pre-2018 editions.
 This means that for many more protein sequences, we can gain some sort of reliable insight in their 3D structure.
 Following the sequence-structure-function paradigm, this also provides us insight into their possible functions.
@@ -113,22 +113,22 @@ However, it was not built from scratch: it heavily builds on previously develope
 The most recent AlphaFold implementation can be summarized in three key steps that are recognizable modules linking to previous concepts and knowledge.
 
 The first module processes the protein sequences into so-called numeric “representations” that can be used as input for the machine learning model.
-To create these representations, first a database search is performed ({doc}`week2`).
-Following that, two representations are created (i.e., the two paths in {numref}`w4f4`): a multiple sequence alignment (MSA – a concept introduced and used in {doc}`week2` and {doc}`week3`), which captures sequence variation; and a representation of how likely all residues interact with each other (i.e., that are close to each other in the 3D structure), in the form of a contact map.
+To create these representations, first a database search is performed ([week 2](week2)).
+Following that, two representations are created (i.e., the two paths in {numref}`alphafold_approach`): a multiple sequence alignment (MSA – a concept introduced and used in [week 2](week2) and [week 3](week3)), which captures sequence variation; and a representation of how likely all residues interact with each other (i.e., that are close to each other in the 3D structure), in the form of a contact map.
 The database search is also used to find if there are any suitable “templates” in the PDB database.
-Up to 4 top templates can be chosen to serve as a starting position for the prediction models.
+Up to four top templates can be chosen to serve as a starting position for the prediction models.
 Please note that this is the first step in homology modelling as well, and that AlphaFold can make “good” predictions on a good quality multiple sequence alignment (MSA) alone; hence, there is no need for templates to be there.
 
 It is important to realize that AlphaFold bases itself largely on co-evolutionary information.
 Let us briefly reflect on why this is relevant for structure prediction.
-As you have realized by now, the residue position in the protein primary sequence does not reflect its final position in 3D: residues far away in the primary sequence may end up close to each other after folding and have specific interactions.
+As you may have realized by now, the residue position in the protein primary sequence does not reflect its final position in 3D: residues far away in the primary sequence may end up close to each other after folding and have specific interactions.
 The concept of co-evolution implies that if two interacting residues are important for the protein’s function, they are likely to co-evolve.
 In other words, if one of them changes into a different amino acid, the other will likely have to change as well to maintain the interaction to support the protein’s 3D structure.
 Such genomic signals can only be extracted when we compare many protein sequences with each other.
 Therefore, a deep MSA of high quality is essential for good predictions.
-During the BIF20306 course, you have learned how to create an MSA ({doc}`week2`), and how it is used for phylogenetic reconstruction ({doc}`week3`).
+During the BIF20306 course, you have learned how to create an MSA ([week 2](week2)), and how it is used for phylogenetic reconstruction ([week 3](week3)).
 Here, AlphaFold uses MSA to extract evolutionary signals and predict co-evolution of residues.
-
+%#% The paragraph above repeats information (MSA from week 2 and phylogeny from week 3), which is also featured in the paragraph above it.
 The second module uses the representations and aims to find restrictions in how the protein sequence folds into its 3D structure.
 This part is the actual machine learning model, and we will consider it largely as a black box.
 The model uses deep learning to learn which input features are important to predict the protein folding based on data-driven pattern recognition.
@@ -136,25 +136,25 @@ The model passes information back and forth between the sequence-residue (MSA) a
 This part requires a lot of computation time and effort and thus needs a good infrastructure that is not available to all laboratories.
 The DeepMind team had the powerful resources needed to train the extensive machine learning model.
 
-The third and final module is the structure builder where the actual folding and refinement of the structure model takes place using the phi, psi, and omega angles (see also {doc}`week1`).
-Furthermore, local and global Confidence Scores are determined.
+The third and final module is the structure builder where the actual folding and refinement of the structure model takes place using the phi, psi, and omega angles (see also [week 1](week1)).
+Furthermore, local and global confidence scores are determined.
 Several prediction cycles usually take place where the predicted 3D structure model serves as a new input (i.e., template) for the structure prediction to allow for further fine-tuning.
 The structure builder takes input from several independently trained models.
-This yields several 3D structure models with tiny or large differences, which are finally ranked according to the models’ confidence scores (see {ref}`model_quality`).
+This yields several 3D structure models with tiny or large differences, which are finally ranked according to the models’ confidence scores (see [Assessing a protein structure model quality](model_quality)).
 
 To summarize the AlphaFold process, database searches are done to construct MSAs and find templates, the exact same input is given to several identical machine learning models with slightly different parameter settings, and the structure builder creates 3D structure models for them that are ranked based on confidence scores to report the best performing model.
 
-:::{figure} images/Week4/w4f4.png
+:::{figure} images/Week4/alphafold-approach.png
 :alt: AlphaFold approach
 :align: center
-:name: w4f4
+:name: alphafold_approach
 
-Figure 4 – Schematic overview of AlphaFold approach. Modified image from: https://www.nature.com/articles/s41586-021-03819-2
+Schematic overview of AlphaFold approach. Credits: modified from {cite}`alphafold_approach_2021`.
 :::
 
 ## AlphaFold DB: a resource of pre-computed AlphaFold protein structure models
 
-The computation of AlphaFold predictive models costs a lot of computation time and resources (see {ref}`alphafold_impact` and {ref}`alphafold_under_the_hood`).
+The computation of AlphaFold predictive models costs a lot of computation time and resources (see [The impact of AlphaFold on biochemistry](alphafold_impact) and [AlphaFold relies on sequence comparisons to find templates and predict co-evolution](alphafold_under_the_hood)).
 To avoid running AlphaFold over and over on the same protein sequences and to facilitate the dissemination and inspection of AlphaFold protein structure models, the DeepMind team collaborated with EMBL’s European Bioinformatics Institute (EMBL-EBI) to create the AlphaFold Protein Structure Database (AlphaFold DB), https://alphafold.ebi.ac.uk/.
 Currently, the resource contains over 200,000,000 structure models.
 The first AlphaFold DB release covered the human proteome, along with several other key organisms such as _Arabidopsis thaliana_ and _Escherichia coli_.
@@ -201,14 +201,14 @@ Predictive models only have true value when they produce some measure of confide
 To get an idea of how well predictions fit the reality, one needs to compare the model with the true situation.
 {numref}`w4f6` shows how this can be done by manual visual inspection of two super-imposed structures, the real one and a predicted one.
 However, to quantitatively assess differences between models, some sort of numeric score is needed.
-In this reader, we have seen one such comparative measure for 3D protein structure models in the CASP section: the Global Distance Test – Total Score ({numref}`w4f3`).
+In this reader, we have seen one such comparative measure for 3D protein structure models in the CASP section: the Global Distance Test – Total Score ({numref}`casp`).
 Another score you may encounter more often is the root mean squared error (RMSE), based on the difference in position of the of α-carbons as input to calculate the score.
 In principle, the smaller the RMSE of a model is, the better.
 The QMEAN-DISCO score used by SWISS-MODEL is also used.
 This score is an ensemble of various metrics that together provide insight into the quality of the model.
 
 To assess the confidence in the model structure without a direct comparison to a known structure, one needs to assess the uncertainty in the position of the amino acid in the 3D coordinate system.
-AlphaFold comes with its own local and global error predictions that the machine learning model calculates (see also {ref}`alphafold_under_the_hood`, and {numref}`w4f7`).
+AlphaFold comes with its own local and global error predictions that the machine learning model calculates (see also [AlphaFold relies on sequence comparisons to find templates and predict co-evolution]alphafold_under_the_hood)), and {numref}`w4f7`).
 Where the local error focuses on individual positions of amino acids, the global error describes how confident the predictions are for various protein parts that can interact through residue-residue interactions.
 The local error is also used to color-code the residues of the model in the 3D structure viewer.
 In this way, it is easier to observe which parts of the structure model are more reliable than others.
@@ -320,7 +320,7 @@ https://alphafold.ebi.ac.uk/faq#faq-5
 
 Taken inspiration and figures from:
 
-https://elearning.bits.vib.be/courses/alphafold/lessons/introduction-to-alphafold/ (CC-BY 4.0)
+https://elearning.bits.vib.be/courses/alphafold/lessons/introduction-to-alphafold/ (CC BY 4.0)
 
 Foldseek publication:
 
