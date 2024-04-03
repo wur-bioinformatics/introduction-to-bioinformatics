@@ -2,35 +2,35 @@
 
 ```{epigraph}
 
--- Justin van der Hooft & Rens Holmer, Wageningen, 2023
+-- Justin van der Hooft & Rens Holmer, Wageningen, 2024
 
 ```
 
 ## Predicting protein structures: the sequence-structure-function paradigm
 
 Proteins are essential for life on earth.
-They have many kinds of functions in organisms such as supporting its structure (i.e., keratin in our skin), performing enzymatic reactions (i.e., Ribulose-1,5-bisphosphate carboxylase-oxygenase, a.k.a. Rubisco, in plants), or receptors for transduction of signals that mediate cell-to-cell communication.
+They have many kinds of functions in organisms such as supporting its structure (e.g., keratin in our skin), performing enzymatic reactions (e.g., Ribulose-1,5-bisphosphate carboxylase-oxygenase, a.k.a. Rubisco, in plants), or receptors for transduction of signals that mediate cell-to-cell communication.
 Intriguingly, a relatively small amount of amino acid building blocks forms the basis of a structurally very diverse protein repertoire that exert a wide range of functions of which only some are mentioned before.
 To understand the function of proteins, knowing their structures is key.
 Proteins are created as a long chain of amino acids that then folds into a three-dimensional (3D) structure, based on various types of interactions between amino acid side groups.
-Interestingly, whereas the amino acid sequence of proteins may differ, their folding may still result in comparable 3D structures – with comparable or even similar functionality (see {numref}`w4f1`).
+Interestingly, whereas the amino acid sequence of proteins may differ, their folding may still result in comparable 3D structures – with comparable or even similar functionality (see {numref}`myoglobin`).
 Thus, the protein folding process is important, as it determines the final 3D structure and misfolding can lead to misfunctioning of the protein, for example causing a disease in humans or resulting in a loss of function in plants.
 
 The sequence-structure-function paradigm states that, in principle, all information to predict the folding of a protein, and thus its 3D structure and ultimately its function, is stored in its primary sequence.
-In practice, however, predicting structure from sequence turned out to be a very hard and challenging task.
+In practice, however, predicting structure from its sequence turned out to be a very hard and challenging task.
 In the various protein structure levels, the primary structure is the amino acid sequence, and the secondary structure refers to local shapes such as sheets, helices, and coils.
 Subsequent interactions between sheets and helices typically form anchor points upon which the tertiary (3D) structure is based.
 This chapter introduces the most recent approach to predicting tertiary (3D) structure directly from amino acid sequences: AlphaFold.
 
-:::{figure} images/Week4/w4f1_myoglobin-1.png
+:::{figure} images/Week4/myoglobin.png
 :alt: Different protein structures
 :align: center
-:name: w4f1
+:name: myoglobin
 
-Protein structures of human myoglobin (top left), African elephant myoglobin (top right, 80% sequence identity to human structure analogue), blackfin tuna myoglobin (bottom right, 45% sequence identity to human analogue) and pigeon myoglobin (bottom left, 25% sequence identity to human analogue).
+Protein structures of human myoglobin (top left), African elephant myoglobin (top right, 80% sequence identity to human structure analogue), blackfin tuna myoglobin (bottom right, 45% sequence identity to human analogue), and pigeon myoglobin (bottom left, 25% sequence identity to human analogue).
 Myoglobin can be found in muscles and its main function is to supply oxygen to muscle cells.
-The protein structure figures illustrate how structure can be largely the same even for sequences that are quite different.  
-Image source: https://www.blopig.com/blog/2021/07/alphafold-2-is-here-whats-behind-the-structure-prediction-miracle/
+The protein structures in this figure illustrate how structure can be largely the same even for sequences that are quite different.
+Credits: {cite}`myoglobin_2021`.
 :::
 
 While current experimental methods can generate many sequences of hypothetical proteins present in organisms, it is still hard and expensive to determine the corresponding 3D protein structures experimentally.
@@ -40,21 +40,21 @@ Thus, alternative methods to derive 3D protein structures are needed to interpre
 
 Consequently, predicting protein structures has been a topic of high interest and relevance for biochemistry for many decades now.
 Various approaches including ab initio, threading (also called fragment-based modelling), and homology modelling have been proposed and used to go from sequence to structure, with both sequence identity and alignment length as the most important factors to decide which approach to choose.
-Very recently, the DeepMind team of Google introduced a machine learning-based approach called AlphaFold.
+Very recently, the [DeepMind](https://deepmind.google/technologies/alphafold/) team of Google introduced a machine learning-based approach called AlphaFold.
 This reader describes how AlphaFold builds on previous approaches and has had substantial impact in biochemistry and bioinformatics.
 An analogy could be made to the introduction of the smartphone: whereas previously, one needed to go to the library to find a computer and connect to the internet to get to a weather forecast, one now simply takes the phone and looks up the weather.
 In the following sections, it is described why AlphaFold could be developed and work only now, how it was compared to other approaches in a fair manner, how it relies on database search and multiple sequence alignment, and what the introduction of the AlphaFoldDB-database that contains AlphaFold-predicted structure models means for discovery pipelines.
 
 ## AlphaFold ingredients: experimentally derived 3D structures & computational advances
 
-:::{figure} images/Week4/w4f2.png
+:::{figure} images/Week4/PDB-stats.png
 :alt: Protein structures in the Protein Data Bank
 :align: center
-:name: w4f2
+:name: PDB_stats
 
-Top: Number of added 3D protein structures that have been added to the Protein Data Bank from 1976 – present time.
-Right: Number of unique 3D protein structures (based on their sequence) that have been added to the Protein Data Bank from 1976 – present time.
-Source: https://www.rcsb.org/stats/
+Top: Number of unique 3D protein structures (based on their sequence) at 95% sequence identity that have been added annually to the Protein Data Bank from 1976 – present time.
+Bottom: Number of 3D protein structures that have been added to the Protein Data Bank from 1976 – present time.
+Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`PDB_stats_2024`.
 :::
 
 It is good to realize why AlphaFold could work in the first place.
@@ -62,19 +62,19 @@ The AlphaFold approach is based on machine learning, i.e., computer algorithms t
 Such a model can then predict the structure, when given a sequence that it has not seen before.
 DeepMind made use of very large neural network models, so-called deep learning.
 The training data for such models ideally consists of many known examples for very complex problems such as protein structure prediction.
-The Protein Data Bank (PDB) collects experimentally such training data, i.e., measured protein 3D structures.
-By now, ~200,000 PDB entries are available of ~80,000 unique protein sequences at 95% sequence similarity ({numref}`w4f2`, top).
+The Protein Data Bank (PDB) collects such experimental training data, i.e., measured protein 3D structures.
+By now, ~218,000 PDB entries are available of ~150,000 unique protein sequences at 95% sequence similarity ({numref}`PDB_stats`, top).
 The latter number is important, as a sufficiently diverse set of examples will ensure that there are enough examples in the training data to recognize relevant patterns of various protein folds and other structural features.
 
 As input for their most recent machine learning model, the DeepMind team predicted the structure of 100,000 protein sequences and added those to the training data, a technique called data augmentation.
-Thus, at the time of model training, the team could use nearly 300,000 protein sequence - 3D structure combinations to train their AlphaFold model that uses an FASTA file as input and outputs a 3D structure model that is described in section {ref}`model_quality`.
+Thus, at the time of model training, the team could use around 300,000 protein sequences - 3D structure combinations to train their AlphaFold model that uses a FASTA file as input and outputs a 3D structure model that is described in section {ref}`model_quality`.
 
 (alphafold_impact)=
 
 ## The impact of AlphaFold on biochemistry
 
 The true impact of AlphaFold would be difficult to assess without an independent test.
-Since protein folding and 3D structure prediction is one of the grand challenges of biochemistry, the Critical Assessment of protein Structure Prediction (CASP) competition was founded in 1994.
+Since protein folding and 3D structure prediction is one of the grand challenges of biochemistry, the Critical Assessment of protein Structure Prediction ([CASP](https://predictioncenter.org/)) competition was founded in 1994.
 CASP is a community-wide competition where research groups are required to predict 3D structures from protein sequences that do not have any public 3D structure available.
 More than 100 research groups worldwide join the CASP competition every two years.
 Using all sequence and structure data available at the present time, they predict structures for protein sequences with newly derived (yet unreleased) structures, specifically withheld from the public for the purpose of this competition.
