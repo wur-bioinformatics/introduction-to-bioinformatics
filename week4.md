@@ -30,7 +30,7 @@ This chapter introduces the most recent approach to predicting tertiary (3D) str
 Protein structures of human myoglobin (top left), African elephant myoglobin (top right, 80% sequence identity to human structure analogue), blackfin tuna myoglobin (bottom right, 45% sequence identity to human analogue), and pigeon myoglobin (bottom left, 25% sequence identity to human analogue).
 Myoglobin can be found in muscles and its main function is to supply oxygen to muscle cells.
 The protein structures in this figure illustrate how structure can be largely the same even for sequences that are quite different.
-Credits: {cite}`myoglobin_2021`.
+Credits: {cite}`blopig_2021`.
 :::
 
 While current experimental methods can generate many sequences of hypothetical proteins present in organisms, it is still hard and expensive to determine the corresponding 3D protein structures experimentally.
@@ -45,6 +45,8 @@ This reader describes how AlphaFold builds on previous approaches and has had su
 An analogy could be made to the introduction of the smartphone: whereas previously, one needed to go to the library to find a computer and connect to the internet to get to a weather forecast, one now simply takes the phone and looks up the weather.
 In the following sections, it is described why AlphaFold could be developed and work only now, how it was compared to other approaches in a fair manner, how it relies on database search and multiple sequence alignment, and what the introduction of the AlphaFoldDB-database that contains AlphaFold-predicted structure models means for discovery pipelines.
 
+---
+
 ## AlphaFold ingredients: experimentally derived 3D structures & computational advances
 
 :::{figure} images/Week4/PDB-stats.png
@@ -54,6 +56,7 @@ In the following sections, it is described why AlphaFold could be developed and 
 
 Top: Number of unique 3D protein structures (based on their sequence) at 95% sequence identity that have been added annually to the Protein Data Bank from 1976 – present time.
 Bottom: Number of 3D protein structures that have been added to the Protein Data Bank from 1976 – present time.
+Note: the low number of structures in 2024 is caused by these statistics being taken from PDB early in the year, meaning many more structures are likely to be generated over the rest of 2024.
 Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`PDB_stats_2024`.
 :::
 
@@ -68,6 +71,8 @@ The latter number is important, as a sufficiently diverse set of examples will e
 
 As input for their most recent machine learning model, the DeepMind team predicted the structure of 100,000 protein sequences and added those to the training data, a technique called data augmentation.
 Thus, at the time of model training, the team could use around 300,000 protein sequences - 3D structure combinations to train their AlphaFold model that uses a FASTA file as input and outputs a 3D structure model that is described in the [Assessing a protein structure model quality](model_quality) section.
+
+---
 
 (alphafold_impact)=
 
@@ -102,6 +107,8 @@ This means that for many more protein sequences, we can gain some sort of reliab
 Following the sequence-structure-function paradigm, this also provides us insight into their possible functions.
 Since there are still many protein sequences with unknown functions, predictive software like AlphaFold can play a very important role in understanding their functions and roles in biochemistry.
 Now that we better understand the impact of AlphaFold, let us find out more about how it works.
+
+---
 
 (alphafold_under_the_hood)=
 
@@ -152,17 +159,19 @@ To summarize the AlphaFold process, database searches are done to construct MSAs
 Schematic overview of AlphaFold approach. Credits: modified from {cite}`alphafold_approach_2021`.
 :::
 
+---
+
 ## AlphaFold DB: a resource of pre-computed AlphaFold protein structure models
 
 The computation of AlphaFold predictive models costs a lot of computation time and resources (see [The impact of AlphaFold on biochemistry](alphafold_impact) and [AlphaFold relies on sequence comparisons to find templates and predict co-evolution](alphafold_under_the_hood)).
-To avoid running AlphaFold over and over on the same protein sequences and to facilitate the dissemination and inspection of AlphaFold protein structure models, the DeepMind team collaborated with EMBL’s European Bioinformatics Institute (EMBL-EBI) to create the AlphaFold Protein Structure Database (AlphaFold DB), https://alphafold.ebi.ac.uk/.
+To avoid running AlphaFold over and over on the same protein sequences and to facilitate the dissemination and inspection of AlphaFold protein structure models, the DeepMind team collaborated with EMBL’s European Bioinformatics Institute ([EMBL-EBI](https://www.ebi.ac.uk/)) to create the AlphaFold Protein Structure Database ([AlphaFold DB](https://alphafold.ebi.ac.uk/)).
 Currently, the resource contains over 200,000,000 structure models.
 The first AlphaFold DB release covered the human proteome, along with several other key organisms such as _Arabidopsis thaliana_ and _Escherichia coli_.
 Actually, for these species, most protein sequences in their UniProt reference proteome were folded by AlphaFold.
 The second release more than doubled the size of the database by adding most of Swiss-Prot (the subset of the UniProt protein database that is manually curated by experts), for all species.
 The third release focused on organisms with a UniProt reference proteome that are relevant to Neglected Tropical Disease or antimicrobial resistance.
 The selection was based on priority lists compiled by the World Health Organisation.
-The most recent release contains predicted structures for nearly all catalogued proteins known to science, which will expand the AlphaFold DB by over 200x - from nearly 1 million structures to over 200 million structures (see {numref}`w4f5`), covering most of UniProt.
+The most recent release contains predicted structures for nearly all catalogued proteins known to science, which will expand the AlphaFold DB by over 200x - from nearly 1 million structures to over 200 million structures (see {numref}`alphafolddb`), covering most of UniProt.
 It is expected that in the coming years all hypothetical proteins will be added to AlphaFold DB.
 This will then – for example – also include viral proteins that are currently excluded.
 
@@ -171,35 +180,35 @@ In one of the practical assignments, you will learn how to work with AlphaFold D
 One important remaining question is: how do we know if we can trust the predictions?
 In other words, how do we know if we can be confident in the 3D structure models that AlphaFold predicts and that AlphaFold DB contains?
 
-:::{figure} images/Week4/w4f5_alphafold_num_prot_structures.svg
+:::{figure} images/Week4/alphafolddb.svg
 :alt: AlphaFold - Number of protein structures
 :align: center
 :width: 80%
-:name: w4f5
+:name: alphafolddb
 
 The most recent release includes predicted protein structures for plants, bacteria, animals, and other organisms, opening up many new opportunities for researchers to use AlphaFold to advance their work on important issues, including sustainability, food insecurity, and neglected diseases.
-Note that PDB contains experimentally validated structures (and ~200K nowadays) and AlphaFold produces predicted structure models.
-
-Image source (July 2022): https://www.deepmind.com/blog/alphafold-reveals-the-structure-of-the-protein-universe
+Note that PDB contains experimentally validated structures (~218K nowadays) and AlphaFold produces predicted structure models. Credits: {cite}`alphafolddb_2022`.
 :::
+
+---
 
 (model_quality)=
 
 ## Assessing a protein structure model quality
 
-:::{figure} images/Week4/w4f6_7mfb.png
+:::{figure} images/Week4/7mfb.png
 :alt: AlphaFold - 7MBF crystal structure vs prediction
 :align: center
-:name: w4f6
+:name: 7mbf
 
 Heavy chain portion of the crystal structure of an antibody (PDB: 7MBF, in orange) superposed with the AlphaFold 2 prediction (in blue).
 The overlay view shows how the folding of the two domains is largely predicted correctly, with some parts of the 3D protein structure that fit the PDB structure better than others.
-Source: https://www.blopig.com/blog/2021/07/alphafold-2-is-here-whats-behind-the-structure-prediction-miracle/
+Credits: {cite}`blopig_2021`.
 :::
 
 Predictive models only have true value when they produce some measure of confidence, because without any idea of certainty about the predictions, it is hard to interpret results and draw conclusions.
 To get an idea of how well predictions fit the reality, one needs to compare the model with the true situation.
-{numref}`w4f6` shows how this can be done by manual visual inspection of two super-imposed structures, the real one and a predicted one.
+{numref}`7mbf` shows how this can be done by manual visual inspection of two super-imposed structures, the "real" (experimentally derived) one and a predicted one.
 However, to quantitatively assess differences between models, some sort of numeric score is needed.
 In this reader, we have seen one such comparative measure for 3D protein structure models in the CASP section: the Global Distance Test – Total Score ({numref}`casp`).
 Another score you may encounter more often is the root mean squared error (RMSE), based on the difference in position of the of α-carbons as input to calculate the score.
@@ -208,14 +217,14 @@ The QMEAN-DISCO score used by SWISS-MODEL is also used.
 This score is an ensemble of various metrics that together provide insight into the quality of the model.
 
 To assess the confidence in the model structure without a direct comparison to a known structure, one needs to assess the uncertainty in the position of the amino acid in the 3D coordinate system.
-AlphaFold comes with its own local and global error predictions that the machine learning model calculates (see also [AlphaFold relies on sequence comparisons to find templates and predict co-evolution]alphafold_under_the_hood)), and {numref}`w4f7`).
+AlphaFold comes with its own local and global error predictions that the machine learning model calculates (see also [AlphaFold relies on sequence comparisons to find templates and predict co-evolution](alphafold_under_the_hood)), and {numref}`arf16`).
 Where the local error focuses on individual positions of amino acids, the global error describes how confident the predictions are for various protein parts that can interact through residue-residue interactions.
 The local error is also used to color-code the residues of the model in the 3D structure viewer.
 In this way, it is easier to observe which parts of the structure model are more reliable than others.
-You will study these two different error scores more during a practical assignment.
+You will study these two different error scores more during the practical assignment.
 
 As you may have started to realize when using databases, they can also contain erratic entries.
-To investigate the quality of both known and predicted 3D protein structures, the Ramachandran plot can be used ({doc}`week1`).
+To investigate the quality of both known and predicted 3D protein structures, the Ramachandran plot can be used ([week 1](week1)).
 You will work with the Ramachandran plot during the practical assignments.
 It is important to note here that some disordered proteins only come into orderly arrangement in the presence of their various protein partners; and other proteins never have ordered structures under any conditions, a property that may be essential to their function.
 How to best model the behavior of such proteins is still an area of active research.
@@ -226,11 +235,13 @@ The main lesson is that you must treat a prediction as a prediction: it is a mod
 Also, keep in mind that there are parts of the 3D protein structure that we can naturally be more confident about.
 For example, secondary structure oftentimes supports the 3D protein structure, and parts of the protein that are naturally more disordered such as random loops are harder to predict correctly.
 Such parts can typically represent parts of the protein structure that are more flexible in their biological environment and any prediction of (very) flexible parts should be considered as a snapshot of the protein structure.
-If you study {numref}`w4f6` in more detail, you will see this reflected in the superimposed image of the PDB (experimental) 3D structure and the AlphaFold structure model.
+If you study {numref}`7mbf` in more detail, you will see this reflected in the superimposed image of the PDB (experimental) 3D structure and the AlphaFold structure model.
+
+---
 
 ## A protein structure model: and now?!
 
-Imagine you have generated a protein structure model, such as the one in {numref}`w4f6`.
+Imagine you have generated a protein structure model, such as the one in {numref}`7mbf`.
 What can you do with it? As mentioned above, it can yield insights into its possible function and role in biochemistry.
 In other words, you can start to form hypotheses that can be experimentally tested in the lab.
 You can also start to make predictions of protein-protein interactions.
@@ -238,9 +249,9 @@ Since such interactions are typically driven by 3D structural elements (clefts, 
 Furthermore, you have seen how comparing protein sequences in multiple sequence alignments helps to gain insight into their relationships; by using 3D structure models as an input, a similar comparison could be done at the structural level.
 As we are increasingly aware, sequences may deviate more than structural elements; thus, (multiple) structure alignments at the level of folds or subunits may give a different view on protein relationships.
 
-A recent tool that allows to do structure-based alignments based on protein structure input in a reasonable timeframe is Foldseek: https://search.foldseek.com/.
+A recent tool that allows to do structure-based alignments based on protein structure input in a reasonable timeframe is [Foldseek](https://search.foldseek.com/).
 By designing a novel 3D-interactions (3Di) alphabet, the team behind Foldseek overcame the mounting task of doing structure-based comparisons at the very large scale that the availability of >200 million structures, sparked by AlphaFold, requires.
-For example, a traditional structure-based alignment tool would take ~1 month to compare on structure to 100 million ones in the database.
+For example, a traditional structure-based alignment tool would take ~1 month to compare one structure to 100 million ones in the database.
 During the practical assignments, you will explore how the combination of AlphaFold and Foldseek can be used to explore possible functions for a protein sequence of interest.
 
 It can be expected that the AlphaFold model will continue to develop.
@@ -248,20 +259,23 @@ For example, the most recent addition is a multimer model that predicts if and h
 Another topic of interest is modelling protein dynamics.
 Many proteins can change shape and thereby function, for example depending on cellular conditions, but this is still very hard to model.
 Finally, we are only starting to explore the role of post-translational modifications in generating many (structurally, functionally) different versions of each protein, so-called proteoforms.
-Based on its current performance, it will be exciting to see where the field is in 10 years from now.
+Based on its current performance, it will be exciting to see where the field is ten years from now.
 Akin to the mobile phone - smartphone development, we may be surprised by its capabilities by then.
 
-:::{figure} images/Week4/w4f7.png
+:::{figure} images/Week4/arf16.png
 :alt: Auxin Response Factor 16 structural prediction
 :align: center
-:name: w4f7
+:name: arf16
+
 Left: AlphaFold 3D protein structure model of Auxin Response Factor 16.
-The amino acid residues are colored according to the local confidence score (see AlphaFold-PSD and practical assignment for further explanation).
+The amino acid residues are colored according to the local confidence score (see [AlphaFold-PSD](https://alphafold.ebi.ac.uk/entry/A3B9A0#help) and practical assignment for further explanation).
 Right: the AlphaFold global error confidence score overview.
-This view shows low errors (dark green) for two parts of the protein structure model, and higher errors for the remaining structure – these also correspond to less confidence locally (see AlphaFold-PSD and practical assignment for further explanation).
+This view shows low errors (dark green) for two parts of the protein structure model, and higher errors for the remaining structure – these also correspond to less confidence locally (see [AlphaFold-PSD](https://alphafold.ebi.ac.uk/entry/A3B9A0#help) and practical assignment for further explanation).
 The structure model can be used to validate the protein’s predicted function and can act as a starting point for further annotations, such as finding its biological interaction partners (i.e., other proteins, DNA, small molecules).
-Source: https://alphafold.ebi.ac.uk/entry/A3B9A0
+Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`arf16_2022`.
 :::
+%#% Perhaps add an image of the Model Confidence score legend on AlphaFold-PSD? Done.
+---
 
 ## Closing remarks
 
@@ -274,7 +288,7 @@ Have you read the above? Test yourself directly by answering the questions first
 ...The amino acid residues that are in close contact with each other even if they are not adjacent to each other in the primary sequence.
 :::
 
-:::{dropdown} How is a MSA relevant for protein 3D structure prediction?...
+:::{dropdown} How is an MSA relevant for protein 3D structure prediction?...
 ...An MSA will reveal conserved regions that indicate parts of the protein sequence that are important for its function. These parts are often represented by specific folds, i.e., stretches with presence of secondary structure elements in a specific configuration.
 :::
 
@@ -286,13 +300,14 @@ Have you read the above? Test yourself directly by answering the questions first
 
 :::{seealso}
 
-Please find below several links with further information about AlphaFold.
+Below, you will find several links with further information about AlphaFold.
 Please note that these are not part of the exam material, which is covered above in this reader.
 A number of these resources were used as an inspiration for the reader material.
 
 Video introduction by the AlphaFold team:
-
-https://youtu.be/gg7WjuFs8F4?si=a8ebksOpRFin7VXa
+<div class="videoWrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/gg7WjuFs8F4?si=0luD_xzP6LMG9ydm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
 Brief AlphaFold introduction by Deepmind:
 
@@ -320,12 +335,14 @@ https://alphafold.ebi.ac.uk/faq#faq-5
 
 Taken inspiration and figures from:
 
-https://elearning.bits.vib.be/courses/alphafold/lessons/introduction-to-alphafold/ (CC BY 4.0)
+https://elearning.bits.vib.be/courses/alphafold/lessons/introduction-to-alphafold/ ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/))
 
 Foldseek publication:
 
 https://www.nature.com/articles/s41587-023-01773-0
 :::
+
+---
 
 # References
 
