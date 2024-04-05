@@ -274,7 +274,7 @@ This view shows low errors (dark green) for two parts of the protein structure m
 The structure model can be used to validate the protein’s predicted function and can act as a starting point for further annotations, such as finding its biological interaction partners (i.e., other proteins, DNA, small molecules).
 Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`arf16_2022`.
 :::
-%#% Perhaps add an image of the Model Confidence score legend on AlphaFold-PSD? Done.
+
 ---
 
 ## Closing remarks
