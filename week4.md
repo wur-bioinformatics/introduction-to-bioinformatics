@@ -1,5 +1,5 @@
 # Week 4 - AlphaFold
-
+%#% Main remarks about week4: writing style is a little more informal than the other chapters but clear. Could use more admonitions. Long header names make the table of contents look clustered. Information is ordered logically, without too many cross-references. This week is quite short but I understand it is not finished yet.
 ```{epigraph}
 
 -- Justin van der Hooft & Rens Holmer, Wageningen, 2024
