@@ -1,5 +1,5 @@
 # Week 1 - Genes, Proteins, Databases, Genome annotation
-
+%#% Main remarks about week1: Clear writing style, good use of the different admonitions, logical order of information and not too many cross-references. Care should be taken with some of the used imagery in this chapter as not all have concrete references (see individual comments).
 ## Biological background
 
 A large part of bioinformatics deals with the analysis of biological sequences.
