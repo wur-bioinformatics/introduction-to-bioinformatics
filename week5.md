@@ -1,5 +1,5 @@
 # Week 5 - Omics data analysis
-
+%#% Main remarks about week5: Clear and formal writing style, similar to week1. Only uses box type admonitions and could do with more of the other types. Information follows a logical order, some cross-references jump far across the document. Some figures have descriptions that are taken straight from their source and could be rewritten (see individual comments).
 :::{figure} images/Week5/omics-levels.png
 :alt: -Omics levels
 :align: center
