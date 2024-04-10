@@ -4,7 +4,7 @@
 
 -- Freek T. Bakker (WUR Biosystematics Group), Wageningen, 2024
 ```
-%#% Main remark about this week is that a lot of concepts are presented, which are repeated or further explained in many different sections (same for abbreviations). I have tried to amend this as much as I could. Some sections could do with a rewrite to make this chapter more congruent (merging paragraphs and explaining a concept once and not adding more on to its definition throughout the chapter). Also tried to do this wherever deemed necessary. - When reading through this chapter there should be a clear separation between what should be considered exam material and what is not.
+%#% Main remarks about week3: Writing style is very "flowy", which is different from the other weeks. Cross-references jump up and down throughout the document, making it more difficult for the reader to keep a clear overview. A lot of concepts are presented, which are repeated or further explained in many different sections (same for abbreviations). I have tried to amend this as much as I could. Some sections could do with a rewrite to make this chapter more congruent (merging paragraphs and explaining a concept once and not adding more on to its definition throughout the chapter). Also tried to do this wherever deemed necessary. - When reading through this chapter there should be a clear separation between what should be considered exam material and what is not, by use of admonitions. I like the inclusion of a glossary but the other weeks do not have one.
 ## Rationale
 
 :::{figure} images/Week3/tree-of-life.png
