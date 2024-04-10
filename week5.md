@@ -2090,7 +2090,7 @@ reality, but may be reached sooner than we now believe possible.
 
 ---
 
-# References
+## References
 
 ```{bibliography}
 :filter: docname in docnames

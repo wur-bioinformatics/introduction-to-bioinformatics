@@ -928,7 +928,7 @@ Many more ontologies exist and are relevant to biomedical research. The European
 
 ---
 
-# References
+## References
 
 ```{bibliography}
 :filter: docname in docnames
