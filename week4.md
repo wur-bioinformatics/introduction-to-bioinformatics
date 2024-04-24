@@ -108,6 +108,48 @@ Whilst now superseded by first more accurate statistical methods and more recent
 Chou and Fasman Propensities (P). F stands for strong former, f weak former, while B and b stand for strong and weak breaker, respectively. I (indifferent) indicates residues that are neither forming nor breaking helices or strands. We can see that Pro has the lowest propensity for forming a helix and a low one for strands as well. However, many other residues that are either weak or indifferent have been reclassified since the propensities shown here have been reparameterized as more data have become available. Credits: {cite}`chou_fasman_1978`.
 :::
 %#% Figure chou_fasman is derived from https://docplayer.org/53395035-Vorlesungsskript-softwarewerkzeuge-der-bioinformatik.html page 80. Are we allowed to use this?
+In subsequent decades, several statistical-based methods were developed that improved sequence-based predictions of secondary structure elements.
+They, for example, started to include information of multiple sequence alignments including residue conservation: such approaches first matched the query sequence to database sequences with known 3D structures and assigned secondary structure elements.
+Then, using the best matching sequences, the secondary structure state of amino acid residues of the query sequence stretch are inferred by averaging the states from the homologous sequences found, further adapted using additional information such as the conserveness of the residue.
+An example of such an approach is Zpred. In general, the use of multiple sequences and additional information about the amino acid residue’s physicochemical properties and conserveness greatly enhanced the prediction performance.
+Next, machine learning took over in the form of neural networks. Such approaches use a so-called sliding window that encompass multiple amino acid residues of which the central one’s state is predicted using a model.
+They typically result in probabilities for each state that can be used to assign the most likely state, i.e., alpha-helical, beta-strand, or random coil (in a three-state model). Examples of such approaches are Jnet and RaptorX.
+
+Most recently, deep learning approaches have been introduced to predict secondary structure elements based on sequence information. The state-of-the-art approach is NetSurfP, which is currently running version 3.
+You will gain hands-on experience of NetSurfP 3.0 during the practical assignments. Here, we will briefly explain how it works and how to assess its results.
+The prediction tool uses a deep neural network approach to accurately predict solvent accessibility and secondary structure using both three- and eight-state definitions, amongst other properties.
+To make this approach work, sufficient training data is needed of protein chains with known PDB 3D structures.
+To avoid over-fitting the model on predominant sequence stretches, each protein sequence that had more than 25% sequence identity to any other protein sequence already in the test set was removed.
+To ensure good quality data, a resolution of 2.5 Angstrom or better was selected for. This resulted in ~10,000 protein sequences used for training.
+To obtain “ground truth”, DSSP was used (see Section X.X) to calculate properties such as solvent accessibility and secondary structure states, resulting in a labeled data set for training.
+The parameters of the neural network were trained using small batches of protein sequences and their “ground truth” to result in a final model.
+
+:::{figure} images/Week4/netsurfp.png
+:alt:
+:align: center
+:name: netsurfp
+
+NetSurfP 3.0 output for a yeast protein that contains both α-helical as well as β-strand sections. Credits: {cite}`netsurfp_2022`. The 3D structure of this protein was obtained from: {cite}`1CT5_1999`.
+:::
+
+As we have seen in Section X.X, there are key similarities and differences between α-helices and β-sheets.
+Both secondary structure elements rely on hydrogen bonds between backbone atoms in the polypeptide chain.
+However, where residues involved in α-helices only have local interactions in the chain, β-sheet residues can have long-range interactions.
+Consequently, β-sheets are more difficult to predict for sequence-based prediction tools.
+The availability of sufficient homologous proteins can alleviate this bottleneck and provide reliable predictions of β-sheets as well.
+Also, the development of 3D structure prediction tools (see Section X.X) is expected to lead to further improvements in predicting secondary structure elements and other per-residue properties like surface exposure/solvent accessibility based on sequence information alone.
+
+### Transmembrane protein sections
+Cells are surrounded by a membrane that consists of a lipid bilayer.
+The membrane is literally what separates the inside of the cell with the outside world.
+Hence, if messages need to be passed on from outside to inside the cell, or vice versa, these messages will need to pass the apolar environment of the membrane.
+To do so, the cellular machinery is using proteins to assist in signal transduction across the membrane.
+Where globular proteins are present within the cell, so-called transmembrane proteins span the membrane at least once.
+It is estimated that ~30% of the proteins are transmembrane, indicating their functional importance.
+Due to restrictions of the protein exterior put on by the specific environment of the membrane in terms of size and polarity, only some local structural configurations are typically found to span the membrane.
+These configurations are typically linked to the protein’s function: be it a receptor for signal transduction or a transporter of specific substances across the membrane.
+Let us consider size first: the average thickness of a membrane is ~30 angstrom (Å), which corresponds to an α-helix of between 15 and 30 residues.
+
 ## AlphaFold ingredients: experimentally derived 3D structures & computational advances
 
 :::{figure} images/Week4/PDB-stats.png
