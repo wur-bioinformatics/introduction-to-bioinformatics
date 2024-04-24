@@ -100,7 +100,14 @@ This can be explained by the special side group arrangement of Proline: this is 
 Another amino acid that that tends to break alpha helices and beta strands is Glycine.
 Whilst now superseded by first more accurate statistical methods and more recently by machine learning-based methods, the Chou-Fasman approach very elegantly demonstrates how the side groups of amino acids do impact their tendency to form specific structures.
 
-%#% Figure propensity is derived from https://docplayer.org/53395035-Vorlesungsskript-softwarewerkzeuge-der-bioinformatik.html page 80. Are we allowed to use this?
+:::{figure} images/Week4/chou-fasman.png
+:alt: The Chou-Fasman approach
+:align: center
+:name: chou_fasman
+
+Chou and Fasman Propensities (P). F stands for strong former, f weak former, while B and b stand for strong and weak breaker, respectively. I (indifferent) indicates residues that are neither forming nor breaking helices or strands. We can see that Pro has the lowest propensity for forming a helix and a low one for strands as well. However, many other residues that are either weak or indifferent have been reclassified since the propensities shown here have been reparameterized as more data have become available. Credits: {cite}`chou_fasman_1978`.
+:::
+%#% Figure chou_fasman is derived from https://docplayer.org/53395035-Vorlesungsskript-softwarewerkzeuge-der-bioinformatik.html page 80. Are we allowed to use this?
 ## AlphaFold ingredients: experimentally derived 3D structures & computational advances
 
 :::{figure} images/Week4/PDB-stats.png
