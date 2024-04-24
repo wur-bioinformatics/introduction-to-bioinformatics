@@ -1,5 +1,5 @@
 # Week 4 - AlphaFold
-
+%#% Main remarks about week4: writing style is a little more informal than the other chapters but clear. Could use more admonitions. Long header names make the table of contents look clustered. Information is ordered logically, without too many cross-references. This week is quite short but I understand it is not finished yet.
 ```{epigraph}
 
 -- Justin van der Hooft & Rens Holmer, Wageningen, 2024
@@ -274,7 +274,7 @@ This view shows low errors (dark green) for two parts of the protein structure m
 The structure model can be used to validate the protein’s predicted function and can act as a starting point for further annotations, such as finding its biological interaction partners (i.e., other proteins, DNA, small molecules).
 Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`arf16_2022`.
 :::
-%#% Perhaps add an image of the Model Confidence score legend on AlphaFold-PSD? Done.
+
 ---
 
 ## Closing remarks
@@ -344,7 +344,7 @@ https://www.nature.com/articles/s41587-023-01773-0
 
 ---
 
-# References
+## References
 
 ```{bibliography}
 :filter: docname in docnames
