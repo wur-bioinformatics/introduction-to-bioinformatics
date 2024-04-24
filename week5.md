@@ -1,5 +1,5 @@
 # Week 5 - Omics data analysis
-
+%#% Main remarks about week5: Clear and formal writing style, similar to week1. Only uses box type admonitions and could do with more of the other types. Information follows a logical order, some cross-references jump far across the document. Some figures have descriptions that are taken straight from their source and could be rewritten (see individual comments).
 :::{figure} images/Week5/omics-levels.png
 :alt: -Omics levels
 :align: center
@@ -61,9 +61,7 @@ the main types of data analysis involved.
 :name: central_dogma
 
 Information flow in the cell. \
-Credits: CC0 1.0 \
-https://creativecommons.org/publicdomain/zero/1.0/ \
-{cite}`central_dogma_2008`
+Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`central_dogma_2008`.
 :::
 DNA is the starting point in the chain of biological information flow. The
 central dogma of molecular biology was postulated by Francis Crick in 1958:
@@ -82,6 +80,7 @@ used to describe all genes in an organism or cell, but now refers to the
 full DNA content of a cell.
 
 (w5box1_humangenomeproject)=
+
 ::::{admonition} Box 1: The Human Genome Project
 :class: tip
 The goal of the Human Genome Project (HGP) was to sequence and annotate all genes in the human genome.
@@ -166,11 +165,12 @@ whereas most higher eukaryotes (including humans) have between 15,000 and
 :align: center
 :name: gene_ploidy
 
-Left, variety of genome sizes. Credits: CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/ {cite}`gene_ploidy_2010`;
-right, examples of ploidy. Credits: CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/ {cite}`gene_ploidy_2011`.
+Left, variety of genome sizes. Credits: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) {cite}`gene_ploidy_2010`;
+right, examples of ploidy. Credits: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) {cite}`gene_ploidy_2011`.
 :::
 
 (w5box2_size)=
+
 :::{admonition} Box 2: Size does(n’t) matter?
 :class: tip
 Genomes come in all shapes and sizes. The smallest known (non-viral) genome
@@ -212,14 +212,15 @@ yield per run are shown in {numref}`sequencing_technology`.
 Sequencing technology, with yield per run vs. read length. Note the
 logarithmic scales. Multiple dots per technology indicate improvements in
 read length and/or yield due to upgrades. This figure is already outdated
-with higher yields produced by the Illumina Novase and longer reads by both
+with higher yields produced by the Illumina NovaSeq and longer reads by both
 Oxford Nanopore MinION/PromethION and Pacbio Sequel II devices. Credits:
-CC BY 4.0 https://creativecommons.org/licenses/by/4.0/ {cite}`sequencing_technology_2016`.
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`sequencing_technology_2016`.
 :::
 
 ---
 
 (sangersequencing)=
+
 ##### Sanger sequencing
 
 Sanger sequencing was the first 'high-throughput' method of DNA sequencing.
@@ -232,7 +233,7 @@ sequencing uses the chain-termination method ({numref}`sanger`).
 :align: center
 :name: sanger
 
-Chain termination (Sanger) sequencing. Credits: CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/ {cite}`sanger_2012`.
+Chain termination (Sanger) sequencing. Credits: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) {cite}`sanger_2012`.
 :::
 
 In a first step, that is universal to all sequencing techniques, genomic DNA
@@ -246,7 +247,7 @@ exactly equally long: they are distributed around the target fragment size.
 :align: center
 :name: sanger_signal
 
-Sanger sequencing signal, with low quality bases at the start of the read. Credits: CC0 1.0 https://creativecommons.org/publicdomain/zero/1.0/ {cite}`sanger_signal_2005`.
+Sanger sequencing signal, with low quality bases at the start of the read. Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`sanger_signal_2005`.
 :::
 
 Template DNA fragments are amplified in a PCR reaction using a primer and
@@ -279,6 +280,7 @@ orientation of genes in cloned vectors, or in microsatellite studies.
 ---
 
 (nextgenerationsequencing)=
+
 ##### Next generation sequencing
 
 Next-generation sequencing (NGS) technologies allow much higher throughput
@@ -336,6 +338,7 @@ lead to incomplete genome assemblies or coverage.
 ---
 
 (3rdgeneration)=
+
 ##### 3rd Generation sequencing
 
 After the success of NGS, alternative so-called 3rd generation technologies
@@ -346,6 +349,7 @@ higher error rate than the methods described previously.
 ---
 
 (pacbio)=
+
 ###### PacBio
 
 The most established method is Pacific Biosciences (PacBio) single molecule real time (SMRT)
@@ -389,6 +393,7 @@ base.
 ---
 
 (nanopore)=
+
 ###### Nanopore sequencing
 
 <div class="videoWrapper">
@@ -445,7 +450,7 @@ Oxford Nanopore MinION sequencer (left). Credits: modified from {cite}`nanopore_
 Causes for contaminated sequencing \
 samples, using as example the \
 tardigrade and surrounding bacteria \
-Credits: {cite}`contamination_2015`.
+Credits: modified from {cite}`contamination_2015`.
 :::
 
 As discussed above, sequencing technology is not perfect and errors will be
@@ -475,6 +480,7 @@ detection of structural variation are discussed.
 
 ---
 (referencegenomequality)=
+
 ##### Reference genome quality
 
 :::{figure} images/Week5/co-segregation.svg
@@ -550,7 +556,7 @@ required to gain a complete, high-quality reference genome assembly.
 :align: center
 :name: WGS
 
-Whole genome sequencing and assembly using short reads. Credits: CC BY-SA 2.5 https://creativecommons.org/licenses/by-sa/2.5/ modified from {cite}`WGS_2011`.
+Whole genome sequencing and assembly using short reads. Credits: [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/) modified from {cite}`WGS_2011`.
 :::
 
 ---
@@ -685,6 +691,7 @@ acioscapulohumeral muscular dystrophy (FSHD). Credits: modified from {cite}`t2t_
 ---
 
 (variants)=
+
 ### Variants
 
 (w5box3_phenotypic_variation)=
@@ -967,6 +974,7 @@ differences in the way the genes are used. In other words, if the genome is
 the book of life, it must also contain the information on how to read it.
 
 (w5box5_epigenetics)=
+
 ::::{admonition} Box 5: Epigenetics
 :class: tip
 ```{figure} images/Week5/epigenetics.png
@@ -1126,6 +1134,7 @@ data analysis is an essential element in systems biology.
 
 ---
 (transcriptomics)=
+
 ### Transcriptomics
 
 Transcriptomics is concerned with measuring the expression of genes (i.e.,
@@ -1194,7 +1203,6 @@ mRNA levels:
 ---
 
 #### How to measure mRNAs?
-
 
 :::{figure} images/Week5/differential-gel.jpg
 :alt: Differential display gel
@@ -1334,6 +1342,7 @@ it makes sense to look here first to see what experimental data is already avail
 ---
 
 (rnaseq)=
+
 #### RNAseq
 
 RNAseq makes use of affordable and reliable sequencing methods. Important
@@ -1550,6 +1559,7 @@ reads indicate regions where the protein of interest binds.
 ---
 
 (proteomics)=
+
 ### Proteomics
 
 As mentioned earlier, transcriptomics is widely applied but does not reflect
@@ -1628,6 +1638,7 @@ specific interactions.
 ---
 
 (massspectrometry)=
+
 ##### Mass spectrometry
 
 :::{figure} images/Week5/mass-spectrometry.png
@@ -1840,6 +1851,7 @@ make sense of the genetic variation we find.
 ---
 
 (omics)=
+
 ### -Omics data analysis
 
 Transcriptomics, proteomics and metabolomics (can) all provide quantitative
@@ -2016,6 +2028,7 @@ of another (set of) gene(s). {numref}`time_series` provides an example.
 ---
 
 (clustering)=
+
 #### Clustering
 
 Clustering methods attempt to find groups of genes that have similar
@@ -2077,7 +2090,7 @@ reality, but may be reached sooner than we now believe possible.
 
 ---
 
-# References
+## References
 
 ```{bibliography}
 :filter: docname in docnames
