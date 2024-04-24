@@ -86,6 +86,7 @@ This property preserves the genetic information during cell division, and also o
 
 ---
 
+(rna_transcription_splicing)=
 ### RNA, transcription, and splicing
 
 During transcription, RNA polymerase reads the template strand (also called noncoding strand) in the 3' to 5' direction ({numref}`transcription`). This produces an RNA molecule from 5' to 3', which is a copy of the coding strand. During transcription thymine is replaced by uracil. In contrast to DNA, RNA does not form a stable double helix. RNA is mainly single stranded, but most RNAs show intramolecular base pairing between complementary bases.

@@ -226,14 +226,14 @@ Gene losses are indicated in light grey. Of the four duplications required, thre
 
 :::{admonition} Box 1: Species tree estimation analysis.
 :class: tip
-{numref}`embedded_tree` shows an example of multiple gene trees (in colour) contributing to the species tree (indicated by black lines) as a result of _species tree estimation_ analysis.
+{numref}`embedded_tree` shows an example of multiple gene trees (in color) contributing to the species tree (indicated by black lines) as a result of _species tree estimation_ analysis.
 Such analysis is beyond the scope of this course, but it is of course important to always keep in mind at what level your phylogenetic reconstruction is, whether at the species, gene, or even biogeographic area level.
 ```{figure} images/Week3/embedded-tree.png
 :alt: Gene trees embedded in a species tree of western pocket gophers (Geomyidae, Thomomys).
 :width: 100%
 :name: embedded_tree
 
-Gene trees, in colour, embedded in the species tree (black lines) of western pocket gophers (_Geomyidae, Thomomys_). Credits: {cite}`embedded_tree_2009` CC BY-NC 2.5 http://creativecommons.org/licenses/by-nc/2.5.
+Gene trees, in color, embedded in the species tree (black lines) of western pocket gophers (_Geomyidae, Thomomys_). Credits: {cite}`embedded_tree_2009` CC BY-NC 2.5 http://creativecommons.org/licenses/by-nc/2.5.
 ```
 :::
 
@@ -290,7 +290,7 @@ A) Multiple sequence alignment (MSA, nucleotides) with examples of shared-derive
 Character state changes for all characters are indicated on the trees and exemplar syn- and autapomorphies are indicated.
 Note that character 6 is invariant and therefore does not contribute to any tree.
 :::
-%#% Figure MSA is quite small and difficult to read (especially the indicated U, I, and S symbols in underneath the MSA). Perhaps rearrange image to display panels underneath each other instead of next to each other? - Self created figure?
+%#% Figure MSA is quite small and difficult to read (especially the indicated U, I, and S symbols in underneath the MSA). Perhaps rearrange image to display panels underneath each other instead of next to each other? - Self-created figure?
 When designing a phylogenetic study, involving the compilation of one or more MSAs, there is usually a choice between adding more _characters_ (lengthening the MSA) versus adding more _taxa_ (adding more sequences(rows) to the MSA).
 Whereas the former is tempting, it is often more useful to add taxa as this allows extra synapomorphies to be realised.
 After all, synapomorphies are relative (not absolute) entities: only in the context of other sequences can you actually "see" them.
@@ -298,7 +298,7 @@ For instance, when studying a gene family in which duplications have occurred du
 Only adding more characters may amplify errors or artefacts caused by taxic under-sampling.
 This can lead to incorrectly inferred long branches with seemingly high support for their position and nodes.
 %#% Maybe a short description of the difference between characters and taxa would be fitting here? - Added this description.
-%#% The parsimony approach wass introduced here but lacked explanation. - Moved this paragraph to the [Parsimony analysis] section.
+%#% The parsimony approach was introduced here but lacked explanation. - Moved this paragraph to the [Parsimony analysis] section.
 
 ---
 
@@ -354,7 +354,7 @@ The yellow birds themselves are now monophyletic.
 
 Nested clades and sister clades.
 Left, the same rooted tree as in {numref}`nested_clades`, now with nested clades indicated by orange shapes: the small orange clade is nested in the lager orange one; it is also a sister clade of the green clade; as are the blue and large orange shapes. Credits: {cite}`bioinformatics_2007`.
-Right, nested and sister clades with LCA (last common ancestor = MRCA) indicated. Credits: {cite}`nested_clades_2014`.
+Right, nested and sister clades with LCA (last common ancestor = MRCA) indicated. Credits: modified from {cite}`nested_clades_2014`.
 :::
 
 In {numref}`hcgob` an example is given illustrating how improper rooting affects clades and the overall structure of the tree.
@@ -392,7 +392,7 @@ Terminal labels as for {numref}`hcgob`; the orange shape indicates monophyly of 
 :name: alphaproteobacteria
 
 An example of an unrooted tree (of a group of alphaproteobacteria).
-Colour marks indicate groups that may be clades, depending on how the tree may become rooted.
+color marks indicate groups that may be clades, depending on how the tree may become rooted.
 The scale bar indicates substitutions per site. Credits: {cite}`bioinformatics_2007`
 :::
 
@@ -501,7 +501,7 @@ Usually only heuristic search methods (see [Tree space and heuristic search meth
 
 Parsimony analysis (same data and trees as in {numref}`MSA`). Character state changes for all characters in the MSA shown left are indicated on the trees and exemplar syn- and autapomorphies are indicated. Note that character 6 is invariant and therefore does not contribute to any tree. Also note that each substitution occurring in the MSA results in one extra step on the tree.
 :::
-%#% Again, like Figure MSA, Self created figure?
+%#% Again, like Figure MSA, self-created figure?
 Each character change can be considered an _ad hoc_ assumption, each of them associated with their type I error, or the chance of having a _false positive_.
 This would be a character change (substitution) inferred on the tree where no change took place.
 The tree that minimises the number of changes also minimises the number of _ad hoc_ assumptions, and hence the type I error.
@@ -571,7 +571,7 @@ The same data set (MSA) of 7 characters observed over 4 terminals (sequenced) an
 However, such clean data is hardly ever found, and the distances measured over the tree may differ from the observed distances in the pairwise matrix.
 This is illustrated in {numref}`ultrametric_distance` in which two trees are depicted: an ultrametric one (left) and an additive tree (right) containing unequal sister branch lengths (to a and b).
 In the additive distance matrix (the matrix on the right), due to the difference in length towards a and b, the most similar sequences may actually not be the most closely related.
-%#% Removed the math notation of a and b in this paragraph, as I understand that terminals a and b are meant here, which are not alpha and beta. - The way the last sentence is written might cuase the wrong assumption that difference in branch lenghts affects relatedness. Perhaps it should be flipped around? (the most closely related sequences may actually not be the most similar/least divergent).
+%#% Removed the math notation of a and b in this paragraph, as I understand that terminals a and b are meant here, which are not alpha and beta. - The way the last sentence is written might cause the wrong assumption that difference in branch lengths affects relatedness. Perhaps it should be flipped around? (the most closely related sequences may actually not be the most similar/least divergent).
 :::{figure} images/Week3/ultrametric-distance.png
 :alt: Comparison between ultrametric distance matrix and tree to additive distance matrix and tree.
 :width: 100%
@@ -613,7 +613,7 @@ Euclidean or metric distance requires observed distances to be _non-negative_, _
 Ultrametric distances are characterised by _ultrametric inequality_ ({numref}`inequality`, right): the two largest distances, when comparing three sequences, are equal (in this case 6 = 6).
 Ultrametric distances have the attractive characteristic that they evolve clock-like, and hence that the most similar sequences will also be most closely related.
 In fact, the ultrametric tree ({numref}`ultrametric_distance`) perfectly describes the observed distances as shown in the distance matrix.
-%#% Self made image? If not, original source is missing.
+%#% Self-made image? If not, original source is missing.
 When distances are additive, the additive tree perfectly describes them ({numref}`ultrametric_distance`, right). However, here sequences b and c have the smallest distance ($d(\text{b,c})=3$), but are not most closely related.
 ```
 :::
@@ -657,7 +657,7 @@ Neighbor Joining.
 An unrooted NJ tree based on Myosin amino acid sequences.
 The scale bar indicates 5% sequence divergence. Credits: {cite}`neighbor_joining_aa_2000`.
 :::
-%#% Figure neighbor_joining-aa is not refered to anywhere in the text. Do we want to keep this figure in?
+%#% Figure neighbor_joining-aa is not referred to anywhere in the text. Do we want to keep this figure in?
 
 ---
 
@@ -706,7 +706,7 @@ The Jukes Cantor model (left), transitions (blue) and transversions (red) and ho
 
 Building a Neighbor Joining tree on pairwise distances that have been corrected with a best-fitting model of nucleotide substitutions.
 :::
-%#% Unable to find original source of Figure neighbor_joining_phylogeny, seems to be derived from a book that was also used on this website (https://internet-evoluzzer.de/die-phylogenie-der-wale/). - Figure is not refered to anywhere in the text. Do we want to keep this figure in?
+%#% Unable to find original source of Figure neighbor_joining_phylogeny, seems to be derived from a book that was also used on this website (https://internet-evoluzzer.de/die-phylogenie-der-wale/). - Figure is not referred to anywhere in the text. Do we want to keep this figure in?
 The first two substitution types listed above are _transitions_ (substitutions among the pyrimidines T and C, and among the purines A and G), whereas the other four occur between purines and pyrimidines and are referred to as _transversions_.
 The rate of transitions ($ti$) has a different dynamic, and hence build-up of substitutions, compared with the rate of transversions ($tv$) (see {numref}`JC`).
 In the Kimura 2 Parameter (K2P) model ({numref}`K2P`) this is accounted for by adding an extra parameter $b$.

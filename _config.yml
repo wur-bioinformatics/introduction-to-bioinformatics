@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: BIF20806 reader
-author: Ridder, Dick de; Kupczok, Anne; Holmer, Rens; Bakker, Freek; Hooft, Justin van :wqder; Risse, Judith; Navarro, Jorge
+author: Ridder, Dick de; Kupczok, Anne; Holmer, Rens; Bakker, Freek; Hooft, Justin van der; Risse, Judith; Navarro, Jorge
 logo: BIF logo.png
 only_build_toc_files: true
 
