@@ -6,7 +6,7 @@
 
 ```
 
-## Predicting protein structures: the sequence-structure-function paradigm
+# Predicting protein structures: the sequence-structure-function paradigm
 
 A lot of sequences have become available.
 However, for most, we do not yet know what type of proteins they represent, and what functionality they have.
@@ -92,6 +92,7 @@ The Q{sub}`3` measure produces useful accuracy predictions when the resulting se
 
 Here, we will describe approaches to predict secondary structure elements on the basis of sequence data alone.
 As these approaches form the foundation for tertiary structure prediction tools, it makes sense to study them first.
+
 One of the first methods to predict secondary structures used statistics to infer a residue’s secondary structure and was the so-called Chou-Fasman approach that, starting in the 1970s, used an increasing set of reference protein 3D structures and 2D structure assignments to determine the natural tendency (propensity) for each amino acid type to either form, break, or be indifferent to form or break an α-helix or β-strand (see {numref}``).
 If we consider a stretch of amino acids, these propensities help to determine if and where an α-helix or β-strand starts or stops.
 For example, some amino acids have a strong tendency to form α-helices (e.g., Alanine) or β-strands (e.g., Isoleucine), whereas others tend to break these local structures.
@@ -105,7 +106,7 @@ Whilst now superseded by first more accurate statistical methods and more recent
 :align: center
 :name: chou_fasman
 
-Chou and Fasman Propensities (P). F stands for strong former, f weak former, while B and b stand for strong and weak breaker, respectively. I (indifferent) indicates residues that are neither forming nor breaking helices or strands. We can see that Pro has the lowest propensity for forming a helix and a low one for strands as well. However, many other residues that are either weak or indifferent have been reclassified since the propensities shown here have been reparameterized as more data have become available. Credits: {cite}`chou_fasman_1978`.
+Chou and Fasman Propensities (P). F stands for strong former, f weak former, while B and b stand for strong and weak breaker, respectively. I (indifferent) indicates residues that are neither forming nor breaking helices or strands. We can see that Pro has the lowest propensity for forming a helix and a low one for strands as well. However, many other residues that are either weak or indifferent have been reclassified since the propensities shown here have been reparameterized as more data have become available. Credits: modified from {cite}`chou_fasman_1978`.
 :::
 %#% Figure chou_fasman is derived from https://docplayer.org/53395035-Vorlesungsskript-softwarewerkzeuge-der-bioinformatik.html page 80. Are we allowed to use this?
 In subsequent decades, several statistical-based methods were developed that improved sequence-based predictions of secondary structure elements.
@@ -125,7 +126,7 @@ To obtain “ground truth”, DSSP was used (see Section X.X) to calculate prope
 The parameters of the neural network were trained using small batches of protein sequences and their “ground truth” to result in a final model.
 
 :::{figure} images/Week4/netsurfp.png
-:alt:
+:alt: NetsurfP output for a yeast protein
 :align: center
 :name: netsurfp
 
@@ -138,8 +139,10 @@ However, where residues involved in α-helices only have local interactions in t
 Consequently, β-sheets are more difficult to predict for sequence-based prediction tools.
 The availability of sufficient homologous proteins can alleviate this bottleneck and provide reliable predictions of β-sheets as well.
 Also, the development of 3D structure prediction tools (see Section X.X) is expected to lead to further improvements in predicting secondary structure elements and other per-residue properties like surface exposure/solvent accessibility based on sequence information alone.
+%#% Not sure what the Section X.X refers to.
 
 ### Transmembrane protein sections
+
 Cells are surrounded by a membrane that consists of a lipid bilayer.
 The membrane is literally what separates the inside of the cell with the outside world.
 Hence, if messages need to be passed on from outside to inside the cell, or vice versa, these messages will need to pass the apolar environment of the membrane.
@@ -148,7 +151,109 @@ Where globular proteins are present within the cell, so-called transmembrane pro
 It is estimated that ~30% of the proteins are transmembrane, indicating their functional importance.
 Due to restrictions of the protein exterior put on by the specific environment of the membrane in terms of size and polarity, only some local structural configurations are typically found to span the membrane.
 These configurations are typically linked to the protein’s function: be it a receptor for signal transduction or a transporter of specific substances across the membrane.
+
 Let us consider size first: the average thickness of a membrane is ~30 angstrom (Å), which corresponds to an α-helix of between 15 and 30 residues.
+
+:::{figure} images/Week4/transmembrane-proteins.png
+:alt: Three different types of transmembrane proteins
+:align: center
+:width: 60%
+:name: transmembrane_proteins
+
+Schematic representation of proteins with transmembrane sections, also called transmembrane proteins, with the membrane represented in light yellow: 1) an alpha-helix containing protein spanning the membrane once (single-pass) 2) an alpha-helix containing protein spanning the membrane several times (multi-pass) 3) a multi-pass membrane protein containing β-sheets. Credits: [CC BY 2.5](https://creativecommons.org/licenses/by/2.5/) {cite}`transmembrane_proteins_2006`.
+:::
+
+The simplest local transmembrane element is an alpha-helix of ~ 15-30 amino acid residues with mainly apolar side groups ({numref}`transmembrane_proteins`, 1).
+The length is restricted by the length of the lipid bilayer, whereas the apolar side groups will have favorable interactions with the acyl chains of the lipids in the membrane.
+A transmembrane protein can span the membrane one or more times (i.e., {numref}`transmembrane_proteins`, 1 & 2), and in some cases a special configuration of the transmembrane proteins creates a “pore”-like structure.
+Here, some helical residues can be charged as the pore environment is completely shielded from the membrane bilayer.
+Another commonly used transmembrane configuration is the “beta-barrel”. This element consists of 8 – 22 transmembrane β-strands (although larger ones with even more β-strands may well exist) that together form a “barrel shape” ({numref}`transmembrane_proteins`, 3), effectively separating the inside of the barrel from the outside, thereby creating a pore in the membrane.
+Such pores can be sealed off with a “switch” in the form of a protein stretch that is either in the “open” or “closed” configuration.
+
+### Signaling peptides
+
+The place where proteins are built in the cell is usually not where they act.
+To exert their function at the right place, proteins need to be transported from where they are folded and formed.
+The cellular machinery has developed a signaling system that use “peptide tags” to enable effective transport of polypeptide chains to their site of action prior to becoming active.
+Such “tags” are called signal peptides that are peptide recognition signals for the cellular transporter machinery.
+Typical site of actions for which signal peptides exist include the cell membrane and the endoplasmic reticulum.
+Furthermore, signal peptides can steer proteins to be secreted from or imported into lysosomes.
+Hence, the presence of such a signal peptide can provide important clues as to what the site of action of a protein may be based on its amino acid sequence.
+
+The signal peptide is an N-terminal leader amino acid sequence that consists of ~ 15-30 residues added to the N-terminus of the mature protein (Fig XX).
+The actual recognition of signal peptides by the cellular transporter machinery is not based on a conserved amino acid sequence, but it largely depends on the physicochemical properties of the amino acids in the signal peptide.
+A signal peptide typically consists of three regions: (the n-region) usually contains 1–5 positively charged amino acids, the second region (the h-region) is made up of 5–15 hydrophobic amino acids, and the third region (the c-region) has 3–7 polar but mostly uncharged amino acids.
+%#% Figure XX has not been provided.
+### Sequence-based prediction of transmembrane sections and signal peptides
+
+Given their functional clues, the prediction of transmembrane sections and signal peptides based on amino acid sequence alone is very advantageous when studying the possible functions of unknown proteins.
+DeepTMHMM is currently the top-performing tool to predict transmembrane sections and signaling peptides in protein sequences.
+The program predicts several labels for each amino acid in a sequence: signal peptide (S), inside cell/cytosol (I), alpha membrane (M), beta membrane (B), periplasm (P) and outside cell/lumen of ER/Golgi/lysosomes (O).
+
+Both transmembrane sections and signal peptides are largely defined by the physicochemical properties of the amino acid residues that they constitute, rather than a conserved motif or short sequence of residues.
+This makes it very hard to recognize these secondary structure elements using classical methods based on alignment.
+Using machine learning methods, however, the characteristics of a training data set with known sequences can be learned and used for the prediction of unknown data.
+The trained models can subsequently judge the properties of amino acids in unknown sequences, thereby allowing the recognition of transmembrane sections and signal peptides.
+Hence, DeepTMHMM uses a deep learning model that takes a protein sequence as input, and then outputs the corresponding per-residue labels.
+Taken all together and considering their order within the amino acid sequence, the residue labels define the predicted topology of the protein.
+DeepTMHMM can predict five different topologies, namely alpha helical transmembrane proteins without a signal peptide (alpha TM), alpha helical transmembrane proteins with signal peptide (SP + alpha TM), beta-barrel transmembrane proteins (Beta), globular proteins with signal peptide (SP + Globular) and globular proteins without signal peptide (Globular).
+Importantly, the two secondary structure elelements predicted here share properties and the deep learning model needed sufficient example data to differentiate transmembrane sections from signal peptides.
+
+In {numref}`alphatm` you can observe a typical output of DeepTMHMM - alpha TM for a multi-pass transmembrane protein.
+
+:::{figure} images/Week4/alphatm.png
+:alt: An example output of DeepTMHMM - alpha TM
+:align: center
+:width: 80%
+:name: alphatm
+
+Left, output of DeepTMHMM - alpha TM prediction on Bovine Adhesion G protein-coupled receptor G7 (ADGRG7, A4IFD4). Right, a gff file of the same protein where the number of transmembrane structures (α-helices), their amino acid positions, and whether the residues are inside or outside the membrane indicated. Credits: {cite}`deeptmhmm_2022`.
+:::
+
+{numref}`betatm` shows an example output of DeepTMHMM - beta for a beta-barrel transmembrane protein.
+
+:::{figure} images/Week4/betatm.png
+:alt: An example output of DeepTMHMM - beta
+:align: center
+:width: 80%
+:name: betatm
+
+Left, output of DeepTMHMM - beta prediction on the outer membrane protein C (precursor) of _Salmonella typhimurium_ (OMPC-SALTY, P0A263). Right, a gff file of the same protein where the signal peptide position, the number of transmembrane structures (β-sheets), their amino acid positions, and whether the residues are in the periplasm or outside the membrane indicated. Credits: {cite}`deeptmhmm_2022`.
+:::
+
+### SignalP
+
+%#% Missing a general introduction to SignalP and references to the figure.
+
+:::{figure} images/Week4/signalp.png
+:alt: example output of SignalP
+:align: center
+:width: 100%
+:name: signalp
+
+SignalP output on the outer membrane protein C (precursor) of _Salmonella typhimurium_ (OMPC-SALTY, P0A263). Credits: {cite}`signalp_2022`.
+:::
+
+In Bacteria and Archaea, SignalP 6.0 can discriminate between five types of signal peptides:
+- Sec/SPI: "standard" secretory signal peptides transported by the Sec translocon and cleaved by Signal Peptidase I (Lep).
+- Sec/SPII: lipoprotein signal peptides transported by the Sec translocon and cleaved by Signal Peptidase II (Lsp).
+- Tat/SPI: Tat signal peptides transported by the Tat translocon and cleaved by Signal Peptidase I (Lep).
+- Tat/SPII: Tat lipoprotein signal peptides transported by the Tat translocon and cleaved by Signal Peptidase II (Lsp).
+- Sec/SPIII: Pilin and pilin-like signal peptides transported by the Sec translocon and cleaved by Signal Peptidase III (PilD/PibD).
+
+Additionally, SignalP 6.0 predicts the regions of signal peptides. Depending on the type, the positions of n-, h- and c-regions as well as of other distinctive features are predicted.
+
+The C-score stands for cleavage site score, which was trained on the recognition of the cleavage site between signal peptide and the protein sequence, and predicts the cleavage site of SPase I.
+The maximum C-score occurs at the position of the first amino acid of the mature protein, so one position behind the cleavage site.
+The S-score, the signal peptide score, is trained on the differentiation of signal peptides and other sequences and has a high value if the corresponding amino acid is part of the signal peptide.
+Therefore, amino acids of the mature protein have a low S-score. The Y-score (combined cleavage site score) is a geometrical mean of the C-score absolute values and the gradient of the S-score and shows where the C-score is high and the S-score has its inflection point.
+Analysis of the three scores shows the likely cleavage site between amino acids 21 and 22.
+In addition, two more values are calculated.
+The S-mean is the average of the S-scores of all amino acids of the signal peptide.
+Consequently, if there is a signal pep- tide, this value should be high.
+The D-score is the arithmetic mean of the S-mean value and the maximum value of the Y-score.
+It will also be high if a signal peptide has been predicted.
+%#% the scores could be described more inline with the wording used in the figure.
 
 ## AlphaFold ingredients: experimentally derived 3D structures & computational advances
 
