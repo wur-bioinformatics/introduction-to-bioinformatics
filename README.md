@@ -70,6 +70,7 @@ When text is accompanied by a figure, the following syntax is used:
 :name: Referencing name of figure
 
 Description of the figure.
+:::
 ```
 
 An example of a proper figure content block:
@@ -136,10 +137,11 @@ Citing a source should be done in the text or at the end of the description of a
 {cite}`citation name`
 ```
 The citation name is based on name given to the citation in the references.bib file in root of the repository.
-This file is a bibtex file, which contains bibtex entries for each citation.
-Bibtex citation can usually be downloaded directly from papers, however, an understanding of the general format is beneficial.
+This file is a BibTex file, which contains BibTex entries for each citation.
+Bibtex citations can usually be downloaded directly from papers, however, an understanding of the general format is beneficial.
+More information on the BibTex format can be found on [BibTex.org](https://www.BibTex.org/Using/).
 
-An example of a bibtex file, which contains a single citation:
+An example of a BibTex file, which contains a single citation:
 
 ```none
 @article{GDT_2020,
@@ -156,7 +158,7 @@ An example of a bibtex file, which contains a single citation:
 The name given to this citation is GDT_2020. The general format for naming should follow a `name_year` style.
 In the case of the example, GDT is short for global distance test, and 2020 was the year of publication.
 
-Citations should be added as bibtex entries prior to using `{cite}`.
+Citations should be added as BibTex entries prior to using `{cite}`.
 
 Assuming the previous example has been saved in references.bib, citing can be done using :
 
@@ -171,7 +173,7 @@ This license is linked to the Creative Commons website using the following synta
 [Type of license](url to license webpage)
 ```
 
-For example:
+When attributing a figure for example:
 ```none
 :::{figure} images/Week1/terstructure.jpg
 :alt: Tertiary structure interactions
@@ -241,12 +243,19 @@ Adding a bibliography to the end of a markdown file is done by adding the follow
 ```none
 ## References
 
-```{bibliography}
+:::{bibliography}
 :filter: docname in docnames
 :labelprefix: (week number, followed by a capital W), for example: 1W
+:::
 ```
-```
+
+This will add all used citations into a bibliography at the bottom of the page.
 
 ---
 
 ### Comments
+
+When writing or reviewing the markdown files, you may want to leave a comment for yourself or other contributors to see.
+The compiler assumes every line that starts with `%` is a comment line.
+However, since percentages are used rather frequently, which makes filtering for comments more difficult, a preference has been given to use `%#%` for commenting.
+This makes sure that it is easy to search for comments in a markdown file and that they are not included in the actual output of the compiler.
