@@ -616,7 +616,7 @@ https://elearning.vib.be/courses/alphafold/. Credits: ([CC-BY 4.0](https://creat
 
 ---
 
-### References
+## References
 
 ```{bibliography}
 :filter: docname in docnames
