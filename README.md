@@ -259,3 +259,13 @@ When writing or reviewing the markdown files, you may want to leave a comment fo
 The compiler assumes every line that starts with `%` is a comment line.
 However, since percentages are used rather frequently, which makes filtering for comments more difficult, a preference has been given to use `%#%` for commenting.
 This makes sure that it is easy to search for comments in a markdown file and that they are not included in the actual output of the compiler.
+Comments are put directly beneath a paragraph or figure that you would like to comment on.
+
+For example:
+
+```none
+#### Secondary structure prediction
+
+As we have seen in Section X.X, there are key similarities and differences between α-helices and β-sheets.
+%#% Not sure what the Section X.X refers to.
+```
