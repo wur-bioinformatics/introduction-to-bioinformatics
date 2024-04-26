@@ -15,7 +15,7 @@ Each header is closed by a section divider (---), apart from the references sect
 
 An example of a properly structured markdown file:
 
-`
+```none
 # Main title
 
 introduction to the chapter.
@@ -47,7 +47,7 @@ Short description of what to expect from this section.
 ---
 
 ## References
-`
+```
 
 For more information on headers and sections see the [Jupyter Book documentation](https://jupyterbook.org/en/stable/structure/sections-headers.html)
 
