@@ -56,6 +56,15 @@ The DNA structure.
 Credits: {cite}`dna_2008`.
 :::
 
+:::{figure} images/Week1/dna_alt.jpg
+:alt: DNA structure
+:width: 80%
+:name: dna_alt
+
+The DNA structure.
+Credits: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) {cite}`dna_alt_2013`.
+:::
+%#% Figure dna original source states that the figure is allowed to be reused, unaltered, in personal, non commercial or educational environment but no license is provided. Provided alternative figure.
 The two strands of the helix run in opposite directions, also called anti-parallel, i.e., one goes from 5' to 3' and the other from 3' to 5' ({numref}`nucleotide`).
 The nucleotide sequence is typically written in 5' to 3' direction.
 Due to the complementarity, the base sequence of a strand can be deduced from the base sequence from the other strand.
@@ -81,6 +90,17 @@ B) Semiconservative DNA replication, where the two copies each contain one origi
 Credits: [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/) {cite}`replication_b_2005`.
 :::
 
+:::{figure} images/Week1/replication_alt.png
+:alt: Replication
+:width: 50%
+:name: replication_alt
+
+A) The process of DNA replication.
+Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`replication_a_2013`.
+B) Semiconservative DNA replication, where the two copies each contain one original strand and one new strand.
+Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) modified from {cite}`replication_b_alt_2009`.
+:::
+
 The error rate of DNA replication is remarkably low, about one erroneous base in 10<sup>9</sup> bases.
 This property preserves the genetic information during cell division, and also over generations.
 
@@ -104,9 +124,9 @@ There are four major types of RNA:
 :width: 70%
 :name: transcription
 
-RNA is produced by transcribing DNA: as such, it is a direct copy of the information contained in the DNA. Where DNA contains thymine (T, indicated in blue), RNA contains uracil (U, indicated in purple).
+RNA is produced by transcribing DNA: as such, it is a direct copy of the information contained in the DNA. Where DNA contains thymine (T, indicated in blue), RNA contains uracil (U, indicated in purple). Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`transcription_2024`.
 :::
-%#% Figure transcription created by Rens Holmer. How to properly attribute? Discussion point for everyone/library.
+
 In eukaryotes, precursor mRNA molecules undergo splicing. During RNA splicing, the spliceosome protein complex removes introns: specific non-coding parts of an mRNA molecule that are not used during translation ({numref}`splicing`), to create mature mRNA. Most introns are characterized by a GU and AG dinucleotide motif in the 5' and 3' end respectively.
 
 :::{figure} images/Week1/splicing.jpg
@@ -131,7 +151,15 @@ During this process tRNAs decode the information on the RNA into amino acids, wh
 
 The translation process, where ribosomes with tRNA molecules "read" codons on the mRNA using anticodons, which then get translated into their corresponding amino acids. These amino acids are linked together by peptide bonds to form a polypeptide chain.
 :::
-%#% Figure translation original source has been removed, replace image?
+
+:::{figure} images/Week1/translation_alt.svg
+:alt: Translation
+:width: 70%
+:name: translation_alt
+
+The translation process, where ribosomes with tRNA molecules "read" codons on the mRNA using anticodons, which then get translated into their corresponding amino acids. These amino acids are linked together by peptide bonds to form a polypeptide chain. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`translation_alt_2024`.
+:::
+
 :::{seealso}
 The details of transcription and translation differ between prokaryotes and eukaryotes. You can look up Chapters 15 and 16 of [Biology 2e](https://openstax.org/details/books/biology-2e) to learn more.
 :::
@@ -170,6 +198,15 @@ Nevertheless, there are also genes that do not code for proteins, but where func
 
 The central dogma of molecular biology.
 Credits: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) {cite}`dogma_2008`.
+:::
+
+:::{figure} images/Week1/dogma_alt.svg
+:alt: Central dogma
+:width: 80%
+:name: dogma_alt
+
+The central dogma of molecular biology.
+Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) modified from {cite}`dogma_alt_2008`.
 :::
 
 ### Proteins
@@ -319,6 +356,16 @@ The four levels of protein structure.
 Credits: Rao, A. Ryan, K. and Tag, A. Department of Biology, Texas A&M University.
 :::
 %#% Figure struclevels is credited but the image is not found on a specific webpage. Is showing credits enough?
+
+:::{figure} images/Week1/struclevels_alt.svg
+:alt: The four levels of protein structure
+:width: 60%
+:name: struclevels_alt
+
+The four levels of protein structure.
+Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`struclevels_alt_2008`.
+:::
+
 The structure of a protein is critical for its function.
 For example, in an enzyme, the active site must be in the correct structure to be able to bind the substrate.
 Other proteins might bind proteins (and influence their activity) or bind DNA (and regulate gene expression).
@@ -379,6 +426,17 @@ The hydrogen bonds form between the oxygen atom in the C group in one amino acid
 Black = carbon, white = hydrogen, blue = nitrogen, and red = oxygen. Credits: Rao, A., Tag, A. Ryan, K. and Fletcher, S. Department of Biology, Texas A&M University.
 :::
 %#% Figure secstructure is credited but the image is not found on a specific webpage. Is showing credits enough? - Similar to Pearson imagery (Campbell Biology 11th edition Figure 5.18).
+
+:::{figure} images/Week1/secstructure_alt.jpg
+:alt: Secondary structure elements
+:width: 80%
+:name: secstructure_alt
+
+α-helices and β-sheets are stablized by hydrogen bonds between the backbone of proteins, i.e., the side chains are not involved.
+The hydrogen bonds form between the oxygen atom in the C group in one amino acid and the hydrogen in the N group.
+Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) {cite}`secstructure_alt_nd`.
+:::
+
 **Turns** are short secondary structure elements that are stabilized by hydrogen bonds between amino acids that are 1 to 5 peptide bonds away.
 The most common form are β-turns, which connect antiparallel β-strands.
 
