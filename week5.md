@@ -126,7 +126,7 @@ already in 1988 and was officially finished in 2003 ({numref}`landmarks_in_genet
 
 History of genome sequencing and the Human Genome Project. Credits: {cite}`landmarks_in_genetics_2003`.
 :::
-
+%#% Beautiful figure but under copyright by Springer Nature. Their quick price estimate returns a $250 price tag for our use case.
 As previously described, the project was very costly, with an estimated cost of \$3 billion. In
 comparison, it is nowadays possible to sequence all variants between a human
 genome and the reference for less than \$1,000 on Illumina’s NovaSeq
@@ -148,6 +148,7 @@ bacteria to more than 100Gb (Giga basepairs) in plants.
 
 Gene content in some representative species. Credits: {cite}`genome_sizes_2009`.
 :::
+%#% Figure genome_sizes comes from the book A Primer of Genome Science. Not able to use this figure (for free).
 Humans have a genome size of 3.2Gb. Not only the genome size varies
 greatly, in eukaryotes the number of chromosomes and chromosomal copies
 (ploidy) do too. Chromosome numbers range from 4 in fruitfly (_Drosophila_)
@@ -452,7 +453,7 @@ samples, using as example the \
 tardigrade and surrounding bacteria \
 Credits: modified from {cite}`contamination_2015`.
 :::
-
+%#% Figure contamination has a Japanese webpage as its source. Is this actually where it came from? Not sure if we are allowed to use this.
 As discussed above, sequencing technology is not perfect and errors will be
 present in the output. Moreover, what we sequence is not always what we
 originally intended to sequence ({numref}`contamination`).
@@ -516,6 +517,7 @@ make chromosome-level assemblies increasingly attainable.
 
 Genetic representation of the _Salmonella typhi_ chromosomal resistance island. Credits: {cite}`salmonella_2015`.
 :::
+%#% Figure salmonella is under copyright by Springer Nature. Unable to use this image for free.
 
 ---
 
@@ -580,7 +582,7 @@ genomes.
 
 The assembly problem as a jigsaw puzzle. Credits: {cite}`jigsaw_2016`.
 :::
-
+%#% Figure jigsaw is created by a lecturer at the Melbourne University. Not sure if we are allowed to use this.
 If we look at a genome assembly using the analogy of a jigsaw puzzle ({numref}`jigsaw`), the challenges become obvious:
 
 - There is no picture on the puzzle box, i.e., we have no idea what the assembled genome is meant to look like.
@@ -663,7 +665,7 @@ expression ({numref}`regulatory_elements`).
 Examples of long-distance regulatory elements and their distances to the
 target gene identified in the human genome. Credits: {cite}`regulatory_elements_2010`
 :::
-%#% Figure regulatory_elements contains imagery that is specified as for personal use only.
+%#% Figure regulatory_elements contains imagery that is specified as for personal use only. Replace this figure.
 As discussed above, the telomere-to-telomere assembly of the human genome
 added the 5% hitherto missing genome sequence. While the previous human
 genome assembly was already considered gold standard and very complete, the
@@ -687,7 +689,7 @@ their actual size, and the “_FRG1_” prefix is omitted for brevity. All
 paralogs are found near satellite arrays. _FRG1_ is involved in
 acioscapulohumeral muscular dystrophy (FSHD). Credits: modified from {cite}`t2t_human_genome_2022`.
 :::
-
+%#% Figure FSHD is under copyright by Science. Unable to use this figure for free.
 ---
 
 (variants)=
@@ -805,7 +807,7 @@ chance for that person to develop breast cancer during their lifetime to
 
 Variants in BRCA1 and BRCA2 genes involved in cancer. Credits: {cite}`BRCA_2011`.
 :::
-
+%#% Figure BRCA is under copyright by JAMA. Unable to use this image for free.
 ---
 
 #### Large-scale genome variation
@@ -821,7 +823,7 @@ duplicated.
 :align: center
 :name: large_scale_variants
 
-Different types of structural variants on chromosome level. Credits: {cite}`large_scale_variants_2024`.
+Different types of structural variants on chromosome level. Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`large_scale_variants_2024`.
 :::
 
 (w5box4_cri_du_chat)=
@@ -903,7 +905,7 @@ Reads from the break point will be split in the alignment.
 :align: center
 :name: male_morphs
 
-Orientation of the inversion in the three male morphs. Credits: {cite}`male_morphs_2022`.
+Orientation of the inversion in the three male morphs. Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`male_morphs_2022`.
 :::
 
 Large chromosomal inversions play a role in within-species phenotypic
@@ -942,9 +944,9 @@ _Ppd-B1_ controls flowering time by affecting photoperiod sensitivity; c)
 CNV of _Rht-D1b_ gene (a truncated version of _Rht-D1a_) determines severity
 of plant dwarfism phenotype. In all three cases, the impact of gene copy
 number on observed phenotype has been verified experimentally. Source data:
-a, b, Díaz et al. (2012); c, Li et al. (2012). Credits: {cite}`CNV_2013`.
+a, b, Díaz et al. (2012); c, Li et al. (2012). Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`CNV_2013`.
 :::
-%#% The description of figure CNV is a literal copy paste from the source article. Rewrite?
+
 ---
 
 ## Functional genomics and systems biology
@@ -1124,7 +1126,7 @@ experimentation, and model extension or modification.
 The systems biology cycle, aiming to iteratively improve models of living
 systems. Credits: {cite}`systems_biology_2002`.
 :::
-
+%#% Figure systems_biology is under copyright by Science. Unable to use for free.
 Eventually, the hope of systems biology is to arrive at systems-level
 understanding of life that will allow us to simulate the effects of
 interventions (mutations, drug treatments, etc.) or even (re)design genes and
@@ -1215,7 +1217,7 @@ Example of differential \
 display gel. Credits: modified from \
 {cite}`differential_gel_2001`.
 :::
-
+%#% Figure differential_gel is under copyright by the American Physiological Society. Unable to use for free.
 Early methods of detecting transcripts and expression levels are northern
 blots and differential display ({numref}`differential_gel`). Both are gel-based
 methods that are low throughput and not very accurate.
@@ -1248,7 +1250,7 @@ Amplification plot of a DNA fragment in a qPCR reaction.
 C{sub}`q` corresponds to the cycle were fluorescence passes the
 detection threshold. Credits: {cite}`qPCR_nd`.
 :::
-%#% Replaced figure qPCR with a higher resolution image and changed the alignment to prevent overflow into the [Microarrays] section.
+%#% Biorad website states its imagery is solely for personal, noncommercial use. Replace figure.
 
 ---
 
@@ -1286,7 +1288,7 @@ expression of the corresponding gene.
 The difference between cDNA (two-color) and oligonucleotide (one-color) microarray analysis.
 Credits: modified from {cite}`microarrays_2007`.
 :::
-
+%#% Figure microarrays is under copyright by Elsevier. Unable to use this image for free.
 There are two main competing types of microarrays: cDNA and oligonucleotide
 arrays. While the principles are the same, they differ in production and
 use (as illustrated in {numref}`microarrays`):
@@ -1378,7 +1380,7 @@ to deal with the resulting data. For a review, see this [paper](https://genomebi
 :name: RNAseq_protocol
 
 Standard RNAseq protocol. \
-Credits: modified from \
+Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) modified from \
 {cite}`RNAseq_protocol_2011`.
 :::
 %#% Figure RNAseq_protocol seems to be self-created out of imagery from different sources. I was only able to find the source for the sequencer, which now serves as the reference for the whole image.
@@ -1538,7 +1540,7 @@ DNA can be sequenced by PCR (ChIP-PCR) or NGS (ChIPseq). Similar protocols
 are available for protein-RNA and protein-protein interactions, the latter
 using two antibodies. Credits: {cite}`chip_protocol_2009`.
 :::
-
+%#% Figure chip_protocol is under copyright by Bioscientifica Limited. Unable to use this image for free.
 RNAseq is a clever protocol that uses the attractive cheap, high-throughput
 DNA sequencing technology to measure something else – in this case, gene
 expression levels. The trick is to first translate the mRNA into DNA,
@@ -1607,7 +1609,7 @@ presence/absence and levels of proteins) and functional proteomics
 An example Western blot (left) and two 2D gels (right), separating proteins
 found in two different strains of *Brucella*. Investigating the difference
 between the two figures on the right can give insight in what proteins are
-differentially expressed between the two strains. Credits: {cite}`gels_2020`.
+differentially expressed between the two strains. Credits: [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/) {cite}`gels_2020`.
 :::
 
 As for DNA, gels ({numref}`gels`) are traditional means to measure the
@@ -1649,7 +1651,7 @@ specific interactions.
 Three mass spectrometry setups, (a) time-of-flight,
 (b) sector field and \(c) quadrupole. Credits: {cite}`mass_spectrometry_2003`.
 :::
-
+%#% Figure mass_spectrometry is under copyright by Springer Nature. Unable to use this image for free.
 Currently the most widely used technology for proteomics (and metabolomics)
 is mass spectrometry (MS). MS devices have been in constant development and
 improvement since their inception in the late 19{sup}`th` century. They differ in
@@ -1723,7 +1725,7 @@ peptides.
 
 A schematic overview of shotgun proteomics. Credits: {cite}`shotgun_proteomics_2007`.
 :::
-
+%#% Figure shotgun_proteomics is under copyright by Springer Nature. Unable to use this image for free.
 More complex protocols have also been developed to compare two protein
 samples in a single experiment, for example by adding known weights (using natural isotopes or
 modified amino acids) and investigating relative differences in shifted mass spectra.
@@ -1740,7 +1742,7 @@ modified amino acids) and investigating relative differences in shifted mass spe
 Experimental methods to detect proteins. Top: high-throughput, bottom:
 low-throughput. Credits: modified from {cite}`experimental_protein_methods_2006`.
 :::
-
+%#% Figure experimental_protein_methods is under copyright by Springer Nature. Unable to use this image for free.
 Next to protein levels, we are also interested in what proteins do in the
 cell: their functions and interactions. Many protocols and analyses have
 been developed for this, with most focusing on protein-protein, protein-DNA
@@ -1782,6 +1784,7 @@ A protein interaction network (4,927 proteins, 209,912 interactions found by
 tandem affinity purification) for *Drosophila melanogaster*, with
 clusters corresponding to protein complexes indicated in color. Credits: modified from {cite}`protein_network_2011`.
 :::
+%#% Figure protein_network is under open access: Permitted for non-commercial purposes: read, print & download. We should be able to use this image.
 
 The methods mentioned measure *physical* interactions between proteins, as
 opposed to *functional* interactions. Such interactions occur when two
@@ -1927,7 +1930,7 @@ Note that there is not much expression difference after 2 and 4 hours of
 growth on serum. Right: a heatmap visualizes the entire dataset, with colors
 indicating z-score normalized expression values: green is low, black is
 medium and red is high expression. Rows are genes, columns indicate growth
-condition, both are clustered. Credits: {cite}`streptococcus_pca_heatmap_2021`.
+condition, both are clustered. Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`streptococcus_pca_heatmap_2021`.
 :::
 
 While omics data can be analyzed in for example Microsoft Excel, it is very
@@ -2012,7 +2015,7 @@ series analysis. Left: heatmap of the 446 genes with most variable gene
 expression levels, clustered into 15 clusters. Right: average expression
 profiles of each cluster show that different groups of genes peak in
 expression in different development stages. These genes may be regulated in
-the same way and be active in similar biological processes. Credits: {cite}`time_series_2005`.
+the same way and be active in similar biological processes. Credits: [CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) {cite}`time_series_2005`.
 :::
 
 Often it is more interesting to follow abundance over time rather than
@@ -2058,7 +2061,7 @@ which obvious clusters should become visible as large color blocks.
 An example part of the Gene Ontology (GO), in the biological process category.
 Lower-level terms are specific instantiations of the higher-level ones. In
 this figure, GO terms are colored according to the *p*-value in an
-enrichment test. Credits: {cite}`go_enrichment_2010`.
+enrichment test. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`go_enrichment_2010`.
 :::
 
 A final often used analysis is enrichment, in which we use gene functional
