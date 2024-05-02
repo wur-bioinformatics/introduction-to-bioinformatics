@@ -432,7 +432,7 @@ Black = carbon, white = hydrogen, blue = nitrogen, and red = oxygen. Credits: Ra
 :width: 80%
 :name: secstructure_alt
 
-α-helices and β-sheets are stablized by hydrogen bonds between the backbone of proteins, i.e., the side chains are not involved.
+α-helices and β-sheets are stablized by hydrogen bonds (the dotted lines) between the backbone of proteins, i.e., the side chains are not involved.
 The hydrogen bonds form between the oxygen atom in the C group in one amino acid and the hydrogen in the N group.
 Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) {cite}`secstructure_alt_nd`.
 :::
@@ -471,6 +471,15 @@ B) A typical Ramachandran plot. The regions marked "core" do not have any steric
 Yellow areas are generally allowed.
 White areas represent conformations that are generally sterically unfavorable.
 Credits: {cite}`phipsi_2014`.
+:::
+
+:::{figure} images/Week1/phipsi_alt.svg
+:alt: Phi, psi, and Ramachandran plot
+:width: 50%
+:name: phipsi_alt
+
+A) The φ, and ψ torsion angles of a polypeptide chain. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`phipsi_alt_2024`.
+B) A typical Ramachandran plot. The red regions marked do not have any steric hindrance, yellow areas represent conformations that have steric hindrance, light yellow areas represent conformations that are generally sterically unfavorable, and white areas do not have any allowed conformations. Credits: ramachandran modified from generated plot using [PROCHECK](https://www.ebi.ac.uk/thornton-srv/software/PROCHECK/index.html) {cite}`procheck_1993`.
 :::
 
 :::{seealso}
@@ -648,9 +657,9 @@ So far, all described steps in the genome annotation process have dealt with wha
 :width: 100%
 :name: genemodel
 
-An example gene model. Various visualization conventions can be identified: boxes represent genomic regions that are transcribed. Boxes are exons, lines between boxes are introns. Narrow boxes (sometimes with a lighter color) are untranscribed regions (UTRs), wider boxes (sometimes darker colored) are coding sequence regions (CDS). The arrow indicates the direction of transcription. In this example a gene on chromosome 1 with two splice variants is shown, where the first variant has a slightly longer 5' UTR and an additional CDS exon in between the first and last exons.
+An example gene model. Various visualization conventions can be identified: boxes represent genomic regions that are transcribed. Boxes are exons, lines between boxes are introns. Narrow boxes (sometimes with a lighter color) are untranscribed regions (UTRs), wider boxes (sometimes darker colored) are coding sequence regions (CDS). The arrow indicates the direction of transcription. In this example a gene on chromosome 1 with two splice variants is shown, where the first variant has a slightly longer 5' UTR and an additional CDS exon in between the first and last exons. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`genemodel_2024`.
 ```
-%#% Figure genemodel is created by Rens Holmer. How to properly attribute? Discussion point for everyone/library.
+
 **Genome browsers** facilitate interactive visualisation of annotations and evidence alignments on genome sequences. Various implementations exist, but all genome browsers typically provide a linear view of a chromosome that can be scrolled and zoomed. In addition, various annotation 'tracks' can often be toggled, to display for instance known gene structures, RNA sequencing alignments, or homologous protein sequence alignments. Most visualization elements can be clicked to open pop-up windows with additional information.
 
 ```{figure} images/Week1/jbrowse.png
@@ -885,7 +894,7 @@ These icons denote the different InterPro entry types:
 :width: 40%
 :name: interpro-types
 
-The icons for the different InterPro entries (homologous superfamily, family, domain, repeat or site). Credits: {cite}`interpro-types_2020`.
+The icons for the different InterPro entries (homologous superfamily, family, domain, repeat or site). Credits: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) {cite}`interpro-types_2020`.
 :::
 
 :::{seealso}
