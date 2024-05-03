@@ -324,7 +324,7 @@ The process of Illumina sequencing. The Illumina NovaSeq uses a system of 2
 fluorescent dies compared to the traditional 4. This greatly speeds up
 sequencing
 :::
-%#% Figure illumina_sequencing tile D looks to be a modified from the original image. Did we do this ourselves? https://www.illumina.com/documents/products/illumina_sequencing_introduction.pdf (Figure 3).
+%#% Figure illumina_sequencing source states that imagery can only be used for personal, non-commercial use only, and will not be copied or posted on any network computer or broadcast in any media, (iii) you may not modify the materials in any way or reproduce, publicly display, perform, distribute, transmit, or create derivative works from any of the materials on this Site.
 Illumina reads can be sequenced from one primer end only, which yields
 so-called single end reads, or from both primer ends, which gives paired end
 reads, i.e., two reads that originate from the same molecule with a distance
@@ -379,7 +379,7 @@ recent PacBio HiFi reads reaching 99% read accuracy.
 
 PacBio sequencing library construction and circular consensus sequencing
 :::
-%#% Figure pacbio seems to be an alteration of the figures found on the website of the University of Exeter (https://biosciences.exeter.ac.uk/sequencing/equipment/pacbio/sequel/), which itself seems to be derived from the PacBio website. The original images can no longer be found on the PacBio website.
+%#% Figure pacbio seems to be an alteration of the figures http://www.pacb.com/wp-content/uploads/2015/08/SMRT_Technology.SMRTbell_Template.jpg and https://speakerdeck.com/pacbio/pacbio-template-preparation?slide=5
 The read length of this technology is determined by the size of the input
 fragment and the length of time the polymerase functions (the high-energy
 laser light slowly degrades the enzyme over time). Median read lengths vary
@@ -519,6 +519,13 @@ Genetic representation of the _Salmonella typhi_ chromosomal resistance island. 
 :::
 %#% Figure salmonella is under copyright by Springer Nature. Unable to use this image for free.
 
+:::{figure} images/Week5/salmonella_alt.png
+:alt: Salmonella enterica subsp. enterica serovar Stanley genetic organization of virulence factors in SPI-1
+:align: center
+:name: salmonella_alt
+
+Genetic representation of the _Salmonella enterica subsp. enterica_ serovar Stanley pathogenicity island-1. Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) modified from {cite}`salmonella_alt_2019`.
+:::
 ---
 
 #### Genome assembly strategies
@@ -808,6 +815,14 @@ chance for that person to develop breast cancer during their lifetime to
 Variants in BRCA1 and BRCA2 genes involved in cancer. Credits: {cite}`BRCA_2011`.
 :::
 %#% Figure BRCA is under copyright by JAMA. Unable to use this image for free.
+
+:::{figure} images/Week5/BRCA_alt.png
+:alt: BRCA genes
+:align: center
+:name: BRCA_alt
+
+Mutations in BRCA1 and BRCA2 found in breast and ovarian cancers. Credits: {cite}`BRCA_alt_2018`.
+:::
 ---
 
 #### Large-scale genome variation
@@ -1206,20 +1221,34 @@ mRNA levels:
 
 #### How to measure mRNAs?
 
-:::{figure} images/Week5/differential-gel.jpg
+%:::{figure} images/Week5/differential-gel.jpg
+%:alt: Differential display gel
+%:width: 150px
+%:height: 300px
+%:align: right
+%:name: differential_gel
+%
+%Example of differential \
+%display gel. Credits: modified from \
+%{cite}`differential_gel_2001`.
+%:::
+%#% Figure differential_gel is under copyright by the American Physiological Society. Unable to use for free.
+
+:::{figure} images/Week5/differential-gel_alt.png
 :alt: Differential display gel
-:width: 150px
-:height: 300px
+:width: 184px
+:height: 367px
 :align: right
-:name: differential_gel
+:name: differential_gel_alt
 
 Example of differential \
-display gel. Credits: modified from \
-{cite}`differential_gel_2001`.
+display gel. Credits: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) \
+modified from \
+{cite}`differential_gel_alt_2014`.
 :::
-%#% Figure differential_gel is under copyright by the American Physiological Society. Unable to use for free.
+
 Early methods of detecting transcripts and expression levels are northern
-blots and differential display ({numref}`differential_gel`). Both are gel-based
+blots and differential display ({numref}`differential_gel_alt`). Both are gel-based
 methods that are low throughput and not very accurate.
 
 Just like the study of genomes, transcriptomics has greatly benefitted from
@@ -1252,6 +1281,16 @@ detection threshold. Credits: {cite}`qPCR_nd`.
 :::
 %#% Biorad website states its imagery is solely for personal, noncommercial use. Replace figure.
 
+:::{figure} images/Week5/qPCR_alt.svg
+:alt: qPCR amplification graph
+:align: center
+:width: 80%
+:name: qPCR_alt
+
+Amplification plot of a DNA fragment in a qPCR reaction.
+C{sub}`q` corresponds to the cycle were fluorescence passes the
+detection threshold. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`qPCR_alt_2024`.
+:::
 ---
 
 #### Microarrays
@@ -1289,6 +1328,16 @@ The difference between cDNA (two-color) and oligonucleotide (one-color) microarr
 Credits: modified from {cite}`microarrays_2007`.
 :::
 %#% Figure microarrays is under copyright by Elsevier. Unable to use this image for free.
+
+:::{figure} images/Week5/microarrays_alt.svg
+:alt: cDNA (two-color) vs oligonucleotide (one-color) microarray analysis.
+:align: center
+:name: microarrays_alt
+
+The difference between cDNA (two-color) and oligonucleotide (one-color) microarray analysis.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`microarrays_alt_2024`.
+:::
+
 There are two main competing types of microarrays: cDNA and oligonucleotide
 arrays. While the principles are the same, they differ in production and
 use (as illustrated in {numref}`microarrays`):
@@ -1541,6 +1590,21 @@ are available for protein-RNA and protein-protein interactions, the latter
 using two antibodies. Credits: {cite}`chip_protocol_2009`.
 :::
 %#% Figure chip_protocol is under copyright by Bioscientifica Limited. Unable to use this image for free.
+
+:::{figure} images/Week5/chip-protocol_alt.jpg
+:alt: ChIPseq protocol
+:align: center
+:name: chip_protocol_alt
+
+The chromatin immunoprecipitation (ChIP) protocol. Proteins are
+cross-linked to DNA, after which genomic DNA is isolated and sheared. Using
+an antibody, only the protein of interest is selected (the
+immunoprecipitation step), after which the cross-linking is reversed and the
+DNA can be sequenced by PCR (ChIP-PCR) or NGS (ChIPseq). Similar protocols
+are available for protein-RNA and protein-protein interactions, the latter
+using two antibodies. Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`chip_protocol_alt_2015`.
+:::
+
 RNAseq is a clever protocol that uses the attractive cheap, high-throughput
 DNA sequencing technology to measure something else – in this case, gene
 expression levels. The trick is to first translate the mRNA into DNA,
