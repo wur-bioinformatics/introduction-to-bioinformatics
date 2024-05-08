@@ -1716,6 +1716,17 @@ Three mass spectrometry setups, (a) time-of-flight,
 (b) sector field and \(c) quadrupole. Credits: {cite}`mass_spectrometry_2003`.
 :::
 %#% Figure mass_spectrometry is under copyright by Springer Nature. Unable to use this image for free.
+
+:::{figure} images/Week5/mass-spectrometry_alt.svg
+:alt: Three mass spectrometry setups
+:align: center
+:width: 70%
+:name: mass_spectrometry_alt
+
+Three mass spectrometry setups, (top) time-of-flight,
+(middle) sector field and (bottom) quadrupole. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`mass_spectrometry_alt_2024`.
+:::
+
 Currently the most widely used technology for proteomics (and metabolomics)
 is mass spectrometry (MS). MS devices have been in constant development and
 improvement since their inception in the late 19{sup}`th` century. They differ in
