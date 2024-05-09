@@ -217,6 +217,8 @@ The basic building blocks of proteins are amino acids.
 
 ---
 
+(Week1_aminoacids)=
+
 #### Amino acids
 
 An amino acid contains a central carbon atom (called α-carbon, or C<sub>α</sub>) ({numref}`aminoacid`).
@@ -404,6 +406,7 @@ Most of these potential sequences do not adopt a stable conformation, thus only 
 ---
 
 (week1_sec_struc)=
+
 ##### Secondary structure
 
 Secondary structures are local conformations in the protein that are stabilized by hydrogen bonds between backbone atoms.
@@ -557,6 +560,8 @@ B) UDP-galactose 4-epimerase, a homodimer (PDB structure 1EK5 colored by seconda
 :::
 
 ---
+
+(Week1_substitutions)=
 
 #### Substitutions
 
@@ -769,6 +774,8 @@ For example, `NC_` accessions denote complete genomes, `NP_` accessions denote p
 
 ---
 
+(Week1_uniprot)=
+
 ### UniProt
 
 There is lots of information available for proteins, such as sequence information, domains, expression, or 3D structure.
@@ -776,8 +783,8 @@ The aim of the Universal Protein Resource ([UniProt](https://www.uniprot.org/)) 
 UniProt contains three databases ({numref}`uniprot`):
 
 - UniProt Knowledgebase (UniProtKB) - see below.
-- UniProt Reference Clusters (UniRef) - clusters of protein sequences at 100%, 90%, and 50% identity.
-- UniProt Archive (UniParc) - non-redundant archive of publicly available protein sequences seen across different databases.
+- UniProt Reference Clusters ([UniRef](https://www.uniprot.org/help/uniref) - clusters of protein sequences at 100%, 90%, and 50% identity.
+- UniProt Archive ([UniParc](https://www.uniprot.org/help/uniparc) - non-redundant archive of publicly available protein sequences seen across different databases.
 
 :::{figure} images/Week1/uniprot.jpg
 :alt: Overview of UniProt
@@ -793,10 +800,10 @@ It contains many cross-references to other databases and is generally a very goo
 
 UniProtKB consists of two sections:
 
-- Swiss-Prot - manually-annotated records with information extracted from literature and curated computational analysis.
-- TrEMBL - automatically annotated records that are not reviewed.
+- [Swiss-Prot](https://web.expasy.org/docs/userman.html#what_is_sprot) - manually-annotated records with information extracted from literature and curated computational analysis.
+- [TrEMBL](https://web.expasy.org/docs/userman.html#what_is_trembl) - automatically annotated records that are not reviewed.
 
-UniProtKB is updated every 8 weeks. The current release has ~570,000 entries in Swiss-Prot and ~251 million entries in TrEMBL.
+UniProtKB is updated every 8 weeks. The current release has ~570,000 entries in Swiss-Prot and ~248 million entries in TrEMBL.
 
 ---
 
@@ -832,6 +839,8 @@ Profiles are well suited to model structure properties of a domain.
 Notably, profiles cover the structural relationships of domains, but they might also score a sequence highly that lacks important functional residues.
 To include that information, **ProRule** contains additional information about Prosite profiles, such as the position of structurally or functionally important amino acids.
 ProRule is used to guide curated annotation of UniProtKB/Swiss-Prot.
+
+(Week1_Interpro)=
 
 ### InterPro
 
