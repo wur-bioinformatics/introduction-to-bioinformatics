@@ -2090,7 +2090,7 @@ series analysis. Left: heatmap of the 446 genes with most variable gene
 expression levels, clustered into 15 clusters. Right: average expression
 profiles of each cluster show that different groups of genes peak in
 expression in different development stages. These genes may be regulated in
-the same way and be active in similar biological processes. Credits: [CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) {cite}`time_series_2005`.
+the same way and be active in similar biological processes. Credits: [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) {cite}`time_series_2005`.
 :::
 
 Often it is more interesting to follow abundance over time rather than
