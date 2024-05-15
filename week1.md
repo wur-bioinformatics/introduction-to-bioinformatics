@@ -103,6 +103,16 @@ Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) modified 
 
 The error rate of DNA replication is remarkably low, about one erroneous base in 10<sup>9</sup> bases.
 This property preserves the genetic information during cell division, and also over generations.
+It also leads to mutations over evolutionary time ({numref}`dna_mutation`), as we will see later ([Substitutions](Week1_substitutions)).
+
+:::{figure} images/Week1/dna_mutation.png
+:alt: DNA_mutation
+:width: 50%
+:name: dna_mutation
+
+A DNA mutation that occurs during replication.
+Credits: [BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) {cite}`dna_mutation_2020`.
+:::
 
 ---
 
