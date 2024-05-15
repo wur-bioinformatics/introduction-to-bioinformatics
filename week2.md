@@ -268,7 +268,7 @@ Local alignment is also a good tool for identifying functional sites from which 
 
 The aim of a local alignment is to find the best subsequences of both input sequences that result in the maximum alignment score given the alignment parameters.
 As for global alignment, efficient algorithms exist to solve this task.
-The Smith-Waterman algorithm can solve this task in a time that is quadratic in the length of the input sequences.  
+The Smith-Waterman algorithm can also solve this task in a time that is quadratic in the length of the input sequences, just like the Needleman-Wunsch algorithm for global alignments.
 
 :::{figure} images/Week2/alg_local.png
 :alt: Local alignment
@@ -383,9 +383,7 @@ Different BLAST types exist for these different kinds of comparisons, where thes
 Different BLAST types to compare different data types. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`blast_types_2024`.
 :::
 
-## File formats
-
-### FASTA
+%#%[TODO week 1: File formats]
 
 ## Multiple sequence alignment
 
