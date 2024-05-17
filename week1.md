@@ -356,10 +356,11 @@ Most of these potential sequences do not adopt a stable conformation, thus only 
 
 ---
 
+(week1_sec_struc)=
 ##### Secondary structure
 
 Secondary structures are local conformations in the protein that are stabilized by hydrogen bonds between backbone atoms.
-We distinguish the regular helices (i.e., α-helix) and sheet structures (i.e., β-sheet) ({numref}`secstructure`) and irregular turns.
+We distinguish the regular helices (i.e., alpha helix - α-helix) and sheet structures (i.e., beta sheet - β-sheet) ({numref}`secstructure`) and irregular turns.
 
 **α-helices** are stabilized by hydrogen bonds between the oxygen atom in the C group in one amino acid and the hydrogen in the N group of the amino acids that is four amino acids farther along the chain.
 Every helical turn has 3.6 amino acids residues and the side chains stick out of the helix.
