@@ -429,7 +429,7 @@ Every helical turn has 3.6 amino acids residues and the side chains stick out of
 The strands have a direction determined by the N- and C-terminus of the protein and are usually depicted as an arrow pointing towards the C-terminus.
 Depending on the direction, strands can align parallel or antiparallel to each other.
 
-:::{figure} images/Week1/secstructure.png
+:::{figure} images/Week1/secstructure.jpg
 :alt: Secondary structure elements
 :width: 80%
 :name: secstructure
@@ -1012,9 +1012,276 @@ An extract of the Sequence Ontology hierarchy. Credits: {cite}`so_2005`.
 ### Other ontologies
 
 Many more ontologies exist and are relevant to biomedical research. The European Bioinformatics Institure (EBI) provides an [ontology lookup service](https://www.ebi.ac.uk/ols4/) that facilitates searching for ontologies. Examples of other ontologies are the [plant ontology](https://www.ebi.ac.uk/ols/ontologies/po) that describes various anatomical structures in plants, and the [human disease ontology](https://disease-ontology.org/).
-
+%PRACTICAL_SEPARATOR%
 ---
 
+## Practical assignments
+
+This practical contains questions and exercises to help you process the study materials of Week 1.
+You have 2 mornings to work your way through the exercises.
+In a single session you should aim to get about halfway through this guide (i.e., day 1: assignment 1-3, day 2: assignment 4 and project preparation exercise).
+Use the time indication to make sure that you do not get stuck in one assignment.
+These practical exercises offer you the best preparation for the project.
+Especially the **project preparation exercise** at the end is a good reflection of the level that is required to write a good project report.
+Make sure that you develop your practical skills now, in order to apply them during the project.
+
+**Note, the answers will be published after the practical!**
+
+:::::{admonition} **DNA & Genes**
+
+_Assignment I: DNA/Genes (45 minutes)_
+
+1. How do you distinguish a ribose sugar from a deoxyribose?
+2. Which bases are purines?
+3. What is the complementary base of A? C? G? T?
+4. What is the reverse complement of sequence ACGGTGATC?
+5. What is the GC content of sequence ATCGATCGGC?
+6. Which is correct? A nucleotide sequence is written from:
+- a. 5' to 3'
+- b. 3' to 5'
+7. In a DNA sequence the G stands for:
+- a. Glycine
+- b. Guanine
+- c. Glucose
+- d. Glutamic acid
+8. Given a coding DNA strand. Write down the non-coding strand, the transcribed sequence, and the resulting chain of amino acids. You may use {numref}`replication_alt`.
+
+`Coding strand:         5' ATGGTTTTACTTGAA 3'` \
+`Non-coding strand:     ......................` \
+`mRNA:                  ......................` \
+`Amino acids:           ......................` \
+9. On your computer, browse to [UniProt](https://www.uniprot.org/) and search for UniProt ID B3H4Y2.
+- a. In which organism is this protein found? What is the length of this protein? What is the corresponding gene ID?
+- b. Write down the first 5 and last 5 amino acids of the protein.
+10. Browse to [araport](https://araport.org/) and click on "TAIR JBrowse" (Firefox or Chrome recommended). This will take you to a genome browser of the Arabidopsis genome. Search for the gene ID from question 9 (see screenshot below).
+```{image} images/Week1/assignment_1_10_araport.png
+:alt: Araport.
+:align: center
+:width: 100%
+:name: assignment_1_10_araport
+```
+Under "Help" -> "General" you can find some information to help you understand what you are looking at.
+- a. You can see that this gene produces two different mRNA transcripts (indicated by .1 and .2) and thus 2 different proteins. How many exons do these transcripts contain? How many introns?
+- b. Turn on the track "Light grown seedling" under "RNA-seq based evidence"/"Aligned reads". Do you recognize the splice sites? Are the first two and last two bases of the intron as expected (based on {numref}`splicing`)?
+- c. Save the data for transcript 1. Save a fasta file for the whole transcript and one for each coding sequence (CDS). Create a fasta file on your computer that contains the complete coding sequence of the protein.
+- d. Is the length of the coding sequence in line with your expectation (based on your findings in question 9a)?
+- e. Translate the first and last few codons to compare them against the protein sequence (question 9). Do they match?
+- f. Look upstream of the gene. Can you find the TATA box? How many nucleotides before the start of transcription?
+11. GC content
+- a. Find a tool on the internet to calculate the GC content of a gene. Which tool did you find? Use it to calculate the GC content for the whole transcript and for the coding sequence that you created in the previous task. What do you observe?
+- b. Look up the GC content of the chromosome where this gene is located (Hint: Search NCBI Genome for the species). Read about [GC content](https://en.wikipedia.org/wiki/GC-content) in coding sequences. Which of the information presented here agrees with your analysis?
+12. Why are viruses not represented in the tree of life? Take a look at [this site](https://www.nature.com/scitable/content/viruses-and-the-tree-of-life-14465158).
+13. Browse to the NCBI taxonomy. Look up the domain and family of the following species:
+```{list-table}
+:header-rows: 1
+:widths: auto
+:name: assignment_1_13_taxonomy
+
+* - Species
+  - Domain
+  - Family
+* - _Moraxella catarrhalis_
+  -
+  -
+* - _Haloarcula quadrata_
+  -
+  -
+* - _Loxodonta cyclotis_
+  -
+  -
+```
+
+%ANSWER%:::{dropdown} Assignment I answers
+%ANSWER%1. Ribose has hydroxyl (-OH) group at the 2' position, deoxyribose does not (only has -H).
+%ANSWER%2. A & G.
+%ANSWER%3. A-T, C-G, G-C, T-A.
+%ANSWER%4. ACGGTGATC -> 5' GATCACCGT 3'.
+%ANSWER%5. 60%.
+%ANSWER%6. Answer a, 5' to 3'.
+%ANSWER%7. Answer b, guanine.
+%ANSWER%8.
+%ANSWER%`5' ATGGTTTTACTTGAA 3'` \
+%ANSWER%`3' TACCAAAATGAACTT 5' = non-coding strand` \
+%ANSWER%`5' AUGGUUUUACUUGAA 3' = mRNA transcript` \
+%ANSWER%`Met–Val-Leu-Leu-Glu   = 3-letter abbreviations` \
+%ANSWER%`MVLLE                 = 1-letter abbreviations` \
+%ANSWER%9a. Arabidopsis thaliana, 80 amino acids, AT1G65484. \
+%ANSWER%9b. MGLKM...PRTGS. \
+%ANSWER%10a. Under "protein coding genes" you see 2 different protein-coding transcripts. Exons are blue, coding sequences are yellow, introns are the thin black lines.Each transcript has 2 exons and 1 intron. \
+%ANSWER%10b. Yes, GU at the start of the intron and AG at the end. The bases at the start of the second exon vary. \
+%ANSWER%10c. Download the data (see screenshots) and generate a new text file where the CDSs have been concatenated.
+%ANSWER%```{image} images/Week1/assignment_1_10c_araport.png
+%ANSWER%:alt: from CDSs to fasta.
+%ANSWER%:align: center
+%ANSWER%:width: 100%
+%ANSWER%:name: assignment_1_10c_araport
+%ANSWER%```
+%ANSWER%10d. Yes, 106+137=243, 243/3 = 81 codons and the last codon is a stop codon. \
+%ANSWER%10e. Yes, MGL... \
+%ANSWER%10f. Yes, about 24 nucleotides before the transcription start. Transcription starts at the 5' UTR of AT1G65484.1 (same as start of the gene locus). The sequence before that is CTTC<u>**TATATAA**</u>ACCGGTCCAGTATTATT. The bold/underlined bases form the TATA box in line with the definition (see also knowledge clip on DNA, slide 16). \
+%ANSWER%11a. Possible tools to use are on [endmemo](http://www.endmemo.com/bio/gc.php) or [Science Buddies](https://www.sciencebuddies.org/science-fair-projects/references/genomics-g-c-content-calculator). GC content for transcript: 34.137931 (length 870). GC content for CDS: 46.91358 (length 243). The GC content in the CDS is much higher. \
+%ANSWER%11b. The GC content of chromosome 1 is 35.9. It is known that coding regions have higher GC than the background genome, consistent with our observation. The GC content can be found by searching NCBI like this:
+%ANSWER%```{image} images/Week1/assignment_1_11b_ncbi.png
+%ANSWER%:alt: GC content NCBI query.
+%ANSWER%:align: center
+%ANSWER%:width: 100%
+%ANSWER%:name: assignment_1_11b_ncbi
+%ANSWER%```
+%ANSWER%You should get to [this](https://www.ncbi.nlm.nih.gov/genome/?term=Arabidopsis+thaliana) page. \
+%ANSWER%12. Viruses do contain DNA or RNA genomes, but they can only replicate inside a living cell of another organism, and thus are not considered cellular life forms. \
+%ANSWER%13.
+%ANSWER%```{list-table}
+%ANSWER%:header-rows: 1
+%ANSWER%:widths: auto
+%ANSWER%:name: assignment_1_13_taxonomy_answers
+%ANSWER%
+%ANSWER%* - Species
+%ANSWER%  - Domain
+%ANSWER%  - Family
+%ANSWER%* - _Moraxella catarrhalis_
+%ANSWER%  - Bacteria
+%ANSWER%  - Moraxellaceae
+%ANSWER%* - _Haloarcula quadrata_
+%ANSWER%  - Archaea
+%ANSWER%  - Haloarculaceae
+%ANSWER%* - _Loxodonta cyclotis_
+%ANSWER%  - Eukaryota 
+%ANSWER%  - Elephantidae
+%ANSWER%```
+%ANSWER%:::
+:::::
+
+:::::{admonition} **Proteins**
+
+_Assignment II: Proteins (45 minutes)_
+
+1. What is special about the amino acid glycine?
+2. List three hydrophobic amino acids.
+3. Which amino acids are acidic?
+```{list-table}
+:header-rows: 0
+:widths: auto
+:name: assignment_2_3_aa
+
+* - alanine
+  - glutamine
+  - leucine
+  - serine
+* - arginine
+  - glutamic acid
+  - lysine
+  - threonine
+* - asparagine
+  - glycine
+  - methionine
+  - tryptophan
+* - aspartic acid
+  - histidine
+  - phenylalanine
+  - tyrosine
+* - cysteine
+  - isoleucine
+  - proline
+  - valine
+```
+4. Which is incorrect?
+- a. A = Arginine
+- b. V = Valine
+- c. Q = Glutamine
+- d. T = Threonine
+5. In a folded protein, the nonpolar amino acids tend to be:
+- a. On the inside of the protein
+- b. At the surface of the protein
+- c. Randomly distributed
+6. The side chains of amino acids play important roles in the folding and the function of proteins. Below, you can see a short peptide that has been formed by five amino acids (labeled from 1 to 5).
+- a. Indicate in blue and red the N-terminus and the C-terminus of the peptide, respectively, and highlight all peptide bonds in green.
+- b. For each of the five amino acids (1-5), give either the name, the three-letter or the one-letter code, depending on the information lacking (for example, for amino acid 1, give the three- and the one-letter code, while for amino acid 2 give the name and the three-letter code).
+- c. Indicate for each of the amino acids (1 to 5) its physiochemical properties (nonpolar, polar, acidic, basic).
+- d. Describe in one sentence what specific property the side chain of amino acid 4 has, and why this property is important to form protein structures.
+```{image} images/Week1/assignment_2_6d_peptide.png
+:alt: Short five amino acid peptide.
+:align: center
+:width: 60%
+:name: assignment_2_6d_peptide
+```
+7. Amino acids and their side chains can interact with other amino acids and form bonds and interactions. Interactions between amino acids and their side chains play important roles in stable folded proteins structures. Revisit {numref}`terstructure` from the reader. With this information in mind, take another look at the peptide sequence with five amino acids (see question 6). Below this peptide, you will find the backbone of another peptide in which the side chains have been only indicated with R (labeled a-e). Look at the 20 amino acids in the amino acid table in the reader. Discuss with your neighbour which of the 20 possible amino acids could be placed as a side chains R (a-e) such that these can likely interact, i.e., forms bonds or other interactions, with the corresponding amino acids (1-5) in the upper peptide (i.e., a interacts with 1, b with 2, and so on). Indicate for each which type of interaction (e.g., hydrogen bonds) are occurring between your proposed pair of amino acids.
+8.Proteins fold into compact structures, and this structure is important for proteins to have biological functional activity. In folded proteins (tertiary structure), the secondary structure is often still visible, i.e., helices and beta sheets are still visible. Sometimes proteins are not only formed by a single structural unit, a so-called domain, but by multiple domains that can either be the same type or of different types. Sometimes, it can be useful to look at the tertiary structure of proteins with known fold (either experimentally or in silico determined), e.g., to see where mutations in the structure occur. We will have a look at the protein structure of Gamma B-Crystallin. Go to the website of [PDB](https://www.rcsb.org), which is a resource for protein structures, and search on the main page for Gamma B-Crystallin, with the ID "1AMM". Click on '3D View' to see a three-dimensional model of the structure. On the bottom right, change the viewer to NGL.
+- a. Color the structure by Secondary structure (see 'Color', under 'Structure View'). Under 'Structure View Documentation' you can find the meaning of each color. Can you identify the number of secondary structure elements (helix, sheet) you can observe in the structure?
+- b. How many domains does this protein have?
+9. Amino acid quiz: you have now worked extensively with amino acids and you should know the relation between the 1- and 3-letter code, the name of the amino acid and its biochemical properties. To test this knowledge once more, perform this small test by filling in the missing information in the table (do not look at the reader before finalizing the quiz).
+```{list-table}
+:header-rows: 1
+:widths: auto
+:name: assignment_2_9_quiz
+
+* - #
+  - 1-letter
+  - 3-letter
+  - Full name
+  - Class
+* - 1
+  -
+  -
+  - Glutamic acid
+  - Nonpolar/Polar/Acidic/Basic
+* - 2
+  -
+  - Phe
+  -
+  - Nonpolar/Polar/Acidic/Basic
+* - 3
+  - T
+  -
+  -
+  - Nonpolar/Polar/Acidic/Basic
+* - 4
+  -
+  - Pro
+  -
+  - Nonpolar/Polar/Acidic/Basic
+* - 5
+  -
+  -
+  - Serine
+  - Nonpolar/Polar/Acidic/Basic
+* - 6
+  - K
+  -
+  -
+  - Nonpolar/Polar/Acidic/Basic
+* - 7
+  -
+  -
+  - Isoleucine
+  - Nonpolar/Polar/Acidic/Basic
+* - 8
+  -
+  - Asn
+  -
+  - Nonpolar/Polar/Acidic/Basic
+* - 9
+  -
+  -
+  - Methionine
+  - Nonpolar/Polar/Acidic/Basic
+* - 10
+  - A
+  -
+  -
+  - Nonpolar/Polar/Acidic/Basic
+* - 11
+  - P
+  -
+  -
+  - Nonpolar/Polar/Acidic/Basic
+* - 12
+  -
+  - His
+  -
+  - Nonpolar/Polar/Acidic/Basic
+```
+:::::
+%PRACTICAL_SEPARATOR%
 ## References
 
 ```{bibliography}
