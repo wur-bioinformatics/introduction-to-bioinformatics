@@ -429,7 +429,7 @@ Every helical turn has 3.6 amino acids residues and the side chains stick out of
 The strands have a direction determined by the N- and C-terminus of the protein and are usually depicted as an arrow pointing towards the C-terminus.
 Depending on the direction, strands can align parallel or antiparallel to each other.
 
-:::{figure} images/Week1/secstructure.jpg
+:::{figure} images/Week1/secstructure.png
 :alt: Secondary structure elements
 :width: 80%
 :name: secstructure
@@ -447,7 +447,7 @@ Black = carbon, white = hydrogen, blue = nitrogen, and red = oxygen. Credits: Ra
 
 α-helices and β-sheets are stablized by hydrogen bonds (the dotted lines) between the backbone of proteins, i.e., the side chains are not involved.
 The hydrogen bonds form between the oxygen atom in the C group in one amino acid and the hydrogen in the N group.
-Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) {cite}`secstructure_alt_nd`.
+Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) modified from {cite}`secstructure_alt_nd`.
 :::
 
 **Turns** are short secondary structure elements that are stabilized by hydrogen bonds between amino acids that are 1 to 5 peptide bonds away.
