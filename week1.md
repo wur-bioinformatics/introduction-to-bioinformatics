@@ -164,6 +164,8 @@ The translation process, where ribosomes with tRNA molecules "read" codons on th
 The details of transcription and translation differ between prokaryotes and eukaryotes. You can look up Chapters 15 and 16 of [Biology 2e](https://openstax.org/details/books/biology-2e) to learn more.
 :::
 
+(Week1_genetic_code)=
+
 ### The genetic code
 
 The genetic code shows the correspondence between codons and amino acids ({numref}`geneticcode`).
@@ -200,14 +202,7 @@ The central dogma of molecular biology.
 Credits: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) {cite}`dogma_2008`.
 :::
 
-:::{figure} images/Week1/dogma_alt.svg
-:alt: Central dogma
-:width: 80%
-:name: dogma_alt
-
-The central dogma of molecular biology.
-Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) modified from {cite}`dogma_alt_2008`.
-:::
+(Week1_proteins)=
 
 ### Proteins
 
@@ -340,6 +335,8 @@ The smallest amino acid is glycine, which provides great flexibility due to its 
 In contrast, proline is an amino acid, where the side chain is bonded to the backbone nitrogen atom, which makes it very rigid.
 
 ---
+
+(Week1_protein_structure)=
 
 #### Protein structure
 
@@ -769,6 +766,8 @@ For example, `NC_` accessions denote complete genomes, `NP_` accessions denote p
 
 ---
 
+(Week1_uniprot)=
+
 ### UniProt
 
 There is lots of information available for proteins, such as sequence information, domains, expression, or 3D structure.
@@ -920,6 +919,8 @@ The Pfam logo for PF12924. Credits: {cite}`interpro_2022`.
 :::
 
 ---
+
+(Week1_ontologies)=
 
 ## Ontologies
 
