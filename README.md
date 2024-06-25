@@ -188,6 +188,8 @@ Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) {cite}`protein
 
 This ensures that there can be no doubt about the proper usage of imagery in the reader. Citations always follow licensing (if applicable).
 
+Self-created imagery has the preference by the WUR to be published under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) licensing.
+
 More information on references and citations can be found in the [Jupyter Book documentation](https://jupyterbook.org/en/stable/reference/cheatsheet.html#citations)
 
 ---
