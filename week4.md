@@ -123,21 +123,7 @@ Whilst now superseded, first by more accurate statistical methods and more recen
 
 Chou and Fasman Propensities (P). F stands for strong former, f weak former, while B and b stand for strong and weak breaker, respectively. I (indifferent) indicates residues that are neither forming nor breaking helices or strands. We can see that Pro has the lowest propensity for forming a helix and a low one for strands as well. However, many other residues that are either weak or indifferent have been reclassified since the propensities shown here have been reparameterized as more data have become available. Credits: modified from {cite}`chou_fasman_1978`.
 :::
-%#% Figure chou_fasman comes from the book Understanding bioinformatics. We can't use this image.
-
-:::{figure} images/Week4/chou-fasman_alt.svg
-:alt: The Chou-Fasman approach
-:align: center
-:name: chou_fasman_alt
-
-Chou and Fasman Propensities (P).
-F stands for strong former, f weak former, while B and b stand for strong and weak breaker, respectively.
-I (indifferent) indicates residues that are neither forming nor breaking helices or strands.
-We can see that Pro has the lowest propensity for forming a helix and a low one for strands as well.
-However, many other residues that are either weak or indifferent have been reclassified since the propensities shown here have been reparameterized as more data have become available.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`chou_fasman_alt_2024`. Based on data from {cite}`chou_fasman_1978`.
-:::
-
+%#% Figure chou_fasman is derived from https://docplayer.org/53395035-Vorlesungsskript-softwarewerkzeuge-der-bioinformatik.html page 80. Are we allowed to use this? Originally from a book, under copyright.
 In subsequent decades, several statistical-based methods were developed that improved sequence-based predictions of secondary structure elements.
 They, for example, started to include information of multiple sequence alignments including residue conservation: such approaches first matched the query sequence to database sequences with known 3D structures and assigned secondary structure elements.
 Then, using the best matching sequences, the secondary structure state of amino acid residues of the query sequence stretch are inferred by averaging the states from the homologous sequences found, further adapted using additional information such as the conservedness of the residue.
@@ -334,17 +320,8 @@ As such approaches are computationally heavy and as they also require a lot of e
 In essence, such approaches aim to model the protein sequence folding process using physicochemical properties of the amino acid residues and their surroundings.
 As the sequence length increases, ever-increasing possible folds occur for the entire 3D structure, making it a computationally intensive task.
 For example, consider 100 amino acid residues that each can have 3 different psi angles.
-This would lead to 3100 possible folds for the sequence.
+This would lead to 3100 possible folds for the sequence, ~.
 If each fold would take 5 seconds to assess on its likelihood to be realistic and energy-favorable, it would take us nearly four and a half hours to analyze and come up with a suggested 3D structures, and that is just 100 amino acids.
-
-:::{figure} images/Week4/three-zones.svg
-:alt: The three zones in 3D protein structure prediction approaches
-:align: center
-:width: 100%
-:name: three_zones
-
-The three zones of protein structure prediction approaches. If an alignment falls within the safe zone, similarity in 3D structure is implied and homology modeling is considered the best approach. If an alignment falls within the twilight zone, little similarity in 3D structure is implied and threading (fragment-based) is considered the best approach. If an alignment falls in the midnight zone there is no similarity in 3D structure and _ab initio_ is considered the best approach. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`three_zones_2024`.
-:::
 
 Fortunately, the database of experimentally derived protein 3D structures is constantly growing.
 Therefore, there is a good chance of having >20% sequence identity of your query sequence.
