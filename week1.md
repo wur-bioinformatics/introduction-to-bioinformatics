@@ -202,7 +202,14 @@ The central dogma of molecular biology.
 Credits: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) {cite}`dogma_2008`.
 :::
 
-(Week1_proteins)=
+:::{figure} images/Week1/dogma_alt.svg
+:alt: Central dogma
+:width: 80%
+:name: dogma_alt
+
+The central dogma of molecular biology.
+Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) modified from {cite}`dogma_alt_2008`.
+:::
 
 ### Proteins
 
