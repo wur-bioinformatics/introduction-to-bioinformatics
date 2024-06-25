@@ -269,3 +269,59 @@ For example:
 As we have seen in Section X.X, there are key similarities and differences between α-helices and β-sheets.
 %#% Not sure what the Section X.X refers to.
 ```
+
+### Custom tags
+
+Currently, two types of custom tags are used in the markdown files to facilitate the practicals in the reader.
+
+`%ANSWER%` is used at the start of all the lines that contain answers in the practical section.
+This tag is used to generate two versions of the reader, one with and one without answers to the practicals.
+
+For example:
+
+```none
+%ANSWER%:::{dropdown} Assignment I answers
+%ANSWER%- a. Shared electrons
+%ANSWER%- b. The C=O and C-N bonds
+%ANSWER%- c. Peptide Bonds
+%ANSWER%:::
+```
+
+`%PRACTICAL_SEPARATOR%` is used one line before and one line after a practical section.
+This tag is used to separate practical sections from the rest of the chapter, so that practicals can be generated as separate documents.
+
+For example:
+
+```none
+%PRACTICAL_SEPARATOR%
+---
+
+## Practical assignments
+
+This practical contains questions and exercises to help you process the study materials of Week 4.
+
+**Note, the answers will be published after the practical!**
+
+:::::{admonition} **Amino Acid Residues and Peptide Folding**
+
+_Assignment I: peptide folding (20 minutes)_
+
+- a. How do you recognize the peptide bonds in the web application?
+
+%ANSWER%:::{dropdown} Assignment I answers
+%ANSWER%- a. You can recognize them by the “shared electrons”.
+%ANSWER%:::
+:::::
+
+:::::{admonition} **Protein Structures and Secondary Structure Elements**
+
+_Assignment II: structure search and visualisation (50 minutes)_
+
+- a. How many amino acids does the protein have?
+
+%ANSWER%:::{dropdown} Assignment II answers
+%ANSWER%- a. The total length is 81 AAs.
+%ANSWER%:::
+:::::
+%PRACTICAL_SEPARATOR%
+```
