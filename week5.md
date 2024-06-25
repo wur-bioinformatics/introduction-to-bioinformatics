@@ -1752,14 +1752,14 @@ specific interactions.
 
 ##### Mass spectrometry
 
-:::{figure} images/Week5/mass-spectrometry.png
-:alt: Three mass spectrometry setups
-:align: center
-:name: mass_spectrometry
-
-Three mass spectrometry setups, (a) time-of-flight,
-(b) sector field and \(c) quadrupole. Credits: {cite}`mass_spectrometry_2003`.
-:::
+%#%:::{figure} images/Week5/mass-spectrometry.png
+%#%:alt: Three mass spectrometry setups
+%#%:align: center
+%#%:name: mass_spectrometry
+%#%
+%#%Three mass spectrometry setups, (a) time-of-flight,
+%#%(b) sector field and \(c) quadrupole. Credits: {cite}`mass_spectrometry_2003`.
+%#%:::
 %#% Figure mass_spectrometry is under copyright by Springer Nature. Unable to use this image for free.
 
 :::{figure} images/Week5/mass-spectrometry_alt.svg
@@ -1788,7 +1788,7 @@ ion.
 
 For each step, different technologies are available which are best suited to
 detection of specific mixtures, compounds of interest (proteins, metabolites),
-and compound size ranges. {numref}`mass_spectrometry` illustrates a number of widely used
+and compound size ranges. {numref}`mass_spectrometry_alt` illustrates a number of widely used
 separation steps, i.e., by measuring time-of-flight or susceptibility to
 deflection by magnetic fields or by tuning an oscillating electrical field
 to allow only specific masses to pass through.

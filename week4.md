@@ -13,7 +13,7 @@ However, for most, we do not yet know what type of proteins they represent, and 
 
 Proteins are essential for life on earth.
 They have many kinds of functions in organisms such as supporting its structure (e.g., keratin in our skin), performing enzymatic reactions (e.g., Ribulose-1,5-bisphosphate carboxylase-oxygenase, a.k.a. Rubisco, in plants), or receptors for transduction of signals that mediate cell-to-cell communication.
-As discussed in [week 1](Week1_proteins), only a relatively small amount of amino acid building blocks forms the basis of a structurally very diverse protein repertoire.
+As discussed in [week 1](Week1_genetic_code), only a relatively small amount of amino acid building blocks forms the basis of a structurally very diverse protein repertoire.
 Hence, to understand the function of proteins, knowing their structures is key. In [week 1](Week1_protein_structure) you have also learned that proteins are created as a long chain of amino acids held together by peptide bonds, i.e., a polypeptide chain (the primary structure), that folds into a three-dimensional (tertiary) structure, based on various types of interactions between amino acid side groups.
 Usually, during this folding process, shorter stretches of local 2D (secondary) structures form first, held together by hydrogen bonds.
 Interestingly, whereas the amino acid sequence of proteins may differ, their folding may still result in comparable 3D structures of the polypeptide chain – with comparable or even similar functionality (see {numref}`myoglobin`).
@@ -312,6 +312,15 @@ The Y-score (combined cleavage site score) is a geometrical mean of the cleavage
 
 First, it is good to realize that the prediction of secondary structure elements has formed the foundation of tools that predict 3D structures of proteins.
 We will first explore the three traditional structure prediction approaches, which will be followed up by the most prominent new approach in structure prediction ([AlphaFold](Week4_alphafold))
+
+:::{figure} images/Week4/three-zones.svg
+:alt: The three zones of tertiary structure prediction approaches
+:align: center
+:width: 80%
+:name: three_zones
+
+The three zones of tertiary structure prediction approaches. Credits: [CC BY-NC 4.0] {cite}`three_zones_2024`.
+:::
 
 Various approaches including _ab initio_, threading (also called fragment-based modelling), and homology modelling have been proposed and used to go from sequence to structure, with both sequence identity and alignment length as the most important factors to decide which approach to choose.
 To make an effective choice between these three traditional structure prediction approaches, the so-called three zones were introduced ({numref}`three_zones`).
