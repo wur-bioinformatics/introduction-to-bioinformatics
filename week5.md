@@ -5,9 +5,8 @@
 :align: center
 :name: omics_levels
 
-Different -ome levels, here illustrated with numbers for *Arabidopsis thaliana*.
+Different -ome levels, here illustrated with numbers for *Arabidopsis thaliana*. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`omcis_levels_2024`.
 :::
-%#% Self-created figure?
 
 ---
 
@@ -126,7 +125,7 @@ already in 1988 and was officially finished in 2003 ({numref}`landmarks_in_genet
 
 History of genome sequencing and the Human Genome Project. Credits: {cite}`landmarks_in_genetics_2003`.
 :::
-
+%#% Beautiful figure but under copyright by Springer Nature. Their quick price estimate returns a $250 price tag for our use case. Recreate 5-10 major landmarks ourselves.
 As previously described, the project was very costly, with an estimated cost of \$3 billion. In
 comparison, it is nowadays possible to sequence all variants between a human
 genome and the reference for less than \$1,000 on Illumina’s NovaSeq
@@ -138,16 +137,19 @@ machine.
 
 With the rapid evolution of sequencing technology, our understanding of
 genomes and their content has grown as well. We now know that genomes vary
-greatly in terms of size, chromosome numbers, and ploidy ({numref}`genome_sizes`),
-as well as gene content ({numref}`gene_ploidy`). Genome sizes range from 100kb in
+greatly in terms of size, chromosome numbers, and ploidy ({numref}`gene_ploidy`),
+as well as gene content ({numref}`genome_sizes`). Genome sizes range from 100kb in
 bacteria to more than 100Gb (Giga basepairs) in plants.
-:::{figure} images/Week5/genome-sizes.jpg
-:alt: Gene content table
-:align: center
-:name: genome_sizes
 
-Gene content in some representative species. Credits: {cite}`genome_sizes_2009`.
+:::{figure} images/Week5/gene-ploidy.png
+:alt:
+:align: center
+:name: gene_ploidy
+
+Left, variety of genome sizes. Credits: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) {cite}`gene_ploidy_2010`;
+right, examples of ploidy. Credits: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) {cite}`gene_ploidy_2011`.
 :::
+
 Humans have a genome size of 3.2Gb. Not only the genome size varies
 greatly, in eukaryotes the number of chromosomes and chromosomal copies
 (ploidy) do too. Chromosome numbers range from 4 in fruitfly (_Drosophila_)
@@ -160,13 +162,21 @@ whereas most higher eukaryotes (including humans) have between 15,000 and
 25,000 genes and some plants can have more than 40,000 genes – rice has over
 46,000.
 
-:::{figure} images/Week5/gene-ploidy.png
-:alt:
+:::{figure} images/Week5/genome-sizes.jpg
+:alt: Gene content table
 :align: center
-:name: gene_ploidy
+:name: genome_sizes
 
-Left, variety of genome sizes. Credits: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) {cite}`gene_ploidy_2010`;
-right, examples of ploidy. Credits: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) {cite}`gene_ploidy_2011`.
+Gene content in some representative species. Credits: {cite}`genome_sizes_2009`.
+:::
+%#% Figure genome_sizes comes from the book A Primer of Genome Science. Not able to use this figure (for free).
+
+:::{figure} images/Week5/genome-sizes_alt.svg
+:alt: Gene content table
+:align: center
+:name: genome_sizes_alt
+
+Gene content in some representative species. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`genome_sizes_alt_2024`.
 :::
 
 (w5box2_size)=
@@ -176,8 +186,8 @@ right, examples of ploidy. Credits: [CC BY-SA 3.0](https://creativecommons.org/l
 Genomes come in all shapes and sizes. The smallest known (non-viral) genome
 is that of the bacterial endosymbiont _Nasuia deltocephalinicola_, which
 only consists of 112,091 nucleotides, encoding 137 proteins. The largest
-genomes known to date are marbled lungfish and the plant _Fritillaria
-assyriaca_ with 130,000,000,000 nucleotides (130Gb), although the amoeboid
+genomes known to date are marbled lungfish and the plant _Paris
+japonica_ with 130,000,000,000 nucleotides (130Gb) and 150,000,000,000 nucleotides (150Gb) respectively, although the amoeboid
 _Polychaos dubium_ is purported to have a genome size of 670Gb. Genome size
 is not necessarily correlated with the number of genes in the genome (see
 also {numref}`genome_sizes`). Number of protein coding genes in turn is not
@@ -323,7 +333,7 @@ The process of Illumina sequencing. The Illumina NovaSeq uses a system of 2
 fluorescent dies compared to the traditional 4. This greatly speeds up
 sequencing
 :::
-%#% Figure illumina_sequencing tile D looks to be a modified from the original image. Did we do this ourselves? https://www.illumina.com/documents/products/illumina_sequencing_introduction.pdf (Figure 3).
+%#% Figure illumina_sequencing source states that imagery can only be used for personal, non-commercial use only, and will not be copied or posted on any network computer or broadcast in any media, (iii) you may not modify the materials in any way or reproduce, publicly display, perform, distribute, transmit, or create derivative works from any of the materials on this Site.
 Illumina reads can be sequenced from one primer end only, which yields
 so-called single end reads, or from both primer ends, which gives paired end
 reads, i.e., two reads that originate from the same molecule with a distance
@@ -378,7 +388,7 @@ recent PacBio HiFi reads reaching 99% read accuracy.
 
 PacBio sequencing library construction and circular consensus sequencing
 :::
-%#% Figure pacbio seems to be an alteration of the figures found on the website of the University of Exeter (https://biosciences.exeter.ac.uk/sequencing/equipment/pacbio/sequel/), which itself seems to be derived from the PacBio website. The original images can no longer be found on the PacBio website.
+%#% Figure pacbio seems to be an alteration of the figures http://www.pacb.com/wp-content/uploads/2015/08/SMRT_Technology.SMRTbell_Template.jpg and https://speakerdeck.com/pacbio/pacbio-template-preparation?slide=5
 The read length of this technology is determined by the size of the input
 fragment and the length of time the polymerase functions (the high-energy
 laser light slowly degrades the enzyme over time). Median read lengths vary
@@ -452,7 +462,19 @@ samples, using as example the \
 tardigrade and surrounding bacteria \
 Credits: modified from {cite}`contamination_2015`.
 :::
+%#% Figure contamination has a Japanese webpage as its source. Without licensing.
 
+:::{figure} images/Week5/contamination_alt.svg
+:alt: Sequencing contamination
+:align: right
+:width: 300px
+:name: contamination_svg
+
+Causes for contaminated sequencing \
+samples, using as example the \
+nematode and surrounding bacteria \
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`contamination_alt_2024`.
+:::
 As discussed above, sequencing technology is not perfect and errors will be
 present in the output. Moreover, what we sequence is not always what we
 originally intended to sequence ({numref}`contamination`).
@@ -492,7 +514,18 @@ detection of structural variation are discussed.
 
 Co-segregation of alleles
 :::
-%#% Self-created image?
+%#% Not sure if self-created image.
+
+:::{figure} images/Week5/co-segregation_alt.svg
+:alt: Co-segregation of alleles
+:width: 300px
+:align: right
+:name: co_segregation_alt
+
+Co-segregation of alleles. \
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`co-segregation_alt_2024`
+:::
+
 Genomes can be reconstructed with different aims, which influence the
 required quality of the final assembly. The human genome, for example, has
 been assembled as far as possible and in 2021, the first telomere-to-telomere
@@ -516,7 +549,15 @@ make chromosome-level assemblies increasingly attainable.
 
 Genetic representation of the _Salmonella typhi_ chromosomal resistance island. Credits: {cite}`salmonella_2015`.
 :::
+%#% Figure salmonella is under copyright by Springer Nature. Unable to use this image for free.
 
+:::{figure} images/Week5/salmonella_alt.png
+:alt: Salmonella enterica subsp. enterica serovar Stanley genetic organization of virulence factors in SPI-1
+:align: center
+:name: salmonella_alt
+
+Genetic representation of the _Salmonella enterica subsp. enterica_ serovar Stanley pathogenicity island-1. Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) modified from {cite}`salmonella_alt_2019`.
+:::
 ---
 
 #### Genome assembly strategies
@@ -580,7 +621,7 @@ genomes.
 
 The assembly problem as a jigsaw puzzle. Credits: {cite}`jigsaw_2016`.
 :::
-
+%#% Figure jigsaw is created by a lecturer at the Melbourne University. Not sure if we are allowed to use this.
 If we look at a genome assembly using the analogy of a jigsaw puzzle ({numref}`jigsaw`), the challenges become obvious:
 
 - There is no picture on the puzzle box, i.e., we have no idea what the assembled genome is meant to look like.
@@ -663,7 +704,7 @@ expression ({numref}`regulatory_elements`).
 Examples of long-distance regulatory elements and their distances to the
 target gene identified in the human genome. Credits: {cite}`regulatory_elements_2010`
 :::
-%#% Figure regulatory_elements contains imagery that is specified as for personal use only.
+%#% Figure regulatory_elements contains imagery that is specified as for personal use only. Not sure how to replace this figure.
 As discussed above, the telomere-to-telomere assembly of the human genome
 added the 5% hitherto missing genome sequence. While the previous human
 genome assembly was already considered gold standard and very complete, the
@@ -687,7 +728,7 @@ their actual size, and the “_FRG1_” prefix is omitted for brevity. All
 paralogs are found near satellite arrays. _FRG1_ is involved in
 acioscapulohumeral muscular dystrophy (FSHD). Credits: modified from {cite}`t2t_human_genome_2022`.
 :::
-
+%#% Figure FSHD is under copyright by Science. Unable to use this figure for free. Not sure how to replace this figure.
 ---
 
 (variants)=
@@ -735,9 +776,9 @@ multiple nucleotide polymorphisms (MNPs) and small insertions and deletions
 :align: center
 :name: indels
 
-A single-nucleotide polymorphism (top left), insertions (bottom), and deletions (top right).
+A single-nucleotide polymorphism (top left), insertions (bottom), and deletions (top right). Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`indels_2024`.
 :::
-%#% Figure indels is our own work?
+
 Each variant at a particular position of a reference genome is called an
 allele. In our example of an SNP above ({numref}`indels`), we have a reference allele T and an
 alternate allele G. When a sample originates from a single individual, the
@@ -805,7 +846,15 @@ chance for that person to develop breast cancer during their lifetime to
 
 Variants in BRCA1 and BRCA2 genes involved in cancer. Credits: {cite}`BRCA_2011`.
 :::
+%#% Figure BRCA is under copyright by JAMA. Unable to use this image for free.
 
+:::{figure} images/Week5/BRCA_alt.png
+:alt: BRCA genes
+:align: center
+:name: BRCA_alt
+
+Mutations in BRCA1 and BRCA2 found in breast and ovarian cancers. Credits: [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/) {cite}`BRCA_alt_2018`.
+:::
 ---
 
 #### Large-scale genome variation
@@ -821,7 +870,7 @@ duplicated.
 :align: center
 :name: large_scale_variants
 
-Different types of structural variants on chromosome level. Credits: {cite}`large_scale_variants_2024`.
+Different types of structural variants on chromosome level. Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`large_scale_variants_2024`.
 :::
 
 (w5box4_cri_du_chat)=
@@ -903,7 +952,7 @@ Reads from the break point will be split in the alignment.
 :align: center
 :name: male_morphs
 
-Orientation of the inversion in the three male morphs. Credits: {cite}`male_morphs_2022`.
+Orientation of the inversion in the three male morphs. Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`male_morphs_2022`.
 :::
 
 Large chromosomal inversions play a role in within-species phenotypic
@@ -942,9 +991,9 @@ _Ppd-B1_ controls flowering time by affecting photoperiod sensitivity; c)
 CNV of _Rht-D1b_ gene (a truncated version of _Rht-D1a_) determines severity
 of plant dwarfism phenotype. In all three cases, the impact of gene copy
 number on observed phenotype has been verified experimentally. Source data:
-a, b, Díaz et al. (2012); c, Li et al. (2012). Credits: {cite}`CNV_2013`.
+a, b, Díaz et al. (2012); c, Li et al. (2012). Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`CNV_2013`.
 :::
-%#% The description of figure CNV is a literal copy paste from the source article. Rewrite?
+
 ---
 
 ## Functional genomics and systems biology
@@ -1124,7 +1173,17 @@ experimentation, and model extension or modification.
 The systems biology cycle, aiming to iteratively improve models of living
 systems. Credits: {cite}`systems_biology_2002`.
 :::
+%#% Figure systems_biology is under copyright by Science. Unable to use for free.
 
+:::{figure} images/Week5/systems-biology_alt.svg
+:alt: The systems biology cycle
+:align: center
+:width: 400px
+:name: systems_biology_alt
+
+The systems biology cycle, aiming to iteratively improve models of living
+systems. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`systems_biology_alt_2024`.
+:::
 Eventually, the hope of systems biology is to arrive at systems-level
 understanding of life that will allow us to simulate the effects of
 interventions (mutations, drug treatments, etc.) or even (re)design genes and
@@ -1204,20 +1263,34 @@ mRNA levels:
 
 #### How to measure mRNAs?
 
-:::{figure} images/Week5/differential-gel.jpg
+%:::{figure} images/Week5/differential-gel.jpg
+%:alt: Differential display gel
+%:width: 150px
+%:height: 300px
+%:align: right
+%:name: differential_gel
+%
+%Example of differential \
+%display gel. Credits: modified from \
+%{cite}`differential_gel_2001`.
+%:::
+%#% Figure differential_gel is under copyright by the American Physiological Society. Unable to use for free.
+
+:::{figure} images/Week5/differential-gel_alt.png
 :alt: Differential display gel
-:width: 150px
-:height: 300px
+:width: 184px
+:height: 367px
 :align: right
-:name: differential_gel
+:name: differential_gel_alt
 
 Example of differential \
-display gel. Credits: modified from \
-{cite}`differential_gel_2001`.
+display gel. Credits: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) \
+modified from \
+{cite}`differential_gel_alt_2014`.
 :::
 
 Early methods of detecting transcripts and expression levels are northern
-blots and differential display ({numref}`differential_gel`). Both are gel-based
+blots and differential display ({numref}`differential_gel_alt`). Both are gel-based
 methods that are low throughput and not very accurate.
 
 Just like the study of genomes, transcriptomics has greatly benefitted from
@@ -1248,8 +1321,18 @@ Amplification plot of a DNA fragment in a qPCR reaction.
 C{sub}`q` corresponds to the cycle were fluorescence passes the
 detection threshold. Credits: {cite}`qPCR_nd`.
 :::
-%#% Replaced figure qPCR with a higher resolution image and changed the alignment to prevent overflow into the [Microarrays] section.
+%#% Biorad website states its imagery is solely for personal, noncommercial use. Replace figure.
 
+:::{figure} images/Week5/qPCR_alt.svg
+:alt: qPCR amplification graph
+:align: center
+:width: 80%
+:name: qPCR_alt
+
+Amplification plot of a DNA fragment in a qPCR reaction.
+C{sub}`q` corresponds to the cycle were fluorescence passes the
+detection threshold. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`qPCR_alt_2024`.
+:::
 ---
 
 #### Microarrays
@@ -1285,6 +1368,16 @@ expression of the corresponding gene.
 
 The difference between cDNA (two-color) and oligonucleotide (one-color) microarray analysis.
 Credits: modified from {cite}`microarrays_2007`.
+:::
+%#% Figure microarrays is under copyright by Elsevier. Unable to use this image for free.
+
+:::{figure} images/Week5/microarrays_alt.svg
+:alt: cDNA (two-color) vs oligonucleotide (one-color) microarray analysis.
+:align: center
+:name: microarrays_alt
+
+The difference between cDNA (two-color) and oligonucleotide (one-color) microarray analysis.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`microarrays_alt_2024`.
 :::
 
 There are two main competing types of microarrays: cDNA and oligonucleotide
@@ -1378,7 +1471,7 @@ to deal with the resulting data. For a review, see this [paper](https://genomebi
 :name: RNAseq_protocol
 
 Standard RNAseq protocol. \
-Credits: modified from \
+Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) modified from \
 {cite}`RNAseq_protocol_2011`.
 :::
 %#% Figure RNAseq_protocol seems to be self-created out of imagery from different sources. I was only able to find the source for the sequencer, which now serves as the reference for the whole image.
@@ -1437,9 +1530,9 @@ are no longer present in the mature mRNA ({numref}`spliced_alignment`).
 :align: right
 :name: spliced_alignment
 
-Mapping of mRNA reads to genomic reference with splice aware aligner.
+Mapping of mRNA reads to genomic reference with splice aware aligner. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`spliced_alignment_2024`.
 :::
-%#% Figure spliced_alignment is self-created?
+
 This means that reads might contain an exon-exon junction, which means they
 should be split along the reference. Most aligners will not consider this a
 valid option. Special splice aware aligners have been developed for this
@@ -1487,8 +1580,9 @@ multiplied by a million to make it more readable.
 :alt: Counting reads
 :align: right
 :name: CPM
+
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`CPM_2024`.
 :::
-%#% Figure CPM is self-created?
 
 ---
 
@@ -1509,8 +1603,9 @@ transcripts in the original sample is represented by each transcript.
 :alt: Comparing transcript levels
 :align: right
 :name: comparing_transcripts
+
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`comparing_transcripts_2024`.
 :::
-%#% Figure comparing_transcripts is self-created?
 
 ---
 
@@ -1537,6 +1632,21 @@ immunoprecipitation step), after which the cross-linking is reversed and the
 DNA can be sequenced by PCR (ChIP-PCR) or NGS (ChIPseq). Similar protocols
 are available for protein-RNA and protein-protein interactions, the latter
 using two antibodies. Credits: {cite}`chip_protocol_2009`.
+:::
+%#% Figure chip_protocol is under copyright by Bioscientifica Limited. Unable to use this image for free.
+
+:::{figure} images/Week5/chip-protocol_alt.jpg
+:alt: ChIPseq protocol
+:align: center
+:name: chip_protocol_alt
+
+The chromatin immunoprecipitation (ChIP) protocol. Proteins are
+cross-linked to DNA, after which genomic DNA is isolated and sheared. Using
+an antibody, only the protein of interest is selected (the
+immunoprecipitation step), after which the cross-linking is reversed and the
+DNA can be sequenced by PCR (ChIP-PCR) or NGS (ChIPseq). Similar protocols
+are available for protein-RNA and protein-protein interactions, the latter
+using two antibodies. Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`chip_protocol_alt_2015`.
 :::
 
 RNAseq is a clever protocol that uses the attractive cheap, high-throughput
@@ -1607,7 +1717,7 @@ presence/absence and levels of proteins) and functional proteomics
 An example Western blot (left) and two 2D gels (right), separating proteins
 found in two different strains of *Brucella*. Investigating the difference
 between the two figures on the right can give insight in what proteins are
-differentially expressed between the two strains. Credits: {cite}`gels_2020`.
+differentially expressed between the two strains. Credits: [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/) {cite}`gels_2020`.
 :::
 
 As for DNA, gels ({numref}`gels`) are traditional means to measure the
@@ -1649,6 +1759,17 @@ specific interactions.
 Three mass spectrometry setups, (a) time-of-flight,
 (b) sector field and \(c) quadrupole. Credits: {cite}`mass_spectrometry_2003`.
 :::
+%#% Figure mass_spectrometry is under copyright by Springer Nature. Unable to use this image for free.
+
+:::{figure} images/Week5/mass-spectrometry_alt.svg
+:alt: Three mass spectrometry setups
+:align: center
+:width: 70%
+:name: mass_spectrometry_alt
+
+Three mass spectrometry setups, (top) time-of-flight,
+(middle) sector field and (bottom) quadrupole. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`mass_spectrometry_alt_2024`.
+:::
 
 Currently the most widely used technology for proteomics (and metabolomics)
 is mass spectrometry (MS). MS devices have been in constant development and
@@ -1681,9 +1802,9 @@ to allow only specific masses to pass through.
 :name: mass_spectrum
 
 An example mass spectrum measured on toluene (left). The various peaks
-correspond to fragments of the original molecule (right).
+correspond to fragments of the original molecule (right). Credits: modified from (left) [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) {cite}`mass_spectrum_left_2005`, (right) [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) {cite}`mass_spectrum_right_2008`.
 :::
-%#% Figure mass_spectrum self-created?
+
 The output of any MS experiment is a mass spectogram, with m/z
 ratios on the x-axis and peaks indicating how many molecules of a certain
 mass have been detected ({numref}`mass_spectrum`). In theory, if a database of known
@@ -1723,6 +1844,14 @@ peptides.
 
 A schematic overview of shotgun proteomics. Credits: {cite}`shotgun_proteomics_2007`.
 :::
+%#% Figure shotgun_proteomics is under copyright by Springer Nature. Unable to use this image for free.
+
+:::{figure} images/Week5/shotgun-proteomics_alt.svg
+:alt: Schematic overview of shotgun proteomics
+:align: center
+:name: shotgun_proteomics_alt
+
+A schematic overview of shotgun proteomics. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`shotgun_proteomics_alt_2024`.
 
 More complex protocols have also been developed to compare two protein
 samples in a single experiment, for example by adding known weights (using natural isotopes or
@@ -1739,6 +1868,16 @@ modified amino acids) and investigating relative differences in shifted mass spe
 
 Experimental methods to detect proteins. Top: high-throughput, bottom:
 low-throughput. Credits: modified from {cite}`experimental_protein_methods_2006`.
+:::
+%#% Figure experimental_protein_methods is under copyright by Springer Nature. Unable to use this image for free.
+
+:::{figure} images/Week5/experimental-protein-methods_alt.png
+:alt: Experimental protein interaction detection
+:align: center
+:name: experimental_protein_methods_alt
+
+Experimental methods to detect proteins. Top: high-throughput Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`experimental_protein_methods_top_alt_2024`, bottom:
+low-throughput Credits: modified from {cite}`experimental_protein_methods_bottom_alt_nd`.
 :::
 
 Next to protein levels, we are also interested in what proteins do in the
@@ -1780,8 +1919,9 @@ cells.
 
 A protein interaction network (4,927 proteins, 209,912 interactions found by
 tandem affinity purification) for *Drosophila melanogaster*, with
-clusters corresponding to protein complexes indicated in color. Credits: modified from {cite}`protein_network_2011`.
+clusters corresponding to protein complexes indicated in color. Credits: modified from {cite}`protein_network_2011` under [Elsevier user license](http://www.elsevier.com/open-access/userlicense/1.0/).
 :::
+%#% Figure protein_network is under open access: Permitted for non-commercial purposes: read, print & download. We should be able to use this image.
 
 The methods mentioned measure *physical* interactions between proteins, as
 opposed to *functional* interactions. Such interactions occur when two
@@ -1896,18 +2036,18 @@ different conditions (middle and right).
 :align: center
 :name: compare_conditions
 
-Difference in expression of gene X between two conditions and two possible distributions the measurement could have come from.
+Difference in expression of gene X between two conditions measured without replicates and two possible distributions the measurement could have come from. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`compare_conditions_2024`.
 :::
-%#% Figure compare_conditions is self-created image?
+
 :::{figure} images/Week5/error-vs-conditions.svg
 :alt: Comparison of differences between replicates and conditions
 :align: center
 :name: error_vs_conditions
 
 Comparison of FPKM values between 2 replicates (left) and two conditions (middle and right).
-The correlation between replicates should be very high, the differences between two conditions can be small (middle) or large (right).
+The correlation between replicates should be very high, the differences between two conditions can be small (middle) or large (right). Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`error_vs_conditions_2024`.
 :::
-%#% Figure error_vs_conditions is self-created image?
+%#% Figure error_vs_conditions is saved as an svg but is not actually a vectorized image.
 
 ---
 
@@ -1927,7 +2067,7 @@ Note that there is not much expression difference after 2 and 4 hours of
 growth on serum. Right: a heatmap visualizes the entire dataset, with colors
 indicating z-score normalized expression values: green is low, black is
 medium and red is high expression. Rows are genes, columns indicate growth
-condition, both are clustered. Credits: {cite}`streptococcus_pca_heatmap_2021`.
+condition, both are clustered. Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`streptococcus_pca_heatmap_2021`.
 :::
 
 While omics data can be analyzed in for example Microsoft Excel, it is very
@@ -1957,7 +2097,7 @@ conditions is the *t*-test. The *t*-statistic is a measure for the
 difference between the means *x* of two distributions, corrected by the
 uncertainty expressed in terms of their standard deviation *s*. A *p*-value,
 the probability that we find a *t*-statistic as large or larger by chance,
-can be calculated using the *t*-distribution.
+can be calculated using the *t*-distribution. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`t_test_2024`.
 :::
 %#% Figure t_test is self-created image?
 Perhaps the most widely used analysis on omics data, the goal here is to
@@ -2012,7 +2152,7 @@ series analysis. Left: heatmap of the 446 genes with most variable gene
 expression levels, clustered into 15 clusters. Right: average expression
 profiles of each cluster show that different groups of genes peak in
 expression in different development stages. These genes may be regulated in
-the same way and be active in similar biological processes. Credits: {cite}`time_series_2005`.
+the same way and be active in similar biological processes. Credits: [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) {cite}`time_series_2005`.
 :::
 
 Often it is more interesting to follow abundance over time rather than
@@ -2058,7 +2198,7 @@ which obvious clusters should become visible as large color blocks.
 An example part of the Gene Ontology (GO), in the biological process category.
 Lower-level terms are specific instantiations of the higher-level ones. In
 this figure, GO terms are colored according to the *p*-value in an
-enrichment test. Credits: {cite}`go_enrichment_2010`.
+enrichment test. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`go_enrichment_2010`.
 :::
 
 A final often used analysis is enrichment, in which we use gene functional
