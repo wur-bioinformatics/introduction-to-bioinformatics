@@ -113,7 +113,7 @@ Whilst now superseded by first more accurate statistical methods and more recent
 
 Chou and Fasman Propensities (P). F stands for strong former, f weak former, while B and b stand for strong and weak breaker, respectively. I (indifferent) indicates residues that are neither forming nor breaking helices or strands. We can see that Pro has the lowest propensity for forming a helix and a low one for strands as well. However, many other residues that are either weak or indifferent have been reclassified since the propensities shown here have been reparameterized as more data have become available. Credits: modified from {cite}`chou_fasman_1978`.
 :::
-%#% Figure chou_fasman is derived from https://docplayer.org/53395035-Vorlesungsskript-softwarewerkzeuge-der-bioinformatik.html page 80. Are we allowed to use this?
+%#% Figure chou_fasman is derived from https://docplayer.org/53395035-Vorlesungsskript-softwarewerkzeuge-der-bioinformatik.html page 80. Are we allowed to use this? Originally from a book, under copyright.
 In subsequent decades, several statistical-based methods were developed that improved sequence-based predictions of secondary structure elements.
 They, for example, started to include information of multiple sequence alignments including residue conservation: such approaches first matched the query sequence to database sequences with known 3D structures and assigned secondary structure elements.
 Then, using the best matching sequences, the secondary structure state of amino acid residues of the query sequence stretch are inferred by averaging the states from the homologous sequences found, further adapted using additional information such as the conserveness of the residue.
@@ -284,7 +284,7 @@ In essence, such approaches aim to model the protein sequence folding process us
 As the sequence length increases, ever-increasing possible folds occur for the entire 3D structure, making it a computationally intensive task.
 For example, consider 100 amino acid residues that each can have 3 different psi angles.
 This would lead to 3100 possible folds for the sequence, ~.
-If each fold would take 5 seconds to assess on its likelihood to be realistic and energy-favorable, it would take us XYXZD to analyze and come up with suggested 3D structures.
+If each fold would take 5 seconds to assess on its likelihood to be realistic and energy-favorable, it would take us nearly four and a half hours to analyze and come up with a suggested 3D structures, and that is just 100 amino acids.
 
 Fortunately, the database of experimentally derived protein 3D structures is constantly growing.
 Therefore, there is a good chance of having >XY% sequence identity of your query sequence.

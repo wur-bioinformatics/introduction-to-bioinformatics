@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: BIF20806 reader
-author: Ridder, Dick de; Kupczok, Anne; Holmer, Rens; Bakker, Freek; Hooft, Justin van der; Risse, Judith; Navarro, Jorge
+author: Wageningen University & Reseach - Ridder, Dick de; Kupczok, Anne; Holmer, Rens; Bakker, Freek; Hooft, Justin van der; Risse, Judith; Navarro, Jorge.
 logo: BIF logo.png
 only_build_toc_files: true
 
@@ -32,6 +32,15 @@ bibtex_bibfiles:
 #use_repository_button: true
 
 #######################################################################################
+# HTML settings
+html:
+  extra_footer: |
+    <p>
+    Text in the reader is provided under a <a href="https://creativecommons.org/">Creative Commons</a> <a href="https://creativecommons.org/licenses/by-nc/4.0/">BY-NC 4.0</a> license.
+    Figures have their licenses stated individually.
+    </p>
+
+#######################################################################################
 # Parse and render settings
 parse:
   myst_enable_extensions:  # default extensions to enable in the myst parser. See https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
@@ -49,6 +58,7 @@ parse:
 # Advanced and power-user settings
 sphinx:
   config: 
+    html_show_copyright: false
     bibtex_default_style: unsrt
     bibtex_reference_style: author_year
     language: en
