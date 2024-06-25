@@ -3,8 +3,6 @@
 
 format: jb-book
 root: intro
-options:
-  numbered: 1
 chapters:
   - file: week1
   - file: week2
