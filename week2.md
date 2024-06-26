@@ -1,8 +1,6 @@
 # Week 2 - Alignment, sequence search, and primer design
 
 In week 2 of Introduction to Bioinformatics, you will study sequence alignment.
-In this week, we use public reading material.
-Read this reading guide carefully and study the described sections.
 
 Make sure you understand what DNA and protein alignments are used for and that you can explain the differences between local and global alignments.
 You should be familiar with concepts related to alignments and sequence search, like dotplots, alignment scores, e-values, and substitution matrices.
@@ -29,6 +27,7 @@ Before diving into the analysis of whether sequences are related, it is importan
 
 ```{admonition} Homology and similarity
 :class: important
+
 **Homology** means that sequences share a common evolutionary history and therefore have a common ancestor.
 Homology is not quantifiable.
 If two sequences have a common ancestor, they are homologous.
@@ -42,6 +41,7 @@ In contrast, we cannot measure homology, but we can only infer it.
 
 ```{admonition} See also
 :class: seealso
+
 Here is a classic paper on homologous protein families: [Tatusov et al., 1997](https://pubmed.ncbi.nlm.nih.gov/9381173/).
 ```
 
@@ -83,7 +83,8 @@ This feature is implemented in a webserver to visualize dotplots, [dotlet](https
 :name: dotweb
 
 A screenshot of [dotlet](https://dotlet.vital-it.ch/) with sequence `MRRPDFMDALQGFLSPLNPAHQLDFMDSLGNLRLEECRIM`.
-- (A) The two sliders to change the appearence of the plot: The top slider can adjust the sensitivity, moving it to the right, fewer similar regions are shown; moving it to the left, also regions with lower similarity appear. The bottom slider adjusts the color scheme and is less relevant compared to the top slider.
+- (A) The two sliders to change the appearence of the plot: The top slider can adjust the sensitivity, moving it to the right, fewer similar regions are shown; moving it to the left, also regions with lower similarity appear.
+  The bottom slider adjusts the color scheme and is less relevant compared to the top slider.
 - (B) The histogram indicates how many hits with a particular similarity are shown; thus the slider can be adjusted to the right tail of the histogram.
 - \(C) The two sliders that can adjust how the two sequences are positioned against each other.
 - (D) Serves a similar function to the two sliders of C but allows for arrow key navigation of the dotplot.
@@ -104,7 +105,8 @@ The resulting alignment contains matches, mismatches, and gaps ({numref}`algterm
 :width: 50%
 :name: algterm
 
-A small example of two aligned sequences. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`alg_term_2024`.
+A small example of two aligned sequences.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`alg_term_2024`.
 :::
 
 ### Alignments of DNA sequences
@@ -121,7 +123,8 @@ The total alignment score is calculated by summing over all columns in the align
 :name: algscore
 
 An example calculation of the alignment score, where matches score 1, mismatches -1 and there is a gap penalty of -1.
-This results in a total score of 1 for this alignment. [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`alg_score_2024`.
+This results in a total score of 1 for this alignment.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`alg_score_2024`.
 :::
 
 The choice of the scoring parameters has an impact which alignment will have the maximum score.
@@ -138,6 +141,7 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 
 ```{admonition} Note 2.1: Affine gap costs
 :class: note
+
 The DNA and protein sequences that we want to align often have varying lengths, which is the result of insertions and deletions during evolution.
 Insertion and deletion events can affect one or multiple residues, where one event of length 2 is more likely to happen than two independent events of length 1.
 To include this in the scoring scheme, alignment programms use **affine gap costs** that distinguish between opening a gap and extending a gap.
@@ -171,6 +175,7 @@ Credits: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) {cite}`
 
 ```{admonition} Box 2.1: Assignment
 :class: tip
+
 Look at the amino acid properties in the table in [week 1](Week1_aminoacids), choose some amino acids with the same properties and some with different properties.
 Then look up these pairs in the BLOSUM62 matrix.
 What do you observe?
@@ -205,9 +210,9 @@ A commonly used matrix is PAM250, which means that 250 mutations happened over 1
 :width: 80%
 :name: submat
 
-An overview of different available substitution matrices. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`submat_2024`.
+An overview of different available substitution matrices.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`submat_2024`.
 :::
-%#% Own figure
 
 :::{seealso}
 An introduction into PAM and BLOSUM substitution matrices.
@@ -252,6 +257,7 @@ Up until now, we have only considered pairwise alignments, where both sequences 
 
 ```{admonition} Note 2.2: Finding the best alignment
 :class: note
+
 There is a huge number of alignments possible for two sequences, since the gaps can be placed in many different ways.
 However, to find the **optimal alignment**, i.e., the one with the highest score, it is not necessary to explore all these possibilities.
 Efficient algorithms exist that guarantee to find the optimal alignment.
@@ -292,6 +298,7 @@ We thus need even more efficient algorithms.
 
 ```{admonition} Note 2.3: Heuristic algorithms
 :class: note
+
 The Needleman-Wunsch and the Smith-Waterman algorithm described in the previous section guarantee to find the alignment with the best score for the given sequences and parameters.
 In contrast, an **heuristic algorithm** employs some heuristics, which generally lead to good results and which make the algorithm much faster. However, the method does not guarantee to find the optimal score anymore.
 ```
@@ -327,7 +334,8 @@ BLAST is thus a heuristic algorithm, but its careful process helps to ensure a r
 :width: 100%
 :name: blast
 
-An overview of the BLAST algorithm. Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`blast_2022`.
+An overview of the BLAST algorithm.
+Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`blast_2022`.
 :::
 
 #### BLAST output
@@ -339,12 +347,13 @@ The BLAST output contains vast information on the found hits, their alignments, 
 :width: 100%
 :name: blast_output
 
-Top 5 blast hits when searching the rat protein P50745 in the Swiss-Prot 2024_02 release database. Credits: {cite}`blast_2009`
+Top 5 blast hits when searching the rat protein P50745 in the Swiss-Prot 2024_02 release database.
+Credits: {cite}`blast_2009`
 :::
-%#% Own figure
 
 ```{admonition} Note 2.4: E-value
 :class: note
+
 An important output statistic is the expectation value (**e-value**), which is the number of BLAST hits you expect to see by chance in the database, with the observed score or higher.
 Note that due to this definition, the e-value depends on the database size.
 Since it is more likely to find something by chance in a larger database, the e-value for the same hit would be higher compared to a smaller database.
@@ -405,123 +414,123 @@ Rens
 
 Rens
 
-**OLD**
-
-This reading material was provided last year:
-* Alignment
- * pairwise alignment
- * scoring matrices
- * alignment score, example calculation
- * BLAST
- * HMMs (very short)
- * Needleman Wunsch and Smith Waterman (very short)
-* Dot plots
-* Scoring matrices
-* BLAST
-* MSA
-* Sequence motifs
-* HMMs
-* Primer design
-
-## Alignment
-
-Read chapter 3 of “Applied Bioinformatics” (Selzer):
-Sequence Comparisons and Sequence-Based Database Searches available from [here](https://link-springer-com.ezproxy.library.wur.nl/content/pdf/10.1007/978-3-319-68301-0_3.pdf).
-
-All material of Chapter 3 is relevant for this course.
-Therefore, you are required to study the whole chapter.
-Unfortunately, the chapter contains some errors:
-* p. 36 first paragraph: "convergent evolution" and "divergent evolution" should be swapped.
-* p. 37 Fig 3.1: in the panel “Insertions and Deletion” W is matched with Q. There should not be a line between these 2 amino acids.
-* p. 38 Fig 3.2: There are many errors in the BLOSUM62 matrix, you can find the correct matrix in ({numref}`blosum62`). The scores with the correct matrix are 68 for the green alignment and 12 for the red alignment.
-* p. 42 “The evolutionary distances correspond to the length of the horizontal branches.” The word horizontal should be removed. All branches correspond to evolutionary distances.
-
-
-After reading you should be able to answer for example the following questions:
-* What is the difference between local and global alignment
-* Given a pairwise alignment and the scoring parameters, calculate the alignment score and decide which alignment is better. For example, fill in the table in ({numref}`pairalgexa`).
-
-:::{figure} images/Week2/pairwise_alignment_example.png
-:alt: Example to calculate scores of pairwise alignments
-:width: 100%
-:name: pairalgexa
-
-Fill the table: Calculate the scores of both alignments under both scoring schemes.
-:::
-
-
-### Dot plots
-
-Read section 3.1.1. of “Comparative Gene Finding” (Axelson-Fisk): Dot Plot Matrix - available from [here](https://link-springer-com.ezproxy.library.wur.nl/content/pdf/10.1007%2F978-1-4471-6693-1_3.pdf).
-
-After reading, you should be able to describe what dot plots are and what they are used for.
-
-### Scoring matrices
-
-Read section 4.1. of “Bioinformatics and Computational Biology” (Tiwary): Introduction - available from [here](https://link-springer-com.ezproxy.library.wur.nl/content/pdf/10.1007/978-981-16-4241-8_4.pdf).
-
-
-After reading, you should be able to explain when amino acid alignment and when nucleotide alignments are used.
-Also, you should be able to name which BLOSUM and which PAM matrix is used for divergent sequences.
-
-### BLAST
-
-Read two websites:
-* Section 1 from BLAST QuickStart available from [here](https://www.ncbi.nlm.nih.gov/books/NBK1734/)
-* and “How does BLAST work?” available from [here](https://resources.qiagenbioinformatics.com/manuals/clcgenomicsworkbench/current/index.php?manual=How_does_BLAST_work.html).
-
-After reading you should be able to name the different steps of BLAST and to describe how the word size can influence the results.
-
-### Multiple sequence alignment
-
-Read parts of “Multiple sequence alignments” (Sperlea) available from [here](https://link-springer-com.ezproxy.library.wur.nl/content/pdf/10.1007/978-3-662-64473-7.pdf).
-
-Read:
-* 1.1 Introduction
-* 1.2 Areas of Application of MSAs
-* 1.3.1 FASTA
-* 1.3.7 Graphical Visualizations
-* 2.3 Multiple Sequence Alignments
-
-After reading, you should be able to explain what MSAs are and which different kinds of solutions exist for this problem.
-
-### Sequence motifs
-
-Read Sections 1-2 of “Discovering sequence motifs” (Bailey) available from [here](https://link-springer-com.ezproxy.library.wur.nl/content/pdf/10.1007/978-1-59745-514-5_17.pdf).
-
-After reading, you should be able to read the representation of sequence motifs and evaluate if a motif has a hit in a certain sequence, for example, given the genome sequence ACCTGAATGTTAA, which of the following motifs has a hit in the genome?
-
-* T-G-A
-* G-A(1,2)-T
-* A-A-N-T-T
-
-Also, you should be able to read logos and evaluate which positions are conserved for which amino acids.
-
-### Hidden Markov models
-
-Read “What are profile hidden Markov models” available from [here](https://www.ebi.ac.uk/training/online/courses/pfam-creating-protein-families/what-are-profile-hidden-markov-models-hmms/).
-
-After reading, you should be able to explain which properties of MSAs are represented in HMMs.
-
-## Primer Design
-Read parts of chapter 5 of “Introduction to Bioinformatics in Microbiology” (Christensen): Primer Design - available from [here](https://link-springer-com.ezproxy.library.wur.nl/content/pdf/10.1007/978-3-319-99280-8_5.pdf).
-
-Only some sections of this chapter are relevant for this course.
-Nevertheless, these sections provide a clear and concise overview of bioinformatic considerations when designing PCR primers.
-You should specifically focus on the part about PCR.
-The part on hybridization (i.e. as used in microarrays) is not relevant for this course.
-
-Read:
-* 5.1 Background for Oligonucleotide Design
-* 5.2 General Rules for Design of Oligonucleotides
-* 5.3.1 String comparison by Score
-* 5.3.3 Design of Primers for PCR and “Kwok’s Rules”
-* 5.4.1 Estimation of Tm by Formula
-
-Unfortunately, there is a typo in the Tm formula on p. 91 in the book.
-The correct formula is Tm=4(G+C)+2(A+T)
-
-After reading, you should be able to explain the basics of primer design and to name which factors influence primer design.
+%**OLD**
+%
+%This reading material was provided last year:
+%* Alignment
+% * pairwise alignment
+% * scoring matrices
+% * alignment score, example calculation
+% * BLAST
+% * HMMs (very short)
+% * Needleman Wunsch and Smith Waterman (very short)
+%* Dot plots
+%* Scoring matrices
+%* BLAST
+%* MSA
+%* Sequence motifs
+%* HMMs
+%* Primer design
+%
+%## Alignment
+%
+%Read chapter 3 of “Applied Bioinformatics” (Selzer):
+%Sequence Comparisons and Sequence-Based Database Searches available from [here](https://link-springer-com.ezproxy.library.wur.nl/content/pdf/10.1007/978-3-319-68301-0_3.pdf).
+%
+%All material of Chapter 3 is relevant for this course.
+%Therefore, you are required to study the whole chapter.
+%Unfortunately, the chapter contains some errors:
+%* p. 36 first paragraph: "convergent evolution" and "divergent evolution" should be swapped.
+%* p. 37 Fig 3.1: in the panel “Insertions and Deletion” W is matched with Q. There should not be a line between these 2 amino acids.
+%* p. 38 Fig 3.2: There are many errors in the BLOSUM62 matrix, you can find the correct matrix in ({numref}`blosum62`). The scores with the correct matrix are 68 for the green alignment and 12 for the red alignment.
+%* p. 42 “The evolutionary distances correspond to the length of the horizontal branches.” The word horizontal should be removed. All branches correspond to evolutionary distances.
+%
+%
+%After reading you should be able to answer for example the following questions:
+%* What is the difference between local and global alignment
+%* Given a pairwise alignment and the scoring parameters, calculate the alignment score and decide which alignment is better. For example, fill in the table in ({numref}`pairalgexa`).
+%
+%:::{figure} images/Week2/pairwise_alignment_example.png
+%:alt: Example to calculate scores of pairwise alignments
+%:width: 100%
+%:name: pairalgexa
+%
+%Fill the table: Calculate the scores of both alignments under both scoring schemes.
+%:::
+%
+%
+%### Dot plots
+%
+%Read section 3.1.1. of “Comparative Gene Finding” (Axelson-Fisk): Dot Plot Matrix - available from [here](https://link-springer-com.ezproxy.library.wur.nl/content/pdf/10.1007%2F978-1-4471-6693-1_3.pdf).
+%
+%After reading, you should be able to describe what dot plots are and what they are used for.
+%
+%### Scoring matrices
+%
+%Read section 4.1. of “Bioinformatics and Computational Biology” (Tiwary): Introduction - available from [here](https://link-springer-com.ezproxy.library.wur.nl/content/pdf/10.1007/978-981-16-4241-8_4.pdf).
+%
+%
+%After reading, you should be able to explain when amino acid alignment and when nucleotide alignments are used.
+%Also, you should be able to name which BLOSUM and which PAM matrix is used for divergent sequences.
+%
+%### BLAST
+%
+%Read two websites:
+%* Section 1 from BLAST QuickStart available from [here](https://www.ncbi.nlm.nih.gov/books/NBK1734/)
+%* and “How does BLAST work?” available from [here](https://resources.qiagenbioinformatics.com/manuals/clcgenomicsworkbench/current/index.php?manual=How_does_BLAST_work.html).
+%
+%After reading you should be able to name the different steps of BLAST and to describe how the word size can influence the results.
+%
+%### Multiple sequence alignment
+%
+%Read parts of “Multiple sequence alignments” (Sperlea) available from [here](https://link-springer-com.ezproxy.library.wur.nl/content/pdf/10.1007/978-3-662-64473-7.pdf).
+%
+%Read:
+%* 1.1 Introduction
+%* 1.2 Areas of Application of MSAs
+%* 1.3.1 FASTA
+%* 1.3.7 Graphical Visualizations
+%* 2.3 Multiple Sequence Alignments
+%
+%After reading, you should be able to explain what MSAs are and which different kinds of solutions exist for this problem.
+%
+%### Sequence motifs
+%
+%Read Sections 1-2 of “Discovering sequence motifs” (Bailey) available from [here](https://link-springer-com.ezproxy.library.wur.nl/content/pdf/10.1007/978-1-59745-514-5_17.pdf).
+%
+%After reading, you should be able to read the representation of sequence motifs and evaluate if a motif has a hit in a certain sequence, for example, given the genome sequence ACCTGAATGTTAA, which of the following motifs has a hit in the genome?
+%
+%* T-G-A
+%* G-A(1,2)-T
+%* A-A-N-T-T
+%
+%Also, you should be able to read logos and evaluate which positions are conserved for which amino acids.
+%
+%### Hidden Markov models
+%
+%Read “What are profile hidden Markov models” available from [here](https://www.ebi.ac.uk/training/online/courses/pfam-creating-protein-families/what-are-profile-hidden-markov-models-hmms/).
+%
+%After reading, you should be able to explain which properties of MSAs are represented in HMMs.
+%
+%## Primer Design
+%Read parts of chapter 5 of “Introduction to Bioinformatics in Microbiology” (Christensen): Primer Design - available from [here](https://link-springer-com.ezproxy.library.wur.nl/content/pdf/10.1007/978-3-319-99280-8_5.pdf).
+%
+%Only some sections of this chapter are relevant for this course.
+%Nevertheless, these sections provide a clear and concise overview of bioinformatic considerations when designing PCR primers.
+%You should specifically focus on the part about PCR.
+%The part on hybridization (i.e. as used in microarrays) is not relevant for this course.
+%
+%Read:
+%* 5.1 Background for Oligonucleotide Design
+%* 5.2 General Rules for Design of Oligonucleotides
+%* 5.3.1 String comparison by Score
+%* 5.3.3 Design of Primers for PCR and “Kwok’s Rules”
+%* 5.4.1 Estimation of Tm by Formula
+%
+%Unfortunately, there is a typo in the Tm formula on p. 91 in the book.
+%The correct formula is Tm=4(G+C)+2(A+T)
+%
+%After reading, you should be able to explain the basics of primer design and to name which factors influence primer design.
 %PRACTICAL_SEPARATOR%
 ---
 

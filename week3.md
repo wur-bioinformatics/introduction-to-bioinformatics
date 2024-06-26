@@ -5,14 +5,14 @@
 -- Freek T. Bakker - WUR Biosystematics Group
 ```
 
-In this week you will learn to use a _Multiple Sequence Alignment_ (MSA), like the ones you compiled in [week 2](`create cross-link to MSA in week 2 when written`), and visualize the variation it contains as a phylogenetic tree.
+In this week you will learn to use a _Multiple Sequence Alignment_ (MSA), like the ones you compiled in [week 2](week2), and visualize the variation it contains as a phylogenetic tree.
 A phylogenetic tree is considered a highly efficient _data structure_ summarizing the data and its variation contained in your MSA.
 A tree is built from _characters_ which are the individual columns or positions in your MSA.
-Characters have states, which are in this case the individual nucleotide or amino acid _substitutions_ occurring in that position (see [Characters & states](charactersandtrees) below).
+Characters have states, which are in this case the individual nucleotide or amino acid _substitutions_ occurring in that position (see [Characters & trees](Week3_characters_trees) below).
 Invariable characters are columns or positions 'occupied' by just one type of nucleotide or amino acid, whereas variable characters may have up to 4 different nucleotides or up to 20 amino acids per position. 
-
+%#%Create cross-link to MSA in week 2 when written
 DNA and amino acid (AA) sequences contain the information necessary for building protein structure, comparing them in an MSA will enable insight how these structures, and their associated functions, may have changed over evolutionary times since they descended from an ancestral sequence.
-The more character state changes (i.e., substitutions) occur between sequences, the more _diverged_ they are and probably also less related (see [Related, diverged](relateddiverged) below), and hence the further apart they will occur on your phylogenetic tree.
+The more character state changes (i.e., substitutions) occur between sequences, the more _diverged_ they are and probably also less related (see [Related, diverged](Week3_related_diverged) below), and hence the further apart they will occur on your phylogenetic tree.
 The information contained in your tree is hierarchical in nature, meaning that it is built-up as nested sets of subtrees that are also known as _clades_.
 A _clade_ is a group containing an ancestor together with all its descendants and is also referred to as a _monophyletic_ group.
 
@@ -20,24 +20,26 @@ A _clade_ is a group containing an ancestor together with all its descendants an
 
 ## Rationale
 
-%#%:::{figure} images/Week3/tree-of-life.png
-%#%:alt: The Tree of Life
-%#%:width: 40%
-%#%:name: tree_of_life
-%#:align: center
-%#%The Tree of Life. Dated in millions of years; \
-%#%rooted with Eubacteria. Credits: {cite}`tree_of_life_2022`.
-%#%:::
+%:::{figure} images/Week3/tree-of-life.png
+%:alt: The Tree of Life
+%:width: 40%
+%:name: tree_of_life
+%align: center
+%The Tree of Life. Dated in millions of years; \
+%rooted with Eubacteria. Credits: {cite}`tree_of_life_2022`.
+%:::
 %#% Unable to use figure tree_of_life due to copyright.
 
 :::{figure} images/Week3/tree-of-life_alt.png
 :alt: Simplified Tree of Life
 :width: 400px
-:name: tree_of_life_alt
 :align: right
+:name: tree_of_life_alt
+
 Simplified Tree of Life. Credits: \
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`tree_of_life_alt_2014`.
 :::
+
 Why should we study phylogenetics and what is it about?
 Ever since Darwin we know that all living things are connected in a tapestry of life, forming a phylogenetic tree of everything ({numref}`tree_of_life_alt`).
 Phylogenetics aims at understanding evolutionary relationships among genes, species, and higher taxa and as such it is relevant to almost all biological questions.
@@ -49,7 +51,8 @@ Examples are studying the evolution of gene families within genomes, or the buil
 :width: 100%
 :name: sars-cov-2
 
-The SARS-CoV-2 phylogenetic tree, March 2024. Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`sars-cov-2_2018`.
+The SARS-CoV-2 phylogenetic tree, March 2024.
+Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`sars-cov-2_2018`.
 :::
 
 Other examples are studying Covid-19 and other pathogen outbreaks ({numref}`sars-cov-2`), studying molecular evolution and the accumulation of substitutions in a multiple sequence alignment (MSA).
@@ -57,14 +60,14 @@ Or, studying population history within a species, reconstructing historical biog
 By _accurate_ we mean estimating relationships that are as close as possible to the actual (historic) relationships, which we cannot know for sure.
 As they happened in the past we cannot _prove_ them, but they are hypotheses (of relationships) that we can only _corroborate_ (confirm, seek support for).
 
-%#%:::{figure} images/Week3/ancestral-states.png
-%#%:alt: A phylogenetic tree with ancestral states
-%#%:width: 100%
-%#%:name: ancestral_states
-%#%
-%#%Comparing species (or genes) in a phylogenetic tree allows inference of ancestral states and evolutionary trends.
-%#%:::
-%#% Figure ancestral_states is rather blurry. - Self created image? If so, reupload in higher resolution.
+%:::{figure} images/Week3/ancestral-states.png
+%:alt: A phylogenetic tree with ancestral states
+%:width: 100%
+%:name: ancestral_states
+%
+%Comparing species (or genes) in a phylogenetic tree allows inference of ancestral states and evolutionary trends.
+%:::
+%#% Unable to use figure ancestral_states because of poor quality
 
 :::{figure} images/Week3/ancestral-states_alt.svg
 :alt: A phylogenetic tree with ancestral states
@@ -98,7 +101,6 @@ A rooted ultrametric phylogenetic tree with its main parts and characteristics i
 Here, the OTUs are GenBank plant chloroplast gene accessions, the names of which have been condensed.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`ultrametric_example_2024`.
 :::
-%#% Figure tree_example is derived from tree_types, is tree_types self created image?
 
 Whereas the horizontal lines represent the actual branches, the vertical lines do not have a meaning and are just there to connect the branches and clades; they will get longer when more terminals are included but do not have a relation with the data (i.e., the MSA).
 Branches are connected via nodes, that can be internal (HTUs) or external (OTUs).
@@ -108,24 +110,24 @@ These individuals can represent genes, species or higher taxa, but they are neve
 Branches and nodes collectively build the _tree topology_, i.e., the structure of the tree.
 
 One of the most important aspects of a phylogenetic tree is whether it is rooted, meaning whether we can distinguish which nodes are old and which are more recent, and also what _clades_ are present.
-Rooting is done by selecting an _outgroup_, which is a reference taxon outside the group of interest (this is described in more detail in section [Rooting & clades](rootingandclades)).
+Rooting is done by selecting an _outgroup_, which is a reference taxon outside the group of interest (this is described in more detail in section [Rooting & clades](Week3_rooting_clades)).
 It is important to realise that most phylogenetic reconstruction methods actually produce unrooted trees, which can then rooted using an outgroup to visualize in what direction evolution proceeded and which clades can be identified.
 
 ---
 
-(relateddiverged)=
+(Week3_related_diverged)=
 
 ### Related, diverged
 
-%#%:::{figure} images/Week3/MRCA-mammals.png
-%#%:alt: An additive phylogenetic tree rooted at monkey
-%#%:width: 100%
-%#%:name: MRCA_mammals
-%#%
-%#%Additive phylogenetic tree of mammalian species, rooted on monkey.
-%#%The MRCA of monkey, cat and dog is indicated.
-%#%Tree topology informs relatedness, branch lengths correspond to divergence. Credits: modified from {cite}`bioinformatics_2007`.
-%#%:::
+%:::{figure} images/Week3/MRCA-mammals.png
+%:alt: An additive phylogenetic tree rooted at monkey
+%:width: 100%
+%:name: MRCA_mammals
+%
+%Additive phylogenetic tree of mammalian species, rooted on monkey.
+%The MRCA of monkey, cat and dog is indicated.
+%Tree topology informs relatedness, branch lengths correspond to divergence. Credits: modified from {cite}`bioinformatics_2007`.
+%:::
 %#%Imagery from this source (Zvelebil and Baum, 2007) is under copyright, unable to be used.
 
 :::{figure} images/Week3/MRCA-mammals_alt.svg
@@ -135,18 +137,20 @@ It is important to realise that most phylogenetic reconstruction methods actuall
 
 Additive phylogenetic tree of mammalian species, rooted on monkey.
 The MRCA of monkey, bear, seal and dog is indicated.
-Tree topology informs relatedness, branch lengths correspond to divergence. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`MRCA_mammals_alt_2024`. Made using imagery from: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`DBCLS_2023`
+Tree topology informs relatedness, branch lengths correspond to divergence.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`MRCA_mammals_alt_2024`.
+Made using imagery from: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`DBCLS_2023`
 :::
 
 In a rooted phylogenetic tree, terminals sharing a more recent common ancestor are more closely related than terminals sharing a less recent common ancestor.
 Thus, in {numref}`MRCA_mammals_alt`, dog and bear are more related than dog and seal, because dog and bear share a more recent common ancestor.
 On the other hand, monkey and dog are as related as monkey and cat, because they all share the same _most recent common ancestor_ (MRCA).
-Being _related_ is not the same as being _diverged_, as divergence means the amount of change accumulated since the split of two lineages, which is reflected in the branch lengths (or in [distances](distancebased)).
+Being _related_ is not the same as being _diverged_, as divergence means the amount of change accumulated since the split of two lineages, which is reflected in the branch lengths (or in [distances](Week3_distance_based)).
 In our example, raccoon and dog would be more diverged than raccoon and bear, but not more closely related.
 
 ---
 
-(trees)=
+(Week3_cladogram_additive_ultrametric)=
 
 ### Cladogram, additive and ultrametric
 
@@ -173,7 +177,7 @@ Here, the OTUs are GenBank plant chloroplast gene accessions, the names of which
 For the same data, the tree is given as _additive_ tree (top) and as an _ultrametric_ tree (bottom left) with branch lengths corresponding to time.
 On the right, flipped, the same tree as _cladogram_, with branch lengths only indicating the structure of the trees.
 :::
-%#% Moved Figure tree_types to this section. - This figure could be much clearer in depicting additive trees and cladograms.
+%#% This figure could be much clearer in depicting additive trees and cladograms.
 
 ---
 
@@ -187,15 +191,15 @@ Polytomies represent parts of the phylogenetic tree that are uncertain in terms 
 This can be due to there being insufficient information in the MSA for resolving the lineages, or ample but conflicting signal.
 Polytomies are usually interpreted as _soft_, meaning that the data used does not allow to resolve the lineages inferred ({numref}`polytomies_alt`).
 
-%#%:::{figure} images/Week3/polytomies.png
-%#%:alt: Hard and soft polytomies
-%#%:width: 60%
-%#%:name: polytomies
-%#%
-%#%Hard and soft polytomies in a phylogenetic tree.
-%#%The soft polytomy can imply different tree resolutions. Credits: {cite}`phylogenetic_approach_1998`.
-%#%:::
-%#% Figure polytomies is quite blurry. Could be reuploaded in higher resolution (I don't have access to the book). Alternatively, easily able to redraw ourselves?
+%:::{figure} images/Week3/polytomies.png
+%:alt: Hard and soft polytomies
+%:width: 60%
+%:name: polytomies
+%
+%Hard and soft polytomies in a phylogenetic tree.
+%The soft polytomy can imply different tree resolutions. Credits: {cite}`phylogenetic_approach_1998`.
+%:::
+%#% Unable to use figure polytomies due to copyright.
 
 :::{figure} images/Week3/polytomies_alt.svg
 :alt: Hard and soft polytomies
@@ -203,19 +207,20 @@ Polytomies are usually interpreted as _soft_, meaning that the data used does no
 :name: polytomies_alt
 
 Hard and soft polytomies in a phylogenetic tree.
-The soft polytomy can imply different tree resolutions. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`polytomies_alt_2024`.
+The soft polytomy can imply different tree resolutions.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`polytomies_alt_2024`.
 :::
 
 In contrast, the _hard_ interpretation would be: instantaneous speciation, i.e., an ancestral species lineage split up so fast that the new lineages do not have sufficient unique substitutions to 'mark' them and to assign them an internal node in the tree.
 An example is the late-Tertiary radiation of mammalian orders, after the fairly quick establishment of cold water around the Earth's poles, combined with that of the hot tropics.
 Several published mammalian phylogenetic trees contain unresolved spines or backbones.
 
-On the other hand, [_gene trees_](orthologsandparalogs) (used for studying gene families) may also contain polytomies and they are usually considered as soft (the data is not decisive enough to infer a branching order).
+On the other hand, [_gene trees_](Week3_orthologs_paralogs) (used for studying gene families) may also contain polytomies and they are usually considered as soft (the data is not decisive enough to infer a branching order).
 _Whole genome duplications_ (auto-polyploidisations) are fairly well known, especially in the evolution of flowering plants. Following such an event, pairs of genes can be expected to form instantaneously, i.e., without accumulating unique substitutions, and may result in hard polytomies in gene trees.
 
 ---
 
-(orthologsandparalogs)=
+(Week3_orthologs_paralogs)=
 
 ### Orthologs & paralogs
 
@@ -225,15 +230,25 @@ For instance, human beta globin and chimp beta globin are orthologs.
 Usually, these genes will have the same function in different species, but this doesn't necessarily have to be the case.
 In contrast, _paralogy_ is the occurrence of similar genes resulting not from speciation but from gene duplication.
 For example, proteins from a gene family with different functions in the same species. Such similar genes are referred to as _paralogs_, which are visualized as multiple occurences of particular terminals on the tree.
-{numref} illustrates the process of gene duplication followed by speciation, resulting in two parallel subtress (the grey X tree and the green X' tree). {numref} shows the challenge with using both orthologs and paralogs in phylogenetic analysis when not all members of a gene family have been sampled.
+{numref}`ortho_para`A and B illustrates the process of gene duplication followed by speciation, resulting in two parallel subtress (the grey X tree and the green X' tree). {numref}`ortho_para`C shows the challenge with using both orthologs and paralogs in phylogenetic analysis when not all members of a gene family have been sampled.
 
-%#%:::{figure} images/Week3/genic-taxic.jpg
-%#%:alt: Gene trees evolving in genic and taxic dimensions
-%#%:width: 60%
-%#%:name: genic_taxic
-%#%
-%#%:::
-%#% Figure needs to be replaced.
+:::{figure} images/Week3/ortho-para.svg
+:alt: The challenge of paralogs
+:width: 100%
+:name: ortho_para
+
+The challenge of paralogs: (A) Paralogous genes are created by gene duplication events.
+Gene X is duplicated in a (recent) common ancestor (RCA) of species A and B resulting in paralogous genes X and X’.
+Species A and B inherit both copies of the gene (unless one or the other is lost somewhere along the way).
+(B) Phylogenetic analysis of the X/X’ gene family gives two parallel phylogenies.
+All sequences of gene X are orthologues of each other, as are all sequences of gene X’.
+However, X and X’ are paralogues.
+Both the X and X’ subtrees show the true relationships among the three species.
+The subtrees are also each other’s natural outgroup, and as a result each subtree is rooted with the other (reciprocally rooting).
+\(C) A tree of the X/X’ gene family can be misleading if not all the sequences are included (because of incomplete sampling or gene loss).
+If the broken branches are missing, then the true species relationships are misrepresented.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`ortho_para_2024`.
+:::
 
 In {numref}`gene_duplication_speciation_alt`, a sequence of events is given involving _two duplications and one speciation event_ that can lead to a set of homologous genes in two species.
 Some of these are _orthologs_ and some are _paralogs_ that have acquired new functions.
@@ -250,15 +265,15 @@ The Bα and Bγ genes are paralogous, as are any other combinations except the o
 Note that Aα and Bγ are orthologs despite their different functions.
 The gene tree inferred from these five genes has multiple occurrences of both species A and B ({numref}`gene_duplication_speciation_alt`B).
 
-%#%:::{figure} images/Week3/gene-duplication-speciation.png
-%#%:alt: Evolutionary history of a gene after duplication and speciation events.
-%#%:width: 100%
-%#%:name: gene_duplication_speciation
-%#%
-%#%The evolutionary history of a gene that has undergone two separate duplication events.
-%#%(A) The species tree (large blue cylinders) comprising species A and B and with indicated gene duplication and neo-functionalisation events leading to β and γ functions.
-%#%(B) The phylogenetic tree that would be drawn for the resulting 5 genes in (A), here drawn as a cladogram. Credits: {cite}`bioinformatics_2007`.
-%#%:::
+%:::{figure} images/Week3/gene-duplication-speciation.png
+%:alt: Evolutionary history of a gene after duplication and speciation events.
+%:width: 100%
+%:name: gene_duplication_speciation
+%
+%The evolutionary history of a gene that has undergone two separate duplication events.
+%(A) The species tree (large blue cylinders) comprising species A and B and with indicated gene duplication and neo-functionalisation events leading to β and γ functions.
+%(B) The phylogenetic tree that would be drawn for the resulting 5 genes in (A), here drawn as a cladogram. Credits: {cite}`bioinformatics_2007`.
+%:::
 %#% Unable to use figure gene_duplication_speciation due to copyright
 
 :::{figure} images/Week3/gene-duplication-speciation_alt.svg
@@ -268,7 +283,8 @@ The gene tree inferred from these five genes has multiple occurrences of both sp
 
 The evolutionary history of a gene that has undergone two separate duplication events.
 (A) The species tree (large blue cylinders) comprising species A and B and with indicated gene duplication and neo-functionalisation events leading to β and γ functions.
-(B) The phylogenetic tree that would be drawn for the resulting 5 genes in (A), here drawn as a cladogram. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`gene_duplication_speciation_alt_2024`.
+(B) The phylogenetic tree that would be drawn for the resulting 5 genes in (A), here drawn as a cladogram.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`gene_duplication_speciation_alt_2024`.
 :::
 
 For another example of a gene versus species tree consider the trees in {numref}`IL_tree_alt`, which are based on the comparison of Interleuken gene sequences.
@@ -278,14 +294,14 @@ In fact, we can deduce that four gene duplication events must have happened, to 
 The fourth duplication event would be necessary to assume to explain the IL-1β versus IL-1βm copies.
 All gene copies in this tree are homologs, some are orthologs (e.g., Human IL-1β and Mouse IL-1β), and some are paralogs (e.g., Human IL-1β and Human IL-1βm).
 
-%#%:::{figure} images/Week3/IL-tree.png
-%#%:alt: Species tree and a gene tree of mammalian Interleukin-1 genes.
-%#%:width: 100%
-%#%:name: IL_tree
-%#%
-%#%A species tree based on external evidence (left) and a gene tree based on a comparison of mammalian Interleukin-1 genes (right).
-%#%In the gene tree, both alpha and beta copies can be seen, which are probably the result of gene duplications (see {numref}`gene_duplication_speciation_alt`). Credits: {cite}`phylogenetic_approach_1998`.
-%#%:::
+%:::{figure} images/Week3/IL-tree.png
+%:alt: Species tree and a gene tree of mammalian Interleukin-1 genes.
+%:width: 100%
+%:name: IL_tree
+%
+%A species tree based on external evidence (left) and a gene tree based on a comparison of mammalian Interleukin-1 genes (right).
+%In the gene tree, both alpha and beta copies can be seen, which are probably the result of gene duplications (see {numref}`gene_duplication_speciation_alt`). Credits: {cite}`phylogenetic_approach_1998`.
+%:::
 %#% Unable to use figure IL_tree due to copyright.
 
 :::{figure} images/Week3/IL-tree_alt.svg
@@ -294,11 +310,24 @@ All gene copies in this tree are homologs, some are orthologs (e.g., Human IL-1�
 :name: IL_tree_alt
 
 A species tree based on external evidence (left) and a gene tree based on a comparison of mammalian Interleukin-1 genes (right).
-In the gene tree, both alpha and beta copies can be seen, which are probably the result of gene duplications (see {numref}`gene_duplication_speciation_alt`). Occurrences of 'Human' in the gene tree are indicated with green boxes. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`IL_tree_alt_2024`. Made using imagery from: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`DBCLS_2021`.
+In the gene tree, both alpha and beta copies can be seen, which are probably the result of gene duplications (see {numref}`gene_duplication_speciation_alt`).
+Occurrences of 'Human' in the gene tree are indicated with green boxes.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`IL_tree_alt_2024`.
+Made using imagery from: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`DBCLS_2021`.
 :::
 
 The tree in {numref}`IL_reconciled_alt` is a so-called _reconciled tree_, which has been inferred as an _extended tree_ that would be necessary to assume in order to explain the position and distribution of all IL sequence types in the gene tree.
 Apart from four gene duplications (marked δ{sub}`1`, δ{sub}`2`, δ{sub}`3` and δ{sub}`4`), several _gene losses_ (indicated with light grey branches) too would need to be assumed to explain the pattern in the gene tree in {numref}`IL_tree_alt`.
+
+%:::{figure} images/Week3/IL-reconciled.png
+%:alt: A reconciled tree of the species tree and gene tree of mammalian Interleukin-1 genes.
+%:width: 100%
+%:name: IL_reconciled
+%
+%Reconciled tree for the mammalian interleukin-1 gene tree shown in {numref}`IL_tree_alt`.
+%Gene losses are indicated in light grey. Of the four duplications required, three are supported by the presence of multiple copies of IL in the same mammal species, and one (δ{sub}`3`) is required to explain the incongruence between IL-1 and mammalian phylogeny. Credits: {cite}`phylogenetic_approach_1998`.
+%:::
+%#% Unable to use figure IL_reconciled due to copyright.
 
 :::{figure} images/Week3/IL-reconciled_alt.svg
 :alt: A reconciled tree of the species tree and gene tree of mammalian Interleukin-1 genes.
@@ -312,17 +341,7 @@ Of the four duplications required, three are supported by the presence of multip
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`IL_tree_reconciled_2024`.
 :::
 
-%#%:::{figure} images/Week3/IL-reconciled.png
-%#%:alt: A reconciled tree of the species tree and gene tree of mammalian Interleukin-1 genes.
-%#%:width: 100%
-%#%:name: IL_reconciled
-%#%
-%#%Reconciled tree for the mammalian interleukin-1 gene tree shown in {numref}`IL_tree_alt`.
-%#%Gene losses are indicated in light grey. Of the four duplications required, three are supported by the presence of multiple copies of IL in the same mammal species, and one (δ{sub}`3`) is required to explain the incongruence between IL-1 and mammalian phylogeny. Credits: {cite}`phylogenetic_approach_1998`.
-%#%:::
-%#% Unable to use figure IL_reconciled due to copyright.
-
-:::{admonition} Box 1: Species tree estimation analysis.
+:::{admonition} Box 3.1: Species tree estimation analysis.
 :class: tip
 
 ```{figure} images/Week3/embedded-tree.png
@@ -346,7 +365,7 @@ Such analysis is beyond the scope of this course, but it is of course important 
 
 ---
 
-(nodalsupportthebootstrap)=
+(Week3_bootstrap)=
 
 ### Nodal support in phylogenetic trees: the bootstrap
 
@@ -360,17 +379,17 @@ We 'only' have our phylogenetic trees as estimates of the _true phylogeny_.
 In order to measure support for the nodes in our phylogenetic tree, rather than producing several replicates of our MSA (which will most likely all be identical), we can draw random samples from the MSA and use these _pseudo-replicate_ data sets to build trees ({numref}`bootstrap_resampling_alt`).
 Repeating this process many times (hundreds or thousands) and summarizing the variation among the trees thus reconstructed, provides insight in the structure of our data and how it supports the nodes in a tree.
 It actually measures the sampling _variance about the estimate_ of the phylogeny {numref}`bootstrap_resampling_alt`B.
-This process is called _bootstrap analysis_ and will be further discussed in [Maximum likelihood tree building](MLtreebuilding), after we have covered the _characters_ underlying our trees in the next section.
+This process is called _bootstrap analysis_ and will be further discussed in [Maximum likelihood tree building](Week3_ML), after we have covered the _characters_ underlying our trees in the next section.
 
-%#%:::{figure} images/Week3/bootstrap-resampling.png
-%#%:alt: Comparison between an unlimited and limited data bootstrap resampling analysis approach.
-%#%:width: 100%
-%#%:name: bootstrap_resampling
-%#%
-%#%Bootstrap resampling analysis in phylogeny reconstruction.
-%#%In case of unlimited data (A), not realistic, a summary of sample-based trees yields sampling variance about the **true phylogeny**.
-%#%In case of limited data (B), realistic, only pseudo-samples are available, that summarise sampling variance about the **estimate of true phylogeny**.
-%#%:::
+%:::{figure} images/Week3/bootstrap-resampling.png
+%:alt: Comparison between an unlimited and limited data bootstrap resampling analysis approach.
+%:width: 100%
+%:name: bootstrap_resampling
+%
+%Bootstrap resampling analysis in phylogeny reconstruction.
+%In case of unlimited data (A), not realistic, a summary of sample-based trees yields sampling variance about the **true phylogeny**.
+%In case of limited data (B), realistic, only pseudo-samples are available, that summarise sampling variance about the **estimate of true phylogeny**.
+%:::
 %#% Unable to use figure bootstrap_resampling due to copyright.
 
 :::{figure} images/Week3/bootstrap-resampling_alt.svg
@@ -386,13 +405,14 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 
 ---
 
-(charactersandtrees)=
+(Week3_characters_trees)=
 
 ## Characters & trees
 
 As outlined above, phylogenetic trees are not directly observed but _inferred_, and represent hypotheses of evolutionary relationship, grouping individuals on the basis of shared history.
 The data used for comparison are the homologous sites among a set of sequences (amino acid or nucleotide) that have been aligned in an MSA in which substitutions are made visible.
-_Homologous_ here means that there are corresponding positions in a gene sequence that are due to common ancestry. So, for instance, position 423 in a gene sequence from one species is homologous with position 423 in that of another species, because both species shared a recent common ancestor and we assume the genes to be orthologs.
+_Homologous_ here means that there are corresponding positions in a gene sequence that are due to common ancestry.
+So, for instance, position 423 in a gene sequence from one species is homologous with position 423 in that of another species, because both species shared a recent common ancestor and we assume the genes to be orthologs.
 Each such position is considered a character with states that are efficiently visualized in an MSA as _substitutions_ ({numref}`MSA_alt`A).
 All nucleotide or amino acid substitutions in the MSA, both unique ones (occurring in only a single individual or sequence) and shared ones (occurring in at least two sequences), are used to build the phylogenetic tree.
 Invariant characters however, showing no substitutions, are not expected to contribute to the tree building process as they do not contain comparative signal.
@@ -421,11 +441,11 @@ After all, synapomorphies are relative (not absolute) entities: only in the cont
 For instance, when studying a gene family in which duplications have occurred during the evolution of its lineages, many taxa should be included in the MSA in order to capture the duplication events.
 Only adding more characters may amplify errors or artefacts caused by taxic under-sampling.
 This can lead to incorrectly inferred long branches with seemingly high support for their position and nodes.
-This phenomenon is referred to as long-branch attraction and is discussed further in [Estimating sequence divergence](estimatingsequencedivergence).
+This phenomenon is referred to as long-branch attraction and is discussed further in [Estimating sequence divergence](Week3_estimating_sequence_divergence).
 
 ---
 
-(rootingandclades)=
+(Week3_rooting_clades)=
 
 ### Rooting & clades
 
@@ -439,15 +459,15 @@ Clades are indeed usually nested into each other, i.e., a clade is a subset of a
 Apart from being nested, clades can also be each other's _sisters_, which means they share an exclusive most recent common ancestor (MRCA) with no other clades included ({numref}`nested_clades_alt`).
 Such _sister groups_ are highly useful in, for instance, evolutionary and comparative studies, as they represent lineages of exact equal age.
 
-%#%:::{figure} images/Week3/nested-clades.png
-%#%:alt: A depiction of a rooted nested tree and nested and sister clades with MRCA.
-%#%:width: 100%
-%#%:name: nested_clades
-%#%
-%#%Nested clades and sister clades.
-%#%Left, the same rooted tree as in {numref}`rooted_trees`, now with nested clades indicated by orange shapes: the small orange clade is nested in the lager orange one; it is also a sister clade of the green clade; as are the blue and large orange shapes. Credits: modified from {cite}`bioinformatics_2007`.
-%#%Right, nested and sister clades with LCA (last common ancestor = MRCA) indicated. Credits: modified from {cite}`nested_clades_2014`.
-%#%:::
+%:::{figure} images/Week3/nested-clades.png
+%:alt: A depiction of a rooted nested tree and nested and sister clades with MRCA.
+%:width: 100%
+%:name: nested_clades
+%
+%Nested clades and sister clades.
+%Left, the same rooted tree as in {numref}`rooted_trees`, now with nested clades indicated by orange shapes: the small orange clade is nested in the lager orange one; it is also a sister clade of the green clade; as are the blue and large orange shapes. Credits: modified from {cite}`bioinformatics_2007`.
+%Right, nested and sister clades with LCA (last common ancestor = MRCA) indicated. Credits: modified from {cite}`nested_clades_2014`.
+%:::
 %#% Unable to use figure nested_clades due to copyright.
 
 :::{figure} images/Week3/nested-clades_alt.svg
@@ -479,20 +499,20 @@ Thus, a new, internally placed, brown bird is inferred as the MRCA, to which the
 This however makes the brown birds paraphyletic with regards to the white birds, because not all descendants from the brown MRCA are brown, some are white.
 The white birds themselves are now monophyletic.
 
-%#%:::{figure} images/Week3/rooted-trees.jpg
-%#%:alt: Unrooted and rooted tree depictions.
-%#%:width: 100%
-%#%:name: rooted_trees
-%#%
-%#%Rooting phylogenetic trees.
-%#%(Left) Unrooted tree depicting phylogenetic relationships among a set of yellow and brown bird species; external nodes represent the extant (living, observed) species, each with their morphological synapo- or autapomorphies, the internal nodes represent inferred (unobserved) ancestors.
-%#%The tree is fully resolved, as each internal node is connected to three branches.
-%#%Looking at the brown and yellow birds at adjacent internal nodes, it is not clear in what direction evolution proceeded and whether brown yielded yellow or rather the other way round.
-%#%This becomes possible upon rooting the tree, usually based on comparison with an external reference species.
-%#%(Right) Rooted tree; external evidence (not shown) was apparently convincing in placing the root between the yellow and brown birds.
-%#%Thus, a new, internally-placed, brown bird is inferred as the MRCA, making the brown birds paraphyletic with regards to the yellow birds, which are now monophyletic.
-%#%The grey arrows indicate the time lines, from the brown bird ("root") which is now the MRCA of the entire tree, to the tips where observed species are located. Credits: {cite}`bioinformatics_2007`
-%#%:::
+%:::{figure} images/Week3/rooted-trees.jpg
+%:alt: Unrooted and rooted tree depictions.
+%:width: 100%
+%:name: rooted_trees
+%
+%Rooting phylogenetic trees.
+%(Left) Unrooted tree depicting phylogenetic relationships among a set of yellow and brown bird species; external nodes represent the extant (living, observed) species, each with their morphological synapo- or autapomorphies, the internal nodes represent inferred (unobserved) ancestors.
+%The tree is fully resolved, as each internal node is connected to three branches.
+%Looking at the brown and yellow birds at adjacent internal nodes, it is not clear in what direction evolution proceeded and whether brown yielded yellow or rather the other way round.
+%This becomes possible upon rooting the tree, usually based on comparison with an external reference species.
+%(Right) Rooted tree; external evidence (not shown) was apparently convincing in placing the root between the yellow and brown birds.
+%Thus, a new, internally-placed, brown bird is inferred as the MRCA, making the brown birds paraphyletic with regards to the yellow birds, which are now monophyletic.
+%The grey arrows indicate the time lines, from the brown bird ("root") which is now the MRCA of the entire tree, to the tips where observed species are located. Credits: {cite}`bioinformatics_2007`
+%:::
 %#% Unable to use figure nested_clades due to copyright.
 
 :::{figure} images/Week3/rooted-trees_alt.svg
@@ -518,15 +538,15 @@ This indicates that care should be taken in selecting and assigning a suitable o
 In that case, one usually considers a copy of the gene of interest with sufficient similarity to be considered homologous, in a far-related evolutionary lineage (such as _Amborella_, for angiosperm plants) as a suitable outgroup for rooting that gene tree.
 {numref}`unrooted_tree` shows an example of an unrooted tree with additive branch lengths.
 
-%#%:::{figure} images/Week3/hcgob.png
-%#%:alt: A properly rooted tree and an unrooted version of the same tree, with the proper root indicated.
-%#%:width: 60%
-%#%:name: hcgob
-%#%
-%#%Rooting phylogenetic trees.
-%#%With human (H), chimp \(C), gorilla (G), orang-utan (O) and gibbon (B) indicated, the rooted tree (top) represents the correct tree topology based on external evidence.
-%#%The position of this root is indicated, both in the rooted and unrooted tree. Credits: {cite}`phylogenetic_approach_1998`.
-%#%:::
+%:::{figure} images/Week3/hcgob.png
+%:alt: A properly rooted tree and an unrooted version of the same tree, with the proper root indicated.
+%:width: 60%
+%:name: hcgob
+%
+%Rooting phylogenetic trees.
+%With human (H), chimp \(C), gorilla (G), orang-utan (O) and gibbon (B) indicated, the rooted tree (top) represents the correct tree topology based on external evidence.
+%The position of this root is indicated, both in the rooted and unrooted tree. Credits: {cite}`phylogenetic_approach_1998`.
+%:::
 %#% Unable to use figure hcgob due to copyright.
 
 :::{figure} images/Week3/hcgob_alt.svg
@@ -536,19 +556,20 @@ In that case, one usually considers a copy of the gene of interest with sufficie
 
 Rooting phylogenetic trees.
 With human (H), chimp \(C), gorilla (G), orang-utan (O) and gibbon (B) indicated, the rooted tree (top) represents the correct tree topology based on external evidence.
-The position of this root is indicated, both in the rooted and unrooted tree. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`hcgob_alt_2024`.
+The position of this root is indicated, both in the rooted and unrooted tree.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`hcgob_alt_2024`.
 :::
 
-%#%:::{figure} images/Week3/hcgob-roots.png
-%#%:alt: Seven rooted trees derived from placing the root on a different branch of the unrooted tree.
-%#%:width: 100%
-%#%:name: hcgob_roots
-%#%
-%#%Rooting phylogenetic trees.
-%#%The seven rooted trees that can be derived from the unrooted tree for five sequences in {numref}`hcgob`.
-%#%Each rooted tree 1-7 corresponds to placing the root on a different branch of the unrooted tree.
-%#%Terminal labels as for {numref}`hcgob`; the orange shape indicates monophyly of human, chimp, and gorilla, when present. Credits: modified from {cite}`phylogenetic_approach_1998`.
-%#%:::
+%:::{figure} images/Week3/hcgob-roots.png
+%:alt: Seven rooted trees derived from placing the root on a different branch of the unrooted tree.
+%:width: 100%
+%:name: hcgob_roots
+%
+%Rooting phylogenetic trees.
+%The seven rooted trees that can be derived from the unrooted tree for five sequences in {numref}`hcgob`.
+%Each rooted tree 1-7 corresponds to placing the root on a different branch of the unrooted tree.
+%Terminal labels as for {numref}`hcgob`; the orange shape indicates monophyly of human, chimp, and gorilla, when present. Credits: modified from {cite}`phylogenetic_approach_1998`.
+%:::
 %#% Unable to use figure hcgob_roots due to copyright.
 
 :::{figure} images/Week3/hcgob-roots_alt.svg
@@ -559,18 +580,19 @@ The position of this root is indicated, both in the rooted and unrooted tree. Cr
 Rooting phylogenetic trees.
 The seven rooted trees that can be derived from the unrooted tree for five sequences in {numref}`hcgob_alt`.
 Each rooted tree 1-7 corresponds to placing the root on a different branch of the unrooted tree.
-Terminal labels as for {numref}`hcgob_alt`; the orange shape indicates monophyly of human, chimp, and gorilla, when present. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`hcgob_roots_alt_2024`.
+Terminal labels as for {numref}`hcgob_alt`; the orange shape indicates monophyly of human, chimp, and gorilla, when present.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`hcgob_roots_alt_2024`.
 :::
 
-%#%:::{figure} images/Week3/alphaproteobacteria.png
-%#%:alt: An unrooted tree of a group of alphaproteobacteria.
-%#%:width: 100%
-%#%:name: alphaproteobacteria
-%#%
-%#%An example of an unrooted tree (of a group of alphaproteobacteria).
-%#%color marks indicate groups that may be clades, depending on how the tree may become rooted.
-%#%The scale bar indicates substitutions per site. Credits: {cite}`bioinformatics_2007`
-%#%:::
+%:::{figure} images/Week3/alphaproteobacteria.png
+%:alt: An unrooted tree of a group of alphaproteobacteria.
+%:width: 100%
+%:name: alphaproteobacteria
+%
+%An example of an unrooted tree (of a group of alphaproteobacteria).
+%color marks indicate groups that may be clades, depending on how the tree may become rooted.
+%The scale bar indicates substitutions per site. Credits: {cite}`bioinformatics_2007`
+%:::
 %#% Unable to use figure alphaproteobacteria due to copyright.
 
 :::{figure} images/Week3/unrooted-tree.svg
@@ -587,13 +609,13 @@ Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`un
 
 ### Newick tree notation
 
-Phylogenetic trees are graphical structures ('graphs') that are the outcome of phylogenetic reconstruction of sometimes hundreds or thousands of sequences, and especially when using character-based tree search (see below [Main approaches to tree building](mainapproachestotreebuilding)) there can be enormous amounts of 'best trees' that all will have to be taken into account, for instance by calculating a consensus tree (see [Tree space and heuristic search methods](treespaceandheuristicsearchmethods)).
+Phylogenetic trees are graphical structures ('graphs') that are the outcome of phylogenetic reconstruction of sometimes hundreds or thousands of sequences, and especially when using character-based tree search (see below [Main approaches to tree building](Week3_tree_building)) there can be enormous amounts of 'best trees' that all will have to be taken into account, for instance by calculating a consensus tree (see [Tree space and heuristic search methods](Week3_tree_space)).
 In any case, handling large numbers of trees in phylogenetical and bioinformatic analytical pipelines requires the tree graphs to be in a format that can be easily read and produced, as a linear statement.
 For this, the Newick notation is commonly used in which brackets describe the structure of the tree.
 For instance, the rooted tree in {numref}`hcgob_alt` above would look like `((((H,C)G)O)B)` in Newick notation.
-In case the tree has branch lengths, they can be indicated in this notation as well (see also the Newick tree Activity suggested in the Reading guide).
+In case the tree has branch lengths, they can be indicated in this notation as well (see also the Newick tree Activity suggested on Brightspace).
 
-:::{admonition} Box 2: Newick notation tree reconstruction.
+:::{admonition} Box 3.2: Newick notation tree reconstruction.
 :class: tip
 
 ```
@@ -609,12 +631,13 @@ The newick notation above was used to reconstruct the tree seen in {numref}`newi
 :name: newick_tree
 
 Newick notation of the unrooted additive tree (with bootstrap values on the nodes) shown. Note that branch lengths are in 10 decimals.
+Credits: [CC BY-NC 4.0] Created using [MEGA](https://www.megasoftware.net/) {cite}`mega_2021`.
 ```
 :::
 
 ---
 
-(mainapproachestotreebuilding)=
+(Week3_tree_building)=
 
 ## Main approaches to tree building
 
@@ -646,11 +669,11 @@ There can also be multiple equally parsimonious trees as a result, which leads t
 
 ---
 
-(treespaceandheuristicsearchmethods)=
+(Week3_tree_space)=
 
 #### Tree space and heuristic search methods
 
-The number of possible bifurcating trees increases astronomically with increasing numbers of included taxa (terminals or sequences in your MSA) and cannot be calculated analytically (see [Box 3](w3box3_bifurcating)).
+The number of possible bifurcating trees increases astronomically with increasing numbers of included taxa (terminals or sequences in your MSA) and cannot be calculated analytically (see [Box 3.3](Week3_bifurcating)).
 For instance, the total number of unrooted bifurcating trees for 10 and for 30 sequences is $2,027,025$ and $4.95 × 10^{38}$ respectively.
 In fact, it quickly becomes practically impossible to compare all possible trees and find the _exact_ best one.
 To overcome this problem, random trees are generated that serve as starting points for tree search in remote and differently placed parts of the tree space.
@@ -658,23 +681,23 @@ Different kinds of branch-swapping with local re-arrangements can be used to imp
 Such tree search methods are called _heuristic_ (rather than exact), yielding best possible estimates, though not necessarily guaranteed best solutions.
 Answers represent estimates, and whether or not the 'best tree' is actually found remains an open question.
 
-(w3box3_bifurcating)=
+(Week3_bifurcating)=
 
-:::{admonition} Box 3: Given a set amount of terminals (n), how many bifurcating trees are possible?
+:::{admonition} Box 3.3: Given a set amount of terminals (n), how many bifurcating trees are possible?
 :class: tip
 
 This number increases very rapidly with increasing _n_.
 Note: the number of unrooted ('unordered') trees follows that of rooted trees.
 
-%#%```{figure} images/Week3/bifurcating.png
-%#%:alt: A calculation of how many bifurcating trees are possible, given a number of unrooted and rooted trees.
-%#%:width: 100%
-%#%:name: bifurcating
-%#%
-%#%Having to assess such large numbers of trees falls under the category of 'NP complete' problems which cannot be solved in a lifetime even with unlimited resources.
-%#%
-%#%(Introduction to Bioinformatics, Helsinki CS 2006)
-%#%```
+%```{figure} images/Week3/bifurcating.png
+%:alt: A calculation of how many bifurcating trees are possible, given a number of unrooted and rooted trees.
+%:width: 100%
+%:name: bifurcating
+%
+%Having to assess such large numbers of trees falls under the category of 'NP complete' problems which cannot be solved in a lifetime even with unlimited resources.
+%
+%(Introduction to Bioinformatics, Helsinki CS 2006)
+%```
 %#% Unable to use figure bifurcating due to copyright.
 
 ```{figure} images/Week3/bifurcating_alt.svg
@@ -687,7 +710,7 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 ```
 :::
 
-These _character-based_ tree building methods (as opposed to [_distance-based_](distancebased) methods, below) are attractive in that trees are made directly from sequence characters, enabling detailed analysis of what characters contribute where in the tree, or reconstructing what ancestral characters (and hence sequences) would have looked like.
+These _character-based_ tree building methods (as opposed to [_distance-based_](Week3_distance_based) methods, below) are attractive in that trees are made directly from sequence characters, enabling detailed analysis of what characters contribute where in the tree, or reconstructing what ancestral characters (and hence sequences) would have looked like.
 This is a powerful feature of character-based tree building methods, which have become dominant in recent years.
 
 ---
@@ -710,14 +733,14 @@ Clade ABC is present in all trees and gets 100%.
 Clade ABCD is present in Tree 1 and Tree 2 and gets 67%.
 DE occurs only once and gets 33%, which is below the majority of 50% and therefore does not occur in the 50% majority-rule consensus tree.
 
-%#%:::{figure} images/Week3/consensus.png
-%#%:alt: Three primary trees with their strict and majority-rule consensus trees.
-%#%:width: 80%
-%#%:name: consensus
-%#%
-%#%Consensus trees.
-%#%Three primary trees are shown on top, their strict and 50% majority-rule consensus trees on the bottom. Credits: {cite}`phylogenetic_approach_1998`.
-%#%:::
+%:::{figure} images/Week3/consensus.png
+%:alt: Three primary trees with their strict and majority-rule consensus trees.
+%:width: 80%
+%:name: consensus
+%
+%Consensus trees.
+%Three primary trees are shown on top, their strict and 50% majority-rule consensus trees on the bottom. Credits: {cite}`phylogenetic_approach_1998`.
+%:::
 %#% Unable to use figure consensus due to copyright.
 
 :::{figure} images/Week3/consensus_alt.svg
@@ -732,7 +755,7 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 
 ---
 
-(parsimonyanalysis)=
+(Week3_parsimony_analysis)=
 
 #### Parsimony analysis
 
@@ -742,15 +765,17 @@ Some characters may have changed only in one of the sequences (_autapomorphy_).
 When all characters in the MSA have been evaluated, the overall score of the fit of the data with that candidate tree is calculated by adding up the changes across all characters (as in {numref}`parsimony`).
 Then, another candidate tree is assumed and the process is carried out again.
 More and more trees are compared this way until either a single best or a group of _equally most parsimonious_ reconstructions remains.
-Given the vastness of tree spaces for even moderate numbers of terminals (see [Box 3](w3box3_bifurcating)) this process may take some time to complete.
-Usually only heuristic search methods (see [Tree space and heuristic search methods](treespaceandheuristicsearchmethods)) are applied in case of >15 terminals.
+Given the vastness of tree spaces for even moderate numbers of terminals (see [Box 3.3](Week3_bifurcating)) this process may take some time to complete.
+Usually only heuristic search methods (see [Tree space and heuristic search methods](Week3_tree_space)) are applied in case of >15 terminals.
 
 :::{figure} images/Week3/parsimony.svg
 :alt: Parsimony analysis, in which character state changes in the MSA are indicated on the resulting trees.
 :width: 100%
 :name: parsimony
 
-Parsimony analysis (same data and trees as in {numref}`MSA_alt`). Character state changes for all characters in the MSA shown left are indicated on the trees and exemplar syn- and autapomorphies are indicated. Note that character 6 is invariant and therefore does not contribute to any tree. Also note that each substitution occurring in the MSA results in one extra step on the tree.
+Parsimony analysis (same data and trees as in {numref}`MSA_alt`). Character state changes for all characters in the MSA shown left are indicated on the trees and exemplar syn- and autapomorphies are indicated.
+Note that character 6 is invariant and therefore does not contribute to any tree. Also note that each substitution occurring in the MSA results in one extra step on the tree.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`parsimony_2024`.
 :::
 
 Each character change can be considered an _ad hoc_ assumption, each of them associated with their type I error, i.e., the chance of having a _false positive_.
@@ -777,17 +802,17 @@ Maximum parsimony methods are included in the software ([MEGA11](https://www.meg
 
 Two other important character-based methods for tree building exist: _maximum likelihood_ (ML) analysis and _Bayesian Inference_ (BI).
 Both differ from parsimony analysis in that they do not merely count differences (as in parsimony analysis) but are based on explicit models of character evolution and operate in a probability framework.
-ML will be discussed in section [Maximum likelihood tree building](MLtreebuilding) below; BI is beyond the scope of this course and will therefore not be treated here.
+ML will be discussed in section [Maximum likelihood tree building](Week3_ML) below; BI is beyond the scope of this course and will therefore not be treated here.
 
 ---
 
-(distancebased)=
+(Week3_distance_based)=
 
 ### Distance-based
 
 The other main approach to tree building is _clustering_, which is _distance_-based, and is widely used in several applications, for instance in visualising BLAST searches as Neighbor Joining trees.
 _Distance-based_ means that instead of comparing one character at a time across all sequences in the MSA, only pairwise comparisons of entire sequences are made (i.e., all characters are compared at once), for all possible sequence pairs in the MSA ({numref}`character_distance_alt`) typically yielding a _triangular_ all-to-all distance matrix.
-Pairwise comparisons yield pairwise distances, which can be ultrametric or Euclidean (see [Box 4](w3box4_distances)).
+Pairwise comparisons yield pairwise distances, which can be ultrametric or Euclidean (see [Box 3.4](Week3_distances)).
 Keep in mind that the relation between Distance ($D$) and Similarity ($S$) is:
 
 $$
@@ -805,14 +830,14 @@ In this case the distance values perfectly fit the resulting distance tree.
 
 Note that both trees in {numref}`characters` and {numref}`character_distance_alt` have the same topology, but the parsimony tree contains more information: in addition to the branching pattern and branch lengths it also contains information on what character changed where on the tree.
 
-%#%:::{figure} images/Week3/character-distance_alt.png
-%#%:alt: Comparison between the parsimony and distance approaches in reconstructing a phylogenetic tree of sequences that accumulated substitutions in a clock-like manner. 
-%#%:width: 100%
-%#%:name: character_distance
-%#%
-%#%Character-based versus distance-based.
-%#%The same data set (MSA) of 7 characters observed over 4 terminals (sequenced) analysed using a character-based approach (left, ‘parsimony’) and, using a distance-based approach (right). Credits: {cite}`phylogenetic_approach_1998`.
-%#%:::
+%:::{figure} images/Week3/character-distance_alt.png
+%:alt: Comparison between the parsimony and distance approaches in reconstructing a phylogenetic tree of sequences that accumulated substitutions in a clock-like manner. 
+%:width: 100%
+%:name: character_distance
+%
+%Character-based versus distance-based.
+%The same data set (MSA) of 7 characters observed over 4 terminals (sequenced) analysed using a character-based approach (left, ‘parsimony’) and, using a distance-based approach (right). Credits: {cite}`phylogenetic_approach_1998`.
+%:::
 %#% Unable to use figure character_distance due to copyright.
 
 :::{figure} images/Week3/character-distance_alt.svg
@@ -825,22 +850,22 @@ The same data set (MSA) of 7 characters observed over 4 terminals (sequences) an
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`character_distance_alt_2024`.
 :::
 
-If the sequences would have accumulated substitutions in a clock-like manner (i.e., like radio-active decay) the resulting pairwise distances may even be ultrametric [(see Box 4)](w3box4_distances).
+If the sequences would have accumulated substitutions in a clock-like manner (i.e., like radio-active decay) the resulting pairwise distances may even be ultrametric [(see Box 3.4)](Week3_distances).
 This would mean that the distances in the triangular pairwise distance matrix are identical with the distances as measured over the resulting distance tree ({numref}`character_distance_alt`).
 However, such clean data is hardly ever found, and the distances measured over the tree may differ from the observed distances in the pairwise matrix.
 This is illustrated in {numref}`ultrametric_distance_alt` in which two trees are depicted: an ultrametric tree (A) and an additive tree (B) containing unequal sister branch lengths (to a and b).
 In the additive distance matrix (matrix B), due to the difference in length towards a and b, the most similar sequences (i.e., b and c) may actually not be the most closely related (i.e., a and b).
 
-%#%:::{figure} images/Week3/ultrametric-distance.png
-%#%:alt: Comparison between ultrametric distance matrix and tree to additive distance matrix and tree.
-%#%:width: 100%
-%#%:name: ultrametric_distance
-%#%
-%#%Ultrametric distance matrix between four sequences a-d and the corresponding ultrametric tree (left).
-%#%Additive distance matrix between four sequences a-d and the corresponding additive tree (right).
-%#%Values in the distance matrix correspond to the sum of the branch lengths along the path between the two sequences on the tree, therefore this data is metric.
-%#%Note that for the additive matrix the most similar sequences (b and c) are not the most closely related, whereas in the ultrametric matrix a and b are most similar and closest-related. Credits: {cite}`phylogenetic_approach_1998`.
-%#%:::
+%:::{figure} images/Week3/ultrametric-distance.png
+%:alt: Comparison between ultrametric distance matrix and tree to additive distance matrix and tree.
+%:width: 100%
+%:name: ultrametric_distance
+%
+%Ultrametric distance matrix between four sequences a-d and the corresponding ultrametric tree (left).
+%Additive distance matrix between four sequences a-d and the corresponding additive tree (right).
+%Values in the distance matrix correspond to the sum of the branch lengths along the path between the two sequences on the tree, therefore this data is metric.
+%Note that for the additive matrix the most similar sequences (b and c) are not the most closely related, whereas in the ultrametric matrix a and b are most similar and closest-related. Credits: {cite}`phylogenetic_approach_1998`.
+%:::
 %#% Unable to use figure ultrametric_distance due to copyright.
 
 :::{figure} images/Week3/ultrametric-distance_alt.svg
@@ -864,9 +889,9 @@ Clustering methods assign individuals to clusters in such a way that individuals
 There is no explicit score or optimality criterion, only the minimisation of overall distance across all sequences.
 Clustering usually produces one tree, no alternative 'equally good' trees are shown; this is due to the clustering algorithm which is designed to produce a single tree.
 
-(w3box4_distances)=
+(Week3_distances)=
 
-:::{admonition} Box 4: Distance measures and their qualities
+:::{admonition} Box 3.4: Distance measures and their qualities
 :class: tip
 
 ```{figure} images/Week3/distances.png
@@ -898,7 +923,7 @@ In fact, the ultrametric tree ({numref}`ultrametric_distance_alt`) perfectly des
 
 ---
 
-(neighborjoining)=
+(Week3_neighbor_joining)=
 
 #### Neighbor Joining
 
@@ -911,15 +936,15 @@ Neighbor Joining produces unrooted trees and therefore, if needed, outgroup root
 There is no molecular clock assumption, which allows differences in branch lengths between neighbors (sisters) to be reconstructed.
 NJ is implemented in [MEGA11](https://www.megasoftware.net/){cite}`mega_2021`) and used in the practical.
 
-%#% :::{figure} images/Week3/neighbor-joining-kimura.png
-%#% :alt: Stepwise process involved in the neighbor joining computational process.
-%#% :width: 100%
-%#% :name: neighbor-joining-kimura
-%#% 
-%#% Neighbor Joining.
-%#% An illustration of the computational process.
-%#% Tree length S is the sum of all branch lengths, and is minimized (F) by iteratively joining neighbors, starting from the star tree (A) (From Kimura 2004)
-%#% :::
+% :::{figure} images/Week3/neighbor-joining-kimura.png
+% :alt: Stepwise process involved in the neighbor joining computational process.
+% :width: 100%
+% :name: neighbor-joining-kimura
+% 
+% Neighbor Joining.
+% An illustration of the computational process.
+% Tree length S is the sum of all branch lengths, and is minimized (F) by iteratively joining neighbors, starting from the star tree (A) (From Kimura 2004)
+% :::
 %#% Unable to use figure neighbor-joining-kimura due to copyright
 
 :::{figure} images/Week3/neighbor-joining-process_alt.svg
@@ -946,12 +971,13 @@ If these are found, it could mean that the data (the synapomorphies accumulated 
 
 Neighbor Joining.
 An unrooted NJ tree based on Myosin amino acid sequences.
-The scale bar indicates 5% sequence divergence. Credits: [CC BY 1.0](https://creativecommons.org/licenses/by/1.0/) {cite}`neighbor_joining_aa_2000`.
+The scale bar indicates 5% sequence divergence.
+Credits: [CC BY 1.0](https://creativecommons.org/licenses/by/1.0/) {cite}`neighbor_joining_aa_2000`.
 :::
 
 ---
 
-(estimatingsequencedivergence)=
+(Week3_estimating_sequence_divergence)=
 
 ## Estimating sequence divergence
 
@@ -975,7 +1001,8 @@ In this way several substitutions may go unnoticed, and a mere _p_-difference wi
 
 Substitution models, all based on the Jukes-Cantor (JC) formula given below, correct divergence estimates for unobserved events.
 The JC formula is based on calculation of the chance of having a substitution for a particular site plus the chance of it not changing into any of the three other nucleotides for that site.
-In the formula, $p$ stands for the observed proportion of differences (i.e., the _p_-difference), and $d$ for the corrected divergence measure. When all sites differ (i.e., $p = 1$), $d$ reaches 0.75 in the limit, i.e., the corrected $d$ cannot exceed 75%.
+In the formula, $p$ stands for the observed proportion of differences (i.e., the _p_-difference), and $d$ for the corrected divergence measure.
+When all sites differ (i.e., $p = 1$), $d$ reaches 0.75 in the limit, i.e., the corrected $d$ cannot exceed 75%.
 
 $$
 d = -\frac{3}{4} \log{\left(1 - \frac{4}{3}p\right)}
@@ -987,12 +1014,12 @@ In this case the relative rates for all six substitution types are assumed to be
 Another assumption in this model is that the base composition across the MSA is equal, assuming a 25% probability of finding of each base at each position in each sequence.
 The JC model is considered a fairly simple, one parameter, model.
 
-%#%:::{figure} images/Week3/JC.png
-%#%:alt:
-%#%:align: center
-%#%:name: JC
-%#%The Jukes Cantor model (left), transitions (blue) and transversions (red) and how they accumulate differently during evolutionary time (right) (From Zvelebil & Baum 2008).
-%#%:::
+%:::{figure} images/Week3/JC.png
+%:alt:
+%:align: center
+%:name: JC
+%The Jukes Cantor model (left), transitions (blue) and transversions (red) and how they accumulate differently during evolutionary time (right) (From Zvelebil & Baum 2008).
+%:::
 %#% Unable to use figure JC due to copyright
 
 :::{figure} images/Week3/JC_alt.svg
@@ -1038,7 +1065,7 @@ For amino acid sequence comparisons, instead of estimating parameter values from
 
 ---
 
-(MLtreebuilding)=
+(Week3_ML)=
 
 ## Maximum likelihood tree building
 
@@ -1063,13 +1090,13 @@ Subsequently, a candidate tree is considered and the likelihood L{sub}`D` of obs
 Then, another tree is considered whilst the same best-fitting model remains selected, and its parameter values are estimated again.
 The likelihood L{sub}`D` of observing the data (your MSA) is calculated again and this time the likelihood may actually be better.
 More trees are evaluated, and more model parameter values are considered, all the time keeping track of L{sub}`D` until no further increase L{sub}`D` can be obtained.
-This is usually achieved by using the heuristic tree search approaches as outlined in [Tree space and heuristic search methods](treespaceandheuristicsearchmethods) and depending on the tree space, determined by the number of sequences in the MSA.
+This is usually achieved by using the heuristic tree search approaches as outlined in [Tree space and heuristic search methods](Week3_tree_space) and depending on the tree space, determined by the number of sequences in the MSA.
 The end result is the maximum likelihood estimate (MLE): the combination of a tree and model parameter values that maximizes the likelihood of the data.
 This tree, which may not be the exact best MLE (it is after all heuristics), is then usually referred to as the ML tree.
 
 Phylogenetic tree reconstruction based on MLE has become the dominant tree building approach over the past decade.
 It is an efficient method that can consider differences in substitution rates and patterns between the sequences in an MSA.
-This would mean that non-clocklike or biased (non-random) accumulation of substitutions would be modelled, and this would minimize possible artefacts in inferring the ML tree topology, for instance LBA (see [above](estimatingsequencedivergence)).
+This would mean that non-clocklike or biased (non-random) accumulation of substitutions would be modelled, and this would minimize possible artefacts in inferring the ML tree topology, for instance LBA (see [above](Week3_estimating_sequence_divergence)).
 
 The MLE pipeline for phylogenetic reconstruction is implemented in the software package [IQ-TREE](http://www.iqtree.org/) {cite}`iqtree_2020`, which includes I) model testing, II) ML tree search, and III) bootstrapping for both nucleotide and amino acid sequences.
 IQ-TREE will be demonstrated and used in this week's practical.
@@ -1082,7 +1109,7 @@ There, the substation models are applied to calculate 'corrected' pairwise seque
 ### Model-testing, ML tree search, Bootstrapping
 
 After an ML tree with branch lengths has been obtained, there is still no information on how nodes in the ML tree may differ in terms of support by the data (MSA).
-Therefore a bootstrap analysis is carried out, repeating the MLE process a number of times, based on pseudo-replicate data sets drawn from the MSA (see [Nodal support in phylogenetic trees: the bootstrap](nodalsupportthebootstrap)).
+Therefore a bootstrap analysis is carried out, repeating the MLE process a number of times, based on pseudo-replicate data sets drawn from the MSA (see [Nodal support in phylogenetic trees: the bootstrap](Week3_bootstrap)).
 After an ML tree is obtained for each pseudo-replicate data set, a 50% majority-rule consensus tree is calculated in order to see the group frequencies (the proportion of replicates in which each node is occurring).
 These frequencies are also referred to as _bootstrap values_.
 The idea is that the more synapomorphies a node has, the higher its bootstrap value will be.
@@ -1094,17 +1121,17 @@ Bootstrap values of 62% are usually obtained for MSAs containing one synapomorph
 That is indeed the trade-off: visualizing lots of nice but poorly supported resolution _versus_ only focusing on strong nodes.
 Usually, we want to see both.
 
-%#%:::{figure} images/Week3/bootstrap-collapse.jpg
-%#%:alt: ML tree with bootstrap values and the same ML tree with low support bootstrap values collapsed.
-%#%:width: 100%
-%#%:name: bootstrap_collapse
-%#%
-%#%Bootstrap analysis.
-%#%A) A maximum likelihood tree with bootstrap values indicated at nodes.
-%#%Note that not all nodes show a bootstrap value, which is probably because values <50% are ignored.
-%#%B) The same analysis, but this time all nodes with bootstrap values <50% collapsed.
-%#%Note the introduction of a polytomy containing four lineages resulting from collapsing weak nodes, and the change from additive tree to cladogram style in the collapsed tree. Credits: {cite}`bioinformatics_2007`.
-:::
+%:::{figure} images/Week3/bootstrap-collapse.jpg
+%:alt: ML tree with bootstrap values and the same ML tree with low support bootstrap values collapsed.
+%:width: 100%
+%:name: bootstrap_collapse
+%
+%Bootstrap analysis.
+%A) A maximum likelihood tree with bootstrap values indicated at nodes.
+%Note that not all nodes show a bootstrap value, which is probably because values <50% are ignored.
+%B) The same analysis, but this time all nodes with bootstrap values <50% collapsed.
+%Note the introduction of a polytomy containing four lineages resulting from collapsing weak nodes, and the change from additive tree to cladogram style in the collapsed tree. Credits: {cite}`bioinformatics_2007`.
+%:::
 %#% Unable to use figure bootstrap_collapse due to copyright.
 
 :::{figure} images/Week3/bootstrap-collapse_alt.svg
@@ -1158,8 +1185,10 @@ Bayesian Inference, in which probabilities for nodes are calculated, and differe
 
 ## Glossary
 This glossary contains the most important terms from this week.
+
 :::{admonition} Glossary
 :class: important
+
 ```{glossary}
 Apomorphy
   Derived character state
@@ -1228,8 +1257,8 @@ Transversion
   a pyrimidine ↔ purine substitution
 ```
 :::
-
 %PRACTICAL_SEPARATOR%
+
 ---
 
 ## Practical assignments
