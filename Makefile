@@ -10,7 +10,8 @@ _build/latex: *md
 	jupyter-book build --builder pdflatex --all .
 
 _build/html: *.md
+	python extract_answers.py
 	jupyter-book build --builder html --all .
 
 clean:
-	rm -r _build
+	rm -r _build _answers
