@@ -391,6 +391,8 @@ One straightfoward observation from a sequence search is that one query sequence
 
 The objective of performing multiple sequence alignment is to identify matching residues (DNA, RNA, or amino acids) across multiple sequences of potentially differing lengths. Similar to pairwise alignment, the result is called 'a multiple sequence alignment'. The resulting multiple sequence alignment can be thought of as a square matrix: rows represent the sequences that we started with, columns represent homologous residues across sequeces, and the entries are either residues or gaps **INSERT FIGURE REFERENCE HERE**.
 
+Various algorithms for creating multiple sequence alignments exist. Here we will go over two main categories: progressive alignment and iterative alignment.
+
 ## Motifs
 
 PSSM, logo

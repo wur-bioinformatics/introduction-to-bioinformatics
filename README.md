@@ -202,7 +202,7 @@ These are cross-references and use labels that can be attached to headers.
 The following syntax is used for the creation of header labels:
 
 ```none
-(label)=
+(Weekx_label)=
 
 # Header
 ```
@@ -210,13 +210,13 @@ The following syntax is used for the creation of header labels:
 And a label is cross-referenced to using:
 
 ```none
-[Any text](label)
+[Any text](Weekx_label)
 ```
 
 For example, when a cross-reference is to be made to a section about translation, you would add the following label above the header that contains information on translation:
 
 ```none
-(translation)=
+(Week1_translation)=
 
 # Translation
 
@@ -226,10 +226,10 @@ Information on translation.
 Which you can then reference to using:
 
 ```none
-For more information on translation, see the above section [Translation](translation).
+For more information on translation, see the above section [Translation](Week1_translation).
 ```
 
-This will produce a link on the word Translation that leads to the section label called translation.
+This will produce a link on the word Translation that leads to the section label called translation in week 1.
 
 For more information on referencing and cross-referencing, see the [Jupyter Book documentation](https://jupyterbook.org/en/stable/content/references.html#references-and-cross-references).
 
