@@ -12,7 +12,6 @@ Finally, make sure that you know the basics of primer design.
 
 During the practical you will learn how to make pairwise and multiple-sequence alignments, perform sequence searches and motif analyses, design primers, and discuss the results.
 
-
 ## Introduction
 
 %#%[TODO: There can be more biological examples in this section]
@@ -83,13 +82,14 @@ This feature is implemented in a webserver to visualize dotplots, [dotlet](https
 :name: dotweb
 
 A screenshot of [dotlet](https://dotlet.vital-it.ch/) with sequence `MRRPDFMDALQGFLSPLNPAHQLDFMDSLGNLRLEECRIM`.
+
 - (A) The two sliders to change the appearence of the plot: The top slider can adjust the sensitivity, moving it to the right, fewer similar regions are shown; moving it to the left, also regions with lower similarity appear. The bottom slider adjusts the color scheme and is less relevant compared to the top slider.
 - (B) The histogram indicates how many hits with a particular similarity are shown; thus the slider can be adjusted to the right tail of the histogram.
 - \(C) The two sliders that can adjust how the two sequences are positioned against each other.
 - (D) Serves a similar function to the two sliders of C but allows for arrow key navigation of the dotplot.
 - (E) Here you can select the window size of sequence comparison and the scoring matrix (window size is explained [below](Week2_blast_algorithm) and substitution matrices will also be explained [below](Week2_substitution_matrices).
 - Credits: {cite}`dotlet_2000`.
-:::
+  :::
 
 ## Pairwise alignment
 
@@ -387,7 +387,9 @@ Different BLAST types to compare different data types. Credits: [CC BY-NC 4.0](h
 
 ## Multiple sequence alignment
 
-Rens
+One straightfoward observation from a sequence search is that one query sequence often has multiple similar sequences ({numref}`blast_output`). This can lead to research questions on for example evolution (where do these sequences come from?), function (why are some sequences more similar to each other than to others?), or stucture (are all parts of these sequences equally similar/dissimilar?). To compare all of these sequences with a pairwise alignment strategy would quickly lead to a large number of comparisons and would be difficult to interpret. Instead, in cases where we want to compare 3 or more sequences with each other, we turn to **multiple sequence alignment**.
+
+The objective of performing multiple sequence alignment is to identify matching residues (DNA, RNA, or amino acids) across multiple sequences of potentially differing lengths. Similar to pairwise alignment, the result is called 'a multiple sequence alignment'. The resulting multiple sequence alignment can be thought of as a square matrix: rows represent the sequences that we started with, columns represent homologous residues across sequeces, and the entries are either residues or gaps **INSERT FIGURE REFERENCE HERE**.
 
 ## Motifs
 
@@ -408,20 +410,21 @@ Rens
 **OLD**
 
 This reading material was provided last year:
-* Alignment
- * pairwise alignment
- * scoring matrices
- * alignment score, example calculation
- * BLAST
- * HMMs (very short)
- * Needleman Wunsch and Smith Waterman (very short)
-* Dot plots
-* Scoring matrices
-* BLAST
-* MSA
-* Sequence motifs
-* HMMs
-* Primer design
+
+- Alignment
+- pairwise alignment
+- scoring matrices
+- alignment score, example calculation
+- BLAST
+- HMMs (very short)
+- Needleman Wunsch and Smith Waterman (very short)
+- Dot plots
+- Scoring matrices
+- BLAST
+- MSA
+- Sequence motifs
+- HMMs
+- Primer design
 
 ## Alignment
 
@@ -431,15 +434,16 @@ Sequence Comparisons and Sequence-Based Database Searches available from [here](
 All material of Chapter 3 is relevant for this course.
 Therefore, you are required to study the whole chapter.
 Unfortunately, the chapter contains some errors:
-* p. 36 first paragraph: "convergent evolution" and "divergent evolution" should be swapped.
-* p. 37 Fig 3.1: in the panel “Insertions and Deletion” W is matched with Q. There should not be a line between these 2 amino acids.
-* p. 38 Fig 3.2: There are many errors in the BLOSUM62 matrix, you can find the correct matrix in ({numref}`blosum62`). The scores with the correct matrix are 68 for the green alignment and 12 for the red alignment.
-* p. 42 “The evolutionary distances correspond to the length of the horizontal branches.” The word horizontal should be removed. All branches correspond to evolutionary distances.
 
+- p. 36 first paragraph: "convergent evolution" and "divergent evolution" should be swapped.
+- p. 37 Fig 3.1: in the panel “Insertions and Deletion” W is matched with Q. There should not be a line between these 2 amino acids.
+- p. 38 Fig 3.2: There are many errors in the BLOSUM62 matrix, you can find the correct matrix in ({numref}`blosum62`). The scores with the correct matrix are 68 for the green alignment and 12 for the red alignment.
+- p. 42 “The evolutionary distances correspond to the length of the horizontal branches.” The word horizontal should be removed. All branches correspond to evolutionary distances.
 
 After reading you should be able to answer for example the following questions:
-* What is the difference between local and global alignment
-* Given a pairwise alignment and the scoring parameters, calculate the alignment score and decide which alignment is better. For example, fill in the table in ({numref}`pairalgexa`).
+
+- What is the difference between local and global alignment
+- Given a pairwise alignment and the scoring parameters, calculate the alignment score and decide which alignment is better. For example, fill in the table in ({numref}`pairalgexa`).
 
 :::{figure} images/Week2/pairwise_alignment_example.png
 :alt: Example to calculate scores of pairwise alignments
@@ -448,7 +452,6 @@ After reading you should be able to answer for example the following questions:
 
 Fill the table: Calculate the scores of both alignments under both scoring schemes.
 :::
-
 
 ### Dot plots
 
@@ -460,15 +463,15 @@ After reading, you should be able to describe what dot plots are and what they a
 
 Read section 4.1. of “Bioinformatics and Computational Biology” (Tiwary): Introduction - available from [here](https://link-springer-com.ezproxy.library.wur.nl/content/pdf/10.1007/978-981-16-4241-8_4.pdf).
 
-
 After reading, you should be able to explain when amino acid alignment and when nucleotide alignments are used.
 Also, you should be able to name which BLOSUM and which PAM matrix is used for divergent sequences.
 
 ### BLAST
 
 Read two websites:
-* Section 1 from BLAST QuickStart available from [here](https://www.ncbi.nlm.nih.gov/books/NBK1734/)
-* and “How does BLAST work?” available from [here](https://resources.qiagenbioinformatics.com/manuals/clcgenomicsworkbench/current/index.php?manual=How_does_BLAST_work.html).
+
+- Section 1 from BLAST QuickStart available from [here](https://www.ncbi.nlm.nih.gov/books/NBK1734/)
+- and “How does BLAST work?” available from [here](https://resources.qiagenbioinformatics.com/manuals/clcgenomicsworkbench/current/index.php?manual=How_does_BLAST_work.html).
 
 After reading you should be able to name the different steps of BLAST and to describe how the word size can influence the results.
 
@@ -477,11 +480,12 @@ After reading you should be able to name the different steps of BLAST and to des
 Read parts of “Multiple sequence alignments” (Sperlea) available from [here](https://link-springer-com.ezproxy.library.wur.nl/content/pdf/10.1007/978-3-662-64473-7.pdf).
 
 Read:
-* 1.1 Introduction
-* 1.2 Areas of Application of MSAs
-* 1.3.1 FASTA
-* 1.3.7 Graphical Visualizations
-* 2.3 Multiple Sequence Alignments
+
+- 1.1 Introduction
+- 1.2 Areas of Application of MSAs
+- 1.3.1 FASTA
+- 1.3.7 Graphical Visualizations
+- 2.3 Multiple Sequence Alignments
 
 After reading, you should be able to explain what MSAs are and which different kinds of solutions exist for this problem.
 
@@ -491,9 +495,9 @@ Read Sections 1-2 of “Discovering sequence motifs” (Bailey) available from [
 
 After reading, you should be able to read the representation of sequence motifs and evaluate if a motif has a hit in a certain sequence, for example, given the genome sequence ACCTGAATGTTAA, which of the following motifs has a hit in the genome?
 
-* T-G-A
-* G-A(1,2)-T
-* A-A-N-T-T
+- T-G-A
+- G-A(1,2)-T
+- A-A-N-T-T
 
 Also, you should be able to read logos and evaluate which positions are conserved for which amino acids.
 
@@ -504,6 +508,7 @@ Read “What are profile hidden Markov models” available from [here](https://w
 After reading, you should be able to explain which properties of MSAs are represented in HMMs.
 
 ## Primer Design
+
 Read parts of chapter 5 of “Introduction to Bioinformatics in Microbiology” (Christensen): Primer Design - available from [here](https://link-springer-com.ezproxy.library.wur.nl/content/pdf/10.1007/978-3-319-99280-8_5.pdf).
 
 Only some sections of this chapter are relevant for this course.
@@ -512,17 +517,19 @@ You should specifically focus on the part about PCR.
 The part on hybridization (i.e. as used in microarrays) is not relevant for this course.
 
 Read:
-* 5.1 Background for Oligonucleotide Design
-* 5.2 General Rules for Design of Oligonucleotides
-* 5.3.1 String comparison by Score
-* 5.3.3 Design of Primers for PCR and “Kwok’s Rules”
-* 5.4.1 Estimation of Tm by Formula
+
+- 5.1 Background for Oligonucleotide Design
+- 5.2 General Rules for Design of Oligonucleotides
+- 5.3.1 String comparison by Score
+- 5.3.3 Design of Primers for PCR and “Kwok’s Rules”
+- 5.4.1 Estimation of Tm by Formula
 
 Unfortunately, there is a typo in the Tm formula on p. 91 in the book.
 The correct formula is Tm=4(G+C)+2(A+T)
 
 After reading, you should be able to explain the basics of primer design and to name which factors influence primer design.
 %PRACTICAL_SEPARATOR%
+
 ---
 
 ## Practical assignments
@@ -556,60 +563,60 @@ To this end, we search in two different databases and compare the results.
 
 %ANSWER%:::{dropdown} Assignment I answers
 %ANSWER%- a. Fasta label always starts with a `>`. The protein/nucleotide sequence follows in the coming lines; see also [Blast documentation](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=BlastHelp).
-%ANSWER%```{image} images/Week2/assignment_1a_fasta.png
+%ANSWER%`{image} images/Week2/assignment_1a_fasta.png
 %ANSWER%:alt: Fasta format.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_1a_fasta
-%ANSWER%```
+%ANSWER%`
 %ANSWER%- b.
-%ANSWER%```{image} images/Week2/assignment_1b_blastp.png
+%ANSWER%`{image} images/Week2/assignment_1b_blastp.png
 %ANSWER%:alt: Blastp search.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_1b_blastp
-%ANSWER%```
+%ANSWER%`
 %ANSWER%- c. The information is displayed in the browser, under different tabs (Descriptions, Graphic Summary, Alignments, and Taxonomy).
 %ANSWER%- d. Two hits are found in two different yeast species. They both have low e-values and match over the whole length, but one has also low identity.
-%ANSWER%```{image} images/Week2/assignment_1d_hits.png
+%ANSWER%`{image} images/Week2/assignment_1d_hits.png
 %ANSWER%:alt: Top hits.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_1d_hits
-%ANSWER%```
+%ANSWER%`
 %ANSWER%- e. The E-value represents the number of alignments with a score of at least S that would be expected by chance alone in searching a complete database of n sequences. The E-value is used to order the BLAST results. A low E-value indicates that a hit is significant. An E-value of 0.0 means 0 sequences are expected to match with this score (or higher), so this indicates a highly significant hit.
 %ANSWER%- f. We perform another search in swissprot.
-%ANSWER%```{image} images/Week2/assignment_1f_server.png
+%ANSWER%`{image} images/Week2/assignment_1f_server.png
 %ANSWER%:alt: Bioinformatics server blast search.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_1f_server
-%ANSWER%```
+%ANSWER%`
 %ANSWER%We find two hits again.
-%ANSWER%```{image} images/Week2/assignment_1f_hits.png
+%ANSWER%`{image} images/Week2/assignment_1f_hits.png
 %ANSWER%:alt: Top hits.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_1f_hits
-%ANSWER%```
+%ANSWER%`
 %ANSWER%- g. 100 hits are found, the last one has an e-value of 2e-41, thus the list is probably incomplete and only the first 100 sequences are reported.
 %ANSWER%- h. With WUR blast 468 hits are found (with NCBI blast, 524 hits would be found, probably due to a more recent database with more entries). Most hits have low e-values, but some have high e-values (above 0.001) and might not be considered homologs.
 %ANSWER%- i. All the results are the same, only the e-value is lower with the Swiss-Prot database. Thus, the found proteins are identical, but the refseq database is much larger, which results in a higher e-value.
 %ANSWER%
 %ANSWER%WUR blast
-%ANSWER%```{image} images/Week2/assignment_1i_wur.png
+%ANSWER%`{image} images/Week2/assignment_1i_wur.png
 %ANSWER%:alt: WUR blast result.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_1i_wur
-%ANSWER%```
+%ANSWER%`
 %ANSWER%NCBI blast
-%ANSWER%```{image} images/Week2/assignment_1i_ncbi.png
+%ANSWER%`{image} images/Week2/assignment_1i_ncbi.png
 %ANSWER%:alt: WUR blast result.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_1i_ncbi
-%ANSWER%```
+%ANSWER%`
 %ANSWER%:::
 :::::
 
@@ -629,10 +636,10 @@ Here we explore these strategies by searching for homologs of the yeast Vps36p i
 - g. Take a look at the taxonomy report of your results (link on top of the blast result page). In which groups of species did you find hits?
 - h. At least one of your hits is outside of fungi, suggesting that Vps36p homologs might be more widespread. What could be a possible blast strategy to find more distant homologs?
 - i. Try to modify the Algorithm parameters for the search done in question f. to find more homologs. Keep using the blastp algorithm, just try to modify a parameter. How many hits do you find?
-Finally, we want to get an overview how similar these distantly related proteins are.
-To this end, we will download some hits and perform a multiple sequence alignment.
-Unfortunately, the download function does not work yet with the WUR blast server.
-To download, also run the search from question i. with NCBI blast.
+  Finally, we want to get an overview how similar these distantly related proteins are.
+  To this end, we will download some hits and perform a multiple sequence alignment.
+  Unfortunately, the download function does not work yet with the WUR blast server.
+  To download, also run the search from question i. with NCBI blast.
 - j. Generate a multi-fasta file of 10 sequences: The first 9 hits from the previous blast search and the original sequence (NP_013521.1). (Hint: you can mark sequences and save them by clicking on Download -> Fasta (complete sequences); use a text editor to add the original sequence manually).
 - k. We will use [M-Coffee](https://tcoffee.crg.eu/apps/tcoffee/do:mcoffee) from the [T-Coffee suite](https://tcoffee.crg.eu/apps/tcoffee/index.html). This program computes multiple other tools to estimate several multiple sequence alignments and combines them into one final alignment. The output includes a color code showing the agreement between the methods. Upload you multi-fasta file and run it with default parameters. Look at the estimated alignment. What can you say about the overall alignment quality? Where can you find regions of high and low agreement?
 - l. Would you conclude that these sequences are homologous across their entire length? Why/why not?
@@ -641,90 +648,90 @@ To download, also run the search from question i. with NCBI blast.
 %ANSWER%- a.
 %ANSWER%
 %ANSWER%WUR blast
-%ANSWER%```{image} images/Week2/assignment_2a_wur.png
+%ANSWER%`{image} images/Week2/assignment_2a_wur.png
 %ANSWER%:alt: WUR blast.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_2a_wur
-%ANSWER%```
+%ANSWER%`
 %ANSWER%NCBI blast
-%ANSWER%```{image} images/Week2/assignment_2a_ncbi.png
+%ANSWER%`{image} images/Week2/assignment_2a_ncbi.png
 %ANSWER%:alt: NCBI blast.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_2a_ncbi
-%ANSWER%```
+%ANSWER%`
 %ANSWER%A regular blastp against the proteins of _Cryptococcus neoformans_ could be done (database non-redundant, limit search to _Cryptococcus neoformans_ (taxid:5207)). You find 21 hits. Several hits have a good query coverage (>75%) and low E-value, but all these hits have a low percent identity (around 22%), suggesting these might be very distant homologs. The hits at the bottom of the list cover only a very small part of the query, and have a high E-value, so these are irrelevant.
 %ANSWER%- b. Try to find matches to DNA, for instance by using TBLASTN (Protein query searching six-frame translated DNA database). BLAST parameters could be adjusted, e.g., the word size could be decreased to include more distant sequences. PSI-BLAST will not work as it only will be able to find more distant matches once first iteration yields results.
 %ANSWER%- c.
 %ANSWER%
 %ANSWER%WUR blast
-%ANSWER%```{image} images/Week2/assignment_2c_wur.png
+%ANSWER%`{image} images/Week2/assignment_2c_wur.png
 %ANSWER%:alt: WUR blast.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_2c_wur
-%ANSWER%```
+%ANSWER%`
 %ANSWER%NCBI blast
-%ANSWER%```{image} images/Week2/assignment_2c_ncbi.png
+%ANSWER%`{image} images/Week2/assignment_2c_ncbi.png
 %ANSWER%:alt: NCBI blast.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_2c_ncbi
-%ANSWER%```
+%ANSWER%`
 %ANSWER%You find 16 hits (with NCBI blast that would be 18). The results are similar to the blastp results. The first two matches have a good combination of a low E-value and a high query coverage. However the percent identity is low. This suggests these are clearly divergent (low percent identity) homologs in _C. neoformans_. The other hits concern only a small part of the query.
 %ANSWER%- d.
 %ANSWER%
 %ANSWER%WUR blast
-%ANSWER%```{image} images/Week2/assignment_2d_wur.png
+%ANSWER%`{image} images/Week2/assignment_2d_wur.png
 %ANSWER%:alt: WUR blast.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_2d_wur
-%ANSWER%```
+%ANSWER%`
 %ANSWER%NCBI blast
-%ANSWER%```{image} images/Week2/assignment_2d_ncbi.png
+%ANSWER%`{image} images/Week2/assignment_2d_ncbi.png
 %ANSWER%:alt: NCBI blast.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_2d_ncbi
-%ANSWER%```
+%ANSWER%`
 %ANSWER%The query is a protein and thus short (566); blast is performing a local alignment and the complete sequence database match is in this case very long (part of chromosome 1), around 2.3 Mb.
 %ANSWER%- e. You will likely get issues with the alignment, even with a local alignment. The aim of an alignment is always to align homologous sequences, but if you offer an entire chromosome the alignment tools will nevertheless align the sequence, which likely will not yield meaningful results. An option would be the slice the sequences around the match (so, cut out the matching part) from the database sequence and use this data for the alignment.
 %ANSWER%- f.
 %ANSWER%
 %ANSWER%WUR blast
-%ANSWER%```{image} images/Week2/assignment_2f_wur.png
+%ANSWER%`{image} images/Week2/assignment_2f_wur.png
 %ANSWER%:alt: WUR blast.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_2f_wur
-%ANSWER%```
+%ANSWER%`
 %ANSWER%NCBI blast
-%ANSWER%```{image} images/Week2/assignment_2f_ncbi.png
+%ANSWER%`{image} images/Week2/assignment_2f_ncbi.png
 %ANSWER%:alt: NCBI blast.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_2f_ncbi
-%ANSWER%```
+%ANSWER%`
 %ANSWER%There are 104 hits. The top hits are good (E-value and identity) with good query coverage within the other species outside of Ascomycota. The percent identity is relatively low ~25% in these hits, because of the evolutionary distance between _S. cerevisiae_ and species outside the phylum Ascomycota.
 %ANSWER%- g. The hits are mainly fungi, but also few non-fungal matches, suggesting this protein may be more common in other species as well.
 %ANSWER%- h. To identify related sequences that are too dissimilar to be found in a straightforward BLAST search, the word size could be decreased or PSI-BLAST could be used.
 %ANSWER%- i. We can modify the word size, this is expected to yield more distant hits.
 %ANSWER%WUR blast
-%ANSWER%```{image} images/Week2/assignment_2i_wur.png
+%ANSWER%`{image} images/Week2/assignment_2i_wur.png
 %ANSWER%:alt: WUR blast.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_2i_wur
-%ANSWER%```
+%ANSWER%`
 %ANSWER%NCBI blast
-%ANSWER%```{image} images/Week2/assignment_2i_ncbi.png
+%ANSWER%`{image} images/Week2/assignment_2i_ncbi.png
 %ANSWER%:alt: NCBI blast.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_2i_ncbi
-%ANSWER%```
+%ANSWER%`
 %ANSWER%We then find 170 hits (with NCBI blast, that would be 173).
 %ANSWER%- j. All 10 sequences, each starting with their Fasta label, should be copy/pasted into one Fasta file.
 %ANSWER%- k. The alignment looks good. The beginning is very well aligned with few gaps. Although there are stretches containing gaps, there are also long regions throughout the alignment with no or few gaps and these are of good quality. Nevertheless, there are also low-quality regions.
@@ -753,68 +760,68 @@ Here, we will use bioinformatics approaches to analyse PLT1 to discover if it is
 - h. We want to analyze the repeats in this protein using the online dot-plot program [Dotlet](http://dotlet.vital-it.ch). Go to the website and add the PLT1 protein sequence as sequence 1 and sequence 2 (we want to perform a self-comparison). To filter some of the low scoring alignments you need to use the sliders below the score histogram. How many repeats can you find in this segment of the protein, and at which locations within the protein fragment are these located?
 - i. What happens if you change the scoring matrix from `BLOSUM62` to `Identity`?
 - j. Use the mouse to click on the region that likely contains the repeat sequence. Use the left and right arrow keys to locate the beginning of the aligned repeat structure. Which conserved amino acids can you identify? Compare the logo of the repeat family with the conserved amino acids that you found. What do you observe?
-Pairwise sequence alignments can identify regions that are conserved.
-Obtain the amino acid sequence of the first and second AP2 domain of PLT1 that was found in InterPro and perform a pairwise sequence alignment with algorithms you can find on the [EBI website](https://www.ebi.ac.uk/jdispatcher/psa).
+  Pairwise sequence alignments can identify regions that are conserved.
+  Obtain the amino acid sequence of the first and second AP2 domain of PLT1 that was found in InterPro and perform a pairwise sequence alignment with algorithms you can find on the [EBI website](https://www.ebi.ac.uk/jdispatcher/psa).
 - k. First perform a global alignment using the Needleman-Wunsch algorithm (Needle). Choose protein alignment and add the protein sequence of each of the protein domain sequences of PLT1. What is the overall identity and similarity between the two domains, and why do these two values differ?
 - l. Now perform a local alignment using the Smith-Waterman algorithm. Do you expect to observe large differences between the global and the local alignment? Explain why.
 
 %ANSWER%:::{dropdown} Assignment III answers
 %ANSWER%- a.
-%ANSWER%```{image} images/Week2/assignment_3a_uniprot.png
+%ANSWER%`{image} images/Week2/assignment_3a_uniprot.png
 %ANSWER%:alt: Swiss-Prot vs TrEMBL.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_3a_uniprot
-%ANSWER%```
+%ANSWER%`
 %ANSWER%Swiss-Prot contains manually annotated sequences while TrEMBL contains automatically deposited sequences (for instance from genome sequencing projects); UniProtKB contains data from both databases.
 %ANSWER%- b. PLT1 is a transcription factor. This is mainly based on sequence similarity but also based on information from literature.
 %ANSWER%- c.
-%ANSWER%```{image} images/Week2/assignment_3c_fasta.png
+%ANSWER%`{image} images/Week2/assignment_3c_fasta.png
 %ANSWER%:alt: PLT1 sequence.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_3c_fasta
-%ANSWER%```
+%ANSWER%`
 %ANSWER%- d. UniProt reports two AP2 domains. According to Prosite, they are located at positions 181-247 and 283-341 in the protein.
 %ANSWER%- e. Use the browse function and enter the Uniprot accession. You can identify two AP2 DOMAINS (IPR001471/PF00847). IPR001471: 180-253 and 282-347.
 %ANSWER%- f. AP2/ERF domains are transcription factors. 8 structures are found in PDB, 51K structures are found in Alphafold.
-%ANSWER%```{image} images/Week2/assignment_3f_go.png
+%ANSWER%`{image} images/Week2/assignment_3f_go.png
 %ANSWER%:alt: GO terms of AP2.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_3f_go
-%ANSWER%```
+%ANSWER%`
 %ANSWER%- g. 15(W), 6(V), 5(G).
-%ANSWER%```{image} images/Week2/assignment_3g_logo.png
+%ANSWER%`{image} images/Week2/assignment_3g_logo.png
 %ANSWER%:alt: Logo of AP2 domain.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_3g_logo
-%ANSWER%```
+%ANSWER%`
 %ANSWER%- h. There are 2 repeats, starting around 170 and 270.
-%ANSWER%```{image} images/Week2/assignment_3h_dotlet.png
+%ANSWER%`{image} images/Week2/assignment_3h_dotlet.png
 %ANSWER%:alt: Dot-plot of PLT1 protein - BLOSUM63.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_3h_dotlet
-%ANSWER%```
+%ANSWER%`
 %ANSWER%- i. Identity score only scores sequence matches (typically +1) and thus the score distribution only has values ranging to the window size (the cutoff, used to determine if a dot is plotted in the dotplot, can be changed using the slider). The BLOSUM scoring matrix also gives a score to mismatches and thus the range of possible scores per window is bigger (see distribution). The same repeats are identified, but they are easier to see with the BLOSUM matrix.
-%ANSWER%```{image} images/Week2/assignment_3i_dotlet.png
+%ANSWER%`{image} images/Week2/assignment_3i_dotlet.png
 %ANSWER%:alt: Dot-plot of PLT1 protein - Identity.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_3i_dotlet
-%ANSWER%```
+%ANSWER%`
 %ANSWER%- j. Some of the conserved amino acids can be identified (GV).
 %ANSWER%- k. You can obtain the sequences by clicking on the range after hovering over the accessions in question g. The range is then marked and can be copied (you may have to get rid of the gaps). Another option is to obtain the domain sequences from UniProt -> Function -> Features -> Sequence.
 %ANSWER%
 %ANSWER%Note that the positions differ slightly. With the Uniprot regions, the alignment length is 67 (identity 40.3%, similarity 61.2%). With the Interpro regions, the alignment length is 74 (identity 40.5%, similarity 60.8%, see screenshot). Using the identity score only identical residues are counted; using similarity, also amino acids with similar properties are counted.
-%ANSWER%```{image} images/Week2/assignment_3k_needle.png
+%ANSWER%`{image} images/Week2/assignment_3k_needle.png
 %ANSWER%:alt: Global alignment using the Needleman-Wunsch algorithm.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_3k_needle
-%ANSWER%```
+%ANSWER%`
 %ANSWER%- l. One would not expect too many differences as the alignment already only concerns domains and not the entire protein sequence.
 %ANSWER%:::
 :::::
@@ -865,21 +872,21 @@ To this end, we use multiple sequence alignments.
 %ANSWER%:::{dropdown} Assignment V answers
 %ANSWER%- a. Make sure to save the alignment in FASTA format somewhere you can find it again. You will need it for the practical assignments of week3.
 %ANSWER%- b. The two AP2 domains are well conserved, while the N and C terminus are generally less well conserved. The conserved columns are marked with a `*`. We find that only the domains are well aligned in the global multiple alignment, which is in accordance with the earlier observation that we only found local hits (assignment IV, question g.).
-%ANSWER%```{image} images/Week2/assignment_5b_mafft.png
+%ANSWER%`{image} images/Week2/assignment_5b_mafft.png
 %ANSWER%:alt: Alignment of the top ten database hits.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_5b_mafft
-%ANSWER%```
+%ANSWER%`
 %ANSWER%- c. We saw in blast that they only partially overlapped with the query in a region containing the AP2 domains. Thus, E-INS-i or L-INS-i would be appropriate.
 %ANSWER%- d. The results are very similar (or identical). The auto option had already choosen the appropriate L-INS-i strategy.
 %ANSWER%- e. Try to locate the conserved GV and then go 4 positions back. The resulting position is 389, it contains a conserved S. The first 10 positions are conserved in the alignment at 70% consensus: SIYRGVTRHR. They are less conserved in the AP2 domain logo since that is based on more sequences from different organisms.
-%ANSWER%```{image} images/Week2/assignment_5e_conservation.png
+%ANSWER%`{image} images/Week2/assignment_5e_conservation.png
 %ANSWER%:alt: Conserved regions in the alignment.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_5e_conservation
-%ANSWER%```
+%ANSWER%`
 %ANSWER%- f. This tool is also only aligning some regions well. Only parts of the proteins might be homologous.
 %ANSWER%- g. This alignment is much shorter, it only includes well aligned columns.
 %ANSWER%:::
@@ -906,21 +913,21 @@ Next, we are interested in another yeast protein – PMP2 (A6ZQT2) – and its h
 %ANSWER%- c. 54 hits.
 %ANSWER%- d. 236 extra hits, 290 hits in total.
 %ANSWER%- e. There is the logo of an HMM model, positions 7(P), 9(G), 30(Y), and 43(F) are particularly conserved.
-%ANSWER%```{image} images/Week2/assignment_6e_logo.png
+%ANSWER%`{image} images/Week2/assignment_6e_logo.png
 %ANSWER%:alt: Signature of the HMM model.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_6e_logo
-%ANSWER%```
+%ANSWER%`
 %ANSWER%- f. We could check UniProt or InterPro with the UniProt accession A6ZQT2.
 %ANSWER%- g. We can look up the UniProt accession in InterPro. We find PF08114: This family consists of small proteolipids associated with the plasma membrane H+ ATPase.
 %ANSWER%- h. We find some congruent positions, e.g., starting at 5: TLPGGVILVF. But there are also differences, e.g, Pfam shows C in pos. 21.
-%ANSWER%```{image} images/Week2/assignment_6h_logo.png
+%ANSWER%`{image} images/Week2/assignment_6h_logo.png
 %ANSWER%:alt: Signature on Pfam.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_6h_logo
-%ANSWER%```
+%ANSWER%`
 %ANSWER%:::
 :::::
 
@@ -939,26 +946,26 @@ Here we will use motif discovery to determine the repeat sequences.
 %ANSWER%:::{dropdown} Assignment VII answers
 %ANSWER%- a. You can access the RefSeq database from the [NCBI website](https://www.ncbi.nlm.nih.gov/refseq/).
 %ANSWER%- b.
-%ANSWER%```{image} images/Week2/assignment_7b_repeat.png
+%ANSWER%`{image} images/Week2/assignment_7b_repeat.png
 %ANSWER%:alt: Repeat region.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_7b_repeat
-%ANSWER%```
+%ANSWER%`
 %ANSWER%- c.
-%ANSWER%```{image} images/Week2/assignment_7c_meme.png
+%ANSWER%`{image} images/Week2/assignment_7c_meme.png
 %ANSWER%:alt: MEME tool.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_7c_meme
-%ANSWER%```
+%ANSWER%`
 %ANSWER%- d.
-%ANSWER%```{image} images/Week2/assignment_7d_mast.png
+%ANSWER%`{image} images/Week2/assignment_7d_mast.png
 %ANSWER%:alt: MAST html output.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_7d_mast
-%ANSWER%```
+%ANSWER%`
 %ANSWER%The found motif is very similar to the repeat region (gtttttgtactctcaagatttaagtaactgtacaac). The motif is even one base longer indicating that C and T are preferred at the first nucleotide of the defense sequence.
 %ANSWER%:::
 :::::
@@ -986,38 +993,38 @@ Here, we aim to design primers that can be used to detect the presence of the _A
 
 %ANSWER%:::{dropdown} Assignment VIII answers
 %ANSWER%- a.
-%ANSWER%```{image} images/Week2/assignment_8a_primer-blast.png
+%ANSWER%`{image} images/Week2/assignment_8a_primer-blast.png
 %ANSWER%:alt: Primer-BLAST.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_8a_primer-blast
-%ANSWER%```
+%ANSWER%`
 %ANSWER%PrimerBLAST looks very similar to other blast tools, and thus you should feel familiar by now.
 %ANSWER%- b. The expected product size indicates the size of the PCR product to be amplified by the designed primers; normally, you want to have products around 250-400 nt for PCR and ~150 for qPCR; longer fragments are more challenging and require optimization of run times and components.
 %ANSWER%- c.
-%ANSWER%```{image} images/Week2/assignment_8c_parameters.png
+%ANSWER%`{image} images/Week2/assignment_8c_parameters.png
 %ANSWER%:alt: Primer-BLAST parameters.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_8c_parameters
-%ANSWER%```
+%ANSWER%`
 %ANSWER%Exclusion and specific sequences can be utilized similarly to normal blast. Using nr is not advised as even though the db is non-redundant, there are often highly similar matches from other species/strains/cultivars that might indicate non-specific binding for the target organisms interested.
 %ANSWER%- d. PrimerBLAST is able to help you to overcome issues with identical sequences being in the database. If PrimerBLAST would not do so, every search would likely return a non-specific primer pair.
 %ANSWER%- e. All primers are okay (based on the defined parameters). The ideal product length for DNA is in the range 150-1000bp (in practice 150-300bp is used a lot, but it depends on the purpose of the PCR). For example, primer pair 2 (225 bp product) or 7 (152 bp product) would be good.
-%ANSWER%```{image} images/Week2/assignment_8e_result.png
+%ANSWER%`{image} images/Week2/assignment_8e_result.png
 %ANSWER%:alt: Primer-BLAST result.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_8e_result
-%ANSWER%```
+%ANSWER%`
 %ANSWER%- f. Saving the primer is relevant as these sequences can be used to order primers.
 %ANSWER%- g. 133 hits are found in the nr database. Interestingly, the first four matches in the database are all 100% identical matches of the input product. Number four is the strain we started with, but apparently there are three other strains for which this piece of DNA is identical. PrimerBLAST still indicated that the primer is specific, because there is only one exact copy of this piece of DNA in the genome. There is actually a hit on the same strain (T30-4), but in a different sequence. However, this hit has some mismatches in the location where the forward primer hybridizes, so likely there will be no amplification.
-%ANSWER%```{image} images/Week2/assignment_8g_hits.png
+%ANSWER%`{image} images/Week2/assignment_8g_hits.png
 %ANSWER%:alt: Primer pair 1 hits.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_8g_hits
-%ANSWER%```
+%ANSWER%`
 %ANSWER%- h. mRNA is first converted to cDNA as RNA and DNA will not hybridize well; Designing over an intron allows to distinguish PCR products from genomic DNA or cDNA (as cDNA does not contain the introns); cDNA is typically shorter and will run at different height.
 %ANSWER%:::
 :::::
@@ -1037,8 +1044,9 @@ You may include up to two figures or tables.
 1. **Materials & Methods** What did you do? Which data, databases and tools did you use, and why did you choose them? What important settings did you select?
 2. **Results** What did you find, what are the main results? Report the relevant data, numbers, tables/figures, and clearly describe your observations.
 3. **Discussion & Conclusion** Do the results make sense? Are they according to your expectation or do you see something surprising? What do the results mean, how can you interpret them? Do different tools agree or not? What can you conclude? Make sure to describe the expectations and assumptions underlying your interpretation.
-:::::
-%PRACTICAL_SEPARATOR%
+   :::::
+   %PRACTICAL_SEPARATOR%
+
 ## References
 
 ```{bibliography}
