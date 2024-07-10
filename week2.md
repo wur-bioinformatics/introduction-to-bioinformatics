@@ -396,11 +396,17 @@ Different BLAST types to compare different data types. Credits: [CC BY-NC 4.0](h
 
 ## Multiple sequence alignment
 
-One straightfoward observation from a sequence search is that one query sequence often has multiple similar sequences ({numref}`blast_output`). This can lead to research questions on for example evolution (where do these sequences come from?), function (why are some sequences more similar to each other than to others?), or stucture (are all parts of these sequences equally similar/dissimilar?). To compare all of these sequences with a pairwise alignment strategy would quickly lead to a large number of comparisons and would be difficult to interpret. Instead, in cases where we want to compare 3 or more sequences with each other, we turn to **multiple sequence alignment**.
+One straightfoward observation from a sequence search is that one query sequence often has multiple similar sequences ({numref}`blast_output`). This can lead to research questions on for example evolution (where do these sequences come from?), function (why are some sequences more similar to each other than to others?), or stucture (are all parts of these sequences equally similar/dissimilar?). To compare all of these sequences with eachother using a pairwise alignment strategy would quickly lead to a large number of comparisons and would be difficult to interpret. Instead, in cases where we want to compare 3 or more sequences with each other, we turn to **multiple sequence alignment**.
 
 The objective of performing multiple sequence alignment is to identify matching residues (DNA, RNA, or amino acids) across multiple sequences of potentially differing lengths. Similar to pairwise alignment, the result is called 'a multiple sequence alignment'. The resulting multiple sequence alignment can be thought of as a square matrix: rows represent the sequences that we started with, columns represent homologous residues across sequeces, and the entries are either residues or gaps **INSERT FIGURE REFERENCE HERE**.
 
-Various algorithms for creating multiple sequence alignments exist. Here we will go over two main categories: progressive alignment and iterative alignment.
+Various algorithms for creating multiple sequence alignments exist. Here we will go over two main concepts that are adopted by many tools: progressive alignment and iterative alignment.
+
+### Progressive alignment
+To avoid having to reconcile many pairwise alignments, progressive alignment takes an iterative approach using a guide tree. The guide tree represents a crude measure of sequence similarity. Progressive alignment picks the two most similar sequences using the guide tree and initializes the multiple sequence alignment by aligning these two sequences with a global alignment strategy. Subsequently, the guide tree is used to determine the order in which sequences are added to the alignment. One way of thinking about this, is that progressive alignment creates increasingly large 'blocks' of sequences, where a block is always treated as a unit (e.g. introducing a gap will happen for all sequences in the block). By iterating through the guide tree, this alignment strategy 'progresses' to the final result, hence the name 'progressive alignment'.
+
+### Iterative refinement
+One potential downside of the progressive alignment strategy is that some of the intermediate blocks represent sub-optimal alignments. Identifying and potentially improving such cases is often referred to as 'iterative refinement' and typically happens on a multiple sequence alignment that was created with a progressive strategy. 
 
 ## Motifs
 
