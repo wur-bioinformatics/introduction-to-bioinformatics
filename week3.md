@@ -1,16 +1,16 @@
-# Week 3 - Phylogenetics & tree reconstruction
+# Chapter 3 - Phylogenetics & tree reconstruction
 
 ```{epigraph}
 
 -- Freek T. Bakker - WUR Biosystematics Group
 ```
 
-In this week you will learn to use a _Multiple Sequence Alignment_ (MSA), like the ones you compiled in [week 2](week2), and visualize the variation it contains as a phylogenetic tree.
+In this chapter you will learn to use a _Multiple Sequence Alignment_ (MSA), like the ones you compiled in [chapter 2](week2), and visualize the variation it contains as a phylogenetic tree.
 A phylogenetic tree is considered a highly efficient _data structure_ summarizing the data and its variation contained in your MSA.
 A tree is built from _characters_ which are the individual columns or positions in your MSA.
 Characters have states, which are in this case the individual nucleotide or amino acid _substitutions_ occurring in that position (see [Characters & trees](Week3_characters_trees) below).
 Invariable characters are columns or positions 'occupied' by just one type of nucleotide or amino acid, whereas variable characters may have up to 4 different nucleotides or up to 20 amino acids per position. 
-%#%Create cross-link to MSA in week 2 when written
+%#%Create cross-link to MSA in chapter 2 when written
 DNA and amino acid (AA) sequences contain the information necessary for building protein structure, comparing them in an MSA will enable insight how these structures, and their associated functions, may have changed over evolutionary times since they descended from an ancestral sequence.
 The more character state changes (i.e., substitutions) occur between sequences, the more _diverged_ they are and probably also less related (see [Related, diverged](Week3_related_diverged) below), and hence the further apart they will occur on your phylogenetic tree.
 The information contained in your tree is hierarchical in nature, meaning that it is built-up as nested sets of subtrees that are also known as _clades_.
@@ -75,7 +75,7 @@ As they happened in the past we cannot _prove_ them, but they are hypotheses (of
 :name: ancestral_states_alt
 
 Comparing species (or genes) in a phylogenetic tree allows inference of ancestral states and evolutionary trends.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`ancestral_states_alt_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
 
 When a phylogenetic tree is known for a specific group, and it is properly rooted, the _ancestral states_ for its characters can in principle be reconstructed (for instance the ancestral amino acid residues in a protein sequence) for each node in the tree.
@@ -99,7 +99,7 @@ They are recognised by the horizontal lines connecting the OTUs and HTUs (hypoth
 
 A rooted ultrametric phylogenetic tree with its main parts and characteristics indicated.
 Here, the OTUs are GenBank plant chloroplast gene accessions, the names of which have been condensed.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`ultrametric_example_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
 
 Whereas the horizontal lines represent the actual branches, the vertical lines do not have a meaning and are just there to connect the branches and clades; they will get longer when more terminals are included but do not have a relation with the data (i.e., the MSA).
@@ -138,7 +138,7 @@ It is important to realise that most phylogenetic reconstruction methods actuall
 Additive phylogenetic tree of mammalian species, rooted on monkey.
 The MRCA of monkey, bear, seal and dog is indicated.
 Tree topology informs relatedness, branch lengths correspond to divergence.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`MRCA_mammals_alt_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 Made using imagery from: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`DBCLS_2023`
 :::
 
@@ -208,7 +208,7 @@ Polytomies are usually interpreted as _soft_, meaning that the data used does no
 
 Hard and soft polytomies in a phylogenetic tree.
 The soft polytomy can imply different tree resolutions.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`polytomies_alt_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
 
 In contrast, the _hard_ interpretation would be: instantaneous speciation, i.e., an ancestral species lineage split up so fast that the new lineages do not have sufficient unique substitutions to 'mark' them and to assign them an internal node in the tree.
@@ -247,7 +247,7 @@ Both the X and X’ subtrees show the true relationships among the three species
 The subtrees are also each other’s natural outgroup, and as a result each subtree is rooted with the other (reciprocally rooting).
 \(C) A tree of the X/X’ gene family can be misleading if not all the sequences are included (because of incomplete sampling or gene loss).
 If the broken branches are missing, then the true species relationships are misrepresented.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`ortho_para_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
 
 In {numref}`gene_duplication_speciation_alt`, a sequence of events is given involving _two duplications and one speciation event_ that can lead to a set of homologous genes in two species.
@@ -284,7 +284,7 @@ The gene tree inferred from these five genes has multiple occurrences of both sp
 The evolutionary history of a gene that has undergone two separate duplication events.
 (A) The species tree (large blue cylinders) comprising species A and B and with indicated gene duplication and neo-functionalisation events leading to β and γ functions.
 (B) The phylogenetic tree that would be drawn for the resulting 5 genes in (A), here drawn as a cladogram.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`gene_duplication_speciation_alt_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
 
 For another example of a gene versus species tree consider the trees in {numref}`IL_tree_alt`, which are based on the comparison of Interleuken gene sequences.
@@ -312,7 +312,7 @@ All gene copies in this tree are homologs, some are orthologs (e.g., Human IL-1�
 A species tree based on external evidence (left) and a gene tree based on a comparison of mammalian Interleukin-1 genes (right).
 In the gene tree, both alpha and beta copies can be seen, which are probably the result of gene duplications (see {numref}`gene_duplication_speciation_alt`).
 Occurrences of 'Human' in the gene tree are indicated with green boxes.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`IL_tree_alt_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 Made using imagery from: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`DBCLS_2021`.
 :::
 
@@ -338,7 +338,7 @@ Apart from four gene duplications (marked δ{sub}`1`, δ{sub}`2`, δ{sub}`3` and
 Reconciled tree for the mammalian interleukin-1 gene tree shown in {numref}`IL_tree_alt`. 
 Gene losses are indicated in light grey.
 Of the four duplications required, three are supported by the presence of multiple copies of IL in the same mammal species, and one (δ{sub}`3`) is required to explain the incongruence between IL-1 and mammalian phylogeny.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`IL_tree_reconciled_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
 
 :::{admonition} Box 3.1: Species tree estimation analysis.
@@ -400,7 +400,7 @@ This process is called _bootstrap analysis_ and will be further discussed in [Ma
 Bootstrap resampling analysis in phylogeny reconstruction.
 In case of unlimited data (A), not realistic, a summary of sample-based trees yields sampling variance about the _true phylogeny_.
 In case of limited data (B), realistic, only pseudo-samples are available, that summarise sampling variance about the _estimate of true phylogeny_.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`bootstrap_resampling_alt_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
 
 ---
@@ -429,7 +429,7 @@ Characters and trees.
 (A) Multiple sequence alignment (MSA, nucleotides) with examples of shared-derived (S), unique (U) as well as invariant (I) characters indicated; (B) MSA containing S, U and I characters and the number of steps per character, as well as the total tree length for tree1 and tree2 indicated on the bottom lines.; \(C) two 'candidate trees' as alternative hypotheses explaining the data in the MSA in (B), with character state changes for all characters are indicated on the trees and exemplar syn- and autapomorphies are indicated.
 Note that character 6 is invariant and therefore does not contribute to any tree.
 Tree 1 requires one step less than tree2 and is therefore the preferred tree.
-Credits: (A) created using MEGA11 and modified from {cite}`mega_2021` (B & C) [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`MSA_alt_2024`
+Credits: (A) created using MEGA11 and modified from {cite}`mega_2021` (B & C) [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`
 :::
 
 When observing substitutions in an MSA we cannot say which ones are ancestral (occurring already in 'deep' ancestors) and which ones are derived, occurring more recently.
@@ -478,7 +478,7 @@ Such _sister groups_ are highly useful in, for instance, evolutionary and compar
 Nested clades and sister clades.
 Top, the same rooted tree as in {numref}`rooted_trees_alt`, indicated with: the blue clade; the orange clade is nested in the lager dashed one; it is also a sister clade of the green clade.
 Bottom, nested and sister clades with MRCA indicated.
-Credits: [CC NY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`nested_clades_alt_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
 
 Again, an MRCA together with _all_ its descendants is considered to form a clade.
@@ -527,7 +527,7 @@ Looking at the brown and white birds at adjacent internal nodes, it is not clear
 This becomes possible upon rooting the tree, usually based on comparison with an external reference species.
 (B) Rooted tree; external evidence (not shown) was apparently convincing in placing the root between the white and brown birds.
 Thus, a new, internally-placed, brown bird is inferred as the MRCA, making the brown birds paraphyletic with regards to the white birds, which are now monophyletic.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`rooted_trees_alt_2024`
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`
 :::
 
 Improper rooting affects clades and the overall structure of tree (as illustrated in {numref}`hcgob_alt`).
@@ -557,7 +557,7 @@ In that case, one usually considers a copy of the gene of interest with sufficie
 Rooting phylogenetic trees.
 With human (H), chimp \(C), gorilla (G), orang-utan (O) and gibbon (B) indicated, the rooted tree (top) represents the correct tree topology based on external evidence.
 The position of this root is indicated, both in the rooted and unrooted tree.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`hcgob_alt_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
 
 %:::{figure} images/Week3/hcgob-roots.png
@@ -581,7 +581,7 @@ Rooting phylogenetic trees.
 The seven rooted trees that can be derived from the unrooted tree for five sequences in {numref}`hcgob_alt`.
 Each rooted tree 1-7 corresponds to placing the root on a different branch of the unrooted tree.
 Terminal labels as for {numref}`hcgob_alt`; the orange shape indicates monophyly of human, chimp, and gorilla, when present.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`hcgob_roots_alt_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
 
 %:::{figure} images/Week3/alphaproteobacteria.png
@@ -656,7 +656,7 @@ This is then repeated with another tree, and again another etc. -_the better the
 :name: characters
 
 Character-based tree building.
-A DNA sequence data set (MSA) of 7 characters observed over 4 terminals (sequences) analyzed using a character-based approach (in this case: parsimony). Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`characters_2024`.
+A DNA sequence data set (MSA) of 7 characters observed over 4 terminals (sequences) analyzed using a character-based approach (in this case: parsimony). Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
 
 In {numref}`characters` a DNA sequence MSA of 7 sites for 4 terminals is given, as well as a starting tree onto which each character is optimised.
@@ -706,7 +706,7 @@ Note: the number of unrooted ('unordered') trees follows that of rooted trees.
 :name: bifurcating_alt
 
 Having to assess such large numbers of trees falls under the category of 'NP complete' problems which cannot be solved in a lifetime even with unlimited resources.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`bifurcating_alt_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 ```
 :::
 
@@ -750,7 +750,7 @@ DE occurs only once and gets 33%, which is below the majority of 50% and therefo
 
 Consensus trees.
 Three primary trees are shown on top, their strict and 50% majority-rule consensus trees on the bottom.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`consensus_alt_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
 
 ---
@@ -775,7 +775,7 @@ Usually only heuristic search methods (see [Tree space and heuristic search meth
 
 Parsimony analysis (same data and trees as in {numref}`MSA_alt`). Character state changes for all characters in the MSA shown left are indicated on the trees and exemplar syn- and autapomorphies are indicated.
 Note that character 6 is invariant and therefore does not contribute to any tree. Also note that each substitution occurring in the MSA results in one extra step on the tree.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`parsimony_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
 
 Each character change can be considered an _ad hoc_ assumption, each of them associated with their type I error, i.e., the chance of having a _false positive_.
@@ -798,7 +798,7 @@ In other words: when presented with competing hypotheses about the same predicti
 
 Is nature parsimonious?
 This is a commonly-heard question but it is good to keep in mind that the parsimony criterion is only applied to _choosing between hypotheses_ (i.e., trees) and _does not assume anything_ about nature and evolution!
-Maximum parsimony methods are included in the software ([MEGA11](https://www.megasoftware.net/){cite}`mega_2021`) used in this week's practical.
+Maximum parsimony methods are included in the software ([MEGA11](https://www.megasoftware.net/){cite}`mega_2021`) used in this chapter's practical.
 
 Two other important character-based methods for tree building exist: _maximum likelihood_ (ML) analysis and _Bayesian Inference_ (BI).
 Both differ from parsimony analysis in that they do not merely count differences (as in parsimony analysis) but are based on explicit models of character evolution and operate in a probability framework.
@@ -847,7 +847,7 @@ Note that both trees in {numref}`characters` and {numref}`character_distance_alt
 
 Distance-based tree building.
 The same data set (MSA) of 7 characters observed over 4 terminals (sequences) analyzed using a character-based approach ({numref}`characters`), now using a distance-based approach.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`character_distance_alt_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
 
 If the sequences would have accumulated substitutions in a clock-like manner (i.e., like radio-active decay) the resulting pairwise distances may even be ultrametric [(see Box 3.4)](Week3_distances).
@@ -876,7 +876,7 @@ In the additive distance matrix (matrix B), due to the difference in length towa
 Ultrametric distance matrix between four sequences a-d and the corresponding ultrametric tree (A).
 Additive distance matrix between four sequences a-d and the corresponding additive tree (B).
 Values in the distance matrix correspond to the sum of the branch lengths along the path between the two sequences on the tree, therefore this data is metric.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`ultrametric_distance_alt_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
 
 Once these pairwise distances have been calculated, the MSA is not further used and trees are built directly from the distances ({numref}`character_distance_alt`).
@@ -901,7 +901,7 @@ Clustering usually produces one tree, no alternative 'equally good' trees are sh
 :name: distances
 
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) \
-{cite}`distances_2024`
+{cite}`own_3_2024`
 ```
 
 ```{figure} images/Week3/inequality_alt.svg
@@ -911,7 +911,7 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) \
 :name: inequality_alt
 
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) \
-{cite}`inequality_alt_2024`
+{cite}`own_3_2024`
 ```
 
 Euclidean or metric distance ({numref}`distances`) requires observed distances to be _non-negative_, _symmetrical_, _distinct_ and to obey the _triangle inequality_ ({numref}`inequality_alt`, (left): the distance between any pair of sequences a and b cannot exceed the sum of the distances between those sequences and a third sequence c.
@@ -955,7 +955,7 @@ NJ is implemented in [MEGA11](https://www.megasoftware.net/){cite}`mega_2021`) a
 Neighbor Joining.
 An illustration of the computational process.
 Tree length S is the sum of all branch lengths, and is minimized (F) by iteratively joining neighbors, starting from the star tree (A).
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`neighbor_joining_process_alt_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
 
 NJ is highly popular as it can generate trees with hundreds of terminals in a very short time.
@@ -1028,7 +1028,7 @@ The JC model is considered a fairly simple, one parameter, model.
 :name: JC_alt
 
 The Jukes Cantor model (left), transitions (blue) and transversions (red) and how they accumulate differently during evolutionary time (right).
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`JC_alt_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
 
 The first two substitution types listed above are _transitions_ (substitutions among the pyrimidines T and C, and among the purines A and G), whereas the other four occur between purines and pyrimidines and are referred to as _transversions_.
@@ -1052,7 +1052,7 @@ orange (parameter _a_) and transversions \
 in blue (parameter _b_). \
 Note that base frequencies f{sub}`N` \
 are considered equal in this model. \
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`K2P_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
 
 Besides the JC and K2P models, other models exist that take into account different aspects of DNA sequence evolution, such as differences between all six substitution types (_general time reversible_ or GTR), sequence base composition or nucleotide frequencies (_Felsenstein81_ or F81), and the distribution of rates of change in sites throughout the MSA: how many fast, and how many slow-evolving sites are there and how are they distributed (this is achieved by comparison with a gamma Γ distribution).
@@ -1061,7 +1061,7 @@ There are up to 220 different models to choose from.
 It is good to realise that these models are reversible and therefore allow the reconstruction of unrooted trees only.
 Once these are determined they can be rooted using outgroup rooting.
 
-For amino acid sequence comparisons, instead of estimating parameter values from the data, amino acid substitution models are based on (pre-defined) _substitution cost matrices_ (see [week 2](Week2_substitution_matrices)) that are based on observations of amino acid substitutions found in over 30,000 protein sequences (e.g., the JTT, Blosum, Dayhoff, LG and WAG matrices).
+For amino acid sequence comparisons, instead of estimating parameter values from the data, amino acid substitution models are based on (pre-defined) _substitution cost matrices_ (see [chapter 2](Week2_substitution_matrices)) that are based on observations of amino acid substitutions found in over 30,000 protein sequences (e.g., the JTT, Blosum, Dayhoff, LG and WAG matrices).
 
 ---
 
@@ -1099,7 +1099,7 @@ It is an efficient method that can consider differences in substitution rates an
 This would mean that non-clocklike or biased (non-random) accumulation of substitutions would be modelled, and this would minimize possible artefacts in inferring the ML tree topology, for instance LBA (see [above](Week3_estimating_sequence_divergence)).
 
 The MLE pipeline for phylogenetic reconstruction is implemented in the software package [IQ-TREE](http://www.iqtree.org/) {cite}`iqtree_2020`, which includes I) model testing, II) ML tree search, and III) bootstrapping for both nucleotide and amino acid sequences.
-IQ-TREE will be demonstrated and used in this week's practical.
+IQ-TREE will be demonstrated and used in this chapter's practical.
 
 Finally, estimating evolutionary divergence using nucleotide substitution models can also be applied in a distance approach.
 There, the substation models are applied to calculate 'corrected' pairwise sequence distances, which are then used to produce a Neighbor Joining tree (see {numref}`neighbor-joining-process_alt`)
@@ -1144,7 +1144,7 @@ A) A maximum likelihood tree with bootstrap values indicated at nodes.
 Note that not all nodes show a bootstrap value, which is probably because values < 50% are ignored.
 B) The same analysis, but this time all nodes with bootstrap values < 50% collapsed.
 Note the introduction of a polytomy containing four lineages resulting from collapsing weak nodes, and the change from additive tree to cladogram style in the collapsed tree.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`bootstrap_collapse_alt_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
 
 ---
@@ -1184,7 +1184,7 @@ Bayesian Inference, in which probabilities for nodes are calculated, and differe
 ---
 
 ## Glossary
-This glossary contains the most important terms from this week.
+This glossary contains the most important terms from this chapter.
 
 :::{admonition} Glossary
 :class: important
@@ -1263,7 +1263,7 @@ Transversion
 
 ## Practical assignments
 
-This guide contains questions and exercises to help you process the study materials of Week 3.
+This guide contains questions and exercises to help you process the study materials of Chapter 3.
 You have two mornings to work your way through the exercises.
 In a single session you should aim to get about halfway through this guide, i.e., assignments I-IV.
 Note that assignment VI is optional.
@@ -1277,7 +1277,7 @@ Thus, make sure that you develop your practical skills now, in order to apply th
 
 _Assignment I: Make an amino acid based PLT1 tree in MEGA11 & visualize it in iTOL (30 minutes)_
 
-As a start, in this assignment you are going to express relationships among a set of 10 PLT1 amino acid sequences for which you generated a multiple sequence alignment (MSA) last week.
+As a start, in this assignment you are going to express relationships among a set of 10 PLT1 amino acid sequences for which you generated a multiple sequence alignment (MSA) last chapter.
 You will do this by building a parsimony tree, using _Molecular Evolutionary Genetics Analysis_ (**[MEGA 11](https://www.megasoftware.net/)**).
 You will then visualize your tree using the tree figure software **[FigTree](http://tree.bio.ed.ac.uk/software/figtree/)** and using **[iTOL](https://itol.embl.de/)**, which is a highly useful platform for storing, managing trees and making pretty pictures of them.
 
@@ -1285,7 +1285,7 @@ First, Start MEGA 11 and open and have a look at the standard MEGA 11 dashboard 
 The open white field works as a canvas on which each analysis performed will appear as a pinned note.
 Apart from 'PHYLOGENY' there are many interesting tools available, some of which you will be using today.
 
-Using File > Open, open your PLT1 MSA from last week; this file should be a FASTA file, with the extension .fasta in the file name.
+Using File > Open, open your PLT1 MSA from last chapter; this file should be a FASTA file, with the extension .fasta in the file name.
 When presented with a choice between `Analyze` and `Align`, select `Analyze` (as the sequences are aligned already).
 Next, select the correct data type.
 
@@ -1433,7 +1433,7 @@ _Assignment III: Estimating sequence divergence: Pairwise distances (30 minutes)
 
 Now close the Data Explorer and go to `Distance`, for computing a pairwise distance comparison among all sequences in the alignment.
 Select `Compute Pairwise Distances`.
-First you will make a crude, uncorrected, distance measure by selecting `p-difference`, which is basically the proportion of differing sites between any two sequences (like the %-identity score you have seen in [week 2](Week2_substitution_matrices)).
+First you will make a crude, uncorrected, distance measure by selecting `p-difference`, which is basically the proportion of differing sites between any two sequences (like the %-identity score you have seen in [chapter 2](Week2_substitution_matrices)).
 Click in the areas in the _Setting_ part (next to the _Option_ part) of the `Analysis Preferences` window and use the following settings:
 
 - Variance estimation Method = None.
@@ -1898,10 +1898,10 @@ MAFFT alignment, IQ-TREE:
 %ANSWER%:::
 :::::
 
-:::::{admonition} **Week 3 Project Preparation Exercise**
+:::::{admonition} **Project Preparation Exercise**
 :class: important
 
-Using last week’s ARF multiple sequence alignment (amino acid sequence),
+Using last chapter’s ARF multiple sequence alignment (amino acid sequence),
 aligned in MAFFT, now use MEGA 11 in order to make a NJ tree, using the
 Poisson and then the Dayhoff model of amino acid substitutions.
 
