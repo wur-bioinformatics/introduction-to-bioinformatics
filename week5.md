@@ -1,4 +1,4 @@
-# Week 5 - Omics data analysis
+# Chapter 5 - Omics data analysis
 
 :::{figure} images/Week5/omics-levels.png
 :alt: -Omics levels
@@ -6,7 +6,7 @@
 :name: omics_levels
 
 Different -ome levels, here illustrated with numbers for _Arabidopsis thaliana_.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`omcis_levels_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
 :::
 
 ---
@@ -108,7 +108,7 @@ In 2021 the first true telomere-to-telomere assembly of the human genome was
 assembled using the third generation technologies described below: [PacBio](Week5_pacbio),
 [Oxford Nanopore](Week5_nanopore) and Hi-C.
 ::::
-%#% In the last line of box 1 it describes third generation technologies, amongst which Hi-C. However, the section [Week5_3rd_generation] lacks information on Hi-C.
+%#% In the last line of box 5.1 it describes third generation technologies, amongst which Hi-C. However, the section [Week5_3rd_generation] lacks information on Hi-C.
 
 ---
 
@@ -184,7 +184,7 @@ whereas most higher eukaryotes (including humans) have between 15,000 and
 :name: genome_sizes_alt
 
 Gene content in some representative species.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`genome_sizes_alt_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
 :::
 
 (Week5_size)=
@@ -487,7 +487,7 @@ Credits: modified from {cite}`nanopore_2021`.
 Causes for contaminated sequencing \
 samples, using as example the \
 nematode and surrounding bacteria \
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`contamination_alt_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
 :::
 
 As discussed above, sequencing technology is not perfect and errors will be
@@ -538,7 +538,7 @@ detection of structural variation are discussed.
 :name: co_segregation_alt
 
 Co-segregation of alleles. \
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`co-segregation_alt_2024`
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`
 :::
 
 Genomes can be reconstructed with different aims, which influence the
@@ -784,11 +784,11 @@ calling is used more and more in plant and animal breeding and selection.
 
 Mapping reads to a reference is a means to an end. As stated above, one of
 the main goals is to detect genomic variation. Such variation can help
-explain phenotypic variation (see [Box 3](Week5_phenotypic_variation)). Genomic variation
+explain phenotypic variation (see [Box 5.3](Week5_phenotypic_variation)). Genomic variation
 between samples, individuals, and/or species can also be used to study
-evolutionary history (see also weeks [2](week2) and [3](week3), on multiple sequence
+evolutionary history (see also chapters [2](week2) and [3](week3), on multiple sequence
 alignments and phylogeny).
-%#% Add direct cross-link to MSA in week 2 when written.
+%#% Add direct cross-link to MSA in chapter 2 when written.
 Variants are divided into two main groups: structural or large-scale
 variants and small-scale variants. First, we will focus on small-scale variants.
 Within this group we distinguish single-nucleotide polymorphisms (SNPs),
@@ -801,7 +801,7 @@ multiple nucleotide polymorphisms (MNPs) and small insertions and deletions
 :name: indels
 
 A single-nucleotide polymorphism (top left), insertions (bottom), and deletions (top right).
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`indels_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
 :::
 
 Each variant at a particular position of a reference genome is called an
@@ -1083,7 +1083,7 @@ Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`ep
 ```
 
 ::::
-%#% The original URL in box5 that is credited as the source leads to page that does not exist anymore. Changed to WikiMedia url. - The description is a literal copy paste from the figure description on WikiMedia.
+%#% The original URL in box 5.5 that is credited as the source leads to page that does not exist anymore. Changed to WikiMedia url. - The description is a literal copy paste from the figure description on WikiMedia.
 
 A part of the explanation lies in what is called _epigenetics_,
 modifications of the genome that do not change the DNA sequence but do
@@ -1220,7 +1220,7 @@ experimentation, and model extension or modification.
 :name: systems_biology_alt
 
 The systems biology cycle, aiming to iteratively improve models of living systems.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`systems_biology_alt_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`own_5_2024`.
 :::
 
 Eventually, the hope of systems biology is to arrive at systems-level
@@ -1238,12 +1238,14 @@ data analysis is an essential element in systems biology.
 
 Transcriptomics is concerned with measuring the expression of genes (i.e.,
 the levels of transcription of genes on the genome to RNA). RNA and its
-role in the cell has already been discussed in [week 1](Week1_rna_transcription_splicing). If you want to know
+role in the cell has already been discussed in [chapter 1](Week1_rna_transcription_splicing). If you want to know
 what other types of RNA exist outside the common mRNA, tRNA and rRNA, read
-[Box 6](w5box6_RNA). Here we focus on measuring and counting transcripts (mRNA).
-%#% Week 1 does also mention miRNA as one of the main types of RNA.
-(w5box6_RNA)=
-:::{admonition} Box 6: The RNA world
+[Box 5.6](Week5_RNA). Here we focus on measuring and counting transcripts (mRNA).
+%#% Chapter 1 does also mention miRNA as one of the main types of RNA.
+
+(Week5_RNA)=
+
+:::{admonition} Box 5.6: The RNA world
 :class: tip
 Many other types of RNA exist in the cell and they perform important regulatory functions:
 
@@ -1374,7 +1376,7 @@ results obtained by other quantitative methods.
 
 Amplification plot of a DNA fragment in a qPCR reaction.
 C{sub}`q` corresponds to the cycle were fluorescence passes the detection threshold.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`qPCR_alt_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
 :::
 
 ---
@@ -1421,7 +1423,7 @@ expression of the corresponding gene.
 :name: microarrays_alt
 
 The difference between cDNA (two-color) and oligonucleotide (one-color) microarray analysis.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`microarrays_alt_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
 :::
 
 There are two main competing types of microarrays: cDNA and oligonucleotide
@@ -1578,7 +1580,7 @@ are no longer present in the mature mRNA ({numref}`spliced_alignment`).
 :name: spliced_alignment
 
 Mapping of mRNA reads to genomic reference with splice aware aligner.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`spliced_alignment_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
 :::
 
 This means that reads might contain an exon-exon junction, which means they
@@ -1629,7 +1631,7 @@ multiplied by a million to make it more readable.
 :align: right
 :name: CPM
 
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`CPM_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
 :::
 
 ---
@@ -1652,7 +1654,7 @@ transcripts in the original sample is represented by each transcript.
 :align: right
 :name: comparing_transcripts
 
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`comparing_transcripts_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
 :::
 
 ---
@@ -1819,7 +1821,7 @@ specific interactions.
 
 Three mass spectrometry setups, (top) time-of-flight,
 (middle) sector field and (bottom) quadrupole.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`mass_spectrometry_alt_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
 :::
 
 Currently the most widely used technology for proteomics (and metabolomics)
@@ -1905,7 +1907,7 @@ complex mixtures. A number of approaches try to solve this problem:
 :name: shotgun_proteomics_alt
 
 A schematic overview of shotgun proteomics.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`shotgun_proteomics_alt_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`own_5_2024`.
 :::
 
 More complex protocols have also been developed to compare two protein
@@ -1932,7 +1934,7 @@ modified amino acids) and investigating relative differences in shifted mass spe
 :name: experimental_protein_methods_alt
 
 Experimental methods to detect proteins. Top: high-throughput, bottom: low-throughput.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by/4.0/) Top: {cite}`experimental_protein_methods_top_alt_2024`. Bottom: {cite}`experimental_protein_methods_bottom_alt_nd`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by/4.0/) Top: {cite}`own_5_2024`. Bottom: {cite}`experimental_protein_methods_bottom_alt_nd`.
 :::
 
 Next to protein levels, we are also interested in what proteins do in the
@@ -2095,7 +2097,7 @@ different conditions (middle and right).
 :name: compare_conditions
 
 Difference in expression of gene X between two conditions measured without replicates and two possible distributions the measurement could have come from.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`compare_conditions_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
 :::
 
 :::{figure} images/Week5/error-vs-conditions.svg
@@ -2105,9 +2107,9 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 
 Comparison of FPKM values between 2 replicates (left) and two conditions (middle and right).
 The correlation between replicates should be very high, the differences between two conditions can be small (middle) or large (right).
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`error_vs_conditions_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
 :::
-%#% Figure error_vs_conditions is saved as an svg but is not actually a vectorized image.
+%#% Figure error_vs_conditions is saved as an svg but is not actually a vectorized image. Harm does not have the R file anymore.
 
 ---
 
@@ -2159,7 +2161,7 @@ difference between the means _x_ of two distributions, corrected by the
 uncertainty expressed in terms of their standard deviation _s_. A _p_-value,
 the probability that we find a _t_-statistic as large or larger by chance,
 can be calculated using the _t_-distribution.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`t_test_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
 :::
 
 Perhaps the most widely used analysis on omics data, the goal here is to
@@ -2262,7 +2264,7 @@ An example part of the Gene Ontology (GO), in the biological process category.
 Lower-level terms are specific instantiations of the higher-level ones. In
 this figure, GO terms are colored according to the _p_-value in an
 enrichment test.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`go_enrichment_2010`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
 :::
 
 A final often used analysis is enrichment, in which we use gene functional
@@ -2297,7 +2299,7 @@ reality, but may be reached sooner than we now believe possible.
 
 ## Practical assignments
 
-This practical contains questions and exercises to help you process the study materials of Week 5.
+This practical contains questions and exercises to help you process the study materials of Chapter 5.
 You have 2 mornings to work your way through the exercises.
 In a single session you should aim to get about halfway through this guide (i.e., day 1: assignment 1-3, day 2: assignment 4, 5 and project preparation exercise).
 Use the time indication to make sure that you do not get stuck in one assignment.
@@ -2314,7 +2316,7 @@ _Assignment I: Genomics (20 minutes)_
 Genome assembly using next-generation sequencing reads is challenging due the short length of the reads, the errors that occur during sequencing and the presence of repeats in the genome.
 After completing this exercise, you should be able to explain how genome assembly works and what problems may be encountered.
 
-- a. Given the set of 6 short reads below, try to recreate the original DNA sequence by looking for overlaps between the reads. Note that there may be some sequencing errors. What amino acid sequence does the DNA sequence code for? Hint: copy the sequences into Word in a fixed-width font (e.g., Courier) and add spaces to align the sequences; for translation, you can Google for an online tool.
+a. Given the set of 6 short reads below, try to recreate the original DNA sequence by looking for overlaps between the reads. Note that there may be some sequencing errors. What amino acid sequence does the DNA sequence code for? Hint: copy the sequences into Word in a fixed-width font (e.g., Courier) and add spaces to align the sequences; for translation, you can Google for an online tool.
 
 ```
 > read_1
@@ -2331,11 +2333,11 @@ ttagcattagcacccatgaacatat
 gatgatgcaaacatggaaagcagcg
 ```
 
-- b. Would you be able to unambiguously reconstruct the overall sequence without read_6?
+b. Would you be able to unambiguously reconstruct the overall sequence without read_6?
 
 %ANSWER%:::{dropdown} Assignment I answers
 %ANSWER%a. There are two sequencing errors (underlined):
-%ANSWER%`
+%ANSWER%```
 %ANSWER%                                                  aagcagcgcgggcgaataataataa
 %ANSWER%acccatattagcattagcaccct̲tg                                                  
 %ANSWER%                   cccatgaacatattgatgatgaaaa                               
@@ -2343,17 +2345,17 @@ gatgatgcaaacatggaaagcagcg
 %ANSWER%       ttagcattagcacccatgaacatat                                           
 %ANSWER%                                 gatgatgc̲aaacatggaaagcagcg                 
 %ANSWER%acccatattagcattagcacccatgaacatattgatgatgaaaacatggaaagcagcgcgggcgaataataataa
-%ANSWER%`
+%ANSWER%```
 %ANSWER%This translates to the amino acid sequence `THISISTHEHIDDENMESSAGE***`. \
 %ANSWER%b. No, then you would also be able to reconstruct this sequence:
-%ANSWER%`
+%ANSWER%```
 %ANSWER%                                          aagcagcgcgggcgaataataataa                       
 %ANSWER%acccatattagcattagcaccct̲tg                                                                 
 %ANSWER%                   cccatgaacatattgatgatgaaaa                                              
 %ANSWER%                                                                 aaaacatggaaagcagcgcgggcga
 %ANSWER%       ttagcattagcacccatgaacatat                                                          
 %ANSWER%acccatattagcattagcaccct̲tgaacatattgatgatgaaaagcagcgcgggcgaataataataaaacatggaaagcagcgcgggcga
-%ANSWER%`
+%ANSWER%```
 %ANSWER% which translates to `THISISTLEHIDDEKQRGRIIIKHGKQRGR`. Read 6 spans the `aaaa` repeat and is needed to uniquely assemble this sequence.
 %ANSWER%:::
 
@@ -2363,14 +2365,13 @@ In this brief hands-on tutorial, you will use a genome browser to learn more abo
 Note that in most of the environments discussed below, you can get additional information on plot elements (boxplots, points etc.) by hovering your mouse over it.
 Please <u>**use Google Chrome or Firefox**</u> as other browsers do not display all websites well.
 
-After completing this exercise, you should be able to explain how next-generation sequencing data is used to study genomic conservation, genetic variation and genome function.
-
-- a. This tour of genome browsers will be based on a gene called BCL11B. First, look up some information on this gene in the [GeneCards database](https://www.genecards.org/). How did it get its name?
-- b. Visit the [UCSC Genome Browser](https://genome-euro.ucsc.edu/) and go to the Genome Browser (below "Tools"). Below "Human Assembly", select the "hg19" genome assembly and search for BCL11B. If you get a list of possible ocations, please choose the correct link corresponding to the BCL11B gene. What chromosome is the gene on, how long is it (in bp), and how many exons does it have? At what position does the gene start (hint: check the arrows in the gene model)?
-- c. Click on the top gene variant in the top of your figure panel to visit a page with information on the gene model. How long is the coding region? How long is the ORF (in bp and in amino acids)?
-- d. Go back to the genome view. Genome browsers work with "tracks", i.e., various sources of information aligned to the genome. What does the "100 Vert. cons" track contain? Do you see a correlation of this track with another track?
-- e. You can also add tracks to the view yourself. Below the main genome window, lookup (but do not yet click on) "ClinVar Variants" under "Phenotype and Literature", select "pack" using the drop-down menu below it, and press the "refresh" button on the right. ClinVar is a database of mutations that have a proven clinical effect (i.e. lead to a disease). Find the red T>G SNP in the fourth exon – under "ClinVar Short Variants" – and zoom in to the nucleotide level ('base') to check whether it is synonymous or not (hint: use the "--->" at the top to select the correct strand). Does this match your expectations?
-- f. Is the position conserved in other genomes?
+After completing this exercise, you should be able to explain how next-generation sequencing data is used to study genomic conservation, genetic variation and genome function. \
+  a. This tour of genome browsers will be based on a gene called BCL11B. First, look up some information on this gene in the [GeneCards database](https://www.genecards.org/). How did it get its name? \
+  b. Visit the [UCSC Genome Browser](https://genome-euro.ucsc.edu/) and go to the Genome Browser (below "Tools"). Below "Human Assembly", select the "hg19" genome assembly and search for BCL11B. If you get a list of possible ocations, please choose the correct link corresponding to the BCL11B gene. What chromosome is the gene on, how long is it (in bp), and how many exons does it have? At what position does the gene start (hint: check the arrows in the gene model)? \
+  c. Click on the top gene variant in the top of your figure panel to visit a page with information on the gene model. How long is the coding region? How long is the ORF (in bp and in amino acids)? \
+  d. Go back to the genome view. Genome browsers work with "tracks", i.e., various sources of information aligned to the genome. What does the "100 Vert. cons" track contain? Do you see a correlation of this track with another track? \
+  e. You can also add tracks to the view yourself. Below the main genome window, lookup (but do not yet click on) "ClinVar Variants" under "Phenotype and Literature", select "pack" using the drop-down menu below it, and press the "refresh" button on the right. ClinVar is a database of mutations that have a proven clinical effect (i.e. lead to a disease). Find the red T>G SNP in the fourth exon – under "ClinVar Short Variants" – and zoom in to the nucleotide level ('base') to check whether it is synonymous or not (hint: use the "--->" at the top to select the correct strand). Does this match your expectations? \
+  f. Is the position conserved in other genomes?
 
 You can inspect a large number of pre-computed tracks in the UCSC Genome Browser, but it is hard to visualise individual NGS samples.
 For that we move to IGV, the [Integrated Genome Viewer](https://igv.org/app).
@@ -2381,22 +2382,22 @@ Then look up BCL11B using the search box and load some additional tracks.
 First, select "Tracks -> Variants", then choose "1KG Phase 3 SNPs" from the list; these are genotypes found in the 1000 Human Genomes project (which eventually sequenced approximately 2500 genomes).
 Also select "Tracks -> Platinum Genomes" and choose "NA12878"; this is short read data of one of six genomes which have been sequenced in depth using different technologies, a lymphoblast cell line to be precise.
 
-- g. Zoom in on the last exon (on the left). What do you notice in the NA12878 read data and the coverage plot at the top of that track?
-- h. Zoom in on position 99,639,270. What does the 1KG genotype track tell about this position? Click on track elements to get more information.
-- i. What genotype does NA12878 have at this position? How many reads support that genotype?
-- j. Next, load regulatory transcription data from the ENCODE project. The ENCODE project was a large functional genomics project that delivered a wide variety of datasets on how the human genome is used: transcription activity, histone modifications, DNA accessibility, etc. Download a file with [RNAseq data for NA12878](http://www.bioinformatics.nl/courses/BIF-20306/wgEncodeRegTxnCaltechRnaSeqGm12878R2x75Il200SigPooled_small.bigWig) and load it as a track in the IGV web app using "Tracks -> Local File...". If you look carefully at this track over the full length of BCL11B, is it in concordance with the gene model? What may cause this?
+  g. Zoom in on the last exon (on the left). What do you notice in the NA12878 read data and the coverage plot at the top of that track? \
+  h. Zoom in on position 99,639,270. What does the 1KG genotype track tell about this position? Click on track elements to get more information. \
+  i. What genotype does NA12878 have at this position? How many reads support that genotype? \
+  j. Next, load regulatory transcription data from the ENCODE project. The ENCODE project was a large functional genomics project that delivered a wide variety of datasets on how the human genome is used: transcription activity, histone modifications, DNA accessibility, etc. Download a file with [RNAseq data for NA12878](http://www.bioinformatics.nl/courses/BIF-20306/wgEncodeRegTxnCaltechRnaSeqGm12878R2x75Il200SigPooled_small.bigWig) and load it as a track in the IGV web app using "Tracks -> Local File...". If you look carefully at this track over the full length of BCL11B, is it in concordance with the gene model? What may cause this?
 
 Structural variants are another type of variation found in genomes that can be inspected in IGV.
 
-- k. Go to chr1:85,974,000-85,993,000 (copy and paste the coordinates into the search box). Have a closer look at the read data track of NA12878. What type of structural variant does the read coverage suggest here? Take a look at [Figure 3A](https://genome.cshlp.org/content/27/1/157) in the paper on the platinum genomes. Does this match your observation? From the "Tracks -> Variants..." menu, load the "1KG Phase 3 SVs" to verify this.
-- l. Locate the other end of the structural variant. What is its size?
-- m. In IGV a gene overlaps the structural variant. What is the name of the gene? Do you think the structural variant affects the protein sequence of the gene?
+k. Go to chr1:85,974,000-85,993,000 (copy and paste the coordinates into the search box). Have a closer look at the read data track of NA12878. What type of structural variant does the read coverage suggest here? Take a look at [Figure 3A](https://genome.cshlp.org/content/27/1/157) in the paper on the platinum genomes. Does this match your observation? From the "Tracks -> Variants..." menu, load the "1KG Phase 3 SVs" to verify this. \
+l. Locate the other end of the structural variant. What is its size? \
+m. In IGV a gene overlaps the structural variant. What is the name of the gene? Do you think the structural variant affects the protein sequence of the gene?
 
 ---
 
 <b><center>Optional</b></center>
 
-- n. You can visualize the individual datasets generated in the ENCODE project using "Tracks -> ENCODE Signals...". Search for "12878" in the top-right box and select a few tracks to display. Use Google to learn what experiments are displayed in these tracks.
+n. You can visualize the individual datasets generated in the ENCODE project using "Tracks -> ENCODE Signals...". Search for "12878" in the top-right box and select a few tracks to display. Use Google to learn what experiments are displayed in these tracks.
 
 ---
 
@@ -2434,24 +2435,23 @@ RNAseq measurements are in log<sub>2</sub>(TPM+1), where TPM stands for Transcri
 The project also includes measurements on copy number (CN) variation, DNA methylation etc.
 
 Again, <u>**use Google Chrome or Firefox**</u>, and do not forget that in most tools you can get additional information on plot elements by hovering your mouse over it.
-After completing this assignment, you should be able to explain the main types of analyses (differential expression, clustering, enrichment analysis) that can be performed on quantitative data.
-
-- a. Visit the CCLE website and search for the gene we worked with before, BCL11B. Your initial view contains a lot of information on expression and mutations of the gene in different (diseased) tissues. Select the "Characterization" tab at the top. You will then see the expression of the BCL11B gene, visualized using so-called _boxplots_. Use Google to figure out how you should interpret these plots – what do the boxes and lines represent?
-- b. Select the "Show lineage subtypes" box in the menu on the left. In which tissues/tumours is the gene highly expressed? In these tissues, in which diseases is it lowly expressed (i.e., between what diseases is BCL11B **differentially expressed**)? Does this match what you learned in GeneCards?
-- c. By clicking "Explore relationships with other data" (top right) you can explore the data in more depth. In the initial view, the y-axis is just used to separate the data points, it does not actually display a measurement. Hover your mouse over the dots to get more information on the samples in which BCL11B was measured. You can get a more informative picture by selecting "Primary disease" for the "Group by" option under "View Options". In which diseases and which samples do you find the highest expression?
-- d. Now select "Gene" as the data type for the Y axis (top left), enter "BCL11A" and select the "Expression" dataset. Again, under "View options", select to color by "Primary disease". Each point now represents the expression of BCL11A and BCL11B in one sample. In what samples are both genes highly expressed?
-- e. Now compare the expression of BCL11B to the expression of the gene RHOH in the same way. What do you see? You can again hover over the points to get more information; in the legend on the right, you can also double-click a specific disease to isolate a single disease and get a clearer picture.
-- f. What can you say about **differential expression** of RHOH by itself? Again, play with the "Group by" and "Filter by" View Options if needed. Does the differential expression pattern make sense? You can Google search the diseases to learn more about the tissues in which they occur.
+After completing this assignment, you should be able to explain the main types of analyses (differential expression, clustering, enrichment analysis) that can be performed on quantitative data. \
+  a. Visit the CCLE website and search for the gene we worked with before, BCL11B. Your initial view contains a lot of information on expression and mutations of the gene in different (diseased) tissues. Select the "Characterization" tab at the top. You will then see the expression of the BCL11B gene, visualized using so-called _boxplots_. Use Google to figure out how you should interpret these plots – what do the boxes and lines represent? \
+  b. Select the "Show lineage subtypes" box in the menu on the left. In which tissues/tumours is the gene highly expressed? In these tissues, in which diseases is it lowly expressed (i.e., between what diseases is BCL11B **differentially expressed**)? Does this match what you learned in GeneCards? \
+  c. By clicking "Explore relationships with other data" (top right) you can explore the data in more depth. In the initial view, the y-axis is just used to separate the data points, it does not actually display a measurement. Hover your mouse over the dots to get more information on the samples in which BCL11B was measured. You can get a more informative picture by selecting "Primary disease" for the "Group by" option under "View Options". In which diseases and which samples do you find the highest expression? \
+  d. Now select "Gene" as the data type for the Y axis (top left), enter "BCL11A" and select the "Expression" dataset. Again, under "View options", select to color by "Primary disease". Each point now represents the expression of BCL11A and BCL11B in one sample. In what samples are both genes highly expressed? \
+  e. Now compare the expression of BCL11B to the expression of the gene RHOH in the same way. What do you see? You can again hover over the points to get more information; in the legend on the right, you can also double-click a specific disease to isolate a single disease and get a clearer picture. \
+ f. What can you say about **differential expression** of RHOH by itself? Again, play with the "Group by" and "Filter by" View Options if needed. Does the differential expression pattern make sense? You can Google search the diseases to learn more about the tissues in which they occur.
 
 ---
 
 <b><center>Optional (20 minutes)</b></center>
 
-- g. Look up BCL11B in [GTEx](https://gtexportal.org/), the gene-tissue expression compendium. GTEx is similar to CCLE, but profiles expression in healthy tissues, collected from donors (directly after they passed away). Under the menu item "Expression", search for the BCL11B gene. In the resulting plot, play around to figure out in which tissue BCL11B is normally expressed most highly.
-- h. While at GTEx, you can inspect some PCA plots of the samples. PCA, or **Principal Component Analysis**, is often used to visualize high-dimensional data. It finds directions in the data along which the samples differ mostly: PC1 is the direction with most variation, PC2 the next direction perpendicular to PC1, and so on. Using the top menu, go to "Expression" -> "Expression PCA". Select the "Hardy Scale" to color the samples. What do you think this scale measures? Hint: look at the legend beneath the plots, the colors correspond to the Hardy Scale.
-- i. In what tissue do you expect to see differences in expression for "Ventilator case" donors? Check this by selecting the tissue from the "Select a tissue" drop down box to create a tissue-specific PCA plot.
-- j. Return to the CCLE and plot BCL11B expression versus BCL11B proteomics. Do you expect a correlation, and do you see one?
-- k. Plot BCL11B expression versus methylation (1kb upstream TSS) and check what DNA methylation does (https://en.wikipedia.org/wiki/DNA_methylation). Are the results what you would expect?
+  g. Look up BCL11B in [GTEx](https://gtexportal.org/), the gene-tissue expression compendium. GTEx is similar to CCLE, but profiles expression in healthy tissues, collected from donors (directly after they passed away). Under the menu item "Expression", search for the BCL11B gene. In the resulting plot, play around to figure out in which tissue BCL11B is normally expressed most highly. \
+  h. While at GTEx, you can inspect some PCA plots of the samples. PCA, or **Principal Component Analysis**, is often used to visualize high-dimensional data. It finds directions in the data along which the samples differ mostly: PC1 is the direction with most variation, PC2 the next direction perpendicular to PC1, and so on. Using the top menu, go to "Expression" -> "Expression PCA". Select the "Hardy Scale" to color the samples. What do you think this scale measures? Hint: look at the legend beneath the plots, the colors correspond to the Hardy Scale. \
+  i. In what tissue do you expect to see differences in expression for "Ventilator case" donors? Check this by selecting the tissue from the "Select a tissue" drop down box to create a tissue-specific PCA plot. \
+  j. Return to the CCLE and plot BCL11B expression versus BCL11B proteomics. Do you expect a correlation, and do you see one? \
+  k. Plot BCL11B expression versus methylation (1kb upstream TSS) and check what DNA methylation does (https://en.wikipedia.org/wiki/DNA_methylation). Are the results what you would expect?
 
 ---
 
@@ -2475,15 +2475,14 @@ If all went well, you found a correlation between the expression of BCL11B and R
 It is easier to find such relations by performing clustering, i.e., finding groups of genes and/or groups of samples that have similar expression.
 Such clusters can help you learn about functional relations between genes that cluster together, or phenotypic relations between samples that cluster together.
 For the CCLE, a nice interactive viewer is available [here](https://maayanlab.github.io/CCLE_Clustergrammer/).
-Open the page and select the "Bone" subset.
-
-- a. In the main figure, the so-called **heatmap**, what do blue and red pixels correspond to? Note that you can zoom in and scroll around using the mouse.
-- b. What is the expression level of BCL11B (use the search box if needed) in sample RDES?
-- c. On the right and at the bottom, the clusters are indicated by grey bars. How many groups of genes do you see initially? And how many groups of samples? Do you think that is reasonable, given the gene expression values?
-- d. You can create fewer or more clusters using the "volume slider buttons" next to the clusters. Try these. Does it look OK to group the genes into more clusters? And the samples?
-- e. Zoom in on the gene names on the left. Is BCL11B indeed clustered with RHOH?
-- f. At the top, additional information on the samples is plotted (tissue, histology, etc.). Does one of the sample clusters correspond to a certain annotation?
-- g. The top left shows a number of Gene Ontology terms (recall from [week 1](Week1_gene_ontology) that occur more often in the set of genes involved in bone tumours than you would expect by chance (i.e., than if a set of genes of similar size were randomly drawn from all genes). We call this a **GO enrichment analysis**. The heights of the bars correspond to the p-values of this analysis; the higher the bar, the more significant the enrichment. Do the terms make sense?
+Open the page and select the "Bone" subset. \
+  a. In the main figure, the so-called **heatmap**, what do blue and red pixels correspond to? Note that you can zoom in and scroll around using the mouse. \
+  b. What is the expression level of BCL11B (use the search box if needed) in sample RDES? \
+  c. On the right and at the bottom, the clusters are indicated by grey bars. How many groups of genes do you see initially? And how many groups of samples? Do you think that is reasonable, given the gene expression values? \
+  d. You can create fewer or more clusters using the "volume slider buttons" next to the clusters. Try these. Does it look OK to group the genes into more clusters? And the samples? \
+  e. Zoom in on the gene names on the left. Is BCL11B indeed clustered with RHOH? \
+  f. At the top, additional information on the samples is plotted (tissue, histology, etc.). Does one of the sample clusters correspond to a certain annotation? \
+  g. The top left shows a number of Gene Ontology terms (recall from [chapter 1](Week1_gene_ontology) that occur more often in the set of genes involved in bone tumours than you would expect by chance (i.e., than if a set of genes of similar size were randomly drawn from all genes). We call this a **GO enrichment analysis**. The heights of the bars correspond to the p-values of this analysis; the higher the bar, the more significant the enrichment. Do the terms make sense?
 
 %ANSWER%:::{dropdown} Assignment IV answers
 %ANSWER%a. Blue corresponds to low gene expression and red corresponds to high gene expression. Expression here seems to be normalized, where 0 means average expression. \
@@ -2502,10 +2501,9 @@ _Assignment V: Differential gene expression (45 minutes)_
 
 NCBI hosts the Gene Expression Omnibus, a database containing gene expression experiments. You can download and combine these data in various formats and analyse them on your own computer to potentially answer biological questions without performing measurements yourself. This course is too short to teach all the skills you need for reanalysing public data, but we can make use of an online tool called GEO2R to do some simple analyses in a web browser.
 
-After completing this assignment, you should be able to interpret the results of differential expression analyses on quantitative data
-
-- a. Visit the [Gene Expression Omnibus](https://www.ncbi.nlm.nih.gov/geo), search for sample series GSE69485 and read the summary and design of the study that produced this series. At the bottom you can find a list of samples. How many are there?
-- b. What type of microarray is used? You can get more information by searching GEO for GPL90. How many probesets are there, for how many genes?
+After completing this assignment, you should be able to interpret the results of differential expression analyses on quantitative data. \
+  a. Visit the [Gene Expression Omnibus](https://www.ncbi.nlm.nih.gov/geo), search for sample series GSE69485 and read the summary and design of the study that produced this series. At the bottom you can find a list of samples. How many are there? \
+  b. What type of microarray is used? You can get more information by searching GEO for GPL90. How many probesets are there, for how many genes?
 
 You can perform simple analyses on this data in GEO2R.
 In this case, we will try to find genes differentially expressed between yeast grown in aerobic and anaerobic conditions, i.e., with oxygen vs. without oxygen.
@@ -2515,14 +2513,14 @@ First, click "Define groups" (at the top) to create two groups, say "aerobic" an
 Then select all four samples taken during exponential growth phase (also late/end) under anaerobic conditions and assign them to the anaerobic group, by clicking "anaerobic" in the group list.
 Do the same for the four aerobic exponential growth phase samples.
 
-- c. Scroll down and press the "Analyze" button. After some processing, a number of graphs are shown that present expression levels, fold changes, differentially expressed genes (blue/red) etc. The "expression density" plot contains the overall distributions of the expression values of all genes per sample; if these distributions look very different, for example due to differences in the measurement setup, this may point to problems. Do these arrays look like they can be compared?
+  c. Scroll down and press the "Analyze" button. After some processing, a number of graphs are shown that present expression levels, fold changes, differentially expressed genes (blue/red) etc. The "expression density" plot contains the overall distributions of the expression values of all genes per sample; if these distributions look very different, for example due to differences in the measurement setup, this may point to problems. Do these arrays look like they can be compared?
 
 Below the figures you should see a list of Affymetrix probe sets (under "ID"), sorted by (adjusted) _p_-values.
 The logFC column indicates the log<sub>2</sub> fold change: 0 for no change, positive for genes more highly expressed under anaerobic conditions and negative for genes more highly expressed under aerobic conditions (or vice versa, depending on which group you created first).
 
-- d. What is the most significantly differentially expressed gene here (the one with the lowest _p_-value)?
-- e. You can inspect the underlying expression values by clicking on the corresponding row in the table, this will show a plot with the expression in each sample; the "Sample values" button will show the actual measurements. Compare the expression ranges for the top three genes. What do you notice?
-- f. To learn more about the differentially expressed genes, you can add Gene Ontology (GO) information. To do so, click "Select columns" above the table and select "GO: Function", "GO: Process" and "GO: Component". Then press "Set". What types of functions do you notice in the top 20 genes?
+  d. What is the most significantly differentially expressed gene here (the one with the lowest _p_-value)? \
+  e. You can inspect the underlying expression values by clicking on the corresponding row in the table, this will show a plot with the expression in each sample; the "Sample values" button will show the actual measurements. Compare the expression ranges for the top three genes. What do you notice? \
+  f. To learn more about the differentially expressed genes, you can add Gene Ontology (GO) information. To do so, click "Select columns" above the table and select "GO: Function", "GO: Process" and "GO: Component". Then press "Set". What types of functions do you notice in the top 20 genes?
 
 ---
 
@@ -2530,7 +2528,7 @@ The logFC column indicates the log<sub>2</sub> fold change: 0 for no change, pos
 Ideally, the results obtained are corroborated by additional experiments.
 In GEO, another study is available that focused on the effect of engineering amylase genes in yeast, producing series GSE38848.
 
-- g. Use GEO2R on series GSE38848 to find genes differentially expressed under anaerobic and aerobic conditions in the reference strain (NC) only. Do you find the same genes? The same functions?
+g. Use GEO2R on series GSE38848 to find genes differentially expressed under anaerobic and aerobic conditions in the reference strain (NC) only. Do you find the same genes? The same functions?
 
 ---
 

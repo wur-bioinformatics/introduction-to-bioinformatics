@@ -188,7 +188,15 @@ Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) {cite}`protein
 
 This ensures that there can be no doubt about the proper usage of imagery in the reader. Citations always follow licensing (if applicable).
 
-Self-created imagery has the preference by the WUR to be published under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) licensing.
+Self-created imagery has the preference by the WUR to be published under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) licensing and uses the format:
+```
+{cite}`own_"chapter number"_2024`.
+```
+For example:
+```
+{cite}`own_2_2024`. 
+```
+for self-created figures in chapter 2.
 
 More information on references and citations can be found in the [Jupyter Book documentation](https://jupyterbook.org/en/stable/reference/cheatsheet.html#citations)
 
@@ -283,9 +291,9 @@ For example:
 
 ```none
 %ANSWER%:::{dropdown} Assignment I answers
-%ANSWER%- a. Shared electrons
-%ANSWER%- b. The C=O and C-N bonds
-%ANSWER%- c. Peptide Bonds
+%ANSWER%a. Shared electrons
+%ANSWER%b. The C=O and C-N bonds
+%ANSWER%c. Peptide Bonds
 %ANSWER%:::
 ```
 
@@ -308,10 +316,10 @@ This practical contains questions and exercises to help you process the study ma
 
 _Assignment I: peptide folding (20 minutes)_
 
-- a. How do you recognize the peptide bonds in the web application?
+a. How do you recognize the peptide bonds in the web application?
 
 %ANSWER%:::{dropdown} Assignment I answers
-%ANSWER%- a. You can recognize them by the “shared electrons”.
+%ANSWER%a. You can recognize them by the “shared electrons”.
 %ANSWER%:::
 :::::
 
@@ -319,10 +327,10 @@ _Assignment I: peptide folding (20 minutes)_
 
 _Assignment II: structure search and visualisation (50 minutes)_
 
-- a. How many amino acids does the protein have?
+a. How many amino acids does the protein have?
 
 %ANSWER%:::{dropdown} Assignment II answers
-%ANSWER%- a. The total length is 81 AAs.
+%ANSWER%a. The total length is 81 AAs.
 %ANSWER%:::
 :::::
 %PRACTICAL_SEPARATOR%

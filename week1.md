@@ -1,4 +1,4 @@
-# Week 1 - Genes, Proteins, Databases, Genome annotation
+# Chapter 1 - Genes, Proteins, Databases, Genome annotation
 
 ## Biological background
 
@@ -147,7 +147,7 @@ There are four major types of RNA:
 
 RNA is produced by transcribing DNA: as such, it is a direct copy of the information contained in the DNA.
 Where DNA contains thymine (T, indicated in blue), RNA contains uracil (U, indicated in purple).
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`transcription_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_1_2024`.
 :::
 
 In eukaryotes, precursor mRNA molecules undergo splicing.
@@ -190,7 +190,7 @@ During this process tRNAs decode the information on the RNA into amino acids, wh
 
 The translation process, where ribosomes with tRNA molecules "read" codons on the mRNA using anticodons, which then get translated into their corresponding amino acids.
 These amino acids are linked together by peptide bonds to form a polypeptide chain.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`translation_alt_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_1_2024`.
 :::
 
 :::{seealso}
@@ -491,7 +491,7 @@ Although secondary structure elements are formed by hydrogen bonds between the b
 For example, methionine, alanine, leucine, and glutamic acid are favoured in α-helices, whereas proline, glycine, and tyrosine are disfavoured.
 Also, valine, isoleucine, tyrosine, cysteine, tryptophan, phenylalanine, and threonine are more frequently found in β-sheets, compared to α-helices.
 In turns, glycine, asparagine, proline, and serine are preferred.
-These preferences are used to predict secondary structure elements in proteins (see [week 4](Week4_secondary_structure_prediction)).
+These preferences are used to predict secondary structure elements in proteins (see [chapter 4](Week4_secondary_structure_prediction)).
 :::
 
 The peptide bond is very rigid and planar, i.e., it cannot rotate to form the elements of protein structure.
@@ -524,7 +524,7 @@ Thus, the Ramachandran plot can be used to assess how plausible a predicted prot
 :width: 50%
 :name: phipsi_alt
 
-A) The φ, and ψ torsion angles of a polypeptide chain. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`phipsi_alt_2024`.
+A) The φ, and ψ torsion angles of a polypeptide chain. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_1_2024`.
 B) A typical Ramachandran plot. The red regions marked do not have any steric hindrance, yellow areas represent conformations that have steric hindrance, light yellow areas represent conformations that are generally sterically unfavorable, and white areas do not have any allowed conformations.
 Credits: Ramachandran plot modified from [PROCHECK](https://www.ebi.ac.uk/thornton-srv/software/PROCHECK/index.html) {cite}`procheck_1993`.
 :::
@@ -666,8 +666,8 @@ The following section describes the most common steps in genome annotation.
 :class: note
 
 Several steps in the genome annotation process make use of algorithms that can search or align biological sequences, for example the BLAST algorithm.
-[Week 2](week2) covers sequence alignment and search in greater detail.
-For now, it is sufficient to know that these algorithms can quickly search very large collections of biological sequences to identify sequences that look similar (what we mean _exactly_ by 'similar' is also part of [week 2](week2)).
+[Chapter 2](week2) covers sequence alignment and search in greater detail.
+For now, it is sufficient to know that these algorithms can quickly search very large collections of biological sequences to identify sequences that look similar (what we mean _exactly_ by 'similar' is also part of [chapter 2](week2)).
 :::
 
 ### Repeat masking
@@ -736,8 +736,8 @@ Like homology-based prediction, this model-based approach works best for closely
 
 Several ab initio gene predictors that use the statistical procedure described above fall in a broader category of models called Hidden Markov Models (HMMs).
 HMMs are designed to model sequence characteristics, and as such they find widespread adoption in bioinformatics.
-[Week 2](week2) covers HMMs in greater detail.
-%#% Insert direct cross-reference to HMMs in week 2 when written.
+[Chapter 2](week2) covers HMMs in greater detail.
+%#% Insert direct cross-reference to HMMs in chapter 2 when written.
 :::
 
 ### Evidence/prediction integration
@@ -769,7 +769,7 @@ Various visualization conventions can be identified: boxes represent genomic reg
 Boxes are exons, lines between boxes are introns. Narrow boxes (sometimes with a lighter color) are untranscribed regions (UTRs), wider boxes (sometimes darker colored) are coding sequence regions (CDS).
 The arrow indicates the direction of transcription.
 In this example a gene on chromosome 1 with two splice variants is shown, where the first variant has a slightly longer 5' UTR and an additional CDS exon in between the first and last exons.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`genemodel_2024`.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_1_2024`.
 ```
 
 **Genome browsers** facilitate interactive visualization of annotations and evidence alignments on genome sequences.
@@ -946,7 +946,7 @@ Patterns cannot deal with mismatches and are limited to exact matches to the pat
 Thus, they are not well suited to identify distant homologs.
 A Prosite **profile** is more general than a pattern and can also detect poorly conserved domains or families.
 They characterize protein domains over their entire length and do not just model the conserved parts.
-Profiles are estimated from multiple sequence alignments and we learn more about them in [week 2](week2).
+Profiles are estimated from multiple sequence alignments and we learn more about them in [chapter 2](week2).
 For now, it is important to know that profiles model matches, insertions, and deletions.
 Importantly, profiles are **quantitative** representations, they will return a score how well the sequence fits to the profile.
 A threshold can be applied to get high-scoring profiles for a sequence.
@@ -1037,8 +1037,8 @@ You can find more information on InterPro entry types with examples [here](https
 
 Pfam is an important resource for protein domains.
 In Pfam, domains are classified according to profiles that are modelled as Hidden Markov models (HMMs).
-We will learn more on HMMs in [week 2](week2).
-%#% Create a direct cross-link to HMMs in week 2 when written.
+We will learn more on HMMs in [chapter 2](week2).
+%#% Create a direct cross-link to HMMs in chapter 2 when written.
 Pfam is now integrated in InterPro.
 Each Pfam domain can be represented with a logo, where the amino acids frequent at a particular position are represented as larger letters ({numref}`pfam-profile`).
 
@@ -1152,7 +1152,7 @@ Examples of other ontologies are the [plant ontology](https://www.ebi.ac.uk/ols/
 
 ## Practical assignments
 
-This practical contains questions and exercises to help you process the study materials of Week 1.
+This practical contains questions and exercises to help you process the study materials of Chapter 1.
 You have 2 mornings to work your way through the exercises.
 In a single session you should aim to get about halfway through this guide (i.e., day 1: assignment 1-3, day 2: assignment 4 and project preparation exercise).
 Use the time indication to make sure that you do not get stuck in one assignment.
@@ -1171,17 +1171,15 @@ _Assignment I: DNA/Genes (45 minutes)_
 3. What is the complementary base of A? C? G? T?
 4. What is the reverse complement of sequence ACGGTGATC?
 5. What is the GC content of sequence ATCGATCGGC?
-6. Which is correct? A nucleotide sequence is written from:
+6. Which is correct? A nucleotide sequence is written from: \
+  a. 5' to 3' \
+  b. 3' to 5'
 
-- a. 5' to 3'
-- b. 3' to 5'
-
-7. In a DNA sequence the G stands for:
-
-- a. Glycine
-- b. Guanine
-- c. Glucose
-- d. Glutamic acid
+7. In a DNA sequence the G stands for: \
+  a. Glycine \
+  b. Guanine \
+  c. Glucose \
+  d. Glutamic acid
 
 8. Given a coding DNA strand. Write down the non-coding strand, the transcribed sequence, and the resulting chain of amino acids. You may use {numref}`replication_alt`.
 ```
@@ -1190,10 +1188,9 @@ Non-coding strand:     ......................
 mRNA:                  ......................
 Amino acids:           ......................
 ```
-9. On your computer, browse to [UniProt](https://www.uniprot.org/) and search for UniProt ID B3H4Y2.
-
-- a. In which organism is this protein found? What is the length of this protein? What is the corresponding gene ID?
-- b. Write down the first 5 and last 5 amino acids of the protein.
+9. On your computer, browse to [UniProt](https://www.uniprot.org/) and search for UniProt ID B3H4Y2. \
+  a. In which organism is this protein found? What is the length of this protein? What is the corresponding gene ID? \
+  b. Write down the first 5 and last 5 amino acids of the protein.
 
 10. Browse to [arabidopsis.org](https://www.arabidopsis.org/tools/overview) and click on "JBrowse" (Firefox or Chrome recommended). This will take you to a genome browser of the _Arabidopsis_ genome. Search for the gene ID from question 9 (see screenshot below).
 
@@ -1204,19 +1201,17 @@ Amino acids:           ......................
 :name: assignment_1_10_jbrowse
 ```
 
-Under "Help" -> "General" you can find some information to help you understand what you are looking at.
+Under "Help" -> "General" you can find some information to help you understand what you are looking at. \
+  a. You can see that this gene produces two different mRNA transcripts (indicated by .1 and .2) and thus 2 different proteins. How many exons do these transcripts contain? How many introns? \
+  b. Turn on the track "Light grown seedling" under "RNA-seq based evidence"/"Aligned reads". Do you recognize the splice sites? Are the first two and last two bases of the intron as expected (based on {numref}`splicing`)? \
+  c. Save the data for transcript 1. Save a fasta file for the whole transcript and one for each coding sequence (CDS). Create a fasta file on your computer that contains the complete coding sequence of the protein. \
+  d. Is the length of the coding sequence in line with your expectation (based on your findings in question 9a)? \
+  e. Translate the first and last few codons to compare them against the protein sequence (question 9). Do they match? \
+  f. Look upstream of the gene. Can you find the TATA box? How many nucleotides before the start of transcription?
 
-- a. You can see that this gene produces two different mRNA transcripts (indicated by .1 and .2) and thus 2 different proteins. How many exons do these transcripts contain? How many introns?
-- b. Turn on the track "Light grown seedling" under "RNA-seq based evidence"/"Aligned reads". Do you recognize the splice sites? Are the first two and last two bases of the intron as expected (based on {numref}`splicing`)?
-- c. Save the data for transcript 1. Save a fasta file for the whole transcript and one for each coding sequence (CDS). Create a fasta file on your computer that contains the complete coding sequence of the protein.
-- d. Is the length of the coding sequence in line with your expectation (based on your findings in question 9a)?
-- e. Translate the first and last few codons to compare them against the protein sequence (question 9). Do they match?
-- f. Look upstream of the gene. Can you find the TATA box? How many nucleotides before the start of transcription?
-
-11. GC content
-
-- a. Find a tool on the internet to calculate the GC content of a gene. Which tool did you find? Use it to calculate the GC content for the whole transcript and for the coding sequence that you created in the previous task. What do you observe?
-- b. Look up the GC content of the chromosome where this gene is located (Hint: Search NCBI Genome for the species). Read about [GC content](https://en.wikipedia.org/wiki/GC-content) in coding sequences. Which of the information presented here agrees with your analysis?
+11. GC content \
+  a. Find a tool on the internet to calculate the GC content of a gene. Which tool did you find? Use it to calculate the GC content for the whole transcript and for the coding sequence that you created in the previous task. What do you observe? \
+  b. Look up the GC content of the chromosome where this gene is located (Hint: Search NCBI Genome for the species). Read about [GC content](https://en.wikipedia.org/wiki/GC-content) in coding sequences. Which of the information presented here agrees with your analysis?
 
 12. Why are viruses not represented in the tree of life? Take a look at [this site](https://www.nature.com/scitable/content/viruses-and-the-tree-of-life-14465158).
 13. Browse to the NCBI taxonomy. Look up the domain and family of the following species:
@@ -1261,27 +1256,27 @@ Under "Help" -> "General" you can find some information to help you understand w
 %ANSWER%10a. Under "protein coding genes" you see 2 different protein-coding transcripts. Exons are blue, coding sequences are yellow, introns are the thin black lines.Each transcript has 2 exons and 1 intron. \
 %ANSWER%10b. Yes, GU at the start of the intron and AG at the end. The bases at the start of the second exon vary. \
 %ANSWER%10c. Download the data (see screenshots) and generate a new text file where the CDSs have been concatenated.
-%ANSWER%`{image} images/Week1/assignment_1_10c_jbrowse.png
+%ANSWER%```{image} images/Week1/assignment_1_10c_jbrowse.png
 %ANSWER%:alt: from CDSs to fasta.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_1_10c_jbrowse
-%ANSWER%`
+%ANSWER%```
 %ANSWER%10d. Yes, 106+137=243, 243/3 = 81 codons and the last codon is a stop codon. \
 %ANSWER%10e. Yes, MGL... \
 %ANSWER%10f. Yes, about 24 nucleotides before the transcription start. Transcription starts at the 5' UTR of AT1G65484.1 (same as start of the gene locus). The sequence before that is CTTC<u>**TATATAA**</u>ACCGGTCCAGTATTATT. The bold/underlined bases form the TATA box in line with the definition (see also knowledge clip on DNA, slide 16). \
 %ANSWER%11a. Possible tools to use are on [endmemo](http://www.endmemo.com/bio/gc.php) or [Science Buddies](https://www.sciencebuddies.org/science-fair-projects/references/genomics-g-c-content-calculator). GC content for transcript: 34.137931 (length 870). GC content for CDS: 46.91358 (length 243). The GC content in the CDS is much higher. \
 %ANSWER%11b. The GC content of chromosome 1 is 35.9. It is known that coding regions have higher GC than the background genome, consistent with our observation. The GC content can be found by searching NCBI like this:
-%ANSWER%`{image} images/Week1/assignment_1_11b_ncbi.png
+%ANSWER%```{image} images/Week1/assignment_1_11b_ncbi.png
 %ANSWER%:alt: GC content NCBI query.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_1_11b_ncbi
-%ANSWER%`
+%ANSWER%```
 %ANSWER%You should get to [this](https://www.ncbi.nlm.nih.gov/genome/?term=Arabidopsis+thaliana) page. \
 %ANSWER%12. Viruses do contain DNA or RNA genomes, but they can only replicate inside a living cell of another organism, and thus are not considered cellular life forms. \
 %ANSWER%13.
-%ANSWER%`{list-table}
+%ANSWER%```{list-table}
 %ANSWER%:header-rows: 1
 %ANSWER%:widths: auto
 %ANSWER%:name: assignment_1_13_taxonomy_answers
@@ -1298,7 +1293,7 @@ Under "Help" -> "General" you can find some information to help you understand w
 %ANSWER%* - _Loxodonta cyclotis_
 %ANSWER%  - Eukaryota 
 %ANSWER%  - Elephantidae
-%ANSWER%`
+%ANSWER%```
 %ANSWER%:::
 :::::
 
@@ -1337,25 +1332,22 @@ _Assignment II: Proteins (45 minutes)_
   - valine
 ```
 
-4. Which is incorrect?
+4. Which is incorrect? \
+  a. A = Arginine \
+  b. V = Valine \
+  c. Q = Glutamine \
+  d. T = Threonine
 
-- a. A = Arginine
-- b. V = Valine
-- c. Q = Glutamine
-- d. T = Threonine
+5. In a folded protein, the nonpolar amino acids tend to be: \
+  a. On the inside of the protein \
+  b. At the surface of the protein \
+  c. Randomly distributed
 
-5. In a folded protein, the nonpolar amino acids tend to be:
-
-- a. On the inside of the protein
-- b. At the surface of the protein
-- c. Randomly distributed
-
-6. The side chains of amino acids play important roles in the folding and the function of proteins. Below, you can see a short peptide that has been formed by five amino acids (labeled from 1 to 5).
-
-- a. Indicate in blue and red the N-terminus and the C-terminus of the peptide, respectively, and highlight all peptide bonds in green.
-- b. For each of the five amino acids (1-5), give either the name, the three-letter or the one-letter code, depending on the information lacking (for example, for amino acid 1, give the three- and the one-letter code, while for amino acid 2 give the name and the three-letter code).
-- c. Indicate for each of the amino acids (1 to 5) its physiochemical properties (nonpolar, polar, acidic, basic).
-- d. Describe in one sentence what specific property the side chain of amino acid 4 has, and why this property is important to form protein structures.
+6. The side chains of amino acids play important roles in the folding and the function of proteins. Below, you can see a short peptide that has been formed by five amino acids (labeled from 1 to 5). \
+  a. Indicate in blue and red the N-terminus and the C-terminus of the peptide, respectively, and highlight all peptide bonds in green. \
+  b. For each of the five amino acids (1-5), give either the name, the three-letter or the one-letter code, depending on the information lacking (for example, for amino acid 1, give the three- and the one-letter code, while for amino acid 2 give the name and the three-letter code). \
+  c. Indicate for each of the amino acids (1 to 5) its physiochemical properties (nonpolar, polar, acidic, basic). \
+  d. Describe in one sentence what specific property the side chain of amino acid 4 has, and why this property is important to form protein structures.
 
 ```{image} images/Week1/assignment_2_6d_peptide.png
 :alt: Short five amino acid peptide.
@@ -1365,10 +1357,9 @@ _Assignment II: Proteins (45 minutes)_
 ```
 
 7. Amino acids and their side chains can interact with other amino acids and form bonds and interactions. Interactions between amino acids and their side chains play important roles in stable folded proteins structures. Revisit {numref}`terstructure` from the reader. With this information in mind, take another look at the peptide sequence with five amino acids (see question 6). Below this peptide, you will find the backbone of another peptide in which the side chains have been only indicated with R (labeled a-e). Look at the 20 amino acids in the amino acid table in the reader. Discuss with your neighbour which of the 20 possible amino acids could be placed as a side chains R (a-e) such that these can likely interact, i.e., forms bonds or other interactions, with the corresponding amino acids (1-5) in the upper peptide (i.e., a interacts with 1, b with 2, and so on). Indicate for each which type of interaction (e.g., hydrogen bonds) are occurring between your proposed pair of amino acids.
-   8.Proteins fold into compact structures, and this structure is important for proteins to have biological functional activity. In folded proteins (tertiary structure), the secondary structure is often still visible, i.e., helices and beta sheets are still visible. Sometimes proteins are not only formed by a single structural unit, a so-called domain, but by multiple domains that can either be the same type or of different types. Sometimes, it can be useful to look at the tertiary structure of proteins with known fold (either experimentally or in silico determined), e.g., to see where mutations in the structure occur. We will have a look at the protein structure of Gamma B-Crystallin. Go to the website of [PDB](https://www.rcsb.org), which is a resource for protein structures, and search on the main page for Gamma B-Crystallin, with the ID "1AMM". Click on '3D View' to see a three-dimensional model of the structure. On the bottom right, change the viewer to NGL.
-
-- a. Color the structure by Secondary structure (see 'Color', under 'Structure View'). Under 'Structure View Documentation' you can find the meaning of each color. Can you identify the number of secondary structure elements (helix, sheet) you can observe in the structure?
-- b. How many domains does this protein have?
+8.Proteins fold into compact structures, and this structure is important for proteins to have biological functional activity. In folded proteins (tertiary structure), the secondary structure is often still visible, i.e., helices and beta sheets are still visible. Sometimes proteins are not only formed by a single structural unit, a so-called domain, but by multiple domains that can either be the same type or of different types. Sometimes, it can be useful to look at the tertiary structure of proteins with known fold (either experimentally or in silico determined), e.g., to see where mutations in the structure occur. We will have a look at the protein structure of Gamma B-Crystallin. Go to the website of [PDB](https://www.rcsb.org), which is a resource for protein structures, and search on the main page for Gamma B-Crystallin, with the ID "1AMM". Click on '3D View' to see a three-dimensional model of the structure. On the bottom right, change the viewer to NGL. \
+  a. Color the structure by Secondary structure (see 'Color', under 'Structure View'). Under 'Structure View Documentation' you can find the meaning of each color. Can you identify the number of secondary structure elements (helix, sheet) you can observe in the structure? \
+  b. How many domains does this protein have?
 
 9. Amino acid quiz: you have now worked extensively with amino acids and you should know the relation between the 1- and 3-letter code, the name of the amino acid and its biochemical properties. To test this knowledge once more, perform this small test by filling in the missing information in the table (do not look at the reader before finalizing the quiz).
 
@@ -1451,28 +1442,28 @@ _Assignment II: Proteins (45 minutes)_
 %ANSWER%4. Answer a is incorrect, A stands for Alanine
 %ANSWER%5. The nonpolar amino acids are hydrophobic (not liking water), and therefore tend to be buried inside the protein surrounded by other hydrophobic amino acids.
 %ANSWER%6. Side chain activities
-%ANSWER%`{image} images/Week1/assignment_2_6_peptide_solution.png
+%ANSWER%```{image} images/Week1/assignment_2_6_peptide_solution.png
 %ANSWER%:alt: Peptide exercise solution.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_2_6_peptide_solution
-%ANSWER%`
+%ANSWER%```
 %ANSWER%7. Side chains and their activities \
-%ANSWER%a & b: other non-polar aa such as Val/Ala/Ieu -> hydrophobic \
+%ANSWER%  a & b: other non-polar aa such as Val/Ala/Ieu -> hydrophobic \
 %ANSWER%c: Asp -> electrostatic \
 %ANSWER%d: Cys -> disulfide \
-%ANSWER%e: Tyr (or any other polar amino acid)-> hydrogen bond \
+%ANSWER%e: Tyr (or any other polar amino acid)-> hydrogen bond
 %ANSWER%8. Protein structures \
-%ANSWER%a. there are 2 times 4 and 3 large beta strands (organized in 2 anti-parallel beta-sheets). Furthermore, the structure contains 1 alpha-helix and 3 3/10 helices, the fourth most common type of protein secondary structures. \
-%ANSWER%b. Likely two identical domains. If you look under "Annotations" in the menu, you see various different annotation sources that mention a gamma-crystallin domain. Under the "Sequence" tab you can see where these domains are on the protein, for example the PFAM or SCOP annotations clearly show two domains.
-%ANSWER%`{image} images/Week1/assignment_2_8b_pfam.png
+%ANSWER%  a. there are 2 times 4 and 3 large beta strands (organized in 2 anti-parallel beta-sheets). Furthermore, the structure contains 1 alpha-helix and 3 3/10 helices, the fourth most common type of protein secondary structures. \
+%ANSWER%  b. Likely two identical domains. If you look under "Annotations" in the menu, you see various different annotation sources that mention a gamma-crystallin domain. Under the "Sequence" tab you can see where these domains are on the protein, for example the PFAM or SCOP annotations clearly show two domains.
+%ANSWER%```{image} images/Week1/assignment_2_8b_pfam.png
 %ANSWER%:alt: 3D view of domains in 1AMM.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_2_8b_pfam
-%ANSWER%`
+%ANSWER%```
 %ANSWER%9. Amino acid quiz
-%ANSWER%`{list-table}
+%ANSWER%```{list-table}
 %ANSWER%:header-rows: 1
 %ANSWER%:widths: auto
 %ANSWER%:name: assignment_2_9_quiz_answers
@@ -1542,7 +1533,7 @@ _Assignment II: Proteins (45 minutes)_
 %ANSWER%  - His
 %ANSWER%  - **Histidine**
 %ANSWER%  - Nonpolar/Polar/Acidic/**Basic**
-%ANSWER%`
+%ANSWER%```
 %ANSWER%:::
 :::::
 
@@ -1550,57 +1541,53 @@ _Assignment II: Proteins (45 minutes)_
 
 _Assignment III: Databases (45 minutes)_
 
-1. In a web browser, navigate to the Molecular Biology Database Collection of the journal _[Nucleic Acids Research](http://www.oxfordjournals.org/nar/database/c/)_ (NAR). Pick three databases from the list that draw your attention, preferably from different categories, and explore them (approx. 5 min each).
+1. In a web browser, navigate to the Molecular Biology Database Collection of the journal _[Nucleic Acids Research](http://www.oxfordjournals.org/nar/database/c/)_ (NAR). Pick three databases from the list that draw your attention, preferably from different categories, and explore them (approx. 5 min each). \
+  a. What type of data is in there? \
+  b. What would it be used for? Highly specialized or broad applications? \
+  c. How can you search the database? \
+  d. Does it look up-to-date and regularly maintained?
 
-- a. What type of data is in there?
-- b. What would it be used for? Highly specialized or broad applications?
-- c. How can you search the database?
-- d. Does it look up-to-date and regularly maintained?
+2. Redundancy \
+  a. What does redundancy in a database mean? Give an example of redundancy in a sequence database. \
+  b. Are the UniProt databases redundant or non-redundant? \
+  c. What is the difference between RefSeq and GenBank in terms of redundancy?
 
-2. Redundancy
+3. Ontology \
+  a. Describe what an ontology is (use the information in the reader and/or Google to find information). \
+  b. The Gene Ontology is one of the most important ontologies in bioinformatics. Which biological domains are covered in the Gene Ontology? \
+  c. Look up the _Arabidopsis_ protein in UniProt (Accession B3H4Y2). What information do you find about the GO terms associated with this protein? \
+  d. Now look up the famous _Arabidopsis_ gene FRIGIDA (Accession P0DH90). Which GO terms are associated with this gene? In which cellular component is this protein found and which biological process is it involved in?
 
-- a. What does redundancy in a database mean? Give an example of redundancy in a sequence database.
-- b. Are the UniProt databases redundant or non-redundant?
-- c. What is the difference between RefSeq and GenBank in terms of redundancy?
-
-3. Ontology
-
-- a. Describe what an ontology is (use the information in the reader and/or Google to find information).
-- b. The Gene Ontology is one of the most important ontologies in bioinformatics. Which biological domains are covered in the Gene Ontology?
-- c. Look up the _Arabidopsis_ protein in UniProt (Accession B3H4Y2). What information do you find about the GO terms associated with this protein?
-- d. Now look up the famous _Arabidopsis_ gene FRIGIDA (Accession P0DH90). Which GO terms are associated with this gene? In which cellular component is this protein found and which biological process is it involved in?
-
-4. UniProt
-
-- a. Look up the two proteins from Q3 in UniProt again. In which of the sections of UniProt is each of them deposited. Which of the two has a higher annotation quality?
-- b. How many publications are linked to each of these proteins? Which of these publications contains specific information on the protein (based on the title)?
-- c. For each protein, look up at least one cross-reference to a database that you know and to a database that you do not yet know. Spend a few minutes to browse the information that you can gain in this way.
-- d. Calculate the frequency of individual amino acids in both protein sequences using the [PIR website](http://pir.georgetown.edu/pirwww/search/comp_mw.shtml). Do you notice something remarkable (Hint: look at relative abundance of various amino acids)? Can you relate this to information that is present in Uniprot (Hint: look at family/domains)?
+4. UniProt \
+  a. Look up the two proteins from Q3 in UniProt again. In which of the sections of UniProt is each of them deposited. Which of the two has a higher annotation quality? \
+  b. How many publications are linked to each of these proteins? Which of these publications contains specific information on the protein (based on the title)? \
+  c. For each protein, look up at least one cross-reference to a database that you know and to a database that you do not yet know. Spend a few minutes to browse the information that you can gain in this way. \
+  d. Calculate the frequency of individual amino acids in both protein sequences using the [PIR website](http://pir.georgetown.edu/pirwww/search/comp_mw.shtml). Do you notice something remarkable (Hint: look at relative abundance of various amino acids)? Can you relate this to information that is present in Uniprot (Hint: look at family/domains)?
 
 5. A hot topic in biological data management is "FAIR" data. What do the letters in FAIR stand for and what do those terms mean?
 
 %ANSWER%:::{dropdown} Assignment III answers
 %ANSWER%1. As a result of this question you should have explored a few databases. On the exam you could be asked to mention a few databases with biological data, so it’s good to get a feeling for how much and what kind of data is out there and how the data is organized and searchable.
 %ANSWER%2. Redundancy \
-%ANSWER%a. Redundancy in a database means that the database contains multiple entries with identical data. In a sequence database it could be that a certain protein sequence of a species has been submitted by several labs. \
-%ANSWER%b. Each of the UniProt databases is non-redundant (https://www.uniprot.org/help/redundancy). Definitions of redundancy differ. \
+%ANSWER%  a. Redundancy in a database means that the database contains multiple entries with identical data. In a sequence database it could be that a certain protein sequence of a species has been submitted by several labs. \
+%ANSWER%  b. Each of the UniProt databases is non-redundant (https://www.uniprot.org/help/redundancy). Definitions of redundancy differ. \
 %ANSWER%c. GenBank is a sequence database, containing sequences submitted by individual labs or large-sequencing projects. GenBank is redundant and can be very redundant for certain loci. RefSeq is the non-redundant version of GenBank where (near-)identical entries are merged. If multiple GenBank submissions represent the same molecule for an organism, the "best" sequence is chosen to represent as the RefSeq record.
-%ANSWER%3. Ontology \
-%ANSWER%a. An ontology is a formal specification of used terms and their connections. A set of concepts and categories in a subject area or domain that shows their properties and the relations between them. \
-%ANSWER%b. Biological process, molecular function, cellular component. \
-%ANSWER%c. B3H4Y2: You find 12 annotations. There are several GO-terms assigned by UniProt, the others are assigned by arabidopsis.orh (the arabidopsis information resource). GO:0016021 suggests this is an integral component of membrane; However, the molecular function annotation are assigned through sequence similarity only (i.e., there is no experimental evidence that verifies this). The linked processes are "response to salicyclic acid, ethylene, and water deprivation" (based on expression pattern evidence). \
-%ANSWER%d. Biological processes: flower development, cell differentiation. Cellular components: nuclear speck. All terms are assigned by uniprot through 'electronic annotation'.
+%ANSWER%  3. Ontology \
+%ANSWER%  a. An ontology is a formal specification of used terms and their connections. A set of concepts and categories in a subject area or domain that shows their properties and the relations between them. \
+%ANSWER%  b. Biological process, molecular function, cellular component. \
+%ANSWER%  c. B3H4Y2: You find 12 annotations. There are several GO-terms assigned by UniProt, the others are assigned by arabidopsis.orh (the arabidopsis information resource). GO:0016021 suggests this is an integral component of membrane; However, the molecular function annotation are assigned through sequence similarity only (i.e., there is no experimental evidence that verifies this). The linked processes are "response to salicyclic acid, ethylene, and water deprivation" (based on expression pattern evidence). \
+%ANSWER%  d. Biological processes: flower development, cell differentiation. Cellular components: nuclear speck. All terms are assigned by uniprot through 'electronic annotation'.
 %ANSWER%4. UniProt \
-%ANSWER%a. Both proteins are in swissprot. This can be seen through the gold/silver image next to the ID at the top of the info page. From this perspective both protein annotations are equally trustworthy. \
-%ANSWER%b. B3H4Y2 is linked to 3 publications: 2 that describe the _Arabidopsis_ genome (unspecific) and 1 (recent paper) about secreted transmembrane peptides (seems relevant). P0DH90 is linked to 8 specific publications. \
-%ANSWER%c. For B3H4Y2 it is e.g., possible to look up RefSeq, we find the genbank file of the protein. For a novel DB it is interesting to look up EnsemblPlants, which covers information on the transcript and on known variation. For P0DH90 it is also possible to look up Pfam. For a novel DB, it is interesting to look up Expression Atlas, where the expression data from several papers is presented. \
-%ANSWER%d. We find a very high fraction of Proline in B3H4Y2, this is unusual since the residue is also bound to the amino group, which has important effects on the protein structure. The proline-rich C-terminus is also noted in Uniprot (under Compositional bias).
-%ANSWER%`{image} images/Week1/assignment_3_4d_composition.png
+%ANSWER%  a. Both proteins are in swissprot. This can be seen through the gold/silver image next to the ID at the top of the info page. From this perspective both protein annotations are equally trustworthy. \
+%ANSWER%  b. B3H4Y2 is linked to 3 publications: 2 that describe the _Arabidopsis_ genome (unspecific) and 1 (recent paper) about secreted transmembrane peptides (seems relevant). P0DH90 is linked to 8 specific publications. \
+%ANSWER%  c. For B3H4Y2 it is e.g., possible to look up RefSeq, we find the genbank file of the protein. For a novel DB it is interesting to look up EnsemblPlants, which covers information on the transcript and on known variation. For P0DH90 it is also possible to look up Pfam. For a novel DB, it is interesting to look up Expression Atlas, where the expression data from several papers is presented. \
+%ANSWER%  d. We find a very high fraction of Proline in B3H4Y2, this is unusual since the residue is also bound to the amino group, which has important effects on the protein structure. The proline-rich C-terminus is also noted in Uniprot (under Compositional bias).
+%ANSWER%```{image} images/Week1/assignment_3_4d_composition.png
 %ANSWER%:alt: Composition of B3H4Y2.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_3_4d_composition
-%ANSWER%`
+%ANSWER%```
 %ANSWER%5. \
 _Findable_: data is well annotated, persistent identifiers, indexed. \
 _Accessible_: standardized communication protocols. \
@@ -1615,28 +1602,25 @@ _Assignment IV: Genome annotation (120 minutes)_
 
 1. Explain how homology searches can be useful in genome annotation and why it is more complex for eukaryotes than for prokaryotes.
 2. How does RNA-sequencing data help gene prediction? Is RNA-sequencing data on its own sufficient to annotate a genome?
-3. In the [UniProt databse](https://www.uniprot.org/) look up the _Arabidopsis_ protein with identifier B3H4Y2. The corresponding gene ID is AT1G65484. In a second tab, look up this gene in TAIR [JBrowse](https://www.arabidopsis.org/tools/overview). The sequence of this gene can be found on BrightSpace. In a third tab, go to the [NCBI Open Reading Frame Finder](https://www.ncbi.nlm.nih.gov/orffinder/) and paste in the gene sequence in FASTA format and hit submit.
+3. In the [UniProt databse](https://www.uniprot.org/) look up the _Arabidopsis_ protein with identifier B3H4Y2. The corresponding gene ID is AT1G65484. In a second tab, look up this gene in TAIR [JBrowse](https://www.arabidopsis.org/tools/overview). The sequence of this gene can be found on BrightSpace. In a third tab, go to the [NCBI Open Reading Frame Finder](https://www.ncbi.nlm.nih.gov/orffinder/) and paste in the gene sequence in FASTA format and hit submit. \
+  a. How many ORFs are found? Are they all in the same reading frame? \
+  b. Do any of the ORFs correspond to the ORF in the annotated gene? Why or why not? \
+  c. When is a simple ORF detection tool useful? When is it insufficient?
 
-- a. How many ORFs are found? Are they all in the same reading frame?
-- b. Do any of the ORFs correspond to the ORF in the annotated gene? Why or why not?
-- c. When is a simple ORF detection tool useful? When is it insufficient?
+4. Yeast (_Saccharomyces cerevisiae_) is a well-studied model organism. A lot of information about yeast is stored in the [Saccharomyces Genome Database](https://www.yeastgenome.org) (SGD). You will work on the reference strain S288C. The relatively small genome of yeast gives us the opportunity to explore some online genome annotation tools (within reasonable time) and compare our findings to the high-quality annotation that is available. In the menu on SGD click on Sequence -> Reference Genome -> Genome Snapshot. Under "Features by Type" explore both the graph and the table view. \
+  a. How many genes does the yeast genome contain? \
+  b. How many tRNAs have been annotated on chromosome 3 and how many on the mitochondrial genome? \
+  First you will annotate the mitochondrial genome of yeast, using [MITOS2](https://usegalaxy.eu/root?tool_id=toolshed.g2.bx.psu.edu/repos/iuc/mitos2/mitos2/2.1.3+galaxy0). \
+  c. Use the mitochondrial genome, provided on Brightspace or download the sequence from SGD. What is the length of the mitochondrial (MT) genome? Be creative or use Google to find the answer. Is the MT genome linear or circular? \
+  d. The yeast MT genome does not use the Standard Genetic Code. Which one does it use? Use [NCBI Genetic Codes](https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi) to find the answer. How many codons have a different meaning? \
+  e. Go to [MITOS2 tool](https://usegalaxy.eu/root?tool_id=toolshed.g2.bx.psu.edu/repos/iuc/mitos2/mitos2/2.1.3+galaxy0). Select a relevant Reference and Genetic Code for yeast and upload the fasta file. **Make sure to change the output to GFF**. Hit submit. This annotation can take about 10 minutes, so continue with the next exercises (5 and 6) until the results are done. \
+  f. Browse the results by clicking around. How many tRNAs are predicted? \
+  g. Look up the first predicted tRNA in the genome browser on SGD. Does the prediction match the known tRNA? To which amino acid does this tRNA correspond? How many GO terms are associated with this tRNA gene? \
+  h. What can you find out about the "giy" gene? In the FAA fasta text file (download from the menu on the left) you can find the protein sequence produced by the gene. Go to [InterPro](https://www.ebi.ac.uk/interpro/search/sequence) and use the protein sequence to search for known protein domains/functions using InterProScan. What functional information do you find for this protein? (Running InteProScan can take a few minutes, in the meantime continue with the next question).
 
-4. Yeast (_Saccharomyces cerevisiae_) is a well-studied model organism. A lot of information about yeast is stored in the [Saccharomyces Genome Database](https://www.yeastgenome.org) (SGD). You will work on the reference strain S288C. The relatively small genome of yeast gives us the opportunity to explore some online genome annotation tools (within reasonable time) and compare our findings to the high-quality annotation that is available. In the menu on SGD click on Sequence -> Reference Genome -> Genome Snapshot. Under "Features by Type" explore both the graph and the table view.
-
-- a. How many genes does the yeast genome contain?
-- b. How many tRNAs have been annotated on chromosome 3 and how many on the mitochondrial genome?
-  First you will annotate the mitochondrial genome of yeast, using [MITOS2](https://usegalaxy.eu/root?tool_id=toolshed.g2.bx.psu.edu/repos/iuc/mitos2/mitos2/2.1.3+galaxy0).
-- c. Use the mitochondrial genome, provided on Brightspace or download the sequence from SGD. What is the length of the mitochondrial (MT) genome? Be creative or use Google to find the answer. Is the MT genome linear or circular?
-- d. The yeast MT genome does not use the Standard Genetic Code. Which one does it use? Use [NCBI Genetic Codes](https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi) to find the answer. How many codons have a different meaning?
-- e. Go to [MITOS2 tool](https://usegalaxy.eu/root?tool_id=toolshed.g2.bx.psu.edu/repos/iuc/mitos2/mitos2/2.1.3+galaxy0). Select a relevant Reference and Genetic Code for yeast and upload the fasta file. **Make sure to change the output to GFF**. Hit submit. This annotation can take about 10 minutes, so continue with the next exercises (5 and 6) until the results are done.
-- f. Browse the results by clicking around. How many tRNAs are predicted?
-- g. Look up the first predicted tRNA in the genome browser on SGD. Does the prediction match the known tRNA? To which amino acid does this tRNA correspond? How many GO terms are associated with this tRNA gene?
-- h. What can you find out about the "giy" gene? In the FAA fasta text file (download from the menu on the left) you can find the protein sequence produced by the gene. Go to [InterPro](https://www.ebi.ac.uk/interpro/search/sequence) and use the protein sequence to search for known protein domains/functions using InterProScan. What functional information do you find for this protein? (Running InteProScan can take a few minutes, in the meantime continue with the next question).
-
-5. Next, we will predict protein-coding genes on chromosome 3 using the widely used [Augustus ab-initio gene predictor](http://bioinf.uni-greifswald.de/augustus/submission.php). Augustus outputs its predictions in the GFF3 text-based file format. To be able to make sense of the Augustus output, familiarize yourself with this format [here](https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md). The Augustus gene predictor has already been trained on many organisms.
-
-- a. Upload the sequence of chromosome 3, choose the right Organism and "run AUGUSTUS" (predict genes on both strands). How many genes are predicted? How many of those contain an intron?
-- b. b. What can you say about the function, domains, etc. of gene g100? Which databases did you use to find this information?
+5. Next, we will predict protein-coding genes on chromosome 3 using the widely used [Augustus ab-initio gene predictor](http://bioinf.uni-greifswald.de/augustus/submission.php). Augustus outputs its predictions in the GFF3 text-based file format. To be able to make sense of the Augustus output, familiarize yourself with this format [here](https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md). The Augustus gene predictor has already been trained on many organisms. \
+  a. Upload the sequence of chromosome 3, choose the right Organism and "run AUGUSTUS" (predict genes on both strands). How many genes are predicted? How many of those contain an intron? \
+  b. What can you say about the function, domains, etc. of gene g100? Which databases did you use to find this information?
 
 6. You have now seen several examples of tools used in genome annotation. Describe structural and functional genome annotation in your own words and give an example of each.
 
@@ -1644,27 +1628,27 @@ _Assignment IV: Genome annotation (120 minutes)_
 %ANSWER%1. Many annotated prokaryotic genomes are present in databases. For a novel genome, you can search against these databases (either nucleotide sequences of genes or protein sequences) to see if these genes/proteins are also present in this novel genome. Typically more than 50% of the genes can be identified this way. For eukaryotes this is much more complex because of introns. There it is more useful to align known proteins to a novel genome as evidence.
 %ANSWER%2. RNA-seq is a direct read-out of transcription and as such is very useful in finding splice-sites. Not all genes are always expressed, so typically RNA-seq is not sufficient to identify all protein-coding genes.
 %ANSWER%3. \
-%ANSWER%a. 6 ORFs are detected, the reading frames are different (1, 1, 2, 2, 2, 3). Note: if you copied the gene sequence from TAIR on arabidopsis.org, you will likely have found 6 ORFs in frames 1, 1, 2, 2, 2, 2. No, because the gene contains an intron, so there’s not 1 continuous ORF in the gene sequence. After splicing, the ORF should be in the coding sequence (CDS). \
-%ANSWER%b. ORF1 corresponds to the start of the gene, but it is too long. The gene has an intron at some point, which is not translated.
+%ANSWER%  a. 6 ORFs are detected, the reading frames are different (1, 1, 2, 2, 2, 3). Note: if you copied the gene sequence from TAIR on arabidopsis.org, you will likely have found 6 ORFs in frames 1, 1, 2, 2, 2, 2. No, because the gene contains an intron, so there’s not 1 continuous ORF in the gene sequence. After splicing, the ORF should be in the coding sequence (CDS). \
+%ANSWER%  b. ORF1 corresponds to the start of the gene, but it is too long. The gene has an intron at some point, which is not translated. \
+%ANSWER%  \>lcl|ORF1 \
+%ANSWER%  **MGLKMSSNALLLSLFLLLLCLFSEIGGSETTHWKI**GQCLPISH \
+%ANSWER%  NSSSYQWIFFSPKPNLAYLRIWLFLETNYNRRISNSALFLLLLYCIK \
+%ANSWER%  The first CDS has a length of 106 (producing 35 AAa), the second part 137, together 243. The second part of the protein does not start with a start codon, so it won’t be found by ORFFINDER. \
+%ANSWER%  c. In prokaryotes, when there are no introns in the genes, it is very useful. In eukaryotes containing many genes with introns, it typically does not work.
 %ANSWER%
-%ANSWER%\>lcl|ORF1 \
-%ANSWER%**MGLKMSSNALLLSLFLLLLCLFSEIGGSETTHWKI**GQCLPISH \
-%ANSWER%NSSSYQWIFFSPKPNLAYLRIWLFLETNYNRRISNSALFLLLLYCIK
-%ANSWER%
-%ANSWER%The first CDS has a length of 106 (producing 35 AAa), the second part 137, together 243. The second part of the protein does not start with a start codon, so it won’t be found by ORFFINDER. \
-%ANSWER%c. In prokaryotes, when there are no introns in the genes, it is very useful. In eukaryotes containing many genes with introns, it typically does not work. \
 %ANSWER%4. \
-%ANSWER%a. 6572 protein-coding genes. \
-%ANSWER%b. 10 tRNAs on Chr 3, 24 on mt. \
-%ANSWER%c. 85,779 nt (85.8 Kb), circular genome. \
-%ANSWER%d. https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi#SG3. 6 codons have a different meaning. https://en.wikipedia.org/wiki/Yeast_mitochondrial_code also mentions that 2 codons are absent. \
-%ANSWER%e. Select chrmt.fasta as the fasta file, Yeast(3) as the genetic code and RefSeq63 Metazoa as your reference data. \
-%ANSWER%f. When you look in the GFF file, you can count 24 tRNAs. \
-%ANSWER%g. Yes: the coordinates of the first tRNA match the reference annotation (but for example in the second one the stop position is different, so the coordinates do not always match). The tRNA corresponds to Proline, 3 GO terms: GO:0005739, GO:0006414, GO:0030533. \
-%ANSWER%h. The protein seems to be some sort of polymerase according to for example the 'homologous superfamily' section of the output. Associated GO term: mRNA processing (GO:0006397). \
+%ANSWER%  a. 6572 protein-coding genes. \
+%ANSWER%  b. 10 tRNAs on Chr 3, 24 on mt. \
+%ANSWER%  c. 85,779 nt (85.8 Kb), circular genome. \
+%ANSWER%  d. https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi#SG3. 6 codons have a different meaning. https://en.wikipedia.org/wiki/Yeast_mitochondrial_code also mentions that 2 codons are absent. \
+%ANSWER%  e. Select chrmt.fasta as the fasta file, Yeast(3) as the genetic code and RefSeq63 Metazoa as your reference data. \
+%ANSWER%  f. When you look in the GFF file, you can count 24 tRNAs. \
+%ANSWER%  g. Yes: the coordinates of the first tRNA match the reference annotation (but for example in the second one the stop position is different, so the coordinates do not always match). The tRNA corresponds to Proline, 3 GO terms: GO:0005739, GO:0006414, GO:0030533. \
+%ANSWER%  h. The protein seems to be some sort of polymerase according to for example the 'homologous superfamily' section of the output. Associated GO term: mRNA processing (GO:0006397).
+%ANSWER%
 %ANSWER%5. \
-%ANSWER%a. 143 predicted, 9 with an intron (search for the word intron, look at them and count). \
-%ANSWER%b. Using InterProScan, the information you find is limited, for example there are no associated GO terms. There is a domain of an ATP-dependent chromatin-remodelling protein, which could provide hints for further research into this proteins function. If you used BLASTP on UniProt, you could have found a lot more information: it seems this protein is [RSC6_YEAST](https://www.uniprot.org/uniprotkb/P25632/entry), and there is for example some literature on this class of proteins. <u>NOTE: using BLASTP was not part of this week’s assignment, so you are not expected to have found this information at this point in the course.</u> \
+%ANSWER%  a. 143 predicted, 9 with an intron (search for the word intron, look at them and count). \
+%ANSWER%  b. Using InterProScan, the information you find is limited, for example there are no associated GO terms. There is a domain of an ATP-dependent chromatin-remodelling protein, which could provide hints for further research into this proteins function. If you used BLASTP on UniProt, you could have found a lot more information: it seems this protein is [RSC6_YEAST](https://www.uniprot.org/uniprotkb/P25632/entry), and there is for example some literature on this class of proteins. <u>NOTE: using BLASTP was not part of this week’s assignment, so you are not expected to have found this information at this point in the course.</u> \
 %ANSWER%6. Structural annotation is the identification of genome features in the genome, e.g., start and stop positions of gene regions, exons, introns, UTRs, CDS. Functional annotation is assigning biological information to the genome features, e.g., protein function, domains, enzyme codes, type of transposon, etc.
 %ANSWER%:::
 :::::
