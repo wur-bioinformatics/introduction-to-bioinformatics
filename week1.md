@@ -1589,10 +1589,10 @@ _Assignment III: Databases (45 minutes)_
 %ANSWER%:name: assignment_3_4d_composition
 %ANSWER%```
 %ANSWER%5. \
-_Findable_: data is well annotated, persistent identifiers, indexed. \
-_Accessible_: standardized communication protocols. \
-_Interoperable_: allow linking/exchange/import of data from different sources through accepted data representations and ontologies. \
-_Reusable_: others should be able to use it, clear, standardized descriptions, proper license, etc.
+%ANSWER%_Findable_: data is well annotated, persistent identifiers, indexed. \
+%ANSWER%_Accessible_: standardized communication protocols. \
+%ANSWER%_Interoperable_: allow linking/exchange/import of data from different sources through accepted data representations and ontologies. \
+%ANSWER%_Reusable_: others should be able to use it, clear, standardized descriptions, proper license, etc.
 %ANSWER%:::
 :::::
 
