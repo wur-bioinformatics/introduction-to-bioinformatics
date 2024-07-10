@@ -398,7 +398,15 @@ Different BLAST types to compare different data types. Credits: [CC BY-NC 4.0](h
 
 One straightfoward observation from a sequence search is that one query sequence often has multiple similar sequences ({numref}`blast_output`). This can lead to research questions on for example evolution (where do these sequences come from?), function (why are some sequences more similar to each other than to others?), or stucture (are all parts of these sequences equally similar/dissimilar?). To compare all of these sequences with eachother using a pairwise alignment strategy would quickly lead to a large number of comparisons and would be difficult to interpret. Instead, in cases where we want to compare 3 or more sequences with each other, we turn to **multiple sequence alignment**.
 
-The objective of performing multiple sequence alignment is to identify matching residues (DNA, RNA, or amino acids) across multiple sequences of potentially differing lengths. Similar to pairwise alignment, the result is called 'a multiple sequence alignment'. The resulting multiple sequence alignment can be thought of as a square matrix: rows represent the sequences that we started with, columns represent homologous residues across sequeces, and the entries are either residues or gaps **INSERT FIGURE REFERENCE HERE**.
+The objective of performing multiple sequence alignment is to identify matching residues (DNA, RNA, or amino acids) across multiple sequences of potentially differing lengths. Similar to pairwise alignment, the result is called 'a multiple sequence alignment'. The resulting multiple sequence alignment can be thought of as a square matrix: rows represent the sequences that we started with, columns represent homologous residues across sequeces, and the entries are either residues or gaps ({numref}`msa_concept`).
+
+:::{figure} images/Week2/msa.svg
+:alt: Multiple Sequence Alignment (conceptual)
+:width: 80%
+:name: msa_concept
+
+Conceptual diagram depicting multiple sequence alignment. Colored dots represent similar sequence elements, in the multiple sequence diagram on the right these elements align in vertical columns. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
+:::
 
 INSERT: SOME SECTION ON RELEVANCE OF MSA
 

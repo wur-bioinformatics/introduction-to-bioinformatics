@@ -1,4 +1,4 @@
-# Chapter 3 - Phylogenetics & tree reconstruction
+# Chapter 3 - Phylogenetics and tree reconstruction
 
 ```{epigraph}
 
