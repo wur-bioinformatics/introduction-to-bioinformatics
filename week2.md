@@ -415,16 +415,61 @@ Various algorithms for creating multiple sequence alignments exist. Here we will
 ### Progressive alignment
 To avoid having to reconcile many pairwise alignments, progressive alignment takes an iterative approach using a guide tree. The guide tree represents a crude measure of similarity between all sequences that are to be analyzed. Progressive alignment picks the two most similar sequences using the guide tree and initializes the multiple sequence alignment by aligning these two sequences with a global alignment strategy. Subsequently, the guide tree is used to determine the order in which sequences are added to the alignment. One way of thinking about this, is that progressive alignment creates increasingly large 'blocks' of sequences, where a block is always treated as a unit (e.g. introducing a gap will happen for all sequences in the block). By iterating through the guide tree, this alignment strategy 'progresses' to the final result, hence the name 'progressive alignment'.
 
+```{admonition} Box 1: Constructing a guide tree
+:class: tip
+The guide tree that is used by the progressive alignment strategy is typically created with a clustering algorithm that takes as input all pairwise distances between sequences. Obtaining these pairwise distances can be done through e.g. local alignment scores, but another common approach is to count the number of subsequences of length $K$ (also known as k-mers) that are present in both sequences of a sequence pair. The downside of this k-mer based strategy is that it provides a crude distance measure (and is therefore not very accurate), the benefit is that it is very fast.
+
+In addition, once a multiple sequence alignment has been created with the progressive strategy, it is straightforward to recompute the guide tree based on this first multiple sequence alignment and calculate a second multiple sequence alignment based on this updated guide tree. This recomputing of the guide tree could in theory be repeated infinitely many times, in practice it seems sufficient to only recompute once. The often used multiple sequence alignment program `mafft` implements recomputing the guide tree in the `FFT-NS-2` algorithm.
+```
+
 ### Iterative refinement
-One potential downside of the progressive alignment strategy is that some of the intermediate blocks represent sub-optimal alignments. Identifying and potentially improving such cases is often referred to as 'iterative refinement' and typically happens on a multiple sequence alignment that was created with a progressive strategy. 
+One potential downside of the progressive alignment strategy is that some of the intermediate blocks represent sub-optimal alignments. For example, when a gap is introduced during an early stage of the progressive approach, it is never removed from the alignment. Identifying and potentially improving such cases is often referred to as 'iterative refinement' and typically happens on a multiple sequence alignment that was created with a progressive strategy. 
+
+Iterative refinement takes as input a multiple sequence alignment, a scoring function for the multiple sequence alignment, and a function to rearrange the multiple sequence alignment. It produces a 'refined' multiple sequence alignment by rearranging the multiple sequence alignment and only keeps the new multiple sequence alignment if the score has increased. This process is typically repeated untill the score no longer increases (or for a fixed number of iterations).
+
+```{admonition} Box 2: Scoring and rearranging multiple sequence alignments
+:class: tip
+For iterative refinenment, various scoring and rearranging strategies exist. Here we outline a common approach for both: the weigted sum-of-pairs scoring function and the partitioning rearrangement strategy.
+
+__Weighted sum-of-pairs scoring__: A generalization of the sum-of-pairs method, where the sum-of-pairs method simply calculates and sums all possible pairwise alignment scores. The generalization consists of adding specific weighing factors to each pair, where the weights are determined by the phylogenetic relationship between the sequences. 
+
+__Partitioning rearrangement__: Following a guide tree, the multiple sequence alignment is partioned into two sub-alignments (or blocks) along each branch of the tree. Each pair of blocks is then realigned, but the resulting alignment is only kept if the score of the realigned blocks has increased.
+```
 
 ## Motifs
+
+Having established how to obtain a multiple sequence alignment, we now focus on several interpretations. One thing that all of these interpretations have in common, is that they enable the identification of (and search for) commonly occuring sequence patterns. A frequently used term for a commonly occuring sequence pattern is __motif__, which we will use from now on. All interpretations of motifs are based on summarizing the _columns_ of the multiple sequence alignment, in an attempt to describe commonly occurring residues across all sequences.
+
+```{admonition} Note 2.5: MSAs VS motifs
+:class: note
+Since all motifs are based on multiple sequence alignments, it may seem tempting to use the terms interchangeably. A key distinction is that a motif always represent a commonly occurring pattern, whereas a multiple sequence alignment can also contain regions of low conservation/similarity. In addition, one multiple sequence alignment can contain multiple motifs.
+```
+
+Arguably the simplest representation of a motif is the __consensus sequence__ (fig XB), where every column of the multiple sequence alignment is represented by the most frequently occurring residue (i.e. the majority consensus). The downside of a consensus sequence is that it does not represent any of the variation present in the motif. 
+
+An extension of the consensus sequence that can represent some variation in a motif is the __pattern string__ (fig XC). Pattern strings contain special syntax for representing variation, for example the pattern `[AG]` indicates that one position in the motif can be either `A` or `G`. As such, pattern strings take inspiration from [regular expressions](https://en.wikipedia.org/wiki/Regular_expression). Various types of pattern strings exist, for example `PROSITE` __REF__ strings contain syntax for representing positions in a motif where the residue is irrelevant (marked by an `*`). Pattern strings are capable of representing some variation in the motif, but they cannot express how likely the occurence of specific variants is (in the example `[AG]`, both `A` and `G` are equally likely to occur).
+
+To express the likelihood of a specific residue occurring at a specific position, a __Position Specific Scoring Matrix (PSSM)__ can be used (FIG XD). 
+
+:::{figure} images/Week2/msa-pattern-pssm-logo.svg
+:alt: Various representations of a motif
+:width: 60%
+:name: motif_concept
+
+Conceptual diagram depicting various representations of a conserved motif. __A:__ MSA __B:__ Consensus sequence __C:__ Pattern __D:__ Position Specific Scoring Matrix (PSSM) __E:__ Sequence logo. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
+:::
+
 
 PSSM, logo
 
 Rens
 
 ## HMMs
+
+```{admonition} Sequence search with MSAs
+:class: important
+The ability to convert a multiple sequence alignment into a collection of probabilities (e.g. PSSMs or HMMs) makes it possible to calculate the probability of a novel sequence 'belonging' to the multiple sequence alignment. This technique generally allows for a more sensitive approach than searching based on pairwise alignments. In practice this often means that matching sequences can be identified over larger evolutionary distances. Tools that implement some version of this approach are `psiBLAST` (which uses PSSMs) and various `HMMer` tools (all using HMMs).
+```
 
 jackhammer, psi-BLAST(!)
 
