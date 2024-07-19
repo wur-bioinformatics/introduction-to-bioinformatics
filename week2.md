@@ -423,7 +423,7 @@ In addition, once a multiple sequence alignment has been created with the progre
 ```
 
 ### Iterative refinement
-One potential downside of the progressive alignment strategy is that some of the intermediate blocks represent sub-optimal alignments. For example, when a gap is introduced during an early stage of the progressive approach, it is never removed from the alignment. Identifying and potentially improving such cases is often referred to as 'iterative refinement' and typically happens on a multiple sequence alignment that was created with a progressive strategy. 
+One potential downside of the progressive alignment strategy is that some of the intermediate blocks represent sub-optimal alignments. For example, when a gap is introduced during an early stage of the progressive approach, it is never removed from the alignment. Identifying and potentially improving such cases is often referred to as 'iterative refinement' and typically happens on a multiple sequence alignment that was created with a progressive strategy.
 
 Iterative refinement takes as input a multiple sequence alignment, a scoring function for the multiple sequence alignment, and a function to rearrange the multiple sequence alignment. It produces a 'refined' multiple sequence alignment by rearranging the multiple sequence alignment and only keeps the new multiple sequence alignment if the score has increased. This process is typically repeated untill the score no longer increases (or for a fixed number of iterations).
 
@@ -431,7 +431,7 @@ Iterative refinement takes as input a multiple sequence alignment, a scoring fun
 :class: tip
 For iterative refinenment, various scoring and rearranging strategies exist. Here we outline a common approach for both: the weigted sum-of-pairs scoring function and the partitioning rearrangement strategy.
 
-__Weighted sum-of-pairs scoring__: A generalization of the sum-of-pairs method, where the sum-of-pairs method simply calculates and sums all possible pairwise alignment scores. The generalization consists of adding specific weighing factors to each pair, where the weights are determined by the phylogenetic relationship between the sequences. 
+__Weighted sum-of-pairs scoring__: A generalization of the sum-of-pairs method, where the sum-of-pairs method simply calculates and sums all possible pairwise alignment scores. The generalization consists of adding specific weighing factors to each pair, where the weights are determined by the phylogenetic relationship between the sequences.
 
 __Partitioning rearrangement__: Following a guide tree, the multiple sequence alignment is partioned into two sub-alignments (or blocks) along each branch of the tree. Each pair of blocks is then realigned, but the resulting alignment is only kept if the score of the realigned blocks has increased.
 ```
@@ -445,7 +445,7 @@ Having established how to obtain a multiple sequence alignment, we now focus on 
 Since all motifs are based on multiple sequence alignments, it may seem tempting to use the terms interchangeably. A key distinction is that a motif always represent a commonly occurring pattern, whereas a multiple sequence alignment can also contain regions of low conservation/similarity. In addition, one multiple sequence alignment can contain multiple motifs.
 ```
 
-Arguably the simplest representation of a motif is the __consensus sequence__ (fig XB), where every column of the multiple sequence alignment is represented by the most frequently occurring residue (i.e. the majority consensus). The downside of a consensus sequence is that it does not represent any of the variation present in the motif. 
+Arguably the simplest representation of a motif is the __consensus sequence__ (fig XB), where every column of the multiple sequence alignment is represented by the most frequently occurring residue (i.e. the majority consensus). The downside of a consensus sequence is that it does not represent any of the variation present in the motif.
 
 An extension of the consensus sequence that can represent some variation in a motif is the __pattern string__ (fig XC). Pattern strings contain special syntax for representing variation, for example the pattern `[AG]` indicates that one position in the motif can be either `A` or `G`. As such, pattern strings take inspiration from [regular expressions](https://en.wikipedia.org/wiki/Regular_expression). Various types of pattern strings exist, for example `PROSITE` __REF__ strings contain syntax for representing positions in a motif where the residue is irrelevant (marked by an `*`). Pattern strings are capable of representing some variation in the motif, but they cannot express how likely the occurence of specific variants is (in the example `[AG]`, both `A` and `G` are equally likely to occur).
 
@@ -617,7 +617,7 @@ On the first practical day you should aim to get about halfway through this guid
 Thus, you should aim to be finished with Assignment III.
 Use the time indication to make sure that you do not get stuck in one assignment.
 These practical exercises offer you the best preparation for the project.
-Make sure that you develop your practical skills now, in order to apply them during the project
+Make sure that you develop your practical skills now, in order to apply them during the project.
 
 **Note, the answers will be published after the practical!**
 
@@ -1080,7 +1080,7 @@ Here, we aim to design primers that can be used to detect the presence of the _A
 %ANSWER%```
 %ANSWER%Exclusion and specific sequences can be utilized similarly to normal blast. Using nr is not advised as even though the db is non-redundant, there are often highly similar matches from other species/strains/cultivars that might indicate non-specific binding for the target organisms interested. \
 %ANSWER%d. PrimerBLAST is able to help you to overcome issues with identical sequences being in the database. If PrimerBLAST would not do so, every search would likely return a non-specific primer pair. \
-%ANSWER%e. All primers are okay (based on the defined parameters). The ideal product length for DNA is in the range 150-1000bp (in practice 150-300bp is used a lot, but it depends on the purpose of the PCR). For example, primer pair 2 (225 bp product) or 7 (152 bp product) would be good. 
+%ANSWER%e. All primers are okay (based on the defined parameters). The ideal product length for DNA is in the range 150-1000bp (in practice 150-300bp is used a lot, but it depends on the purpose of the PCR). For example, primer pair 2 (225 bp product) or 7 (152 bp product) would be good.
 %ANSWER%```{image} images/Week2/assignment_8e_result.png
 %ANSWER%:alt: Primer-BLAST result.
 %ANSWER%:align: center
