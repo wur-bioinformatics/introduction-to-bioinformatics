@@ -616,7 +616,9 @@ Make sure that you develop your practical skills now, in order to apply them dur
 
 _Assignment I: BLAST of Vps36 (30 minutes)_
 
-First, we want to find homologs of the yeast protein Vps36, the Vacuolar protein-sorting-associated protein 36. \
+Finding homologs of proteins is a common task in biology, since the presence of homologs can tell us something about the function of the protein and in which other species it can be found. \
+Thus, we first practise finding homologs. \
+We want to find homologs of the yeast protein Vps36, the Vacuolar protein-sorting-associated protein 36. \
 To this end, we search in two different databases and compare the results. \
   a. Retrieve the protein sequence of Vps36p from the yeast S. cerevisiae (NP_013521.3) from NCBI in fasta format. (Note: you can download it into a file or leave the tab open and use copy/paste). What does the fasta format look like? I.e. how is the sequence and the additional information (name) of the sequence stored? \
   b. We want to identify similar proteins in the swissprot database using the National Center for Biotechnology Information (NCBI) BLAST program. Go to the website of the [NCBI](https://www.ncbi.nlm.nih.gov). On the right sight of the webpage, you find a direct link to BLAST. Next, you need to decide which search strategy would be appropriate to search a protein database (swissprot) with a protein sequence as a query (if you are not sure anymore, look at {numref}`blast_types`). Click on the appropriate search strategy. Enter the sequence into the query box, select UniProtKb/Swissprot as the database you want to search, and make sure you have the correct algorithm selected. Finally, click on the ‘BLAST’ button to perform the search. \
@@ -667,17 +669,17 @@ To this end, we search in two different databases and compare the results. \
 %ANSWER%:name: assignment_1f_hits
 %ANSWER%```
 %ANSWER%g. 100 hits are found, the last one has an e-value of 2e-41, thus the list is probably incomplete and only the first 100 sequences are reported. \
-%ANSWER%h. With WUR blast 468 hits are found (with NCBI blast, 524 hits would be found, probably due to a more recent database with more entries). Most hits have low e-values, but some have high e-values (above 0.001) and might not be considered homologs. \
+%ANSWER%h. With WUR blast 468 hits are found (with NCBI blast, 553 hits would be found, probably due to a more recent database with more entries). Most hits have low e-values, but some have high e-values (above 0.001) and might not be considered homologs. \
 %ANSWER%i. All the results are the same, only the e-value is lower with the Swiss-Prot database. Thus, the found proteins are identical, but the refseq database is much larger, which results in a higher e-value.
 %ANSWER%
-%ANSWER%WUR blast
+%ANSWER%WUR blast result with RefSeq database
 %ANSWER%```{image} images/Week2/assignment_1i_wur.png
 %ANSWER%:alt: WUR blast result.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_1i_wur
 %ANSWER%```
-%ANSWER%NCBI blast
+%ANSWER%NCBI blast result with RefSeq database
 %ANSWER%```{image} images/Week2/assignment_1i_ncbi.png
 %ANSWER%:alt: WUR blast result.
 %ANSWER%:align: center
@@ -818,17 +820,17 @@ Here, we will use bioinformatics approaches to analyse PLT1 to discover if it is
 [UniProt](http://www.uniprot.org) is a publicly available protein database that contains protein sequences and functional annotation for >200,000,000 protein entries. \
   a. Have a look at the UniProt website. Why does UniProtKB-TrEMBL have so many more entries than UniProtKB-Swiss-Prot? \
   b. Search for the _Arabidopsis_ protein PLT1 using the UniProt identifier Q5YGP8. The PLT1 entry provides you with an overview of the protein entry and some functional information. Read the functional description of PLT1. Does this description fit the information above on PLT1, and how does UniProt gather this information? \
-  c. Towards the end of the entry, you can find the actual protein sequence of PLT1. You can download the sequence in a fasta format by clicking on the Download button. \
-  d. Which functional regions are present in PLT1? Where in the sequence are they located? Which database is used for that information? (Hint: functional regions can be found under Function -> Features). \
+  c. Which functional regions are present in PLT1? Where in the sequence are they located? Which database is used for that information? (Hint: functional regions can be found under Function -> Features). \
+  d. Towards the end of the entry, you can find the actual protein sequence of PLT1. You can download the sequence in a fasta format by clicking on the Download button. \
   e. Interpro also provides a functional analysis of proteins and their domains. Go the the [interpro](https://www.ebi.ac.uk/interpro/) website and look up the entry for PLT1. How many protein domains have been identified in PLT1 and where are they located? \
   f. Look up the domain in Interpro. What is the function of the identified domains? What information can you find on GO terms and on protein structures? \
   g. Look up the domain in Pfam and look at the HMM logo of the domain. Which 3 positions are most conserved and which amino acids are preferred there? \
   h. We want to analyze the repeats in this protein using the online dot-plot program [Dotlet](http://dotlet.vital-it.ch). Go to the website and add the PLT1 protein sequence as sequence 1 and sequence 2 (we want to perform a self-comparison). To filter some of the low scoring alignments you need to use the sliders below the score histogram. How many repeats can you find in this segment of the protein, and at which locations within the protein fragment are these located? \
   i. What happens if you change the scoring matrix from `BLOSUM62` to `Identity`? \
   j. Use the mouse to click on the region that likely contains the repeat sequence. Use the left and right arrow keys to locate the beginning of the aligned repeat structure. Which conserved amino acids can you identify? Compare the logo of the repeat family with the conserved amino acids that you found. What do you observe? \
-  Pairwise sequence alignments can identify regions that are conserved.
+  k. Pairwise sequence alignments can identify regions that are conserved.
   Obtain the amino acid sequence of the first and second AP2 domain of PLT1 that was found in InterPro and perform a pairwise sequence alignment with algorithms you can find on the [EBI website](https://www.ebi.ac.uk/jdispatcher/psa). \
-  k. First perform a global alignment using the Needleman-Wunsch algorithm (Needle). Choose protein alignment and add the protein sequence of each of the protein domain sequences of PLT1. What is the overall identity and similarity between the two domains, and why do these two values differ? \
+  First perform a global alignment using the Needleman-Wunsch algorithm (Needle). Choose protein alignment and add the protein sequence of each of the protein domain sequences of PLT1. What is the overall identity and similarity between the two domains, and why do these two values differ? \
   l. Now perform a local alignment using the Smith-Waterman algorithm. Do you expect to observe large differences between the global and the local alignment? Explain why.
 
 %ANSWER%:::{dropdown} Assignment III answers
@@ -841,16 +843,16 @@ Here, we will use bioinformatics approaches to analyse PLT1 to discover if it is
 %ANSWER%```
 %ANSWER%Swiss-Prot contains manually annotated sequences while TrEMBL contains automatically deposited sequences (for instance from genome sequencing projects); UniProtKB contains data from both databases. \
 %ANSWER%b. PLT1 is a transcription factor. This is mainly based on sequence similarity but also based on information from literature. \
-%ANSWER%c.
+%ANSWER%c. UniProt reports two AP2 domains. According to Prosite, they are located at positions 181-247 and 283-341 in the protein. \
+%ANSWER%d.
 %ANSWER%```{image} images/Week2/assignment_3c_fasta.png
 %ANSWER%:alt: PLT1 sequence.
 %ANSWER%:align: center
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_3c_fasta
 %ANSWER%```
-%ANSWER%d. UniProt reports two AP2 domains. According to Prosite, they are located at positions 181-247 and 283-341 in the protein. \
 %ANSWER%e. Use the browse function and enter the Uniprot accession. You can identify two AP2 DOMAINS (IPR001471/PF00847). IPR001471: 180-253 and 282-347. \
-%ANSWER%f. AP2/ERF domains are transcription factors. 8 structures are found in PDB, 51K structures are found in Alphafold.
+%ANSWER%f. AP2/ERF domains are transcription factors. 8 structures are found in PDB, 49K structures are found in Alphafold.
 %ANSWER%```{image} images/Week2/assignment_3f_go.png
 %ANSWER%:alt: GO terms of AP2.
 %ANSWER%:align: center
@@ -912,9 +914,10 @@ We will use BLAST to identify protein sequences in publicly available databases 
 %ANSWER%b. 250 hits. The limit on the number of returned alignments was set to 250. \
 %ANSWER%c. You would likely find more than 250 hits; 250 is set as default, always check the default settings of the programs you use. Swiss-Prot hits are likely better due to the increased quality (manual vs automatic). \
 %ANSWER%d. Set the E-value parameters and/or the max number of matches. On the results page you may also select 'popular organisms' to only get results from these. \
-%ANSWER%e. 148 hits are found. \
-%ANSWER%f. 103 hits. \
-%ANSWER%g. BLAST always performs a local alignment. The more sequences diverge, the smaller the region with sufficient similarity to perform the alignment will get. This is normally also reflected by drops in bit-score and e-value, but not in identity. Thus, when filtering matches on identity, query coverage (or similar) should be considered \
+%ANSWER%e. 136 hits are found. \
+%ANSWER%f. 104 hits. \
+%ANSWER%g. BLAST always performs a local alignment. Most of these hits only cover parts of the target sequence, which is expected for a local alignment.
+The more sequences diverge, the smaller the identity and the region with sufficient similarity to perform the alignment will get. This is normally also reflected by drops in bit-score and e-value. Thus, when filtering matches on identity, query coverage (or similar) should also be considered. \
 %ANSWER%h. Make sure you save the first 10 database hits in fasta format somewhere you can find it again. You will need it for the next assignment.
 %ANSWER%:::
 :::::
