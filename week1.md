@@ -864,11 +864,6 @@ Genbank is part of the [INSDC](https://www.insdc.org/) (International Nucleotide
 The other two member databases are [ENA](https://www.ebi.ac.uk/ena/browser/home) (European Nucleotide Archive) and [DDBJ](https://www.ddbj.nig.ac.jp/index-e.html) (DNA Data Bank of Japan).
 The data submitted to either database is exchanged daily, so all databases contain essentially the same information.
 
-The **GenBank file format** is also a popular format to represent genes or genomes.
-[Here](https://www.ncbi.nlm.nih.gov/Sitemap/samplerecord.html) you can find an example GenBank record with annotations.
-Important elements are the Locus, Definition (i.e., the name), and the Organism.
-Additionally, Features, such as genes and CDSs (coding sequences) are listed.
-
 ---
 
 ### RefSeq
@@ -1086,6 +1081,7 @@ On a Windows computer, plain text files can for example be created with the Note
 :name: notepad
 
 A screenshot of Notepad on Windows.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_1_2024`.
 :::
 
 On a Mac, plain text files can for example be created with the TextEdit program ({numref}`textedit`).
@@ -1097,6 +1093,7 @@ Take care to set the settings to plain text.
 :name: textedit
 
 A screenshot of TextEdit on Mac.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_1_2024`.
 :::
 
 ```{admonition} See also
@@ -1105,7 +1102,7 @@ If you are not yet familiar with plain text editors, then try it now and write a
 ```
 
 There are some important file formats in bioinformatics.
-A fasta file stores a DNA or protein sequence ({numref}`fasta`).
+A **fasta file** stores a DNA or protein sequence ({numref}`fasta`).
 Information on the sequence is found in the header (starting with `>`), which is on one line and the sequence can go over multiple lines.
 A multi-fasta file stores multiple sequences.
 
@@ -1115,24 +1112,19 @@ A multi-fasta file stores multiple sequences.
 :name: fasta
 
 A sequence in fasta format.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_1_2024`.
 :::
 
-A genbank file can save additional information about a sequence, for example about the taxonomy of the organisms, who published it and when it was isolated ({numref}`genbank-format`).
-In addition features can be found on a sequence such as genes within a genome.
-
-:::{figure} images/Week1/genbank-format.png
-:alt: Genbank file
-:width: 50%
-:name: genbank-format
-
-A sequence with additional information in genbank format.
-:::
+The **GenBank file format** is a popular format to represent genes or genomes.
+[Here](https://www.ncbi.nlm.nih.gov/Sitemap/samplerecord.html) you can find an example GenBank record with annotations.
+Important elements are the Locus, Definition (i.e., the name), and the Organism.
+Additionally, Features, such as genes and CDSs (coding sequences) are listed.
 
 #### Binary files
 
 Binary files are all the files that are not text files, they cannot be opened in a text editor.
 Instead, they need special programs to write and to open and interpret them.
-Examples are word files (.docx) which can be opened with Word, pdf files (.pdf) which can be opened with Acrobat Reader, or image files (e.g., .png) which can be opened with image viewers.
+Examples are word files (`.docx`) which can be opened with Word, pdf files (`.pdf`) which can be opened with Acrobat Reader, or image files (e.g., `.png`) which can be opened with image viewers.
 
 Binary files are are also sometimes used in bioinformatics.
 Examples include the bam format, which is a binary version of the sam format or the gzip format.
