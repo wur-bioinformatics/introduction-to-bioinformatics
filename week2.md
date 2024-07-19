@@ -449,7 +449,7 @@ Arguably the simplest representation of a motif is the __consensus sequence__ (f
 
 An extension of the consensus sequence that can represent some variation in a motif is the __pattern string__ (fig XC). Pattern strings contain special syntax for representing variation, for example the pattern `[AG]` indicates that one position in the motif can be either `A` or `G`. As such, pattern strings take inspiration from [regular expressions](https://en.wikipedia.org/wiki/Regular_expression). Various types of pattern strings exist, for example `PROSITE` __REF__ strings contain syntax for representing positions in a motif where the residue is irrelevant (marked by an `*`). Pattern strings are capable of representing some variation in the motif, but they cannot express how likely the occurence of specific variants is (in the example `[AG]`, both `A` and `G` are equally likely to occur).
 
-To express the likelihood of a specific residue occurring at a specific position, a __Position Specific Scoring Matrix (PSSM)__ can be used (FIG XD).
+To express the likelihood of a specific residue occurring at a specific position, a __Position Specific Scoring Matrix (PSSM)__ can be used (FIG XD). Every column in a PSSM represents a column in the multiple sequence alignment and every row represents one of the possible residues. For example: a DNA PSSM would have four rows, representing the nucleotides `A`, `C`, `G`, or `T`. The entries represent probabilities of observing a specific residue at a specific position. As a consequence, all columns in a PSSM must sum to one.
 
 :::{figure} images/Week2/msa-pattern-pssm-logo.svg
 :alt: Various representations of a motif
@@ -465,6 +465,15 @@ PSSM, logo
 Rens
 
 ## HMMs
+
+:::{figure} images/Week2/hmm.svg
+:alt: DNA profile HMM with three positions and three states (match, insertion, deletion)
+:width: 60%
+:name: simple_hmm
+
+. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
+:::
+
 
 ```{admonition} Sequence search with MSAs
 :class: important
