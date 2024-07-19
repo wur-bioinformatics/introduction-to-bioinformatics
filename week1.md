@@ -1052,6 +1052,95 @@ Credits: {cite}`interpro_2022`.
 :::
 
 ---
+### File formats
+
+There are many different formats for biological data.
+A format is a set of rules about the contents and organization of the data.
+You should be familiar with a couple of common data formats in bioinformatics, which you will experience in the practicals.
+
+```{admonition} Note 1.8: Examples of common data formats in bioinformatics
+:class: note
+* FASTA
+* Genbank
+* GFF (Generic Feature Format)
+* FASTQ
+* SAM/BAM (Sequence Alignment/Map format)
+* VCF (Variant Call Format)
+* PDB (structure data)
+```
+
+#### Plain text files
+
+Many of the biological data formats are plain text files, they only contain letters, numbers, and symbols, but no formatting, such as font size or colors.
+As a convention, they usually have the ending `.txt`.
+The advantage of plain text files is that they can be opened with any text editor on any computer.
+Plain text differs from rich text format, where the latter can also include formatting.
+Many bioinformatics programs expect plain text files as input.
+Thus, when creating them on your computer, take care to save in this format, and not for example in rtf or word.
+
+On a Windows computer, plain text files can for example be created with the Notepad program ({numref}`notepad`).
+
+:::{figure} images/Week1/notepad.png
+:alt: Notepad editor
+:width: 70%
+:name: notepad
+
+A screenshot of Notepad on Windows.
+:::
+
+On a Mac, plain text files can for example be created with the TextEdit program ({numref}`textedit`).
+Take care to set the settings to plain text.
+
+:::{figure} images/Week1/textedit.png
+:alt: TextEdit editor
+:width: 100%
+:name: textedit
+
+A screenshot of TextEdit on Mac.
+:::
+
+```{admonition} See also
+:class: seealso
+If you are not yet familiar with plain text editors, then try it now and write and save a plain text file on your computer!
+```
+
+There are some important file formats in bioinformatics.
+A fasta file stores a DNA or protein sequence ({numref}`fasta`).
+Information on the sequence is found in the header (starting with `>`), which is on one line and the sequence can go over multiple lines.
+A multi-fasta file stores multiple sequences.
+
+:::{figure} images/Week1/fasta.png
+:alt: Fasta file
+:width: 50%
+:name: fasta
+
+A sequence in fasta format.
+:::
+
+A genbank file can save additional information about a sequence, for example about the taxonomy of the organisms, who published it and when it was isolated ({numref}`genbank-format`).
+In addition features can be found on a sequence such as genes within a genome.
+
+:::{figure} images/Week1/genbank-format.png
+:alt: Genbank file
+:width: 50%
+:name: genbank-format
+
+A sequence with additional information in genbank format.
+:::
+
+#### Binary files
+
+Binary files are all the files that are not text files, they cannot be opened in a text editor.
+Instead, they need special programs to write and to open and interpret them.
+Examples are word files (.docx) which can be opened with Word, pdf files (.pdf) which can be opened with Acrobat Reader, or image files (e.g., .png) which can be opened with image viewers.
+
+Binary files are are also sometimes used in bioinformatics.
+Examples include the bam format, which is a binary version of the sam format or the gzip format.
+Gzip is used for compressing text files without the loss of information.
+For large files, lots of disk space can be saved this way.
+
+
+---
 
 (Week1_ontologies)=
 
@@ -1070,7 +1159,7 @@ Ontologies play a crucial role in bioinformatics because they facilitate:
     They enable computer systems to process data more accurately, leading to more meaningful analyses and discoveries.
 3.  **Scientific reasoning**: by organizing information in a logical and structured way, ontologies help researchers generate hypotheses, design experiments, and validate findings more effectively.
 
-:::{admonition} Note 1.8: FAIR principles
+:::{admonition} Note 1.9: FAIR principles
 :class: note
 
 As described above, ontologies facilitate scientific reproducibility.
@@ -1095,7 +1184,7 @@ The [Gene Ontology](http://geneontology.org/) (GO) is a knowledgebase for the fu
   Can be cellular compartments (e.g., [mitochondrion](http://amigo.geneontology.org/amigo/term/GO:0005739)) or macromolecular complexes of which they are part (e.g., the [ribosome](http://amigo.geneontology.org/amigo/term/GO:0005840)).
 - Biological Process: the larger biological programs composed of multiple molecular activities, for example [DNA repair](http://amigo.geneontology.org/amigo/term/GO:0006281) or [signal transduction](http://amigo.geneontology.org/amigo/term/GO:0007165).
 
-:::{admonition} Note 1.9: Molecular pathway?
+:::{admonition} Note 1.10: Molecular pathway?
 :class: note
 
 A biological process is not equivalent to a molecular pathway.
@@ -1291,7 +1380,7 @@ Under "Help" -> "General" you can find some information to help you understand w
 %ANSWER%  - Archaea
 %ANSWER%  - Haloarculaceae
 %ANSWER%* - _Loxodonta cyclotis_
-%ANSWER%  - Eukaryota 
+%ANSWER%  - Eukaryota
 %ANSWER%  - Elephantidae
 %ANSWER%```
 %ANSWER%:::
