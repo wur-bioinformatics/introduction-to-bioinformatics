@@ -2,3 +2,4 @@ _build/*
 _answers/*
 
 .DS_Store
+*.ipynb_checkpoints

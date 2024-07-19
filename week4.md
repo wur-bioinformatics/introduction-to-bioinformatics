@@ -35,9 +35,9 @@ While current experimental methods can generate many sequences of hypothetical p
 The main traditional experimental analytical techniques used are nuclear magnetic resonance (NMR) spectroscopy and X-ray crystallography.
 The former yields useful but noisy measurements with usually multiple structural conformations; the latter is more accurate, but easily costs 120,000 euros and it can take a year or even longer to fully elucidate the protein 3D structure from the data, and some structures cannot be measured at all.
 However, fueled by recent technical advances, biological sequence data has become widely available, mostly in the form of genomic sequences.
-By translating these DNA sequences into possible amino acid sequences using the codon language you have learned about in [chapter1](Week1_genetic_code), amino acid sequences can be inferred in which theoretical proteins can be predicted.
+By translating these DNA sequences into possible amino acid sequences using the codon language you have learned about in [chapter 1](Week1_genetic_code), amino acid sequences can be inferred in which theoretical proteins can be predicted.
 The sheer number of biological sequences make manual analysis too daunting. Thus, alternative methods to derive 3D protein structures are needed to interpret the large amount of biological sequence data that has become available in the recent decades.
-Consequently, predicting protein structures based on protein sequence information has been a topic of high interest and relevance for biochemistry for many decades now.
+Consequently, predicting protein structures based on protein sequence information has been a topic of high interest and relevance to biochemists and scientists in general for many decades.
 
 The sequence-structure-function paradigm states that, _in principle_, all information to predict the folding of a protein, and thus its 3D structure and ultimately its function, is stored in its primary sequence.
 In practice, however, predicting structure from its sequence turned out to be a very complex and challenging task.
@@ -68,7 +68,7 @@ Hence, several assignment tools were developed to replace the previously discuss
 
 The three options for an amino acid residue as mentioned above would translate into a so-called "three-state model", (α-helix, β-strand, or other) used by secondary structure assignment tools such as DSSP, PALSSE, and Stride, that use 3D structures as an input to assign three secondary structure labels.
 You will get hands-on experience with these tools during the practical assignments. Please note that there are additional – less occurring – secondary structure elements that could be recognized, such as the β-turn, a sharp bend in the protein chain, and several special helices.
-As a result, some tools will return eight states or even more. However, these can also be summarized in the three original states listed above. 
+As a result, some tools will return eight states or even more. However, these can also be grouped in the three original states listed above. 
 
 Assigning or predicting the secondary structure of a protein is only useful if you have an idea of the accuracy of the assignments/predictions from a given program.
 The measured accuracy is used to help estimate its likely performance when presented with a sequence of an unknown structure.
@@ -113,7 +113,7 @@ One of the first methods to predict secondary structures used statistics to infe
 If we consider a stretch of amino acids, these propensities help to determine if and where an α-helix or β-strand starts or stops.
 For example, some amino acids have a strong tendency to form α-helices (e.g., Alanine) or β-strands (e.g., Isoleucine), whereas others tend to break these local structures.
 In particular, we can observe that Proline is a strong breaker of both structure elements.
-This can be explained by the special side group arrangement of Proline: this is fused twice to the backbone of the protein, rendering the amino acid very inflexible when it comes to the phi (φ) and ψ (psi) angles it can render (see [chapter1](Week1_secondary_structure) for more information on phi and psi angles).
+This can be explained by the special side group arrangement of Proline: this is fused twice to the backbone of the protein, rendering the amino acid very inflexible when it comes to the phi (φ) and ψ (psi) angles it can render (see [chapter 1](Week1_secondary_structure) for more information on phi and psi angles).
 Another amino acid that that tends to break alpha helices and beta strands is Glycine.
 Whilst now superseded, first by more accurate statistical methods and more recently by machine learning-based methods, the Chou-Fasman approach very elegantly demonstrates how the side groups of amino acids impact their tendency to form specific structures.
 
@@ -155,7 +155,7 @@ They typically result in probabilities for each state that can be used to assign
 Examples of such approaches are Jnet and RaptorX.
 
 Most recently, deep learning approaches have been introduced to predict secondary structure elements based on sequence information.
-The state-of-the-art approach is NetSurfP, which is currently running version 3.
+The state-of-the-art approach is NetSurfP, of which version 3 is currently running.
 You will gain hands-on experience with NetSurfP 3.0 during the practical assignments.
 Here, we will briefly explain how it works and how to assess its results.
 The prediction tool uses a deep neural network approach to accurately predict solvent accessibility and secondary structure using both three- and eight-state definitions, amongst other properties.
@@ -286,7 +286,7 @@ Credits: {cite}`deeptmhmm_2022`.
 
 ### SignalP
 
-In the previous section it was stated that DeepTMHMM can be used to detect the location of signal peptides inside and outside the cell membrane, however, better tools exist for the discrimination between signal peptides types, such as SignalP 6.0.
+In the previous section it was covered how DeepTMHMM can be used to predict the presence of signal peptides; however, more dedicated tools exist for the discrimination between signal peptides types, such as SignalP 6.0.
 This tool can predict signal peptides from sequence data for all known types of signal peptides in Archea, Eukaryota, and Bacteria.
 Additionally, SignalP 6.0 predicts the regions of signal peptides. Depending on the type, the positions of n-, h- and c-regions as well as of other distinctive features are predicted.
 
@@ -350,7 +350,7 @@ It will also be high if a signal peptide has been predicted.
 ## Tertiary protein structure prediction
 
 First, it is good to realize that the prediction of secondary structure elements has formed the foundation of tools that predict 3D structures of proteins.
-We will first explore the three traditional structure prediction approaches, which will be followed up by the most prominent new approach in structure prediction ([AlphaFold](Week4_alphafold))
+We will first explore the three traditional structure prediction approaches, which will be followed up by the most prominent new approach in structure prediction ([AlphaFold](Week4_alphafold)) that relies on several concepts of the traditional approaches.
 
 :::{figure} images/Week4/three-zones.svg
 :alt: The three zones of tertiary structure prediction approaches
@@ -368,9 +368,8 @@ According to the figure, as we can observe, below 20% sequence identity between 
 As such approaches are computationally heavy and as they also require a lot of expert knowledge, they are not widely used.
 In essence, such approaches aim to model the protein sequence folding process using physicochemical properties of the amino acid residues and their surroundings.
 As the sequence length increases, ever-increasing possible folds occur for the entire 3D structure, making it a computationally intensive task.
-For example, consider 100 amino acid residues that each can have 3 different psi angles.
-This would lead to 3100 possible folds for the sequence, ~.
-If each fold would take 5 seconds to assess on its likelihood to be realistic and energy-favorable, it would take us nearly four and a half hours to analyze and come up with a suggested 3D structures, and that is just 100 amino acids.
+For example, consider 100 amino acid residues that each have their psi, phi, and omega angles. If they would (only) have have 3 possibilies per angle, this would lead to 3^300^ (= 10^143^) possible folds for the sequence. 
+If each fold would take just 1 second to assess its likelihood to be realistic and energy-favorable, it would take us 10^126^ years to analyze and come up with a suggested 3D structure, and that is just 100 amino acids under severe contraints.
 
 Fortunately, the database of experimentally derived protein 3D structures is constantly growing.
 Therefore, there is a good chance of having >20% sequence identity of your query sequence.
@@ -382,8 +381,8 @@ As this approach is also relatively computationally demanding, and newer approac
 If both the query sequence identity and length of the alignment are large enough, homology modelling can be attempted to create a structure model.
 So-called "template sequences" have to be found in the structure database.
 
-Nowadays, [SWISS-MODEL](https://swissmodel.expasy.org/) provides precalculated 3D homology models. It is important to note that SWISS-MODEL now also contains the AlphaFold deep learning-based models.
-These 3D structure models will need to be evaluated on their correctness.
+Nowadays, [SWISS-MODEL](https://swissmodel.expasy.org/) provides precalculated 3D homology models. It is important to note that SWISS-MODEL now also contains the AlphaFold deep learning-based models (see [AlphaFold](Week4_alphafold) section).
+Hence, it is important to notice the origin of the 3D structure models, and all will need to be evaluated on their reliability.
 
 Still, new protein sequences that bear almost no resemblance to existing ones are discovered almost every day.
 Hence, the scientific community has been adopting various artificial intelligence-based approaches of which AlphaFold is the most prominent one to date.
@@ -488,7 +487,7 @@ Please note that this is the first step in homology modelling as well, and that 
 %#% Create direct cross-links to MSA in chapter 2 when written.
 It is important to realize that AlphaFold bases itself largely on co-evolutionary information.
 Let us briefly reflect on why this is relevant for structure prediction.
-As you may have realized by now, the residue position in the protein primary sequence does not reflect its final position in 3D: residues far away in the primary sequence may end up close to each other after folding and have specific interactions.
+As you may have realized by now, the residue position in the protein primary sequence does not reflect its final position in 3D space: residues far away in the primary sequence may end up close to each other after folding and have specific interactions.
 The concept of co-evolution implies that if two interacting residues are important for the protein’s function, they are likely to co-evolve.
 In other words, if one of them changes into a different amino acid, the other will likely have to change as well to maintain the interaction to support the protein’s 3D structure.
 Such genomic signals can only be extracted when we compare many protein sequences with each other.
@@ -696,7 +695,7 @@ Another topic of interest is modelling protein dynamics.
 Many proteins can change shape and thereby function, for example depending on cellular conditions, but this is still very hard to model.
 Finally, we are only starting to explore the role of post-translational modifications in generating many (structurally, functionally) different versions of each protein, so-called proteoforms.
 Based on its current performance, it will be exciting to see where the field is ten years from now.
-Akin to the mobile phone - smartphone development, we may be surprised by its capabilities by then.
+Akin to the mobile phone - smartphone development we have witnessed over the last decade, we may be surprised by its capabilities by then.
 
 :::{admonition} Note 4.1
 :class: note
@@ -810,7 +809,7 @@ The core database is called wwPDB and there are a number of portals to access th
 In this first part, we will inspect and visualize a number of these structures through the RCSB website.
 To explore the available tools, we will work with different structures of the following proteins: a human ubiquitin-like protein, NEDD8; a mouse transcription factor, STAT3; and a sea cucumber globin.
 After completing this assignment, you will be able to inspect protein 3D structures through visualizations in the Protein Data Bank. \
-  a. First, in UniProt lookup the **human**(!) NEDD8 protein, a ubiquitin-like protein. Ubiquitin is a small protein (76 amino acids "AAs") that occurs in many cell types (hence the name: it is ubiquitous). It is involved in the regulation of several cellular processes: proteins are marked for relocation, interaction, degradation, etc., through the addition of one or more ubiquitin proteins ("ubiquitination"). It is highly conserved in eukaryotes and its structure has been studied extensively. If you found the right entry, you will notice that 81 AAs are mentioned. Can you find on the page why the total length of the protein is indicated as 81 AAs? Then, go to the "Structure" tab through the menu on the left. How many helices and strands does the protein have? \
+  a. First, in **[UniProt](https://www.uniprot.org/)** lookup the **human**(!) NEDD8 protein, a ubiquitin-like protein. Ubiquitin is a small protein (76 amino acids "AAs") that occurs in many cell types (hence the name: it is ubiquitous). It is involved in the regulation of several cellular processes: proteins are marked for relocation, interaction, degradation, etc., through the addition of one or more ubiquitin proteins ("ubiquitination"). It is highly conserved in eukaryotes and its structure has been studied extensively. If you found the right entry, you will notice that 81 AAs are mentioned. Can you find on the page why the total length of the protein is indicated as 81 AAs? Then, go to the "Structure" tab through the menu on the left. How many helices and strands does the protein have? \
   b. Stay at the "Structure" tab. Below the 3D structure visualization, you see many available structures from the Protein Data Bank (PDB): some of only one ubiquitin chain, some of multiple chains together. What is the best resolution obtained? Do you think that resolution is good? \
   c. Look up or filter for NMR-based structures. Follow the link to the 2N7K NMR-derived structure in RCSB PDB and look at the 3D visualization in the top left (on the **"Structure Summary"** tab). What do you notice in the visualization? \
   d. Go back to the NEDD8 UniProt page and open the highest resolution structure that contains 4 chains, 1NDD, in RCSB PDB. Click on the **"Structure"** tab. PDB offers several inline viewers – make sure to select the NGL viewer on the lower right of the 3D view and drawing options. You can now inspect the structure of the protein using the mouse (rotate, zoom). On the right of the image, select "Asymmetric Unit" for the "Assembly" and "by Chain" for "Color". What do you observe? What do we call a complex like this? \
@@ -818,8 +817,8 @@ After completing this assignment, you will be able to inspect protein 3D structu
   f. Change the visualization of the "Assembly" back to "Bioassembly 1", use "Cartoon" style and color the structure "by Secondary structure". Can you recognize the structural elements you found under question a.? \
   g. By hovering the pointer over the structure, you can obtain information on each residue and its position in the amino acid sequence. Inspect the amino acid orders of the strands, are the four longer beta strands in the beta sheet parallel or anti-parallel? \
   h. Switch from the NGL viewer to JSmol, and right click on the structure model and find the option "Style" – then select hydrogen bonds and click on "calculate". Also follow the same steps to view any disulfide bonds (click on "on"). See the [Jsmol documentation](https://www.rcsb.org/docs/3d-viewers/jmol) for help (Help Links underneath the viewer). Do the results agree with what you know about secondary structures? You can select the "Ball and Stick" style to see what individual atoms are linked. \
-  i. Search in RCSB PDB for another structure to visualize using the 3D View NGL viewer, **256B**, and focus on the interaction with heme (\[HEM]109:B) using the "Ligand View" selector on the right (on Ball & Stick by default). This highlights all residues within a certain radius of the heme that may interact with it. Approximately how many residues seem to be involved in this interaction? What kind of interactions are involved? Is this realistic for such a structure/space? You could use the [Ligand Viewer documentation](https://www.rcsb.org/docs/3d-viewers/ngl#ligand-viewer-options) (Documentation -> 3D Viewers -> NGL -> Ligand Viewer). \
-  j. Some structures include even larger ligands, such as DNA sequences. An example is **1BG1**, a structure of a transcription factor, STAT3. Look it up in the PDB. Approximately how many nucleotide pairs seem to be involved in the protein-DNA binding based on your inspection of the 3D structure? The nucleotide sequence preferred for binding is called a motif; you can check the one for STAT3 in the transcription factor binding profile database [JASPAR](http://jaspar.genereg.net/) \
+  i. Search in [RCSB PDB](https://www.rcsb.org/) for another structure to visualize using the 3D View Mol viewer, **256B**, and focus on the interaction with heme (\[HEM]109:B) using the "Ligand View", by clicking on "Ligand" on the right hand side, and subsequently clicking the ligand itself in the 3D view. This highlights all residues within a certain radius of the heme that may interact with it. Approximately how many residues seem to be involved in this interaction? What kind of interactions are involved? Is this realistic for such a structure/space? \
+  j. Some structures include even larger ligands, such as DNA sequences. An example is **1BG1**, a structure of a transcription factor, STAT3. Look it up in the PDB. Approximately how many nucleotide pairs seem to be involved in the protein-DNA binding based on your inspection of the 3D structure? The nucleotide sequence preferred for binding is called a motif; you can check the one for STAT3 in the transcription factor binding profile database [JASPAR](http://jaspar.genereg.net/). \
   k. From the **"Literature"** box on the 1BG1 PDB **"Structure Summary"** page, follow the Primary Citation "Search on PubMed" link to find the paper that first described the STAT3 structure. In Figure 3 of that paper, does the DNA binding site look like the one you found in question j.? \
   l. For a final demonstration, in RCSB PDB move to structure 1HLM, of a sea cucumber globin, and go to the "Macromolecules" section under the "Structure Summary" and find similar proteins by 3D structure (click on the link). To what other structure is (part of) it most similar? Download the PDB files of 1HLM and the most similar structure by clicking on both protein entries and select "PDB format" from the drop-down menu "Download Files" on the right top of the window. Then, compare them using [TM-score](https://seq2fun.dcmb.med.umich.edu//TM-score/). What can you make of the output, are the structures similar? What measure(s) indicate this?
 
