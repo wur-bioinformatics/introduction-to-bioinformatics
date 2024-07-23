@@ -983,7 +983,7 @@ Next, we are interested in another yeast protein – PMP2 (A6ZQT2) – and its h
   h. On the website of the Pfam domain, you can find the corresponding logo under "Signature". Compare the logo of the family to the logo found with jackhmmer. What do you observe?
 
 %ANSWER%:::{dropdown} Assignment VI answers
-%ANSWER%a. 51 hits, 50 are in fungi, 1 in a Sar bacterium. \
+%ANSWER%a. 55 hits, 54 are in fungi, 1 in a Sar eukaryote. \
 %ANSWER%b. It builds an HMM from the hits which is then used to find more distant homologs. \
 %ANSWER%c. 54 hits. \
 %ANSWER%d. 236 extra hits, 290 hits in total. \
@@ -1014,7 +1014,7 @@ The bacterial immune system CRISPR/Cas encodes the defense sequences to target m
 Here we will use motif discovery to determine the repeat sequences. \
   a. Access the RefSeq database at NCBI to retrieve the genome data for _Streptococcus thermophilus_ (Accession NZ_LR822015.1). Hint: Use Customize view to display all features \
   b. Go the the first repeat_region feature. Where in the genome is it located? Retrieve the sequence of this feature (Hint: click on repeat_region and then on Fasta in the bottom right). \
-  c. Use MEME and MAST to discover the motif. Go to the [MEME suite](https://meme-suite.org/) and click on MEME. Under Input, select "Type in sequences" from the dropdown menu to paste your fasta sequence. Choose the correct option under "How do you expect motif sites to be distributed in sequences?" and select one motif to find. Repeat this process for the MAST tool. \
+  c. Use MEME and MAST to discover the motif. Go to the [MEME suite](https://meme-suite.org/) and click on MEME. Under Input, select "Type in sequences" from the dropdown menu to paste your fasta sequence. Choose the correct option under "How do you expect motif sites to be distributed in sequences?" and select one motif to find. \
   d. After running the search, retrieve the MAST HTML output. Which motif do you find and how often does it occur in the sequence? Compare the motif to the repeat annotated in RefSeq. What do you observe?
 
 %ANSWER%:::{dropdown} Assignment VII answers
@@ -1040,7 +1040,7 @@ Here we will use motif discovery to determine the repeat sequences. \
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_7d_mast
 %ANSWER%```
-%ANSWER%The found motif is very similar to the repeat region (gtttttgtactctcaagatttaagtaactgtacaac). The motif is even one base longer indicating that C and T are preferred at the first nucleotide of the defense sequence.
+%ANSWER%The found motif is very similar to the repeat region (gtttttgtactctcaagatttaagtaactgtacaac). The motif is even one base longer indicating that C and T are preferred at the first nucleotide of the defense sequence. MAST finds it 24 times.
 %ANSWER%:::
 :::::
 
@@ -1091,7 +1091,7 @@ Here, we aim to design primers that can be used to detect the presence of the _A
 %ANSWER%:name: assignment_8e_result
 %ANSWER%```
 %ANSWER%f. Saving the primer is relevant as these sequences can be used to order primers. \
-%ANSWER%g. 133 hits are found in the nr database. Interestingly, the first four matches in the database are all 100% identical matches of the input product. Number four is the strain we started with, but apparently there are three other strains for which this piece of DNA is identical. PrimerBLAST still indicated that the primer is specific, because there is only one exact copy of this piece of DNA in the genome. There is actually a hit on the same strain (T30-4), but in a different sequence. However, this hit has some mismatches in the location where the forward primer hybridizes, so likely there will be no amplification.
+%ANSWER%g. 135 hits are found in the nr database. Interestingly, the first four matches in the database are all 100% identical matches of the input product. Number four is the strain we started with, but apparently there are three other strains for which this piece of DNA is identical. PrimerBLAST still indicated that the primer is specific, because there is only one exact copy of this piece of DNA in the genome. There is actually a hit on the same strain (T30-4), but in a different sequence. However, this hit has some mismatches in the location where the forward primer hybridizes, so likely there will be no amplification.
 %ANSWER%```{image} images/Week2/assignment_8g_hits.png
 %ANSWER%:alt: Primer pair 1 hits.
 %ANSWER%:align: center
