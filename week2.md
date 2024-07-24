@@ -287,7 +287,23 @@ The global identity is 20/71 (28.2%) and the local identity is 12/12 (100.0%).
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
 :::
 
+(Week2_sequence_search)=
+
 ## Search in sequence databases
+
+In Chapter 1, we learned about different [sequence databases](Week1_databases).
+We often want to search novel sequences in these databases, for example to learn which other organisms have homologs.
+Two sequences that are highly similar, might also share the same function.
+This relationship is used for the [functional annotation](Week1_functional_annotation) of sequences, where the search in databases is an important step.
+
+```{admonition} Note 2.3: Similarity by chance
+:class: note
+
+When all nucleotides occur randomly and at the same frequency, then each sequence of length `x` is expected to occur with a frequency of 1/4{sup}`x`, e.g., a sequence of length 3 has a frequency of 1/64 and a sequence of length 10 has a frequency of about 1 in a million.
+This become important since these days, databases are very large, they can contain millions of sequences.
+Due to this large amount of data, some similarities might just be observed by chance, especially if our sequence of interest is short.
+Thus, statistical methods have been developed to estimate if an observed alignment might have just occured due to chance (see below).
+```
 
 ### Database search vs. pairwise alignment
 
@@ -296,7 +312,7 @@ In this task, we have a query sequence and we want to find similar sequences in 
 Although the algorithms that were discussed in the previous section are relatively fast when two sequences are aligned, it would still take too long overall to perform pairwise sequence alignments of the query with all potential subjects from the database.
 We thus need even more efficient algorithms.
 
-```{admonition} Note 2.3: Heuristic algorithms
+```{admonition} Note 2.4: Heuristic algorithms
 :class: note
 
 The Needleman-Wunsch and the Smith-Waterman algorithm described in the previous section guarantee to find the alignment with the best score for the given sequences and parameters.
@@ -351,7 +367,7 @@ Top 5 blast hits when searching the rat protein P50745 in the Swiss-Prot 2024_02
 Credits: {cite}`blast_2009`
 :::
 
-```{admonition} Note 2.4: E-value
+```{admonition} Note 2.5: E-value
 :class: note
 
 An important output statistic is the expectation value (**e-value**), which is the number of BLAST hits you expect to see by chance in the database, with the observed score or higher.
@@ -377,8 +393,8 @@ The 4{sup}`th` and 5{sup}`th` hit are only local, since the query cover is ~30%,
 #### BLAST types
 
 Different types of BLAST exist to search nucleotides or proteins in the respective databases:
-`blastn` searches a nucleotide sequence in a nucleotide database and `blastp` searches a protein sequence in a protein database ({numref}`blast_types`).
-In addition, the query and/or the database can also be translated in all six reading frames to allow additional kinds of comparisons.
+`blastn` searches a nucleotide sequence in a nucleotide database and `blastp` searches a protein sequence in a protein database.
+In addition, the query and/or the database can also be translated in all six reading frames to allow additional kinds of comparisons ({numref}`blast_types`).
 
 %#%[TODO: check that the reading frame translation is clear from chapter 1 or explain more]
 
