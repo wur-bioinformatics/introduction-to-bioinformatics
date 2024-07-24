@@ -203,7 +203,10 @@ The details of transcription and translation differ between prokaryotes and euka
 
 The genetic code shows the correspondence between codons and amino acids ({numref}`geneticcode`).
 Since 64 possible codons code for 20 different amino acids, the genetic code is degenerate, i.e., most amino acids are specified by more than one codon.
-Thus, the protein sequence can be deduced from the DNA or RNA sequence but not vice versa.
+Thus, the codons encoding one particular amino acid may differ in one or two of their positions.
+You can notice in {numref}`geneticcode` that the third codon position often differs between codons for the same amino acid.
+As a result of the code degeneracy, the protein sequence can be deduced from the DNA or RNA sequence but not vice versa.
+
 There are three codons that do not encode for an amino acid, but instead signal the end of the protein sequence, called **stop codons**.
 Furthermore, translation generally starts with the start codon AUG encoding methionine.
 More information of how protein information is encoded in genomes can be found in the section on [genome annotation](Week1_genome_annotation).
@@ -747,12 +750,15 @@ Since these various approaches almost never agree exactly in their predictions, 
 Typically a weighted consensus approach is used: each individual source of evidence is given a weight representing how much it should influence the final decision, after which a majority vote decides what the annotation should look like.
 Typically RNA-seq evidence gets a high weight, and various forms of homology evidence can be weighted depending on how closely related they are to the genome of interest.
 
+(Week1_functional_annotation)=
+
 ### Functional annotation
 
 So far, all described steps in the genome annotation process have dealt with what genes look like on a structural level.
 To gain biological insight, the next step is to assign functional annotations to the predicted genes.
 This functional annotation step consists of using various sequence alignment and search tools to find sequences with a known function/description and to transfer the information of the known gene to the predicted gene.
 Several databases of high-quality known functions are often used, which are described in more detail in the next section of this chapter.
+In [Chapter 2](Week2_sequence_search) we will learn about approaches how to search these databases efficiently.
 
 :::{admonition} Note 1.6: Visualizing gene structure
 :class: note
@@ -787,6 +793,8 @@ A screenshot of the JBrowse genome browser showing _Arabidopsis thaliana_ chromo
 :::
 
 ---
+
+(Week1_databases)=
 
 ## Databases
 
