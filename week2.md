@@ -1,4 +1,4 @@
-# Chapter 2 - Alignment, sequence search, and primer design
+# Alignment, sequence search, and primer design
 
 In chapter 2 of Introduction to Bioinformatics, you will study sequence alignment.
 

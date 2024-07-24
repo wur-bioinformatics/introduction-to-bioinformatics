@@ -1,4 +1,4 @@
-# Chapter 1 - Genes, Proteins, Databases, Genome annotation
+# Genes, Proteins, Databases, Genome annotation
 
 ## Biological background
 
@@ -1227,7 +1227,6 @@ Credits: {cite}`so_2005`.
 Many more ontologies exist and are relevant to biomedical research.
 The European Bioinformatics Institure (EBI) provides an [ontology lookup service](https://www.ebi.ac.uk/ols4/) that facilitates searching for ontologies.
 Examples of other ontologies are the [plant ontology](https://www.ebi.ac.uk/ols/ontologies/po) that describes various anatomical structures in plants, and the [human disease ontology](https://disease-ontology.org/).
-%PRACTICAL_SEPARATOR%
 
 ---
 
@@ -1241,26 +1240,66 @@ These practical exercises offer you the best preparation for the project.
 Especially the **project preparation exercise** at the end is a good reflection of the level that is required to write a good project report.
 Make sure that you develop your practical skills now, in order to apply them during the project.
 
-**Note, the answers will be published after the practical!**
+**Note, the answers will be made available after the practical!**
 
-:::::{admonition} **DNA & Genes**
-
-_Assignment I: DNA/Genes (45 minutes)_
+:::::{admonition} _Assignment 1: DNA/Genes (45 minutes)_
 
 1. How do you distinguish a ribose sugar from a deoxyribose?
+:::{dropdown} Answer
+:class-container: answer
+:open:
+Ribose has hydroxyl (-OH) group at the 2' position, deoxyribose does not (only has -H).
+:::
+
 2. Which bases are purines?
+:::{dropdown} Answer
+:class-container: answer
+:open:
+A & G.
+:::
+
 3. What is the complementary base of A? C? G? T?
+:::{dropdown} Answer
+:class-container: answer
+:open:
+A-T, C-G, G-C, T-A.
+:::
+
 4. What is the reverse complement of sequence ACGGTGATC?
+:::{dropdown} Answer
+:class-container: answer
+:open:
+ACGGTGATC -> 5' GATCACCGT 3'.
+:::
+
 5. What is the GC content of sequence ATCGATCGGC?
+:::{dropdown} Answer
+:class-container: answer
+:open:
+G + C = 6
+A + C + G + T = 10
+6/10 = 60%.
+:::
+
 6. Which is correct? A nucleotide sequence is written from: \
-  a. 5' to 3' \
-  b. 3' to 5'
+  A. 5' to 3' \
+  B. 3' to 5'
+:::{dropdown} Answer
+:class-container: answer
+:open:
+ A: 5' to 3'.
+:::
 
 7. In a DNA sequence the G stands for: \
-  a. Glycine \
-  b. Guanine \
-  c. Glucose \
-  d. Glutamic acid
+  A. Glycine \
+  B. Guanine \
+  C. Glucose \
+  D. Glutamic acid
+:::{dropdown} Answer
+:class-container: answer
+:open:
+B: Guanine
+:::
 
 8. Given a coding DNA strand. Write down the non-coding strand, the transcribed sequence, and the resulting chain of amino acids. You may use {numref}`replication_alt`.
 ```
@@ -1269,32 +1308,64 @@ Non-coding strand:     ......................
 mRNA:                  ......................
 Amino acids:           ......................
 ```
+:::{dropdown} Answer
+:class-container: answer
+:open:
+```
+5' ATGGTTTTACTTGAA 3'
+3' TACCAAAATGAACTT 5' = non-coding strand
+5' AUGGUUUUACUUGAA 3' = mRNA transcript
+Met–Val-Leu-Leu-Glu   = 3-letter abbreviations
+MVLLE                 = 1-letter abbreviations
+```
+:::
+
 9. On your computer, browse to [UniProt](https://www.uniprot.org/) and search for UniProt ID B3H4Y2. \
   a. In which organism is this protein found? What is the length of this protein? What is the corresponding gene ID? \
   b. Write down the first 5 and last 5 amino acids of the protein.
-
-10. Browse to [arabidopsis.org](https://www.arabidopsis.org/tools/overview) and click on "JBrowse" (Firefox or Chrome recommended). This will take you to a genome browser of the _Arabidopsis_ genome. Search for the gene ID from question 9 (see screenshot below).
+:::{dropdown} Answer
+:class-container: answer
+:open:
+a. Arabidopsis thaliana, 80 amino acids, AT1G65484. \
+b. MGLKM...PRTGS. \
+:::
 
 ```{image} images/Week1/assignment_1_10_jbrowse.png
 :alt: Jbrowse.
 :align: center
-:width: 100%
+:width: 80%
 :name: assignment_1_10_jbrowse
 ```
 
-Under "Help" -> "General" you can find some information to help you understand what you are looking at. \
+10. Browse to [arabidopsis.org](https://www.arabidopsis.org/tools/overview) and click on "JBrowse" (Firefox or Chrome recommended). This will take you to a genome browser of the _Arabidopsis_ genome. Search for the gene ID from question 9 (see screenshot above). Under "Help" -> "General" you can find some information to help you understand what you are looking at. \
   a. You can see that this gene produces two different mRNA transcripts (indicated by .1 and .2) and thus 2 different proteins. How many exons do these transcripts contain? How many introns? \
   b. Turn on the track "Light grown seedling" under "RNA-seq based evidence"/"Aligned reads". Do you recognize the splice sites? Are the first two and last two bases of the intron as expected (based on {numref}`splicing`)? \
   c. Save the data for transcript 1. Save a fasta file for the whole transcript and one for each coding sequence (CDS). Create a fasta file on your computer that contains the complete coding sequence of the protein. \
   d. Is the length of the coding sequence in line with your expectation (based on your findings in question 9a)? \
   e. Translate the first and last few codons to compare them against the protein sequence (question 9). Do they match? \
   f. Look upstream of the gene. Can you find the TATA box? How many nucleotides before the start of transcription?
+:::{dropdown} Answer
+:class-container: answer
+:open:
+Ribose has hydroxyl (-OH) group at the 2' position, deoxyribose does not (only has -H).
+:::
 
 11. GC content \
   a. Find a tool on the internet to calculate the GC content of a gene. Which tool did you find? Use it to calculate the GC content for the whole transcript and for the coding sequence that you created in the previous task. What do you observe? \
   b. Look up the GC content of the chromosome where this gene is located (Hint: Search NCBI Genome for the species). Read about [GC content](https://en.wikipedia.org/wiki/GC-content) in coding sequences. Which of the information presented here agrees with your analysis?
+:::{dropdown} Answer
+:class-container: answer
+:open:
+Ribose has hydroxyl (-OH) group at the 2' position, deoxyribose does not (only has -H).
+:::
 
 12. Why are viruses not represented in the tree of life? Take a look at [this site](https://www.nature.com/scitable/content/viruses-and-the-tree-of-life-14465158).
+:::{dropdown} Answer
+:class-container: answer
+:open:
+Ribose has hydroxyl (-OH) group at the 2' position, deoxyribose does not (only has -H).
+:::
+
 13. Browse to the NCBI taxonomy. Look up the domain and family of the following species:
 
 ```{list-table}
@@ -1315,6 +1386,12 @@ Under "Help" -> "General" you can find some information to help you understand w
   -
   -
 ```
+
+:::{dropdown} Answer
+:class-container: answer
+:open:
+Ribose has hydroxyl (-OH) group at the 2' position, deoxyribose does not (only has -H).
+:::
 
 %ANSWER%:::{dropdown} Assignment I answers
 %ANSWER%1. Ribose has hydroxyl (-OH) group at the 2' position, deoxyribose does not (only has -H).

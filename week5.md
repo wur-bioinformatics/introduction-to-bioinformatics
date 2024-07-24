@@ -1,4 +1,4 @@
-# Chapter 5 - Omics data analysis
+# Omics data analysis
 
 :::{figure} images/Week5/omics-levels.png
 :alt: -Omics levels
