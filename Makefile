@@ -1,17 +1,19 @@
+INPUTS:=*md _config.yml _toc.yml images/**/* _static/*
+
 .PHONY: all
 
-all: html pdf
+all: pdf html
 
-pdf: _build/latex
+pdf: _build/pdf
 
 html: _build/html
 
-_build/latex: *md
-	jupyter-book build --builder pdflatex --all .
+_build/pdf: $(INPUTS)
+	jupyter-book build --builder pdfhtml --all .
 
-_build/html: *.md
+_build/html: $(INPUTS)
 	python extract_answers.py
 	jupyter-book build --builder html --all .
 
 clean:
-	rm -r _build _answers
+	rm -rf _build _answers

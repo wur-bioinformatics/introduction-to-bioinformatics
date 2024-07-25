@@ -28,3 +28,19 @@ div.citation p {
 .videoWrapper{
     text-align: center;
 }
+
+@media print {
+    section#biological-background,
+    section#genome-annotation,
+    section#databases,
+    section#ontologies,
+    section#references {
+        display: none;
+    }   
+}
+
+@media not print {
+    details.answer {
+        display: none;
+    }
+}

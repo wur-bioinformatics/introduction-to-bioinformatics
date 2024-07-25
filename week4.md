@@ -1,4 +1,4 @@
-# Chapter 4 - Protein structure prediction
+# Protein structure prediction
 
 ```{epigraph}
 
