@@ -651,7 +651,7 @@ To this end, we search in two different databases and compare the results. \
   d. In which organisms do you find similar sequences? Which of the hits do you consider as homologs? \
   e. What is the interpretation of an e-value? What does an e-value of 0.0 suggest? \
   f. The NCBI blast service is an important bioinformatics tool, that you should practice. However, we have experienced that high usage from one location at the same time (like during BIF20306 practicals) results in a delayed response of the web service. To mitigate long waiting times, we set up a [server](http://bioinformatics.nl/blast) with the most important NCBI blast functionalities. Run the previous search also with this server and look at the results. Note that with the run url you will also be able to retrieve the results later. Preferably, do all the following blast exercises in Assignments I and II with this server. \
-  g. Next, we want to find more homologous sequences; thus we search in the RefSeq protein database (Blast database refseq_protein). How many hits do you find? Look at the last hit, do you think that all similar sequences in that database have been found? Note: We still need the results in Swissprot. Save the urls, so you can retrieve them later or leave these results open and perform the new search in a new browser window or tab. \
+  g. Next, we want to find more homologous sequences; thus we search in the RefSeq protein database (Blast database refseq_protein). How many hits do you find? Look at the last hit, do you think that all similar sequences in that database have been found? **Note**: We still need the results in Swissprot. Save the urls, so you can retrieve them later or leave these results open and perform the new search in a new browser window or tab. \
   h. Perform the same search as in question g., but now allow for finding a larger number of hits (Change Max target sequences under Algorithm parameters to the maximum available). How many hits do you find? Would you consider all of them as homologous to the yeast Vps36? \
   i. Go back to the Swissprot results and look at the first hit that is not the query sequence itself. Compare the blast results (score, query coverage, e-value, percent identity, alignment length) to the hit of the same species found in RefSeq. What do you observe?
 
@@ -693,8 +693,8 @@ To this end, we search in two different databases and compare the results. \
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_1f_hits
 %ANSWER%```
-%ANSWER%g. 100 hits are found, the last one has an e-value of 2e-41, thus the list is probably incomplete and only the first 100 sequences are reported. \
-%ANSWER%h. With WUR blast 468 hits are found (with NCBI blast, 553 hits would be found, probably due to a more recent database with more entries). Most hits have low e-values, but some have high e-values (above 0.001) and might not be considered homologs. \
+%ANSWER%g. 100 hits are found, the last one has an e-value of 6e-42 (with NCBI blast) or 2e-42 (with WUR blast), thus the list is probably incomplete and only the first 100 sequences are reported. \
+%ANSWER%h. With WUR blast 591 hits are found (with NCBI blast, 587 hits would be found, probably due to a slightly different database version). Most hits have low e-values, but some have high e-values (above 0.001) and might not be considered homologs. \
 %ANSWER%i. All the results are the same, only the e-value is lower with the Swiss-Prot database. Thus, the found proteins are identical, but the refseq database is much larger, which results in a higher e-value.
 %ANSWER%
 %ANSWER%WUR blast result with RefSeq database
