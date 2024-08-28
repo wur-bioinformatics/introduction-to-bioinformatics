@@ -461,44 +461,42 @@ Having established how to obtain a multiple sequence alignment, we now focus on 
 Since all motifs are based on multiple sequence alignments, it may seem tempting to use the terms interchangeably. A key distinction is that a motif always represent a commonly occurring pattern, whereas a multiple sequence alignment can also contain regions of low conservation/similarity. In addition, one multiple sequence alignment can contain multiple motifs.
 ```
 
-Arguably the simplest representation of a motif is the __consensus sequence__ (fig XB), where every column of the multiple sequence alignment is represented by the most frequently occurring residue (i.e. the majority consensus). The downside of a consensus sequence is that it does not represent any of the variation present in the motif.
+Arguably the simplest representation of a motif is the __consensus sequence__ ({numref}`motif_concept`B), where every column of the multiple sequence alignment is represented by the most frequently occurring residue (i.e. the majority consensus). The downside of a consensus sequence is that it does not represent any of the variation present in the motif.
 
-An extension of the consensus sequence that can represent some variation in a motif is the __pattern string__ (fig XC). Pattern strings contain special syntax for representing variation, for example the pattern `[AG]` indicates that one position in the motif can be either `A` or `G`. As such, pattern strings take inspiration from [regular expressions](https://en.wikipedia.org/wiki/Regular_expression). Various types of pattern strings exist, for example `PROSITE` __REF__ strings contain syntax for representing positions in a motif where the residue is irrelevant (marked by an `*`). Pattern strings are capable of representing some variation in the motif, but they cannot express how likely the occurence of specific variants is (in the example `[AG]`, both `A` and `G` are equally likely to occur).
+An extension of the consensus sequence that can represent some variation in a motif is the __pattern string__ ({numref}`motif_concept`C). Pattern strings contain special syntax for representing variation, for example the pattern `[AG]` indicates that one position in the motif can be either `A` or `G`. As such, pattern strings take inspiration from [regular expressions](https://en.wikipedia.org/wiki/Regular_expression). Various types of pattern strings exist, for example `PROSITE` __REF__ strings contain syntax for representing positions in a motif where the residue is irrelevant (marked by an `*`). Pattern strings are capable of representing some variation in the motif, but they cannot express how likely the occurence of specific variants is (in the example `[AG]`, both `A` and `G` are equally likely to occur).
 
-To express the likelihood of a specific residue occurring at a specific position, a __Position Specific Scoring Matrix (PSSM)__ can be used (FIG XD). Every column in a PSSM represents a column in the multiple sequence alignment and every row represents one of the possible residues. For example: a DNA PSSM would have four rows, representing the nucleotides `A`, `C`, `G`, or `T`. The entries represent probabilities of observing a specific residue at a specific position. As a consequence, all columns in a PSSM must sum to one.
+To express the likelihood of a specific residue occurring at a specific position, a __Position Specific Scoring Matrix (PSSM)__ can be used ({numref}`motif_concept`D). Every column in a PSSM represents a column in the multiple sequence alignment and every row represents one of the possible residues. For example: a DNA PSSM would have four rows, representing the nucleotides `A`, `C`, `G`, or `T`. The entries represent probabilities of observing a specific residue at a specific position. As a consequence, all columns in a PSSM must sum to one. Since a PSSM contains probabilities, it is relatively straightforward to calculate how well an unknown sequence matches an existing PSSM: assuming independence between positions, one simply multiplies the observation probabilities of the characters in the novel sequence.
 
 :::{figure} images/Week2/msa-pattern-pssm-logo.svg
 :alt: Various representations of a motif
 :width: 60%
 :name: motif_concept
 
-Conceptual diagram depicting various representations of a conserved motif. __A:__ MSA __B:__ Consensus sequence __C:__ Pattern __D:__ Position Specific Scoring Matrix (PSSM) __E:__ Sequence logo. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
+Conceptual diagram depicting various representations of a conserved motif. __A:__ Multiple sequence alignment (MSA) of 5 sequences and 7 positions. __B:__ Consensus sequence. All 5 sequences of the MSA are summarized into one sequence, every position is represented by the most common character at that position. __C:__ Pattern string. Unambigous positions are represented by single letters, positions in the MSA with more than one character are represented by multiple characters in between square brackets. __D:__ Position Specific Scoring Matrix (PSSM). Every row represents one of the possible characters in the MSA, every column represents one of the MSA positions, numbers indicate the probability of observing a specific character at a specific position. (Hence, every column sums to one). __E:__ Sequence logo. Every position in the sequence logo represents a position in the MSA, characters are scaled proportional to their probability of being observed at their respective positions (e.g. an unambiguous position has one large character, a position with several options has multiple small characters). Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
 :::
 
 
-PSSM, logo
+## Profile hidden Markov models (pHMMs)
 
-Rens
+The previous sections on multiple sequence alignments and motifs explained some basics of how collections of similar sequences can be summarized and used. In this section we highlight a powerful approach for using the information in MSAs to perform sequence search and comparison: __profile hidden Markov models (pHMMs)__. Some of the fundamentals of general hidden Markov models have been covered in [Chapter 1](week1), here we introduce how a few simple adaptations to the general concept of HMMs unlocks a powerful sequence search approach.
 
-## HMMs
+The simplest introduction of profile hidden Markov models is to think of them as an extension of a position specific scoring matrix. Like a PSSM, a pHMM contains probabilities of observing certain characters at certain positions in an MSA. However, a pHMM adds the notion that the biological phenomenon of insertion and deletion of sequence elements requires unique distributions of observation probabilities. Following the hidden Markov model formulation: the _hidden states_ match/insert/delete all have their own unique _emission probabilities_ for the possible characters. In addition, a pHMM includes _transition probabilities_ between the  hidden states. A graphical representation of a simple profile HMM can be seen in {numref}`simple_hmm`. Just like in PSSMs, a probabilistic score can be calculated for a novel sequence matching an existing HMM. Due to the nature of some of the transition probabilies (e.g. insertion states can be repeated, see {numref}`simple_hmm`) in pHMMs this is a bit more involved than for a PSSM. Efficient algorithms for working with pHMMs exist and have been implemented in for example the HMMer suite. The exact details of these algorithms are outside of the scope of this book.
 
 :::{figure} images/Week2/hmm.svg
 :alt: DNA profile HMM with three positions and three states (match, insertion, deletion)
 :width: 60%
 :name: simple_hmm
 
-. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
+Schematic representation of a simple DNA profile HMM containing all model probabilities. The model consists of three hidden states: match (yellow square), deletion (red circle), and insertion (blue diamond). Emission probabilities are indicated inside the hidden states, transition probabilities between hidden states are indicated next to arrows. In principle the information in this schematic is enough to calculate the probability of a sequence belonging to this pHMM. For example, the sequence `GAT` would get a probility of $(0.8 * 0.6) * (0.4 * 0.7) * (0.3 * 0.4) * 0.8 = 0.013$. We arrive at this number by multiplying all relevant transition and emission probabilites. Note that determing the relevant probabilities can be more involved than in this simple example. Efficient algorithms for determining the optimal path through the HMM graph exist, but are outside of the scope of this book. In addition, we do not expect that you can perform these calculation by hand. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
 :::
 
 
 ```{admonition} Sequence search with MSAs
 :class: important
-The ability to convert a multiple sequence alignment into a collection of probabilities (e.g. PSSMs or HMMs) makes it possible to calculate the probability of a novel sequence 'belonging' to the multiple sequence alignment. This technique generally allows for a more sensitive approach than searching based on pairwise alignments. In practice this often means that matching sequences can be identified over larger evolutionary distances. Tools that implement some version of this approach are `psiBLAST` (which uses PSSMs) and various `HMMer` tools (all using HMMs).
+The ability to convert a multiple sequence alignment into a collection of probabilities (e.g. PSSMs or HMMs) makes it possible to calculate the probability of a novel sequence 'belonging' to the multiple sequence alignment. This technique generally allows for a more sensitive approach than searching based on pairwise alignments. In practice this often means that matching sequences can be identified over larger evolutionary distances. Tools that implement some version of this approach are `psiBLAST` (which uses PSSMs) and various `HMMer` tools (all using pHMMs).
 ```
 
-jackhammer, psi-BLAST(!)
-
-Rens
+The ability to group biological sequences based on conserved/co-occuring regions and subsequently using this for sequence search is exploited in a wide range of biological sequence databases. Some of these databases have been introduced in [chapter 1](week1), here we briefly outline a few more details on how HMMs are incorporated into many of these resources by using PFAM as an example. All entries in the PFAM database are represented by profile HMMs. The entries are subdivided into one of six categories: family, domain, repeat, conserved site, coiled coil, or disordered. The main distinction between these six categories is the length of the matching sequences: a 'family' PFAM HMM is expected to match across the entire length of a protein sequence, a 'conserved site' is typically only a small region in a protein. As such, multiple PFAM HMMs can match a given protein sequence. The combination of matching PFAM HMMs on a given sequence can be used to give a fine-grained description of known elements in a sequence.
 
 ## Primer design
 
@@ -651,7 +649,7 @@ To this end, we search in two different databases and compare the results. \
   d. In which organisms do you find similar sequences? Which of the hits do you consider as homologs? \
   e. What is the interpretation of an e-value? What does an e-value of 0.0 suggest? \
   f. The NCBI blast service is an important bioinformatics tool, that you should practice. However, we have experienced that high usage from one location at the same time (like during BIF20306 practicals) results in a delayed response of the web service. To mitigate long waiting times, we set up a [server](http://bioinformatics.nl/blast) with the most important NCBI blast functionalities. Run the previous search also with this server and look at the results. Note that with the run url you will also be able to retrieve the results later. Preferably, do all the following blast exercises in Assignments I and II with this server. \
-  g. Next, we want to find more homologous sequences; thus we search in the RefSeq protein database (Blast database refseq_protein). How many hits do you find? Look at the last hit, do you think that all similar sequences in that database have been found? Note: We still need the results in Swissprot. Save the urls, so you can retrieve them later or leave these results open and perform the new search in a new browser window or tab. \
+  g. Next, we want to find more homologous sequences; thus we search in the RefSeq protein database (Blast database refseq_protein). How many hits do you find? Look at the last hit, do you think that all similar sequences in that database have been found? **Note**: We still need the results in Swissprot. Save the urls, so you can retrieve them later or leave these results open and perform the new search in a new browser window or tab. \
   h. Perform the same search as in question g., but now allow for finding a larger number of hits (Change Max target sequences under Algorithm parameters to the maximum available). How many hits do you find? Would you consider all of them as homologous to the yeast Vps36? \
   i. Go back to the Swissprot results and look at the first hit that is not the query sequence itself. Compare the blast results (score, query coverage, e-value, percent identity, alignment length) to the hit of the same species found in RefSeq. What do you observe?
 
@@ -693,8 +691,8 @@ To this end, we search in two different databases and compare the results. \
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_1f_hits
 %ANSWER%```
-%ANSWER%g. 100 hits are found, the last one has an e-value of 2e-41, thus the list is probably incomplete and only the first 100 sequences are reported. \
-%ANSWER%h. With WUR blast 468 hits are found (with NCBI blast, 553 hits would be found, probably due to a more recent database with more entries). Most hits have low e-values, but some have high e-values (above 0.001) and might not be considered homologs. \
+%ANSWER%g. 100 hits are found, the last one has an e-value of 6e-42 (with NCBI blast) or 2e-42 (with WUR blast), thus the list is probably incomplete and only the first 100 sequences are reported. \
+%ANSWER%h. With WUR blast 591 hits are found (with NCBI blast, 587 hits would be found, probably due to a slightly different database version). Most hits have low e-values, but some have high e-values (above 0.001) and might not be considered homologs. \
 %ANSWER%i. All the results are the same, only the e-value is lower with the Swiss-Prot database. Thus, the found proteins are identical, but the refseq database is much larger, which results in a higher e-value.
 %ANSWER%
 %ANSWER%WUR blast result with RefSeq database
@@ -722,7 +720,7 @@ Blast cannot only be used to search proteins sequences in protein databases with
 Here we explore these strategies by searching for homologs of the yeast Vps36p in fungi and other organisms. \
   a. Next, we aim to find out if homologs of this protein exist in the fungus _Cryptococcus neoformans_. What would be the most straightforward BLAST search strategy to do this? Perform this blast search using a large database (non-redundant). How many hits do you find? Inspect the length of the alignments, the percent identity, and E-value. What do you observe and what do you conclude? \
   b. In case no homologs would have been found using a ‘normal’ blastp search, which alternatives could you use to still find homologs, e.g. in the genome sequence? Describe what happens in that BLAST flavor. \
-  c. Search the protein sequence of Vps36p against the nucleotide sequences (nt nucleotide) of _C. neoformans_ using tblastn, indicating that you <u>only</u> want to search this single species and not the entire database. Inspect the search results. Do you think these are good hits and would you feel comfortable to conclude that there are (or are not) homologs of this gene in _C. neoformans_? \
+  c. Search the protein sequence of Vps36p against the nucleotide sequences of _C. neoformans_ using tblastn, indicating that you <u>only</u> want to search this single species and not the entire database (use the database: Nucleotide collection (nt)). Inspect the search results. Do you think these are good hits and would you feel comfortable to conclude that there are (or are not) homologs of this gene in _C. neoformans_? \
   d. Some of the hits reported are part of chromosome 1 of _C. neoformans_. Inspect these hits in more detail. How long is your query and how long is the sequence in the database? \
   e. Think about the following case, where you would like to study this hit in more detail. For instance, you could perform a multiple sequence alignment of your protein with this database hit and also with other sequences. What would happen if you would download the sequence from the database? Why could this be a problem, and how could you solve this? \
   f. _S. cerevisiae_ belongs to the fungal phylum Ascomycota, while _C. neoformans_ belongs to the phylum Basidiomycetes. Vps36p is highly conserved throughout Ascomycota and likely has homologs outside of this phylum too, as already indicated by your searches above. We now want to get a better overview of possible homologs of Vps36p in other species (outside of Ascomycota). To this end, perform a blastp search of Vsp36p to the refseq_protein database (excluding Ascomycota), set the number of target sequences to the maximum. Have a look at the best hits. What can you say in terms of query coverage and identity? \
@@ -730,9 +728,7 @@ Here we explore these strategies by searching for homologs of the yeast Vps36p i
   h. At least one of your hits is outside of fungi, suggesting that Vps36p homologs might be more widespread. What could be a possible blast strategy to find more distant homologs? \
   i. Try to modify the Algorithm parameters for the search done in question f. to find more homologs. Keep using the blastp algorithm, just try to modify a parameter. How many hits do you find? \
 Finally, we want to get an overview how similar these distantly related proteins are.
-To this end, we will download some hits and perform a multiple sequence alignment.
-Unfortunately, the download function does not work yet with the WUR blast server.
-To download, also run the search from question i. with NCBI blast. \
+To this end, we will download some hits and perform a multiple sequence alignment. \
   j. Generate a multi-fasta file of 10 sequences: The first 9 hits from the previous blast search and the original sequence (NP_013521.1). (Hint: you can mark sequences and save them by clicking on Download -> Fasta (complete sequences); use a text editor to add the original sequence manually). \
   k. We will use [M-Coffee](https://tcoffee.crg.eu/apps/tcoffee/do:mcoffee) from the [T-Coffee suite](https://tcoffee.crg.eu/apps/tcoffee/index.html). This program computes multiple other tools to estimate several multiple sequence alignments and combines them into one final alignment. The output includes a color code showing the agreement between the methods. Upload you multi-fasta file and run it with default parameters. Look at the estimated alignment. What can you say about the overall alignment quality? Where can you find regions of high and low agreement? \
   l. Would you conclude that these sequences are homologous across their entire length? Why/why not?
@@ -772,7 +768,7 @@ To download, also run the search from question i. with NCBI blast. \
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_2c_ncbi
 %ANSWER%```
-%ANSWER%You find 16 hits (with NCBI blast that would be 18). The results are similar to the blastp results. The first two matches have a good combination of a low E-value and a high query coverage. However the percent identity is low. This suggests these are clearly divergent (low percent identity) homologs in _C. neoformans_. The other hits concern only a small part of the query. \
+%ANSWER%You find 12 hits (with NCBI blast that would be 20). The results are similar to the blastp results. The first two matches have a good combination of a low E-value and a high query coverage. However the percent identity is low. This suggests these are clearly divergent (low percent identity) homologs in _C. neoformans_. The other hits concern only a small part of the query. \
 %ANSWER%d.
 %ANSWER%
 %ANSWER%WUR blast
@@ -807,7 +803,7 @@ To download, also run the search from question i. with NCBI blast. \
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_2f_ncbi
 %ANSWER%```
-%ANSWER%There are 104 hits. The top hits are good (E-value and identity) with good query coverage within the other species outside of Ascomycota. The percent identity is relatively low ~25% in these hits, because of the evolutionary distance between _S. cerevisiae_ and species outside the phylum Ascomycota. \
+%ANSWER%There are 116 hits (with NCBI blast that would be 118). The top hits are good (low e-value) with good query coverage within the other species outside of Ascomycota. The percent identity is relatively low ~25% in these hits, because of the evolutionary distance between _S. cerevisiae_ and species outside the phylum Ascomycota. \
 %ANSWER%g. The hits are mainly fungi, but also few non-fungal matches, suggesting this protein may be more common in other species as well. \
 %ANSWER%h. To identify related sequences that are too dissimilar to be found in a straightforward BLAST search, the word size could be decreased or PSI-BLAST could be used. \
 %ANSWER%i. We can modify the word size, this is expected to yield more distant hits.
@@ -826,7 +822,7 @@ To download, also run the search from question i. with NCBI blast. \
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_2i_ncbi
 %ANSWER%```
-%ANSWER%We then find 170 hits (with NCBI blast, that would be 173). \
+%ANSWER%We then find 190 hits (with NCBI blast, that would be 193). \
 %ANSWER%j. All 10 sequences, each starting with their Fasta label, should be copy/pasted into one Fasta file. \
 %ANSWER%k. The alignment looks good. The beginning is very well aligned with few gaps. Although there are stretches containing gaps, there are also long regions throughout the alignment with no or few gaps and these are of good quality. Nevertheless, there are also low-quality regions. \
 %ANSWER%l. From the observations in the previous question, you can conclude that these are homologous sequences over their whole length.
