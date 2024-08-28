@@ -730,9 +730,7 @@ Here we explore these strategies by searching for homologs of the yeast Vps36p i
   h. At least one of your hits is outside of fungi, suggesting that Vps36p homologs might be more widespread. What could be a possible blast strategy to find more distant homologs? \
   i. Try to modify the Algorithm parameters for the search done in question f. to find more homologs. Keep using the blastp algorithm, just try to modify a parameter. How many hits do you find? \
 Finally, we want to get an overview how similar these distantly related proteins are.
-To this end, we will download some hits and perform a multiple sequence alignment.
-Unfortunately, the download function does not work yet with the WUR blast server.
-To download, also run the search from question i. with NCBI blast. \
+To this end, we will download some hits and perform a multiple sequence alignment. \
   j. Generate a multi-fasta file of 10 sequences: The first 9 hits from the previous blast search and the original sequence (NP_013521.1). (Hint: you can mark sequences and save them by clicking on Download -> Fasta (complete sequences); use a text editor to add the original sequence manually). \
   k. We will use [M-Coffee](https://tcoffee.crg.eu/apps/tcoffee/do:mcoffee) from the [T-Coffee suite](https://tcoffee.crg.eu/apps/tcoffee/index.html). This program computes multiple other tools to estimate several multiple sequence alignments and combines them into one final alignment. The output includes a color code showing the agreement between the methods. Upload you multi-fasta file and run it with default parameters. Look at the estimated alignment. What can you say about the overall alignment quality? Where can you find regions of high and low agreement? \
   l. Would you conclude that these sequences are homologous across their entire length? Why/why not?
@@ -772,7 +770,7 @@ To download, also run the search from question i. with NCBI blast. \
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_2c_ncbi
 %ANSWER%```
-%ANSWER%You find 16 hits (with NCBI blast that would be 20). The results are similar to the blastp results. The first two matches have a good combination of a low E-value and a high query coverage. However the percent identity is low. This suggests these are clearly divergent (low percent identity) homologs in _C. neoformans_. The other hits concern only a small part of the query. \
+%ANSWER%You find 12 hits (with NCBI blast that would be 20). The results are similar to the blastp results. The first two matches have a good combination of a low E-value and a high query coverage. However the percent identity is low. This suggests these are clearly divergent (low percent identity) homologs in _C. neoformans_. The other hits concern only a small part of the query. \
 %ANSWER%d.
 %ANSWER%
 %ANSWER%WUR blast
@@ -807,7 +805,7 @@ To download, also run the search from question i. with NCBI blast. \
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_2f_ncbi
 %ANSWER%```
-%ANSWER%There are 104 hits. The top hits are good (E-value and identity) with good query coverage within the other species outside of Ascomycota. The percent identity is relatively low ~25% in these hits, because of the evolutionary distance between _S. cerevisiae_ and species outside the phylum Ascomycota. \
+%ANSWER%There are 116 hits (with NCBI blast that would be 118). The top hits are good (low e-value) with good query coverage within the other species outside of Ascomycota. The percent identity is relatively low ~25% in these hits, because of the evolutionary distance between _S. cerevisiae_ and species outside the phylum Ascomycota. \
 %ANSWER%g. The hits are mainly fungi, but also few non-fungal matches, suggesting this protein may be more common in other species as well. \
 %ANSWER%h. To identify related sequences that are too dissimilar to be found in a straightforward BLAST search, the word size could be decreased or PSI-BLAST could be used. \
 %ANSWER%i. We can modify the word size, this is expected to yield more distant hits.
@@ -826,7 +824,7 @@ To download, also run the search from question i. with NCBI blast. \
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_2i_ncbi
 %ANSWER%```
-%ANSWER%We then find 170 hits (with NCBI blast, that would be 173). \
+%ANSWER%We then find 190 hits (with NCBI blast, that would be 193). \
 %ANSWER%j. All 10 sequences, each starting with their Fasta label, should be copy/pasted into one Fasta file. \
 %ANSWER%k. The alignment looks good. The beginning is very well aligned with few gaps. Although there are stretches containing gaps, there are also long regions throughout the alignment with no or few gaps and these are of good quality. Nevertheless, there are also low-quality regions. \
 %ANSWER%l. From the observations in the previous question, you can conclude that these are homologous sequences over their whole length.
