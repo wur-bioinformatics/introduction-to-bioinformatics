@@ -7,7 +7,7 @@ options:
   numbered: 1
 chapters:
   - file: week1
-  - file: week2f
+  - file: week2
   - file: week3
   - file: week4
   - file: week5
