@@ -732,15 +732,29 @@ In eukaryotic genome prediction these models become quite complex because they h
 How _exactly_ a model decides what annotation score to give to which nucleotide is part of the model architecture and parameterization.
 In all cases, the model parameters are chosen to accurately reproduce a known genome annotation.
 If sufficient data is used to learn the model parameters, it is assumed that these models can be used to predict annotations on novel genome sequences.
-Like homology-based prediction, this model-based approach works best for closely related organisms.
+Like homology-based prediction, this model-based approach works best for closely related organisms. In the past, almost all ab initio prediction methods were formulated as hidden Markov models (HMMs) (see Note 1.5). Examples of tools implementing HMM based ab initio prediction are SNAP, GeneMark, and Augustus. With the availability of more high quality data (genome sequences and accompanying annotations), approaches based on deep learning and generative AI have proven to frequently perform better than HMM based approaches.
 
-:::{admonition} Note 1.5: Hidden Markov Models
+:::{admonition} Note 1.5: Hidden Markov models (HMMs)
 :class: note
 
-Several ab initio gene predictors that use the statistical procedure described above fall in a broader category of models called Hidden Markov Models (HMMs).
-HMMs are designed to model sequence characteristics, and as such they find widespread adoption in bioinformatics.
-[Chapter 2](week2) covers HMMs in greater detail.
-%#% Insert direct cross-reference to HMMs in chapter 2 when written.
+Hidden Markov models (HMMs) are useful for the statistical modelling of general sequence characteristics. As such they find widespread adoption in bioinformatics to study biological sequences. Providing a full technical description of all aspects of HMMs is outside of the scope of this book. Here we will stick to a somewhat handwavy description to provide a first introduction.
+
+A hidden Markov model can be used to predict some unobserved labelling across a sequence of observations. For example: in genome annotation, coding and non-coding regions of a genome can be treated as an unobserved characteristic, where the nucleotides are the sequence of observations. As such, 'hidden' refers to the _unobserved labelling_. In addition, 'Markov' refers to some useful statistical assumptions on the nature of independence between observations and labellings that enable efficient computation.
+
+More formally, the unobserved labellings are referred to as the 'hidden states', and every hidden state contains some probabilities of observing our sequence of interest, called the 'emission probabilities'. To complete our handwavy HMM definition, we define 'transition probabilities' between hidden states.
+
+The combination of hidden states, emission probabilities, and transition probabilities enable asking questions such as 'given my current observation and a certain label of my previous observation, what is the most likely label for my current observation?'. In the context of genome annotation this would translate to for example 'given that I see a stop-codon, and that my previous label was coding sequence, what is my current most likely label?', the answer to which would be 'non-coding' (See {numref}`coding_hmm`).
+
+```{figure} images/Week1/coding_hmm.svg
+:alt: Coding HMM
+:width: 100%
+:name: coding_hmm
+
+__A__: Graphical representation of a general hidden Markov model. Shaded circles indicate observations, white circles indicate unobserved labellings (hidden states). Black arrows indicate transition probabilities between hidden states, and emission probabilies for observations from hidden states. Note that there are no arrows between observations! This is one of the properties of HMMs that enable efficient computation. __B__: A (simplified) HMM variant that labels a sequence of DNA codons as either coding or non-coding. Real-world gene predicition HMMs use a more elaborate structure with more hidden states, and six-frame representations of the DNA.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_1_2024`.
+```
+
+[Chapter 2](week2) and [Chapter 4](week4) cover various other applications of HMMs in bioinformatics, such as defining and prediction sequence domains, or transmembrane properties of proteins.
 :::
 
 ### Evidence/prediction integration
