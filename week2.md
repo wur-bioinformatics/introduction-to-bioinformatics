@@ -649,7 +649,7 @@ To this end, we search in two different databases and compare the results. \
   d. In which organisms do you find similar sequences? Which of the hits do you consider as homologs? \
   e. What is the interpretation of an e-value? What does an e-value of 0.0 suggest? \
   f. The NCBI blast service is an important bioinformatics tool, that you should practice. However, we have experienced that high usage from one location at the same time (like during BIF20306 practicals) results in a delayed response of the web service. To mitigate long waiting times, we set up a [server](http://bioinformatics.nl/blast) with the most important NCBI blast functionalities. Run the previous search also with this server and look at the results. Note that with the run url you will also be able to retrieve the results later. Preferably, do all the following blast exercises in Assignments I and II with this server. \
-  g. Next, we want to find more homologous sequences; thus we search in the RefSeq protein database (Blast database refseq_protein). How many hits do you find? Look at the last hit, do you think that all similar sequences in that database have been found? Note: We still need the results in Swissprot. Save the urls, so you can retrieve them later or leave these results open and perform the new search in a new browser window or tab. \
+  g. Next, we want to find more homologous sequences; thus we search in the RefSeq protein database (Blast database refseq_protein). How many hits do you find? Look at the last hit, do you think that all similar sequences in that database have been found? **Note**: We still need the results in Swissprot. Save the urls, so you can retrieve them later or leave these results open and perform the new search in a new browser window or tab. \
   h. Perform the same search as in question g., but now allow for finding a larger number of hits (Change Max target sequences under Algorithm parameters to the maximum available). How many hits do you find? Would you consider all of them as homologous to the yeast Vps36? \
   i. Go back to the Swissprot results and look at the first hit that is not the query sequence itself. Compare the blast results (score, query coverage, e-value, percent identity, alignment length) to the hit of the same species found in RefSeq. What do you observe?
 
@@ -691,8 +691,8 @@ To this end, we search in two different databases and compare the results. \
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_1f_hits
 %ANSWER%```
-%ANSWER%g. 100 hits are found, the last one has an e-value of 2e-41, thus the list is probably incomplete and only the first 100 sequences are reported. \
-%ANSWER%h. With WUR blast 468 hits are found (with NCBI blast, 553 hits would be found, probably due to a more recent database with more entries). Most hits have low e-values, but some have high e-values (above 0.001) and might not be considered homologs. \
+%ANSWER%g. 100 hits are found, the last one has an e-value of 6e-42 (with NCBI blast) or 2e-42 (with WUR blast), thus the list is probably incomplete and only the first 100 sequences are reported. \
+%ANSWER%h. With WUR blast 591 hits are found (with NCBI blast, 587 hits would be found, probably due to a slightly different database version). Most hits have low e-values, but some have high e-values (above 0.001) and might not be considered homologs. \
 %ANSWER%i. All the results are the same, only the e-value is lower with the Swiss-Prot database. Thus, the found proteins are identical, but the refseq database is much larger, which results in a higher e-value.
 %ANSWER%
 %ANSWER%WUR blast result with RefSeq database
@@ -720,7 +720,7 @@ Blast cannot only be used to search proteins sequences in protein databases with
 Here we explore these strategies by searching for homologs of the yeast Vps36p in fungi and other organisms. \
   a. Next, we aim to find out if homologs of this protein exist in the fungus _Cryptococcus neoformans_. What would be the most straightforward BLAST search strategy to do this? Perform this blast search using a large database (non-redundant). How many hits do you find? Inspect the length of the alignments, the percent identity, and E-value. What do you observe and what do you conclude? \
   b. In case no homologs would have been found using a ‘normal’ blastp search, which alternatives could you use to still find homologs, e.g. in the genome sequence? Describe what happens in that BLAST flavor. \
-  c. Search the protein sequence of Vps36p against the nucleotide sequences (nt nucleotide) of _C. neoformans_ using tblastn, indicating that you <u>only</u> want to search this single species and not the entire database. Inspect the search results. Do you think these are good hits and would you feel comfortable to conclude that there are (or are not) homologs of this gene in _C. neoformans_? \
+  c. Search the protein sequence of Vps36p against the nucleotide sequences of _C. neoformans_ using tblastn, indicating that you <u>only</u> want to search this single species and not the entire database (use the database: Nucleotide collection (nt)). Inspect the search results. Do you think these are good hits and would you feel comfortable to conclude that there are (or are not) homologs of this gene in _C. neoformans_? \
   d. Some of the hits reported are part of chromosome 1 of _C. neoformans_. Inspect these hits in more detail. How long is your query and how long is the sequence in the database? \
   e. Think about the following case, where you would like to study this hit in more detail. For instance, you could perform a multiple sequence alignment of your protein with this database hit and also with other sequences. What would happen if you would download the sequence from the database? Why could this be a problem, and how could you solve this? \
   f. _S. cerevisiae_ belongs to the fungal phylum Ascomycota, while _C. neoformans_ belongs to the phylum Basidiomycetes. Vps36p is highly conserved throughout Ascomycota and likely has homologs outside of this phylum too, as already indicated by your searches above. We now want to get a better overview of possible homologs of Vps36p in other species (outside of Ascomycota). To this end, perform a blastp search of Vsp36p to the refseq_protein database (excluding Ascomycota), set the number of target sequences to the maximum. Have a look at the best hits. What can you say in terms of query coverage and identity? \
@@ -728,9 +728,7 @@ Here we explore these strategies by searching for homologs of the yeast Vps36p i
   h. At least one of your hits is outside of fungi, suggesting that Vps36p homologs might be more widespread. What could be a possible blast strategy to find more distant homologs? \
   i. Try to modify the Algorithm parameters for the search done in question f. to find more homologs. Keep using the blastp algorithm, just try to modify a parameter. How many hits do you find? \
 Finally, we want to get an overview how similar these distantly related proteins are.
-To this end, we will download some hits and perform a multiple sequence alignment.
-Unfortunately, the download function does not work yet with the WUR blast server.
-To download, also run the search from question i. with NCBI blast. \
+To this end, we will download some hits and perform a multiple sequence alignment. \
   j. Generate a multi-fasta file of 10 sequences: The first 9 hits from the previous blast search and the original sequence (NP_013521.1). (Hint: you can mark sequences and save them by clicking on Download -> Fasta (complete sequences); use a text editor to add the original sequence manually). \
   k. We will use [M-Coffee](https://tcoffee.crg.eu/apps/tcoffee/do:mcoffee) from the [T-Coffee suite](https://tcoffee.crg.eu/apps/tcoffee/index.html). This program computes multiple other tools to estimate several multiple sequence alignments and combines them into one final alignment. The output includes a color code showing the agreement between the methods. Upload you multi-fasta file and run it with default parameters. Look at the estimated alignment. What can you say about the overall alignment quality? Where can you find regions of high and low agreement? \
   l. Would you conclude that these sequences are homologous across their entire length? Why/why not?
@@ -770,7 +768,7 @@ To download, also run the search from question i. with NCBI blast. \
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_2c_ncbi
 %ANSWER%```
-%ANSWER%You find 16 hits (with NCBI blast that would be 18). The results are similar to the blastp results. The first two matches have a good combination of a low E-value and a high query coverage. However the percent identity is low. This suggests these are clearly divergent (low percent identity) homologs in _C. neoformans_. The other hits concern only a small part of the query. \
+%ANSWER%You find 12 hits (with NCBI blast that would be 20). The results are similar to the blastp results. The first two matches have a good combination of a low E-value and a high query coverage. However the percent identity is low. This suggests these are clearly divergent (low percent identity) homologs in _C. neoformans_. The other hits concern only a small part of the query. \
 %ANSWER%d.
 %ANSWER%
 %ANSWER%WUR blast
@@ -805,7 +803,7 @@ To download, also run the search from question i. with NCBI blast. \
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_2f_ncbi
 %ANSWER%```
-%ANSWER%There are 104 hits. The top hits are good (E-value and identity) with good query coverage within the other species outside of Ascomycota. The percent identity is relatively low ~25% in these hits, because of the evolutionary distance between _S. cerevisiae_ and species outside the phylum Ascomycota. \
+%ANSWER%There are 116 hits (with NCBI blast that would be 118). The top hits are good (low e-value) with good query coverage within the other species outside of Ascomycota. The percent identity is relatively low ~25% in these hits, because of the evolutionary distance between _S. cerevisiae_ and species outside the phylum Ascomycota. \
 %ANSWER%g. The hits are mainly fungi, but also few non-fungal matches, suggesting this protein may be more common in other species as well. \
 %ANSWER%h. To identify related sequences that are too dissimilar to be found in a straightforward BLAST search, the word size could be decreased or PSI-BLAST could be used. \
 %ANSWER%i. We can modify the word size, this is expected to yield more distant hits.
@@ -824,7 +822,7 @@ To download, also run the search from question i. with NCBI blast. \
 %ANSWER%:width: 100%
 %ANSWER%:name: assignment_2i_ncbi
 %ANSWER%```
-%ANSWER%We then find 170 hits (with NCBI blast, that would be 173). \
+%ANSWER%We then find 190 hits (with NCBI blast, that would be 193). \
 %ANSWER%j. All 10 sequences, each starting with their Fasta label, should be copy/pasted into one Fasta file. \
 %ANSWER%k. The alignment looks good. The beginning is very well aligned with few gaps. Although there are stretches containing gaps, there are also long regions throughout the alignment with no or few gaps and these are of good quality. Nevertheless, there are also low-quality regions. \
 %ANSWER%l. From the observations in the previous question, you can conclude that these are homologous sequences over their whole length.
