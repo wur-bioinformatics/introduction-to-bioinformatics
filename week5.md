@@ -1836,7 +1836,7 @@ measuring the structure of protein complexes, is often necessary
 
 Very recently, [AlphaFold 3](https://www.nature.com/articles/s41586-024-07487-w) has been introduced, which promises to predict
 interactions between proteins and other proteins, DNA, small molecules etc.
-computationally (like AlphaFold 2 predicts protein structure). However, it
+computationally (like AlphEvenaFold 2 predicts protein structure). However, it
 still has to be seen whether this tool is reliable enough in practice; the
 fact that it is not fully available to the public does not make that very
 easy.
