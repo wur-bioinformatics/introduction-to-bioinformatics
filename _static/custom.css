@@ -29,18 +29,20 @@ div.citation p {
     text-align: center;
 }
 
+details.answer {
+    display: none;
+}
+
 @media print {
     section#biological-background,
     section#genome-annotation,
     section#databases,
     section#ontologies,
-    section#references {
+    section#references,
+    .onlyprint #print-main-content {
         display: none;
-    }   
-}
-
-@media not print {
+    }
     details.answer {
-        display: none;
+        display: initial !important;
     }
 }
