@@ -1,6 +1,6 @@
-# Welcome to "Introduction to Bioinformatics"
+# Introduction to bioinformatics
 
-## Bioinformatics
+## What is bioinformatics?
 
 The field of bioinformatics deals with research, development and application
 of computational tools and approaches for expanding the use of molecular, 

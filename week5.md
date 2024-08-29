@@ -1066,24 +1066,18 @@ the book of life, it must also contain the information on how to read it.
 :align: center
 :name: epigenetics
 
-Epigenetic mechanisms are affected by several factors and processes
-including development, environmental chemicals, drugs and pharmaceuticals,
-aging, and nutrition. DNA methylation is what occurs when methyl groups, an
-epigenetic factor found in some dietary sources, can tag DNA and activate or
-repress genes. Histones are proteins around which DNA can wind for
-compaction and gene regulation. Histone modification occurs when the
-binding of epigenetic factors to histone "tails" alters the extent to which
-DNA is wrapped around histones and the availability of genes in the DNA to
-be activated. At a coarser level, the 3D organization of the DNA ("chromatin
-structure") also influences which regions of the genome are accessible for
-transcription. In humans, all of these factors and processes can have an effect on
-health and disruption can result in cancer,
-autoimmune disease, mental disorders or diabetes, among other illnesses.
+Epigenetic mechanisms are influenced by factors like development, chemicals,
+drugs, aging, and nutrition.  DNA methylation involves adding methyl groups
+to DNA, which can turn genes on or off.  Histones are proteins that DNA
+wraps around, and their modification can change how tightly DNA is packed,
+affecting gene activity.  The 3D shape of DNA also affects which genes are
+accessible.  Changes in these processes can impact health and lead to
+diseases such as cancer, autoimmune disorders, mental illnesses, and
+diabetes.
 Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`epigenetics_2005`.
 ```
 
 ::::
-%#% The original URL in box 5.5 that is credited as the source leads to page that does not exist anymore. Changed to WikiMedia url. - The description is a literal copy paste from the figure description on WikiMedia.
 
 A part of the explanation lies in what is called _epigenetics_,
 modifications of the genome that do not change the DNA sequence but do
@@ -1144,37 +1138,26 @@ important limitations:
 	experiment requires labor and consumables
 - Technical noise: all measurements technologies come with inherent variation and
   measurement noise
-%#%	Moreover, omics measurements are often indirect, measuring the effects of certain molecules or interactions through other readouts (for example, by imaging fluorescent markers, or by translating RNA to DNA for subsequent sequencing) or measuring only parts of molecules. Such technologies require steps in data analysis to translate the measurements back to what we actually wanted to measure, which also introduces noise.
 - Biological variation: different cells, organs or individuals will differ
   in their biological state and make-up
-%#% when studying the effect of a mutation or intervention by comparing two samples, ideally all other biological circumstances should be identical. In practice, cells are dynamic (e.g., cell cycle) and sensitive to environmental influence. Similarly, molecule levels and interactions are dynamic: molecules are produced, transported, modified, and degraded continuously, and a measurement at a specific time point is only a snapshot.
 - Bias and coverage: most omics technologies are most efficient (or even
   only work) for measuring specific types of molecules or interactions
+
+%#%	Moreover, omics measurements are often indirect, measuring the effects of certain molecules or interactions through other readouts (for example, by imaging fluorescent markers, or by translating RNA to DNA for subsequent sequencing) or measuring only parts of molecules. Such technologies require steps in data analysis to translate the measurements back to what we actually wanted to measure, which also introduces noise.
+%#% when studying the effect of a mutation or intervention by comparing two samples, ideally all other biological circumstances should be identical. In practice, cells are dynamic (e.g., cell cycle) and sensitive to environmental influence. Similarly, molecule levels and interactions are dynamic: molecules are produced, transported, modified, and degraded continuously, and a measurement at a specific time point is only a snapshot.
 %#%, or work best for certain ranges of levels. It is often also hard to take the many different functional forms of a molecule, such as modified proteins, into account. Some technologies are even limited to measuring a subset of all possible molecules or interactions. This means that care must be taken when analyzing the resulting data; in particular, _not_ measuring something does not mean it is not there.
 
-Typically, functional genomics experiments then involve studying the effect
-of genetic variation on certain omics levels. Such variation can be
-natural, for example comparing omics data measured on two organisms with
-known (limited) genetic differences due to evolution. It can also be
-experimentally introduced, for example by:
+Typically, functional genomics experiments involve studying the effect of
+genetic variation on certain omics levels.  Such variation can be natural,
+for example comparing omics data measured on two organisms with known
+(limited) genetic differences due to evolution.  It can also be
+experimentally introduced, for example bychanging the environment
+(temperature, nutrients, drugs, etc.), introducing small mutations in the
+DNA sequence, knocking out genes, introducing new genes etc.  The effects of
+such interventions at a specific omics level then provide information on the
+function of the manipulated gene(s).
 
-- changing the environment (temperature, nutrients, drugs, etc.).
-- introducing small mutations in the DNA sequence.
-- knocking out genes (ensuring they are no longer expressed).
-- knocking down genes (removing the transcripts).
-- knocking in genes (introducing new genes).
-
-The effects of such interventions at a specific omics level then provide
-information on the function of the manipulated gene(s). Ideally we would
-measure different omics levels at the same time (multi-omics) and even in
-the same sample (paired omics), but this is often experimentally too complex
-and costly. Some omics technologies are more acccessible than
-others, in terms of cost, data quality, and interpretation and are therefore
-most widely used - in particular, gene expression levels (transcriptomics)
-are often measured and assumed to reflect the overall state of a cell.
-However, as discussed [below](Week5_omics), we should be careful with this.
-
----
+%@% Ideally we would measure different omics levels at the same time (multi-omics) and even in the same sample (paired omics), but this is often experimentally too complex and costly. Some omics technologies are more acccessible than others, in terms of cost, data quality, and interpretation and are therefore most widely used - in particular, gene expression levels (transcriptomics) are often measured and assumed to reflect the overall state of a cell. However, as discussed [below](Week5_omics), we should be careful with this. 
 
 #### From functional genomics to systems biology
 
@@ -1224,9 +1207,8 @@ data analysis is an essential element in systems biology.
 Transcriptomics is concerned with measuring the expression of genes (i.e.,
 the levels of transcription of genes on the genome to RNA). RNA and its
 role in the cell has already been discussed in [chapter 1](Week1_rna_transcription_splicing). If you want to know
-what other types of RNA exist outside the common mRNA, tRNA and rRNA, read
+what other types of RNA exist outside the common mRNA, rRNA, tRNA and miRNA, read
 [Box 5.6](Week5_RNA). Here we focus on measuring and counting transcripts (mRNA).
-%#% Chapter 1 does also mention miRNA as one of the main types of RNA.
 
 (Week5_RNA)=
 
@@ -1279,19 +1261,39 @@ variation, some will cause noise.
 
 mRNA levels:
 
-- Differ between genes.
-- Differ between isoforms.
-- Differ between tissues and cell types.
-- Differ between developmental stages.
-- Vary with cell cycle.
-- Vary during the day (circadian rhythm) and/or season.
-- Differ between individual cells.
-- Depend on the environment.
-- Are the result of mRNA synthesis and mRNA decay.
+- are the result of mRNA synthesis and mRNA decay.
+- differ between genes, isoforms, cells, cell types and tissues, and developmental stages
+- vary with cell cycle, during the day (circadian rhythm) and/or season
+- depend on the environment
 
 ---
 
 #### How to measure mRNAs?
+
+Just like the study of genomes, transcriptomics has greatly benefitted from
+technological developments that allowed an increase in throughput and
+sensitivity of measurements.  [Box 5.6](Week5_gelspcr) and [Box
+5.7](Week5_microarrays) provide an overview of technologies that were
+important for the development of the field, but are not widely used anymore;
+at this time, RNAseq is almost exclusively used to measure mRNA levels.
+
+Note that even though microarrays haves now been mostly superseded by RNAseq as a
+cheaper and better quality alternative (see [below](Week5_rnaseq)). 
+However, there are many microarray samples still available for re-use in
+databases, as submission of measurement data to such databases is compulsory
+upon publication of a scientific paper.  The most well-known repositories
+are the NCBI Gene Expression Omnibus
+([GEO](https://www.ncbi.nlm.nih.gov/geo/)), with as of March 2024 ~7.1
+million samples, and [EBI
+ArrayExpress](https://www.ebi.ac.uk/biostudies/arrayexpress).  If you are
+interested in a certain question that may be answered using transcriptomics,
+it makes sense to look here first to see what experimental data is already
+available.
+
+(Week5_gelspcr)=
+
+::::{admonition} Box 5.6: Gels and qPCR
+:class: tip
 
 %:::{figure} images/Week5/differential-gel.jpg
 %:alt: Differential display gel
@@ -1319,27 +1321,21 @@ modified from \
 {cite}`differential_gel_alt_2014`.
 :::
 
+---
+
 Early methods of detecting transcripts and expression levels are northern
-blots and differential display ({numref}`differential_gel_alt`). Both are gel-based
-methods that are low throughput and not very accurate.
-
-Just like the study of genomes, transcriptomics has greatly benefitted from
-technological developments that allowed an increase in throughput and
-sensitivity of measurements.
-
-Northern blots and differential displays were superseded by qPCR
-(quantitative PCR) and microarrays. qPCR is a form of PCR with the formal
-name of quantitative real-time PCR (abbreviated as qPCR, whereas RT-PCR
-stands for reverse transcription PCR and when using RNA as input is
-sometimes called RT-qPCR, reverse transcription qPCR). The real-time
-assessment of the PCR product allows the quantification of the number of
-input materials. The abundance of each DNA molecule is measured by adding a
-fluorescent reporter, either a dye that binds DNA or fluorescent probes.
-The level of fluorescence increases with the number of amplified fragments,
-which in turn is detected. When the reaction passes a threshold at a given
-cycle, the cycle number is used to deduce the original amount of template
-fragments in the reaction ({numref}`qPCR_alt`). qPCR is often used to validate
-results obtained by other quantitative methods.
+blots and differential display ({numref}`differential_gel_alt`).  Both are
+gel-based methods, low throughput and not very accurate.  Northern blots and
+differential displays were superseded by qPCR (quantitative PCR) and
+microarrays (see [Box 5.7](Week5_microarrays).  Quantitative real-time PCR
+(qPCR) is a PCR (polymerase chain reaction) that measures the abundance of
+each DNA molecule by adding a fluorescent reporter, either a dye that binds
+DNA or fluorescent probes.  The level of fluorescence increases with the
+number of amplified fragments, which in turn is detected.  When the reaction
+passes a threshold at a given cycle, the cycle number is used to deduce the
+original amount of template fragments in the reaction ({numref}`qPCR_alt`). 
+qPCR is often used to validate results obtained by other quantitative
+methods.
 
 %:::{figure} images/Week5/qPCR.jpg
 %:alt: qPCR amplification graph
@@ -1365,32 +1361,34 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 :::
 
 ---
+::::
 
-#### Microarrays
+(Week5_microarrays)=
 
-The first widely used high-throughput method to study expression of genes
+::::{admonition} Box 5.6: Microarrays
+:class: tip
+
+The first widely used _high-throughput_ method to measure gene expression 
 was the microarray. DNA microarrays are based on the principle that
-complementary strands of DNA tend to bind to each other. Microarrays are
-typically flat surfaces (slides of glass or some other material) that
-contain microscopic spots of single-strand DNA sequences - so-called probes -
-fixated at known locations, ranging from a few thousand to millions. Each
+complementary strands of DNA bind each other. Microarrays are
+typically flat surfaces (slides of glass or some other material) with
+microscopic spots of single-strand DNA sequences - so-called probes -
+at known locations, ranging from a few thousand to millions. Each
 DNA sequence is chosen to (as best as possible) represent a specific gene,
 i.e., a unique subsequence. This means that microarrays can only be
 designed to detect known genes and are organism-specific, and that gene
 variants (SNPs, splice variants) are hard to detect.
 
-The general measurement protocol is then as follows. From a given sample,
-mRNA molecules are first selected by looking for a poly-A tail, converted
-into complementary DNA (cDNA), labelled with a fluorescent dye and washed over the surface.
-Complementary sequences will bind, and after some time the unbound material
-is washed off and fluorescence is measured using a microscope. The light
-intensity level at a certain location on the surface is then an indirect
-readout for the number of sequences that bound, and thus for the relative
-expression of the corresponding gene.
+In microarray experiments, mRNA molecules are first selected by looking for
+a poly-A tail, converted into complementary DNA (cDNA), labelled with a
+fluorescent dye and washed over the surface.  Complementary sequences will
+bind, and after some time the unbound material is washed off and
+fluorescence is measured using a microscope.  The light intensity level at a
+certain location on the surface is then an indirect readout for the number
+of sequences that bound, and thus for the relative expression of the
+corresponding gene.
 
 ---
-
-##### cDNA and oligonucleotide arrays
 
 %:::{figure} images/Week5/microarrays.png
 %:alt: cDNA (two-color) vs oligonucleotide (one-color) microarray analysis.
@@ -1415,9 +1413,9 @@ There are two main competing types of microarrays: cDNA and oligonucleotide
 arrays. While the principles are the same, they differ in production and
 use (as illustrated in {numref}`microarrays_alt`):
 
-- cDNA microarrays contain rather long probes of several hundreds of
-  nucleotides, up to 1000nt. Microarrays can be produced in the lab by spotting
-  robots, so they can easily be adjusted for specific experiments. This comes
+- __cDNA microarrays__ contain long probes, of several hundreds of
+  nucleotides up to 1000nt. They can be produced in the lab by spotting
+  robots, and so easily be adjusted for specific experiments. This comes
   with greater variation between microarrays, making it harder to compare
   different measurements. cDNA microarrays are therefore mostly used for
   direct comparisons between two samples, in which both samples (for example,
@@ -1429,7 +1427,7 @@ use (as illustrated in {numref}`microarrays_alt`):
   found in sample 2 and a yellow spot that it was found in both samples. The
   intensity then reflects the overall expression level: black/dark for low
   expression in both samples, bright for high expression.
-- oligonucleotide microarrays contain short probes (25nt), which are
+- __oligonucleotide microarrays__ contain short probes (25nt), which are
   produced using technology similar to microchip production. This means
   quality is high and constant, and different arrays can easily be compared.
   Oligonucleotide arrays therefore usually measure just a single sample using
@@ -1437,34 +1435,17 @@ use (as illustrated in {numref}`microarrays_alt`):
   transcripts are usually measured by combining multiple probes in so-called
   probesets.
 
-Analysis of microarray data involves microscope image acquisition, followed
-by image processing to extract spot intensities at the right locations.
 Overall, microarray measurements are often noisy and cannot distinguish very
 low expression levels, as they do not provide enough fluorescence
 signal. Data normalization is therefore also an important step, to remove
-non-relevant variation between different microarray measurements. For cDNA
-microarrays, careful experimental design - deciding which samples to compare
-on the same array - is also essential.
+non-relevant variation between different microarray measurements. 
 
 <div class="videoWrapper">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/0ATUjAxNf6U" title="DNA Microarray Methodology" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div
 
 ---
-
-##### Repositories
-
-While popular in the 1990s and early 2000s, microarrays haves now been
-mostly superseded by RNAseq as a cheaper and better quality alternative (see
-[below](Week5_rnaseq)). However, there are many microarray samples still available for
-re-use in databases, as submission of measurement data to such databases is
-compulsory upon publication of a scientific paper. The most well-known
-repositories are the NCBI Gene Expression Omnibus ([GEO](https://www.ncbi.nlm.nih.gov/geo/)),
-with as of March 2024 ~7.1 million samples, and [EBI ArrayExpress](https://www.ebi.ac.uk/biostudies/arrayexpress).
-If you are interested in a certain question that may be answered using transcriptomics,
-it makes sense to look here first to see what experimental data is already available.
-
----
+::::
 
 (Week5_rnaseq)=
 
@@ -1478,20 +1459,6 @@ transcript sequences. While RNAseq is mainly used to study transcript
 abundance, it can also be used to detect transcript isoforms (and their
 abundance), as well as variants (see [Variants](Week5_variants) above).
 
-:::{admonition} Box 5.7: Ever more detail
-:class: tip
-
-Until now, most RNAseq experiments have been performed on groups of cells,
-as sequencing devices require large amounts of DNA. This means that cells
-of different cell types or different life stages are included in a single
-sample. While detection of differentially expressed genes is clearly
-possible with this method, weak or more nuanced variation is averaged out
-across all cells. Recently, methods have become available that separate
-tissues into individual cells and sequence each of these separately. This
-does require PCR amplification of RNA to reach the amounts required for
-sequencing, as well as sophisticated bioinformatics and statistical methods
-to deal with the resulting data. For a review, see this [paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0927-y).
-:::
 
 ---
 
@@ -1524,28 +1491,15 @@ This allows the detection of the actual isoforms present in samples.
 
 Next, the reads need to be assigned to their corresponding transcripts. For
 this there are two options: mapping of the reads to an existing reference
-which can be either a genome or a transcriptome, or a de novo assembly of the
+which can be either a genome or a transcriptome, or a _de novo_ assembly of the
 transcripts (similar to assembly of genomes). Once reads have been assigned
 to their corresponding transcript or gene, expression is quantified by
 counting the number of reads per feature.
 
-The following points summarize the strength and weaknesses of RNAseq for the
-measurement of transcripts compared to microarrays:
-
-✔️ Works for species without a reference genome.
-
-✔️ Can identify alternatively spliced transcripts.
-
-✔️ Can identify SNPs between transcripts.
-
-✔️ Is more quantitative than microarrays, especially at lower expression levels.
-
-❌ Is limited by fragment/read length, although full length transcript sequencing solves this.
-
-❌ Produces large raw datasets, which take up storage and computing power to process.
-
-❌ Analysis is less straightforward than for microarray data; there is not
-yet one standard protocol.
+The advantage of not using probes (compared to qPCR and microarrays) is that
+RNAseq works for species without a reference genome, can identify alternatively spliced
+transcripts, SNPs in transcripts, etc. A downside is that usually large
+datasets are generated, which require dedicated analysis workflows.
 
 ---
 
@@ -1568,18 +1522,18 @@ Mapping of mRNA reads to genomic reference with splice aware aligner.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
 :::
 
-This means that reads might contain an exon-exon junction, which means they
-should be split along the reference. Most aligners will not consider this a
-valid option. Special splice aware aligners have been developed for this
-reason, that are able to map normal reads that map contiguously to the
-reference sequence as well as reads that are split across splice sites
-({numref}`spliced_alignment`). They also take into account known intron exon boundaries
-to determine the point within a read where it has to be split and whether
-the split alignment is correct.
+This means that reads might contain an exon-exon junction and should be
+split along the reference.  Most aligners will not consider this a valid
+option.  Special splice-aware aligners have been developed for this reason,
+that are able to map normal reads that map contiguously to the reference
+sequence as well as reads that are split across splice sites
+({numref}`spliced_alignment`).  They also take into account known intron-exon 
+boundaries to determine the point within a read where it has to be
+split and whether the split alignment is correct.
 
 ---
 
-#### Transcript quantification
+##### Transcript quantification
 
 After sequencing and mapping, the next step is to quantify the abundance of
 transcripts, i.e., the expression levels. Reads assigned to each feature
@@ -1593,23 +1547,16 @@ comparability of read counts between samples is the total number of reads
 sequenced in each sample. Also, not all transcripts are the same length,
 affecting the number of reads detected per transcript. So, some
 normalisation is required to take into account these differences and make
-data comparable. The next section will cover the steps and explain why a
-certain normalisation is required.
+data comparable. The main methods are:
 
----
+- __simple counting__: this is the starting point of every analysis.  We
+  count the number of reads that map to each exon or gene.
 
-##### Simple counting
-
-This is the starting point of every analysis. We count the number of reads
-that map to each exon or gene.
-
-##### CPM
-
-CPM stands for counts per million (reads). It represents a relative measure
-for the read counts corrected for the total number of reads of a sample. It
-assigns each read a value that corresponds to the proportion of the total
-number of reads that single read represents. This tiny fraction is then
-multiplied by a million to make it more readable.
+- __CPM__: counts per million (reads), a relative measure for
+  the read counts corrected for the total number of reads of a sample.  It
+  assigns each read a value that corresponds to the proportion of the total
+  number of reads that single read represents.  This tiny fraction is then
+  multiplied by a million to make it more readable.
 
 :::{figure} images/Week5/CPM.svg
 :alt: Counting reads
@@ -1619,20 +1566,14 @@ multiplied by a million to make it more readable.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
 :::
 
----
-
-##### Comparing between transcripts
-
-We not only have to normalise for the total number of reads representing
-each sample. When comparing expression of two different transcripts, we
-also have to take into account the characteristics of the transcripts we are
-comparing and normalise accordingly.
-
-RPKM and FPKM (Reads/Fragments per kilobase transcript per million)
-normalise the counts per feature length and the total number of reads. TPM
-(transcripts per million transcripts) normalises per transcript. TPM uses a
-calculation to give a measurement of which proportion of the total number of
-transcripts in the original sample is represented by each transcript.
+- __RPKM, FPKM and TPM__: when comparing expression of two different transcripts, we
+  also have to take into account the characteristics of the transcripts we
+  are comparing and normalise accordingly.  RPKM and FPKM (Reads/Fragments
+  per kilobase transcript per million) normalise the counts per feature
+  length and the total number of reads.  TPM (transcripts per million
+  transcripts) normalises per transcript.  TPM uses a calculation to give a
+  measurement of which proportion of the total number of transcripts in the
+  original sample is represented by each transcript.
 
 :::{figure} images/Week5/comparing-transcripts.svg
 :alt: Comparing transcript levels
@@ -1644,63 +1585,32 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 
 ---
 
-##### Which method to use?
-
-There is no easy answer and there is a large debate whether RPKM/FPKM or TPM
-are the better method. CPM can clearly only be used when there is no
-difference in transcript length, e.g., when comparing one transcript between
-two samples.
+There is no clear optimal method, and there is a large debate whether
+RPKM/FPKM or TPM are preferred.  CPM can clearly only be used when there is
+no difference in transcript length, e.g., when comparing one transcript
+between two samples.
 
 ---
 
-#### ChIPseq and other protocols
+:::{admonition} Box 5.8: Ever more detail
+:class: tip
 
-%:::{figure} images/Week5/chip-protocol.jpeg
-%:alt: ChIPseq protocol
-%:align: right
-%:name: chip_protocol
-%
-%The chromatin immunoprecipitation (ChIP) protocol. Proteins are
-%cross-linked to DNA, after which genomic DNA is isolated and sheared. Using
-%an antibody, only the protein of interest is selected (the
-%immunoprecipitation step), after which the cross-linking is reversed and the
-%DNA can be sequenced by PCR (ChIP-PCR) or NGS (ChIPseq). Similar protocols
-%are available for protein-RNA and protein-protein interactions, the latter
-%using two antibodies. Credits: {cite}`chip_protocol_2009`.
-%:::
-%#% Unable to use figure chip_protocol due to copyright.
-
-:::{figure} images/Week5/chip-protocol_alt.jpg
-:alt: ChIPseq protocol
-:align: center
-:name: chip_protocol_alt
-
-The chromatin immunoprecipitation (ChIP) protocol. Proteins are
-cross-linked to DNA, after which genomic DNA is isolated and sheared. Using
-an antibody, only the protein of interest is selected (the
-immunoprecipitation step), after which the cross-linking is reversed and the
-DNA can be sequenced by PCR (ChIP-PCR) or NGS (ChIPseq). Similar protocols
-are available for protein-RNA and protein-protein interactions, the latter
-using two antibodies.
-Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`chip_protocol_alt_2015`.
+Until now, most RNAseq experiments have been performed on groups of cells,
+as sequencing devices require large amounts of DNA. This means that cells
+of different cell types or different life stages are included in a single
+sample. While detection of differentially expressed genes is clearly
+possible with this method, weak or more nuanced variation is averaged out
+across all cells. Recently, methods have become available that separate
+tissues into individual cells and sequence each of these separately. This
+does require PCR amplification of RNA to reach the amounts required for
+sequencing, as well as sophisticated bioinformatics and statistical methods
+to deal with the resulting data. Other recent technology allows to measure
+transcription spatially (e.g. in a tissue), at specific locations on a grid.
+For a review on single-cell transcriptomics, see this
+[paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0927-y);
+a recent review on spatial transcriptomics can be found
+[here](https://www.nature.com/articles/s41587-022-01448-2).
 :::
-
-RNAseq is a clever protocol that uses the attractive cheap, high-throughput
-DNA sequencing technology to measure something else – in this case, gene
-expression levels. The trick is to first translate the mRNA into DNA,
-measure the DNA, and then reconstruct the desired measurement by transcript
-quantification. Many more such protocols have been developed to measure
-other molecule levels and interactions of interest. Three well-known
-protocols are:
-
-- ChIPseq, for chromatin immunoprecipitation sequencing: for a given protein
-  – for example, a transcription factor or a histone – this can detect where
-  it binds DNA.
-  {numref}`chip_protocol_alt` illustrates this.
-  After sequencing, the DNA can be mapped against the genome: peaks of mapped
-  reads indicate regions where the protein of interest binds.
-- Hi-C, to study 3D proximity of chromosome parts in the nucleus.
-- Bisulfite sequencing, to assess methylation of DNA.
 
 ---
 
@@ -1743,50 +1653,37 @@ presence/absence and levels of proteins) and functional proteomics
 
 #### Quantitative proteomics
 
-##### Blots and gels
-
-:::{figure} images/Week5/gels.png
-:alt: Western blot and 2D gel
-:align: center
-:name: gels
-
-An example Western blot (left) and two 2D gels (right), separating proteins
-found in two different strains of _Brucella_. Investigating the difference
-between the two figures on the right can give insight in what proteins are
-differentially expressed between the two strains.
-Credits: [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/) {cite}`gels_2020`.
-:::
-
-As for DNA, gels ({numref}`gels`) are traditional means to measure the
-presence/absence of proteins (Western blots), denaturing proteins, tagging
-proteins of interest with a specific labeled antibody and separating them by
-size (molecular weight). After separation, the labeled antibodies can be
-imaged and used to infer presence (and to some extent, level) of the protein
-of interest. 2D versions are also used, that separate proteins by both size
-and isoelectric point or pH value. Such experiments can be repeated on
-different samples to look for spots with different intensities, that may
-point to abundance differences. One would still have to
-extract these spots and perform further measurements to learn more about
-these proteins, such as their sequence. One method of sequencing proteins
-is Edman degradation, but this is limited to short peptides (~30 amino
-acids) and requires large amounts of starting material.
-
----
-
-##### Protein microarrays
-
-Like DNA microarrays, arrays have also been developed for proteins. This
-requires antibodies for all proteins that have to be distinguished, which
-makes designing and performing a protein microarray experiment far more
-cumbersome than a DNA microarray experiment. Arrays are therefore mostly
-used for specific applications, such as high-throughput detection of
-specific interactions.
+As for DNA/RNA, gels and microarrays are traditional means to measure the
+presence/absence of proteins. These days, __mass spectrometry__ is the most
+widely used technology in proteomics (and metabolomics), as explained in [Box
+5.9](Week5_mass_spectrometry).
 
 ---
 
 (Week5_mass_spectrometry)=
 
-##### Mass spectrometry
+::::{admonition} Box 5.9: Mass spectrometry
+:class: note
+
+Mass spectrometry (MS) devices have been in constant development and
+improvement since their inception in the late 19{sup}`th` century.  They
+differ in specific setup, but all follow three basic steps:
+
+1. Ionize a molecule.
+2. Separate or select molecules based on their mass.
+3. Detect time and/or location of arrival at a detector to infer the mass of
+   each molecule.
+
+To be fully correct, MS measures the mass-over-charge ratio (m/z) rather
+than the actual mass, i.e., the mass in relation to the charge number of the
+ion.
+
+For each step, different technologies are available which are best suited to
+detection of specific mixtures, compounds of interest (proteins, metabolites),
+and compound size ranges. {numref}`mass_spectrometry_alt` illustrates a number of widely used
+separation steps, i.e., by measuring time-of-flight or susceptibility to
+deflection by magnetic fields or by tuning an oscillating electrical field
+to allow only specific masses to pass through.
 
 %:::{figure} images/Week5/mass-spectrometry.png
 %:alt: Three mass spectrometry setups
@@ -1809,27 +1706,6 @@ Three mass spectrometry setups, (top) time-of-flight,
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
 :::
 
-Currently the most widely used technology for proteomics (and metabolomics)
-is mass spectrometry (MS). MS devices have been in constant development and
-improvement since their inception in the late 19{sup}`th` century. They differ in
-specific setup, but all follow three basic steps:
-
-1. Ionize a molecule.
-2. Separate or select molecules based on their mass.
-3. Detect time and/or location of arrival at a detector to infer the mass of
-   each molecule.
-
-To be fully correct, MS measures the mass-over-charge ratio (m/z) rather
-than the actual mass, i.e., the mass in relation to the charge number of the
-ion.
-
-For each step, different technologies are available which are best suited to
-detection of specific mixtures, compounds of interest (proteins, metabolites),
-and compound size ranges. {numref}`mass_spectrometry_alt` illustrates a number of widely used
-separation steps, i.e., by measuring time-of-flight or susceptibility to
-deflection by magnetic fields or by tuning an oscillating electrical field
-to allow only specific masses to pass through.
-
 <div class="videoWrapper">
     <iframe width="650" height="488" src="https://www.youtube.com/embed/J-wao0O0_qM" title="Mass Spectrometry MS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
@@ -1846,27 +1722,31 @@ Credits: modified from (left) [CC BY-SA 3.0](https://creativecommons.org/license
 
 The output of any MS experiment is a mass spectogram, with m/z
 ratios on the x-axis and peaks indicating how many molecules of a certain
-mass have been detected ({numref}`mass_spectrum`). In theory, if a database of known
-molecule structures (e.g., proteins or peptides) and their calculated masses
-would be available, one could look up each mass and identify the
-corresponding molecule. A major challenge in interpreting such a
-spectrum is the limited resolution of MS devices, which means that a
-certain peak can still be caused by many different types of molecules. Some
-smaller molecules of interest may even have identical masses (e.g.,
-isoforms) and so cannot be distinguished, which is particularly hard in
-complex mixtures. A number of approaches try to solve this problem:
+mass have been detected ({numref}`mass_spectrum`). 
 
-- Chromatography: moving the sample through a separation column before entering the MS
+::::
+
+---
+
+In theory, if a database of known molecule structures (e.g., proteins or
+peptides) and their calculated masses would be available, one could look up
+each mass and identify the corresponding molecule.  A major challenge in
+interpreting a spectrum in this way is the limited resolution of MS devices, which
+means that a certain peak can still be caused by many different types of
+molecules.  Some smaller molecules of interest may even have identical
+masses (e.g., isoforms) and so cannot be distinguished, which is
+particularly hard in complex mixtures.  A number of approaches try to solve
+this problem:
+
+- Chromatography: moving the sample through a column before entering the MS
   device, filled with an inert gas (gas chromatography, GC) or liquid
   (liquid chromatography, LC). Different molecules take different times to travel through these
   columns, and arrival time at the MS device thus provides extra information.
-  Again, a database of column travel times for specific known compounds is
-  essential to analyze these arrival times.
 - Tandem mass spectrometry or MS/MS: measuring molecules twice, once intact (in a first MS device) and then
-  again after selection and fragmentation (in a second MS device). This depends on the
-  predictability of fragmentation: if a molecule falls apart at specific
-  places, we can get more information from the combination of the overall mass
-  and the masses of the fragments it breaks into.
+  again after selection and fragmentation (in a second MS device).  If a
+  molecule always falls apart at specific places, we can get more
+  information from the combination of the overall mass and the masses of the
+  fragments it breaks into.
 - Shotgun proteomics: specifically for proteins, a protocol in which an enzyme is first used to
   cut the protein at specific places (for example, trypsin cleaves the protein
   into peptides at arginines and lysines) ({numref}`shotgun_proteomics_alt`). The peptide masses are then
@@ -1895,23 +1775,40 @@ A schematic overview of shotgun proteomics.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`own_5_2024`.
 :::
 
-More complex protocols have also been developed to compare two protein
-samples in a single experiment, for example by adding known weights (using natural isotopes or
-modified amino acids) and investigating relative differences in shifted mass spectra.
-
----
-
 #### Functional proteomics
 
-%:::{figure} images/Week5/experimental-protein-methods.png
-%:alt: Experimental protein interaction detection
-%:align: center
-%:name: experimental_protein_methods
-%
-%Experimental methods to detect proteins. Top: high-throughput, bottom:
-%low-throughput. Credits: modified from {cite}`experimental_protein_methods_2006`.
-%:::
-%#% Unable to use figure experimental_protein_methods due to copyright.
+Next to protein levels, we are also interested in what proteins do in the
+cell: their functions and interactions. Many protocols and analyses have
+been developed for this, with most focusing on protein-protein, protein-DNA
+and protein-metabolite (enzymatic) interactions. [Box 5.10](Week5_funcprot) lists some methods to
+measure sch intereactions. Note that while many of these experiments are
+cumbersome, they are essential to advance functional genomics -
+(bioinformatics) predictions critically depend on high-quality data and
+cannot replace experimental validation. 
+
+(Week5_funcprot)=
+
+::::{admonition} Box 5.10: Measuring functional interactions
+:class: tip
+
+:::{figure} images/Week5/chip-protocol_alt.jpg
+:alt: ChIPseq protocol
+:align: center
+:name: chip_protocol_alt
+
+The chromatin immunoprecipitation (ChIP) protocol. Proteins are
+cross-linked to DNA, after which genomic DNA is isolated and sheared. Using
+an antibody, only the protein of interest is selected (the
+immunoprecipitation step), after which the cross-linking is reversed and the
+DNA can be sequenced by PCR (ChIP-PCR) or NGS (ChIPseq). When reads are then
+mapped on the genome, peaks indicate where proteins are bound.
+Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`chip_protocol_alt_2015`.
+:::
+
+For protein-DNA interaction, the ChIPseq method
+({numref}`chip_protocol_alt`) uses RNAseq to learn how proteins modify DNA,
+initiate replication and repair, and regulate expression as transcription
+factors or enhancers.  
 
 :::{figure} images/Week5/experimental-protein-methods_alt.png
 :alt: Experimental protein interaction detection
@@ -1922,19 +1819,8 @@ Experimental methods to detect proteins. Top: high-throughput, bottom: low-throu
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by/4.0/) Top: {cite}`own_5_2024`. Bottom: {cite}`experimental_protein_methods_bottom_alt_nd`.
 :::
 
-Next to protein levels, we are also interested in what proteins do in the
-cell: their functions and interactions. Many protocols and analyses have
-been developed for this, with most focusing on protein-protein, protein-DNA
-and protein-metabolite (enzymatic) interactions. Note that while many of these experiments are
-cumbersome, they are essential to advance functional genomics -
-(bioinformatics) predictions critically depend on high-quality data and
-cannot replace experimental validation.
-
-For protein-DNA interaction, the already mentioned ChIPseq method is widely
-used to learn how proteins modify DNA, initiate replication and repair, and
-regulate expression as transcription factors or enhancers. For
-protein-protein interactions, the main high-throughput protocols ({numref}`experimental_protein_methods_alt`,
-top) are:
+For protein-protein interactions, the main high-throughput protocols
+({numref}`experimental_protein_methods_alt`, top) are:
 
 - Yeast two-hybrid, in which one of the two proteins is attached to a DNA-binding
   domain and the other to an expression activating domain. Only if the two
@@ -1946,13 +1832,35 @@ top) are:
 These protocols are noisy and have many false positives and negatives, so
 further experimental validation using low-throughput methods, essentially
 measuring the structure of protein complexes, is often necessary
-({numref}`experimental_protein_methods_alt`, bottom). Nevertheless, like transcriptomics data,
-"interactomics" measurements are stored in databases, such as
-[IntAct](https://www.ebi.ac.uk/intact/home) and can be used to obtain
-insights into cell-wide protein interaction networks ({numref}`protein_network`).
-Groups of highly connected proteins, i.e., with many interactions, can
-indicate e.g., protein complexes or signalling pathways within or between
-cells.
+({numref}`experimental_protein_methods_alt`, bottom). 
+
+Very recently, [AlphaFold 3](https://www.nature.com/articles/s41586-024-07487-w) has been introduced, which promises to predict
+interactions between proteins and other proteins, DNA, small molecules etc.
+computationally (like AlphaFold 2 predicts protein structure). However, it
+still has to be seen whether this tool is reliable enough in practice; the
+fact that it is not fully available to the public does not make that very
+easy.
+
+::::
+
+
+Like transcriptomics data, "interactomics" measurements are stored in
+databases, such as [IntAct](https://www.ebi.ac.uk/intact/home) and can be
+used to obtain insights into cell-wide protein interaction networks
+({numref}`protein_network`).  Groups of highly connected proteins, i.e.,
+with many interactions, can indicate e.g., protein complexes or signalling
+pathways within or between cells; protein-DNA relations can be used to
+identify gene expression regulation programmes.
+
+Note that the methods mentioned measure _physical_ interactions between
+proteins, as opposed to _functional_ interactions.  Such interactions occur
+when two proteins have similar functions - even though they may never
+actually physically interact, for example when they are two alternative
+transcription factors for the same gene.  Such functional interactions can
+be measured to some extent, but are mostly predicted by bioinformatics tools
+that combine various pieces of evidence: literature, sequence similarity,
+gene co-expression, etc.  [STRING](https://string-db.org/) and
+[GeneMania](https://genemania.org/) are the most well-known examples.
 
 :::{figure} images/Week5/protein-network.jpg
 :alt: Example protein interaction network
@@ -1965,16 +1873,6 @@ clusters corresponding to protein complexes indicated in color.
 Credits: modified from {cite}`protein_network_2011` under [Elsevier user license](http://www.elsevier.com/open-access/userlicense/1.0/).
 :::
 %#% Figure protein_network is under open access: Permitted for non-commercial purposes: read, print & download. We should be able to use this image.
-
-The methods mentioned measure _physical_ interactions between proteins, as
-opposed to _functional_ interactions. Such interactions occur when two
-proteins have similar functions - even though they may never actually
-physically interact, for example when they are two alternative transcription
-factors for the same gene. Such functional interactions can be measured to
-some extent, but are mostly predicted by bioinformatics tools that combine
-various pieces of evidence: literature, sequence similarity, gene co-expression,
-etc. [STRING](https://string-db.org/) and
-[GeneMania](https://genemania.org/) are the most well-known examples.
 
 ---
 
@@ -1990,25 +1888,27 @@ The Roche biochemical pathway chart: global overview of metabolic processes
 Credits: {cite}`metabolic_network_2016`.
 :::
 
-Many cells produce a wide range of metabolites - small molecules or compounds that are part of metabolism. Many of
-these so-called primary metabolites, serve as building blocks for essential
-molecules, such as DNA or proteins, and provide energy for reactions. Other
-metabolites, specialized metabolites, function in many organisms for
-communication, regulation (hormones), defense (antibiotics), and symbiosis.
-Some metabolites also regulate relevant phenotypes. As such, solving the structures of all molecules circulating in cells and measuring the
+Many cells produce a wide range of metabolites - small molecules or
+compounds that are part of metabolism.  Many of these so-called primary
+metabolites, serve as building blocks for essential molecules, such as DNA
+or proteins, and provide energy for reactions.  Other metabolites,
+specialized metabolites, function in many organisms for communication,
+regulation (hormones), defense (antibiotics), and symbiosis.  Some
+metabolites also regulate relevant phenotypes.  As such, solving the
+structures of all molecules circulating in cells and measuring the
 concentrations of metabolites as so-called "end points" of cellular
 organization seems highly relevant in studying growth and development of
-organisms and communities. Metabolomics is also important in medicine and
+organisms and communities.  Metabolomics is also important in medicine and
 pharmacology, in food safety and in uncovering the production repertoire of
 microbes in industrial biotechnology.
 
-For measuring metabolites, mostly the MS technologies described [above](Week5_mass_spectrometry) are
-employed, in particular GC-MS and LC-MS. As the range of metabolite sizes
-and characteristics is large and many metabolites are still unknown,
-identifying them from mass spectra is still very challenging. An advantage
-is that known metabolic reactions, collected in metabolic networks
-({numref}`metabolic_network`), can
-support systems biology approaches, specifically in microbes.
+For measuring metabolites, mostly the MS technologies described
+[above](Week5_mass_spectrometry) are employed, in particular GC-MS and
+LC-MS.  As the range of metabolite sizes and characteristics is large and
+many metabolites are still unknown, identifying them from mass spectra is
+still very challenging.  An advantage is that known metabolic reactions,
+collected in metabolic networks ({numref}`metabolic_network`), can support
+systems biology approaches, specifically in microbes.
 
 ---
 
