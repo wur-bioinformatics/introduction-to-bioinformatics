@@ -53,7 +53,7 @@ a BSc course "Introduction to Bioinformatics" at Wageningen University .  We
 structured it around the "journey" a researcher would take to study an unknown
 sequence:
 
-:::{figure} images/Week1/overview.png
+:::{figure} images/Intro/overview.png
 :alt: Overview of the chapters i the book
 :width: 90%
 :name: overview
@@ -102,7 +102,12 @@ that all material (figures etc.) is only re-used when copyright allows it,
 but if you still find some material that you believe is incorrectly used or
 cited, please let us know.
 
-## Reading guide
+<div align=right>Dick de Ridder, Anne Kupczok, Rens Holmer, Freek Bakker, Justin van der
+Hooft, Judith Risse, Jorge Navarro and Tomer Sardjoe</div>
+
+<div align=right>Wageningen, September 2024</div>
+
+### Reading guide
 
 The text is decorated with different types of boxes that show additional
 information or are used to highlight and clarify important aspects.  Yellow
@@ -129,13 +134,3 @@ Additional information, often times provides extra examples to material mentione
 Link to external information, like videos or blogs. Not exam material, but might make exam material more clear.
 ```
 
-Dick de Ridder
-Anne Kupczok
-Rens Holmer
-Freek Bakker
-Justin van der Hooft
-Judith Risse
-Jorge Navarro
-Tomer Sardjoe
-
-Wageningen, September 2024
