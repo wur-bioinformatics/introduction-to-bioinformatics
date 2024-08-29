@@ -1140,32 +1140,17 @@ Even though omics measurements provide highly detailed overviews of
 cellular states and reactions to perturbations, there are a number of
 important limitations:
 
-- Cost: omics devices are often expensive to acquire, and each experiment requires
-  labor and consumables. Experimental costs (time, money) are therefore often
-  limiting, especially when studying multiple omics levels or investigating
-  the effects of all combinations of interventions.
-- Technical noise: all measurements come with inherent variation and
-  measurement noise. Moreover, omics measurements are often indirect,
-  measuring the effects of certain molecules or interactions through other
-  readouts (for example, by imaging fluorescent markers, or by translating RNA
-  to DNA for subsequent sequencing) or measuring only parts of molecules. Such
-  technologies require steps in data analysis to translate the measurements
-  back to what we actually wanted to measure, which also introduces noise.
-- Biological variation: when studying the effect of a mutation or
-  intervention by comparing two samples, ideally all other biological circumstances should be
-  identical. In practice, cells are dynamic (e.g., cell cycle) and sensitive to
-  environmental influence. Similarly, molecule levels and interactions are
-  dynamics: molecules are produced, transported, modified, and degraded
-  continuously, and a measurement at a specific time point is only a
-  snapshot.
-- Bias and coverage: most omics technologies are most efficient for
-  measuring specific types of molecules or interactions, or work best for
-  certain ranges of levels. It is often also hard to take the many different
-  functional forms of a molecule, such as modified proteins, into account.
-  Some technologies are even limited to measuring a subset of all possible
-  molecules or interactions. This means that care must be taken when
-  analyzing the resulting data; in particular, _not_ measuring something does
-  not mean it is not there.
+- Experimental cost: omics devices are often expensive to acquire, and each 
+	experiment requires labor and consumables
+- Technical noise: all measurements technologies come with inherent variation and
+  measurement noise
+%#%	Moreover, omics measurements are often indirect, measuring the effects of certain molecules or interactions through other readouts (for example, by imaging fluorescent markers, or by translating RNA to DNA for subsequent sequencing) or measuring only parts of molecules. Such technologies require steps in data analysis to translate the measurements back to what we actually wanted to measure, which also introduces noise.
+- Biological variation: different cells, organs or individuals will differ
+  in their biological state and make-up
+%#% when studying the effect of a mutation or intervention by comparing two samples, ideally all other biological circumstances should be identical. In practice, cells are dynamic (e.g., cell cycle) and sensitive to environmental influence. Similarly, molecule levels and interactions are dynamic: molecules are produced, transported, modified, and degraded continuously, and a measurement at a specific time point is only a snapshot.
+- Bias and coverage: most omics technologies are most efficient (or even
+  only work) for measuring specific types of molecules or interactions
+%#%, or work best for certain ranges of levels. It is often also hard to take the many different functional forms of a molecule, such as modified proteins, into account. Some technologies are even limited to measuring a subset of all possible molecules or interactions. This means that care must be taken when analyzing the resulting data; in particular, _not_ measuring something does not mean it is not there.
 
 Typically, functional genomics experiments then involve studying the effect
 of genetic variation on certain omics levels. Such variation can be
