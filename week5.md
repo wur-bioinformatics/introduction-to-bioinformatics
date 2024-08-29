@@ -205,7 +205,7 @@ is not necessarily correlated with the number of genes in the genome (see
 also {numref}`w5t1`). Number of protein coding genes in turn is not
 correlated entirely with organism complexity.
 :::
-
++++ {"page-break": true}
 #### Genome sequencing technologies
 
 The process of generating a genome starts with DNA sequencing, the detection
@@ -304,6 +304,7 @@ next-generation sequencing (NGS) methods. Today it is still used, among
 others to sequence PCR products to validate variants, to determine the
 orientation of genes in cloned vectors, or in microsatellite studies.
 
++++
 ##### Next generation sequencing
 
 Next-generation sequencing (NGS) technologies allow much higher throughput
@@ -367,7 +368,7 @@ lead to incomplete genome assemblies or coverage.
 
 Overall, Illumina reads are cheap, short and highly accurate.
 
-
++++
 ##### 3rd Generation sequencing
 
 After the success of NGS, alternative so-called 3rd generation technologies
@@ -486,14 +487,15 @@ Important things to know about nanopore sequencing:
 
 ##### Quality control
 
-:::{figure} images/Week5/Fig_11_from_Doc_Picture8.png
+:::{figure} images/Week5/ladybug_aphid.png
 :alt: Sequencing contamination
 :align: right
+:width: 300px
 :name: w5f11
 
 Causes for contaminated sequencing \
 samples, using as example the \
-tardigrade and surrounding bacteria
+ladybug and its main food source, aphids.
 :::
 As discussed above, sequencing technology is not perfect and errors will be
 present in the output. Moreover, what we sequence is not always what we
@@ -508,6 +510,7 @@ remnants of adapters and sequencing vectors. It is therefore important to
 assess the quality of the sequencing itself and the output data before
 further analysis.
 
++++ {"page-break": true}
 #### Genome assembly
 
 When no reference genome is available for a species, we need to assemble
@@ -543,12 +546,13 @@ we need more contiguous assemblies. 3rd generation sequencing, scaffolding
 and newer technologies such as chromatin conformation capture (Hi-C) etc. 
 make chromosome-level assemblies increasingly attainable.
 
-:::{figure} images/Week5/Fig_13_41587_2015_Article_BFnbt3103_Fig2_HTML.png
-:alt: Salmonella typhi chromosomal resistance island
+:::{figure} images/Week5/rDNAgenes-10-00345-g001.png
+:alt: ribosomal DNA genes
 :align: center
 :name: w5f13
 
-Genetic representation of the _Salmonella typhi_ chromosomal resistance island
+Order of genes in the ribosomal 45S DNA locus
+Credits: Adapted from [Radka Symonova, CC-BY 4.0](https://doi.org/10.3390/genes10050345)
 :::
 
 #### Genome assembly strategies
@@ -581,12 +585,13 @@ and sequenced using Illumina, PacBio or Oxford Nanopore technology. Note
 that WGS generally generates draft genome assemblies; additional steps are
 required to gain a complete, high-quality reference genome assembly.
 
-:::{figure} images/Week5/Fig_14_WGS.png
+:::{figure} images/Week5/genome_assembly.png
 :alt: WGS using short reads
 :align: center
 :name: w5f14
 
-Whole genome sequencing and assembly using short reads
+Whole genome sequencing and assembly. \
+Short reads on the left are generally not used anymore for *de novo* assembly.
 :::
 
 ##### Assembly challenges
