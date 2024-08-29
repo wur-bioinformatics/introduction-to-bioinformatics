@@ -424,14 +424,14 @@ The objective of performing multiple sequence alignment is to identify matching 
 Conceptual diagram depicting multiple sequence alignment. Colored dots represent similar sequence elements, in the multiple sequence diagram on the right these elements align in vertical columns. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
 :::
 
-INSERT: SOME SECTION ON RELEVANCE OF MSA
+%#% INSERT: SOME SECTION ON RELEVANCE OF MSA
 
 Various algorithms for creating multiple sequence alignments exist. Here we will go over two main concepts that are adopted by many tools: progressive alignment and iterative alignment.
 
 ### Progressive alignment
 To avoid having to reconcile many pairwise alignments, progressive alignment takes an iterative approach using a guide tree. The guide tree represents a crude measure of similarity between all sequences that are to be analyzed. Progressive alignment picks the two most similar sequences using the guide tree and initializes the multiple sequence alignment by aligning these two sequences with a global alignment strategy. Subsequently, the guide tree is used to determine the order in which sequences are added to the alignment. One way of thinking about this, is that progressive alignment creates increasingly large 'blocks' of sequences, where a block is always treated as a unit (e.g. introducing a gap will happen for all sequences in the block). By iterating through the guide tree, this alignment strategy 'progresses' to the final result, hence the name 'progressive alignment'.
 
-```{admonition} Box 1: Constructing a guide tree
+```{admonition} Box 2.2: Constructing a guide tree
 :class: tip
 The guide tree that is used by the progressive alignment strategy is typically created with a clustering algorithm that takes as input all pairwise distances between sequences. Obtaining these pairwise distances can be done through e.g. local alignment scores, but another common approach is to count the number of subsequences of length $K$ (also known as k-mers) that are present in both sequences of a sequence pair. The downside of this k-mer based strategy is that it provides a crude distance measure (and is therefore not very accurate), the benefit is that it is very fast.
 
@@ -443,7 +443,9 @@ One potential downside of the progressive alignment strategy is that some of the
 
 Iterative refinement takes as input a multiple sequence alignment, a scoring function for the multiple sequence alignment, and a function to rearrange the multiple sequence alignment. It produces a 'refined' multiple sequence alignment by rearranging the multiple sequence alignment and only keeps the new multiple sequence alignment if the score has increased. This process is typically repeated untill the score no longer increases (or for a fixed number of iterations).
 
-```{admonition} Box 2: Scoring and rearranging multiple sequence alignments
+Since iterative refinement methods typically start with a progressive alignment and improve its score, programs that implement an iterative refinement strategy (e.g., the FFT-NS-i method in `mafft`) typically perform better, but also need more time, than programs that are based on progressive alignment (e.g., the FFT-NS-2 method in `mafft` and the Clustal program) {cite}`katoh_mafft_2014`.
+
+```{admonition} Box 2.3: Scoring and rearranging multiple sequence alignments
 :class: tip
 For iterative refinenment, various scoring and rearranging strategies exist. Here we outline a common approach for both: the weigted sum-of-pairs scoring function and the partitioning rearrangement strategy.
 
@@ -463,16 +465,25 @@ Since all motifs are based on multiple sequence alignments, it may seem tempting
 
 Arguably the simplest representation of a motif is the __consensus sequence__ ({numref}`motif_concept`B), where every column of the multiple sequence alignment is represented by the most frequently occurring residue (i.e. the majority consensus). The downside of a consensus sequence is that it does not represent any of the variation present in the motif.
 
-An extension of the consensus sequence that can represent some variation in a motif is the __pattern string__ ({numref}`motif_concept`C). Pattern strings contain special syntax for representing variation, for example the pattern `[AG]` indicates that one position in the motif can be either `A` or `G`. As such, pattern strings take inspiration from [regular expressions](https://en.wikipedia.org/wiki/Regular_expression). Various types of pattern strings exist, for example `PROSITE` __REF__ strings contain syntax for representing positions in a motif where the residue is irrelevant (marked by an `*`). Pattern strings are capable of representing some variation in the motif, but they cannot express how likely the occurence of specific variants is (in the example `[AG]`, both `A` and `G` are equally likely to occur).
+An extension of the consensus sequence that can represent some variation in a motif is the __pattern string__ ({numref}`motif_concept`C).
+In pattern strings, unambigous positions are represented by single letters and there is a special syntax for representing variation:
+Positions in the MSA with more than one character are represented by multiple characters in between square brackets.
+A pattern string containing, for example, the pattern `[AG]` indicates that one position in the motif can be either `A` or `G`. As such, pattern strings take inspiration from [regular expressions](https://en.wikipedia.org/wiki/Regular_expression). Various types of pattern strings exist, for example `PROSITE` __REF__ strings used in the [Prosite database](Week1_prosite) contain syntax for representing positions in a motif where the residue is irrelevant (marked by an `*`). Pattern strings are capable of representing some variation in the motif, but they cannot express how likely the occurence of specific variants is (in the example `[AG]`, both `A` and `G` are equally likely to occur).
 
-To express the likelihood of a specific residue occurring at a specific position, a __Position Specific Scoring Matrix (PSSM)__ can be used ({numref}`motif_concept`D). Every column in a PSSM represents a column in the multiple sequence alignment and every row represents one of the possible residues. For example: a DNA PSSM would have four rows, representing the nucleotides `A`, `C`, `G`, or `T`. The entries represent probabilities of observing a specific residue at a specific position. As a consequence, all columns in a PSSM must sum to one. Since a PSSM contains probabilities, it is relatively straightforward to calculate how well an unknown sequence matches an existing PSSM: assuming independence between positions, one simply multiplies the observation probabilities of the characters in the novel sequence.
+To express the likelihood of a specific residue occurring at a specific position, a __Position Specific Scoring Matrix (PSSM)__ can be used ({numref}`motif_concept`D).
+Every row represents one of the possible characters in the MSA and every column represents a column in the MSA, where numbers indicate the probability of observing a specific character at a specific position.
+Hence, every column sums to one.
+For example: a DNA PSSM would have four rows, representing the nucleotides `A`, `C`, `G`, or `T`. The entries represent probabilities of observing a specific residue at a specific position. As a consequence, all columns in a PSSM must sum to one. Since a PSSM contains probabilities, it is relatively straightforward to calculate how well an unknown sequence matches an existing PSSM: assuming independence between positions, one simply multiplies the observation probabilities of the characters in the novel sequence.
+
+Finally, sequence logos are a graphical representation of an alignment ({numref}`motif_concept`E). Every position in the sequence logo represents a position in the MSA, characters are scaled proportional to their probability of being observed at their respective positions (e.g. an unambiguous position has one large character, a position with several options has multiple small characters).
 
 :::{figure} images/Week2/msa-pattern-pssm-logo.svg
 :alt: Various representations of a motif
 :width: 60%
 :name: motif_concept
 
-Conceptual diagram depicting various representations of a conserved motif. __A:__ Multiple sequence alignment (MSA) of 5 sequences and 7 positions. __B:__ Consensus sequence. All 5 sequences of the MSA are summarized into one sequence, every position is represented by the most common character at that position. __C:__ Pattern string. Unambigous positions are represented by single letters, positions in the MSA with more than one character are represented by multiple characters in between square brackets. __D:__ Position Specific Scoring Matrix (PSSM). Every row represents one of the possible characters in the MSA, every column represents one of the MSA positions, numbers indicate the probability of observing a specific character at a specific position. (Hence, every column sums to one). __E:__ Sequence logo. Every position in the sequence logo represents a position in the MSA, characters are scaled proportional to their probability of being observed at their respective positions (e.g. an unambiguous position has one large character, a position with several options has multiple small characters). Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
+Conceptual diagram depicting various representations of a conserved motif. __A:__ Multiple sequence alignment (MSA) of 5 sequences and 7 positions. __B:__ Consensus sequence. __C:__ Pattern string. __D:__ Position Specific Scoring Matrix (PSSM). __E:__ Sequence logo.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
 :::
 
 
@@ -487,8 +498,14 @@ The simplest introduction of profile hidden Markov models is to think of them as
 :width: 60%
 :name: simple_hmm
 
-Schematic representation of a simple DNA profile HMM containing all model probabilities. The model consists of three hidden states: match (yellow square), deletion (red circle), and insertion (blue diamond). Emission probabilities are indicated inside the hidden states, transition probabilities between hidden states are indicated next to arrows. In principle the information in this schematic is enough to calculate the probability of a sequence belonging to this pHMM. For example, the sequence `GAT` would get a probility of $(0.8 * 0.6) * (0.4 * 0.7) * (0.3 * 0.4) * 0.8 = 0.013$. We arrive at this number by multiplying all relevant transition and emission probabilites. Note that determing the relevant probabilities can be more involved than in this simple example. Efficient algorithms for determining the optimal path through the HMM graph exist, but are outside of the scope of this book. In addition, we do not expect that you can perform these calculation by hand. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
+Schematic representation of a simple DNA profile HMM containing all model probabilities. The model consists of three hidden states: match (yellow square), deletion (red circle), and insertion (blue diamond). Emission probabilities are indicated inside the hidden states, transition probabilities between hidden states are indicated next to arrows.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
 :::
+
+```{admonition} Box 2.4: Calculating the probability of a sequence
+:class: tip
+In principle the information in {numref}`simple_hmm` is enough to calculate the probability of a sequence belonging to this pHMM. For example, the sequence `GAT` would get a probability of $(0.8 * 0.6) * (0.4 * 0.7) * (0.3 * 0.4) * 0.8 = 0.013$. We arrive at this number by multiplying all relevant transition and emission probabilities. Note that determining the relevant probabilities can be more involved than in this simple example. Efficient algorithms for determining the optimal path through the HMM graph exist, but are outside of the scope of this book. In addition, we do not expect that you can perform these calculation by hand.
+```
 
 
 ```{admonition} Sequence search with MSAs
@@ -496,7 +513,10 @@ Schematic representation of a simple DNA profile HMM containing all model probab
 The ability to convert a multiple sequence alignment into a collection of probabilities (e.g. PSSMs or HMMs) makes it possible to calculate the probability of a novel sequence 'belonging' to the multiple sequence alignment. This technique generally allows for a more sensitive approach than searching based on pairwise alignments. In practice this often means that matching sequences can be identified over larger evolutionary distances. Tools that implement some version of this approach are `psiBLAST` (which uses PSSMs) and various `HMMer` tools (all using pHMMs).
 ```
 
-The ability to group biological sequences based on conserved/co-occuring regions and subsequently using this for sequence search is exploited in a wide range of biological sequence databases. Some of these databases have been introduced in [chapter 1](week1), here we briefly outline a few more details on how HMMs are incorporated into many of these resources by using PFAM as an example. All entries in the PFAM database are represented by profile HMMs. The entries are subdivided into one of six categories: family, domain, repeat, conserved site, coiled coil, or disordered. The main distinction between these six categories is the length of the matching sequences: a 'family' PFAM HMM is expected to match across the entire length of a protein sequence, a 'conserved site' is typically only a small region in a protein. As such, multiple PFAM HMMs can match a given protein sequence. The combination of matching PFAM HMMs on a given sequence can be used to give a fine-grained description of known elements in a sequence.
+```{admonition} Box 2.5: pHMMs in databases
+:class: tip
+The ability to group biological sequences based on conserved/co-occuring regions and subsequently using this for sequence search is exploited in a wide range of biological sequence databases. Some of these databases have been introduced in [chapter 1](week1), here we briefly outline a few more details on how HMMs are incorporated into many of these resources by using [Pfam](Week1_pfam) as an example. All entries in the PFAM database are represented by profile HMMs. The entries are subdivided into one of six categories: family, domain, repeat, conserved site, coiled coil, or disordered. The main distinction between these six categories is the length of the matching sequences: a 'family' PFAM HMM is expected to match across the entire length of a protein sequence, a 'conserved site' is typically only a small region in a protein. As such, multiple PFAM HMMs can match a given protein sequence. The combination of matching PFAM HMMs on a given sequence can be used to give a fine-grained description of known elements in a sequence.
+```
 
 ## Primer design
 

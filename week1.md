@@ -737,11 +737,11 @@ Like homology-based prediction, this model-based approach works best for closely
 :::{admonition} Note 1.5: Hidden Markov models (HMMs)
 :class: note
 
-Hidden Markov models (HMMs) are useful for the statistical modelling of general sequence characteristics. As such they find widespread adoption in bioinformatics to study biological sequences. Providing a full technical description of all aspects of HMMs is outside of the scope of this book. Here we will stick to a somewhat handwavy description to provide a first introduction.
+Hidden Markov models (HMMs) are useful for the statistical modelling of general sequence characteristics. As such they find widespread adoption in bioinformatics to study biological sequences. Providing a full technical description of all aspects of HMMs is outside of the scope of this book. Here we will stick to a somewhat simplistic description to provide a first introduction.
 
 A hidden Markov model can be used to predict some unobserved labelling across a sequence of observations. For example: in genome annotation, coding and non-coding regions of a genome can be treated as an unobserved characteristic, where the nucleotides are the sequence of observations. As such, 'hidden' refers to the _unobserved labelling_. In addition, 'Markov' refers to some useful statistical assumptions on the nature of independence between observations and labellings that enable efficient computation.
 
-More formally, the unobserved labellings are referred to as the 'hidden states', and every hidden state contains some probabilities of observing our sequence of interest, called the 'emission probabilities'. To complete our handwavy HMM definition, we define 'transition probabilities' between hidden states.
+More formally, the unobserved labellings are referred to as the 'hidden states', and every hidden state contains some probabilities of observing our sequence of interest, called the 'emission probabilities'. To complete our HMM definition, we define 'transition probabilities' between hidden states.
 
 The combination of hidden states, emission probabilities, and transition probabilities enable asking questions such as 'given my current observation and a certain label of my previous observation, what is the most likely label for my current observation?'. In the context of genome annotation this would translate to for example 'given that I see a stop-codon, and that my previous label was coding sequence, what is my current most likely label?', the answer to which would be 'non-coding' (See {numref}`coding_hmm`).
 
