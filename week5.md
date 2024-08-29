@@ -82,7 +82,7 @@ used to describe all genes in an organism or cell, but now refers to the
 full DNA content of a cell.
 
 (w5box1)=
-::::{admonition} Box 1: The history of DNA sequencing and the Human Genome Project
+::::{admonition} Box 5.1: The history of DNA sequencing and the Human Genome Project
 :class: tip
 The history of genome sequencing is closely linked with the Human Genome 
 Project (HGP) and the HGP was the major driver in technology development.
@@ -110,32 +110,20 @@ One of the most surprising findings was that the human genome only contained rou
 estimated 50,000-140,000. The entire project is estimated to have cost [\$3
 billion](https://www.genome.gov/about-genomics/educational-resources/fact-sheets/human-genome-project). 
 In 2021 the first true telomere-to-telomere assembly of the human genome was
-assembled using the third generation technologies described below: PacBio,
-Oxford Nanopore and Hi-C.
+assembled using the third generation technologies described below: [PacBio](Week5_pacbio),
+[Oxford Nanopore](Week5_nanopore) and Hi-C.
 
 :::{figure} images/Week5/Fig_Box1_Human_Genome_Project_Timeline_(26964377742).jpg
 :alt: Human Genome Project Timeline
 :name: landmarks_in_genetics
-assembled using the third generation technologies described below: [PacBio](Week5_pacbio),
-[Oxford Nanopore](Week5_nanopore) and Hi-C.
+Timeline of the Human Genome Project \
+Credits: [CC-BY 2.0](https://creativecommons.org/licenses/by/2.0) {cite}`timeline_HGP_2003`.
+:::
+
 ::::
 %#% In the last line of box 5.1 it describes third generation technologies, amongst which Hi-C. However, the section [Week5_3rd_generation] lacks information on Hi-C.
 
 ---
-
-### The history of genome sequencing
-
-The first genomes sequenced were those of the Phi X bacteriophage in 1977
-and the Epstein-Barr virus in 1983. The first bacterial genome,
-_Haemophilus influenzae_, was sequenced in 1995, followed by the first
-archaeal genome sequence of _Methanococcus jannaschii_ in 1996. In the same
-year followed the first eukaryotic genome, that of _Saccharomyces
-cerevisiae_ (baker's yeast). _Escherichia coli_, the main bacterial model
-organism, was sequenced in 1997. Sequencing of the human genome started
-already in 1988 and was officially finished in 2003 ({numref}`landmarks_in_genetics`) and
-[Box 5.1](Week5_humangenomeproject)).
-
-::::
 
 ### Genomes
 
@@ -143,7 +131,7 @@ The history of genome sequencing and the importance of the human genome project
 in the development of sequencing methods is described in [Box 1](w5box1).
 With the rapid evolution of sequencing technology, our understanding of
 genomes and their content has grown as well. We now know that genomes vary
-greatly in terms of size, chromosome numbers, and ploidy ({numref}`w5f4`),
+greatly in terms of size, chromosome numbers, and ploidy ({numref}`gene_ploidy`),
 as well as gene content ({numref}`w5t1`). Genome sizes range from 100kb in
 bacteria to more than 100Gb (Giga basepairs) in plants. Humans have a genome size of 3.2Gb. 
 
@@ -198,18 +186,18 @@ whereas most higher eukaryotes (including humans) have between 15,000 and
 25,000 genes and some plants can have more than 40,000 genes – rice has over
 46,000.
 
-:::{figure} images/Week5/Fig_04_Genome_Sizes.png
-:alt: Genome sizes and ploidy variation
+:::{figure} images/Week5/gene-ploidy.png
+:alt:
 :align: center
-:name: genome_sizes_alt
+:name: gene_ploidy
 
-Gene content in some representative species.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
+Left, variety of genome sizes. Credits: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) {cite}`gene_ploidy_2010`;
+right, examples of ploidy. Credits: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) {cite}`gene_ploidy_2011`.
 :::
 
-(Week5_size)=
 
-:::{admonition} Box 5.2: Size does(n't) matter?
+(Week5_size)=
+::::{admonition} Box 5.2: Size does(n't) matter?
 :class: tip
 Genomes come in all shapes and sizes. The smallest known (non-viral) genome
 is that of the bacterial endosymbiont _Nasuia deltocephalinicola_, which
@@ -220,8 +208,7 @@ _Polychaos dubium_ is purported to have a genome size of 670Gb. Genome size
 is not necessarily correlated with the number of genes in the genome (see
 also {numref}`w5t1`). Number of protein coding genes in turn is not
 correlated entirely with organism complexity.
-:::
-+++ {"page-break": true}
+::::
 
 ---
 
@@ -268,7 +255,7 @@ For more details on its history and how it works, see [Box 3](w5box3).
 Important to know about Sanger sequencing is 
 
 (w5box3)=
-::::{admonition} Box 3: Sanger sequencing
+::::{admonition} Box 5.3: Sanger sequencing
 :class: tip
 
 Developed in 1977 by Fred Sanger and colleagues, the protocol was first
@@ -301,20 +288,16 @@ Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`sa
 Template DNA fragments are amplified in a PCR reaction using a primer and
 DNA polymerase. Each sample is amplified in 4 separate reactions, one for
 each nucleotide (A, T, C, G). In each of these reactions, a small
-DNA polymerase. Each sample is amplified in 4 separate reactions, one for
-each nucleotide (A, T, C, G). In each of these reactions, a small
+DNA polymerase. In each of these reactions, a small
 proportion of modified nucleotides (ddNTP) is added to the normal
-nucleotides (dNTP). These modified nucleotides are designed to stop the
 nucleotides (dNTP). These modified nucleotides are designed to stop the
 elongation of the strand and are linked to a label by which they can be
 identified. This leads to a collection of partially amplified fragments of
 template DNA. The length of each fragment was originally measured by the
-identified. This leads to a collection of partially amplified fragments of
-template DNA. The length of each fragment was originally measured by the
-distance the fragment travelled on a gel, in later setups by the time it
+identified. distance the fragment travelled on a gel, in later setups by the time it
 took to pass through a capillary.  The label on the last nucleotide then
 identifies the base at a given position and a peak pattern is generated. 
-From a signal of peak patterns ({numref}`w5f7`), the sequence can be read
+From a signal of peak patterns ({numref}`sanger_signal`), the sequence can be read
 off automatically. Sanger sequencing produces read lengths between
 700-1,000 nucleotides; after this, the quality of the base calling drops too
 far to be useful. The quality at the beginning of a read is generally too
@@ -326,9 +309,9 @@ of the same base. Sanger sequencing machines can sequence 96 fragments in
 parallel, making it comparatively low throughput.
 
 ::::
+
 Sanger sequencing was the main sequencing platform until around 2007. From
 2004 onwards, it was increasingly superseded by the what we call
-next-generation sequencing (NGS) methods. Today it is still used, among
 next-generation sequencing (NGS) methods. Today it is still used, among
 others to sequence PCR products to validate variants, to determine the
 orientation of genes in cloned vectors, or in microsatellite studies.
@@ -336,7 +319,7 @@ orientation of genes in cloned vectors, or in microsatellite studies.
 ---
 
 (Week5_ngs)=
-+++
+
 ##### Next generation sequencing
 
 Next-generation sequencing (NGS) technologies allow much higher throughput
@@ -353,7 +336,7 @@ sequencing of reads. How Sequencing-by-synthesis and Illumina patterned flow
 cells work is explaind in [Box 4](w5box4).
 
 (w5box4)=
-::::{admonition} Box 4: Illumina sequencing
+::::{admonition} Box 5.4: Illumina sequencing
 :class: tip
 
 Illumina sequencing uses
@@ -400,13 +383,12 @@ single run range from millions to billions, depending on the model.
 - fragments with extreme GC content are less likely to be sequenced, which can
 lead to incomplete genome assemblies or coverage.
 
+Overall, Illumina reads are cheap, short and highly accurate.
+
 ---
 
 (Week5_3rd_generation)=
 
-Overall, Illumina reads are cheap, short and highly accurate.
-
-+++
 ##### 3rd Generation sequencing
 
 After the success of NGS, alternative so-called 3rd generation technologies
@@ -420,10 +402,11 @@ higher error rate than the methods described previously.
 
 The most established method is PacBio single molecule real time (SMRT)
 sequencing. Compared to other methods it does not include a PCR step to
-amplify the signal of the template DNA.
+amplify the signal of the template DNA. Instead it amplifies the light 
+emmitted when a labelled nucleotide is inserted.
 
 (w5box5)=
-::::{admonition} Box 5: PacBio sequencing
+::::{admonition} Box 5.5: PacBio sequencing
 :class: tip
 PacBio sequencing does not amplify the template fragment prior to sequencing,
 instead it makes clever use of the structure of SMRT-cells to amplify the 
@@ -474,23 +457,23 @@ Important things to know about PacBio sequencing:
 ###### Nanopore sequencing
 
 The newest technology is nanopore sequencing, currently provided by Oxford
-Nanopore on the MinION and related devices ({numref}`w5f10`). This
+Nanopore on the MinION and related devices ({numref}`minion`). This
 technology is completely different to any of the others, in that it directly
 detects the order of nucleotides based on current changes caused by a DNA strand 
 being pulled through a protein nanopore embedded in a membrane. As with Pacbio sequencing
 read-length is determined by the length of the DNA template. 
 
-:::{figure} images/Week5/w5f10_Minion.jpg
+:::{figure} images/Week5/MinionSequencer.jpg
 :alt: Oxford Nanopore MinION
 :align: center
-:name: w5f10
+:name: minion
 
 Oxford Nanopore MinION sequencer
-Credits: [Mary Mark Ockerbloom, CC BY-SA 4.0](https://commons.wikimedia.org/wiki/File:MinION_Portable_Gene_Sequencer_IMG_20200219_170422318.jpg)
+Credits: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) {cite}`minion_2020`
 :::
 
 (w5box6)=
-::::{admonition} Box 6: Nanopore sequencing
+::::{admonition} Box 5.6: Nanopore sequencing
 :class: tip
 The flow-cell in nanopore sequencing has a number
 of wells. Each of these wells has a sensor at the bottom that detects
@@ -539,16 +522,17 @@ Important things to know about nanopore sequencing:
 :alt: Sequencing contamination
 :align: right
 :width: 300px
-:name: w5f11
+:name: ladybug_aphid
 
 Causes for contaminated sequencing \
-samples, using as example the \
-ladybug and its main food source, aphids.
+samples, using as example the ladybug \
+and its main food source, aphids. \
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`
 :::
 
 As discussed above, sequencing technology is not perfect and errors will be
 present in the output. Moreover, what we sequence is not always what we
-originally intended to sequence ({numref}`w5f11`).
+originally intended to sequence ({numref}`ladybug_aphid`).
 
 
 Sources of errors related to sequencing itself are base calling errors
@@ -560,7 +544,7 @@ assess the quality of the sequencing itself and the output data before
 further analysis.
 
 ---
-+++ {"page-break": true}
+
 #### Genome assembly
 
 When no reference genome is available for a species, we need to assemble
@@ -580,17 +564,6 @@ detection of structural variation are discussed.
 
 ##### Reference genome quality
 
-%:::{figure} images/Week5/co-segregation.svg
-%:alt: Co-segregation of alleles
-%:width: 300px
-%:height: 100px
-%:align: right
-%:name: co_segregation
-%
-%Co-segregation of alleles
-%:::
-%#% Unable to use figure co_segragation due to unknown author.
-
 :::{figure} images/Week5/co-segregation_alt.svg
 :alt: Co-segregation of alleles
 :width: 300px
@@ -607,25 +580,25 @@ been assembled as far as possible and in 2021, the first telomere-to-telomere
 assembly was published, adding the final 5% of
 bases. It has taken enormous effort, both in terms of finance and labor,
 to get to this stage. This is neither feasible nor strictly necessary for
-each genome assembly project. Hence, most genome assemblies currently available are so-called draft assemblies, and most fully completed genomes
-are from bacteria and other species with small genomes. In terms of the
-are from bacteria and other species with small genomes. In terms of the
+each genome assembly project. Hence, most genome assemblies currently 
+available are so-called draft assemblies, and most fully completed genomes
+are from bacteria and other species with small genomes. In terms of the 
 assembly process, for eukaryotic genomes the euchromatic regions assemble
-easiest. Fortunately, these regions contain most of the genes, making draft
-easiest. Fortunately, these regions contain most of the genes, making draft
+best. Fortunately, these regions contain most of the genes, making draft
 assemblies useful for studying mutations or expression patterns. When we
-want to study larger features of the genome itself however, such as co-segregation of alleles ({numref}`w5f12`) or gene order ({numref}`w5f13`),
+want to study larger features of the genome itself however, such as 
+co-segregation of alleles ({numref}`co_segregation_alt`) or gene order ({numref}`salmonella_alt`),
 we need more contiguous assemblies. 3rd generation sequencing, scaffolding
 and newer technologies such as chromatin conformation capture (Hi-C) etc. 
 make chromosome-level assemblies increasingly attainable.
 
-:::{figure} images/Week5/rDNAgenes-10-00345-g001.png
-:alt: ribosomal DNA genes
+:::{figure} images/Week5/salmonella_alt.png
+:alt: Salmonella enterica subsp. enterica serovar Stanley genetic organization of virulence factors in SPI-1
 :align: center
 :name: salmonella_alt
 
-Order of genes in the ribosomal 45S DNA locus
-Credits: Adapted from [Radka Symonova, CC-BY 4.0](https://doi.org/10.3390/genes10050345)
+Genetic representation of the _Salmonella enterica subsp. enterica_ serovar Stanley pathogenicity island-1.
+Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) modified from {cite}`salmonella_alt_2019`.
 :::
 
 ---
@@ -658,7 +631,7 @@ puzzle is solved later by computer.
 ##### Whole genome sequencing
 
 Nowadays, the most widely employed genome sequencing approach is whole
-genome sequencing (WGS, {numref}`w5f14`). As the term implies the whole
+genome sequencing (WGS, {numref}`WGS`). As the term implies the whole
 genome is sequenced, without discrimination. DNA is extracted from cells
 and sheared into random fragments. These fragments are then size selected
 and sequenced using Illumina, PacBio or Oxford Nanopore technology. Note
@@ -671,7 +644,8 @@ required to gain a complete, high-quality reference genome assembly.
 :name: WGS
 
 Whole genome sequencing and assembly. \
-Short reads on the left are generally not used anymore for *de novo* assembly.
+Short reads on the left are generally not used anymore for *de novo* assembly. \
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`
 :::
 
 ---
@@ -814,11 +788,11 @@ acioscapulohumeral muscular dystrophy (FSHD). Credits: modified from {cite}`t2t_
 ### Variants
 
 (Week5_phenotypic_variation)=
-::::{admonition} Box 5.3: Phenotypic variation
+::::{admonition} Box 5.7: Phenotypic variation
 :class: tip
 Small variants can have large phenotypic effects.
 
-```{figure} images/Week5/carrots.jpg
+:::{figure} images/Week5/carrots.jpg
 :alt: carrot phenotypic diversity
 :width: 200px
 :align: right
@@ -826,7 +800,7 @@ Small variants can have large phenotypic effects.
 
 Color variations in carrots. \
 Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`carrots_2006`.
-```
+:::
 
 They account for the large variation in things all around us. In food
 products, variants have been actively selected for to create the wide
@@ -840,13 +814,8 @@ calling is used more and more in plant and animal breeding and selection.
 
 Mapping reads to a reference is a means to an end. As stated above, one of
 the main goals is to detect genomic variation. Such variation can help
-explain phenotypic variation (see [Box 7](w5box7)). Genomic variation
+explain phenotypic variation (see [Box 5.7](Week5_phenotypic_variation)). Genomic variation
 between samples, individuals and/or species can also be used to study
-evolutionary history (see also weeks 2 and 3, on multiple sequence
-Mapping reads to a reference is a means to an end. As stated above, one of
-the main goals is to detect genomic variation. Such variation can help
-explain phenotypic variation (see [Box 5.3](Week5_phenotypic_variation)). Genomic variation
-between samples, individuals, and/or species can also be used to study
 evolutionary history (see also chapters [2](week2) and [3](week3), on multiple sequence
 alignments and phylogeny).
 %#% Add direct cross-link to MSA in chapter 2 when written.
@@ -926,22 +895,13 @@ Well-studied examples are mutations in the BRCA1 and BRCA2 genes
 chance for that person to develop breast cancer during their lifetime to
 80%.
 
-%:::{figure} images/Week5/BRCA.png
-%:alt: BRCA genes
-%:align: center
-%:name: BRCA
-%
-%Variants in BRCA1 and BRCA2 genes involved in cancer. Credits: {cite}`BRCA_2011`.
-%:::
-%#% Unable to use figure BRCA due to copyright.
-
 :::{figure} images/Week5/BRCA_alt.png
 :alt: BRCA genes
 :align: center
 :name: BRCA_alt
 
 Mutations in BRCA1 and BRCA2 found in breast and ovarian cancers.
-Credits: {cite}`BRCA_alt_2018`.
+Credits: [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/) {cite}`BRCA_alt_2018`.
 :::
 
 ---
@@ -962,18 +922,16 @@ duplicated.
 Different types of structural variants on chromosome level. Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`large_scale_variants_2024`.
 :::
 
-(w578)=
-:::{admonition} Box 8: Cri du chat syndrome
 (Week5_cri_du_chat)=
-:::{admonition} Box 5.4: Cri du chat syndrome
+::::{admonition} Box 5.8: Cri du chat syndrome
 :class: tip
 
-```{image} images/Week5/cri-du-chat.png
+:::{figure} images/Week5/cri-du-chat.png
 :alt: cri du chat mutation and phenotype
 :align: right
 :width: 200px
 :name: cri_du_chat
-```
+:::
 
 Cri du chat syndrome is a genetic disorder that is caused by the partial
 deletion of the short arm of chromosome 5. Babies suffering from the
@@ -981,7 +939,7 @@ condition have a high pitched cry that sounds similar to a cat, which has
 given the condition its name.
 
 Furthermore, they suffer a.o. from delayed growth and poor reflexes.
-:::
+::::
 %#% Image cri_du_chat source https://www.newhealthguide.org/Life-Expectancy-Of-Cri-Du-Chat-Syndrome.html.
 
 ---
@@ -1120,10 +1078,10 @@ the book of life, it must also contain the information on how to read it.
 
 (Week5_epigenetics)=
 
-::::{admonition} Box 5.5: Epigenetics
+::::{admonition} Box 5.9: Epigenetics
 :class: tip
 
-```{figure} images/Week5/epigenetics.png
+:::{figure} images/Week5/epigenetics.png
 :alt: Description of epigenetic mechanisms
 :width: 100%
 :align: center
@@ -1143,14 +1101,14 @@ transcription. In humans, all of these factors and processes can have an effect 
 health and disruption can result in cancer,
 autoimmune disease, mental disorders or diabetes, among other illnesses.
 Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`epigenetics_2005`.
-```
+:::
 
 ::::
 %#% The original URL in box 5.5 that is credited as the source leads to page that does not exist anymore. Changed to WikiMedia url. - The description is a literal copy paste from the figure description on WikiMedia.
 
 A part of the explanation lies in what is called _epigenetics_,
 modifications of the genome that do not change the DNA sequence but do
-influence gene expression ([Box 5.5](Week5_epigenetics)). There are other mechanisms besides
+influence gene expression ([Box 5.9](Week5_epigenetics)). There are other mechanisms besides
 epigenetics that control how genes are expressed, and how the resulting
 proteins eventually fulfill their function in the cell. The most well-known
 ones are interactions between proteins and DNA (transcription factors and
@@ -1308,7 +1266,7 @@ what other types of RNA exist outside the common mRNA, tRNA and rRNA, read
 
 (Week5_RNA)=
 
-:::{admonition} Box 5.6: The RNA world
+::::{admonition} Box 5.10: The RNA world
 :class: tip
 Many other types of RNA exist in the cell and they perform important regulatory functions:
 
@@ -1316,22 +1274,23 @@ Many other types of RNA exist in the cell and they perform important regulatory 
   miRNAs bind to target sites in mRNA and prevent binding of the messenger.
 - siRNA (short interfering RNA): are generally 20-24nt long pieces of RNA that work similar to miRNAs but instead of actively preventing translation, the targeted mRNA is cut into pieces and destroyed.
 
-```{figure} images/Week5/RNA-types.png
+:::{figure} images/Week5/RNA-types.png
 :alt: Overview of the different types of RNA
 :align: center
 :width: 100%
 :name: RNA_types
 
 The generalized RNAi mechanism up to the molecular level depicting the role of various cellular proteins and external siRNAs. Credits: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) modified from {cite}`RNA_types_2016`.
-```
+:::
 
 - snoRNA (small nucleolar RNA): guides the methylation and pseudouridylation of ribosomal RNA required in the mature rRNA.
 - lncRNA (long non-coding RNA): >200nt long stretches of RNA that arise from transcription but (appear to) have no open reading frame.
   How many of these lncRNAs have a specific function and what that function might be is not clear. Most might simply be the result of pervasive transcription.
 - piRNA (piwi interacting RNA): found in animals and slightly longer than miRNAs (26-31nt), they interact with piwi proteins. piRNAs are implicated in epigenetic gene silencing, but not much is known.
-  :::
-  %#% Figure RNA_types is rather blurry and unclear. Replace image that better depicts the different types of RNA?
-  For the understanding of transcriptome analysis it is important to remember that in eukaryotes most genes contain introns and that one gene can have many transcripts.
+::::
+
+%#% Figure RNA_types is rather blurry and unclear. Replace image that better depicts the different types of RNA?
+For the understanding of transcriptome analysis it is important to remember that in eukaryotes most genes contain introns and that one gene can have many transcripts.
 
 In transcriptomics, the aim is to measure presence and abundance of
 transcripts. Such measurements are based on a large number of cells but
@@ -1556,7 +1515,7 @@ transcript sequences. While RNAseq is mainly used to study transcript
 abundance, it can also be used to detect transcript isoforms (and their
 abundance), as well as variants (see [Variants](Week5_variants) above).
 
-:::{admonition} Box 5.7: Ever more detail
+:::{admonition} Box 5.11: Ever more detail
 :class: tip
 
 Until now, most RNAseq experiments have been performed on groups of cells,
@@ -2545,7 +2504,7 @@ Open the page and select the "Bone" subset. \
   d. You can create fewer or more clusters using the "volume slider buttons" next to the clusters. Try these. Does it look OK to group the genes into more clusters? And the samples? \
   e. Zoom in on the gene names on the left. Is BCL11B indeed clustered with RHOH? \
   f. At the top, additional information on the samples is plotted (tissue, histology, etc.). Does one of the sample clusters correspond to a certain annotation? \
-  g. The top left shows a number of Gene Ontology terms (recall from [chapter 1](Week1_gene_ontology) that occur more often in the set of genes involved in bone tumours than you would expect by chance (i.e., than if a set of genes of similar size were randomly drawn from all genes). We call this a **GO enrichment analysis**. The heights of the bars correspond to the p-values of this analysis; the higher the bar, the more significant the enrichment. Do the terms make sense?
+  g. The top left shows a number of Gene Ontology terms (recall from [chapter 1](Week1_gene_ontology)) that occur more often in the set of genes involved in bone tumours than you would expect by chance (i.e., than if a set of genes of similar size were randomly drawn from all genes). We call this a **GO enrichment analysis**. The heights of the bars correspond to the p-values of this analysis; the higher the bar, the more significant the enrichment. Do the terms make sense?
 
 %ANSWER%:::{dropdown} Assignment IV answers
 %ANSWER%a. Blue corresponds to low gene expression and red corresponds to high gene expression. Expression here seems to be normalized, where 0 means average expression. \
@@ -2629,8 +2588,8 @@ You may include up to two figures or tables.
 1. **Materials & Methods** What did you do? Which data, databases and tools did you use, and why did you choose these? What important settings did you select?
 2. **Results** What did you find, what are the main results? Report the relevant data, numbers, tables/figures, and clearly describe your observations.
 3. **Discussion & Conclusion** Do the results make sense? Are they according to your expectation or do you see something surprising? What do the results mean, how can you interpret them? Do different tools agree or not? What can you conclude? Make sure to describe the expectations and assumptions underlying your interpretation.
-   :::::
-   %PRACTICAL_SEPARATOR%
+:::::
+%PRACTICAL_SEPARATOR%
 
 ## References
 
