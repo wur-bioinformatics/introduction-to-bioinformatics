@@ -1,6 +1,6 @@
-# Welcome to BIF20306 reader
+# Welcome to Introduction to Bioinformatics
 
-This is the official reader material for the Introduction to Bioinformatics (BIF20306) course. This reader is organised so that each chapter aligns with the contents of one week. Some weeks are not fully available in this reader yet, in which case reading instruction for other material are provided. Currently, the following chapters are available:
+This is the official book for the Introduction to Bioinformatics (BIF20306) course. This book is organised so that each chapter aligns with the contents of one week:
 
 ```{tableofcontents}
 
