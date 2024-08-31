@@ -1,3 +1,5 @@
+<br class="onlyprint"/>
+
 # Genes, Proteins, Databases, Genome annotation
 
 ## Biological background
