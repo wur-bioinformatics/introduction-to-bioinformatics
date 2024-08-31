@@ -2178,7 +2178,6 @@ the large volumes of omics data in order to solve specific tasks. The end
 goal, [a systems biology simulation of the living
 cell](https://www.wholecellviz.org/viz.php#replication), is still far from
 reality, but may be reached sooner than we now believe possible.
-%PRACTICAL_SEPARATOR%
 
 ---
 
@@ -2194,9 +2193,7 @@ Make sure that you develop your practical skills now, in order to apply them dur
 
 **Note, the answers will be published after the practical!**
 
-:::::{admonition} **Genomics**
-
-_Assignment I: Genomics (20 minutes)_
+:::::{admonition} _Assignment I: Genomics (20 minutes)_
 
 Genome assembly using next-generation sequencing reads is challenging due the short length of the reads, the errors that occur during sequencing and the presence of repeats in the genome.
 After completing this exercise, you should be able to explain how genome assembly works and what problems may be encountered.
@@ -2219,32 +2216,39 @@ gatgatgcaaacatggaaagcagcg
 ```
 
 b. Would you be able to unambiguously reconstruct the overall sequence without read_6?
+:::::
 
-%ANSWER%:::{dropdown} Assignment I answers
-%ANSWER%a. There are two sequencing errors (underlined):
-%ANSWER%```
-%ANSWER%                                                  aagcagcgcgggcgaataataataa
-%ANSWER%acccatattagcattagcaccct̲tg                                                  
-%ANSWER%                   cccatgaacatattgatgatgaaaa                               
-%ANSWER%                                        aaaacatggaaagcagcgcgggcga          
-%ANSWER%       ttagcattagcacccatgaacatat                                           
-%ANSWER%                                 gatgatgc̲aaacatggaaagcagcg                 
-%ANSWER%acccatattagcattagcacccatgaacatattgatgatgaaaacatggaaagcagcgcgggcgaataataataa
-%ANSWER%```
-%ANSWER%This translates to the amino acid sequence `THISISTHEHIDDENMESSAGE***`. \
-%ANSWER%b. No, then you would also be able to reconstruct this sequence:
-%ANSWER%```
-%ANSWER%                                          aagcagcgcgggcgaataataataa                       
-%ANSWER%acccatattagcattagcaccct̲tg                                                                 
-%ANSWER%                   cccatgaacatattgatgatgaaaa                                              
-%ANSWER%                                                                 aaaacatggaaagcagcgcgggcga
-%ANSWER%       ttagcattagcacccatgaacatat                                                          
-%ANSWER%acccatattagcattagcaccct̲tgaacatattgatgatgaaaagcagcgcgggcgaataataataaaacatggaaagcagcgcgggcga
-%ANSWER%```
-%ANSWER% which translates to `THISISTLEHIDDEKQRGRIIIKHGKQRGR`. Read 6 spans the `aaaa` repeat and is needed to uniquely assemble this sequence.
-%ANSWER%:::
+:::{dropdown} Assignment I answers
+:class-container: answers
+:open:
+a. There are two sequencing errors (underlined):
+```
+                                                  aagcagcgcgggcgaataataataa
+acccatattagcattagcaccct̲tg                                                  
+                   cccatgaacatattgatgatgaaaa                               
+                                        aaaacatggaaagcagcgcgggcga          
+       ttagcattagcacccatgaacatat                                           
+                                 gatgatgc̲aaacatggaaagcagcg                 
+acccatattagcattagcacccatgaacatattgatgatgaaaacatggaaagcagcgcgggcgaataataataa
+```
+This translates to the amino acid sequence `THISISTHEHIDDENMESSAGE***`. \
+b. No, then you would also be able to reconstruct this sequence:
+```
+                                          aagcagcgcgggcgaataataataa                       
+acccatattagcattagcaccct̲tg                                                                 
+                   cccatgaacatattgatgatgaaaa                                              
+                                                                 aaaacatggaaagcagcgcgggcga
+       ttagcattagcacccatgaacatat                                                          
+acccatattagcattagcaccct̲tgaacatattgatgatgaaaagcagcgcgggcgaataataataaaacatggaaagcagcgcgggcga
+```
+ which translates to `THISISTLEHIDDEKQRGRIIIKHGKQRGR`. Read 6 spans the `aaaa` repeat and is needed to uniquely assemble this sequence.
+:::
 
-_Assignment II: Genomics and NGS (60 minutes)_
+<div style="page-break-after: always; visibility: hidden"> 
+\pagebreak 
+</div>
+
+::::{admonition} _Assignment II: Genomics and NGS (60 minutes)_
 
 In this brief hands-on tutorial, you will use a genome browser to learn more about a specific gene and its sequence variants; then you will work with IGV, the Integrated Genome Viewer, to inspect a number of different NGS datasets.
 Note that in most of the environments discussed below, you can get additional information on plot elements (boxplots, points etc.) by hovering your mouse over it.
@@ -2288,28 +2292,32 @@ n. You can visualize the individual datasets generated in the ENCODE project usi
 
 This concludes this trial of genome browsers, which demonstrates how you can relatively easily inspect genomics data for conservation, variation, expression etc.
 Although here we have focused on the human genome (because of the wide availability of data), IGV can handle any genomic data – as long as it is in a standard format – and genome browsers similar to the human UCSC one are available for many different organisms at [UCSC](https://genome-euro.ucsc.edu/), [EMBL-EBI](https://www.ensembl.org/) and [Ensembl Genomes](http://ensemblgenomes.org/) and at model organisms community sites.
-
-%ANSWER%:::{dropdown} Assignment II answers
-%ANSWER%a. It is closely related to BCL11A, a gene whose translocation may be associated with B-cell malignancies (CLL, chronic lymphatic leukemia; BCL = B-cell lymphoma/leukemia). \
-%ANSWER%b. Chromosome 14, 102,198bp, 4 exons. It starts at position 99,737,822 and lies on the reverse strand (the arrows go left). \
-%ANSWER%c. 97,068 bp; 2,685 bp or 894 amino acids (and 1 stop codon). \
-%ANSWER%d. Conservation in 100 vertebrate genomes; yes, conservation is correlated with exons, although there also seem to be some conserved (regulatory?) regions in the introns. \
-%ANSWER%e. It is nonsynonymous (AAT -> AAG: Asn -> Lys). This replaces a polar residue by a basic one, which may indeed interfere with protein structure and/or function. You can also find this by clicking on the variant; at the top, the effect on the protein sequence is specified as c.1323T>G (p.Asn441Lys), where c. means coding region, p. means protein and p.XPY means that at position P, amino acid X is replaced by Y. \
-%ANSWER%f. The position is not conserved (3rd codon position), due to the redundancy in the genetic code; but the amino acid is. \
-%ANSWER%g. Variants become visible: some differences occur only in one or two reads (likely sequencing errors), some occur in many reads and are represented in the coverage plot by colored bars. Most of these bars have two colors, indicating that only one chromosome carries the variant. \
-%ANSWER%h. It says the reference contains a T, but an alternative (ALT) G is found in a number of samples. The abbreviations are not very clear, but the count of alternative alleles (G) is 1100 (AC) out of a total number of 5008 alleles (AN), i.e., 21.96% (the allele frequency, AF). \
-%ANSWER%i. NA12878 has genotype T|G (reference T, alternative G), i.e., two different alleles on the two chromosomes. These are supported by 75 reads – 40 x G, 35 x T. \
-%ANSWER%j. Not fully: you can see some reads outside an exon. Could be an incorrect gene model or (more likely) erroneously mapped reads. Also, exon 1 and 3 are barely covered, which could point to alternative splicing in this sample. For exon 3 this is corroborated by the gene models in the UCSC genome browser; for exon 1 it could point to RNA degradation, i.e., a measurement artefact. \
-%ANSWER%k. The read coverage (in the top part of the track of NA12878) doubles in the view. This is indicative of a duplication: the sequenced genome contains two copies of the sequence compared to the reference, leading (on average) to twice as many reads. In this case the region has been duplicated in place as a tandem duplication. The paper and the SV track confirm this. \
-%ANSWER%l. The duplication begins at roughly 85,980,100 and ends around 86,007,500, making it about 27,500 bp long. \
-%ANSWER%m. The gene is DDAH1. The duplication falls completely within an intron and does not affect the resulting protein (at least, its amino acid sequence; it could influence transcription or folding through mechanisms that depend on the intron). \
-%ANSWER%n. Many tracks are available, displaying various summaries of measurements on genome functionality (e.g., transcription, histone binding and modification, transcription factor and RNA binding, DNA accessibility, methylation etc.). For more information see, e.g., the [ENCODE project website](https://www.encodeproject.org/) or [Wikipedia](https://en.wikipedia.org/wiki/ENCODE).
-%ANSWER%:::
 :::::
 
-:::::{admonition} **Transcriptomics**
+:::{dropdown} Assignment II answers
+:class-container: answers
+:open:
+a. It is closely related to BCL11A, a gene whose translocation may be associated with B-cell malignancies (CLL, chronic lymphatic leukemia; BCL = B-cell lymphoma/leukemia). \
+b. Chromosome 14, 102,198bp, 4 exons. It starts at position 99,737,822 and lies on the reverse strand (the arrows go left). \
+c. 97,068 bp; 2,685 bp or 894 amino acids (and 1 stop codon). \
+d. Conservation in 100 vertebrate genomes; yes, conservation is correlated with exons, although there also seem to be some conserved (regulatory?) regions in the introns. \
+e. It is nonsynonymous (AAT -> AAG: Asn -> Lys). This replaces a polar residue by a basic one, which may indeed interfere with protein structure and/or function. You can also find this by clicking on the variant; at the top, the effect on the protein sequence is specified as c.1323T>G (p.Asn441Lys), where c. means coding region, p. means protein and p.XPY means that at position P, amino acid X is replaced by Y. \
+f. The position is not conserved (3rd codon position), due to the redundancy in the genetic code; but the amino acid is. \
+g. Variants become visible: some differences occur only in one or two reads (likely sequencing errors), some occur in many reads and are represented in the coverage plot by colored bars. Most of these bars have two colors, indicating that only one chromosome carries the variant. \
+h. It says the reference contains a T, but an alternative (ALT) G is found in a number of samples. The abbreviations are not very clear, but the count of alternative alleles (G) is 1100 (AC) out of a total number of 5008 alleles (AN), i.e., 21.96% (the allele frequency, AF). \
+i. NA12878 has genotype T|G (reference T, alternative G), i.e., two different alleles on the two chromosomes. These are supported by 75 reads – 40 x G, 35 x T. \
+j. Not fully: you can see some reads outside an exon. Could be an incorrect gene model or (more likely) erroneously mapped reads. Also, exon 1 and 3 are barely covered, which could point to alternative splicing in this sample. For exon 3 this is corroborated by the gene models in the UCSC genome browser; for exon 1 it could point to RNA degradation, i.e., a measurement artefact. \
+k. The read coverage (in the top part of the track of NA12878) doubles in the view. This is indicative of a duplication: the sequenced genome contains two copies of the sequence compared to the reference, leading (on average) to twice as many reads. In this case the region has been duplicated in place as a tandem duplication. The paper and the SV track confirm this. \
+l. The duplication begins at roughly 85,980,100 and ends around 86,007,500, making it about 27,500 bp long. \
+m. The gene is DDAH1. The duplication falls completely within an intron and does not affect the resulting protein (at least, its amino acid sequence; it could influence transcription or folding through mechanisms that depend on the intron). \
+n. Many tracks are available, displaying various summaries of measurements on genome functionality (e.g., transcription, histone binding and modification, transcription factor and RNA binding, DNA accessibility, methylation etc.). For more information see, e.g., the [ENCODE project website](https://www.encodeproject.org/) or [Wikipedia](https://en.wikipedia.org/wiki/ENCODE).
+:::
 
-_Assignment III: Omics data analysis (45 minutes)_
+<div style="page-break-after: always; visibility: hidden"> 
+\pagebreak 
+</div>
+
+:::::{admonition} _Assignment III: Omics data analysis (45 minutes)_
 
 There is a wide variety of tools to analyze omics data; introducing all of these is beyond the scope of this course.
 To gain some experience, we will explore a pre-processed online compendium of human cancer cell line transcriptomics measurements, the Cancer Cell Line Encyclopedia (CCLE).
@@ -2339,22 +2347,29 @@ After completing this assignment, you should be able to explain the main types o
   k. Plot BCL11B expression versus methylation (1kb upstream TSS) and check what DNA methylation does (https://en.wikipedia.org/wiki/DNA_methylation). Are the results what you would expect?
 
 ---
+:::::
 
-%ANSWER%:::{dropdown} Assignment III answers
-%ANSWER%a. Boxplots display distributions, i.e., a large collection of measurements. Boxes indicate the first and third quartile (i.e., 25% of the data falls below the box, 25% above the box) and a line indicates the median. The whiskers typically extend to 1.5x the range between the first and third quartile. Individual points indicate "outliers", i.e., measurements which fall outside this range. \
-%ANSWER%b. Mostly high in blood and bone tissues, specifically in ALL and Ewings sarcoma. Low in blood for AML and chronic diseases (CLL, CML) and in bone for the other sarcomas. And yes, more or less; BCL11B is involved in T-cell tumors, not B-cell ones (UniProt actually lists this). It seems to be a B-cell tumor _repressor_, so low expression indicates disease. \
-%ANSWER%c. Expression is highest in bone cancer (sample SKNMC) and leukemia (SUPT11). \
-%ANSWER%d. In leukemia and lung cancer samples (top right). \
-%ANSWER%e. Correlated expression in leukemia and bone cancer. In both cases, both genes clearly have a much higher expression for the particular disease than in other cell types/diseases. \
-%ANSWER%f. Differential expression between lymphomas/leukemias vs. most other diseases. This makes sense: the GeneCard for RHOH describes a role in leukemias and lymphomas. \
-%ANSWER%g. In the skin, followed by the brain. \
-%ANSWER%h. The way in which the donor died. \
-%ANSWER%i. In lung. Yes, there is a clear difference along PC1. Also holds for other tissues, though. \
-%ANSWER%j. At low expression levels the relation is not very clear, but at high expression levels proteomics measurements are also high. \
-%ANSWER%k. Methylation of the promoter region silences gene expression. It is not very easy to see, but for high methylation expression is mostly low (as expected).
-%ANSWER%:::
+:::{dropdown} Assignment III answers
+:class-container: answers
+:open:
+a. Boxplots display distributions, i.e., a large collection of measurements. Boxes indicate the first and third quartile (i.e., 25% of the data falls below the box, 25% above the box) and a line indicates the median. The whiskers typically extend to 1.5x the range between the first and third quartile. Individual points indicate "outliers", i.e., measurements which fall outside this range. \
+b. Mostly high in blood and bone tissues, specifically in ALL and Ewings sarcoma. Low in blood for AML and chronic diseases (CLL, CML) and in bone for the other sarcomas. And yes, more or less; BCL11B is involved in T-cell tumors, not B-cell ones (UniProt actually lists this). It seems to be a B-cell tumor _repressor_, so low expression indicates disease. \
+c. Expression is highest in bone cancer (sample SKNMC) and leukemia (SUPT11). \
+d. In leukemia and lung cancer samples (top right). \
+e. Correlated expression in leukemia and bone cancer. In both cases, both genes clearly have a much higher expression for the particular disease than in other cell types/diseases. \
+f. Differential expression between lymphomas/leukemias vs. most other diseases. This makes sense: the GeneCard for RHOH describes a role in leukemias and lymphomas. \
+g. In the skin, followed by the brain. \
+h. The way in which the donor died. \
+i. In lung. Yes, there is a clear difference along PC1. Also holds for other tissues, though. \
+j. At low expression levels the relation is not very clear, but at high expression levels proteomics measurements are also high. \
+k. Methylation of the promoter region silences gene expression. It is not very easy to see, but for high methylation expression is mostly low (as expected).
+:::
 
-_Assignment IV: Clustering (30 minutes)_
+<div style="page-break-after: always; visibility: hidden"> 
+\pagebreak 
+</div>
+
+:::::{admonition} _Assignment IV: Clustering (30 minutes)_
 
 If all went well, you found a correlation between the expression of BCL11B and RHOH in some tissues.
 It is easier to find such relations by performing clustering, i.e., finding groups of genes and/or groups of samples that have similar expression.
@@ -2368,21 +2383,25 @@ Open the page and select the "Bone" subset. \
   e. Zoom in on the gene names on the left. Is BCL11B indeed clustered with RHOH? \
   f. At the top, additional information on the samples is plotted (tissue, histology, etc.). Does one of the sample clusters correspond to a certain annotation? \
   g. The top left shows a number of Gene Ontology terms (recall from [chapter 1](Week1_gene_ontology) that occur more often in the set of genes involved in bone tumours than you would expect by chance (i.e., than if a set of genes of similar size were randomly drawn from all genes). We call this a **GO enrichment analysis**. The heights of the bars correspond to the p-values of this analysis; the higher the bar, the more significant the enrichment. Do the terms make sense?
-
-%ANSWER%:::{dropdown} Assignment IV answers
-%ANSWER%a. Blue corresponds to low gene expression and red corresponds to high gene expression. Expression here seems to be normalized, where 0 means average expression. \
-%ANSWER%b. 1.304 (zoom in and hover). \
-%ANSWER%c. Two groups of genes, three groups of samples. There seems to be a clear distinction between the two gene clusters, in terms of color (expression); the difference between the sample clusters is less clear – you could argue that 2 or 4 clusters would be equally good. \
-%ANSWER%d. It does not seem to look OK for Genes, you get many very small clusters. Samples maybe; at four clusters, you get a small extra cluster of two similar samples. \
-%ANSWER%e. Yes, they are next to each other in the clustering: their expression is very similar over all samples. \
-%ANSWER%f. Yes, histology: the right cluster clearly corresponds to Ewing sarcoma. \
-%ANSWER%g. Yes, these are all bone-related biological processes.
-%ANSWER%:::
 :::::
 
-:::::{admonition} **Differential gene expression**
+:::{dropdown} Assignment IV answers
+:class-container: answers
+:open:
+a. Blue corresponds to low gene expression and red corresponds to high gene expression. Expression here seems to be normalized, where 0 means average expression. \
+b. 1.304 (zoom in and hover). \
+c. Two groups of genes, three groups of samples. There seems to be a clear distinction between the two gene clusters, in terms of color (expression); the difference between the sample clusters is less clear – you could argue that 2 or 4 clusters would be equally good. \
+d. It does not seem to look OK for Genes, you get many very small clusters. Samples maybe; at four clusters, you get a small extra cluster of two similar samples. \
+e. Yes, they are next to each other in the clustering: their expression is very similar over all samples. \
+f. Yes, histology: the right cluster clearly corresponds to Ewing sarcoma. \
+g. Yes, these are all bone-related biological processes.
+:::
 
-_Assignment V: Differential gene expression (45 minutes)_
+<div style="page-break-after: always; visibility: hidden"> 
+\pagebreak 
+</div>
+
+:::::{admonition} _Assignment V: Differential gene expression (45 minutes)_
 
 NCBI hosts the Gene Expression Omnibus, a database containing gene expression experiments. You can download and combine these data in various formats and analyse them on your own computer to potentially answer biological questions without performing measurements yourself. This course is too short to teach all the skills you need for reanalysing public data, but we can make use of an online tool called GEO2R to do some simple analyses in a web browser.
 
@@ -2422,17 +2441,23 @@ cells). However, the underlying analyses – differential expression, clustering
 principal component analysis etc. – can be widely applied on most quantitative –
 omics datasets. If you want to dive deeper, you will need to use more advanced
 (statistical) methods which are taught in other courses.
-
-%ANSWER%:::{dropdown} Assignment V answers
-%ANSWER%a. There are 20 samples. \
-%ANSWER%b. The microarray is an Affymetrix Yeast Genome S98 one: 9,335 probesets, over 6,400 genes. There are more probesets than genes: some probesets (attempt to) detect the same gene, some probesets are there for putative ORFs and some probesets are for quality control and calibration. \
-%ANSWER%c. Yes, the distributions are rather similar. \
-%ANSWER%d. YML038C, a hypothetical protein – its function is not yet verified. \
-%ANSWER%e. While the _relative_ changes are similar, the underlying _absolute_ measurement values are wildly different, ranging to 150 for the top gene to over 10,000 for the third gene. \
-%ANSWER%f. The top 20 genes seem to be mostly related to respiration: heme, iron transport, stress response and redox (reduction-oxidation) reactions. However, there are also less clear functions, such as steroid/sterol and borate transport. \
-%ANSWER%g. Some genes (or gene families) are the same (TIR, DAN, FET), but not exactly so – small differences in measurement setup, background strain, experimental conditions etc. play a role. The functions seem very similar though.
-%ANSWER%:::
 :::::
+
+:::{dropdown} Assignment V answers
+:class-container: answers
+:open:
+a. There are 20 samples. \
+b. The microarray is an Affymetrix Yeast Genome S98 one: 9,335 probesets, over 6,400 genes. There are more probesets than genes: some probesets (attempt to) detect the same gene, some probesets are there for putative ORFs and some probesets are for quality control and calibration. \
+c. Yes, the distributions are rather similar. \
+d. YML038C, a hypothetical protein – its function is not yet verified. \
+e. While the _relative_ changes are similar, the underlying _absolute_ measurement values are wildly different, ranging to 150 for the top gene to over 10,000 for the third gene. \
+f. The top 20 genes seem to be mostly related to respiration: heme, iron transport, stress response and redox (reduction-oxidation) reactions. However, there are also less clear functions, such as steroid/sterol and borate transport. \
+g. Some genes (or gene families) are the same (TIR, DAN, FET), but not exactly so – small differences in measurement setup, background strain, experimental conditions etc. play a role. The functions seem very similar though.
+:::
+
+<div style="page-break-after: always; visibility: hidden"> 
+\pagebreak 
+</div>
 
 :::::{admonition} **Project Preparation Exercise**
 :class: important
@@ -2451,8 +2476,7 @@ You may include up to two figures or tables.
 1. **Materials & Methods** What did you do? Which data, databases and tools did you use, and why did you choose these? What important settings did you select?
 2. **Results** What did you find, what are the main results? Report the relevant data, numbers, tables/figures, and clearly describe your observations.
 3. **Discussion & Conclusion** Do the results make sense? Are they according to your expectation or do you see something surprising? What do the results mean, how can you interpret them? Do different tools agree or not? What can you conclude? Make sure to describe the expectations and assumptions underlying your interpretation.
-   :::::
-   %PRACTICAL_SEPARATOR%
+:::::
 
 ## References
 

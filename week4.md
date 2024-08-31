@@ -772,9 +772,7 @@ Thus, make sure that you develop your practical skills now, in order to apply th
 
 **Note, the answers will be published after the practical!**
 
-:::::{admonition} **Amino Acid Residues and Peptide Folding**
-
-_Assignment I: peptide folding (20 minutes)_
+:::::{admonition} _Assignment I: peptide folding (20 minutes)_
 
 You will shortly revisit chapter 1 as peptide folding is key for any secondary and tertiary structural element in proteins.
 Answer the following questions.
@@ -788,20 +786,24 @@ Use the radio buttons on the side to select the ɸ or ψ bond and increase or de
   d. Switch on the "Show Clashes" on the right hand side. Can you find out why the 0°, 0° area is so empty in the Ramachandran plot? \
   e. Try different combinations of ɸ and ψ. Write down at least three combinations of ɸ and ψ that are not allowed in the Ramachandran plot and fold the center amino acid using these angles. Is the fold indeed impossible? Note that non-bonding atoms generally should be at least ±2.5Å apart (the sum of their Van der Waals radii) to avoid steric hindrance – in the application indicated by colored areas between atoms where clashes occur. \
   f. Can you reason how the above observations lead to the conclusion that steric hinderance is important for secondary and tertiary structure elements of proteins?
-
-%ANSWER%:::{dropdown} Assignment I answers
-%ANSWER%a. You can recognize them by the "shared electrons" that are distributed over the C=O and C-N bonds indicated as white dots. Also, you can select "Peptide Bonds" on the right-hand side, and they are then highlighted. \
-%ANSWER%b. Yes, this is allowed and most likely corresponds to β-strands that are part of a β-sheet (see the plot below the web application or {numref}`phipsi_alt`B). \
-%ANSWER%c. The scale goes from -180° to 180° because -180° and 180° are equivalent in the 360° system. \
-%ANSWER%d. This area is empty because all amino acid combinations have steric clashes there and cannot be forced in that steric configuration. \
-%ANSWER%e. You can take any combinations in the white regions of {numref}`phipsi_alt`B or in the plot below the web application. Note how the angles are rotating facing the alpha carbon. You will probably observe how easy it is to find such combinations. \
-%ANSWER%f. The "allowed regions" will enforce some angles on the rotational bonds in a peptide chain thereby providing a limited set of options to form larger structural elements. We will explore quite a few of them during in this chapter.
-%ANSWER%:::
 :::::
 
-:::::{admonition} **Protein Structures and Secondary Structure Elements**
+:::{dropdown} Assignment I answers
+:class-container: answers
+:open:
+a. You can recognize them by the "shared electrons" that are distributed over the C=O and C-N bonds indicated as white dots. Also, you can select "Peptide Bonds" on the right-hand side, and they are then highlighted. \
+b. Yes, this is allowed and most likely corresponds to β-strands that are part of a β-sheet (see the plot below the web application or {numref}`phipsi_alt`B). \
+c. The scale goes from -180° to 180° because -180° and 180° are equivalent in the 360° system. \
+d. This area is empty because all amino acid combinations have steric clashes there and cannot be forced in that steric configuration. \
+e. You can take any combinations in the white regions of {numref}`phipsi_alt`B or in the plot below the web application. Note how the angles are rotating facing the alpha carbon. You will probably observe how easy it is to find such combinations. \
+f. The "allowed regions" will enforce some angles on the rotational bonds in a peptide chain thereby providing a limited set of options to form larger structural elements. We will explore quite a few of them during in this chapter.
+:::
 
-_Assignment II: structure search and visualisation (50 minutes)_
+<div style="page-break-after: always; visibility: hidden"> 
+\pagebreak 
+</div>
+
+:::::{admonition} _Assignment II: Protein structure search and visualisation (50 minutes)_
 
 Protein structures are measured using a variety of technologies.
 Once published, they are stored in the **[Protein Data Bank, or PDB](https://www.rcsb.org/)**.
@@ -821,23 +823,30 @@ After completing this assignment, you will be able to inspect protein 3D structu
   j. Some structures include even larger ligands, such as DNA sequences. An example is **1BG1**, a structure of a transcription factor, STAT3. Look it up in the PDB. Approximately how many nucleotide pairs seem to be involved in the protein-DNA binding based on your inspection of the 3D structure? The nucleotide sequence preferred for binding is called a motif; you can check the one for STAT3 in the transcription factor binding profile database [JASPAR](http://jaspar.genereg.net/). \
   k. From the **"Literature"** box on the 1BG1 PDB **"Structure Summary"** page, follow the Primary Citation "Search on PubMed" link to find the paper that first described the STAT3 structure. In Figure 3 of that paper, does the DNA binding site look like the one you found in question j.? \
   l. For a final demonstration, in RCSB PDB move to structure 1HLM, of a sea cucumber globin, and go to the "Macromolecules" section under the "Structure Summary" and find similar proteins by 3D structure (click on the link). To what other structure is (part of) it most similar? Download the PDB files of 1HLM and the most similar structure by clicking on both protein entries and select "PDB format" from the drop-down menu "Download Files" on the right top of the window. Then, compare them using [TM-score](https://seq2fun.dcmb.med.umich.edu//TM-score/). What can you make of the output, are the structures similar? What measure(s) indicate this?
+:::::
 
-%ANSWER%:::{dropdown} Assignment II answers
-%ANSWER%a. The total length is 81 AAs, but this includes a propetide of 5 AAs that is cleaved off during maturation leaving a 76 AA long functional protein. You can find this information under the "PTM/Processing" tab. The protein has 7 strands and 3 helices, which might be difficult to tell in the default structure viewer. Question f. will show you how to manipulate the viewer to get clearer visualizations. \
-%ANSWER%b. 1.60 Å; yes, that resolution is pretty good considering the sum of their Van der Waals radii is ±2.5Å. The phi/psi angles should therefore be mostly correct. \
-%ANSWER%c. It’s an ensemble structure, i.e., several predictions are overlaid on top of each other. You can see that they agree with each other in many places, but (especially at the ends) disagree quite a bit. Also, no resolution is given for NMR-derived structures. \
-%ANSWER%d. You see how there are four coloured chains, and you also observe some ligands in the protein structure. If you look closely, you see that NEDD8 is a homotetramer: a complex of 4 identical subunits (individual chains). Often, protein structures are (or can only be) measured as part of complexes, in which researchers then manually indicate the individual proteins. \
-%ANSWER%e. Green/white seems to be hydrophobic (since residues with those colors are at the core of the complex), red hydrophilic (the surface). You can now verify this by clicking on "Structure View Documentation" on the right-hand side above the various coloring options - the color legends are explained there. \
-%ANSWER%f. The Cartoon style draws a ribbon with colours indicating helices, strands, loops etc. Here, the structural elements match those found in a., although two of the helices (the purple ones) and two of the strands (yellow) are very short. \
-%ANSWER%g. Of the four longer strands, the two centre ones are parallel, but these central beta strands are both antiparallel to the two outside ones. You can find out by hovering over the structure and noting the residue numbers in the sheets (i.e., see whether they go up or down together in the same direction). \
-%ANSWER%h. Yes, it looks like the dashed lines represent hydrogen bonds that run **along** the helices and **between** the sheets, thus supporting these secondary structures! This indeed agrees with the theory. \
-%ANSWER%j. By eye, approximately 10 amino acid residues are close to the DNA. JASPAR shows a motif 11 nucleotides. Note: look at the motif for mouse (_Mus musculus_), as the 1BG1 structure was found in mouse and the binding site of the human STAT3 is slightly different. Note how you can get quite interesting hints about the residues and nucleotides involved in the interaction by combining these databases. \
-%ANSWER%i. Not easy to see, but well over 10, likely 12 or so. The type of interactions are hydrophobic interactions between amino acid residues and the carbon rings of the heme group. As to how realistic this number is, the threshold used to select the residues around the ligand (5Å) is somewhat arbitrary and probably too large, making this number an estimate. \
-%ANSWER%k. Almost.... When comparing the 9 central base pairs highlighted in yellow in Figure 3 in the paper to the JASPAR STAT3 motif, we can observe that strong GGAA is indeed present; however, the start of the motif is not completely similar other than the starting T. Overall, there is certainly correspondence. \
-%ANSWER%l. Parts of the structures of 1HLM and 5M3L are indeed similar: the comparison has an RMSD of 6.9 and a TM-score of 0.43. The RMSD is the Root Mean Square Deviation of atomic positions, an average distance over all atoms between two proteins. The interpretation of the TM-score is given on the page. We can also compare the structures by eye using the JSmol figures on on the TM-score results page, and these indicate that the folding of the 8 alpha-helices does correspond reasonably well (hence the structural similarity) but other parts less so (as reflected by the overall RMSD and TM-Score).
-%ANSWER%:::
+:::{dropdown} Assignment II answers
+:class-container: answers
+:open:
+a. The total length is 81 AAs, but this includes a propetide of 5 AAs that is cleaved off during maturation leaving a 76 AA long functional protein. You can find this information under the "PTM/Processing" tab. The protein has 7 strands and 3 helices, which might be difficult to tell in the default structure viewer. Question f. will show you how to manipulate the viewer to get clearer visualizations. \
+b. 1.60 Å; yes, that resolution is pretty good considering the sum of their Van der Waals radii is ±2.5Å. The phi/psi angles should therefore be mostly correct. \
+c. It’s an ensemble structure, i.e., several predictions are overlaid on top of each other. You can see that they agree with each other in many places, but (especially at the ends) disagree quite a bit. Also, no resolution is given for NMR-derived structures. \
+d. You see how there are four coloured chains, and you also observe some ligands in the protein structure. If you look closely, you see that NEDD8 is a homotetramer: a complex of 4 identical subunits (individual chains). Often, protein structures are (or can only be) measured as part of complexes, in which researchers then manually indicate the individual proteins. \
+e. Green/white seems to be hydrophobic (since residues with those colors are at the core of the complex), red hydrophilic (the surface). You can now verify this by clicking on "Structure View Documentation" on the right-hand side above the various coloring options - the color legends are explained there. \
+f. The Cartoon style draws a ribbon with colours indicating helices, strands, loops etc. Here, the structural elements match those found in a., although two of the helices (the purple ones) and two of the strands (yellow) are very short. \
+g. Of the four longer strands, the two centre ones are parallel, but these central beta strands are both antiparallel to the two outside ones. You can find out by hovering over the structure and noting the residue numbers in the sheets (i.e., see whether they go up or down together in the same direction). \
+h. Yes, it looks like the dashed lines represent hydrogen bonds that run **along** the helices and **between** the sheets, thus supporting these secondary structures! This indeed agrees with the theory. \
+j. By eye, approximately 10 amino acid residues are close to the DNA. JASPAR shows a motif 11 nucleotides. Note: look at the motif for mouse (_Mus musculus_), as the 1BG1 structure was found in mouse and the binding site of the human STAT3 is slightly different. Note how you can get quite interesting hints about the residues and nucleotides involved in the interaction by combining these databases. \
+i. Not easy to see, but well over 10, likely 12 or so. The type of interactions are hydrophobic interactions between amino acid residues and the carbon rings of the heme group. As to how realistic this number is, the threshold used to select the residues around the ligand (5Å) is somewhat arbitrary and probably too large, making this number an estimate. \
+k. Almost.... When comparing the 9 central base pairs highlighted in yellow in Figure 3 in the paper to the JASPAR STAT3 motif, we can observe that strong GGAA is indeed present; however, the start of the motif is not completely similar other than the starting T. Overall, there is certainly correspondence. \
+l. Parts of the structures of 1HLM and 5M3L are indeed similar: the comparison has an RMSD of 6.9 and a TM-score of 0.43. The RMSD is the Root Mean Square Deviation of atomic positions, an average distance over all atoms between two proteins. The interpretation of the TM-score is given on the page. We can also compare the structures by eye using the JSmol figures on on the TM-score results page, and these indicate that the folding of the 8 alpha-helices does correspond reasonably well (hence the structural similarity) but other parts less so (as reflected by the overall RMSD and TM-Score).
+:::
 
-_Assignment III: secondary structure prediction (50 minutes)_
+<div style="page-break-after: always; visibility: hidden"> 
+\pagebreak 
+</div>
+
+:::::{admonition} _Assignment III: secondary structure prediction (50 minutes)_
 
 1TIM is a prototypic TIM-barrel PDB structure, of the triose phosphate topoisomerase protein.
 TIM barrels occur in many proteins and form a topology (fold) in the protein fold database CATH (in Assignment V you will gain practice with the fold database).
@@ -854,28 +863,28 @@ After completing this assignment, you will be able to interpret the outcome of p
   i. NetSurfP-3.0 simultaneously predicts Relative Surface Accessibility (top line in graphical view on the results page). Do the results concur with your findings under e. and h.? \
   j. Finally, predict the transmembrane topology of SigmaR1 (UniProt ID Q99720), aquaporin (P47865) and 1TIM (P00940) using [TMHMM](https://services.healthtech.dtu.dk/service.php?TMHMM-2.0). For each protein, copy/paste the FASTA sequence from UniProt into TMHMM and press "Submit". Do the predictions make sense, given the protein descriptions and the available 3D structures? \
   k. Do the same as before for aquaporin (P47865) and 1TIM (P00940) using the newer version of TMHMM, **[DeepTMHMM](https://services.healthtech.dtu.dk/service.php?DeepTMHMM)**. How do the results compare to those found at j.?
-
-%ANSWER%:::{dropdown} Assignment III answers
-%ANSWER%a. PALSSE assigns more residues to "helix" and "sheet", less to "other". This could be due to predicting wider/smaller ranges of the secondary structure elements, thus differing in assigning residues in the border regions. This shows that it is not trivial to derive secondary structure, even from a given 3D structure, where especially the beginnings and ends of helices and sheets are not black-and-white. \
-%ANSWER%b. PALSSE indeed predicts wider regions (especially for the helices), i.e., it disagrees with DSSP and Stride at the edges of secondary structure elements. \
-%ANSWER%c. Wikipedia mentions 8 helices and 8 sheets. This roughly corresponds to the results here, although DSSP and STRIDE cut several helices (the 4{sup}`th`, 5{sup}`th`, 6{sup}`th`, and the 8{sup}`th`) in half. \
-%ANSWER%d. 247 residues are predicted, 10 of which are different between the consensus residue states and the DSSP predictions: Q3 = 237/247 = 0.96. \
-%ANSWER%e. The core of a protein is mostly hydrophobic; when comparing the Kyte & Doolittle predictions to the secondary structure assignments, it turns out that the sheets are made up of mostly hydrophobic residues, so these are likely on the inside. You can confirm this by inspecting the 3D structure in PDB. \
-%ANSWER%f. By combining information from multiple sequences, the prediction will be less influenced by "noise", i.e., non-conserved variation in the protein sequences. Conservation is a strong signal that residues are structurally (and thus functionally) important. \
-%ANSWER%g. NetSurfP-3.0 does predict 8 helices and 8 sheets, with similar small splits of several amino acid residues in 3 of the helices as the consensus predicted by 2struc under a. \
-%ANSWER%h. This is an effect of the difference between predicting 3 classes or 8 classes. In an 8-state prediction, more classes are available; whereas for a 3-state prediction, all other classes are combined into "coil" (C) and together are most probable to occur. Hence, in some borderline cases, the two models will differ and the SS3 model may favour the "coil" assignment. Based on your inspection in 2Struct, you may have noticed that this is anyways a hard call to make even with the structure in hand – and that perhaps it is more likely to still be part of the helix. The boundaries between secondary structural elements and coils are tough to assign – even as humans – and unsurprisingly the computational approaches also have difficulties here. As for the split in the helix, there is something to say for both: in the 3D structure, there is a bend that breaks the regular helical pattern; however, the helical curve is still maintained in this region. \
-%ANSWER%i. Yes.... Sheets are mostly buried, helices mostly exposed (although it is by no means a perfect relation). \
-%ANSWER%j. SigmaR1: yes, there’s a single helix at the start (see PDB) which crosses the membrane, the remainder is outside. This is typical for receptor proteins. Aquaporin: yes, it’s a channel, for which the protein repeatedly crosses the membrane. 1TIM: no, it’s an enzyme in primary metabolism, so likely inside the cell, but it is predicted to be outside (you can basically only learn from this that it’s not a transmembrane protein – this is an example that underlines that you should take care during the interpretation! \
-%ANSWER%k. When comparing the prediction results, the predictions for aquaporin are very similar. We can now see that for 1TIM, the protein is actually predicted to be _inside_ the cell, as we would expect. Hence, although it takes a bit longer, DeepTMHMM is the preferred tool to use, next to common sense of course!
-%ANSWER%:::
 :::::
 
-:::::{admonition} **Protein Tertiary Structure Prediction**
+:::{dropdown} Assignment III answers
+:class-container: answers
+:open:
+a. PALSSE assigns more residues to "helix" and "sheet", less to "other". This could be due to predicting wider/smaller ranges of the secondary structure elements, thus differing in assigning residues in the border regions. This shows that it is not trivial to derive secondary structure, even from a given 3D structure, where especially the beginnings and ends of helices and sheets are not black-and-white. \
+b. PALSSE indeed predicts wider regions (especially for the helices), i.e., it disagrees with DSSP and Stride at the edges of secondary structure elements. \
+c. Wikipedia mentions 8 helices and 8 sheets. This roughly corresponds to the results here, although DSSP and STRIDE cut several helices (the 4{sup}`th`, 5{sup}`th`, 6{sup}`th`, and the 8{sup}`th`) in half. \
+d. 247 residues are predicted, 10 of which are different between the consensus residue states and the DSSP predictions: Q3 = 237/247 = 0.96. \
+e. The core of a protein is mostly hydrophobic; when comparing the Kyte & Doolittle predictions to the secondary structure assignments, it turns out that the sheets are made up of mostly hydrophobic residues, so these are likely on the inside. You can confirm this by inspecting the 3D structure in PDB. \
+f. By combining information from multiple sequences, the prediction will be less influenced by "noise", i.e., non-conserved variation in the protein sequences. Conservation is a strong signal that residues are structurally (and thus functionally) important. \
+g. NetSurfP-3.0 does predict 8 helices and 8 sheets, with similar small splits of several amino acid residues in 3 of the helices as the consensus predicted by 2struc under a. \
+h. This is an effect of the difference between predicting 3 classes or 8 classes. In an 8-state prediction, more classes are available; whereas for a 3-state prediction, all other classes are combined into "coil" (C) and together are most probable to occur. Hence, in some borderline cases, the two models will differ and the SS3 model may favour the "coil" assignment. Based on your inspection in 2Struct, you may have noticed that this is anyways a hard call to make even with the structure in hand – and that perhaps it is more likely to still be part of the helix. The boundaries between secondary structural elements and coils are tough to assign – even as humans – and unsurprisingly the computational approaches also have difficulties here. As for the split in the helix, there is something to say for both: in the 3D structure, there is a bend that breaks the regular helical pattern; however, the helical curve is still maintained in this region. \
+i. Yes.... Sheets are mostly buried, helices mostly exposed (although it is by no means a perfect relation). \
+j. SigmaR1: yes, there’s a single helix at the start (see PDB) which crosses the membrane, the remainder is outside. This is typical for receptor proteins. Aquaporin: yes, it’s a channel, for which the protein repeatedly crosses the membrane. 1TIM: no, it’s an enzyme in primary metabolism, so likely inside the cell, but it is predicted to be outside (you can basically only learn from this that it’s not a transmembrane protein – this is an example that underlines that you should take care during the interpretation! \
+k. When comparing the prediction results, the predictions for aquaporin are very similar. We can now see that for 1TIM, the protein is actually predicted to be _inside_ the cell, as we would expect. Hence, although it takes a bit longer, DeepTMHMM is the preferred tool to use, next to common sense of course!
+:::
+
+:::::{admonition} _Assignment IV: AlphaFold 3D structure predictions (50 minutes)_
 Most approaches to protein structure modelling are computationally highly demanding and will take too much time to try during this practical.
 This is currently only feasible for automated homology modelling (assignment VI), but first we will investigate AlphaFold2 through the AlphaFold database and functional domains through the CATH database.
 After completing assignment IV, you will be able to search the AlphaFold database for predicted 3D protein structure models and assess the quality of these models both locally and globally.
-
-_Assignment IV: AlphaFold 3D structure predictions (50 minutes)_
 
 The introduction of AlphaFold has revolutionized the protein structure prediction field.
 Here, we will assess pre-computed ready-made AlphaFold2 models through the [AlphaFold Protein Structure Database](https://alphafold.ebi.ac.uk) where >200,000,000 structure models are now available. \
@@ -887,17 +896,20 @@ Here, we will assess pre-computed ready-made AlphaFold2 models through the [Alph
   f. Now, consider the following: a fellow student has a protein sequence from a plant sample origin that she would like to characterize (the sequence is displayed below). You decide to help her, and you input the results into Uniprot Blast. Further below the top results are presented. Do the presented matches make sense to you? Is there a match that you think is good enough to infer the structure from its model? Study the AlphaFold model. What is the quality? What is the possible function of the protein? \
   g. Go back to the "Probable caffeine synthase MTL3" AlphaFold structure prediction page. With your new knowledge on the global predicted aligned error model, what do you now think of the model? \
   h. Some say that AlphaFold will solve all our problems in structure protein folding.... but it may yet be a bit early to conclude that. Have a look at the structure model for Human Insulin (UniProt P01308)? What is the quality of the proposed model? Can you think of reasons why?
+:::::
 
-%ANSWER%:::{dropdown} Assignment IV answers
-%ANSWER%a. AlphaFold DB contains 51285 protein structure models related to _Coffea arabica_ (May 2024). For _Arabidopsis thaliana_, the database returns more hits: 132903! The number of human (_Homo sapiens_) related protein structure models is 186018. Please note that this number is dependent on what humans and computer programs over time have recognized as proteins in the genome (i.e.,there is a UniProt entry), and also note that this is not correlated to the size of the genome: the _Coffea arabica_ genome has 130 megabases, the _Arabidopsis thaliana_ genome has 135 megabases, and the human genome contains 3000 megabases. \
-%ANSWER%b. Based on the Model Confidence color labelling, dark blue and blue are the very high (confidence) and confident categories – and the protein 3D structure model is mostly colored blue; thus, the AlphaFold model predicts a high confidence for the proposed structure. Inspecting the structure, it is composed of many secondary structure elements – these are usually easier to predict. The outer ends of the structure, that also includes various loops, is colored in blue or even yellow (low confidence) and orange (very low confidence), which also fits with our prior knowledge: random loops are hard to predict and can in practice be quite flexible. \
-%ANSWER%c. According to the UniProt page, the protein "may be involved in the biosynthesis of caffeine", and the annotations are "inferred from homology". Scrolling down on the page, it can be seen that it likely is a "methyltransferase-like 3", a "putative N-methyltransferase". The structure of caffeine indeed contains various nitrogen (N) atoms that are methylated, so the probable inferred function could indeed be involved in caffeine biosynthesis. \
-%ANSWER%d. In the "all databases" tab, several annotated proteins return, mostly with methyltransferase functions. The TM alignment looks very reasonable. In the "PDB100" tab, there are also several decent matches, in both close as well as further away (plant) species. What is remarkable is that in most cases the sequence similarity of the match is (well) below 40%, whereas the structure (and thus likely functional) similarity is much higher. This demonstrates the power of fold-based searching. There is, however, one caveat: searching with predicted structures in large databases of mainly predicted structures can easily propagate errors; therefore, the "PDB100" matches are a great way of validating such comparisons. \
-%ANSWER%e. The protein structure model contains of two parts, of which one is predicted relatively confident, and the other has a reasonable quality structure prediction. After studying the global error score, it becomes clear that, whilst the two parts on themselves are indeed folded with a reasonable confidence, the manner in which they are positioned toward each other is quite uncertain. Therefore, we can only draw some preliminary conclusions from the individual parts, but not from the overall 3D structure model \
-%ANSWER%f. Based on the length, score, and Identity Percentage, from the presented top hits, there are several good matches from rice, including the top one, Q6Z2X6 - _Oryza sativa subsp. Japonica_): Cycloartenol synthase. Other hits show similar protein names and are also from plant origin – this observation fits with our prior knowledge. After studying the structure model of the top-hit Q6Z2X6, based on the AlphaFold structure model confidence scores, we can conclude that we can be confident about the model. One reason is that high number of alpha helices in the protein, which facilitate structure prediction. The global error figure shows that apart from three very small stretches, AlphaFold is confident about the overall structure. Since there is no PDB structure available, this is great step forward for biochemistry. The function of the protein is very likely to be in the terpense biosynthesis as an enzyme that converts oxidosqualene ((3S)-2,3-epoxy-2,3-dihydrosqualene) to cycloartenol. \
-%ANSWER%g. The global error for this protein model reflects that the protein likely consists of one domain and that AlphaFold is mostly confident about how the various parts of the protein are positioned compared to each other. \
-%ANSWER%h. Clearly, AlphaFold is not confident at all about this structure model, apart from a helical stretch. Possible reasons for this lower-quality 3D structure model include a lack of examples in the training data, a lack of inherent (secondary) structure in the protein, the lack of information about folding in the cell with help of chaperones (proteins that assist in the folding), or the absence of other polypeptide chains that interact with a protein that then together form a multimer. At least, it is clear that we should not take this structure model for human insulin for granted.... 
-%ANSWER%:::
+:::{dropdown} Assignment IV answers
+:class-container: answers
+:open:
+a. AlphaFold DB contains 51285 protein structure models related to _Coffea arabica_ (May 2024). For _Arabidopsis thaliana_, the database returns more hits: 132903! The number of human (_Homo sapiens_) related protein structure models is 186018. Please note that this number is dependent on what humans and computer programs over time have recognized as proteins in the genome (i.e.,there is a UniProt entry), and also note that this is not correlated to the size of the genome: the _Coffea arabica_ genome has 130 megabases, the _Arabidopsis thaliana_ genome has 135 megabases, and the human genome contains 3000 megabases. \
+b. Based on the Model Confidence color labelling, dark blue and blue are the very high (confidence) and confident categories – and the protein 3D structure model is mostly colored blue; thus, the AlphaFold model predicts a high confidence for the proposed structure. Inspecting the structure, it is composed of many secondary structure elements – these are usually easier to predict. The outer ends of the structure, that also includes various loops, is colored in blue or even yellow (low confidence) and orange (very low confidence), which also fits with our prior knowledge: random loops are hard to predict and can in practice be quite flexible. \
+c. According to the UniProt page, the protein "may be involved in the biosynthesis of caffeine", and the annotations are "inferred from homology". Scrolling down on the page, it can be seen that it likely is a "methyltransferase-like 3", a "putative N-methyltransferase". The structure of caffeine indeed contains various nitrogen (N) atoms that are methylated, so the probable inferred function could indeed be involved in caffeine biosynthesis. \
+d. In the "all databases" tab, several annotated proteins return, mostly with methyltransferase functions. The TM alignment looks very reasonable. In the "PDB100" tab, there are also several decent matches, in both close as well as further away (plant) species. What is remarkable is that in most cases the sequence similarity of the match is (well) below 40%, whereas the structure (and thus likely functional) similarity is much higher. This demonstrates the power of fold-based searching. There is, however, one caveat: searching with predicted structures in large databases of mainly predicted structures can easily propagate errors; therefore, the "PDB100" matches are a great way of validating such comparisons. \
+e. The protein structure model contains of two parts, of which one is predicted relatively confident, and the other has a reasonable quality structure prediction. After studying the global error score, it becomes clear that, whilst the two parts on themselves are indeed folded with a reasonable confidence, the manner in which they are positioned toward each other is quite uncertain. Therefore, we can only draw some preliminary conclusions from the individual parts, but not from the overall 3D structure model \
+f. Based on the length, score, and Identity Percentage, from the presented top hits, there are several good matches from rice, including the top one, Q6Z2X6 - _Oryza sativa subsp. Japonica_): Cycloartenol synthase. Other hits show similar protein names and are also from plant origin – this observation fits with our prior knowledge. After studying the structure model of the top-hit Q6Z2X6, based on the AlphaFold structure model confidence scores, we can conclude that we can be confident about the model. One reason is that high number of alpha helices in the protein, which facilitate structure prediction. The global error figure shows that apart from three very small stretches, AlphaFold is confident about the overall structure. Since there is no PDB structure available, this is great step forward for biochemistry. The function of the protein is very likely to be in the terpense biosynthesis as an enzyme that converts oxidosqualene ((3S)-2,3-epoxy-2,3-dihydrosqualene) to cycloartenol. \
+g. The global error for this protein model reflects that the protein likely consists of one domain and that AlphaFold is mostly confident about how the various parts of the protein are positioned compared to each other. \
+h. Clearly, AlphaFold is not confident at all about this structure model, apart from a helical stretch. Possible reasons for this lower-quality 3D structure model include a lack of examples in the training data, a lack of inherent (secondary) structure in the protein, the lack of information about folding in the cell with help of chaperones (proteins that assist in the folding), or the absence of other polypeptide chains that interact with a protein that then together form a multimer. At least, it is clear that we should not take this structure model for human insulin for granted.... 
+
 
 **Protein Sequence from plant origin (this is the protein sequence from question f):**
 ```
@@ -923,8 +935,14 @@ INLQQSEDGEFPQQEIIGVFNKNCMISYSEYRNIFPIWALGFAIRDATAWISE
 :width: 80%
 :name: assignment_4_blast
 ```
+:::
 
-_Assignment V: automated homology modelling (45 minutes)_
+<div style="page-break-after: always; visibility: hidden"> 
+\pagebreak 
+</div>
+
+
+:::::{admonition} _Assignment V: automated homology modelling (45 minutes)_
 Now, we will move to automated homology modelling.
 After completing this assignment, you will be able to create an automated homology 3D protein structure model and assess the quality of the model by inspecting the model and template 3D structures.
 Since for the Q5YGP8 protein no close structural homologs are available, we will use another protein in this assignment: UniProt ID Q8QGC7. \
@@ -945,26 +963,30 @@ Since for the Q5YGP8 protein no close structural homologs are available, we will
   i. Finally, assess the structure quality of a "good" and a "bad" 3D model in SWISS-MODEL, by pressing the "Structure assessment" button under each model on the left and studying the Ramachandran plots. Compare the Ramachandran plots to the plots for the templates, which you can look up at **[PDBSum](http://www.ebi.ac.uk/pdbsum)**. What do you find? \
   j. Once protein structures are known, they can be used to learn about their interactions and functions. As an example, inspect protein 3i49 in the [PDB](https://www.rcsb.org/) and in [PDBsum](http://www.ebi.ac.uk/thornton-srv/databases/cgi-bin/pdbsum/GetPage.pl?pdbcode=index.html). What reaction does this protein catalyze? What cofactor is needed? Visualize the ligand interactions in PDB and learn about the structure in more detail using the Ligand/Metal tabs in PBDsum. Which residues constitute the active site? What does this tell you about the sequence-structure-function paradigm? \
   k. Now, go back to the UniProt page for Q8QGC7. You may remember from the AlphaFold assignment that we can expect an AlphaFold-predicted 3D structure model here as well. Indeed, under the "Structure" tab, there is a predicted structure! How does it compare to the homology modelling predicted structures from f.?
-
-%ANSWER%:::{dropdown} Assignment V answers
-%ANSWER%a. It’s a chicken cannabinoid receptor, 234 amino acids long. \
-%ANSWER%b. Yes, it matches a number of structures (just over 200 as of May 2024) for various lengths of residues and different % of sequence ID with the human Cannabinoid receptor 1 at 93% sequence ID. Structures for the human receptor have been measured using X-ray at 2.5-3.0 Å. This is of sufficient quality to attempt homology modelling. \
-%ANSWER%c. 1105 templates are found (as of May 2024), but not unique. 50 are shown. The top-ranking ones are the PDB matches found earlier; the following matches show far lower sequence identity, and have a different (but perhaps related) function. Not all templates found are therefore likely good candidates for homology modelling. \
-%ANSWER%d. The top-ranking proteins have high similarity, but do not all cover the full protein. There are clear groups (four major ones) of templates for various (overlapping) parts of the sequence. \
-%ANSWER%e. The alignment mostly agrees, but not everywhere. \
-%ANSWER%f. Blue is good (mostly in well-aligned regions with clear secondary structures), red is bad (mostly in poorly aligned regions corresponding to loops and turns). Note that the loops and turns to a large extent determine the overall protein structure. \
-%ANSWER%g. The models based on parts of the human CB1 receptor (i.e., 6KPG, 5TGZ) are OK, but not excellent; the model based on the template with lower ID is much worse. It seems like the loops area is the most problematic to model due to its inherent flexibility. This is translated into the lower GMQE score, and local QMEANDisCo scores, and in several lower Q-MEAN Z scores as well, as they deviate from the mean. However, parts of the structure seem to be of good quality, especially those containing well-defined secondary structure elements. \
-%ANSWER%h. The fit is worst (i.e., residues coloured reddish) in the loops, which are unique to the chicken protein and harder to model than the highly conserved regions. This indeed corresponds to a drop in local quality also confirming our observations in g. \
-%ANSWER%i. The model structure assessments are both good. The well-fitting model contains no "illegal" residues, the bad model a few (although still fewer than 10%). In addition, the template structures are also of good quality with no amino acid residues in disallowed regions. \
-%ANSWER%j. The catalysed reaction is: DNA-base-CH3 + 2-oxoglutarate + O2 = DNA-base + formaldehyde + succinate + CO2, the cofactor = Fe. Residues interacting with AKG (2-Oxoglutaric acid) are: 120, 122, 204, 208, 210, 131, 133, 187; with Fe, 131, 133 and 187. This demonstrates that structure is very important for function, as sequentially distant residues need to come together in 3D. \
-%ANSWER%k. Overall, the structure models seem to be in quite good correspondence to each other, with the alpha helices placed in similar ways. What is remarkable, is that AlphaFold is quite certain about the linker between the two main alpha helical sides of the protein, whereas the structure models predicted by homology modelling show more uncertainty there. The question is, though, how much structure that part of the protein really has....
-%ANSWER%:::
 :::::
+
+:::{dropdown} Assignment V answers
+:class-container: answers
+:open:
+a. It’s a chicken cannabinoid receptor, 234 amino acids long. \
+b. Yes, it matches a number of structures (just over 200 as of May 2024) for various lengths of residues and different % of sequence ID with the human Cannabinoid receptor 1 at 93% sequence ID. Structures for the human receptor have been measured using X-ray at 2.5-3.0 Å. This is of sufficient quality to attempt homology modelling. \
+c. 1105 templates are found (as of May 2024), but not unique. 50 are shown. The top-ranking ones are the PDB matches found earlier; the following matches show far lower sequence identity, and have a different (but perhaps related) function. Not all templates found are therefore likely good candidates for homology modelling. \
+d. The top-ranking proteins have high similarity, but do not all cover the full protein. There are clear groups (four major ones) of templates for various (overlapping) parts of the sequence. \
+e. The alignment mostly agrees, but not everywhere. \
+f. Blue is good (mostly in well-aligned regions with clear secondary structures), red is bad (mostly in poorly aligned regions corresponding to loops and turns). Note that the loops and turns to a large extent determine the overall protein structure. \
+g. The models based on parts of the human CB1 receptor (i.e., 6KPG, 5TGZ) are OK, but not excellent; the model based on the template with lower ID is much worse. It seems like the loops area is the most problematic to model due to its inherent flexibility. This is translated into the lower GMQE score, and local QMEANDisCo scores, and in several lower Q-MEAN Z scores as well, as they deviate from the mean. However, parts of the structure seem to be of good quality, especially those containing well-defined secondary structure elements. \
+h. The fit is worst (i.e., residues coloured reddish) in the loops, which are unique to the chicken protein and harder to model than the highly conserved regions. This indeed corresponds to a drop in local quality also confirming our observations in g. \
+i. The model structure assessments are both good. The well-fitting model contains no "illegal" residues, the bad model a few (although still fewer than 10%). In addition, the template structures are also of good quality with no amino acid residues in disallowed regions. \
+j. The catalysed reaction is: DNA-base-CH3 + 2-oxoglutarate + O2 = DNA-base + formaldehyde + succinate + CO2, the cofactor = Fe. Residues interacting with AKG (2-Oxoglutaric acid) are: 120, 122, 204, 208, 210, 131, 133, 187; with Fe, 131, 133 and 187. This demonstrates that structure is very important for function, as sequentially distant residues need to come together in 3D. \
+k. Overall, the structure models seem to be in quite good correspondence to each other, with the alpha helices placed in similar ways. What is remarkable, is that AlphaFold is quite certain about the linker between the two main alpha helical sides of the protein, whereas the structure models predicted by homology modelling show more uncertainty there. The question is, though, how much structure that part of the protein really has....
+:::
+
+<div style="page-break-after: always; visibility: hidden"> 
+\pagebreak 
+</div>
 
 :::::{admonition} **Project Preparation Exercise**
 :class: important
-
-_Assignment VI: Explorative analysis on a protein sequence (75 - 90 minutes)_
 
 This assignment is a project-like question: to remind you, the difference is that you will not be guided to the exact tools you need to use, but we rather expect you to use the knowledge and expertise from the reader and practical assignments to find the right tools.
 In other words, this assignment is meant to let you explore the tools you have visited during the assignments I – V (or alternative tools that you may have found) and come to relevant observations about the structure and function of the proteins under study.
@@ -987,7 +1009,7 @@ You may want to highlight some of your findings with screenshots from the tools 
 We encourage you to discuss your results with fellow students and the TAs and teacher.
 Oftentimes, they may have found different but complementary information, and together you will be able to paint a more complete picture of the protein families.
 :::::
-%PRACTICAL_SEPARATOR%
+
 ## References
 
 ```{bibliography}
