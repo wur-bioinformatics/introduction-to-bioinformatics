@@ -51,14 +51,15 @@ interpret the outcomes of computational analyses.
 To support life science students to reach these learning goals, we developed
 a BSc course "Introduction to Bioinformatics" at Wageningen University .  We
 structured it around the "journey" a researcher would take to study an unknown
-sequence:
+sequence, as illustrated in Figure {numref}`overview`.
 
 :::{figure} images/Intro/overview.png
-:alt: Overview of the chapters i the book
+:alt: Overview of the chapters in the book
 :width: 90%
 :name: overview
 
-Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) {cite}`own_1_2024`.
+Overview of the chapters in this book.
+Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) {cite}`own_I_2024`.
 :::
 
 ## Why a new book?
@@ -134,3 +135,9 @@ Additional information, often times provides extra examples to material mentione
 Link to external information, like videos or blogs. Not exam material, but might make exam material more clear.
 ```
 
+## References
+
+```{bibliography}
+:filter: docname in docnames
+:labelprefix: I
+```
