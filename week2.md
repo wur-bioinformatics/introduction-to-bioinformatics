@@ -525,7 +525,7 @@ The ability to group biological sequences based on conserved/co-occuring regions
 
 ## Primer design
 
-Rens
+STILL TO BE ADDED
 
 %**OLD**
 %
