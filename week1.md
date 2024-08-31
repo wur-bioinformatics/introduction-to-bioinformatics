@@ -1,6 +1,9 @@
-<br class="onlyprint"/>
-
 # Genes, Proteins, Databases, Genome annotation
+
+```{epigraph}
+
+-- Rens Holmer, Anne Kupczok, Tomer Sardjoe
+```
 
 ## Biological background
 
@@ -1354,57 +1357,72 @@ Amino acids:           ......................
 5. 60%.
 6. Answer a, 5' to 3'.
 7. Answer b, guanine.
-8.
-```
-5' ATGGTTTTACTTGAA 3'
-3' TACCAAAATGAACTT 5' = non-coding strand
-5' AUGGUUUUACUUGAA 3' = mRNA transcript
-Met–Val-Leu-Leu-Glu   = 3-letter abbreviations
-MVLLE                 = 1-letter abbreviations
-```
-9a. Arabidopsis thaliana, 80 amino acids, AT1G65484. \
-9b. MGLKM...PRTGS. \
-10a. Under "protein coding genes" you see 2 different protein-coding transcripts. Exons are blue, coding sequences are yellow, introns are the thin black lines.Each transcript has 2 exons and 1 intron. \
-10b. Yes, GU at the start of the intron and AG at the end. The bases at the start of the second exon vary. \
-10c. Download the data (see screenshots) and generate a new text file where the CDSs have been concatenated.
-```{image} images/Week1/assignment_1_10c_jbrowse.png
-:alt: from CDSs to fasta.
-:align: center
-:width: 100%
-:name: assignment_1_10c_jbrowse
-```
-10d. Yes, 106+137=243, 243/3 = 81 codons and the last codon is a stop codon. \
-10e. Yes, MGL... \
-10f. Yes, about 24 nucleotides before the transcription start. Transcription starts at the 5' UTR of AT1G65484.1 (same as start of the gene locus). The sequence before that is CTTC<u>**TATATAA**</u>ACCGGTCCAGTATTATT. The bold/underlined bases form the TATA box in line with the definition (see also knowledge clip on DNA, slide 16). \
-11a. Possible tools to use are on [endmemo](http://www.endmemo.com/bio/gc.php) or [Science Buddies](https://www.sciencebuddies.org/science-fair-projects/references/genomics-g-c-content-calculator). GC content for transcript: 34.137931 (length 870). GC content for CDS: 46.91358 (length 243). The GC content in the CDS is much higher. \
-11b. The GC content of chromosome 1 is 35.9. It is known that coding regions have higher GC than the background genome, consistent with our observation. The GC content can be found by searching NCBI like this:
-```{image} images/Week1/assignment_1_11b_ncbi.png
-:alt: GC content NCBI query.
-:align: center
-:width: 100%
-:name: assignment_1_11b_ncbi
-```
-You should get to [this](https://www.ncbi.nlm.nih.gov/genome/?term=Arabidopsis+thaliana) page. \
-12. Viruses do contain DNA or RNA genomes, but they can only replicate inside a living cell of another organism, and thus are not considered cellular life forms. \
-13.
-```{list-table}
-:header-rows: 1
-:widths: auto
-:name: assignment_1_13_taxonomy_answers
+8. 
+    ```
+    5' ATGGTTTTACTTGAA 3'
+    3' TACCAAAATGAACTT 5' = non-coding strand
+    5' AUGGUUUUACUUGAA 3' = mRNA transcript
+    Met–Val-Leu-Leu-Glu   = 3-letter abbreviations
+    MVLLE                 = 1-letter abbreviations
+    ```
+9. 
+    a. Arabidopsis thaliana, 80 amino acids, AT1G65484.  
 
-* - Species
-  - Domain
-  - Family
-* - _Moraxella catarrhalis_
-  - Bacteria
-  - Moraxellaceae
-* - _Haloarcula quadrata_
-  - Archaea
-  - Haloarculaceae
-* - _Loxodonta cyclotis_
-  - Eukaryota
-  - Elephantidae
-```
+    b. MGLKM...PRTGS.
+
+10. 
+    a. Under "protein coding genes" you see 2 different protein-coding transcripts. Exons are blue, coding sequences are yellow, introns are the thin black lines.Each transcript has 2 exons and 1 intron.  
+
+    b. Yes, GU at the start of the intron and AG at the end. The bases at the start of the second exon vary.  
+
+    c. Download the data (see screenshots) and generate a new text file where the CDSs have been concatenated.
+    ```{image} images/Week1/assignment_1_10c_jbrowse.png
+    :alt: from CDSs to fasta.
+    :align: center
+    :width: 100%
+    :name: assignment_1_10c_jbrowse
+    ```  
+
+    d. Yes, 106+137=243, 243/3 = 81 codons and the last codon is a stop codon.  
+
+    e. Yes, MGL...   
+
+    f. Yes, about 24 nucleotides before the transcription start. Transcription starts at the 5' UTR of AT1G65484.1 (same as start of the gene locus). The sequence before that is CTTC<u>**TATATAA**</u>ACCGGTCCAGTATTATT. The bold/underlined bases form the TATA box in line with the definition (see also knowledge clip on DNA, slide 16).  
+
+
+11. 
+    a. Possible tools to use are on [endmemo](http://www.endmemo.com/bio/gc.php) or [Science Buddies](https://www.sciencebuddies.org/science-fair-projects/references/genomics-g-c-content-calculator). GC content for transcript: 34.137931 (length 870). GC content for CDS: 46.91358 (length 243). The GC content in the CDS is much higher.  
+
+    b. The GC content of chromosome 1 is 35.9. It is known that coding regions have higher GC than the background genome, consistent with our observation. The GC content can be found by searching NCBI like this:
+    ```{image} images/Week1/assignment_1_11b_ncbi.png
+    :alt: GC content NCBI query.
+    :align: center
+    :width: 100%
+    :name: assignment_1_11b_ncbi
+    ```
+    You should get to [this](https://www.ncbi.nlm.nih.gov/genome/?term=Arabidopsis+thaliana) page.  
+
+12. Viruses do contain DNA or RNA genomes, but they can only replicate inside a living cell of another organism, and thus are not considered cellular life forms.
+
+13. 
+    ```{list-table}
+    :header-rows: 1
+    :widths: auto
+    :name: assignment_1_13_taxonomy_answers
+
+    * - Species
+      - Domain
+      - Family
+    * - _Moraxella catarrhalis_
+      - Bacteria
+      - Moraxellaceae
+    * - _Haloarcula quadrata_
+      - Archaea
+      - Haloarculaceae
+    * - _Loxodonta cyclotis_
+      - Eukaryota
+      - Elephantidae
+    ```
 :::
 
 <div style="page-break-after: always; visibility: hidden"> 
@@ -1417,32 +1435,32 @@ You should get to [this](https://www.ncbi.nlm.nih.gov/genome/?term=Arabidopsis+t
 2. List three hydrophobic amino acids.
 3. Which amino acids are acidic?
 
-```{list-table}
-:header-rows: 0
-:widths: auto
-:name: assignment_2_3_aa
+    ```{list-table}
+    :header-rows: 0
+    :widths: auto
+    :name: assignment_2_3_aa
 
-* - alanine
-  - glutamine
-  - leucine
-  - serine
-* - arginine
-  - glutamic acid
-  - lysine
-  - threonine
-* - asparagine
-  - glycine
-  - methionine
-  - tryptophan
-* - aspartic acid
-  - histidine
-  - phenylalanine
-  - tyrosine
-* - cysteine
-  - isoleucine
-  - proline
-  - valine
-```
+    * - alanine
+      - glutamine
+      - leucine
+      - serine
+    * - arginine
+      - glutamic acid
+      - lysine
+      - threonine
+    * - asparagine
+      - glycine
+      - methionine
+      - tryptophan
+    * - aspartic acid
+      - histidine
+      - phenylalanine
+      - tyrosine
+    * - cysteine
+      - isoleucine
+      - proline
+      - valine
+    ```
 
 4. Which is incorrect? \
   a. A = Arginine \
