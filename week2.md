@@ -529,9 +529,9 @@ Many laborary techniques in biomedical applications rely on the polymerase chain
 
 :::::{admonition} Box 2.6: The polymerase chain reaction (PCR)
 :class: tip
-Invented in 1983 by Kary B. Mullis, the polymerase chain reaction was first published in 1985 in a study on sickle cell anemia [REF]. Ten years after it's discovery, PCR's many biomedical application gained it's inventor the 1993 Nobel prize (shared with Michael Smith for his work on site-directed mutagenesis).
+Invented in 1983 by Kary B. Mullis, the polymerase chain reaction was first published in 1985 in a study on sickle cell anemia {cite}`saiki1985enzymatic`. Ten years after it's discovery, PCR's many biomedical application gained it's inventor the 1993 Nobel prize (shared with Michael Smith for his work on site-directed mutagenesis).
 
-A method for amplifying DNA, PCR relies on the naturally occurring process of DNA replication by the polymerase enzyme to duplicate DNA (See[Chapter 1](week1)). The reaction uses so-called primers to select which regions of DNA to amplify, and a temperature-cycling scheme to double the number reaction products each cycle ({numref}`PCR`). PCR primers are relatively short fragments of single stranded DNA that 'prime' the polymerase: they determine where DNA replication should start. Primers always come in pairs: by using a forward and reverse primer at opposing ends and strands of the desired DNA region, it is ensured two copies of DNA can be made from one original DNA region.
+A method for amplifying DNA, PCR relies on the naturally occurring process of DNA replication by the polymerase enzyme to duplicate DNA (See [Chapter 1](week1)). The reaction uses so-called primers to select which regions of DNA to amplify, and a temperature-cycling scheme to double the number reaction products each cycle ({numref}`PCR`). PCR primers are relatively short fragments of single stranded DNA that 'prime' the polymerase: they determine where DNA replication should start. Primers always come in pairs: by using a forward and reverse primer at opposing ends and strands of the desired DNA region, it is ensured two copies of DNA can be made from one original DNA region.
 
 During the reaction, typically three different temperature phases are alternated: (1.) the denaturation phase (~95°C) breaks up the double stranded DNA into single stranded DNA, (2.) the annealing phase (~55°C) allows the primers to bind to their complementary DNA forming a small section of double stranded DNA, and (3.) the extension phase (~72°C) allows the polymerase enzyme to extend the double stranded section, creating two full double stranded copies of the original material. Repeating this process keeps on doubling the number of copies, which is why it is referred to as a chain reaction.
 A crucial discovery in the invention of the PCR reaction for biomedical applications is the use of a polymerase enzyme that can withstand the high temperatures of the denaturation phase. The first thermostable polymerase was extracted from a species of bacteria living in hot springs: _Thermus aquaticus_ (hence the name _Taq_ polymerase). 
@@ -542,7 +542,7 @@ A crucial discovery in the invention of the PCR reaction for biomedical applicat
 :name: PCR
 
 The polymerase chain reaction uses primers to select a desired region of DNA, and doubles it's reaction products every cycle.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
+Credits: {cite}`PCR_NHGR`.
 :::
 :::::
 
