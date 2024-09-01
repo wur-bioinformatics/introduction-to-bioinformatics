@@ -11,7 +11,7 @@ Make sure you understand what DNA and protein alignments are used for and that y
 You should be familiar with concepts related to alignments and sequence search, like dotplots, alignment scores, e-values, and substitution matrices.
 Make sure you understand what multiple alignments are used for and that you can explain the differences between different solutions for the MSA problem.
 You should understand what motifs are and the basics of profile hidden Markov models.
-Finally, make sure that you know the basics of primer design.
+This chapter concludes with a section on PCR primer design as an example on the use of sequence alignment algorithms in practice.
 
 During the practical you will learn how to make pairwise and multiple-sequence alignments, perform sequence searches and motif analyses, design primers, and discuss the results.
 
@@ -523,9 +523,41 @@ The ability to convert a multiple sequence alignment into a collection of probab
 The ability to group biological sequences based on conserved/co-occuring regions and subsequently using this for sequence search is exploited in a wide range of biological sequence databases. Some of these databases have been introduced in [chapter 1](week1), here we briefly outline a few more details on how HMMs are incorporated into many of these resources by using [Pfam](Week1_pfam) as an example. All entries in the PFAM database are represented by profile HMMs. The entries are subdivided into one of six categories: family, domain, repeat, conserved site, coiled coil, or disordered. The main distinction between these six categories is the length of the matching sequences: a 'family' PFAM HMM is expected to match across the entire length of a protein sequence, a 'conserved site' is typically only a small region in a protein. As such, multiple PFAM HMMs can match a given protein sequence. The combination of matching PFAM HMMs on a given sequence can be used to give a fine-grained description of known elements in a sequence.
 ```
 
-## Primer design
+## PCR primer design
 
-STILL TO BE ADDED
+Many laborary techniques in biomedical applications rely on the polymerase chain reaction (PCR, see box 2.6) for amplifying specific fragments of DNA. Examples include pathogen detection, analyzing genetic variation, targeted mutagenesis, de novo protein synthesis, and studying gene expression patterns. Which DNA fragments are amplified is determined largely by which PCR _primers_ are used. To design primers that succesfully amplify the DNA of interest several computational steps are combined. This section highlight some of these bioinformatic considerations.
+
+:::::{admonition} Box 2.6: The polymerase chain reaction (PCR)
+:class: tip
+Invented in 1983 by Kary B. Mullis, the polymerase chain reaction was first published in 1985 in a study on sickle cell anemia [REF]. Ten years after it's discovery, PCR's many biomedical application gained it's inventor the 1993 Nobel prize (shared with Michael Smith for his work on site-directed mutagenesis).
+
+A method for amplifying DNA, PCR relies on the naturally occurring process of DNA replication by the polymerase enzyme to duplicate DNA (See[Chapter 1](week1)). The reaction uses so-called primers to select which regions of DNA to amplify, and a temperature-cycling scheme to double the number reaction products each cycle ({numref}`PCR`). PCR primers are relatively short fragments of single stranded DNA that 'prime' the polymerase: they determine where DNA replication should start. Primers always come in pairs: by using a forward and reverse primer at opposing ends and strands of the desired DNA region, it is ensured two copies of DNA can be made from one original DNA region.
+
+During the reaction, typically three different temperature phases are alternated: (1.) the denaturation phase (~95°C) breaks up the double stranded DNA into single stranded DNA, (2.) the annealing phase (~55°C) allows the primers to bind to their complementary DNA forming a small section of double stranded DNA, and (3.) the extension phase (~72°C) allows the polymerase enzyme to extend the double stranded section, creating two full double stranded copies of the original material. Repeating this process keeps on doubling the number of copies, which is why it is referred to as a chain reaction.
+A crucial discovery in the invention of the PCR reaction for biomedical applications is the use of a polymerase enzyme that can withstand the high temperatures of the denaturation phase. The first thermostable polymerase was extracted from a species of bacteria living in hot springs: _Thermus aquaticus_ (hence the name _Taq_ polymerase). 
+
+:::{figure} images/Week2/PCR.jpg
+:alt: PCR reaction product doubling
+:width: 100%
+:name: PCR
+
+The polymerase chain reaction uses primers to select a desired region of DNA, and doubles it's reaction products every cycle.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
+:::
+:::::
+
+PCR primers typically have to meet several requirements to result in a successful PCR product: they have to be biochemically feasible (i.e. denature, anneal, and extend at the right temperature), they have to be specific (only amplify the region of interest), they should produce a product of a reasonable size (~500-1000 nucleotides, depending on the application), and they should be stable as single stranded DNA. The combination of these requirements typically allows primers of ~18-30 nucleotides long. To aid in the quick design of potentially successful primers, tools such as Primer-BLAST or Primer3+ automatically check most of the mentioned requirements. For example, Primer-BLAST lets a user upload a sequence of DNA that should be amplified, and can be configured to find primer products of a specific size. In addition, putative off-target amplification (i.e. specificity) is checked using BLAST on a database of choice, and several desired temperatures can be configured. 
+
+```{admonition} Approximating PCR denaturation temperature $T_m$
+:class: important
+The temperature at which approximately half of the DNA strands in a solution are in a denatured stated is referred to as the _melting temperature_ $T_m$, and is an important parameter in primer design. The exact melting temperature depends on the exact length and nucleotide composition of the DNA fragment, but for short sequences a useful approximation exists. This approximation can come in handy for quick checks and predictions.
+
+For primers shorter than 14 nucleotides, the melting temperature can be approximated with the following formula:
+
+$T_m = 2 * (A + T) + 4 * (G + C)$
+
+Where A, C, G, and T are the number of respective nucleotides in the primer.
+```
 
 %**OLD**
 %
