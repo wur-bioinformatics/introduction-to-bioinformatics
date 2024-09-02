@@ -14,14 +14,14 @@ execute:
 # Define the name of the latex output file for PDF builds
 latex:
   latex_documents:
-    targetname: BIF20306reader.tex
+    targetname: BIF20306book.tex
 
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
     - references.bib
 # Information about where the book exists on the web
 # repository:
-#  url: https://git.wur.nl/bioinformatics/bif20806-reader  # Online location of your book
+#  url: https://git.wur.nl/bioinformatics/bif20806-book  # Online location of your book
 #  path_to_book: docs  # Optional path to your book, relative to the repository root
 #  branch: master  # Which branch of the repository should be used when creating links (optional)
 
@@ -36,7 +36,7 @@ bibtex_bibfiles:
 html:
   extra_footer: |
     <p>
-    Text in the reader is provided under a <a href="https://creativecommons.org/">Creative Commons</a> <a href="https://creativecommons.org/licenses/by-nc/4.0/">BY-NC 4.0</a> license.
+    Text in the book is provided under a <a href="https://creativecommons.org/">Creative Commons</a> <a href="https://creativecommons.org/licenses/by-nc/4.0/">BY-NC 4.0</a> license.
     Figures have their licenses stated individually.
     </p>
 
