@@ -479,8 +479,8 @@ However, it was not built from scratch: it heavily builds on previously develope
 The most recent AlphaFold implementation can be summarized in three key steps that are recognizable modules linking to previous concepts and knowledge.
 
 The first module processes the protein sequences into so-called numeric "representations" that can be used as input for the machine learning model.
-To create these representations, first a database search is performed ([chapter 2](week2)).
-Following that, two representations are created (i.e., the two paths in {numref}`alphafold_approach`): a multiple sequence alignment (MSA – a concept introduced and used in [chapter 2](week2) and [chapter 3](week3)), which captures sequence variation; and a representation of how likely all residues interact with each other (i.e., that are close to each other in the 3D structure), in the form of a contact map.
+To create these representations, first a database search is performed ([chapter 2](chapter2)).
+Following that, two representations are created (i.e., the two paths in {numref}`alphafold_approach`): a multiple sequence alignment (MSA – a concept introduced and used in [chapter 2](chapter2) and [chapter 3](chapter3)), which captures sequence variation; and a representation of how likely all residues interact with each other (i.e., that are close to each other in the 3D structure), in the form of a contact map.
 The database search is also used to find if there are any suitable "templates" in the PDB database.
 Up to four top templates can be chosen to serve as a starting position for the prediction models.
 Please note that this is the first step in homology modelling as well, and that AlphaFold can make "good" predictions on a good quality multiple sequence alignment (MSA) alone; hence, there is no need for templates to be there.
