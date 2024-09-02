@@ -6,8 +6,8 @@ root: intro
 options:
   numbered: 1
 chapters:
-  - file: week1
-  - file: week2
-  - file: week3
-  - file: week4
-  - file: week5
+  - file: chapter1
+  - file: chapter2
+  - file: chapter3
+  - file: chapter4
+  - file: chapter5

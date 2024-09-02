@@ -29,11 +29,35 @@ div.citation p {
     text-align: center;
 }
 
-details.answer {
+details.answers {
     display: none;
 }
 
 @media print {
+    section#what-is-bioinformatics,
+    section#teaching-bioinformatics,
+    section#introduction,
+    section#dot-plots,
+    section#pairwise-alignment,
+    section#search-in-sequence-databases,
+    section#multiple-sequence-alignment,
+    section#motifs,
+    section#profile-hidden-markov-models-phmms,
+    section#primer-design,
+    section#rationale,
+    section#phylogenetic-trees-structure-interpretation,
+    section#characters-trees,
+    section#main-approaches-to-tree-building,
+    section#estimating-sequence-divergence,
+    section#maximum-likelihood-tree-building,
+    section#recap-tree-building-methods,
+    section#glossary,
+    section#predicting-protein-structures-the-sequence-structure-function-paradigm,
+    section#secondary-protein-structure-prediction,
+    section#tertiary-protein-structure-prediction,
+    figure#omics-levels,
+    section#genomics-and-sequencing,
+    section#functional-genomics-and-systems-biology,
     section#biological-background,
     section#genome-annotation,
     section#databases,
@@ -42,7 +66,8 @@ details.answer {
     .onlyprint #print-main-content {
         display: none;
     }
-    details.answer {
+    details.answers {
         display: initial !important;
     }
 }
+/*DO NOT REMOVE THIS LINE*/

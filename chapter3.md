@@ -2,10 +2,10 @@
 
 ```{epigraph}
 
--- Freek T. Bakker - WUR Biosystematics Group
+-- Freek T. Bakker
 ```
 
-In this chapter you will learn to use a _Multiple Sequence Alignment_ (MSA), like the ones you compiled in [chapter 2](week2), and visualize the variation it contains as a phylogenetic tree.
+In this chapter you will learn to use a _Multiple Sequence Alignment_ (MSA), like the ones you compiled in [chapter 2](chapter2), and visualize the variation it contains as a phylogenetic tree.
 A phylogenetic tree is considered a highly efficient _data structure_ summarizing the data and its variation contained in your MSA.
 A tree is built from _characters_ which are the individual columns or positions in your MSA.
 Characters have states, which are in this case the individual nucleotide or amino acid _substitutions_ occurring in that position (see [Characters & trees](Week3_characters_trees) below).
@@ -1257,7 +1257,6 @@ Transversion
   a pyrimidine ↔ purine substitution
 ```
 :::
-%PRACTICAL_SEPARATOR%
 
 ---
 
@@ -1273,9 +1272,7 @@ Thus, make sure that you develop your practical skills now, in order to apply th
 
 **Note, the answers will be published after the practical!**
 
-:::::{admonition} **Phylogenetic tree reconstruction**
-
-_Assignment I: Make an amino acid based PLT1 tree in MEGA11 & visualize it in iTOL (30 minutes)_
+:::::{admonition} _Assignment I: Make an amino acid based PLT1 tree in MEGA11 & visualize it in iTOL (30 minutes)_
 
 As a start, in this assignment you are going to express relationships among a set of 10 PLT1 amino acid sequences for which you generated a multiple sequence alignment (MSA) last chapter.
 You will do this by building a parsimony tree, using _Molecular Evolutionary Genetics Analysis_ (**[MEGA 11](https://www.megasoftware.net/)**).
@@ -1318,8 +1315,8 @@ Therefore, it will be good to take a look at the 'condensed' version of our Boot
 
 _Questions:_
 
-1. _Why are the topologies of the bootstrap consensus and that of the most parsimonious tree not the same?
-2. _What does the polytomy in your condensed bootstrap tree represent?_
+1. Why are the topologies of the bootstrap consensus and that of the most parsimonious tree not the same?  
+2. What does the polytomy in your condensed bootstrap tree represent?
 
 Visualising your trees is an essential step in phylogenetic analysis, as the (hierarchical) information contained in trees is usually graphical in nature.
 Important aspects of picturing phylogenetic trees are:
@@ -1367,18 +1364,22 @@ Therefore, you want to show the tree unrooted by selecting 'Unrooted'.
 
 With these steps you have gone from a tree generated in MEGA 11 to a nice tree picture, a procedure that you can apply to other trees generated in this practical and of course in your project later on in the course.
 Also, use iTOL to store your trees and keep an overview of all trees generated.
-
-%ANSWER%:::{dropdown} Assignment I answers
-%ANSWER%1. Why are the topologies of the bootstrap consensus and that of the most parsimonious tree not the same? \
-%ANSWER%**Probably because they are un-rooted or rooted differently. In case an outgroup is known, rooting it with that would probably give it same or at least congruent topologies. Alternatively, when rooted properly, it could still be that some weak nodes in the parsimony tree didn’ t make it in the bootstrap consensus. This would also cause topology changes, though not necessarily incongruence.**
-%ANSWER%2. What does the polytomy in your condensed bootstrap tree represent? \
-%ANSWER%**That there not enough synapomorphies in the MSA to resolve the -now collapsed- nodes in the polytomy. Alternatively, it could also bet he cases that there are enough, but conflicting, synapomorphies. That way you would also get a polytomy.**
-%ANSWER%:::
 :::::
 
-:::::{admonition} **Estimating sequence divergence**
+<div style="page-break-after: always; visibility: hidden"> 
+\pagebreak 
+</div>
 
-_Assignment II: Estimating sequence divergence: exploring the MSA (20 minutes)_
+:::{dropdown} Assignment I answers
+:class-container: answers
+:open:
+1. Why are the topologies of the bootstrap consensus and that of the most parsimonious tree not the same?  
+**Probably because they are un-rooted or rooted differently. In case an outgroup is known, rooting it with that would probably give it same or at least congruent topologies. Alternatively, when rooted properly, it could still be that some weak nodes in the parsimony tree didn’ t make it in the bootstrap consensus. This would also cause topology changes, though not necessarily incongruence.**
+2. What does the polytomy in your condensed bootstrap tree represent?  
+**That there not enough synapomorphies in the MSA to resolve the -now collapsed- nodes in the polytomy. Alternatively, it could also bet he cases that there are enough, but conflicting, synapomorphies. That way you would also get a polytomy.**
+:::
+
+:::::{admonition} _Assignment II: Estimating sequence divergence: exploring the MSA (20 minutes)_
 
 ```{image} images/Week3/assignment_2_1.png
 :alt: Proteobacterial 16S rDNA.
@@ -1417,19 +1418,31 @@ This alignment does not contain an outgroup sequence, therefore, in principle, w
 
 _Questions:_
 
-1. _What do the alignment-gaps represent?_
-2. _What is the % of phylogenetic informative (Pi) sites in this alignment?_
-3. _How could we try and find a proper outgroup sequence for our alignment?_
-4. _Given that our trees will be unrooted can we still infer monophyly of the different Proteobacterial classes?_
+1. What do the alignment-gaps represent?
+2. What is the % of phylogenetic informative (Pi) sites in this alignment?
+3. How could we try and find a proper outgroup sequence for our alignment?
+4. Given that our trees will be unrooted can we still infer monophyly of the different Proteobacterial classes?
+:::::
 
-%ANSWER%:::{dropdown} Assignment II answers
-%ANSWER%1. They represent length-variation among the sequences (not 'holes' in the DNA..) and have been decided by the operator compiling the alignment, i.e., there can be subjectivity in where exactly to place the gaps.
-%ANSWER%2. These can be found in the bottom–left window corner: V=828, Pi=666, both out of 2444 total sites (34% and 27%) Pi sites are sites in which at least two sequences have a nucleotide different from the rest. Such sites have the potential to build at least the smallest clade possible, that of two terminals.
-%ANSWER%3. When we know that an outgroup has not been included in our ingroup (i.e., the set of sequences the phylogenetic relationships among which we want to estimate) an additional sequence, probably from GenBank or other data bases, would need to be added. BLAST or psiBLAST might be a good tool to find sequences that share an MRCA with our ingroup, by selecting among BLAST hits those sequences with a sequence divergence greater than that among ingroup sequences. (But be aware that these could also represent 'outcast' sequences rather than outgoups!) Alternatively, the (taxonomic) literature may be useful to guide outgroup selection.
-%ANSWER%4. No, strictly speaking not ("no rooting no monophyly.."). We would need that outgroup! On the other hand, it is tempting to consider the main 'clades' in your tree as clades indeed, especially when the MRCAs for each are on long branches apart from each other. Wilkinson et al. have suggested to call these 'clans' instead of 'clades'. Possibly, the different clades may not change so much upon different rooting scenarios. Their relative branching order may well do.
-%ANSWER%:::
+<div style="page-break-after: always; visibility: hidden"> 
+\pagebreak 
+</div>
 
-_Assignment III: Estimating sequence divergence: Pairwise distances (30 minutes)_
+:::{dropdown} Assignment II answers
+:class-container: answers
+:open:
+
+1. They represent length-variation among the sequences (not 'holes' in the DNA..) and have been decided by the operator compiling the alignment, i.e., there can be subjectivity in where exactly to place the gaps.
+2. These can be found in the bottom–left window corner: V=828, Pi=666, both out of 2444 total sites (34% and 27%) Pi sites are sites in which at least two sequences have a nucleotide different from the rest. Such sites have the potential to build at least the smallest clade possible, that of two terminals.
+3. When we know that an outgroup has not been included in our ingroup (i.e., the set of sequences the phylogenetic relationships among which we want to estimate) an additional sequence, probably from GenBank or other data bases, would need to be added. BLAST or psiBLAST might be a good tool to find sequences that share an MRCA with our ingroup, by selecting among BLAST hits those sequences with a sequence divergence greater than that among ingroup sequences. (But be aware that these could also represent 'outcast' sequences rather than outgoups!) Alternatively, the (taxonomic) literature may be useful to guide outgroup selection.
+4. No, strictly speaking not ("no rooting no monophyly.."). We would need that outgroup! On the other hand, it is tempting to consider the main 'clades' in your tree as clades indeed, especially when the MRCAs for each are on long branches apart from each other. Wilkinson et al. have suggested to call these 'clans' instead of 'clades'. Possibly, the different clades may not change so much upon different rooting scenarios. Their relative branching order may well do.
+:::
+
+<div style="page-break-after: always; visibility: hidden"> 
+\pagebreak 
+</div>
+
+:::::{admonition} _Assignment III: Estimating sequence divergence: Pairwise distances (30 minutes)_
 
 Now close the Data Explorer and go to `Distance`, for computing a pairwise distance comparison among all sequences in the alignment.
 Select `Compute Pairwise Distances`.
@@ -1465,32 +1478,34 @@ What is the overall average distance now?
 
 _Questions:_
 
-1. _Why do these distances values get increasingly larger (apart from the last step)?_
-2. _Can you think of cases where the raw p-difference would be ok for measuring evolutionary distance?_
-3. _What is Complete deletion (check your Captions) and how does it compare with Pairwise deletion?_
-4. _In your opinion, what would be the best way of modelling sequence divergence among these sequences?_
-
-%ANSWER%:::{dropdown} Assignment III answers
-%ANSWER%From the Average menu, select Overall. What is the overall average sequence divergence among these sequences? \
-%ANSWER%**0.183**. \
-%ANSWER%Now repeat the above steps but this time selecting Kimura 2 parameter (K2P) model. What is now the overall average distance? (Always use the Caption menu option to verify what your settings were) \
-%ANSWER%**0.213**. \
-%ANSWER%Repeat the above steps again, this time selecting both K2P model _and_ Rates among sites = Gamma distributed (G). What is now the overall average distance? \
-%ANSWER%**0.25**. \
-%ANSWER%Now select the Tamura-Nei (TN) model under Model/Method and calculate your overall average distance. \
-%ANSWER%**0.253**.
-%ANSWER%Repeat the last step but this time changing Gaps/Missing Data Treatment to Complete deletion. What is the overall average distance now? \
-%ANSWER% **0.227**.
-%ANSWER%1. It is because increasingly more realistic/sophisticated modelling of sequence divergence is taking into account increasingly more 'unseen events'. Simple models such as Jukes-Cantor can’t notice the subtleties that the more expensive models can.
-%ANSWER%2. In case of recent divergence where only few substitutions have ocurred. For instance, among DNA barcodes for species ID.
-%ANSWER%3. Sequences are being compared on a pair-wise basis, i.e., _everybody is compared with everybody_. When there is length-variation present in the MSA, comparison of positions lacking in one sequence cannot be made. Such positions could then be ignored for that comparison (between those two sequences) and this is _Pairwise deletion_. The alternative can be _Complete deletion_ in which the entire columns (positions, characters) in which this length-variation occurs is deleted prior to pairwise comparison. This way you end-up with an MSA in which no length-variation exists anymore and quite possibly, in the process you will have 'thrown away' some valuable variation (substitutions) in the length-variable regions. Especially if the length variation contained long indels.
-%ANSWER%4. Ideally this would depend on the overall level of sequence similarity, or _p_-distance: if it is < 2% use JC or K2P, if it is > 5% use GTR and if you see high-diverse regions alternated with 'quiet' ones definitively use Gamma! The idea is that the higher the _p_-distance the more evolution has occurred and probably more sophisticated models are needed to describe all that. In this case _p_-distance was 0.183 which is already pretty high. Therefore, a more complex ('expensive') model is better here. The other thing is that because of some very large inserts the complete deletion option may be better(?), although for smaller gaps and inserts ('indels') this means sacrificing a lot of variation (synapomorphies!). Best to try both complete _and_ pairwise deletion and assess and discuss difference in results, if any.
-%ANSWER%:::
+1. Why do these distances values get increasingly larger (apart from the last step)?
+2. Can you think of cases where the raw p-difference would be ok for measuring evolutionary distance?
+3. What is Complete deletion (check your Captions) and how does it compare with Pairwise deletion?
+4. In your opinion, what would be the best way of modelling sequence divergence among these sequences?
 :::::
 
-:::::{admonition} **From sequence divergence to trees**
 
-_Assignment IV: From sequence divergence to trees: Distance trees (60 minutes)_
+:::{dropdown} Assignment III answers
+:class-container: answers
+:open:
+
+From the Average menu, select Overall. What is the overall average sequence divergence among these sequences? \
+**0.183**. \
+Now repeat the above steps but this time selecting Kimura 2 parameter (K2P) model. What is now the overall average distance? (Always use the Caption menu option to verify what your settings were) \
+**0.213**. \
+Repeat the above steps again, this time selecting both K2P model _and_ Rates among sites = Gamma distributed (G). What is now the overall average distance? \
+**0.25**. \
+Now select the Tamura-Nei (TN) model under Model/Method and calculate your overall average distance. \
+**0.253**.
+Repeat the last step but this time changing Gaps/Missing Data Treatment to Complete deletion. What is the overall average distance now? \
+ **0.227**.
+1. It is because increasingly more realistic/sophisticated modelling of sequence divergence is taking into account increasingly more 'unseen events'. Simple models such as Jukes-Cantor can’t notice the subtleties that the more expensive models can.
+2. In case of recent divergence where only few substitutions have ocurred. For instance, among DNA barcodes for species ID.
+3. Sequences are being compared on a pair-wise basis, i.e., _everybody is compared with everybody_. When there is length-variation present in the MSA, comparison of positions lacking in one sequence cannot be made. Such positions could then be ignored for that comparison (between those two sequences) and this is _Pairwise deletion_. The alternative can be _Complete deletion_ in which the entire columns (positions, characters) in which this length-variation occurs is deleted prior to pairwise comparison. This way you end-up with an MSA in which no length-variation exists anymore and quite possibly, in the process you will have 'thrown away' some valuable variation (substitutions) in the length-variable regions. Especially if the length variation contained long indels.
+4. Ideally this would depend on the overall level of sequence similarity, or _p_-distance: if it is < 2% use JC or K2P, if it is > 5% use GTR and if you see high-diverse regions alternated with 'quiet' ones definitively use Gamma! The idea is that the higher the _p_-distance the more evolution has occurred and probably more sophisticated models are needed to describe all that. In this case _p_-distance was 0.183 which is already pretty high. Therefore, a more complex ('expensive') model is better here. The other thing is that because of some very large inserts the complete deletion option may be better(?), although for smaller gaps and inserts ('indels') this means sacrificing a lot of variation (synapomorphies!). Best to try both complete _and_ pairwise deletion and assess and discuss difference in results, if any.
+:::
+
+:::::{admonition} _Assignment IV: From sequence divergence to trees: Distance trees (60 minutes)_
 
 After having computed **Pairwise Distances** among the sequences, you will now perform **distance tree** analysis (NJ), converting pairwise sequence distances into (distance) trees.
 
@@ -1519,26 +1534,37 @@ This is exactly the same tree structure with the same branch lengths, but it is 
 ```
 
 _Questions:_
-1. _Keeping in mind the dependence on root-choice, what can you say about monophyly of the α-, β-, γ-, δ-, and ε- Proteobacteria based on this sequence alignment?_
-2. _Applying the rooting as above (assigning _Bdellovibrio_ and _Heliobacter_ as outgroup, are your NJ trees congruent with those depicted in that figure? If not, what could be the cause?_
+1. Keeping in mind the dependence on root-choice, what can you say about monophyly of the α-, β-, γ-, δ-, and ε- Proteobacteria based on this sequence alignment?
+2. Applying the rooting as above (assigning _Bdellovibrio_ and _Heliobacter_ as outgroup, are your NJ trees congruent with those depicted in that figure? If not, what could be the cause?
+:::::
+<div style="page-break-after: always; visibility: hidden"> 
+\pagebreak 
+</div>
 
-%ANSWER%:::{dropdown} Assignment IV answers
-%ANSWER%1. With Neighbor Joining, using Tajima Nei substitution model and with gamma modelled rate distribution (shape parameter α=1), there is monophyly of the beta class (blue), for the gammas (red) their MRCA would also have lead to the beta class, therefore the gammas are paraphyletic. The other three classes are each monophyletic, however this may change when proper rooting is applied.
-%ANSWER%2. Below is the same NJ tree as in step 1 above, left: rooted on delta+epsilon , and right: mid point rooted (both trees based on Pairwise deletion). This result in a different placement of the α class (green, which is sister to yellow and purple in the mid-point rooted tree), but as the internodes connecting this clade are very short (i.e. not many characters supporting it), this topological incongruence is weak and therefore we don’t attach main conclusions to it.
-%ANSWER%```{image} images/Week3/assignment_4_2.png
-%ANSWER%:alt: rooted delta+epsilon tree and mid point rooted tree.
-%ANSWER%:align: center
-%ANSWER%:width: 100%
-%ANSWER%:name: assignment_4_2
-%ANSWER%```
-%ANSWER%:::
-%ANSWER%The only difference with the trees from assignment II (from Zvelebil & Baum) is with regards the placement of _Coxiella burnetii_, which is nested in the red cluster in our NJ trees, but sister to red+blue in Zv&B.
+:::{dropdown} Assignment IV answers
+:class-container: answers
+:open:
+
+1. With Neighbor Joining, using Tajima Nei substitution model and with gamma modelled rate distribution (shape parameter α=1), there is monophyly of the beta class (blue), for the gammas (red) their MRCA would also have lead to the beta class, therefore the gammas are paraphyletic. The other three classes are each monophyletic, however this may change when proper rooting is applied.
+2. Below is the same NJ tree as in step 1 above, left: rooted on delta+epsilon , and right: mid point rooted (both trees based on Pairwise deletion). This result in a different placement of the α class (green, which is sister to yellow and purple in the mid-point rooted tree), but as the internodes connecting this clade are very short (i.e. not many characters supporting it), this topological incongruence is weak and therefore we don’t attach main conclusions to it.
+```{image} images/Week3/assignment_4_2.png
+:alt: rooted delta+epsilon tree and mid point rooted tree.
+:align: center
+:width: 100%
+:name: assignment_4_2
+```
+
+The only difference with the trees from assignment II (from Zvelebil & Baum) is with regards the placement of _Coxiella burnetii_, which is nested in the red cluster in our NJ trees, but sister to red+blue in Zv&B.
 The trees seem different with regards to the placement of yellow, green and purple, but all trees, ours and Zv&B have ((yellow, purple)green), it’s just that in Zv&B this clade is flipped/turned around.
 This does not affect the information in the tree (which is hierarchical) and therefore there is no conflict among the trees with regards this part.
 
 The reason for the different placement of _Coxiella burnetii_ could well be the fact that in Zv&B maximum likelihood was used whereas our trees are NJ distance trees.
 
-_Assignment V: From sequence divergence to trees: Likelihood trees (60 minutes)_
+:::
+
+
+
+:::::{admonition} _Assignment V: From sequence divergence to trees: Likelihood trees (60 minutes)_
 
 With the maximum likelihood (ML) approach an explicit model of nucleotide substitution is applied in order to calculate the probability of 'observing the data'.
 This means that the probability of having each site change as observed is calculated _given_ a certain tree topology (out of many such topologies).
@@ -1726,8 +1752,8 @@ Try finding the LnL values in the cells marked with 'o' below.
 
 _Questions:_
 
-1. _Why are the LnL values so different among character sets (deletion treatments) but not among models?_
-2. _Why don’t we just go straight to the most complex model, surely that one would fit any data set best?_
+1. Why are the LnL values so different among character sets (deletion treatments) but not among models?
+2. Why don’t we just go straight to the most complex model, surely that one would fit any data set best?
 
 In order to visualise your IQ-TREE ML tree with bootstrap values on, use **iTOL** as explained above in Assignment I.
 Go to iTOL and open and upload the `.contree` file you downloaded in the .zip file from the IQ-TREE webserver.
@@ -1735,64 +1761,67 @@ The extension 'contree' refers to the fact that you are dealing with a bootstrap
 
 Make a nice tree picture, make sure it is in the same orientation and (un)rooting, after which you can save it by exporting in .svg graphics format.
 Compare this to the figure in assignment II, above, and discuss any differences, both topological and in terms of nodal support, that you may see.
-
-%ANSWER%:::{dropdown} Assignment V answers
-%ANSWER%How do the five Proteobacterial classes group in this analysis? Is the ML tree topology different from the NJ tree you calculated under at the start of assignment IV? \
-%ANSWER%**There are some important differences: the green clade has switched position, as has the _Xyllella/Xanthomonas_ clade. The NJ and ML trees are clearly in conflict topologically.**
-%ANSWER%```{image} images/Week3/assignment_5_1.png
-%ANSWER%:alt: ML tree.
-%ANSWER%:align: center
-%ANSWER%:width: 50%
-%ANSWER%:name: assignment_5_1
-%ANSWER%```
-%ANSWER%Open the .log file that is included in your .zip bundle from IQ-TREE and find the 'Best score found' after finilazing tree search. How does it compare with the model testing best Ln score? Can you explain the difference? \
-%ANSWER%**Best-fitting model LogL = -19303.1910** \
-%ANSWER%**BEST SCORE FOUND LogL = -19284.082** \
-%ANSWER%**This is still quite a bit better than the best fitting LnL score, probably because during the finalizing tree search a really thorough exploration of tree space has been conducted by IQ TREE, yielding a tree that better fits the data and hence, with higher LnL (the MLE!)**
-%ANSWER%
-%ANSWER%Now compare the best LogL score of your IQ-TREE analysis with the best log likelihood value that you found in MEGA 11 in before. Are they the same? \
-%ANSWER%**Using the GTR + Gamma model the LnL value is 11894.34; however using the winning model from the IQ TREE analysis (TN + I + Gamma) this value is 11905.25, which is slightly worse. When repeating these analyses, this time with pairwise deletion the LnL’s become 13869.69 and 13882.63 respectively. In any case, these values are still much higher than those found in the IQ TREE search. The reason for that is probably that both analyses have been based on different number of positions from the same alignment (check in IQ TREE iq.tre files and in the MEGA Captions)**.
-%ANSWER%```{list-table}
-%ANSWER%:header-rows: 1
-%ANSWER%:widths: auto
-%ANSWER%:name: assignment_5_quiz_answers
-%ANSWER%
-%ANSWER%* - Model
-%ANSWER%  - MEGA
-%ANSWER%  - MEGA
-%ANSWER%  - MEGA
-%ANSWER%  - IQ-TREE
-%ANSWER%* - #
-%ANSWER%  - Pairwise deletion
-%ANSWER%  - Complete deletion
-%ANSWER%  - Use all sites
-%ANSWER%  - #
-%ANSWER%* - TN+I+G
-%ANSWER%  - **-13858.85**
-%ANSWER%  - -11895.49
-%ANSWER%  - **-19347.05**
-%ANSWER%  - **-19303.1910**
-%ANSWER%* - GTR+G
-%ANSWER%  - -13847.07
-%ANSWER%  - **-13858.85**
-%ANSWER%  - -19330.23
-%ANSWER%  - **-19300.0064**
-%ANSWER%```
-%ANSWER% Once again this shows that LnL values should not be compared **between datasets**, but between **models (or trees)** on **one and the same dataset!**
-%ANSWER%
-%ANSWER%1. Why are the LnL values so different among character sets (deletion treatments) but not among models? \
-%ANSWER%**Using differing number of sites apparently has a large effect on LnL calculation; as indicated above, likelihood values should only be compared from the same dataset. Comparing models has a much smaller effect as only one or two**
-%ANSWER%2. Why don’t we just go straight to the most complex model, surely that one would fit any data set best? \
-%ANSWER%**Tempting as it may be, the most complex model will contain the largest amount of parameters, for each of which a value needs to be estimated from the 'signal' in the data. There may not be enough signal however to feed all parameters, potentially resulting in imprecise likelihood calculations.**
-%ANSWER%
-%ANSWER%Compare this to the figure in assignment II, above, and discuss any differences, both topological and in terms of nodal support, that you may see. \
-%ANSWER%**Make sure your rooting is correct, try to find clades in common between your ML tree and the trees in the figure in assignment II; ideally the coloured labels will help you 'find' the clades or establish groups are paraphyletic (or even polyphyletic). Also check the bootstrap support for nodes and explore whether they correlate with the length of their branches.**
-%ANSWER%:::
 :::::
+<div style="page-break-after: always; visibility: hidden"> 
+\pagebreak 
+</div>
 
-:::::{admonition} **Phylogeny estimation of TDP DNA sequences**
+:::{dropdown} Assignment V answers
+:class-container: answers
+:open:
+How do the five Proteobacterial classes group in this analysis? Is the ML tree topology different from the NJ tree you calculated under at the start of assignment IV? \
+**There are some important differences: the green clade has switched position, as has the _Xyllella/Xanthomonas_ clade. The NJ and ML trees are clearly in conflict topologically.**
+```{image} images/Week3/assignment_5_1.png
+:alt: ML tree.
+:align: center
+:width: 50%
+:name: assignment_5_1
+```
+Open the .log file that is included in your .zip bundle from IQ-TREE and find the 'Best score found' after finilazing tree search. How does it compare with the model testing best Ln score? Can you explain the difference? \
+**Best-fitting model LogL = -19303.1910** \
+**BEST SCORE FOUND LogL = -19284.082** \
+**This is still quite a bit better than the best fitting LnL score, probably because during the finalizing tree search a really thorough exploration of tree space has been conducted by IQ TREE, yielding a tree that better fits the data and hence, with higher LnL (the MLE!)**
 
-_Assignment VI - Optional: Trees are as good as the MSA they’re based on: phylogeny estimation of TDP DNA sequences (60 minutes)_
+Now compare the best LogL score of your IQ-TREE analysis with the best log likelihood value that you found in MEGA 11 in before. Are they the same? \
+**Using the GTR + Gamma model the LnL value is 11894.34; however using the winning model from the IQ TREE analysis (TN + I + Gamma) this value is 11905.25, which is slightly worse. When repeating these analyses, this time with pairwise deletion the LnL’s become 13869.69 and 13882.63 respectively. In any case, these values are still much higher than those found in the IQ TREE search. The reason for that is probably that both analyses have been based on different number of positions from the same alignment (check in IQ TREE iq.tre files and in the MEGA Captions)**.
+```{list-table}
+:header-rows: 1
+:widths: auto
+:name: assignment_5_quiz_answers
+
+* - Model
+  - MEGA
+  - MEGA
+  - MEGA
+  - IQ-TREE
+* - #
+  - Pairwise deletion
+  - Complete deletion
+  - Use all sites
+  - #
+* - TN+I+G
+  - **-13858.85**
+  - -11895.49
+  - **-19347.05**
+  - **-19303.1910**
+* - GTR+G
+  - -13847.07
+  - **-13858.85**
+  - -19330.23
+  - **-19300.0064**
+```
+ Once again this shows that LnL values should not be compared **between datasets**, but between **models (or trees)** on **one and the same dataset!**
+
+1. Why are the LnL values so different among character sets (deletion treatments) but not among models? 
+**Using differing number of sites apparently has a large effect on LnL calculation; as indicated above, likelihood values should only be compared from the same dataset. Comparing models has a much smaller effect as only one or two**
+2. Why don’t we just go straight to the most complex model, surely that one would fit any data set best? 
+**Tempting as it may be, the most complex model will contain the largest amount of parameters, for each of which a value needs to be estimated from the 'signal' in the data. There may not be enough signal however to feed all parameters, potentially resulting in imprecise likelihood calculations.**
+
+Compare this to the figure in assignment II, above, and discuss any differences, both topological and in terms of nodal support, that you may see. 
+**Make sure your rooting is correct, try to find clades in common between your ML tree and the trees in the figure in assignment II; ideally the coloured labels will help you 'find' the clades or establish groups are paraphyletic (or even polyphyletic). Also check the bootstrap support for nodes and explore whether they correlate with the length of their branches.**
+:::
+
+:::::{admonition} _Assignment VI - Optional: Trees are as good as the MSA they’re based on: phylogeny estimation of TDP DNA sequences (60 minutes)_
 
 The objective of this assignment is to learn how to use the software package _Mesquite_ for the handling and manipulation of DNA sequence alignments prior to phylogenetic analysis.
 Mesquite does not (really) build trees, but enables you to optimise alignments, edit character matrices, trace characters over phylogenetic trees, and, quite useful, convert from and to an impressive list of file formats.
@@ -1885,18 +1914,26 @@ MAFFT alignment, IQ-TREE:
 :width: 80%
 :name: assignment_6_6
 ```
-
-%ANSWER%:::{dropdown} Assignment VI answers
-%ANSWER%Compare the two .pdfs, by 'visual inspection' (this may cause your PC to slow down for a minute, have patience..) and discuss which one you would consider a 'better alignment'.
-%ANSWER%One could argue that the MAFFT alignment is better, because of the _divide-and-conquer_ approach: first align conserved 'anchors' across all terminals, then do the bits in between. Visual inspection of the two alignment versions seems to suggest the MAFFT-alignment looks more 'quiet' which would be consistent with fewer substitutions -because better alignment.
-%ANSWER%
-%ANSWER%You will have noticed that in Zv&B Figs. 7.22A and B no bootstrap support values are given, but you will have these now in your IQ-TREEs. Interpret bootstrap clade support in your IQ-TREES and discusswhether the claims by Zvelebil & Baum with regards functional evolution are supported, or to what extent we can be confident about them.
-%ANSWER%
-%ANSWER%One could argue that the deeper nodes in our IQ-TREE analysis appear to be poorly supported, with bootstrap values < 80% in several cases. Interpretation by Zv&B with regards duplication events in the ALS genes are more or less supported by the bootstraps; the topology in the rest of the tree is fairly poor and should probably better be represented by a polytomy.
-%ANSWER%
-%ANSWER%This means that the position of _Erwinia carotovora_, for which Zv&B state: "From its position, it will probably function in a similar way to either OXC or pyruvate oxi dase (POX), although it is also not far from the glyoxylate carboligase (GCL) cluster." But this is hard to support given the poor nodal support in this part of the tree, meaning its position is unsecure and could actually go in various places on this part of the tree.
-%ANSWER%:::
 :::::
+
+<div style="page-break-after: always; visibility: hidden"> 
+\pagebreak 
+</div>
+
+:::{dropdown} Assignment VI answers
+Compare the two .pdfs, by 'visual inspection' (this may cause your PC to slow down for a minute, have patience..) and discuss which one you would consider a 'better alignment'.
+One could argue that the MAFFT alignment is better, because of the _divide-and-conquer_ approach: first align conserved 'anchors' across all terminals, then do the bits in between. Visual inspection of the two alignment versions seems to suggest the MAFFT-alignment looks more 'quiet' which would be consistent with fewer substitutions -because better alignment.
+
+You will have noticed that in Zv&B Figs. 7.22A and B no bootstrap support values are given, but you will have these now in your IQ-TREEs. Interpret bootstrap clade support in your IQ-TREES and discusswhether the claims by Zvelebil & Baum with regards functional evolution are supported, or to what extent we can be confident about them.
+
+One could argue that the deeper nodes in our IQ-TREE analysis appear to be poorly supported, with bootstrap values < 80% in several cases. Interpretation by Zv&B with regards duplication events in the ALS genes are more or less supported by the bootstraps; the topology in the rest of the tree is fairly poor and should probably better be represented by a polytomy.
+
+This means that the position of _Erwinia carotovora_, for which Zv&B state: "From its position, it will probably function in a similar way to either OXC or pyruvate oxi dase (POX), although it is also not far from the glyoxylate carboligase (GCL) cluster." But this is hard to support given the poor nodal support in this part of the tree, meaning its position is unsecure and could actually go in various places on this part of the tree.
+:::
+
+<div style="page-break-after: always; visibility: hidden"> 
+\pagebreak 
+</div>
 
 :::::{admonition} **Project Preparation Exercise**
 :class: important
@@ -1918,7 +1955,7 @@ You may include up to two figures or tables.
 2. **Results** What did you find, what are the main results? Report the relevant data, numbers, tables/figures, and clearly describe your observations.
 3. **Discussion & Conclusion** Do the results make sense? Are they according to your expectation or do you see something surprising? What do the results mean, how can you interpret them? Do different tools agree or not? What can you conclude? Make sure to describe the expectations and assumptions underlying your interpretation.
 :::::
-%PRACTICAL_SEPARATOR%
+
 ## References
 
 ```{bibliography}
