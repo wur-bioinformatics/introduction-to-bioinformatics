@@ -5,9 +5,8 @@
 -- Dick de Ridder, Judith Risse
 ```
 
-:::{admonition}
-:class: warning
-WARNING: THIS CHAPTER IS UNDER CONSTRUCTION AND SUBJECT TO CHANGE
+:::{warning}
+__THIS CHAPTER IS UNDER CONSTRUCTION AND SUBJECT TO CHANGE__
 :::
 
 :::{figure} images/Week5/omics-levels.png
