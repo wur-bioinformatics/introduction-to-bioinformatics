@@ -84,6 +84,8 @@ For example, the reverse complement of AAGT is ACTT, where both strands are give
 
 ---
 
+(Week1_replication)=
+
 ### DNA replication
 
 As the two DNA strands are only connected via hydrogen bonds, they can be separated relatively easily, for example during DNA replication ({numref}`replication_alt`).
@@ -1269,8 +1271,8 @@ Make sure that you develop your practical skills now, in order to apply them dur
 
 **Note, the answers will be made available after the practical!**
 
-<div style="page-break-after: always; visibility: hidden"> 
-\pagebreak 
+<div style="page-break-after: always; visibility: hidden">
+\pagebreak
 </div>
 
 :::::{admonition} _Assignment I: DNA/Genes (45 minutes)_
@@ -1357,7 +1359,7 @@ Amino acids:           ......................
 5. 60%.
 6. Answer a, 5' to 3'.
 7. Answer b, guanine.
-8. 
+8.
     ```
     5' ATGGTTTTACTTGAA 3'
     3' TACCAAAATGAACTT 5' = non-coding strand
@@ -1365,12 +1367,12 @@ Amino acids:           ......................
     Met–Val-Leu-Leu-Glu   = 3-letter abbreviations
     MVLLE                 = 1-letter abbreviations
     ```
-9. 
+9.
     a. Arabidopsis thaliana, 80 amino acids, AT1G65484.  
 
     b. MGLKM...PRTGS.
 
-10. 
+10.
     a. Under "protein coding genes" you see 2 different protein-coding transcripts. Exons are blue, coding sequences are yellow, introns are the thin black lines.Each transcript has 2 exons and 1 intron.  
 
     b. Yes, GU at the start of the intron and AG at the end. The bases at the start of the second exon vary.  
@@ -1390,7 +1392,7 @@ Amino acids:           ......................
     f. Yes, about 24 nucleotides before the transcription start. Transcription starts at the 5' UTR of AT1G65484.1 (same as start of the gene locus). The sequence before that is CTTC<u>**TATATAA**</u>ACCGGTCCAGTATTATT. The bold/underlined bases form the TATA box in line with the definition (see also knowledge clip on DNA, slide 16).  
 
 
-11. 
+11.
     a. Possible tools to use are on [endmemo](http://www.endmemo.com/bio/gc.php) or [Science Buddies](https://www.sciencebuddies.org/science-fair-projects/references/genomics-g-c-content-calculator). GC content for transcript: 34.137931 (length 870). GC content for CDS: 46.91358 (length 243). The GC content in the CDS is much higher.  
 
     b. The GC content of chromosome 1 is 35.9. It is known that coding regions have higher GC than the background genome, consistent with our observation. The GC content can be found by searching NCBI like this:
@@ -1404,7 +1406,7 @@ Amino acids:           ......................
 
 12. Viruses do contain DNA or RNA genomes, but they can only replicate inside a living cell of another organism, and thus are not considered cellular life forms.
 
-13. 
+13.
     ```{list-table}
     :header-rows: 1
     :widths: auto
@@ -1425,8 +1427,8 @@ Amino acids:           ......................
     ```
 :::
 
-<div style="page-break-after: always; visibility: hidden"> 
-\pagebreak 
+<div style="page-break-after: always; visibility: hidden">
+\pagebreak
 </div>
 
 :::::{admonition} _Assignment II: Proteins (45 minutes)_
@@ -1670,8 +1672,8 @@ e: Tyr (or any other polar amino acid)-> hydrogen bond
 ```
 :::
 
-<div style="page-break-after: always; visibility: hidden"> 
-\pagebreak 
+<div style="page-break-after: always; visibility: hidden">
+\pagebreak
 </div>
 
 :::::{admonition} _Assignment III: Databases (45 minutes)_
@@ -1733,8 +1735,8 @@ _Interoperable_: allow linking/exchange/import of data from different sources th
 _Reusable_: others should be able to use it, clear, standardized descriptions, proper license, etc.
 :::
 
-<div style="page-break-after: always; visibility: hidden"> 
-\pagebreak 
+<div style="page-break-after: always; visibility: hidden">
+\pagebreak
 </div>
 
 :::::{admonition} _Assignment IV: Genome annotation (120 minutes)_
@@ -1795,8 +1797,8 @@ _Reusable_: others should be able to use it, clear, standardized descriptions, p
 6. Structural annotation is the identification of genome features in the genome, e.g., start and stop positions of gene regions, exons, introns, UTRs, CDS. Functional annotation is assigning biological information to the genome features, e.g., protein function, domains, enzyme codes, type of transposon, etc.
 :::
 
-<div style="page-break-after: always; visibility: hidden"> 
-\pagebreak 
+<div style="page-break-after: always; visibility: hidden">
+\pagebreak
 </div>
 
 :::::{admonition} **Project Preparation Exercise**
