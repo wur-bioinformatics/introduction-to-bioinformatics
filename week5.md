@@ -216,7 +216,6 @@ correlated entirely with organism complexity.
 
 The process of generating a genome starts with DNA sequencing, the detection
 of nucleotides and their order along a strand of DNA. Conceptually, there
-of nucleotides and their order along a strand of DNA. Conceptually, there
 are three ways of sequencing:
 
 - Chemical sequencing relies on step-by-step cleaving off the last nucleotide from a chain and identifying it.
@@ -252,7 +251,6 @@ Oxford Nanopore MinION/PromethION and Pacbio Sequel II devices. Credits:
 
 Sanger sequencing was the first 'high-throughput' method of DNA sequencing. 
 For more details on its history and how it works, see [Box 3](w5box3). 
-Important to know about Sanger sequencing is 
 
 (w5box3)=
 ::::{admonition} Box 5.3: Sanger sequencing
@@ -309,6 +307,12 @@ of the same base. Sanger sequencing machines can sequence 96 fragments in
 parallel, making it comparatively low throughput.
 
 ::::
+
+Important to know about Sanger sequencing:
+- is the original sequencing platform
+- produces reads of upto 1000bp long with a quality of 99.9% (Q30)
+- is low throughput
+
 
 Sanger sequencing was the main sequencing platform until around 2007. From
 2004 onwards, it was increasingly superseded by the what we call
@@ -744,15 +748,14 @@ from them. In the [reference genome quality](Week5_reference_genome_quality) sec
 order were already mentioned. If a genome is assembled in fewer, larger
 pieces (i.e., longer contigs), we can also understand more about the long
 distance regulatory elements that play a role in regulation of gene
-expression ({numref}`regulatory_elements`).
+expression ({numref}`Pax6_locus`).
 
-:::{figure} images/Week5/regulatory-elements.png
-:alt: Regulatory elements
+:::{figure} images/Week5/Pax6_operon.png
+:alt: PAX6 locus
 :align: center
-:name: regulatory_elements
+:name: PAX6_locus
 
-Examples of long-distance regulatory elements and their distances to the
-target gene identified in the human genome. Credits: {cite}`regulatory_elements_2010`
+Physical map of the human PAX6 locus. Credits: {cite}`regulatory_elements_2010`
 :::
 %#% Figure regulatory_elements contains imagery that is specified as for personal use only. Replace this figure.
 
