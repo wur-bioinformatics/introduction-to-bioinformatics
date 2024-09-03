@@ -216,7 +216,6 @@ correlated entirely with organism complexity.
 
 The process of generating a genome starts with DNA sequencing, the detection
 of nucleotides and their order along a strand of DNA. Conceptually, there
-of nucleotides and their order along a strand of DNA. Conceptually, there
 are three ways of sequencing:
 
 - Chemical sequencing relies on step-by-step cleaving off the last nucleotide from a chain and identifying it.
@@ -343,8 +342,6 @@ Illumina sequencing uses
 bridge-amplification, where the PCR reaction takes place directly on a
 flow-cell surface. In the library preparation step, a
 forward and reverse adapter are ligated to the ends of a single strand
-template fragment. The complementary sequences for the adapters are ligated
-to a flow-cell as PCR primers. The initial template sequence (with
 template fragment. The complementary sequences for the adapters are ligated
 to a flow-cell as PCR primers. The initial template sequence (with
 adapters) will then form a double stranded bond with one of the primers on
@@ -485,8 +482,6 @@ A current potential is applied between the top and the bottom of the
 membrane and, as DNA is negatively charged, it wants to travel through the
 pore. This changes the electrical resistance, which is detected by the
 sensor. A problem is that the DNA travels too fast for the sensor to detect
-pore. This changes the electrical resistance, which is detected by the
-sensor. A problem is that the DNA travels too fast for the sensor to detect
 the nucleotides; the solution is to add a DNA-polymerase, that acts as a
 brake (it is also called motor, as it actively unzips the DNA). 
 The polymerase itself does not fit through the pore and sits on top of it. 
@@ -553,9 +548,6 @@ Here we discuss what to do when a reference genome sequence is not yet
 available. First, we examine why we would want to create a reference
 assembly, and what types of references can be created. Next, the assembly
 process and its challenges are introduced. Finally, genome annotation and
-available. First, we examine why we would want to create a reference
-assembly, and what types of references can be created. Next, the assembly
-process and its challenges are introduced. Finally, genome annotation and
 detection of structural variation are discussed.
 
 ---
@@ -608,8 +600,6 @@ Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) modified from
 In the early days of DNA sequencing, generating sequencing reads was very
 costly. Much effort was therefore spent on developing methods requiring a
 minimum amount of sequence data to assemble a genome. Moreover, Sanger
-costly. Much effort was therefore spent on developing methods requiring a
-minimum amount of sequence data to assemble a genome. Moreover, Sanger
 sequencing requires all fragments of DNA in a run to be identical, so some
 form of organising the DNA was required. This was initially done by
 sequencing the start of a single large fragment (much longer than the read
@@ -617,7 +607,6 @@ length), and generating sequencing primers from the end of the sequenced
 part for the next round of sequencing, until the end of the fragment was
 reached. This rather tedious approach was not feasible for larger genomes. 
 This led to the development of the whole genome shotgun sequencing method,
-made possible by the growth in compute power for assembly. With the advent
 made possible by the growth in compute power for assembly. With the advent
 of 2nd generation sequencing, this was updated by leaving out the cloning
 step. 2nd generation sequencing technology (e.g. Illumina) allows for a
