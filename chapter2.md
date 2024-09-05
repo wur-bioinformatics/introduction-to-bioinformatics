@@ -897,8 +897,8 @@ Here, we will use bioinformatics approaches to analyse PLT1 to discover if it is
 1. Have a look at the UniProt website. Why does UniProtKB-TrEMBL have so many more entries than UniProtKB-Swiss-Prot?
 2. Search for the _Arabidopsis_ protein PLT1 using the UniProt identifier Q5YGP8. The PLT1 entry provides you with an overview of the protein entry and some functional information. Read the functional description of PLT1. Does this description fit the information above on PLT1, and how does UniProt gather this information?
 3. Which functional regions are present in PLT1? Where in the sequence are they located? Which database is used for that information? (Hint: functional regions can be found under Function -> Features).
-4. Towards the end of the entry, you can find the actual protein sequence of PLT1. You can download the sequence in a fasta format by clicking on the Download button.
-5. Interpro also provides a functional analysis of proteins and their domains. Go the the [interpro](https://www.ebi.ac.uk/interpro/) website and look up the entry for PLT1. How many protein domains have been identified in PLT1 and where are they located?
+4. Towards the end of the entry, you can find the actual protein sequence of PLT1. You can download the sequence in fasta format by clicking on the Download button.
+5. Interpro also provides a functional analysis of proteins and their domains. Go to the [interpro](https://www.ebi.ac.uk/interpro/) website and look up the entry for PLT1. How many protein domains have been identified in PLT1 and where are they located?
 6. Look up the domain in Interpro. What is the function of the identified domains? What information can you find on GO terms and on protein structures?
 7. Look up the domain in Pfam and look at the HMM logo of the domain. Which 3 positions are most conserved and which amino acids are preferred there?
 8. We want to analyze the repeats in this protein using the online dot-plot program [Dotlet](http://dotlet.vital-it.ch). Go to the website and add the PLT1 protein sequence as sequence 1 and sequence 2 (we want to perform a self-comparison). To filter some of the low scoring alignments you need to use the sliders below the score histogram. How many repeats can you find in this segment of the protein, and at which locations within the protein fragment are these located?
@@ -952,7 +952,7 @@ Here, we will use bioinformatics approaches to analyse PLT1 to discover if it is
     :width: 100%
     :name: assignment_3h_dotlet
     ```
-9. Identity score only scores sequence matches (typically +1) and thus the score distribution only has values ranging to the window size (the cutoff, used to determine if a dot is plotted in the dotplot, can be changed using the slider). The BLOSUM scoring matrix also gives a score to mismatches and thus the range of possible scores per window is bigger (see distribution). The same repeats are identified, but they are easier to see with the BLOSUM matrix.
+9. Identity only scores sequence matches (typically +1) and thus the score distribution only has values ranging to the window size (the cutoff, used to determine if a dot is plotted in the dotplot, can be changed using the slider). The BLOSUM scoring matrix also gives a score to mismatches and thus the range of possible scores per window is bigger (see distribution). The same repeats are identified, but they are easier to see with the BLOSUM matrix.
     ```{image} images/Week2/assignment_3i_dotlet.png
     :alt: Dot-plot of PLT1 protein - Identity.
     :align: center
@@ -982,11 +982,11 @@ After we analysed the PLT1 sequence, we want to find potential homologs of PLT1 
 We will use BLAST to identify protein sequences in publicly available databases with sufficiently high similarity scores such that these are likely homologs of PLT1.
 1. Go back to the UniProt database and click on BLAST within the UniProt entry. Change the target database to "UniProtKB Swiss-Prot" and perform the search (‘Run BLAST’). What is the ‘best’ hit found (how could you define ‘best’)? Look at the second-best hit, which sequence is that and in which organism is it found? Report the e-value, the identity, and the score. How might the two sequences be related?
 2. How many hits do you find with that search?
-3. Do you expect to find more database hits in the UniProtKB database? Why? What database would be the most useful database to identify PLT1 homologs in plants? Why?
+3. Do you expect to find even more database hits in the UniProtKB database than what your original search showed? Why? Which of the included database would be the most useful database to identify PLT1 homologs in plants? Why?
 4. How could you influence the number of hits you find in the database?
 5. Repeat the search, but only consider hits with an E-value of 1e-4 and up to 1,000 possible matches. How many hits do you find?
 6. Now we want to focus on homologs in _A. thaliana_ (click on _A. thaliana_ in popular organism). How many hits do you find in _A. thaliana_?
-7. On the right part of the output page, you can find a graphical overview of the alignment (aligned part highlighted thick bar). You can also click on these to see the aligned regions. If you look at the first ten sequences, what do you observe regarding the aligned region, and what does this suggest? Is this what you would expect from a BLAST search, and why?
+7. On the right part of the output page, you can find a graphical overview of the alignment (aligned part highlighted as thick bar). You can also click on these to see the aligned regions. If you look at the first ten sequences, what do you observe regarding the aligned region, and what does this suggest? Is this what you would expect from a BLAST search, and why?
 8. Save the first ten database hits in fasta format. Note: UniProt provides an alignment option, which provides the easiest way to get all sequences of interest: Mark them -> click Align -> click Align selected results -> copy the sequences from the window into a text file, take care to copy the whole 10 sequences.
 :::::
 
@@ -995,12 +995,12 @@ We will use BLAST to identify protein sequences in publicly available databases 
 :open:
 1. The first hit is the query itself (ID Q5YGP8), 100% identity. The 2nd match has lower identity (74%), but also an E-value of 0.0, score 2122, covers the whole query. The hit is PLT2 also found in _A. thaliana_. The 2 sequences might be related by a duplication.
 2. 250 hits. The limit on the number of returned alignments was set to 250.
-3. You would likely find more than 250 hits; 250 is set as default, always check the default settings of the programs you use. Swiss-Prot hits are likely better due to the increased quality (manual vs automatic).
+3. You would likely find more than 250 hits; 250 is set as default, always check the default settings of the programs you use. Swiss-Prot hits are likely better than TrEMBL due to the increased quality (manual vs automatic).
 4. Set the E-value parameters and/or the max number of matches. On the results page you may also select 'popular organisms' to only get results from these.
 5. 136 hits are found.
 6. 104 hits.
 7. BLAST always performs a local alignment. Most of these hits only cover parts of the target sequence, which is expected for a local alignment.
-The more sequences diverge, the smaller the identity and the region with sufficient similarity to perform the alignment will get. This is normally also reflected by drops in bit-score and e-value. Thus, when filtering matches on identity, query coverage (or similar) should also be considered.
+The more sequences diverge, the smaller the identity and the region with sufficient similarity to perform the alignment will get. This is normally also reflected by drops in bit-score and e-value. Thus, when filtering matches on identity, query coverage should also be considered.
 8. Make sure you save the first 10 database hits in fasta format somewhere you can find it again. You will need it for the next assignment.
 :::
 
@@ -1012,11 +1012,11 @@ The more sequences diverge, the smaller the identity and the region with suffici
 
 Next, we want to explore the conservation of the PLT1 family identified in the previous assignment.
 To this end, we use multiple sequence alignments.
-1. Use the first ten hits from the Swiss-Prot database (see assignment IV, question h.) to perform the multiple sequence alignment using [MAFFT](https://mafft.cbrc.jp/alignment/server/). Download this alignment in FASTA format and save it somewhere you will be able to find it again. You will re-use this alignment in Chapter 3 to build a phylogenetic tree.
+1. Use the first ten hits from the Swiss-Prot database (see assignment IV, question 8.) to perform the multiple sequence alignment using [MAFFT](https://mafft.cbrc.jp/alignment/server/). Download this alignment in FASTA format and save it somewhere you will be able to find it again. You will re-use this alignment in Chapter 3 to build a phylogenetic tree.
 2. Which regions are well aligned, and which not? How can you easily spot these in a multiple-sequence alignment? How does this region relate to the previously identified protein domains?
 3. Look at the iterative refinement methods available as options in MAFFT. Which strategy do you find appropriate for your data set?
 4. Run the strategy that you propose and compare it to the previous alignment. What do you observe? Check the results page of the first run again. Can you find an explanation for your observation?
-5. Download the first multiple alignment in fasta format and display it in an [alignment viewing program](https://www.ebi.ac.uk/jdispatcher/msa/mview). Locate the start of the first AP2 domain in the alignment (Hint: look at the Pfam logo and try to find the first 2 highly conserved positions). Where does the domain start? Look at the first 10 positions of the domain and compare the conservation in the alignment to the Pfam logo. What do you observe?
+5. Download the first multiple alignment (question 1) in fasta format and display it in an [alignment viewing program](https://www.ebi.ac.uk/jdispatcher/msa/mview). Locate the start of the first AP2 domain in the alignment (Hint: look at the Pfam logo and try to find the first 2 highly conserved positions). Where does the domain start? Look at the first 10 positions of the domain and compare the conservation in the alignment to the Pfam logo. What do you observe?
 6. Next, we try a different alignment tool: [M-Coffee](https://tcoffee.crg.eu/apps/tcoffee/do:mcoffee) from the [T-Coffee suite](https://tcoffee.crg.eu/apps/tcoffee/index.html). Does that tool provide a good global alignment? Why/why not?
 7. The T-Coffee suite also includes a program to extract reliable regions from an alignment: the Core/TCS tool. We want to use this tool to extract reliable columns from our alignment. Use the button under "Send results" -> Core/TCS at the bottom to run it, then click "Submit". A fasta file, where only the well aligned columns are included, can be downloaded at the bottom ("fasta_aln file"). Display this file in mview. What can you say about the quality of this alignment?
 :::::
@@ -1025,7 +1025,7 @@ To this end, we use multiple sequence alignments.
 :class-container: answers
 :open:
 1. Make sure to save the alignment in FASTA format somewhere you can find it again. You will need it for the practical assignments of chapter 3.
-2. The two AP2 domains are well conserved, while the N and C terminus are generally less well conserved. The conserved columns are marked with a `*`. We find that only the domains are well aligned in the global multiple alignment, which is in accordance with the earlier observation that we only found local hits (assignment IV, question g.).
+2. The two AP2 domains are well conserved, while the N and C terminus are generally less well conserved. The conserved columns are marked with a `*`. We find that only the domains are well aligned in the global multiple alignment, which is in accordance with the earlier observation that we only found local hits (assignment IV, question 7).
     ```{image} images/Week2/assignment_5b_mafft.png
     :alt: Alignment of the top ten database hits.
     :align: center
@@ -1069,7 +1069,7 @@ Next, we are interested in another yeast protein – PMP2 (A6ZQT2) – and its h
 2. It builds an HMM from the hits which is then used to find more distant homologs.
 3. 54 hits.
 4. 236 extra hits, 290 hits in total.
-5. There is the logo of an HMM model, positions 7(P), 9(G), 30(Y), and 43(F) are particularly conserved.
+5. There is the logo of an HMM model, positions 7\(P\), 9(G), 30(Y), and 43(F) are particularly conserved.
     ```{image} images/Week2/assignment_6e_logo.png
     :alt: Signature of the HMM model.
     :align: center
@@ -1096,7 +1096,7 @@ Next, we are interested in another yeast protein – PMP2 (A6ZQT2) – and its h
 The bacterial immune system CRISPR/Cas encodes the defense sequences to target mobile genetic elements in the CRISPR (clustered regularly interspaced short palindromic repeats) locus, where the defense sequences are located between repeats.
 Here we will use motif discovery to determine the repeat sequences.
 1. Access the RefSeq database at NCBI to retrieve the genome data for _Streptococcus thermophilus_ (Accession NZ_LR822015.1). Hint: Use Customize view to display all features
-2. Go the the first repeat_region feature. Where in the genome is it located? Retrieve the sequence of this feature (Hint: click on repeat_region and then on Fasta in the bottom right).
+2. Go the the first `repeat_region` feature. Where in the genome is it located? Retrieve the sequence of this feature (Hint: click on `repeat_region` and then on `Fasta` in the bottom right).
 3. Use MEME and MAST to discover the motif. Go to the [MEME suite](https://meme-suite.org/) and click on MEME. Under Input, select "Type in sequences" from the dropdown menu to paste your fasta sequence. Choose the correct option under "How do you expect motif sites to be distributed in sequences?" and select one motif to find.
 4. After running the search, retrieve the MAST HTML output. Which motif do you find and how often does it occur in the sequence? Compare the motif to the repeat annotated in RefSeq. What do you observe?
 :::::
@@ -1126,7 +1126,7 @@ Here we will use motif discovery to determine the repeat sequences.
     :width: 100%
     :name: assignment_7d_mast
     ```
-    The found motif is very similar to the repeat region (gtttttgtactctcaagatttaagtaactgtacaac). The motif is even one base longer indicating that C and T are preferred at the first nucleotide of the defense sequence. MAST finds it 24 times.
+    The found motif is very similar to the repeat region (`gtttttgtactctcaagatttaagtaactgtacaac`). The motif is even one base longer indicating that C and T are preferred at the first nucleotide of the defense sequence. MAST finds it 24 times.
 :::
 
 <div style="page-break-after: always; visibility: hidden">
@@ -1145,7 +1145,7 @@ Here, we aim to design primers that can be used to detect the presence of the _A
 1. Download the genomic sequence of the _Avr1_ gene locus from BrightSpace. To help you design 'appropriate' primers (remember what characteristics are important when designing a primer), we will use [PrimerBLAST](https://www.ncbi.nlm.nih.gov/tools/primer-blast). PrimerBLAST combines Primer3, a program that designs primers for a given target sequence, and BLAST, which determines if the primer sequences are specific.
 2. Have a look at the settings for the expected product size (default value is set to be between 70-1000nt). What does this mean?
 3. We want to make sure that our designed primers are as specific as possible. Therefore, we want to avoid that the designed primer can match to any other region in the genome other than the target region, in this case _Avr1_. Therefore, we can indicate that PrimerBLAST will check the specificity against the _P. infestans_ genome sequence. To this end, select the database ('Refseq representative genomes') and enter _Phytophthora infestans_ in the 'organism' field. One of the possibilities is also to use the 'non-redundant' (nr) database. Can you imagine why choosing the nr database can be a problem when identifying specific primer sequences?
-4. Enter the sequence of _Avr1_ into the search field of PrimerBLAST, and run PrimerBLAST with the options defined under question c. (database and organism). PrimerBLAST will identify that your _Avr1_ is matching to an existing sequence in the database, which can interfere with the identification of specific primers. To make sure that PrimerBLAST takes this into account, select the database sequence, and proceed by clicking on the submit button.
+4. Enter the sequence of _Avr1_ into the search field of PrimerBLAST, and run PrimerBLAST with the options defined under question 3 (database and organism). PrimerBLAST will identify that your _Avr1_ is matching to an existing sequence in the database, which can interfere with the identification of specific primers. To make sure that PrimerBLAST takes this into account, select the database sequence, and proceed by clicking on the submit button.
 5. Look at the results from PrimerBLAST. On top, you will find a summary about your submitted sequence (its length), and a message on whether PrimerBLAST was able to identify specific primers. Below, you will find a graphical overview of the distribution of the primer pairs along your sequence, as well as detailed information for each of the primer pairs (e.g. GC, Tm, length, and product length). Which of the primer pairs would be the best, and why (clearly all primers fulfill the quality criteria)?
 6. If you place your mouse over the primer pair in the graphical overview, you can save the sequence of the primer and the product as a FASTA formatted file. Moreover, you can also directly search the product to the NCBI databases using BLAST. Why is it useful to save such a primer sequence?
 7. BLAST the product of 'Primer pair 1', set the Max target sequences to the maximum and leave all other settings to default. How many hits do you find in the database that match your product? Can you imagine why PrimerBLAST indicated that your primer pair is specific?
