@@ -5,7 +5,7 @@
 -- Freek T. Bakker
 ```
 
-In this chapter you will learn to use a _Multiple Sequence Alignment_ (MSA), like the ones you compiled in [chapter 2](week2), and visualize the variation it contains as a phylogenetic tree.
+In this chapter you will learn to use a _Multiple Sequence Alignment_ (MSA), like the ones you compiled in [chapter 2](chapter2), and visualize the variation it contains as a phylogenetic tree.
 A phylogenetic tree is considered a highly efficient _data structure_ summarizing the data and its variation contained in your MSA.
 A tree is built from _characters_ which are the individual columns or positions in your MSA.
 Characters have states, which are in this case the individual nucleotide or amino acid _substitutions_ occurring in that position (see [Characters & trees](Week3_characters_trees) below).

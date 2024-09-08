@@ -795,7 +795,7 @@ Mapping reads to a reference is a means to an end. As stated above, one of
 the main goals is to detect genomic variation. Such variation can help
 explain phenotypic variation (see [Box 5.3](Week5_phenotypic_variation)). Genomic variation
 between samples, individuals, and/or species can also be used to study
-evolutionary history (see also chapters [2](week2) and [3](week3), on multiple sequence
+evolutionary history (see also chapters [2](chapter2) and [3](chapter3), on multiple sequence
 alignments and phylogeny).
 %#% Add direct cross-link to MSA in chapter 2 when written.
 Variants are divided into two main groups: structural or large-scale

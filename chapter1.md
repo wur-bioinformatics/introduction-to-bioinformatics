@@ -676,8 +676,8 @@ The following section describes the most common steps in genome annotation.
 :class: note
 
 Several steps in the genome annotation process make use of algorithms that can search or align biological sequences, for example the BLAST algorithm.
-[Chapter 2](week2) covers sequence alignment and search in greater detail.
-For now, it is sufficient to know that these algorithms can quickly search very large collections of biological sequences to identify sequences that look similar (what we mean _exactly_ by 'similar' is also part of [chapter 2](week2)).
+[Chapter 2](chapter2) covers sequence alignment and search in greater detail.
+For now, it is sufficient to know that these algorithms can quickly search very large collections of biological sequences to identify sequences that look similar (what we mean _exactly_ by 'similar' is also part of [chapter 2](chapter2)).
 :::
 
 ### Repeat masking
@@ -761,7 +761,7 @@ __A__: Graphical representation of a general hidden Markov model. Shaded circles
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_1_2024`.
 ```
 
-[Chapter 2](week2) and [Chapter 4](week4) cover various other applications of HMMs in bioinformatics, such as defining and prediction sequence domains, or transmembrane properties of proteins.
+[Chapter 2](chapter2) and [Chapter 4](chapter4) cover various other applications of HMMs in bioinformatics, such as defining and prediction sequence domains, or transmembrane properties of proteins.
 :::
 
 ### Evidence/prediction integration
@@ -970,7 +970,7 @@ Patterns cannot deal with mismatches and are limited to exact matches to the pat
 Thus, they are not well suited to identify distant homologs.
 A Prosite **profile** is more general than a pattern and can also detect poorly conserved domains or families.
 They characterize protein domains over their entire length and do not just model the conserved parts.
-Profiles are estimated from multiple sequence alignments and we learn more about them in [chapter 2](week2).
+Profiles are estimated from multiple sequence alignments and we learn more about them in [chapter 2](chapter2).
 For now, it is important to know that profiles model matches, insertions, and deletions.
 Importantly, profiles are **quantitative** representations, they will return a score how well the sequence fits to the profile.
 A threshold can be applied to get high-scoring profiles for a sequence.
@@ -1061,7 +1061,7 @@ You can find more information on InterPro entry types with examples [here](https
 
 Pfam is an important resource for protein domains.
 In Pfam, domains are classified according to profiles that are modelled as Hidden Markov models (HMMs).
-We will learn more on HMMs in [chapter 2](week2).
+We will learn more on HMMs in [chapter 2](chapter2).
 %#% Create a direct cross-link to HMMs in chapter 2 when written.
 Pfam is now integrated in InterPro.
 Each Pfam domain can be represented with a logo, where the amino acids frequent at a particular position are represented as larger letters ({numref}`pfam-profile`).
