@@ -484,7 +484,7 @@ Such _sister groups_ are highly useful in, for instance, evolutionary and compar
 :name: nested_clades_alt
 
 Nested clades and sister clades.
-Top, the same rooted tree as in {numref}`rooted_trees_alt`, indicated with: the blue clade; the orange clade is nested in the larger dashed one; it is also a sister clade of the green clade.
+Top, the same rooted tree as in {numref}`rooted_trees_alt`, now with nested clades indicated with orange and green shapes: the small orange clade is nested in the larger -dashed- one; it is also a sister clade of the green clade; as are the blue and larger dashed clades.
 Bottom, nested and sister clades with MRCA indicated.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
