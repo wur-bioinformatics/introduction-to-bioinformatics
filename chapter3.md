@@ -245,7 +245,7 @@ All sequences of gene X are orthologues of each other, as are all sequences of g
 However, X and X’ are paralogues.
 Both the X and X’ subtrees show the true relationships among the three species.
 The subtrees are also each other’s natural outgroup, and as a result each subtree is rooted with the other (reciprocally rooting).
-\(C) A tree of the X/X’ gene family can be misleading if not all the sequences are included (because of incomplete sampling or gene loss).
+(C ) A tree of the X/X’ gene family can be misleading if not all the sequences are included (because of incomplete sampling or gene loss).
 If the broken branches are missing, then the true species relationships are misrepresented.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
@@ -287,12 +287,20 @@ The evolutionary history of a gene that has undergone two separate duplication e
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
 
-For another example of a gene versus species tree consider the trees in {numref}`IL_tree_alt`, which are based on the comparison of Interleuken gene sequences.
+For another example of a gene versus species tree consider the trees in {numref}`IL_tree_alt`, which are based on the comparison of Interleukin gene sequences.
 There are multiple occurrences of the terminals from the species tree (bovine, sheep, pig etc.) in the gene tree, each grouped with a different Interleukin sequence type.
 These are the paralogs, that probably resulted from gene duplication events during the proliferation of the IL clade.
-In fact, we can deduce that four gene duplication events must have happened, to explain the occurrence of for instance 'human' at three positions in the gene tree (indicated with green boxes in {numref}`IL_tree_alt`), namely I) in the IL-1α clade, II) in the IL-1rα clade, and III) as a sister pair in the IL-1β clade.
-The fourth duplication event would be necessary to assume to explain the IL-1β versus IL-1βm copies.
-All gene copies in this tree are homologs, some are orthologs (e.g., Human IL-1β and Mouse IL-1β), and some are paralogs (e.g., Human IL-1β and Human IL-1βm).
+
+Given that there are four copies of IL1 in humans (indicated with green boxes in the gene tree in {numref}`IL_tree_alt`), there must have been at least three gene duplications in the history of the interleukins.
+Three of them are inferred from the presence of multiple copies of IL in the same mammalian species, i.e. i) in the ancestor of the IL-1α + β clade, ii) in the ancestor of the IL-1rα + β clade, and iii) as a sister pair in the IL-1β clade.
+Duplication δ3 is required to explain the incongruence between the mammalian species tree and the IL-1β phylogeny.
+The incongruence is that in the gene tree human and mouse are more closely related than either is to bovine/sheep.
+The species tree however indicates human to be more closely related to bovine/sheep than to mouse.
+In order to resolve (reconcile) this, δ3 is suggested as indicated in {numref}`IL_reconciled_alt`. 
+
+%In fact, we can deduce that four gene duplication events must have happened, to explain the occurrence of for instance 'human' at three positions in the gene tree (indicated with green boxes in {numref}`IL_tree_alt`), namely I) in the IL-1α clade, II) in the IL-1rα clade, and III) as a sister pair in the IL-1β clade.
+%The fourth duplication event would be necessary to assume to explain the IL-1β versus IL-1βm copies.
+%All gene copies in this tree are homologs, some are orthologs (e.g., Human IL-1β and Mouse IL-1β), and some are paralogs (e.g., Human IL-1β and Human IL-1βm).
 
 %:::{figure} images/Week3/IL-tree.png
 %:alt: Species tree and a gene tree of mammalian Interleukin-1 genes.
@@ -426,7 +434,7 @@ The more shared substitutions occur for a set of sequences in your MSA, the stro
 :name: MSA_alt
 
 Characters and trees.
-(A) Multiple sequence alignment (MSA, nucleotides) with examples of shared-derived (S), unique (U) as well as invariant (I) characters indicated; (B) MSA containing S, U and I characters and the number of steps per character, as well as the total tree length for tree1 and tree2 indicated on the bottom lines.; \(C) two 'candidate trees' as alternative hypotheses explaining the data in the MSA in (B), with character state changes for all characters are indicated on the trees and exemplar syn- and autapomorphies are indicated.
+__A__: Multiple sequence alignment (MSA, nucleotides) with examples of shared-derived (S), unique (U) as well as invariant (I) characters indicated; __B__: MSA containing S, U and I characters and the number of steps per character, as well as the total tree length for tree1 and tree2 indicated on the bottom lines.; __C__: two 'candidate trees' as alternative hypotheses explaining the data in the MSA in (B), with character state changes for all characters are indicated on the trees and exemplar syn- and autapomorphies are indicated.
 Note that character 6 is invariant and therefore does not contribute to any tree.
 Tree 1 requires one step less than tree2 and is therefore the preferred tree.
 Credits: (A) created using MEGA11 and modified from {cite}`mega_2021` (B & C) [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`
@@ -476,7 +484,7 @@ Such _sister groups_ are highly useful in, for instance, evolutionary and compar
 :name: nested_clades_alt
 
 Nested clades and sister clades.
-Top, the same rooted tree as in {numref}`rooted_trees_alt`, indicated with: the blue clade; the orange clade is nested in the lager dashed one; it is also a sister clade of the green clade.
+Top, the same rooted tree as in {numref}`rooted_trees_alt`, now with nested clades indicated with orange and green shapes: the small orange clade is nested in the larger -dashed- one; it is also a sister clade of the green clade; as are the blue and larger dashed clades.
 Bottom, nested and sister clades with MRCA indicated.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
@@ -531,7 +539,7 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 :::
 
 Improper rooting affects clades and the overall structure of tree (as illustrated in {numref}`hcgob_alt`).
-The correct rooting of this tree is indicated in {numref}`hcgob_alt`, which is undisputed and based on external evidence for these species.
+The correct rooting of this tree is indicated, with human and chimpanzee as sisters, which is undisputed and based on external evidence for these species.
 Placing the root at the seven possible different positions in the unrooted tree of five terminals shows that only in three cases the (correct) human-chimp-gorilla monophyly is maintained ({numref}`hcgob_roots_alt`).
 The other four topologies show extensive conflict, both with each other and with the correct topology.
 This indicates that care should be taken in selecting and assigning a suitable outgroup, which can be problematic in the case of isolated long phylogenetic branches (for instance, in protists or zooplankton lineages) or in the case of reconstructing a gene tree.
@@ -555,7 +563,7 @@ In that case, one usually considers a copy of the gene of interest with sufficie
 :name: hcgob_alt
 
 Rooting phylogenetic trees.
-With human (H), chimp \(C), gorilla (G), orang-utan (O) and gibbon (B) indicated, the rooted tree (top) represents the correct tree topology based on external evidence.
+With human (H), chimp (C ), gorilla (G), orang-utan (O) and gibbon (B) indicated, the rooted tree (top) represents the correct tree topology based on external evidence.
 The position of this root is indicated, both in the rooted and unrooted tree.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
@@ -728,7 +736,7 @@ _Strict_ consensus demands that only identical tree topologies are visualised.
 As this is not the case (AB,C is present in Trees 1 and 3, but not in 2; 'AB,C' meaning there is a clade AB and C is its sister), this part of the strict consensus collapses into the trichotomy (A,B,C).
 Likewise, D and E are monophyletic only in Tree 3, therefore this part of the tree collapses in a 'deep' trichotomy (D,E, the rest).
 For the _50% majority-rule_ consensus, the amount of (in)congruence among a set of trees is actually quantified, based on the occurrence of each node in the entire set of trees, and applying a majority-rule threshold.
-Thus, in {numref}`consensus_alt` clade AB occurs in Tree 1 and Tree 3 and its group frequency is therefore ⅔ or 67% in the 50% majority-rule consensus tree.
+Thus, in {numref}`consensus_alt` clade AB occurs in Tree 1 and Tree 3 and its group frequency in the 50% majority-rule consensus tree is therefore ⅔ or 67% .
 Clade ABC is present in all trees and gets 100%.
 Clade ABCD is present in Tree 1 and Tree 2 and gets 67%.
 DE occurs only once and gets 33%, which is below the majority of 50% and therefore does not occur in the 50% majority-rule consensus tree.
@@ -846,7 +854,7 @@ Note that both trees in {numref}`characters` and {numref}`character_distance_alt
 :name: character_distance_alt
 
 Distance-based tree building.
-The same data set (MSA) of 7 characters observed over 4 terminals (sequences) analyzed using a character-based approach ({numref}`characters`), now using a distance-based approach.
+The same data set (MSA) of 7 characters observed over 4 terminals (sequences) analyzed using a character-based approach in {numref}`characters`, now using a distance-based approach.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
 
@@ -961,7 +969,7 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 NJ is highly popular as it can generate trees with hundreds of terminals in a very short time.
 This makes it a great tool for quickly assessing the (phylogenetic) structure in a data set (MSA) without having to explore wide tree spaces (as in the character-based approach).
 It is good to keep in mind that NJ is a clustering method, i.e., it groups sequences on the basis of overall similarity, not on shared ancestry or synapomorphy.
-Therefore, for phylogenetic studies, character-based analysis is preferred, and NJ analysis can be used in addition ({numref}`neighbor_joining-aa`, to check for possible incongruencies between the two.
+Therefore, for phylogenetic studies, character-based analysis is preferred, and NJ analysis can be used in addition ({numref}`neighbor_joining-aa`), to check for possible incongruencies between the two.
 If these are found, it could mean that the data (the synapomorphies accumulated in the MSA) are not metric for that part of the tree, which could warrant additional analysis methods (such as phylogenetic network reconstruction) which is beyond the scope of this course.
 
 :::{figure} images/Week3/neighbor-joining-aa.jpg
@@ -1157,7 +1165,7 @@ Clustering usually results in a single tree, the optimality criterion approach i
 
 Another useful criterion to classify tree building methods is whether an explicit model of character evolution is applied, versus mere counting (parsimony) of changes. In this course we covered Maximum Likelihood and parsimony, and Neighbor Joining using corrected distances, i.e., applying the character model in pairwise sequence comparison.
 Bayesian Inference, in which probabilities for nodes are calculated, and different models are evaluated simultaneously, is beyond the scope of this course.
-(If you are interested, they are covered in [BIS-30306 Comparative Biology & Systematics](https://wur.osiris-student.nl/onderwijscatalogus/extern/cursus?cursusid=817294&taal=en)).
+(If you are interested, they are covered in [BIS-40306 Comparative Biology & Systematics](https://wur.osiris-student.nl/onderwijscatalogus/extern/cursus)).
 
 ```{list-table}
 :header-rows: 1
@@ -1200,7 +1208,7 @@ Bifurcating
   A tree containing nodes that are all connected through three branches
 
 Bootstrap
-  A method for measuring support
+  A method for measuring node support in a phylogenetic tree
 
 Branch length
   The length, either in steps (parsimony), distances (clustering) or substitutions per site (maximum likelihood)
@@ -1209,7 +1217,7 @@ Clade
   Monophyletic group, MRCA with all descendants
 
 GTR
-  General time reversible substitution model
+  General time reversible nucleotide substitution model
 
 JC
   Jukes-Cantor nucleotide substitution model
@@ -1242,7 +1250,7 @@ _p_-difference
   Proportional difference, uncorrected
 
 Polytomy
-  Part of a phylogenetic tree with nodes connected through >>3 branches
+  Part of a phylogenetic tree that is collapsed, node is connected through > 3 branches
 
 Root
   Reference individual, used for polarising a tree
@@ -1300,18 +1308,18 @@ In order to see the branch lengths, select 'Layout' (in the top-left window) and
 
 Select 'Branch lengths' and you see the average number of amino acid replacements indicated on the branches of the tree (average across multiple possible optimizations for each position).
 
-One good thing of MEGA is that upon clicking `Caption` (bottom left) you will get complete info on all the settings that were used in this analysis; for instance, how many most parsimonious reconstructions there were (in this case a single one), how starting trees were calculated and how many sites were in the MSA.
+One good thing of MEGA is that upon clicking `Caption` (bottom left) you will get complete info on all the settings that were used in this analysis as well as on results; for instance, how many most parsimonious reconstructions there were (in this case a single one), how starting trees were calculated and how many sites were in the MSA.
 
 - Now save your tree by selecting `File > Export Current Tree` (Newick), tick the 'Branch length' box, and click 'Ok'. The Newick notation will be shown in the Text File editor, select `File > Save as` and give it a logical name and replace the .nwk extension by .tre.
 - You may repeat the Maximum parsimony analysis, but now selecting, at 'Phylogeny Test', `Bootstrap method`. This will perform a bootstrap analysis of 500 replicates.
 - After it is completed you see two tabs on top of the tree window: 'Original Tree' shows the initial parsimony result now with bootstrap values superimposed on (some of) the nodes. The other tab, named 'Bootstrap consensus tree' shows the actual bootstrap analysis.
 - Use Layout > `Toggle scaling of the tree` in order to see the average branch lengths.
-- Save your bootstrap tree as above, now with ticking both the `Branch length` and `Bootstrap Values` boxes.
+- Save your bootstrap tree as above, now with ticking the `Bootstrap Values` box.
 
 We have seen in the lectures that boostrap values of < 50% are actually rather uninformative, as a single synapomorphy already can have 62% as a result.
 Therefore, it will be good to take a look at the 'condensed' version of our Bootstrap consensus tree.
 
-- Make sure you are in the Boostrap consensus tree tab and go to `Compute condensed tree` button (top-left). You will be given 'Tree Cutoff options' and type 62 in the % cutoff box. See how your Bootstrap consensus tree changes?
+- Make sure you are in the Original tree tab and go to `Compute > Compute condensed tree` button (top-left). You will be given 'Tree Cutoff options' and type 62 in the % cutoff box. See how your Bootstrap consensus tree changes?
 
 _Questions:_
 
@@ -1339,18 +1347,20 @@ For now, go to [iTOL](https://itol.embl.de/) and register for getting a (free) a
 At the Welcome page, do have a look around to get a feel for how larger trees can be displayed and additional (external) data can be integrated and annotated with the tree figures.
 Also, do have a look at the [Gallery](https://itol.embl.de/gallery.cgi) where user trees are displayed.
 
-Go to MyTrees and upload the MP tree that you just made in MEGA 11.
+Go to MyTrees and upload the two trees that you just made in MEGA 11.
+Clicking on either of them will visualize your trees.
+N.B.: the Control panel can be dragged to the side in order to see the entire tree. Use the `previous` and `next tree` buttons (next to `My Trees`) in order to toggle between the two trees.
 Although no outgroup was included or selected in your PLT1 MSA, the tree appears rooted because in the Control Panel under `Mode` 'Rectangular' is selected by default in iTOL.
 Therefore, you want to show the tree unrooted by selecting 'Unrooted'.
 
 - Under `Branch options > Line style` increase the line thickness to up to for instance 20 px in order to make the tree structure more clearly visible.
 - Under `Labels` toggle between Display and Hide in order to see tree structure-only; use the + tool (top-right corner of the screen) to zoom in.
 - Under `Mode options > Rotation` you can rotate your tree.
-- Now go to `Advanced > Bootstraps / metadata` and select 'Display' and then 'Text'. Increase font size to like 60px, Round to 2 decimals and you see your bootstrap values appear at your tree.
+- Now make sure to select your bootstrap consensus tree and go to `Advanced > Branch metadata > Display > Bootstraps / metadata` and select 'Display' and then 'Text'. Increase font size to like 60px, Round to 2 decimals and you see your bootstrap values appear at your tree.
 - Go to `Advanced > Node options` and select 'Display' for both your Leaf nodes and Internal nodes. Choose a symbol and colour, increase the symbol size to like 50px or more.
-- Use `Advanced > Branch metadata display > Branch lengths` and select 'Display'. Increase font size to like 60px and Round decimals to 2; this way you can read your branch lengths from your tree.
-- Go back to `Basic > Branch options` and select 'Connections between nodes are curves'.
-- Go to `Basic > Mode options` and select 'Ignore' at branch lengths in order to see a cladogram version of your tree, i.e., without proportional branch lengths. (trees _with_ branch lengths are much more interesting!)
+- Now switch to your 'Original tree' and use `Advanced > Branch metadata display > Branch lengths` and select 'Display'. Increase font size to like 60px and Round decimals to 2; this way you can read your branch lengths from your tree.
+- Go back to `Basic`, make sure ‘Mode’ is either Circular or Rectangular (not Unrooted) and then select `Branch options >  Connections between nodes are curves`.
+- Go to `Basic > Mode options` and select 'Ignore' at branch lengths in order to see a cladogram version of your tree, i.e., without proportional branch lengths. N.B.: this will not work for your bootstrap consensus tree as it has no branch lengths. (trees _with_ branch lengths are much more interesting!)
 - Click on any internal node in your tree and select `Branches > This node > Colour` in order to colour a branch in your tree.
 - Explore the other functions of tree visualisation that iTOL offers; when you are happy with your tree, use `Export > Full image > Export` and save in .svg format, for use in Word or PowerPoint documents.
 ```{image} images/Week3/assignment_1_1.png
