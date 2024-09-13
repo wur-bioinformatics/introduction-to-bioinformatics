@@ -123,11 +123,11 @@ assembled using the third generation technologies described below: [PacBio](Week
 
 ### The history of genome sequencing
 
-The first genomes sequenced were those of the Phi X bacteriophage in 1977
+The first genomes sequenced were those of viruses: the Phi X bacteriophage in 1977
 and the Epstein-Barr virus in 1983. The first bacterial genome,
 _Haemophilus influenzae_, was sequenced in 1995, followed by the first
 archaeal genome sequence of _Methanococcus jannaschii_ in 1996. In the same
-year followed the first eukaryotic genome, that of _Saccharomyces
+year the first eukaryotic genome was published, that of _Saccharomyces
 cerevisiae_ (baker's yeast). _Escherichia coli_, the main bacterial model
 organism, was sequenced in 1997. Sequencing of the human genome started
 already in 1988 and was officially finished in 2003 ({numref}`landmarks_in_genetics`) and
@@ -142,7 +142,8 @@ History of genome sequencing and the Human Genome Project.
 Credits: {cite}`landmarks_in_genetics_2003`.
 :::
 %#% Beautiful figure but under copyright by Springer Nature. Their quick price estimate returns a $250 price tag for our use case.
-As previously described, the project was very costly, with an estimated cost of \$3 billion. In
+As described in [Box 5.1](Week5_humangenomeproject), the Human Genome
+Project project was very costly, with an estimated cost of \$3 billion. In
 comparison, it is nowadays possible to sequence all variants between a human
 genome and the reference for less than \$1,000 on Illumina's NovaSeq
 machine.
@@ -153,9 +154,10 @@ machine.
 
 With the rapid evolution of sequencing technology, our understanding of
 genomes and their content has grown as well. We now know that genomes vary
-greatly in terms of size, chromosome numbers, and ploidy ({numref}`gene_ploidy`),
+greatly in terms of size, chromosome numbers, the numnber of copies of
+each chromosome -- the ploidy ({numref}`gene_ploidy`),
 as well as gene content ({numref}`genome_sizes_alt`). Genome sizes range from 100kb in
-bacteria to more than 100Gb (Giga basepairs) in plants.
+bacteria to more than 100Gb (Giga basepairs) in plants. Humans have a genome size of 3.2Gb. 
 
 :::{figure} images/Week5/gene-ploidy.png
 :alt:
@@ -166,17 +168,16 @@ Left, variety of genome sizes. Credits: [CC BY-SA 3.0](https://creativecommons.o
 right, examples of ploidy. Credits: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) {cite}`gene_ploidy_2011`.
 :::
 
-Humans have a genome size of 3.2Gb. Not only the genome size varies
-greatly, in eukaryotes the number of chromosomes and chromosomal copies
-(ploidy) do too. Chromosome numbers range from 4 in fruitfly (\_Drosophila*)
-to 23 in human to 50 in goldfish and 100+ in some ferns. Similarly, ploidy
-ranges from haploid (single set of chromosome(s), ploidy of N) and diploid
-(two copies, ploidy of 2N) to polyploid (more than 3 copies), with at the
-extreme end ferns with ploidy levels of over 100. Gene numbers also vary
-per species; at the low end, bacterial endosymbionts have 120+ genes,
-whereas most higher eukaryotes (including humans) have between 15,000 and
-25,000 genes and some plants can have more than 40,000 genes – rice has over
-46,000.
+Not only the genome size varies greatly, in eukaryotes the number of
+chromosomes and ploidy do too.  Chromosome numbers range from 4 in fruitfly
+(_Drosophila melanogaster_) to 23 in human to 50 in goldfish and 100+ in some
+ferns. Similarly, ploidy ranges from haploid (single set of chromosome(s),
+ploidy of N) and diploid (two copies, ploidy of 2N) to polyploid (more than
+3 copies), with at the extreme end ferns with ploidy levels of over 100. 
+Gene numbers also vary per species; at the low end, bacterial endosymbionts
+have 120+ genes, whereas most higher eukaryotes (including humans) have
+between 15,000 and 25,000 genes and some plants can have more than 40,000
+genes – rice has over 46,000.
 
 %:::{figure} images/Week5/genome-sizes.jpg
 %:alt: Gene content table
@@ -201,16 +202,16 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 :::{admonition} Box 5.2: Size does(n't) matter?
 :class: tip
 
-Genomes come in all shapes and sizes. The smallest known (non-viral) genome
+Genomes come in all shapes and sizes.  The smallest known (non-viral) genome
 is that of the bacterial endosymbiont _Nasuia deltocephalinicola_, which
-only consists of 112,091 nucleotides, encoding 137 proteins. The largest
-genomes known to date are marbled lungfish and the plant _Paris
-japonica_ with 130,000,000,000 nucleotides (130Gb) and 150,000,000,000 nucleotides (150Gb) respectively, although the amoeboid
-_Polychaos dubium_ is purported to have a genome size of 670Gb. Genome size
-is not necessarily correlated with the number of genes in the genome (see
-also {numref}`genome_sizes_alt`). Number of protein coding genes in turn is not
-correlated entirely with organism complexity.
-:::
+only consists of 112,091 nucleotides, encoding 137 proteins.  The largest
+genomes known to date are marbled lungfish and the plant _Paris japonica_
+with 130,000,000,000 nucleotides (130Gb) and 150,000,000,000 nucleotides
+(150Gb) respectively, although the amoeboid _Polychaos dubium_ is purported
+to have a genome size of 670Gb.  Genome size is not necessarily correlated
+with the number of genes in the genome (see also
+{numref}`genome_sizes_alt`).  The number of protein coding genes in turn is
+not correlated entirely with an organism's complexity.  :::
 
 ---
 
@@ -229,8 +230,10 @@ are three ways of sequencing:
 
 - Direct sequencing involves directly measuring the order of nucleotides in a strand of DNA, which has only recently become feasible and is thus far only implemented in [Oxford Nanopore sequencing](Week5_nanopore).
 
-Some sequencing devices and their capabilities in terms of read length and
-yield per run are shown in {numref}`sequencing_technology`.
+Different technologies vary wildly in the length of DNA sequences they produce
+(the read length) and their throughput.  Some sequencing devices and their
+capabilities in terms of read length and yield per run are shown in
+{numref}`sequencing_technology`.
 
 :::{figure} images/Week5/sequencing-technology.jpg
 :alt: Sequencing technology evolution
@@ -317,8 +320,8 @@ Next-generation sequencing (NGS) technologies allow much higher throughput
 at far lower cost than Sanger sequencing, although it comes at a price:
 shorter reads and lower base-calling accuracy. Where Sanger sequencing
 machines could sequence 96 fragments simultaneously, these newer devices now
-produce billions of reads per sequencing run. Describing all of these
-methods in detail is beyond the scope of this course.
+produce billions of reads per sequencing run. Describing the various
+methods in detail is beyond the scope of this book.
 
 As with Sanger sequencing, NGS methods rely on amplification of a library of
 input DNA fragments to enhance the signal of the actual sequencing step.
