@@ -401,7 +401,7 @@ linear, and that a single template can thus be sequenced multiple times
 consecutively in what is called circular consensus sequencing (CCS). In
 general 3rd generation sequencing techniques suffer from a higher error
 rate, with most errors being indels, short insertions or deletions. This
-has implications for, e.g., mapping and assembly. Making use of the CCS
+has implications for, e.g., mapping and assembly (discussed below). Making use of the CCS
 allows for proofreading and higher accuracy ({numref}`pacbio_sequencing`), with the most
 recent PacBio HiFi reads reaching 99% read accuracy.
 
@@ -744,7 +744,7 @@ genome assembly was already considered gold standard and very complete, the
 number of genes increased with 5%, of which 0.4% were protein coding. This
 increase in identified genes also allows the study of expression patterns of
 these genes. An increase in genome coverage can also reveal hidden
-elements: {numref}`FSHD` shows all paralogs of a disease related gene that
+elements. As an illustration, {numref}`FSHD` shows all paralogs of a disease related gene that
 have finally been resolved. Most of the missing copies were in hard to
 sequence parts of the genome. Chromosome-level assemblies also allow us to
 study genome evolution itself, the way chromosomes are rearranged during
@@ -755,7 +755,7 @@ evolution and speciation.
 :align: center
 :name: FSHD
 
-Shows the protein-coding gene _FRG1_ and its 23 paralogs in CHM13. Only 9
+The protein-coding gene _FRG1_ and its 23 paralogs in CHM13. Only 9
 were found in the previous assembly (GRCh38). Genes are drawn larger than
 their actual size, and the "_FRG1_" prefix is omitted for brevity. All
 paralogs are found near satellite arrays. _FRG1_ is involved in
@@ -784,8 +784,8 @@ Color variations in carrots. \
 Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`carrots_2006`.
 ```
 
-They account for the large variation in things all around us. In food
-products, variants have been actively selected for to create the wide
+They account for the observable variation in things all around us. In
+agriculte, variants have been actively selected for to create the wide
 varieties of shapes, color and taste we see in our food items today ({numref}`carrots`).
 Historically, variants have been selected purely on these visible phenotypes
 and new ones have been created mainly by chance in large-scale crosses.
@@ -794,8 +794,9 @@ Nowadays genetic information obtained through genome sequencing and variant
 calling is used more and more in plant and animal breeding and selection.
 ::::
 
-Mapping reads to a reference is a means to an end. As stated above, one of
-the main goals is to detect genomic variation. Such variation can help
+When a (nearby) reference genome is already available, reads can also be
+mapped to that genome. Mapping entails finding the location in the genome
+that matches each read, allowing for some small differences - genomic variation. Such variation can help
 explain phenotypic variation (see [Box 5.3](Week5_phenotypic_variation)). Genomic variation
 between samples, individuals, and/or species can also be used to study
 evolutionary history (see also chapters [2](chapter2) and [3](chapter3), on multiple sequence
