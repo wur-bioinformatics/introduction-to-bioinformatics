@@ -231,7 +231,11 @@ are three ways of sequencing:
 - Direct sequencing involves directly measuring the order of nucleotides in a strand of DNA, which has only recently become feasible and is thus far only implemented in [Oxford Nanopore sequencing](Week5_nanopore).
 
 Different technologies vary wildly in the length of DNA sequences they produce
-(the read length) and their throughput.  Some sequencing devices and their
+(the read length) and their throughput, which together determine the
+coverage: the (average) number of times each base in the genome is represented in a read.
+For some purposes, such as genome assembly, it is essential that the
+coverage is sufficiently high - depending on read length, between 50x to
+100x. A number of sequencing devices and their
 capabilities in terms of read length and yield per run are shown in
 {numref}`sequencing_technology`.
 
@@ -362,7 +366,7 @@ Illumina reads can be sequenced from one primer end only, which yields
 so-called single end reads, or from both primer ends, which gives paired end
 reads, i.e., two reads that originate from the same molecule with a distance
 that is approximately known. The read length is set by the protocol and
-ranges between 30 to 2x350 nucleotides. The number of clusters of amplified
+ranges between 30 to 2 x 350 nucleotides. The number of clusters of amplified
 fragments on a flow cell ranges from millions to billions.
 
 Illumina reads are cheap, short, and highly accurate. One issue is that
@@ -765,10 +769,6 @@ acioscapulohumeral muscular dystrophy (FSHD). Credits: modified from {cite}`t2t_
 
 ---
 
-(Week5_variants)=
-
-### Variants
-
 (Week5_phenotypic_variation)=
 ::::{admonition} Box 5.3: Phenotypic variation
 :class: tip
@@ -794,6 +794,10 @@ Nowadays genetic information obtained through genome sequencing and variant
 calling is used more and more in plant and animal breeding and selection.
 ::::
 
+(Week5_variants)=
+
+### Variants
+
 When a (nearby) reference genome is already available, reads can also be
 mapped to that genome. Mapping entails finding the location in the genome
 that matches each read, allowing for some small differences - genomic variation. Such variation can help
@@ -813,7 +817,7 @@ multiple nucleotide polymorphisms (MNPs) and small insertions and deletions
 :align: center
 :name: indels
 
-A single-nucleotide polymorphism (top left), insertions (bottom), and deletions (top right).
+A single-nucleotide polymorphism (top left), an insertion (bottom), and a deletion (top right).
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
 :::
 
@@ -848,8 +852,6 @@ likely due to an error.
 
 ---
 
-#### Variants and their effects
-
 :::{figure} images/Week5/flower-color.png
 :alt: Flower color SNP
 :align: center
@@ -867,6 +869,8 @@ of the stop codon in the predicted protein, highlighting the premature
 termination in the white flowered cultivar.
 Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`flower_color_2010`.
 :::
+
+#### Variants and their effects
 
 SNPs between individuals underly most phenotypic variation. Sometimes a
 single variant causes a different phenotype, like the classical mendelian
@@ -961,16 +965,15 @@ humans.
 
 ##### Detection of structural variants
 
-Accurately detecting structural variation in a genome is not easy. The
-challenge lies in detecting the edges of the variants (i.e., breakpoints)
-and, in case of duplications/insertions/deletions, the resulting copy
-number. When a mapping-based approach is used (possible if the reference
-genome is known) we can use read depth and paired end reads to detect
-variants. In the case of a gene duplication we expect more reads to map to
-the single copy of the reference genome than expected. More copies of the
-gene in the sample will result in more reads from that gene
-({numref}`gene_duplication`). Conversely, coverage is expected to drop when one copy
-of a gene is lost.
+Accurately detecting structural variation in a genome is not easy.  The
+challenge lies in detecting the edges of the variants (the so-called
+breakpoints) and, in case of duplications/insertions/deletions, the
+resulting copy number.  When a mapping-based approach is used (possible if
+the reference genome is known) we can use read depth and paired end reads to
+detect variants.  More copies of the gene in the sample will result in more
+reads from that gene ({numref}`gene_duplication`) than expected for a single
+copy.  Conversely, coverage is expected to drop when one copy of a gene is
+lost.
 
 :::{figure} images/Week5/gene-duplication.jpg
 :alt: Gene duplication creates coverage challenges
@@ -981,11 +984,11 @@ Gene duplication results in higher coverage than expected in the duplicated regi
 Credits: [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) {cite}`gene_duplication_2009`.
 :::
 
-Orientations of paired end reads as well as split reads are a good
+Orientations of paired end reads as well as split reads are good
 indicators to detect the boundaries of inversions, but also substitutions
 and translocations. The rearrangements will result in one read from a pair
-to map to one genomic location and the other read to another location.
-Reads from the break point will be split in the alignment.
+mapping to one genomic location and the other read to another location.
+Reads overlapping the breakpoint will be split in the alignment.
 
 ---
 
@@ -1013,8 +1016,8 @@ the ruff (_Calidris pugnax_, {numref}`male_morphs`).
 
 At least two genetic inversions are associated with the _Heliconius numata_
 supergene. The ancestral gene order, which matches that in _H. melpomene_
-and _H. erato_ is shown on the left and is associated with ancestral
-phenotypes such as _H. n. silvana_. Two sequentially derived inversions
+and _H. erato_, is shown on the left and is associated with ancestral
+phenotypes such as those found in _H. n. silvana_. Two sequentially derived inversions
 are associated with dominant alleles and are shown in the middle and right.
 Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`butterflies_2017`.
 :::
@@ -1043,6 +1046,8 @@ Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`CNV_20
 ---
 
 ## Functional genomics and systems biology
+
+---
 
 :::{figure} images/Week5/stem-cell.svg
 :alt: Different human cell types
