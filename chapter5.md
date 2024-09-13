@@ -211,7 +211,8 @@ with 130,000,000,000 nucleotides (130Gb) and 150,000,000,000 nucleotides
 to have a genome size of 670Gb.  Genome size is not necessarily correlated
 with the number of genes in the genome (see also
 {numref}`genome_sizes_alt`).  The number of protein coding genes in turn is
-not correlated entirely with an organism's complexity.  :::
+not correlated entirely with an organism's complexity.  
+:::
 
 ---
 
@@ -1047,8 +1048,6 @@ Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`CNV_20
 
 ## Functional genomics and systems biology
 
----
-
 :::{figure} images/Week5/stem-cell.svg
 :alt: Different human cell types
 :width: 400px
@@ -1058,8 +1057,6 @@ Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`CNV_20
 With the same genome, human stem cells differentiate into a wide range of shapes.
 Credits: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) {cite}`stem_cell_2019`.
 :::
-
----
 
 ### The need for functional genomics
 
@@ -1169,11 +1166,12 @@ Typically, functional genomics experiments involve studying the effect of
 genetic variation on certain omics levels.  Such variation can be natural,
 for example comparing omics data measured on two organisms with known
 (limited) genetic differences due to evolution.  It can also be
-experimentally introduced, for example bychanging the environment
-(temperature, nutrients, drugs, etc.), introducing small mutations in the
-DNA sequence, knocking out genes, introducing new genes etc.  The effects of
+experimentally introduced, for example by introducing small mutations in the
+DNA sequence, knocking out genes, introducing new genes etc.  Variation can
+also be introduced in the environment, e.g. by changing the 
+temperature, adding or removing nutrients, introducing drugs etc. The effects of
 such interventions at a specific omics level then provide information on the
-function of the manipulated gene(s).
+function of the manipulated gene(s) or the effect of the environment.
 
 %@% Ideally we would measure different omics levels at the same time (multi-omics) and even in the same sample (paired omics), but this is often experimentally too complex and costly. Some omics technologies are more acccessible than others, in terms of cost, data quality, and interpretation and are therefore most widely used - in particular, gene expression levels (transcriptomics) are often measured and assumed to reflect the overall state of a cell. However, as discussed [below](Week5_omics), we should be careful with this. 
 
@@ -1205,7 +1203,8 @@ experimentation, and model extension or modification.
 :width: 400px
 :name: systems_biology_alt
 
-The systems biology cycle, aiming to iteratively improve models of living systems.
+The systems biology cycle, aiming to iteratively improve models of living systems
+(based on {cite}`systems_biology_2002`).
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`own_5_2024`.
 :::
 
@@ -1227,6 +1226,9 @@ the levels of transcription of genes on the genome to RNA). RNA and its
 role in the cell has already been discussed in [chapter 1](Week1_rna_transcription_splicing). If you want to know
 what other types of RNA exist outside the common mRNA, rRNA, tRNA and miRNA, read
 [Box 5.6](Week5_RNA). Here we focus on measuring and counting transcripts (mRNA).
+For the understanding of transcriptome analysis it is important to remember
+that in eukaryotes most genes contain introns and that one gene can have
+many transcripts.
 
 (Week5_RNA)=
 
@@ -1253,10 +1255,9 @@ The generalized RNAi mechanism up to the molecular level depicting the role of v
 - piRNA (piwi interacting RNA): found in animals and slightly longer than miRNAs (26-31nt), they interact with piwi proteins. piRNAs are implicated in epigenetic gene silencing, but not much is known.
   :::
   %#% Figure RNA_types is rather blurry and unclear. Replace image that better depicts the different types of RNA?
-  For the understanding of transcriptome analysis it is important to remember that in eukaryotes most genes contain introns and that one gene can have many transcripts.
 
 In transcriptomics, the aim is to measure presence and abundance of
-transcripts. Such measurements are based on a large number of cells but
+transcripts. Such measurements are based on a large number of cells, but
 more recently the transcriptome of individual cells can also be studied. So
 what do transcripts and their abundance tell us about a studied subject? In
 any experiment we often want to know what happens to a cell/tissue/organism
@@ -1279,7 +1280,7 @@ variation, some will cause noise.
 
 mRNA levels:
 
-- are the result of mRNA synthesis and mRNA decay.
+- are the result of mRNA synthesis and mRNA decay
 - differ between genes, isoforms, cells, cell types and tissues, and developmental stages
 - vary with cell cycle, during the day (circadian rhythm) and/or season
 - depend on the environment
@@ -1292,10 +1293,11 @@ Just like the study of genomes, transcriptomics has greatly benefitted from
 technological developments that allowed an increase in throughput and
 sensitivity of measurements.  [Box 5.6](Week5_gelspcr) and [Box
 5.7](Week5_microarrays) provide an overview of technologies that were
-important for the development of the field, but are not widely used anymore;
-at this time, RNAseq is almost exclusively used to measure mRNA levels.
+important for the development of the field (such as microarrays), but are
+not widely used anymore; at this time, RNAseq is almost exclusively used to
+measure mRNA levels.
 
-Note that even though microarrays haves now been mostly superseded by RNAseq as a
+Note that microarrays haves now been mostly superseded by RNAseq as a
 cheaper and better quality alternative (see [below](Week5_rnaseq)). 
 However, there are many microarray samples still available for re-use in
 databases, as submission of measurement data to such databases is compulsory
@@ -1306,7 +1308,13 @@ million samples, and [EBI
 ArrayExpress](https://www.ebi.ac.uk/biostudies/arrayexpress).  If you are
 interested in a certain question that may be answered using transcriptomics,
 it makes sense to look here first to see what experimental data is already
-available.
+available. Note that the technology used determines how the expression
+level should be interpreted. Some microarray types compare two samples and thus produce relative
+expression levels, often log<sub>2</sub)-transformed so that 0 means no change, +1
+means a 2-fold higher expression, +2 a 4-fold higher expression and so on;
+negative numbers indicate lower expression. Other microarray types measure
+levels that represent absolute expression in a single sample (in arbitrary
+units).
 
 (Week5_gelspcr)=
 
@@ -1383,7 +1391,7 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 
 (Week5_microarrays)=
 
-::::{admonition} Box 5.6: Microarrays
+::::{admonition} Box 5.7: Microarrays
 :class: tip
 
 The first widely used _high-throughput_ method to measure gene expression 
@@ -1501,15 +1509,15 @@ The RNA is then converted to stable double stranded cDNA.
 The resulting cDNA library is then sequenced, usually as paired end reads of 100-150bp.
 A standard sequencing run results in 30 million or more reads per sample.
 
-The read lengths currently used are relatively short and complicated models
-are used to assign reads to exons and isoforms. New developments in this
+The read lengths currently used are relatively short and complicated methods
+are required to assign reads to exons and isoforms. New developments in this
 field are long cDNA conversions that allow sequencing of full-length
 transcripts on [PacBio](Week5_pacbio) and direct sequencing of RNA on [Oxford Nanopore](Week5_nanopore).
 This allows the detection of the actual isoforms present in samples.
 
 Next, the reads need to be assigned to their corresponding transcripts. For
-this there are two options: mapping of the reads to an existing reference
-which can be either a genome or a transcriptome, or a _de novo_ assembly of the
+this there are two options: mapping of the reads to an existing reference,
+which can be either a genome or a transcriptome; or a _de novo_ assembly of the
 transcripts (similar to assembly of genomes). Once reads have been assigned
 to their corresponding transcript or gene, expression is quantified by
 counting the number of reads per feature.
@@ -1527,10 +1535,7 @@ In principle, sequenced reads from an RNAseq experiment do not differ from
 reads sequenced from genomic DNA in that they can be mapped to a reference
 sequence. The same algorithms apply when mapping RNAseq reads to an
 assembled transcriptome (a reference sequence that only contains RNA
-sequences) or to prokaryotic genomes. Mapping eukaryotic mRNA sequences to
-a genomic reference is more cumbersome, as most genes have introns, which
-are no longer present in the mature mRNA ({numref}`spliced_alignment`).
-
+sequences) or to prokaryotic genomes. 
 :::{figure} images/Week5/spliced-alignment.svg
 :alt: Spiced read alignment
 :align: right
@@ -1540,14 +1545,16 @@ Mapping of mRNA reads to genomic reference with splice aware aligner.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
 :::
 
-This means that reads might contain an exon-exon junction and should be
-split along the reference.  Most aligners will not consider this a valid
-option.  Special splice-aware aligners have been developed for this reason,
-that are able to map normal reads that map contiguously to the reference
-sequence as well as reads that are split across splice sites
-({numref}`spliced_alignment`).  They also take into account known intron-exon 
-boundaries to determine the point within a read where it has to be
-split and whether the split alignment is correct.
+Mapping eukaryotic mRNA sequences to a genomic reference is more cumbersome,
+as most genes have introns, which are no longer present in the mature mRNA
+({numref}`spliced_alignment`).  This means that reads might contain an
+exon-exon junction and should be split along the reference.  Most aligners
+will not consider this a valid option.  Special splice-aware aligners have
+been developed for this reason, that are able to map normal reads that map
+contiguously to the reference sequence as well as reads that are split
+across splice sites ({numref}`spliced_alignment`).  They also take into
+account known intron-exon boundaries to determine the point within a read
+where it has to be split and whether the split alignment is correct.
 
 ---
 
@@ -1649,7 +1656,7 @@ for a number of reasons:
   blocks (nucleotides).
 - Moreover, given alternative splicing, the number of proteins that needs to
   be distinguished is higher than the number of genes.
-- Proteins can be modified in a myriad of ways, structurally, as well as
+- Proteins can be modified in a myriad of ways after translation, structurally, as well as
   biochemically, by the addition of many different groups on individual amino
   acids. For some proteins, it is estimated that many thousands of different
   variants can be found in a cell.
@@ -1799,7 +1806,7 @@ Next to protein levels, we are also interested in what proteins do in the
 cell: their functions and interactions. Many protocols and analyses have
 been developed for this, with most focusing on protein-protein, protein-DNA
 and protein-metabolite (enzymatic) interactions. [Box 5.10](Week5_funcprot) lists some methods to
-measure sch intereactions. Note that while many of these experiments are
+measure such intereactions. Note that while many of these experiments are
 cumbersome, they are essential to advance functional genomics -
 (bioinformatics) predictions critically depend on high-quality data and
 cannot replace experimental validation. 
@@ -1854,7 +1861,7 @@ measuring the structure of protein complexes, is often necessary
 
 Very recently, [AlphaFold 3](https://www.nature.com/articles/s41586-024-07487-w) has been introduced, which promises to predict
 interactions between proteins and other proteins, DNA, small molecules etc.
-computationally (like AlphEvenaFold 2 predicts protein structure). However, it
+computationally (like AlphaFold 2 predicts protein structure). However, it
 still has to be seen whether this tool is reliable enough in practice; the
 fact that it is not fully available to the public does not make that very
 easy.
@@ -1863,10 +1870,10 @@ easy.
 
 
 Like transcriptomics data, "interactomics" measurements are stored in
-databases, such as [IntAct](https://www.ebi.ac.uk/intact/home) and can be
+databases, such as [IntAct](https://www.ebi.ac.uk/intact/home), and can be
 used to obtain insights into cell-wide protein interaction networks
 ({numref}`protein_network`).  Groups of highly connected proteins, i.e.,
-with many interactions, can indicate e.g., protein complexes or signalling
+with many interactions, can indicate e.g. protein complexes or signalling
 pathways within or between cells; protein-DNA relations can be used to
 identify gene expression regulation programmes.
 
@@ -2046,8 +2053,8 @@ color. If the data is clustered along both genes and samples,
 interesting patterns may be easy to spot. A second approach often used in
 initial data exploration is Principal Component Analysis (PCA), which plots
 samples (or genes) along the main axes of variation in the data. If color or
-markers are added, a PCA plot serves very well to detect outliers and
-groups. Both visualizations are illustrated in {numref}`streptococcus_pca_heatmap`.
+markers are added, a PCA plot serves very well to detect groups and outliers. 
+Both visualizations are illustrated in {numref}`streptococcus_pca_heatmap`.
 
 ---
 
@@ -2092,18 +2099,7 @@ There are two caveats:
 
 There are a number of similar, but more sophisticated approaches that better
 match with experimental follow-up, but these are out of scope for this
-reader.
-
----
-
-#### Classification
-
-Classification is related to differential abundance analysis, in that it
-tries to find genes that best explain the difference between conditions.
-However, here the goal is actually to predict the condition of a new (additional)
-sample based on a limited set of gene expression levels, as accurately as possible.
-Applications are mainly found in medicine, such as diagnosis and prognosis,
-but are also used to distinguish different cell types, growth stages, etc.
+book.
 
 ---
 
@@ -2135,6 +2131,17 @@ of another (set of) gene(s). {numref}`time_series` provides an example.
 
 ---
 
+#### Classification
+
+Classification is related to differential abundance analysis, in that it
+tries to find genes that best explain the difference between conditions.
+However, here the goal is actually to predict the condition of a new (additional)
+sample based on a limited set of gene expression levels, as accurately as possible.
+Applications are mainly found in medicine, such as diagnosis and prognosis,
+but are also used to distinguish different cell types, growth stages, etc.
+
+---
+
 (Week5_clustering)=
 
 #### Clustering
@@ -2143,7 +2150,6 @@ Clustering methods attempt to find groups of genes that have similar
 abundance profiles over all samples, or (vice versa) samples that have
 similar abundance profiles over all genes. We call such genes or samples
 co-expressed. Based on the guilt-by-association principle, correlation
-(also known as 'co-expression' when applied to transcriptomics)
 can be used to learn about the function of genes - "if the expression of gene
 A is similar to that of gene B with a certain function F, then gene A likely
 also has function F". This can help identify genes involved in similar
@@ -2186,13 +2192,14 @@ higher level than that of individual genes.
 
 ### Outlook
 
-This section of the reader on omics data analysis is likely the most prone
+This section on omics data analysis is likely the most prone
 to obsolescence. We have only touched upon or even left out recent
 developments in single-molecule measurements of DNA, RNA, and proteins, of
 single-cell and spatial omics analysis, where molecules are measured in
 individual cells or at grid points in tissues, and accompanying developments
 in deep learning that promise to provide foundation models to capitalize on
-the large volumes of omics data in order to solve specific tasks. The end
+the large volumes of omics data in order to learn the "language" of DNA and
+proteins and to solve specific tasks. The end
 goal, [a systems biology simulation of the living
 cell](https://www.wholecellviz.org/viz.php#replication), is still far from
 reality, but may be reached sooner than we now believe possible.
@@ -2270,7 +2277,7 @@ After completing this exercise, you should be able to explain how genome assembl
 
 In this brief hands-on tutorial, you will use a genome browser to learn more about a specific gene and its sequence variants; then you will work with IGV, the Integrated Genome Viewer, to inspect a number of different NGS datasets.
 Note that in most of the environments discussed below, you can get additional information on plot elements (boxplots, points etc.) by hovering your mouse over it.
-Please <u>**use Google Chrome or Firefox**</u> as other browsers do not display all websites well.
+Please <u>**use Google Chrome or Firefox**</u> as other browsers may not display all websites well.
 
 After completing this exercise, you should be able to explain how next-generation sequencing data is used to study genomic conservation, genetic variation and genome function. 
 1. This tour of genome browsers will be based on a gene called BCL11B. First, look up some information on this gene in the [GeneCards database](https://www.genecards.org/). How did it get its name? 
