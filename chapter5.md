@@ -40,7 +40,7 @@ and metabolomics focus on gene expression, protein, and metabolite levels,
 respectively. Finally, phenomics measures the outward appearance and
 behavior of cells and organisms.
 
-The concept of genes is central to the dogma of molecular biology: it
+The concept of genes is central to the dogma of molecular biology; it
 therefore makes sense that much early research was invested in sequencing
 genomes. These genomes were then annotated for genes, with accompanying
 predicted protein sequences. This focus on sequences has dominated much of
@@ -54,11 +54,11 @@ organisms behave. This led to research in functional genomics and systems
 biology, for which computational data analysis of other omics level data
 have become indispensable.
 
-Below, genomics will first be introduced along with the most relevant
-technology: sequencing, which is also used for transcriptomics. This will
+Below, genomics will first be introduced, along with the most relevant
+technology: sequencing, which is also used for transcriptomics.  This will
 be followed by an introduction to functional genomics and systems biology
-and overviews of transcriptomics, proteomics, metabolomics, and phenomics, as well as
-the main types of data analysis involved.
+and brief overviews of transcriptomics, proteomics, metabolomics, and
+phenomics, as well as the main types of data analysis involved.
 
 ---
 
