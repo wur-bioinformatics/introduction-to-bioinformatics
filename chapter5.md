@@ -2344,7 +2344,7 @@ Although here we have focused on the human genome (because of the wide availabil
 
 :::::{admonition} _Assignment III: Omics data analysis (45 minutes)_
 
-There is a wide variety of tools to analyze omics data; introducing all of these is beyond the scope of this course.
+There is a wide variety of tools to analyze omics data; introducing all of these is beyond the scope of this book.
 To gain some experience, we will explore a pre-processed online compendium of human cancer cell line transcriptomics measurements, the Cancer Cell Line Encyclopedia (CCLE).
 The data is hosted on the [Cancer Dependency Portal (DepMap)](https://depmap.org/portal/ccle/) by the Broad Institute, a collaboration between Harvard and MIT, as part of the Broad Cancer Dependency Map.
 
@@ -2356,8 +2356,8 @@ Again, <u>**use Google Chrome or Firefox**</u>, and do not forget that in most t
 After completing this assignment, you should be able to explain the main types of analyses (differential expression, clustering, enrichment analysis) that can be performed on quantitative data.
 1. Visit the CCLE website and search for the gene we worked with before, BCL11B. Your initial view contains a lot of information on expression and mutations of the gene in different (diseased) tissues. Select the "Characterization" tab at the top. You will then see the expression of the BCL11B gene, visualized using so-called _boxplots_. Use Google to figure out how you should interpret these plots – what do the boxes and lines represent? 
 2. Select the "Show lineage subtypes" box in the menu on the left. In which tissues/tumours is the gene highly expressed? In these tissues, in which diseases is it lowly expressed (i.e., between what diseases is BCL11B **differentially expressed**)? Does this match what you learned in GeneCards? 
-3. By clicking "Explore relationships with other data" (top right) you can explore the data in more depth. In the initial view, the y-axis is just used to separate the data points, it does not actually display a measurement. Hover your mouse over the dots to get more information on the samples in which BCL11B was measured. You can get a more informative picture by selecting "Primary disease" for the "Group by" option under "View Options". In which diseases and which samples do you find the highest expression? 
-4. Now select "Gene" as the data type for the Y axis (top left), enter "BCL11A" and select the "Expression" dataset. Again, under "View options", select to color by "Primary disease". Each point now represents the expression of BCL11A and BCL11B in one sample. In what samples are both genes highly expressed? 
+3. By clicking "Explore relationships with other data" (top right) you can explore the data in more depth. In the initial view, the y-axis is just used to separate the data points, it does not actually display a measurement. Hover your mouse over the dots to get more information on the samples in which BCL11B was measured. You can get a more informative picture by selecting "Model Property" for the "Color by" option under "View Options", and then selecting "Primary disease" as property. In which diseases and which samples do you find the highest expression? 
+4. Now set the "Plot type" to "Scatter plot" (top left). Then for the Y axis, select "Expression" under "Data type" and "Gene" and "BCL11A" under "Feature". Again, under "View options", select to color by "Primary disease" if needed. Each point now represents the expression of BCL11A and BCL11B in one sample. In what types of disease are both genes highly expressed? 
 5. Now compare the expression of BCL11B to the expression of the gene RHOH in the same way. What do you see? You can again hover over the points to get more information; in the legend on the right, you can also double-click a specific disease to isolate a single disease and get a clearer picture. 
 6. What can you say about **differential expression** of RHOH by itself? Again, play with the "Group by" and "Filter by" View Options if needed. Does the differential expression pattern make sense? You can Google search the diseases to learn more about the tissues in which they occur.
 
@@ -2369,7 +2369,7 @@ After completing this assignment, you should be able to explain the main types o
 8. While at GTEx, you can inspect some PCA plots of the samples. PCA, or **Principal Component Analysis**, is often used to visualize high-dimensional data. It finds directions in the data along which the samples differ mostly: PC1 is the direction with most variation, PC2 the next direction perpendicular to PC1, and so on. Using the top menu, go to "Expression" -> "Expression PCA". Select the "Hardy Scale" to color the samples. What do you think this scale measures? Hint: look at the legend beneath the plots, the colors correspond to the Hardy Scale. 
 9. In what tissue do you expect to see differences in expression for "Ventilator case" donors? Check this by selecting the tissue from the "Select a tissue" drop down box to create a tissue-specific PCA plot.
 10. Return to the CCLE and plot BCL11B expression versus BCL11B proteomics. Do you expect a correlation, and do you see one? 
-11. Plot BCL11B expression versus methylation (1kb upstream TSS) and check what DNA methylation does (https://en.wikipedia.org/wiki/DNA_methylation). Are the results what you would expect?
+11. Plot BCL11B expression versus its methylation and check what DNA methylation does (https://en.wikipedia.org/wiki/DNA_methylation). Are the results what you would expect?
 
 ---
 :::::
@@ -2378,8 +2378,8 @@ After completing this assignment, you should be able to explain the main types o
 :class-container: answers
 :open:
 1. Boxplots display distributions, i.e., a large collection of measurements. Boxes indicate the first and third quartile (i.e., 25% of the data falls below the box, 25% above the box) and a line indicates the median. The whiskers typically extend to 1.5x the range between the first and third quartile. Individual points indicate "outliers", i.e., measurements which fall outside this range. 
-2. Mostly high in blood and bone tissues, specifically in ALL and Ewings sarcoma. Low in blood for AML and chronic diseases (CLL, CML) and in bone for the other sarcomas. And yes, more or less; BCL11B is involved in T-cell tumors, not B-cell ones (UniProt actually lists this). It seems to be a B-cell tumor _repressor_, so low expression indicates disease. 
-3. Expression is highest in bone cancer (sample SKNMC) and leukemia (SUPT11). 
+2. Mostly high in blood and bone tissues, specifically in T-cell leukemia/lymphoma, mature T and NK neoplasms (blood) and Ewings sarcoma (bone). Low in blood for B-cell leukemia/lymphoma and Hodgkin lymphoma and in bone for the other sarcomas. And yes, more or less; BCL11B is involved in T-cell tumors, not B-cell ones (UniProt actually lists this). It seems to be a B-cell tumor _repressor_, so low expression indicates disease. 
+3. Expression is highest in Ewing sarcoma (sample NCCES1C1) followed by mature T and NK lymphoma (SUPT11) and T-cell leukemia/lymphoma (PF382).
 4. In leukemia and lung cancer samples (top right). 
 5. Correlated expression in leukemia and bone cancer. In both cases, both genes clearly have a much higher expression for the particular disease than in other cell types/diseases. 
 6. Differential expression between lymphomas/leukemias vs. most other diseases. This makes sense: the GeneCard for RHOH describes a role in leukemias and lymphomas. 
@@ -2401,7 +2401,7 @@ It is easier to find such relations by performing clustering, i.e., finding grou
 Such clusters can help you learn about functional relations between genes that cluster together, or phenotypic relations between samples that cluster together.
 For the CCLE, a nice interactive viewer is available [here](https://maayanlab.github.io/CCLE_Clustergrammer/).
 Open the page and select the "Bone" subset. 
-1. In the main figure, the so-called **heatmap**, what do blue and red pixels correspond to? Note that you can zoom in and scroll around using the mouse.
+1. In the main figure, the so-called **heatmap**, what do blue and red pixels correspond to? Note that you can zoom in and scroll around using the mouse; and do read the text below the figure.
 2. What is the expression level of BCL11B (use the search box if needed) in sample RDES? 
 3. On the right and at the bottom, the clusters are indicated by grey bars. How many groups of genes do you see initially? And how many groups of samples? Do you think that is reasonable, given the gene expression values? 
 4. You can create fewer or more clusters using the "volume slider buttons" next to the clusters. Try these. Does it look OK to group the genes into more clusters? And the samples? 
@@ -2416,7 +2416,7 @@ Open the page and select the "Bone" subset.
 1. Blue corresponds to low gene expression and red corresponds to high gene expression. Expression here seems to be normalized, where 0 means average expression. 
 2. 1.304 (zoom in and hover). 
 3. Two groups of genes, three groups of samples. There seems to be a clear distinction between the two gene clusters, in terms of color (expression); the difference between the sample clusters is less clear – you could argue that 2 or 4 clusters would be equally good. 
-4. It does not seem to look OK for Genes, you get many very small clusters. Samples maybe; at four clusters, you get a small extra cluster of two similar samples. 
+4. It does not seem to look OK for genes, you get many very small clusters. Samples maybe; at four clusters, you get a small extra cluster of two similar samples. 
 5. Yes, they are next to each other in the clustering: their expression is very similar over all samples. 
 6. Yes, histology: the right cluster clearly corresponds to Ewing sarcoma. 
 7. Yes, these are all bone-related biological processes.
@@ -2428,11 +2428,11 @@ Open the page and select the "Bone" subset.
 
 :::::{admonition} _Assignment V: Differential gene expression (45 minutes)_
 
-NCBI hosts the Gene Expression Omnibus, a database containing gene expression experiments. You can download and combine these data in various formats and analyse them on your own computer to potentially answer biological questions without performing measurements yourself. This course is too short to teach all the skills you need for reanalysing public data, but we can make use of an online tool called GEO2R to do some simple analyses in a web browser.
+NCBI hosts the Gene Expression Omnibus, a database containing gene expression experiments - both microarrays and RNAseq. You can download and combine these data in various formats and analyse them on your own computer to potentially answer biological questions without performing measurements yourself. This course is too short to teach all the skills you need for reanalysing public data, but we can make use of an online tool called GEO2R to do some simple analyses in a web browser.
 
 After completing this assignment, you should be able to interpret the results of differential expression analyses on quantitative data. 
-1. Visit the [Gene Expression Omnibus](https://www.ncbi.nlm.nih.gov/geo), search for sample series GSE69485 and read the summary and design of the study that produced this series. At the bottom you can find a list of samples. How many are there? 
-2. What type of microarray is used? You can get more information by searching GEO for GPL90. How many probesets are there, for how many genes?
+1. Visit the [Gene Expression Omnibus](https://www.ncbi.nlm.nih.gov/geo), search for sample series GSE69485 (microarray data) and read the summary and design of the study that produced this series. At the bottom you can find a list of samples. How many are there? 
+2. What type of microarray is used? You can get more information by searching GEO for GPL90. How many probesets are there (corresponding to the number of rows in the data table)? For how many genes?
 
 You can perform simple analyses on this data in GEO2R.
 In this case, we will try to find genes differentially expressed between yeast grown in aerobic and anaerobic conditions, i.e., with oxygen vs. without oxygen.
@@ -2453,7 +2453,8 @@ The logFC column indicates the log<sub>2</sub> fold change: 0 for no change, pos
 
 ---
 
-<b><center>Optional</b></center>
+<b><center>Optional (20 minutes)</b></center>
+
 Ideally, the results obtained are corroborated by additional experiments.
 In GEO, another study is available that focused on the effect of engineering amylase genes in yeast, producing series GSE38848.
 
@@ -2493,7 +2494,7 @@ The results will be discussed at the end of the Week 5 recap lecture
 ---
 
 Explore tissue-specific gene expression of ARF5 and IAA5.
-For this, you can use some other (plant-specific) resources than the human-centered ones you used above, e.g., [Expression Atlas](https://www.ebi.ac.uk/gxa/), also accessible through UniProt, under "Expression") or [BAR](https://bar.utoronto.ca/), the Bio-Analytic Resource for Plant Biology.
+For this, you can use some other (plant-specific) resources than the human-centered ones you used above, e.g., [Expression Atlas](https://www.ebi.ac.uk/gxa/) (also accessible through UniProt, under "Expression") or [BAR](https://bar.utoronto.ca/), the Bio-Analytic Resource for Plant Biology.
 
 Describe the following items in a few bullet points each.
 You may include up to two figures or tables.
