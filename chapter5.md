@@ -251,7 +251,6 @@ Oxford Nanopore MinION/PromethION and Pacbio Sequel II devices. Credits:
 
 Sanger sequencing was the first 'high-throughput' method of DNA sequencing. 
 For more details on its history and how it works, see [Box 3](w5box3). 
-Important to know about Sanger sequencing is 
 
 (w5box3)=
 ::::{admonition} Box 5.3: Sanger sequencing
@@ -307,6 +306,20 @@ is. This makes it difficult to differentiate between 3, 4 and 5 nucleotides
 of the same base. Sanger sequencing machines can sequence 96 fragments in 
 parallel, making it comparatively low throughput.
 
+::::
+
+Sanger sequencing needs many copies of a single DNA fragment to be present in
+the sequencing reaction. This meant that in the sample preparation step 
+fragments were cloned using either PCR or other large scale amplification methods.
+The requirement of uniqueness is the biggest drawback of Sanger sequencing.
+
+(w3imp1)=
+::::{admonition} Important to know about Sanger sequencing
+:class: important
+- is the original sequencing platform
+- produces reads of upto 1000bp long with a quality of 99.9% (Q30)
+- is low throughput
+- can only sequence on fragment at a time.
 ::::
 
 Sanger sequencing was the main sequencing platform until around 2007. From
@@ -365,7 +378,9 @@ fall into a tiny well and the amplification step takes place in the wells:
 <iframe align="middle" width="560" height="315" src="https://www.youtube.com/embed/pfZp5Vgsbw0?si=rONHDeNRYq_cL0kg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ::::
 
-The following things are important to know about Illumina sequencing:
+(w5imp2)=
+::::{admonition} Important to know about Illumina sequencing
+:class: important
 - all reads in one run have the same length, defined by the number of cycles (20-350bp). 
 - due to the fixed read length it is possible that the sequenced reads contain 
   primer sequences (if the DNA fragment was shorter than the number of cycles). 
@@ -379,6 +394,7 @@ that is approximately known.
 single run range from millions to billions, depending on the model.
 - fragments with extreme GC content are less likely to be sequenced, which can
 lead to incomplete genome assemblies or coverage.
+::::
 
 Overall, Illumina reads are cheap, short and highly accurate.
 
@@ -438,14 +454,16 @@ base.
 
 ::::
 
-Important things to know about PacBio sequencing:
-
+(w5imp3)=
+::::{admonition} Important things to know about PacBio sequencing
+:class: important
 - fragments with extreme GC content can be sequenced as there is no PCR step
 - the same fragment can be sequenced multiple times and used for error correction (Hifi)
 - read length is about 15kb for Hifi reads and up to 175kb for continuous long reads (CLR)
 - accuracy ranges from 99% (Q20) for CLR to 99.9% (Q30) for HiFi reads
 - it is high throughput with one run yielding up to 25 million reads (Revio)
 - is still more expensive than Illumina
+::::
 
 ---
 
@@ -504,12 +522,15 @@ the International Space Station.
 
 ::::
 
-Important things to know about nanopore sequencing:
+(w5imp4)=
+::::{admonition} Important things to know about nanopore sequencing
+:class: important
 - Can sequence very long reads
 - Accuracy is 98-99.9% (Q17-Q30)
 - Can directly detect base modifications (methylation)
 - fragments with extreme GC content can be sequenced as there is no PCR step
 - it is high throughput with one flowcell yielding between 2.5 and 3.5 million reads (MinION)
+::::
 
 ##### Quality control
 
@@ -651,37 +672,37 @@ algorithms and software. Any computational approach has to overcome the
 real-world challenges posed by the sequenced data and the characteristics of
 genomes.
 
-:::{figure} images/Week5/jigsaw.png
+:::{figure} images/Week5/fish_puzzle_numbers.png
 :alt: The assembly problem as a jigsaw puzzle
 :align: center
 :name: jigsaw
 
-The assembly problem as a jigsaw puzzle.
-Credits: {cite}`jigsaw_2016`.
+The assembly problem as a jigsaw puzzle. Numbers are referred to in the text.
+Credits: Based on [Public Domain Mark](https://creativecommons.org/public-domain/pdm/) {cite}`three_fish`, [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
 :::
-%#% Figure jigsaw is created by a lecturer at the Melbourne University. Not sure if we are allowed to use this.
+
 
 If we look at a genome assembly using the analogy of a jigsaw puzzle ({numref}`jigsaw`), the challenges become obvious:
 
 - There is no picture on the puzzle box, i.e. we have no idea what the assembled genome is meant to look like.
- We can look at related genomes, but this will only give an approximate idea.
+ We can look at related genomes, but this will only give an approximate idea. (Number 1 in the image)
 
 - There are loads of pieces in the puzzle, billions of them.
  Every piece represents a small part of the genome that has been sequenced.
 
-- Some pieces are frayed or dirty, i.e., reads contain errors, further obfuscating the overall picture.
+- Some pieces are frayed or dirty, i.e., reads contain errors, further obfuscating the overall picture. (2 and 5)
 
 - Some pieces are missing.
  Some parts of the genome do not break as easily as others, and are not included in the sheared fragments.
- Other have extreme GC values and do not amplify as well in the PCR step.
+ Other have extreme GC values and do not amplify as well in the PCR step. (3)
 
 - Some parts of the puzzle contain the same image.
  In genome terms, these are duplicated regions, where some genes may have more than one copy.
- For example, the ribosomal RNA cistron (the region which encodes the parts of the ribosome) consists of multiple copies.
+ For example, the ribosomal RNA cistron (the region which encodes the parts of the ribosome) consists of multiple copies. (4)
 
-- Some parts of the puzzle look completely identical and are featureless, like blue sky: the repeat regions.
+- Some parts of the puzzle look completely identical and are featureless: the repeat regions. (6)
 
-- In circular genomes, there are no "corners": we do not know where the genome begins or ends.
+- In circular genomes, there are no "corners": we do not know where the genome begins or ends. (7)
 
 In addition to the metaphors of the single puzzle, many organisms contain
 two (i.e. diploid) or more (i.e. polyploid) copies of the same chromosome,
@@ -691,7 +712,7 @@ these differences grow too big, parts from the two puzzles may be assembled
 independently without noticing (remember - we have no puzzle box!).
 
 With long high-quality reads this puzzle challenge becomes simpler, as there
-are fewer pieces in total and fewer only blue-sky parts. Currently,
+are fewer pieces in total and fewer featureless parts. Currently,
 chromosome-level assemblies are routinely generated using PacBio HiFi reads
 in combination with Hi-C.
 
@@ -699,13 +720,13 @@ in combination with Hi-C.
 
 ##### Repeats
 
-Repeat regions (i.e., the blue sky) are the main challenge in genome
+Repeat regions (i.e., the boring background) are the main challenge in genome
 assembly and most contigs (contiguous sequences, the longest stretches that
 can be assembled unequivocally) stop at the edges of repetitive regions.
-The process is like finding many puzzle pieces containing both bits of stork
-and blue sky, and trying to figure out which edge belongs to which stork and
-how much blue sky goes in between. One solution for solving the repeat
-problem are longer reads (that can bridge the blue sky between two storks).
+The process is like finding many puzzle pieces containing both bits of fish
+and background, and trying to figure out which edge belongs to which fish and
+how much background goes in between. One solution for solving the repeat
+problem are longer reads (that can bridge the sea between two fishes).
 To illustrate the scale of the problem that repeats pose in assembly: most
 mammalian Y-chromosomes have not been assembled for more than 50%, because
 of the repeat content.
@@ -733,17 +754,18 @@ from them. In the [reference genome quality](Week5_reference_genome_quality) sec
 order were already mentioned. If a genome is assembled in fewer, larger
 pieces (i.e., longer contigs), we can also understand more about the long
 distance regulatory elements that play a role in regulation of gene
-expression ({numref}`regulatory_elements`).
+expression ({numref}`Pax6_locus`).
 
-:::{figure} images/Week5/regulatory-elements.png
-:alt: Regulatory elements
+:::{figure} images/Week5/Pax6_operon.jpg
+:alt: PAX6 locus
 :align: center
-:name: regulatory_elements
+:name: Pax6_locus
 
-Examples of long-distance regulatory elements and their distances to the
-target gene identified in the human genome. Credits: {cite}`regulatory_elements_2010`
+Physical map of the human PAX6 locus showing long distance regulatory elements. 
+Credits: {cite}`pax_locus`
+
 :::
-%#% Figure regulatory_elements contains imagery that is specified as for personal use only. Replace this figure.
+
 
 As discussed above, the telomere-to-telomere assembly of the human genome
 added the 5% hitherto missing genome sequence. While the previous human
@@ -766,9 +788,10 @@ Shows the protein-coding gene _FRG1_ and its 23 paralogs in CHM13. Only 9
 were found in the previous assembly (GRCh38). Genes are drawn larger than
 their actual size, and the "_FRG1_" prefix is omitted for brevity. All
 paralogs are found near satellite arrays. _FRG1_ is involved in
-acioscapulohumeral muscular dystrophy (FSHD). Credits: modified from {cite}`t2t_human_genome_2022`.
+acioscapulohumeral muscular dystrophy (FSHD). 
+Credits: modified from [CC BY  4.0](https://creativecommons.org/licenses/by/4.0) via PMC {cite}`t2t_human_genome_2022`.
 :::
-%#% Figure FSHD is under copyright by Science. Unable to use this figure for free.
+
 
 ---
 
@@ -805,7 +828,7 @@ Mapping reads to a reference is a means to an end. As stated above, one of
 the main goals is to detect genomic variation. Such variation can help
 explain phenotypic variation (see [Box 5.7](Week5_phenotypic_variation)). Genomic variation
 between samples, individuals and/or species can also be used to study
-evolutionary history (see also chapters [2](week2) and [3](week3), on multiple sequence
+evolutionary history (see also chapters [2](chapter2) and [3](chapter3), on multiple sequence
 alignments and phylogeny).
 %#% Add direct cross-link to MSA in chapter 2 when written.
 Variants are divided into two main groups: structural or large-scale
@@ -928,8 +951,9 @@ condition have a high pitched cry that sounds similar to a cat, which has
 given the condition its name.
 
 Furthermore, they suffer a.o. from delayed growth and poor reflexes.
+Credits: Image modified from [CC-BY 2.0](https://creativecommons.org/licenses/by/2.0) {cite}`cri-du-chat` and [CC-BY SA 4.0](http://creativecommons.org/licenses/by/4.0/) {cite}`chrom5`.
 ::::
-%#% Image cri_du_chat source https://www.newhealthguide.org/Life-Expectancy-Of-Cri-Du-Chat-Syndrome.html.
+
 
 ---
 
@@ -1212,16 +1236,6 @@ scientific approach in which the main goal is to construct models of living
 systems, that are increasingly refined by hypothesis formation,
 experimentation, and model extension or modification.
 
-%:::{figure} images/Week5/systems-biology.png
-%:alt: The systems biology cycle
-%:align: center
-%:width: 400px
-%:name: systems_biology
-%
-%The systems biology cycle, aiming to iteratively improve models of living
-%systems. Credits: {cite}`systems_biology_2002`.
-%:::
-%#% Figure systems_biology is under copyright by Science. Unable to use for free.
 
 :::{figure} images/Week5/systems-biology_alt.svg
 :alt: The systems biology cycle
@@ -1249,7 +1263,7 @@ data analysis is an essential element in systems biology.
 Transcriptomics is concerned with measuring the expression of genes (i.e.,
 the levels of transcription of genes on the genome to RNA). RNA and its
 role in the cell has already been discussed in [chapter 1](Week1_rna_transcription_splicing). If you want to know
-what other types of RNA exist outside the common mRNA, tRNA and rRNA, read
+what other types of RNA exist outside the common mRNA, miRNA, tRNA and rRNA, read
 [Box 5.6](Week5_RNA). Here we focus on measuring and counting transcripts (mRNA).
 %#% Chapter 1 does also mention miRNA as one of the main types of RNA.
 
@@ -1263,7 +1277,7 @@ Many other types of RNA exist in the cell and they perform important regulatory 
   miRNAs bind to target sites in mRNA and prevent binding of the messenger.
 - siRNA (short interfering RNA): are generally 20-24nt long pieces of RNA that work similar to miRNAs but instead of actively preventing translation, the targeted mRNA is cut into pieces and destroyed.
 
-:::{figure} images/Week5/RNA-types.png
+:::{figure} images/Week5/RNA-types.jpg
 :alt: Overview of the different types of RNA
 :align: center
 :width: 100%
@@ -1319,19 +1333,6 @@ mRNA levels:
 
 #### How to measure mRNAs?
 
-%:::{figure} images/Week5/differential-gel.jpg
-%:alt: Differential display gel
-%:width: 150px
-%:height: 300px
-%:align: right
-%:name: differential_gel
-%
-%Example of differential \
-%display gel. Credits: modified from \
-%{cite}`differential_gel_2001`.
-%:::
-%#% Figure differential_gel is under copyright by the American Physiological Society. Unable to use for free.
-
 :::{figure} images/Week5/differential-gel_alt.png
 :alt: Differential display gel
 :width: 184px
@@ -1366,18 +1367,6 @@ which in turn is detected. When the reaction passes a threshold at a given
 cycle, the cycle number is used to deduce the original amount of template
 fragments in the reaction ({numref}`qPCR_alt`). qPCR is often used to validate
 results obtained by other quantitative methods.
-
-%:::{figure} images/Week5/qPCR.jpg
-%:alt: qPCR amplification graph
-%:align: center
-%:width: 500px
-%:name: qPCR
-%
-%Amplification plot of a DNA fragment in a qPCR reaction.
-%C{sub}`q` corresponds to the cycle were fluorescence passes the
-%detection threshold. Credits: {cite}`qPCR_nd`.
-%:::
-%#% Unable to use figure qPCR due to copyright.
 
 :::{figure} images/Week5/qPCR_alt.svg
 :alt: qPCR amplification graph
@@ -1417,16 +1406,6 @@ expression of the corresponding gene.
 ---
 
 ##### cDNA and oligonucleotide arrays
-
-%:::{figure} images/Week5/microarrays.png
-%:alt: cDNA (two-color) vs oligonucleotide (one-color) microarray analysis.
-%:align: center
-%:name: microarrays
-%
-%The difference between cDNA (two-color) and oligonucleotide (one-color) microarray analysis.
-%Credits: modified from {cite}`microarrays_2007`.
-%:::
-%#% Unable to use figure microarrays due to copyright.
 
 :::{figure} images/Week5/microarrays_alt.svg
 :alt: cDNA (two-color) vs oligonucleotide (one-color) microarray analysis.
@@ -1525,15 +1504,14 @@ to deal with the resulting data. For a review, see this [paper](https://genomebi
 
 :::{figure} images/Week5/RNAseq-protocol.png
 :alt: RNAseq protocol
-:align: right
+:align: center
 :width: 350px
 :name: RNAseq_protocol
 
 Standard RNAseq protocol. \
-Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) modified from \
-{cite}`RNAseq_protocol_2011`.
+Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`own_5_2024` modified/created from \
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`RNAseq_seq_2011`, {cite}`RNAseq_plant_2023`, {cite}`RNAseq_seq_2020`, [CC BY 3.0](https://creativecommons.org/licenses/by/3.0) {cite}`RNAseq_mouse_2013`, {cite}`RNAseq_heart_2016`, [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0) {cite}`RNAseq_fish_2014`
 :::
-%#% Figure RNAseq_protocol seems to be self-created out of imagery from different sources. I was only able to find the source for the sequencer, which now serves as the reference for the whole image.
 
 The standard protocol of an RNAseq experiment is shown in {numref}`RNAseq_protocol`.
 First, all RNA (total RNA) is extracted from a biological sample.
@@ -1680,21 +1658,6 @@ two samples.
 ---
 
 #### ChIPseq and other protocols
-
-%:::{figure} images/Week5/chip-protocol.jpeg
-%:alt: ChIPseq protocol
-%:align: right
-%:name: chip_protocol
-%
-%The chromatin immunoprecipitation (ChIP) protocol. Proteins are
-%cross-linked to DNA, after which genomic DNA is isolated and sheared. Using
-%an antibody, only the protein of interest is selected (the
-%immunoprecipitation step), after which the cross-linking is reversed and the
-%DNA can be sequenced by PCR (ChIP-PCR) or NGS (ChIPseq). Similar protocols
-%are available for protein-RNA and protein-protein interactions, the latter
-%using two antibodies. Credits: {cite}`chip_protocol_2009`.
-%:::
-%#% Unable to use figure chip_protocol due to copyright.
 
 :::{figure} images/Week5/chip-protocol_alt.jpg
 :alt: ChIPseq protocol
