@@ -40,7 +40,7 @@ and metabolomics focus on gene expression, protein, and metabolite levels,
 respectively. Finally, phenomics measures the outward appearance and
 behavior of cells and organisms.
 
-The concept of genes is central to the dogma of molecular biology: it
+The concept of genes is central to the dogma of molecular biology; it
 therefore makes sense that much early research was invested in sequencing
 genomes. These genomes were then annotated for genes, with accompanying
 predicted protein sequences. This focus on sequences has dominated much of
@@ -54,11 +54,11 @@ organisms behave. This led to research in functional genomics and systems
 biology, for which computational data analysis of other omics level data
 have become indispensable.
 
-Below, genomics will first be introduced along with the most relevant
-technology: sequencing, which is also used for transcriptomics. This will
+Below, genomics will first be introduced, along with the most relevant
+technology: sequencing, which is also used for transcriptomics.  This will
 be followed by an introduction to functional genomics and systems biology
-and overviews of transcriptomics, proteomics, metabolomics, and phenomics, as well as
-the main types of data analysis involved.
+and brief overviews of transcriptomics, proteomics, metabolomics, and
+phenomics, as well as the main types of data analysis involved.
 
 ---
 
@@ -123,11 +123,11 @@ assembled using the third generation technologies described below: [PacBio](Week
 
 ### The history of genome sequencing
 
-The first genomes sequenced were those of the Phi X bacteriophage in 1977
+The first genomes sequenced were those of viruses: the Phi X bacteriophage in 1977
 and the Epstein-Barr virus in 1983. The first bacterial genome,
 _Haemophilus influenzae_, was sequenced in 1995, followed by the first
 archaeal genome sequence of _Methanococcus jannaschii_ in 1996. In the same
-year followed the first eukaryotic genome, that of _Saccharomyces
+year the first eukaryotic genome was published, that of _Saccharomyces
 cerevisiae_ (baker's yeast). _Escherichia coli_, the main bacterial model
 organism, was sequenced in 1997. Sequencing of the human genome started
 already in 1988 and was officially finished in 2003 ({numref}`landmarks_in_genetics`) and
@@ -142,7 +142,8 @@ History of genome sequencing and the Human Genome Project.
 Credits: {cite}`landmarks_in_genetics_2003`.
 :::
 %#% Beautiful figure but under copyright by Springer Nature. Their quick price estimate returns a $250 price tag for our use case.
-As previously described, the project was very costly, with an estimated cost of \$3 billion. In
+As described in [Box 5.1](Week5_humangenomeproject), the Human Genome
+Project project was very costly, with an estimated cost of \$3 billion. In
 comparison, it is nowadays possible to sequence all variants between a human
 genome and the reference for less than \$1,000 on Illumina's NovaSeq
 machine.
@@ -153,9 +154,10 @@ machine.
 
 With the rapid evolution of sequencing technology, our understanding of
 genomes and their content has grown as well. We now know that genomes vary
-greatly in terms of size, chromosome numbers, and ploidy ({numref}`gene_ploidy`),
+greatly in terms of size, chromosome numbers, the numnber of copies of
+each chromosome -- the ploidy ({numref}`gene_ploidy`),
 as well as gene content ({numref}`genome_sizes_alt`). Genome sizes range from 100kb in
-bacteria to more than 100Gb (Giga basepairs) in plants.
+bacteria to more than 100Gb (Giga basepairs) in plants. Humans have a genome size of 3.2Gb. 
 
 :::{figure} images/Week5/gene-ploidy.png
 :alt:
@@ -166,17 +168,16 @@ Left, variety of genome sizes. Credits: [CC BY-SA 3.0](https://creativecommons.o
 right, examples of ploidy. Credits: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) {cite}`gene_ploidy_2011`.
 :::
 
-Humans have a genome size of 3.2Gb. Not only the genome size varies
-greatly, in eukaryotes the number of chromosomes and chromosomal copies
-(ploidy) do too. Chromosome numbers range from 4 in fruitfly (\_Drosophila*)
-to 23 in human to 50 in goldfish and 100+ in some ferns. Similarly, ploidy
-ranges from haploid (single set of chromosome(s), ploidy of N) and diploid
-(two copies, ploidy of 2N) to polyploid (more than 3 copies), with at the
-extreme end ferns with ploidy levels of over 100. Gene numbers also vary
-per species; at the low end, bacterial endosymbionts have 120+ genes,
-whereas most higher eukaryotes (including humans) have between 15,000 and
-25,000 genes and some plants can have more than 40,000 genes – rice has over
-46,000.
+Not only the genome size varies greatly, in eukaryotes the number of
+chromosomes and ploidy do too.  Chromosome numbers range from 4 in fruitfly
+(_Drosophila melanogaster_) to 23 in human to 50 in goldfish and 100+ in some
+ferns. Similarly, ploidy ranges from haploid (single set of chromosome(s),
+ploidy of N) and diploid (two copies, ploidy of 2N) to polyploid (more than
+3 copies), with at the extreme end ferns with ploidy levels of over 100. 
+Gene numbers also vary per species; at the low end, bacterial endosymbionts
+have 120+ genes, whereas most higher eukaryotes (including humans) have
+between 15,000 and 25,000 genes and some plants can have more than 40,000
+genes – rice has over 46,000.
 
 %:::{figure} images/Week5/genome-sizes.jpg
 %:alt: Gene content table
@@ -201,15 +202,16 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 :::{admonition} Box 5.2: Size does(n't) matter?
 :class: tip
 
-Genomes come in all shapes and sizes. The smallest known (non-viral) genome
+Genomes come in all shapes and sizes.  The smallest known (non-viral) genome
 is that of the bacterial endosymbiont _Nasuia deltocephalinicola_, which
-only consists of 112,091 nucleotides, encoding 137 proteins. The largest
-genomes known to date are marbled lungfish and the plant _Paris
-japonica_ with 130,000,000,000 nucleotides (130Gb) and 150,000,000,000 nucleotides (150Gb) respectively, although the amoeboid
-_Polychaos dubium_ is purported to have a genome size of 670Gb. Genome size
-is not necessarily correlated with the number of genes in the genome (see
-also {numref}`genome_sizes_alt`). Number of protein coding genes in turn is not
-correlated entirely with organism complexity.
+only consists of 112,091 nucleotides, encoding 137 proteins.  The largest
+genomes known to date are marbled lungfish and the plant _Paris japonica_
+with 130,000,000,000 nucleotides (130Gb) and 150,000,000,000 nucleotides
+(150Gb) respectively, although the amoeboid _Polychaos dubium_ is purported
+to have a genome size of 670Gb.  Genome size is not necessarily correlated
+with the number of genes in the genome (see also
+{numref}`genome_sizes_alt`).  The number of protein coding genes in turn is
+not correlated entirely with an organism's complexity.  
 :::
 
 ---
@@ -229,8 +231,14 @@ are three ways of sequencing:
 
 - Direct sequencing involves directly measuring the order of nucleotides in a strand of DNA, which has only recently become feasible and is thus far only implemented in [Oxford Nanopore sequencing](Week5_nanopore).
 
-Some sequencing devices and their capabilities in terms of read length and
-yield per run are shown in {numref}`sequencing_technology`.
+Different technologies vary wildly in the length of DNA sequences they produce
+(the read length) and their throughput, which together determine the
+coverage: the (average) number of times each base in the genome is represented in a read.
+For some purposes, such as genome assembly, it is essential that the
+coverage is sufficiently high - depending on read length, between 50x to
+100x. A number of sequencing devices and their
+capabilities in terms of read length and yield per run are shown in
+{numref}`sequencing_technology`.
 
 :::{figure} images/Week5/sequencing-technology.jpg
 :alt: Sequencing technology evolution
@@ -317,8 +325,8 @@ Next-generation sequencing (NGS) technologies allow much higher throughput
 at far lower cost than Sanger sequencing, although it comes at a price:
 shorter reads and lower base-calling accuracy. Where Sanger sequencing
 machines could sequence 96 fragments simultaneously, these newer devices now
-produce billions of reads per sequencing run. Describing all of these
-methods in detail is beyond the scope of this course.
+produce billions of reads per sequencing run. Describing the various
+methods in detail is beyond the scope of this book.
 
 As with Sanger sequencing, NGS methods rely on amplification of a library of
 input DNA fragments to enhance the signal of the actual sequencing step.
@@ -359,7 +367,7 @@ Illumina reads can be sequenced from one primer end only, which yields
 so-called single end reads, or from both primer ends, which gives paired end
 reads, i.e., two reads that originate from the same molecule with a distance
 that is approximately known. The read length is set by the protocol and
-ranges between 30 to 2x350 nucleotides. The number of clusters of amplified
+ranges between 30 to 2 x 350 nucleotides. The number of clusters of amplified
 fragments on a flow cell ranges from millions to billions.
 
 Illumina reads are cheap, short, and highly accurate. One issue is that
@@ -398,7 +406,7 @@ linear, and that a single template can thus be sequenced multiple times
 consecutively in what is called circular consensus sequencing (CCS). In
 general 3rd generation sequencing techniques suffer from a higher error
 rate, with most errors being indels, short insertions or deletions. This
-has implications for, e.g., mapping and assembly. Making use of the CCS
+has implications for, e.g., mapping and assembly (discussed below). Making use of the CCS
 allows for proofreading and higher accuracy ({numref}`pacbio_sequencing`), with the most
 recent PacBio HiFi reads reaching 99% read accuracy.
 
@@ -741,7 +749,7 @@ genome assembly was already considered gold standard and very complete, the
 number of genes increased with 5%, of which 0.4% were protein coding. This
 increase in identified genes also allows the study of expression patterns of
 these genes. An increase in genome coverage can also reveal hidden
-elements: {numref}`FSHD` shows all paralogs of a disease related gene that
+elements. As an illustration, {numref}`FSHD` shows all paralogs of a disease related gene that
 have finally been resolved. Most of the missing copies were in hard to
 sequence parts of the genome. Chromosome-level assemblies also allow us to
 study genome evolution itself, the way chromosomes are rearranged during
@@ -752,7 +760,7 @@ evolution and speciation.
 :align: center
 :name: FSHD
 
-Shows the protein-coding gene _FRG1_ and its 23 paralogs in CHM13. Only 9
+The protein-coding gene _FRG1_ and its 23 paralogs in CHM13. Only 9
 were found in the previous assembly (GRCh38). Genes are drawn larger than
 their actual size, and the "_FRG1_" prefix is omitted for brevity. All
 paralogs are found near satellite arrays. _FRG1_ is involved in
@@ -761,10 +769,6 @@ acioscapulohumeral muscular dystrophy (FSHD). Credits: modified from {cite}`t2t_
 %#% Figure FSHD is under copyright by Science. Unable to use this figure for free.
 
 ---
-
-(Week5_variants)=
-
-### Variants
 
 (Week5_phenotypic_variation)=
 ::::{admonition} Box 5.3: Phenotypic variation
@@ -781,8 +785,8 @@ Color variations in carrots. \
 Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`carrots_2006`.
 ```
 
-They account for the large variation in things all around us. In food
-products, variants have been actively selected for to create the wide
+They account for the observable variation in things all around us. In
+agriculte, variants have been actively selected for to create the wide
 varieties of shapes, color and taste we see in our food items today ({numref}`carrots`).
 Historically, variants have been selected purely on these visible phenotypes
 and new ones have been created mainly by chance in large-scale crosses.
@@ -791,8 +795,13 @@ Nowadays genetic information obtained through genome sequencing and variant
 calling is used more and more in plant and animal breeding and selection.
 ::::
 
-Mapping reads to a reference is a means to an end. As stated above, one of
-the main goals is to detect genomic variation. Such variation can help
+(Week5_variants)=
+
+### Variants
+
+When a (nearby) reference genome is already available, reads can also be
+mapped to that genome. Mapping entails finding the location in the genome
+that matches each read, allowing for some small differences - genomic variation. Such variation can help
 explain phenotypic variation (see [Box 5.3](Week5_phenotypic_variation)). Genomic variation
 between samples, individuals, and/or species can also be used to study
 evolutionary history (see also chapters [2](chapter2) and [3](chapter3), on multiple sequence
@@ -809,7 +818,7 @@ multiple nucleotide polymorphisms (MNPs) and small insertions and deletions
 :align: center
 :name: indels
 
-A single-nucleotide polymorphism (top left), insertions (bottom), and deletions (top right).
+A single-nucleotide polymorphism (top left), an insertion (bottom), and a deletion (top right).
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
 :::
 
@@ -844,8 +853,6 @@ likely due to an error.
 
 ---
 
-#### Variants and their effects
-
 :::{figure} images/Week5/flower-color.png
 :alt: Flower color SNP
 :align: center
@@ -863,6 +870,8 @@ of the stop codon in the predicted protein, highlighting the premature
 termination in the white flowered cultivar.
 Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`flower_color_2010`.
 :::
+
+#### Variants and their effects
 
 SNPs between individuals underly most phenotypic variation. Sometimes a
 single variant causes a different phenotype, like the classical mendelian
@@ -957,16 +966,15 @@ humans.
 
 ##### Detection of structural variants
 
-Accurately detecting structural variation in a genome is not easy. The
-challenge lies in detecting the edges of the variants (i.e., breakpoints)
-and, in case of duplications/insertions/deletions, the resulting copy
-number. When a mapping-based approach is used (possible if the reference
-genome is known) we can use read depth and paired end reads to detect
-variants. In the case of a gene duplication we expect more reads to map to
-the single copy of the reference genome than expected. More copies of the
-gene in the sample will result in more reads from that gene
-({numref}`gene_duplication`). Conversely, coverage is expected to drop when one copy
-of a gene is lost.
+Accurately detecting structural variation in a genome is not easy.  The
+challenge lies in detecting the edges of the variants (the so-called
+breakpoints) and, in case of duplications/insertions/deletions, the
+resulting copy number.  When a mapping-based approach is used (possible if
+the reference genome is known) we can use read depth and paired end reads to
+detect variants.  More copies of the gene in the sample will result in more
+reads from that gene ({numref}`gene_duplication`) than expected for a single
+copy.  Conversely, coverage is expected to drop when one copy of a gene is
+lost.
 
 :::{figure} images/Week5/gene-duplication.jpg
 :alt: Gene duplication creates coverage challenges
@@ -977,11 +985,11 @@ Gene duplication results in higher coverage than expected in the duplicated regi
 Credits: [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) {cite}`gene_duplication_2009`.
 :::
 
-Orientations of paired end reads as well as split reads are a good
+Orientations of paired end reads as well as split reads are good
 indicators to detect the boundaries of inversions, but also substitutions
 and translocations. The rearrangements will result in one read from a pair
-to map to one genomic location and the other read to another location.
-Reads from the break point will be split in the alignment.
+mapping to one genomic location and the other read to another location.
+Reads overlapping the breakpoint will be split in the alignment.
 
 ---
 
@@ -1009,8 +1017,8 @@ the ruff (_Calidris pugnax_, {numref}`male_morphs`).
 
 At least two genetic inversions are associated with the _Heliconius numata_
 supergene. The ancestral gene order, which matches that in _H. melpomene_
-and _H. erato_ is shown on the left and is associated with ancestral
-phenotypes such as _H. n. silvana_. Two sequentially derived inversions
+and _H. erato_, is shown on the left and is associated with ancestral
+phenotypes such as those found in _H. n. silvana_. Two sequentially derived inversions
 are associated with dominant alleles and are shown in the middle and right.
 Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`butterflies_2017`.
 :::
@@ -1049,8 +1057,6 @@ Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`CNV_20
 With the same genome, human stem cells differentiate into a wide range of shapes.
 Credits: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) {cite}`stem_cell_2019`.
 :::
-
----
 
 ### The need for functional genomics
 
@@ -1160,11 +1166,12 @@ Typically, functional genomics experiments involve studying the effect of
 genetic variation on certain omics levels.  Such variation can be natural,
 for example comparing omics data measured on two organisms with known
 (limited) genetic differences due to evolution.  It can also be
-experimentally introduced, for example bychanging the environment
-(temperature, nutrients, drugs, etc.), introducing small mutations in the
-DNA sequence, knocking out genes, introducing new genes etc.  The effects of
+experimentally introduced, for example by introducing small mutations in the
+DNA sequence, knocking out genes, introducing new genes etc.  Variation can
+also be introduced in the environment, e.g. by changing the 
+temperature, adding or removing nutrients, introducing drugs etc. The effects of
 such interventions at a specific omics level then provide information on the
-function of the manipulated gene(s).
+function of the manipulated gene(s) or the effect of the environment.
 
 %@% Ideally we would measure different omics levels at the same time (multi-omics) and even in the same sample (paired omics), but this is often experimentally too complex and costly. Some omics technologies are more acccessible than others, in terms of cost, data quality, and interpretation and are therefore most widely used - in particular, gene expression levels (transcriptomics) are often measured and assumed to reflect the overall state of a cell. However, as discussed [below](Week5_omics), we should be careful with this. 
 
@@ -1196,7 +1203,8 @@ experimentation, and model extension or modification.
 :width: 400px
 :name: systems_biology_alt
 
-The systems biology cycle, aiming to iteratively improve models of living systems.
+The systems biology cycle, aiming to iteratively improve models of living systems
+(based on {cite}`systems_biology_2002`).
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`own_5_2024`.
 :::
 
@@ -1218,6 +1226,9 @@ the levels of transcription of genes on the genome to RNA). RNA and its
 role in the cell has already been discussed in [chapter 1](Week1_rna_transcription_splicing). If you want to know
 what other types of RNA exist outside the common mRNA, rRNA, tRNA and miRNA, read
 [Box 5.6](Week5_RNA). Here we focus on measuring and counting transcripts (mRNA).
+For the understanding of transcriptome analysis it is important to remember
+that in eukaryotes most genes contain introns and that one gene can have
+many transcripts.
 
 (Week5_RNA)=
 
@@ -1244,10 +1255,9 @@ The generalized RNAi mechanism up to the molecular level depicting the role of v
 - piRNA (piwi interacting RNA): found in animals and slightly longer than miRNAs (26-31nt), they interact with piwi proteins. piRNAs are implicated in epigenetic gene silencing, but not much is known.
   :::
   %#% Figure RNA_types is rather blurry and unclear. Replace image that better depicts the different types of RNA?
-  For the understanding of transcriptome analysis it is important to remember that in eukaryotes most genes contain introns and that one gene can have many transcripts.
 
 In transcriptomics, the aim is to measure presence and abundance of
-transcripts. Such measurements are based on a large number of cells but
+transcripts. Such measurements are based on a large number of cells, but
 more recently the transcriptome of individual cells can also be studied. So
 what do transcripts and their abundance tell us about a studied subject? In
 any experiment we often want to know what happens to a cell/tissue/organism
@@ -1270,7 +1280,7 @@ variation, some will cause noise.
 
 mRNA levels:
 
-- are the result of mRNA synthesis and mRNA decay.
+- are the result of mRNA synthesis and mRNA decay
 - differ between genes, isoforms, cells, cell types and tissues, and developmental stages
 - vary with cell cycle, during the day (circadian rhythm) and/or season
 - depend on the environment
@@ -1283,10 +1293,11 @@ Just like the study of genomes, transcriptomics has greatly benefitted from
 technological developments that allowed an increase in throughput and
 sensitivity of measurements.  [Box 5.6](Week5_gelspcr) and [Box
 5.7](Week5_microarrays) provide an overview of technologies that were
-important for the development of the field, but are not widely used anymore;
-at this time, RNAseq is almost exclusively used to measure mRNA levels.
+important for the development of the field (such as microarrays), but are
+not widely used anymore; at this time, RNAseq is almost exclusively used to
+measure mRNA levels.
 
-Note that even though microarrays haves now been mostly superseded by RNAseq as a
+Note that microarrays haves now been mostly superseded by RNAseq as a
 cheaper and better quality alternative (see [below](Week5_rnaseq)). 
 However, there are many microarray samples still available for re-use in
 databases, as submission of measurement data to such databases is compulsory
@@ -1297,7 +1308,13 @@ million samples, and [EBI
 ArrayExpress](https://www.ebi.ac.uk/biostudies/arrayexpress).  If you are
 interested in a certain question that may be answered using transcriptomics,
 it makes sense to look here first to see what experimental data is already
-available.
+available. Note that the technology used determines how the expression
+level should be interpreted. Some microarray types compare two samples and thus produce relative
+expression levels, often log<sub>2</sub)-transformed so that 0 means no change, +1
+means a 2-fold higher expression, +2 a 4-fold higher expression and so on;
+negative numbers indicate lower expression. Other microarray types measure
+levels that represent absolute expression in a single sample (in arbitrary
+units).
 
 (Week5_gelspcr)=
 
@@ -1374,7 +1391,7 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 
 (Week5_microarrays)=
 
-::::{admonition} Box 5.6: Microarrays
+::::{admonition} Box 5.7: Microarrays
 :class: tip
 
 The first widely used _high-throughput_ method to measure gene expression 
@@ -1492,15 +1509,15 @@ The RNA is then converted to stable double stranded cDNA.
 The resulting cDNA library is then sequenced, usually as paired end reads of 100-150bp.
 A standard sequencing run results in 30 million or more reads per sample.
 
-The read lengths currently used are relatively short and complicated models
-are used to assign reads to exons and isoforms. New developments in this
+The read lengths currently used are relatively short and complicated methods
+are required to assign reads to exons and isoforms. New developments in this
 field are long cDNA conversions that allow sequencing of full-length
 transcripts on [PacBio](Week5_pacbio) and direct sequencing of RNA on [Oxford Nanopore](Week5_nanopore).
 This allows the detection of the actual isoforms present in samples.
 
 Next, the reads need to be assigned to their corresponding transcripts. For
-this there are two options: mapping of the reads to an existing reference
-which can be either a genome or a transcriptome, or a _de novo_ assembly of the
+this there are two options: mapping of the reads to an existing reference,
+which can be either a genome or a transcriptome; or a _de novo_ assembly of the
 transcripts (similar to assembly of genomes). Once reads have been assigned
 to their corresponding transcript or gene, expression is quantified by
 counting the number of reads per feature.
@@ -1518,10 +1535,7 @@ In principle, sequenced reads from an RNAseq experiment do not differ from
 reads sequenced from genomic DNA in that they can be mapped to a reference
 sequence. The same algorithms apply when mapping RNAseq reads to an
 assembled transcriptome (a reference sequence that only contains RNA
-sequences) or to prokaryotic genomes. Mapping eukaryotic mRNA sequences to
-a genomic reference is more cumbersome, as most genes have introns, which
-are no longer present in the mature mRNA ({numref}`spliced_alignment`).
-
+sequences) or to prokaryotic genomes. 
 :::{figure} images/Week5/spliced-alignment.svg
 :alt: Spiced read alignment
 :align: right
@@ -1531,14 +1545,16 @@ Mapping of mRNA reads to genomic reference with splice aware aligner.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
 :::
 
-This means that reads might contain an exon-exon junction and should be
-split along the reference.  Most aligners will not consider this a valid
-option.  Special splice-aware aligners have been developed for this reason,
-that are able to map normal reads that map contiguously to the reference
-sequence as well as reads that are split across splice sites
-({numref}`spliced_alignment`).  They also take into account known intron-exon 
-boundaries to determine the point within a read where it has to be
-split and whether the split alignment is correct.
+Mapping eukaryotic mRNA sequences to a genomic reference is more cumbersome,
+as most genes have introns, which are no longer present in the mature mRNA
+({numref}`spliced_alignment`).  This means that reads might contain an
+exon-exon junction and should be split along the reference.  Most aligners
+will not consider this a valid option.  Special splice-aware aligners have
+been developed for this reason, that are able to map normal reads that map
+contiguously to the reference sequence as well as reads that are split
+across splice sites ({numref}`spliced_alignment`).  They also take into
+account known intron-exon boundaries to determine the point within a read
+where it has to be split and whether the split alignment is correct.
 
 ---
 
@@ -1640,7 +1656,7 @@ for a number of reasons:
   blocks (nucleotides).
 - Moreover, given alternative splicing, the number of proteins that needs to
   be distinguished is higher than the number of genes.
-- Proteins can be modified in a myriad of ways, structurally, as well as
+- Proteins can be modified in a myriad of ways after translation, structurally, as well as
   biochemically, by the addition of many different groups on individual amino
   acids. For some proteins, it is estimated that many thousands of different
   variants can be found in a cell.
@@ -1790,7 +1806,7 @@ Next to protein levels, we are also interested in what proteins do in the
 cell: their functions and interactions. Many protocols and analyses have
 been developed for this, with most focusing on protein-protein, protein-DNA
 and protein-metabolite (enzymatic) interactions. [Box 5.10](Week5_funcprot) lists some methods to
-measure sch intereactions. Note that while many of these experiments are
+measure such intereactions. Note that while many of these experiments are
 cumbersome, they are essential to advance functional genomics -
 (bioinformatics) predictions critically depend on high-quality data and
 cannot replace experimental validation. 
@@ -1845,7 +1861,7 @@ measuring the structure of protein complexes, is often necessary
 
 Very recently, [AlphaFold 3](https://www.nature.com/articles/s41586-024-07487-w) has been introduced, which promises to predict
 interactions between proteins and other proteins, DNA, small molecules etc.
-computationally (like AlphEvenaFold 2 predicts protein structure). However, it
+computationally (like AlphaFold 2 predicts protein structure). However, it
 still has to be seen whether this tool is reliable enough in practice; the
 fact that it is not fully available to the public does not make that very
 easy.
@@ -1854,10 +1870,10 @@ easy.
 
 
 Like transcriptomics data, "interactomics" measurements are stored in
-databases, such as [IntAct](https://www.ebi.ac.uk/intact/home) and can be
+databases, such as [IntAct](https://www.ebi.ac.uk/intact/home), and can be
 used to obtain insights into cell-wide protein interaction networks
 ({numref}`protein_network`).  Groups of highly connected proteins, i.e.,
-with many interactions, can indicate e.g., protein complexes or signalling
+with many interactions, can indicate e.g. protein complexes or signalling
 pathways within or between cells; protein-DNA relations can be used to
 identify gene expression regulation programmes.
 
@@ -2037,8 +2053,8 @@ color. If the data is clustered along both genes and samples,
 interesting patterns may be easy to spot. A second approach often used in
 initial data exploration is Principal Component Analysis (PCA), which plots
 samples (or genes) along the main axes of variation in the data. If color or
-markers are added, a PCA plot serves very well to detect outliers and
-groups. Both visualizations are illustrated in {numref}`streptococcus_pca_heatmap`.
+markers are added, a PCA plot serves very well to detect groups and outliers. 
+Both visualizations are illustrated in {numref}`streptococcus_pca_heatmap`.
 
 ---
 
@@ -2083,18 +2099,7 @@ There are two caveats:
 
 There are a number of similar, but more sophisticated approaches that better
 match with experimental follow-up, but these are out of scope for this
-reader.
-
----
-
-#### Classification
-
-Classification is related to differential abundance analysis, in that it
-tries to find genes that best explain the difference between conditions.
-However, here the goal is actually to predict the condition of a new (additional)
-sample based on a limited set of gene expression levels, as accurately as possible.
-Applications are mainly found in medicine, such as diagnosis and prognosis,
-but are also used to distinguish different cell types, growth stages, etc.
+book.
 
 ---
 
@@ -2126,6 +2131,17 @@ of another (set of) gene(s). {numref}`time_series` provides an example.
 
 ---
 
+#### Classification
+
+Classification is related to differential abundance analysis, in that it
+tries to find genes that best explain the difference between conditions.
+However, here the goal is actually to predict the condition of a new (additional)
+sample based on a limited set of gene expression levels, as accurately as possible.
+Applications are mainly found in medicine, such as diagnosis and prognosis,
+but are also used to distinguish different cell types, growth stages, etc.
+
+---
+
 (Week5_clustering)=
 
 #### Clustering
@@ -2134,7 +2150,6 @@ Clustering methods attempt to find groups of genes that have similar
 abundance profiles over all samples, or (vice versa) samples that have
 similar abundance profiles over all genes. We call such genes or samples
 co-expressed. Based on the guilt-by-association principle, correlation
-(also known as 'co-expression' when applied to transcriptomics)
 can be used to learn about the function of genes - "if the expression of gene
 A is similar to that of gene B with a certain function F, then gene A likely
 also has function F". This can help identify genes involved in similar
@@ -2177,13 +2192,14 @@ higher level than that of individual genes.
 
 ### Outlook
 
-This section of the reader on omics data analysis is likely the most prone
+This section on omics data analysis is likely the most prone
 to obsolescence. We have only touched upon or even left out recent
 developments in single-molecule measurements of DNA, RNA, and proteins, of
 single-cell and spatial omics analysis, where molecules are measured in
 individual cells or at grid points in tissues, and accompanying developments
 in deep learning that promise to provide foundation models to capitalize on
-the large volumes of omics data in order to solve specific tasks. The end
+the large volumes of omics data in order to learn the "language" of DNA and
+proteins and to solve specific tasks. The end
 goal, [a systems biology simulation of the living
 cell](https://www.wholecellviz.org/viz.php#replication), is still far from
 reality, but may be reached sooner than we now believe possible.
@@ -2261,7 +2277,7 @@ After completing this exercise, you should be able to explain how genome assembl
 
 In this brief hands-on tutorial, you will use a genome browser to learn more about a specific gene and its sequence variants; then you will work with IGV, the Integrated Genome Viewer, to inspect a number of different NGS datasets.
 Note that in most of the environments discussed below, you can get additional information on plot elements (boxplots, points etc.) by hovering your mouse over it.
-Please <u>**use Google Chrome or Firefox**</u> as other browsers do not display all websites well.
+Please <u>**use Google Chrome or Firefox**</u> as other browsers may not display all websites well.
 
 After completing this exercise, you should be able to explain how next-generation sequencing data is used to study genomic conservation, genetic variation and genome function. 
 1. This tour of genome browsers will be based on a gene called BCL11B. First, look up some information on this gene in the [GeneCards database](https://www.genecards.org/). How did it get its name? 
@@ -2328,7 +2344,7 @@ Although here we have focused on the human genome (because of the wide availabil
 
 :::::{admonition} _Assignment III: Omics data analysis (45 minutes)_
 
-There is a wide variety of tools to analyze omics data; introducing all of these is beyond the scope of this course.
+There is a wide variety of tools to analyze omics data; introducing all of these is beyond the scope of this book.
 To gain some experience, we will explore a pre-processed online compendium of human cancer cell line transcriptomics measurements, the Cancer Cell Line Encyclopedia (CCLE).
 The data is hosted on the [Cancer Dependency Portal (DepMap)](https://depmap.org/portal/ccle/) by the Broad Institute, a collaboration between Harvard and MIT, as part of the Broad Cancer Dependency Map.
 
@@ -2340,8 +2356,8 @@ Again, <u>**use Google Chrome or Firefox**</u>, and do not forget that in most t
 After completing this assignment, you should be able to explain the main types of analyses (differential expression, clustering, enrichment analysis) that can be performed on quantitative data.
 1. Visit the CCLE website and search for the gene we worked with before, BCL11B. Your initial view contains a lot of information on expression and mutations of the gene in different (diseased) tissues. Select the "Characterization" tab at the top. You will then see the expression of the BCL11B gene, visualized using so-called _boxplots_. Use Google to figure out how you should interpret these plots – what do the boxes and lines represent? 
 2. Select the "Show lineage subtypes" box in the menu on the left. In which tissues/tumours is the gene highly expressed? In these tissues, in which diseases is it lowly expressed (i.e., between what diseases is BCL11B **differentially expressed**)? Does this match what you learned in GeneCards? 
-3. By clicking "Explore relationships with other data" (top right) you can explore the data in more depth. In the initial view, the y-axis is just used to separate the data points, it does not actually display a measurement. Hover your mouse over the dots to get more information on the samples in which BCL11B was measured. You can get a more informative picture by selecting "Primary disease" for the "Group by" option under "View Options". In which diseases and which samples do you find the highest expression? 
-4. Now select "Gene" as the data type for the Y axis (top left), enter "BCL11A" and select the "Expression" dataset. Again, under "View options", select to color by "Primary disease". Each point now represents the expression of BCL11A and BCL11B in one sample. In what samples are both genes highly expressed? 
+3. By clicking "Explore relationships with other data" (top right) you can explore the data in more depth. In the initial view, the y-axis is just used to separate the data points, it does not actually display a measurement. Hover your mouse over the dots to get more information on the samples in which BCL11B was measured. You can get a more informative picture by selecting "Model Property" for the "Color by" option under "View Options", and then selecting "Primary disease" as property. In which diseases and which samples do you find the highest expression? 
+4. Now set the "Plot type" to "Scatter plot" (top left). Then for the Y axis, select "Expression" under "Data type" and "Gene" and "BCL11A" under "Feature". Again, under "View options", select to color by "Primary disease" if needed. Each point now represents the expression of BCL11A and BCL11B in one sample. In what types of disease are both genes highly expressed? 
 5. Now compare the expression of BCL11B to the expression of the gene RHOH in the same way. What do you see? You can again hover over the points to get more information; in the legend on the right, you can also double-click a specific disease to isolate a single disease and get a clearer picture. 
 6. What can you say about **differential expression** of RHOH by itself? Again, play with the "Group by" and "Filter by" View Options if needed. Does the differential expression pattern make sense? You can Google search the diseases to learn more about the tissues in which they occur.
 
@@ -2353,7 +2369,7 @@ After completing this assignment, you should be able to explain the main types o
 8. While at GTEx, you can inspect some PCA plots of the samples. PCA, or **Principal Component Analysis**, is often used to visualize high-dimensional data. It finds directions in the data along which the samples differ mostly: PC1 is the direction with most variation, PC2 the next direction perpendicular to PC1, and so on. Using the top menu, go to "Expression" -> "Expression PCA". Select the "Hardy Scale" to color the samples. What do you think this scale measures? Hint: look at the legend beneath the plots, the colors correspond to the Hardy Scale. 
 9. In what tissue do you expect to see differences in expression for "Ventilator case" donors? Check this by selecting the tissue from the "Select a tissue" drop down box to create a tissue-specific PCA plot.
 10. Return to the CCLE and plot BCL11B expression versus BCL11B proteomics. Do you expect a correlation, and do you see one? 
-11. Plot BCL11B expression versus methylation (1kb upstream TSS) and check what DNA methylation does (https://en.wikipedia.org/wiki/DNA_methylation). Are the results what you would expect?
+11. Plot BCL11B expression versus its methylation and check what DNA methylation does (https://en.wikipedia.org/wiki/DNA_methylation). Are the results what you would expect?
 
 ---
 :::::
@@ -2362,8 +2378,8 @@ After completing this assignment, you should be able to explain the main types o
 :class-container: answers
 :open:
 1. Boxplots display distributions, i.e., a large collection of measurements. Boxes indicate the first and third quartile (i.e., 25% of the data falls below the box, 25% above the box) and a line indicates the median. The whiskers typically extend to 1.5x the range between the first and third quartile. Individual points indicate "outliers", i.e., measurements which fall outside this range. 
-2. Mostly high in blood and bone tissues, specifically in ALL and Ewings sarcoma. Low in blood for AML and chronic diseases (CLL, CML) and in bone for the other sarcomas. And yes, more or less; BCL11B is involved in T-cell tumors, not B-cell ones (UniProt actually lists this). It seems to be a B-cell tumor _repressor_, so low expression indicates disease. 
-3. Expression is highest in bone cancer (sample SKNMC) and leukemia (SUPT11). 
+2. Mostly high in blood and bone tissues, specifically in T-cell leukemia/lymphoma, mature T and NK neoplasms (blood) and Ewings sarcoma (bone). Low in blood for B-cell leukemia/lymphoma and Hodgkin lymphoma and in bone for the other sarcomas. And yes, more or less; BCL11B is involved in T-cell tumors, not B-cell ones (UniProt actually lists this). It seems to be a B-cell tumor _repressor_, so low expression indicates disease. 
+3. Expression is highest in Ewing sarcoma (sample NCCES1C1) followed by mature T and NK lymphoma (SUPT11) and T-cell leukemia/lymphoma (PF382).
 4. In leukemia and lung cancer samples (top right). 
 5. Correlated expression in leukemia and bone cancer. In both cases, both genes clearly have a much higher expression for the particular disease than in other cell types/diseases. 
 6. Differential expression between lymphomas/leukemias vs. most other diseases. This makes sense: the GeneCard for RHOH describes a role in leukemias and lymphomas. 
@@ -2385,7 +2401,7 @@ It is easier to find such relations by performing clustering, i.e., finding grou
 Such clusters can help you learn about functional relations between genes that cluster together, or phenotypic relations between samples that cluster together.
 For the CCLE, a nice interactive viewer is available [here](https://maayanlab.github.io/CCLE_Clustergrammer/).
 Open the page and select the "Bone" subset. 
-1. In the main figure, the so-called **heatmap**, what do blue and red pixels correspond to? Note that you can zoom in and scroll around using the mouse.
+1. In the main figure, the so-called **heatmap**, what do blue and red pixels correspond to? Note that you can zoom in and scroll around using the mouse; and do read the text below the figure.
 2. What is the expression level of BCL11B (use the search box if needed) in sample RDES? 
 3. On the right and at the bottom, the clusters are indicated by grey bars. How many groups of genes do you see initially? And how many groups of samples? Do you think that is reasonable, given the gene expression values? 
 4. You can create fewer or more clusters using the "volume slider buttons" next to the clusters. Try these. Does it look OK to group the genes into more clusters? And the samples? 
@@ -2400,7 +2416,7 @@ Open the page and select the "Bone" subset.
 1. Blue corresponds to low gene expression and red corresponds to high gene expression. Expression here seems to be normalized, where 0 means average expression. 
 2. 1.304 (zoom in and hover). 
 3. Two groups of genes, three groups of samples. There seems to be a clear distinction between the two gene clusters, in terms of color (expression); the difference between the sample clusters is less clear – you could argue that 2 or 4 clusters would be equally good. 
-4. It does not seem to look OK for Genes, you get many very small clusters. Samples maybe; at four clusters, you get a small extra cluster of two similar samples. 
+4. It does not seem to look OK for genes, you get many very small clusters. Samples maybe; at four clusters, you get a small extra cluster of two similar samples. 
 5. Yes, they are next to each other in the clustering: their expression is very similar over all samples. 
 6. Yes, histology: the right cluster clearly corresponds to Ewing sarcoma. 
 7. Yes, these are all bone-related biological processes.
@@ -2412,11 +2428,11 @@ Open the page and select the "Bone" subset.
 
 :::::{admonition} _Assignment V: Differential gene expression (45 minutes)_
 
-NCBI hosts the Gene Expression Omnibus, a database containing gene expression experiments. You can download and combine these data in various formats and analyse them on your own computer to potentially answer biological questions without performing measurements yourself. This course is too short to teach all the skills you need for reanalysing public data, but we can make use of an online tool called GEO2R to do some simple analyses in a web browser.
+NCBI hosts the Gene Expression Omnibus, a database containing gene expression experiments - both microarrays and RNAseq. You can download and combine these data in various formats and analyse them on your own computer to potentially answer biological questions without performing measurements yourself. This course is too short to teach all the skills you need for reanalysing public data, but we can make use of an online tool called GEO2R to do some simple analyses in a web browser.
 
 After completing this assignment, you should be able to interpret the results of differential expression analyses on quantitative data. 
-1. Visit the [Gene Expression Omnibus](https://www.ncbi.nlm.nih.gov/geo), search for sample series GSE69485 and read the summary and design of the study that produced this series. At the bottom you can find a list of samples. How many are there? 
-2. What type of microarray is used? You can get more information by searching GEO for GPL90. How many probesets are there, for how many genes?
+1. Visit the [Gene Expression Omnibus](https://www.ncbi.nlm.nih.gov/geo), search for sample series GSE69485 (microarray data) and read the summary and design of the study that produced this series. At the bottom you can find a list of samples. How many are there? 
+2. What type of microarray is used? You can get more information by searching GEO for GPL90. How many probesets are there (corresponding to the number of rows in the data table)? For how many genes?
 
 You can perform simple analyses on this data in GEO2R.
 In this case, we will try to find genes differentially expressed between yeast grown in aerobic and anaerobic conditions, i.e., with oxygen vs. without oxygen.
@@ -2437,7 +2453,8 @@ The logFC column indicates the log<sub>2</sub> fold change: 0 for no change, pos
 
 ---
 
-<b><center>Optional</b></center>
+<b><center>Optional (20 minutes)</b></center>
+
 Ideally, the results obtained are corroborated by additional experiments.
 In GEO, another study is available that focused on the effect of engineering amylase genes in yeast, producing series GSE38848.
 
@@ -2477,7 +2494,7 @@ The results will be discussed at the end of the Week 5 recap lecture
 ---
 
 Explore tissue-specific gene expression of ARF5 and IAA5.
-For this, you can use some other (plant-specific) resources than the human-centered ones you used above, e.g., [Expression Atlas](https://www.ebi.ac.uk/gxa/), also accessible through UniProt, under "Expression") or [BAR](https://bar.utoronto.ca/), the Bio-Analytic Resource for Plant Biology.
+For this, you can use some other (plant-specific) resources than the human-centered ones you used above, e.g., [Expression Atlas](https://www.ebi.ac.uk/gxa/) (also accessible through UniProt, under "Expression") or [BAR](https://bar.utoronto.ca/), the Bio-Analytic Resource for Plant Biology.
 
 Describe the following items in a few bullet points each.
 You may include up to two figures or tables.
