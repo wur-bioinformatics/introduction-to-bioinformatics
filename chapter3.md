@@ -1317,14 +1317,14 @@ One good thing of MEGA is that upon clicking `Caption` (bottom left) you will ge
 - Save your bootstrap tree as above, now with ticking the `Bootstrap Values` box.
 
 We have seen in the lectures that boostrap values of < 50% are actually rather uninformative, as a single synapomorphy already can have 62% as a result.
-Therefore, it will be good to take a look at the 'condensed' version of our Bootstrap consensus tree.
+Therefore, it will be good to take a look at the 'condensed' version of our tree.
 
-- Make sure you are in the Original tree tab and go to `Compute > Compute condensed tree` button (top-left). You will be given 'Tree Cutoff options' and type 62 in the % cutoff box. See how your Bootstrap consensus tree changes?
+- Make sure you are in the Original tree tab and go to `Compute > Compute condensed tree` button (top-left). You will be given 'Tree Cutoff options' and type 62 in the % cutoff box. See how your tree changes?
 
 _Questions:_
 
 1. Why are the topologies of the bootstrap consensus and that of the most parsimonious tree not the same?  
-2. What does the polytomy in your condensed bootstrap tree represent?
+2. What does the polytomy in your condensed tree represent?
 
 Visualising your trees is an essential step in phylogenetic analysis, as the (hierarchical) information contained in trees is usually graphical in nature.
 Important aspects of picturing phylogenetic trees are:
