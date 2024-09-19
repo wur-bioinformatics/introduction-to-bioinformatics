@@ -826,10 +826,15 @@ Nowadays genetic information obtained through genome sequencing and variant
 calling is used more and more in plant and animal breeding and selection.
 ::::
 
-Mapping reads to a reference is a means to an end. As stated above, one of
-the main goals is to detect genomic variation. Such variation can help
-explain phenotypic variation (see [Box 5.7](Week5_phenotypic_variation)). Genomic variation
-between samples, individuals and/or species can also be used to study
+(Week5_variants)=
+
+### Variants
+
+When a (nearby) reference genome is already available, reads can also be
+mapped to that genome. Mapping entails finding the location in the genome
+that matches each read, allowing for some small differences - genomic variation. Such variation can help
+explain phenotypic variation (see [Box 5.3](Week5_phenotypic_variation)). Genomic variation
+between samples, individuals, and/or species can also be used to study
 evolutionary history (see also chapters [2](chapter2) and [3](chapter3), on multiple sequence
 alignments and phylogeny).
 %#% Add direct cross-link to MSA in chapter 2 when written.
@@ -1307,8 +1312,8 @@ mRNA levels:
 
 Just like the study of genomes, transcriptomics has greatly benefitted from
 technological developments that allowed an increase in throughput and
-sensitivity of measurements.  [Box 5.6](Week5_gelspcr) and [Box
-5.7](Week5_microarrays) provide an overview of technologies that were
+sensitivity of measurements.  [Box 5.11](Week5_gelspcr) and 
+[Box 5.12](Week5_microarrays) provide an overview of technologies that were
 important for the development of the field (such as microarrays), but are
 not widely used anymore; at this time, RNAseq is almost exclusively used to
 measure mRNA levels.
@@ -1334,7 +1339,7 @@ units).
 
 (Week5_gelspcr)=
 
-::::{admonition} Box 5.6: Gels and qPCR
+::::{admonition} Box 5.11: Gels and qPCR
 :class: tip
 
 
@@ -1356,7 +1361,7 @@ Early methods of detecting transcripts and expression levels are northern
 blots and differential display ({numref}`differential_gel_alt`).  Both are
 gel-based methods, low throughput and not very accurate.  Northern blots and
 differential displays were superseded by qPCR (quantitative PCR) and
-microarrays (see [Box 5.7](Week5_microarrays).  Quantitative real-time PCR
+microarrays (see [Box 5.7](Week5_microarrays)).  Quantitative real-time PCR
 (qPCR) is a PCR (polymerase chain reaction) that measures the abundance of
 each DNA molecule by adding a fluorescent reporter, either a dye that binds
 DNA or fluorescent probes.  The level of fluorescence increases with the
@@ -1383,7 +1388,7 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 
 #### Microarrays
 
-::::{admonition} Box 5.7: Microarrays
+::::{admonition} Box 5.12: Microarrays
 :class: tip
 
 The first widely used _high-throughput_ method to measure gene expression 
@@ -1621,7 +1626,7 @@ RPKM/FPKM or TPM are preferred.  CPM can clearly only be used when there is
 no difference in transcript length, e.g., when comparing one transcript
 between two samples.
 
-::::{admonition} Box 5.8: Ever more detail
+::::{admonition} Box 5.13: Ever more detail
 :class: tip
 
 Until now, most RNAseq experiments have been performed on groups of cells,
@@ -1719,7 +1724,7 @@ presence/absence and levels of proteins) and functional proteomics
 
 (Week5_mass_spectrometry)=
 
-::::{admonition} Box 5.9: Mass spectrometry
+::::{admonition} Box 5.14: Mass spectrometry
 :class: note
 
 Mass spectrometry (MS) devices have been in constant development and
@@ -1825,7 +1830,7 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`own
 Next to protein levels, we are also interested in what proteins do in the
 cell: their functions and interactions. Many protocols and analyses have
 been developed for this, with most focusing on protein-protein, protein-DNA
-and protein-metabolite (enzymatic) interactions. [Box 5.10](Week5_funcprot) lists some methods to
+and protein-metabolite (enzymatic) interactions. [Box 5.14](Week5_funcprot) lists some methods to
 measure such intereactions. Note that while many of these experiments are
 cumbersome, they are essential to advance functional genomics -
 (bioinformatics) predictions critically depend on high-quality data and
@@ -1833,7 +1838,7 @@ cannot replace experimental validation.
 
 (Week5_funcprot)=
 
-::::{admonition} Box 5.10: Measuring functional interactions
+::::{admonition} Box 5.14: Measuring functional interactions
 :class: tip
 
 :::{figure} images/Week5/chip-protocol_alt.jpg
@@ -2245,17 +2250,17 @@ After completing this exercise, you should be able to explain how genome assembl
 1. Given the set of 6 short reads below, try to recreate the original DNA sequence by looking for overlaps between the reads. Note that there may be some sequencing errors. What amino acid sequence does the DNA sequence code for? Hint: copy the sequences into Word in a fixed-width font (e.g., Courier) and add spaces to align the sequences; for translation, you can Google for an online tool.
 
     ```
-    > read_1
+    >read_1
     aagcagcgcgggcgaataataataa
-    > read_2
+    >read_2
     acccatattagcattagcacccttg
-    > read_3
+    >read_3
     cccatgaacatattgatgatgaaaa
-    > read_4
+    >read_4
     aaaacatggaaagcagcgcgggcga
-    > read_5
+    >read_5
     ttagcattagcacccatgaacatat
-    > read_6
+    >read_6
     gatgatgcaaacatggaaagcagcg
     ```
 
