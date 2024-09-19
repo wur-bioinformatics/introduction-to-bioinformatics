@@ -1243,7 +1243,7 @@ Transcriptomics is concerned with measuring the expression of genes (i.e.,
 the levels of transcription of genes on the genome to RNA). RNA and its
 role in the cell has already been discussed in [chapter 1](Week1_rna_transcription_splicing). If you want to know
 what other types of RNA exist outside the common mRNA, miRNA, tRNA and rRNA, read
-[Box 5.6](Week5_RNA). Here we focus on measuring and counting transcripts (mRNA).
+[Box 5.10](Week5_RNA). Here we focus on measuring and counting transcripts (mRNA).
 %#% Chapter 1 does also mention miRNA as one of the main types of RNA.
 For the understanding of transcriptome analysis it is important to remember
 that in eukaryotes most genes contain introns and that one gene can have
