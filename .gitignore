@@ -1,1 +1,7 @@
 _build/*
+.venv/*
+_answers/*
+
+.DS_Store
+*.ipynb_checkpoints
+.vscode
