@@ -236,6 +236,12 @@ coverage is sufficiently high - depending on read length, between 50x to
 capabilities in terms of read length and yield per run are shown in
 {numref}`sequencing_technology`.
 
+Sequencing technologies also vary in the accuracy of base-calls. This accuracy is measured using quality 
+or Q scores and they represent the probability that a base-call is incorrect. A higher Q-score is better.
+The most commonly used cut-off value is Q30 which corresponds with an incorrect base-call probability 
+of 1 in 1000 and therfore an accuracy of 99.9%.
+
+
 :::{figure} images/Week5/sequencing-technology.jpg
 :alt: Sequencing technology evolution
 :align: center
