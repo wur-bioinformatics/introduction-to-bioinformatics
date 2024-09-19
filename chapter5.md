@@ -322,10 +322,10 @@ The requirement of uniqueness is the biggest drawback of Sanger sequencing.
 (w3imp1)=
 ::::{admonition} Important to know about Sanger sequencing
 :class: important
-- is the original sequencing platform
-- produces reads of upto 1000bp long with a quality of 99.9% (Q30)
-- is low throughput
-- can only sequence on fragment at a time.
+- it is the original sequencing platform
+- it produces reads of upto 1000bp long with a quality of 99.9% (Q30)
+- it is a low throughput method
+- it can only sequence on fragment at a time.
 ::::
 
 Sanger sequencing was the main sequencing platform until around 2007. From
@@ -387,19 +387,19 @@ fall into a tiny well and the amplification step takes place in the wells:
 (w5imp2)=
 ::::{admonition} Important to know about Illumina sequencing
 :class: important
-- all reads in one run have the same length, defined by the number of cycles (20-350bp). 
+- all reads in one run have the same length, defined by the number of cycles (20-350bp).
 - due to the fixed read length it is possible that the sequenced reads contain 
-  primer sequences (if the DNA fragment was shorter than the number of cycles). 
-  These always need to be removed.
+  primer sequences (if the DNA fragment was shorter than the number of
+  cycles); these always need to be removed
 - reads can be sequenced from one primer end only, which yields
 so-called single end reads, or from both primer ends, which gives paired end
 reads, i.e. two reads that originate from the same molecule with a distance
-that is approximately known. 
-- reads have a base accuracy of about 99.99% (Q40).
+that is approximately known
+- reads have a base accuracy of about 99.99% (Q40)
 - it is very high throughput: The number reads obtained in a 
-single run range from millions to billions, depending on the model.
+single run range from millions to billions, depending on the model
 - fragments with extreme GC content are less likely to be sequenced, which can
-lead to incomplete genome assemblies or coverage.
+lead to incomplete genome assemblies or coverage
 ::::
 
 Overall, Illumina reads are cheap, short and highly accurate.
@@ -465,10 +465,10 @@ base.
 :class: important
 - fragments with extreme GC content can be sequenced as there is no PCR step
 - the same fragment can be sequenced multiple times and used for error correction (Hifi)
-- read length is about 15kb for Hifi reads and up to 175kb for continuous long reads (CLR)
+- read lengths are about 15kb for Hifi reads and up to 175kb for continuous long reads (CLR)
 - accuracy ranges from 99% (Q20) for CLR to 99.9% (Q30) for HiFi reads
-- it is high throughput with one run yielding up to 25 million reads (Revio)
-- is still more expensive than Illumina
+- it is a high throughput technology, with one run yielding up to 25 million reads (Revio)
+- it is still more expensive than Illumina
 ::::
 
 ---
@@ -531,11 +531,11 @@ the International Space Station.
 (w5imp4)=
 ::::{admonition} Important things to know about nanopore sequencing
 :class: important
-- Can sequence very long reads
-- Accuracy is 98-99.9% (Q17-Q30)
-- Can directly detect base modifications (methylation)
+- it can sequence very long reads
+- the accuracy is 98-99.9% (Q17-Q30)
+- it can directly detect base modifications (methylation)
 - fragments with extreme GC content can be sequenced as there is no PCR step
-- it is high throughput with one flowcell yielding between 2.5 and 3.5 million reads (MinION)
+- it is a high throughput technology, with one flowcell yielding between 2.5 and 3.5 million reads (MinION)
 ::::
 
 ##### Quality control
@@ -1330,19 +1330,24 @@ ArrayExpress](https://www.ebi.ac.uk/biostudies/arrayexpress).  If you are
 interested in a certain question that may be answered using transcriptomics,
 it makes sense to look here first to see what experimental data is already
 available. Note that the technology used determines how the expression
-level should be interpreted. Some microarray types compare two samples and thus produce relative
-expression levels, often log<sub>2</sub)-transformed so that 0 means no change, +1
-means a 2-fold higher expression, +2 a 4-fold higher expression and so on;
-negative numbers indicate lower expression. Other microarray types measure
-levels that represent absolute expression in a single sample (in arbitrary
-units).
+level should be interpreted (see box below). 
+
+(w3imp5)=
+::::{admonition} Important to know about microarrays
+:class: important
+- microarrays measure expression indirectly, using fluorescence; as a
+  result, measurements can be noisy and have a low dynamic range (i.e., low
+  expression levels cannot be measured well)
+- some microarray types compare two samples and thus produce relative expression levels, often log<sub>2</sub>-transformed so that 0 means no change, +1
+  means a 2-fold higher expression, +2 a 4-fold higher expression and so on; negative numbers indicate lower expression
+- other microarray types measure levels that represent absolute expression in a single sample (in arbitrary
+  units); normalization is then important when comparing measurements between samples
+::::
 
 (Week5_gelspcr)=
 
 ::::{admonition} Box 5.11: Gels and qPCR
 :class: tip
-
-
 
 :::{figure} images/Week5/differential-gel_alt.png
 :alt: Differential display gel
@@ -1457,6 +1462,7 @@ non-relevant variation between different microarray measurements.
     <iframe width="560" height="315" src="https://www.youtube.com/embed/0ATUjAxNf6U" title="DNA Microarray Methodology" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div
 ::::
+
 ---
 
 %##### Repositories
@@ -1471,7 +1477,8 @@ non-relevant variation between different microarray measurements.
 %If you are interested in a certain question that may be answered using transcriptomics,
 %it makes sense to look here first to see what experimental data is already available.
 %
-%---
+---
+
 
 (Week5_rnaseq)=
 
