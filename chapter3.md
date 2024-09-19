@@ -1931,6 +1931,8 @@ MAFFT alignment, IQ-TREE:
 </div>
 
 :::{dropdown} Assignment VI answers
+:class-container: answers
+:open:
 Compare the two .pdfs, by 'visual inspection' (this may cause your PC to slow down for a minute, have patience..) and discuss which one you would consider a 'better alignment'.
 One could argue that the MAFFT alignment is better, because of the _divide-and-conquer_ approach: first align conserved 'anchors' across all terminals, then do the bits in between. Visual inspection of the two alignment versions seems to suggest the MAFFT-alignment looks more 'quiet' which would be consistent with fewer substitutions -because better alignment.
 
