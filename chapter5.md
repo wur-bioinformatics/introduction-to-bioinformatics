@@ -742,6 +742,8 @@ problem are longer reads (that can bridge the sea between two fishes).
 To illustrate the scale of the problem that repeats pose in assembly: most
 mammalian Y-chromosomes have not been assembled for more than 50%, because
 of the repeat content.
+[Chapter 1](Chapter1_repeat_masking) explains how to mask repeats from a genome
+as a first step prior to genome annotation.
 
 ---
 
@@ -756,6 +758,16 @@ quality of an assembly; we can compare it to closely related genomes that
 have already been assembled; and we can compare the assembly with the
 expectations we have about the genome in terms of overall size, number of
 chromosomes and genes, given the known biology of the species.
+
+---
+
+##### Structural and functional annotation
+
+The next step after genome assembly is annotation. First, during 
+structural annotation we try to identify the location and structure of 
+(protein coding) genes (_see_ [chapter 1 - Gene prediction](Chapter1_gene_prediction)). 
+Next, we attempt to identify the function of the predicted gene during functional 
+annotation (_see_ [chapter 1 - Functional annotation](Week1_functional_annotation)).
 
 ---
 
