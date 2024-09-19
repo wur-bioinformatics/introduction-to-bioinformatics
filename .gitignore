@@ -1,4 +1,5 @@
 _build/*
+.venv/*
 _answers/*
 
 .DS_Store
