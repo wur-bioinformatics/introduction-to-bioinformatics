@@ -680,6 +680,7 @@ Several steps in the genome annotation process make use of algorithms that can s
 For now, it is sufficient to know that these algorithms can quickly search very large collections of biological sequences to identify sequences that look similar (what we mean _exactly_ by 'similar' is also part of [chapter 2](chapter2)).
 :::
 
+(Chapter1_repeat_masking)=
 ### Repeat masking
 
 Repeat masking involves the identification and masking (hiding) of repetitive sequences within a genome.
@@ -697,6 +698,7 @@ Subsequently, the genome to be annotated is compared against this repeat library
 When a match is found, the corresponding region in the genome is 'masked' or annotated as a repetitive element.
 This means that these regions are excluded from further analysis or labeled as repetitive.
 
+(Chapter1_gene_prediction)=
 ### Gene prediction
 
 The process of finding protein coding genes differs between prokaryotic and eukaryotic genomes.
