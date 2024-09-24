@@ -1196,7 +1196,7 @@ Even though omics measurements provide highly detailed overviews of
 cellular states and reactions to perturbations, there are a number of
 important limitations:
 
-Experimental cost: omics devices are often expensive to acquire, and each 
+- Experimental cost: omics devices are often expensive to acquire, and each 
 	experiment requires labor and consumables
 - Technical noise: all measurements technologies come with inherent variation and
   measurement noise
