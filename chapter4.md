@@ -855,7 +855,7 @@ After completing this assignment, you will be able to interpret the outcome of p
 1. First, let us study the results of the secondary structure assignment tools **DSSP**, **PALSSE** and **Stride** for 1TIM. These tools predict secondary structure elements based on 3D protein structures. You can find the results of these tools in a pdf file on BrightSpace, under Week 4, and then Practicals_Files. Check the fractions of residues predicted as helix, sheet and other by the three methods. What is the main difference between the results of DSSP and STRIDE on the one hand, and those of PALSSE on the other hand? What could explain this difference? 
 2. Check the structure alignments in the results file. Does this confirm the reason for the differences you hypothesized under question 1.? 
 3. Based on your results, how many helices do you think there are? And how many sheets? Does that match with the information from [Wikipedia](https://en.wikipedia.org/wiki/TIM_barrel)? 
-4. To assess the quality of the secondary structure predictions, there are several scoring metrics. The most direct and easy one to calculate is the Q3 score. The Q3 value is the fraction of residues predicted correctly in the secondary structure states, namely helix, strand, and coil. You can find more information [here](http://what-when-how.com/bioinformatics/secondary-structure-prediction-bioinformatics/). Calculate – by hand – the Q3 of the DSSP predictions of Chain A, thereby assuming the consensus is the actual secondary structure (i.e., the "ground truth"). 
+4. To assess the quality of the secondary structure predictions, there are several scoring metrics. The most direct and easy one to calculate is the Q3 score. The Q3 value is the fraction of residues predicted correctly in the secondary structure states, namely helix, strand, and coil. You can find more information in {numref}`Q3_alt`. Calculate – by hand – the Q3 of the DSSP predictions of Chain A, thereby assuming the consensus is the actual secondary structure (i.e., the "ground truth"). 
 5. To gain more information about a protein’s properties, you can predict local hydrophobicity (Kyte-Doolittle, averaged over a 9-residue window) of the studied 1TIM 3D structure by uploading the corresponding protein sequence, UniProt ID P00940, using the [server](http://web.expasy.org/protscale/) (select the full 2-248). Compare the output to the DSSP secondary structure prediction of question a. Do you expect the core to be made up of helices or sheets? How did you get to that answer? How can you verify this? 
 6. We can predict the secondary structure using a state-of-the-art algorithm, [**NetSurfP-3.0**](https://services.healthtech.dtu.dk/services/NetSurfP-3.0/). Copy and paste the FASTA protein sequence of the triose phosphate topoisomerase protein (P00940) in the allocated field (or upload the FASTA file) and NetSurfP-3.0 uses a machine learning approach that treats the protein sequences as sentences of a language. By training a large model based on known protein 3D structures from PDB and DSSP-calculated properties thereof, NetSurfP-3.0 predicts secondary structure properties from primary sequences. What is the advantage of combining the information from several sequences for the secondary structure prediction? 
 7. Based on the NetSurfP-3.0 results page, how do the number of helices and sheets as found by the SS3 results displayed in the graphical overview compare to your previous answer under question 3.? And how does the picture compare to the results from 1.? 
@@ -893,7 +893,33 @@ Here, we will assess pre-computed ready-made AlphaFold2 models through the [Alph
 3. The biological function of "Probable caffeine synthase MTL3" is speculative. Follow the link to the UniProt page. What is the likely role of in the biosynthesis of caffeine? 
 4. The emergence of AlphaFold and the resulting AlphaFold database have triggered the development of other tools. As you have read in the reader, protein function is mostly determined by its structure rather than its sequence. With the increasing availability of 3D structures, in particular predicted ones, it is now possible to search for related proteins based on their folds with a predicted or experimental 3D structure as input. Return to the Uniprot page for "Probable caffeine synthase MTL3" and go to the "Structure" tab. Under the AlphaFold model view, the actual AlphaFold model is mentioned with a link to **Foldseek** at the right-hand side. Click on that link to open a new search in [Foldseek](https://search.foldseek.com/search) prepopulated with the predicted "Probable caffeine synthase MTL3" model structure and start a search. Based on the results in the "all databases" tab, what kind of functionality can you infer? Check some of the matches by clicking on the alignment button at the right-hand side. How do they look? As the top of this list is mainly populated by predicted structures, move to the "PDB100" tab (scroll to the right at the top of the screen – this contains only entries from PDB), and do the same. In what kind of organisms do you find matches? What is the sequence similarity of the matches and how does that relate to the structure similarity? 
 5. Now open the _Coffea arabica_ "DNA-directed RNA polymerase subunit alpha" (UniProt A0A367) AlphaFold page in a new tab. Study the global "Predicted aligned error tutorial" by clicking on the arrow. Once you understand the error model, study both the local and global error model for this structure model. Zoom in on the structure model on parts of interest and click on some residues – what do you see? What is your conclusion about the quality of the structure model?
-6. Now, consider the following: a fellow student has a protein sequence from a plant sample origin that she would like to characterize (the sequence is displayed below). You decide to help her, and you input the results into Uniprot Blast. Further below the top results are presented. Do the presented matches make sense to you? Is there a match that you think is good enough to infer the structure from its model? Study the AlphaFold model. What is the quality? What is the possible function of the protein? 
+6. Now, consider the following: a fellow student has a protein sequence from a plant sample origin that she would like to characterize:  
+    ```
+    MREGRETKNGNGHVGRRASSQVWEFDPGDPDELVVVAEAARRGFVVRRHELKHSSDLL
+    MRMQFAKANPLKLDIPAIKLEEHEAVTGEAVLSSLKRAIARYSTFQAHDWPGDYGGPM
+    FLMPGLIITLYVSGALNTALSSEHQKEIRYLYNHEDGGWGLHIEGHSTMFGGSALTYV
+    SLRLLGEGPDSGDGAMEKGRKWILDHGGATYITSWGKFWLSVLGVFDWSGNNPVPPEI
+    WLLLLPYFLPIHPGRMWCHCRMVYLPMCYIYGKRFVGPVTPIILELRKELYEVPYNEV
+    DWDKARNLCAKEDLYYPHPFVQDVLPATLHKFVEPAMLRWPGNKLREKALDTVMQHIH
+    YEDENTRYICIGPVNKVLNMLACWISEAFKLHIPRVHDYLWIAEDGMKMQGYNGAFTV
+    QAIVATGLIEEFGPTLKLAHGYIKKTQVIDDCPGDLSQWYRHISKGAWPFSTADHGWP
+    ISDCTAEGLKAALLLSKISPDIVGEAVEVNRLYDSVNCLMSYMNDNGGFAIRPTELLL
+    TRSYAWLELINPAETFGDIVIDYPYVECTSAAIQALTAFKKLYPGHRKSEIDNCISKA
+    ASFIEGIQKSDGSWYGSWAVCFTYGTWFGVKGLVAAGRTFKNSPAIRKACDFLLSKEL
+    PSGGWGGESYLSSQDQVYTNLEGKRPHAVNTGWAMLALIDAGQAERDPIPLHRAAKVL
+    INLQQSEDGEFPQQEIIGVFNKNCMISYSEYRNIFPIWALGFAIRDATAWISE
+    ```
+    You decide to help her, and you input the results into Uniprot Blast. Below the top results are presented ({numref}`alphafolddb_blast_results`, click to enlarge).
+    :::{figure} images/Week4/alphafolddb-blast-results.svg
+    :alt: Top BLAST hits for running blastp against the Uniprot + alphafold database
+    :align: center
+    :width: 70%
+    :name: alphafolddb_blast_results
+    
+    Top BLAST hits for running blastp against the Uniprot + alphafold database.
+    Credits: {cite}`alphafold3_approach_2024`.
+    :::
+    Do the presented matches make sense to you? Is there a match that you think is good enough to infer the structure from its model? Study the AlphaFold model. What is the quality? What is the possible function of the protein? 
 7. Go back to the "Probable caffeine synthase MTL3" AlphaFold structure prediction page. With your new knowledge on the global predicted aligned error model, what do you now think of the model? 
 8. Some say that AlphaFold will solve all our problems in structure protein folding.... but it may yet be a bit early to conclude that. Have a look at the structure model for Human Insulin (UniProt P01308)? What is the quality of the proposed model? Can you think of reasons why?
 :::::
@@ -911,7 +937,7 @@ Here, we will assess pre-computed ready-made AlphaFold2 models through the [Alph
 8. Clearly, AlphaFold is not confident at all about this structure model, apart from a helical stretch. Possible reasons for this lower-quality 3D structure model include a lack of examples in the training data, a lack of inherent (secondary) structure in the protein, the lack of information about folding in the cell with help of chaperones (proteins that assist in the folding), or the absence of other polypeptide chains that interact with a protein that then together form a multimer. At least, it is clear that we should not take this structure model for human insulin for granted.... 
 
 
-**Protein Sequence from plant origin (this is the protein sequence from question f):**
+**Protein Sequence from plant origin (this is the protein sequence from question IV.6):**
 ```
 MREGRETKNGNGHVGRRASSQVWEFDPGDPDELVVVAEAARRGFVVRRHELKHSSDLL
 MRMQFAKANPLKLDIPAIKLEEHEAVTGEAVLSSLKRAIARYSTFQAHDWPGDYGGPM
