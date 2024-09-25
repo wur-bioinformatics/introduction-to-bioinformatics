@@ -1491,8 +1491,9 @@ Amino acids:           ......................
 ```
 
 7. Amino acids and their side chains can interact with other amino acids and form bonds and interactions. Interactions between amino acids and their side chains play important roles in stable folded proteins structures. Revisit {numref}`terstructure` from the reader. With this information in mind, take another look at the peptide sequence with five amino acids (see question 6). Below this peptide, you will find the backbone of another peptide in which the side chains have been only indicated with R (labeled a-e). Look at the 20 amino acids in the amino acid table in the reader. Discuss with your neighbour which of the 20 possible amino acids could be placed as a side chains R (a-e) such that these can likely interact, i.e., forms bonds or other interactions, with the corresponding amino acids (1-5) in the upper peptide (i.e., a interacts with 1, b with 2, and so on). Indicate for each which type of interaction (e.g., hydrogen bonds) are occurring between your proposed pair of amino acids.
-8.Proteins fold into compact structures, and this structure is important for proteins to have biological functional activity. In folded proteins (tertiary structure), the secondary structure is often still visible, i.e., helices and beta sheets are still visible. Sometimes proteins are not only formed by a single structural unit, a so-called domain, but by multiple domains that can either be the same type or of different types. Sometimes, it can be useful to look at the tertiary structure of proteins with known fold (either experimentally or in silico determined), e.g., to see where mutations in the structure occur. We will have a look at the protein structure of Gamma B-Crystallin. Go to the website of [PDB](https://www.rcsb.org), which is a resource for protein structures, and search on the main page for Gamma B-Crystallin, with the ID "1AMM". Click on '3D View' to see a three-dimensional model of the structure. On the bottom right, change the viewer to NGL. \
-  a. Color the structure by Secondary structure (see 'Color', under 'Structure View'). Under 'Structure View Documentation' you can find the meaning of each color. Can you identify the number of secondary structure elements (helix, sheet) you can observe in the structure? \
+
+8. Proteins fold into compact structures, and this structure is important for proteins to have biological functional activity. In folded proteins (tertiary structure), the secondary structure is often still visible, i.e., helices and beta sheets are still visible. Sometimes proteins are not only formed by a single structural unit, a so-called domain, but by multiple domains that can either be the same type or of different types. Sometimes, it can be useful to look at the tertiary structure of proteins with known fold (either experimentally or in silico determined), e.g., to see where mutations in the structure occur. We will have a look at the protein structure of Gamma B-Crystallin. Go to the website of [PDB](https://www.rcsb.org), which is a resource for protein structures, and search on the main page for Gamma B-Crystallin, with the ID "1AMM". Click on '3D View' to see a three-dimensional model of the structure. On the bottom right, change the viewer to NGL. 
+  a. Color the structure by Secondary structure (see 'Color', under 'Structure View'). Under 'Structure View Documentation' you can find the meaning of each color. Can you identify the number of secondary structure elements (helix, sheet) you can observe in the structure? 
   b. How many domains does this protein have?
 
 9. Amino acid quiz: you have now worked extensively with amino acids and you should know the relation between the 1- and 3-letter code, the name of the amino acid and its biochemical properties. To test this knowledge once more, perform this small test by filling in the missing information in the table (do not look at the reader before finalizing the quiz).
@@ -1586,13 +1587,14 @@ Amino acids:           ......................
 :width: 100%
 :name: assignment_2_6_peptide_solution
 ```
-7. Side chains and their activities \
-  a & b: other non-polar aa such as Val/Ala/Ieu -> hydrophobic \
-c: Asp -> electrostatic \
-d: Cys -> disulfide \
-e: Tyr (or any other polar amino acid)-> hydrogen bond
-8. Protein structures \
-  a. there are 2 times 4 and 3 large beta strands (organized in 2 anti-parallel beta-sheets). Furthermore, the structure contains 1 alpha-helix and 3 3/10 helices, the fourth most common type of protein secondary structures. \
+7. Side chains and their activities 
+  a & b: other non-polar aa such as Val/Ala/Ieu -> hydrophobic 
+  c: Asp -> electrostatic 
+  d: Cys -> disulfide 
+  e: Tyr (or any other polar amino acid)-> hydrogen bond
+
+8. Protein structures 
+  a. there are 2 times 4 and 3 large beta strands (organized in 2 anti-parallel beta-sheets). Furthermore, the structure contains 1 alpha-helix and 3 3/10 helices, the fourth most common type of protein secondary structures. 
   b. Likely two identical domains. If you look under "Annotations" in the menu, you see various different annotation sources that mention a gamma-crystallin domain. Under the "Sequence" tab you can see where these domains are on the protein, for example the PFAM or SCOP annotations clearly show two domains.
 ```{image} images/Week1/assignment_2_8b_pfam.png
 :alt: 3D view of domains in 1AMM.
@@ -1600,6 +1602,7 @@ e: Tyr (or any other polar amino acid)-> hydrogen bond
 :width: 100%
 :name: assignment_2_8b_pfam
 ```
+
 9. Amino acid quiz
 ```{list-table}
 :header-rows: 1
