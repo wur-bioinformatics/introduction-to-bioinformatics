@@ -1117,7 +1117,7 @@ react to changes in the environment and to signals from other cells. In
 most multicellular organisms, cells in different organs develop in very
 different ways, leading to different cell shapes, tissue organization and
 behaviour ({numref}`stem_cell`). Still, each cell contains the same genome, so there must be
-differences in the way that that genome is used. In other words, if the genome is
+differences in the way which that genome is used. In other words, if the genome is
 the book of life, it must also contain the information on how to read it.
 
 (Week5_epigenetics)=
