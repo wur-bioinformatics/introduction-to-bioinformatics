@@ -1,9 +1,15 @@
-# Phylogenetics and tree reconstruction
+---
+title: 3. Phylogenetics and tree reconstruction
+label: chapter_3
+authors:
+  - Freek Bakker
+---
 
-```{epigraph}
-
--- Freek T. Bakker
-```
+:::{important} Learning outcomes
+- 1
+- 2
+- 3 
+:::
 
 In this chapter you will learn to use a _Multiple Sequence Alignment_ (MSA), like the ones you compiled in [chapter 2](chapter2), and visualize the variation it contains as a phylogenetic tree.
 A phylogenetic tree is considered a highly efficient _data structure_ summarizing the data and its variation contained in your MSA.
@@ -1191,83 +1197,6 @@ Bayesian Inference, in which probabilities for nodes are calculated, and differe
 
 ---
 
-## Glossary
-This glossary contains the most important terms from this chapter.
-
-:::{admonition} Glossary
-:class: important
-
-```{glossary}
-Apomorphy
-: Derived character state
-
-Autapomorphy
-: For a group, all members being derived from one MRCA
-
-Bifurcating
-: A tree containing nodes that are all connected through three branches
-
-Bootstrap
-: A method for measuring node support in a phylogenetic tree
-
-Branch length
-: The length, either in steps (parsimony), distances (clustering) or substitutions per site (maximum likelihood)
-
-Clade
-: Monophyletic group, MRCA with all descendants
-
-GTR
-: General time reversible nucleotide substitution model
-
-JC
-: Jukes-Cantor nucleotide substitution model
-
-K2P
-: Kimura 2-parameter nucleotide substitution model
-
-LBA
-: long-branch attraction
-
-Monophyly
-: For a group, all members being derived from one MRCA
-
-MLE
-: Maximum likelihood estimate
-
-MRCA
-: Most recent common ancestor
-
-MSA
-: Multiple sequence alignment
-
-Nodal support
-: The support -by the characters- for a node in the phylogenetic tree
-
-Paraphyly
-: For a group, not all members being derived from one MRCA
-
-_p_-difference
-: Proportional difference, uncorrected
-
-Polytomy
-: Part of a phylogenetic tree that is collapsed, node is connected through > 3 branches
-
-Root
-: Reference individual, used for polarising a tree
-
-Synapomorphy
-: Shared derived character state
-
-Transition
-: a substitution among pyrimindes (C,T) or among purines (A,G)
-
-Transversion
-: a pyrimidine ↔ purine substitution
-```
-:::
-
----
-
 ## Practical assignments
 
 This guide contains questions and exercises to help you process the study materials of Chapter 3.
@@ -1967,6 +1896,76 @@ You may include up to two figures or tables.
 2. **Results** What did you find, what are the main results? Report the relevant data, numbers, tables/figures, and clearly describe your observations.
 3. **Discussion & Conclusion** Do the results make sense? Are they according to your expectation or do you see something surprising? What do the results mean, how can you interpret them? Do different tools agree or not? What can you conclude? Make sure to describe the expectations and assumptions underlying your interpretation.
 :::::
+
+## Glossary
+This glossary contains the most important terms from this chapter.
+```{glossary}
+Apomorphy
+: Derived character state
+
+Autapomorphy
+: For a group, all members being derived from one MRCA
+
+Bifurcating
+: A tree containing nodes that are all connected through three branches
+
+Bootstrap
+: A method for measuring node support in a phylogenetic tree
+
+Branch length
+: The length, either in steps (parsimony), distances (clustering) or substitutions per site (maximum likelihood)
+
+Clade
+: Monophyletic group, MRCA with all descendants
+
+GTR
+: General time reversible nucleotide substitution model
+
+JC
+: Jukes-Cantor nucleotide substitution model
+
+K2P
+: Kimura 2-parameter nucleotide substitution model
+
+LBA
+: long-branch attraction
+
+Monophyly
+: For a group, all members being derived from one MRCA
+
+MLE
+: Maximum likelihood estimate
+
+MRCA
+: Most recent common ancestor
+
+MSA
+: Multiple sequence alignment
+
+Nodal support
+: The support -by the characters- for a node in the phylogenetic tree
+
+Paraphyly
+: For a group, not all members being derived from one MRCA
+
+_p_-difference
+: Proportional difference, uncorrected
+
+Polytomy
+: Part of a phylogenetic tree that is collapsed, node is connected through > 3 branches
+
+Root
+: Reference individual, used for polarising a tree
+
+Synapomorphy
+: Shared derived character state
+
+Transition
+: a substitution among pyrimindes (C,T) or among purines (A,G)
+
+Transversion
+: a pyrimidine ↔ purine substitution
+```
 
 ## References
 

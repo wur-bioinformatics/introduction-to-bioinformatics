@@ -1,4 +1,4 @@
-# Introduction to bioinformatics
+# Introduction to Bioinformatics
 
 ## What is bioinformatics?
 
@@ -103,10 +103,9 @@ that all material (figures etc.) is only re-used when copyright allows it,
 but if you still find some material that you believe is incorrectly used or
 cited, please let us know.
 
-<div align=right>Dick de Ridder, Anne Kupczok, Rens Holmer, Freek Bakker, Justin van der
-Hooft, Judith Risse, Jorge Navarro and Tomer Sardjoe</div>
-
-<div align=right>Wageningen, September 2024</div>
+```{epigraph}
+\- Dick de Ridder, Anne Kupczok, Rens Holmer, Freek Bakker, Justin van der Hooft, Judith Risse, Jorge Navarro and Tomer Sardjoe (Wageningen, September 2024)
+```
 
 ### Reading guide
 

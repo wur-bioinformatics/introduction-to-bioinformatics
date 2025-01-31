@@ -1,9 +1,15 @@
-# Protein structure prediction
+---
+title: 4. Protein structure prediction
+label: chapter_4
+authors:
+  - Justin van der Hooft
+---
 
-```{epigraph}
-
--- Justin van der Hooft
-```
+:::{important} Learning outcomes
+- 1
+- 2
+- 3 
+:::
 
 ## Predicting protein structures: the sequence-structure-function paradigm
 
@@ -1035,6 +1041,14 @@ You may want to highlight some of your findings with screenshots from the tools 
 We encourage you to discuss your results with fellow students and the TAs and teacher.
 Oftentimes, they may have found different but complementary information, and together you will be able to paint a more complete picture of the protein families.
 :::::
+
+## Glossary
+
+:::{glossary}
+MSA
+: **M**ultiple **S**equence **A**lignment
+
+:::
 
 ## References
 

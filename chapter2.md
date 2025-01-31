@@ -1,11 +1,13 @@
-# Alignment, sequence search, and primer design
+---
+title: 2. Alignment, sequence search, and primer design
+label: chapter_2
+authors:
+  - Anne Kupczok
+  - Rens Holmer
+---
 
-```{epigraph}
-
--- Anne Kupczok, Rens Holmer
-```
-
-In chapter 2 of Introduction to Bioinformatics, you will study sequence alignment.
+:::{important} Learning outcomes
+In this chapter, you will study sequence alignment.
 
 Make sure you understand what DNA and protein alignments are used for and that you can explain the differences between local and global alignments.
 You should be familiar with concepts related to alignments and sequence search, like dotplots, alignment scores, e-values, and substitution matrices.
@@ -14,6 +16,7 @@ You should understand what motifs are and the basics of profile hidden Markov mo
 This chapter concludes with a section on PCR primer design as an example on the use of sequence alignment algorithms in practice.
 
 During the practical you will learn how to make pairwise and multiple-sequence alignments, perform sequence searches and motif analyses, design primers, and discuss the results.
+:::
 
 ## Introduction
 
@@ -1211,6 +1214,14 @@ You may include up to two figures or tables.
 2. **Results** What did you find, what are the main results? Report the relevant data, numbers, tables/figures, and clearly describe your observations.
 3. **Discussion & Conclusion** Do the results make sense? Are they according to your expectation or do you see something surprising? What do the results mean, how can you interpret them? Do different tools agree or not? What can you conclude? Make sure to describe the expectations and assumptions underlying your interpretation.
 :::::
+
+## Glossary
+
+:::{glossary}
+MSA
+: **M**ultiple **S**equence **A**lignment
+
+:::
 
 ## References
 

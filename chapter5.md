@@ -1,3 +1,17 @@
+---
+title: 5. Omics data analysis
+label: chapter_5
+authors:
+  - Judith Risse
+  - Dick de Ridder
+---
+
+:::{important} Learning outcomes
+- 1
+- 2
+- 3 
+:::
+
 # Omics data analysis
 
 :::{figure} images/Week5/omics-levels.png
@@ -2561,6 +2575,14 @@ You may include up to two figures or tables.
 2. **Results** What did you find, what are the main results? Report the relevant data, numbers, tables/figures, and clearly describe your observations.
 3. **Discussion & Conclusion** Do the results make sense? Are they according to your expectation or do you see something surprising? What do the results mean, how can you interpret them? Do different tools agree or not? What can you conclude? Make sure to describe the expectations and assumptions underlying your interpretation.
 :::::
+
+## Glossary
+
+:::{glossary}
+MSA
+: **M**ultiple **S**equence **A**lignment
+
+:::
 
 
 ## References

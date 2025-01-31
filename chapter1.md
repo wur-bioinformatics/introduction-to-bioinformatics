@@ -1,9 +1,17 @@
-# Genes, Proteins, Databases, Genome annotation
+---
+title: 1. Genes, Proteins, Databases, Genome annotation
+label: chapter_1
+authors:
+  - Rens Holmer
+  - Anne Kupczok
+  - Tomer Sardjoe
+---
 
-```{epigraph}
-
--- Rens Holmer, Anne Kupczok, Tomer Sardjoe
-```
+:::{important} Learning outcomes
+- 1
+- 2
+- 3 
+:::
 
 ## Biological background
 
@@ -1273,9 +1281,7 @@ Make sure that you develop your practical skills now, in order to apply them dur
 
 **Note, the answers will be made available after the practical!**
 
-<div style="page-break-after: always; visibility: hidden">
-\pagebreak
-</div>
++++
 
 :::::{admonition} _Assignment I: DNA/Genes (45 minutes)_
 
@@ -1429,9 +1435,7 @@ Amino acids:           ......................
     ```
 :::
 
-<div style="page-break-after: always; visibility: hidden">
-\pagebreak
-</div>
++++
 
 :::::{admonition} _Assignment II: Proteins (45 minutes)_
 
@@ -1740,9 +1744,7 @@ _Interoperable_: allow linking/exchange/import of data from different sources th
 _Reusable_: others should be able to use it, clear, standardized descriptions, proper license, etc.
 :::
 
-<div style="page-break-after: always; visibility: hidden">
-\pagebreak
-</div>
++++
 
 :::::{admonition} _Assignment IV: Genome annotation (120 minutes)_
 
@@ -1802,9 +1804,7 @@ _Reusable_: others should be able to use it, clear, standardized descriptions, p
 6. Structural annotation is the identification of genome features in the genome, e.g., start and stop positions of gene regions, exons, introns, UTRs, CDS. Functional annotation is assigning biological information to the genome features, e.g., protein function, domains, enzyme codes, type of transposon, etc.
 :::
 
-<div style="page-break-after: always; visibility: hidden">
-\pagebreak
-</div>
++++
 
 :::::{admonition} **Project Preparation Exercise**
 :class: important
@@ -1823,6 +1823,16 @@ You may include up to two figures or tables.
 2. **Results** What did you find, what are the main results? Report the relevant data, numbers, tables/figures, and clearly describe your observations.
 3. **Discussion & Conclusion** Do the results make sense? Are they according to your expectation or do you see something surprising? What do the results mean, how can you interpret them? Do different tools agree or not? What can you conclude? Make sure to describe the expectations and assumptions underlying your interpretation.
 :::::
+
+## Glossary
+
+:::{glossary}
+DNA
+: **D**eoxyribo**N**ucleic **A**cid
+
+RNA
+: RiboNucleic Acid
+:::
 
 ## References
 

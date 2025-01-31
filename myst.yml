@@ -2,15 +2,30 @@ version: 1
 project:
   title: Introduction to Bioinformatics
   authors:
-    - name: Wageningen University & Reseach - Ridder
-    - name: Dick de; Kupczok
-    - name: Anne; Holmer
-    - name: Rens; Bakker
-    - name: Freek; Hooft
-    - name: Justin van der; Risse
-    - name: Judith; Navarro
-    - name: Jorge; Sardjoe
-    - name: Tomer.
+    - name: Dick de Ridder
+      affiliation: wurbif
+    - name: Anne Kupczok
+      affiliation: wurbif
+    - name: Rens Holmer
+      affiliation: wurbif
+    - name: Freek Bakker
+      affiliation: wurbis
+    - name: Justin van der Hooft
+      affiliation: wurbif
+    - name: Judith Risse
+      affiliation: wurbif
+    - name: Jorge Navarro
+      affiliation: wurbif
+    - name: Tomer Sardjoe
+      affiliation: wurbif
+  affiliations:
+   - id: wurbif
+     institution: Wageningen University & Reseach
+     department: Bioinformatics
+   - id: wurbis
+     institution: Wageningen University & Reseach
+     department: Biosystematics
+
   bibliography:
     - references.bib
   exports:
@@ -26,6 +41,7 @@ project:
     - file: chapter4.md
     - file: chapter5.md
 site:
+  github: http://github.com/wur-bioinformatics/introduction-to-bioinformatics
   options:
     logo: BIF logo.png
   template: book-theme
