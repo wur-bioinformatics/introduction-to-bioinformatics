@@ -1,0 +1,31 @@
+version: 1
+project:
+  title: Introduction to Bioinformatics
+  authors:
+    - name: Wageningen University & Reseach - Ridder
+    - name: Dick de; Kupczok
+    - name: Anne; Holmer
+    - name: Rens; Bakker
+    - name: Freek; Hooft
+    - name: Justin van der; Risse
+    - name: Judith; Navarro
+    - name: Jorge; Sardjoe
+    - name: Tomer.
+  bibliography:
+    - references.bib
+  exports:
+    - format: pdf
+      template: plain_latex_book
+      output: exports/BIF20306book.pdf
+    - format: typst
+  toc:
+    - file: intro.md
+    - file: chapter1.md
+    - file: chapter2.md
+    - file: chapter3.md
+    - file: chapter4.md
+    - file: chapter5.md
+site:
+  options:
+    logo: BIF logo.png
+  template: book-theme
