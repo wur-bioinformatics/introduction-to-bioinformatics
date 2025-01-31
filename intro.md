@@ -115,18 +115,24 @@ information or are used to highlight and clarify important aspects.  Yellow
 and blue boxes are part of the exam material for this course, green boxes
 provide useful additional information or links.
 
-```{admonition} Important information :class: important A yellow box
+```{admonition} Important information
+:class: important A yellow box
 indicates important information that you should remember and is definitely
-part of the exam material.  ```
+part of the exam material.
+```
 
-```{admonition} Note 1: Noteworthy information :class: note Highlighted
+```{admonition} Note 1: Noteworthy information
+:class: note Highlighted
 information that is considered part of the exam material.  Notes are
-numbered for easy reference.  ```
+numbered for easy reference.
+```
 
-```{admonition} Box 1: Additional information :class: tip Additional
+```{admonition} Box 1: Additional information
+:class: tip Additional
 information, often times provides extra examples to material mentioned in
 the main text.  Not part of the exam material, but might make exam material
-more clear.  Boxes are numbered for easy reference.  ```
+more clear.  Boxes are numbered for easy reference.
+```
 
 ```{admonition} See also
 :class: seealso
