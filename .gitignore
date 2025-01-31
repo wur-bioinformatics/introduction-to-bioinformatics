@@ -5,3 +5,5 @@ _answers/*
 .DS_Store
 *.ipynb_checkpoints
 .vscode
+# Jupyter Book (via myst) build outputs
+_build

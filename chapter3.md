@@ -1199,70 +1199,70 @@ This glossary contains the most important terms from this chapter.
 
 ```{glossary}
 Apomorphy
-  Derived character state
+: Derived character state
 
 Autapomorphy
-  For a group, all members being derived from one MRCA
+: For a group, all members being derived from one MRCA
 
 Bifurcating
-  A tree containing nodes that are all connected through three branches
+: A tree containing nodes that are all connected through three branches
 
 Bootstrap
-  A method for measuring node support in a phylogenetic tree
+: A method for measuring node support in a phylogenetic tree
 
 Branch length
-  The length, either in steps (parsimony), distances (clustering) or substitutions per site (maximum likelihood)
+: The length, either in steps (parsimony), distances (clustering) or substitutions per site (maximum likelihood)
 
 Clade
-  Monophyletic group, MRCA with all descendants
+: Monophyletic group, MRCA with all descendants
 
 GTR
-  General time reversible nucleotide substitution model
+: General time reversible nucleotide substitution model
 
 JC
-  Jukes-Cantor nucleotide substitution model
+: Jukes-Cantor nucleotide substitution model
 
 K2P
-  Kimura 2-parameter nucleotide substitution model
+: Kimura 2-parameter nucleotide substitution model
 
 LBA
-  long-branch attraction
+: long-branch attraction
 
 Monophyly
-  For a group, all members being derived from one MRCA
+: For a group, all members being derived from one MRCA
 
 MLE
-  Maximum likelihood estimate
+: Maximum likelihood estimate
 
 MRCA
-  Most recent common ancestor
+: Most recent common ancestor
 
 MSA
-  Multiple sequence alignment
+: Multiple sequence alignment
 
 Nodal support
-  The support -by the characters- for a node in the phylogenetic tree
+: The support -by the characters- for a node in the phylogenetic tree
 
 Paraphyly
-  For a group, not all members being derived from one MRCA
+: For a group, not all members being derived from one MRCA
 
 _p_-difference
-  Proportional difference, uncorrected
+: Proportional difference, uncorrected
 
 Polytomy
-  Part of a phylogenetic tree that is collapsed, node is connected through > 3 branches
+: Part of a phylogenetic tree that is collapsed, node is connected through > 3 branches
 
 Root
-  Reference individual, used for polarising a tree
+: Reference individual, used for polarising a tree
 
 Synapomorphy
-  Shared derived character state
+: Shared derived character state
 
 Transition
-  a substitution among pyrimindes (C,T) or among purines (A,G)
+: a substitution among pyrimindes (C,T) or among purines (A,G)
 
 Transversion
-  a pyrimidine ↔ purine substitution
+: a pyrimidine ↔ purine substitution
 ```
 :::
 
