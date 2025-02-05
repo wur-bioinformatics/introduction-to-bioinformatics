@@ -1,6 +1,6 @@
 ---
 title: 3. Phylogenetics and tree reconstruction
-label: chapter_3
+label: chapter3
 authors:
   - Freek Bakker
 ---
@@ -1970,6 +1970,4 @@ Transversion
 ## References
 
 ```{bibliography}
-:filter: docname in docnames
-:labelprefix: 3W
 ```

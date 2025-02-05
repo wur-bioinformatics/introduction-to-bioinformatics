@@ -81,9 +81,11 @@ The five steps along the journey above are reflected in a setup with five
 chapters, that each contain basic text, various boxes with different types
 of material (see below), practical exercises and references:
 
-```{tableofcontents}
-
-```
+1. [Genes, Proteins, Databases, Genome annotation](#chapter1)
+2. [Alignment, Sequence search, Primer design](#chapter2)
+3. [Pylogenetics and tree building](#chapter3)
+4. [Protein structure prediction](#chapter4)
+5. [Omics data analysis](#chapter5)
 
 After some years of development and streamlining, we have now reached the stage 
 that we feel it is ready to release it to the community as an online textbook, free
@@ -141,6 +143,4 @@ Link to external information, like videos or blogs. Not exam material, but might
 ## References
 
 ```{bibliography}
-:filter: docname in docnames
-:labelprefix: I
 ```

@@ -1,6 +1,6 @@
 ---
 title: 2. Alignment, sequence search, and primer design
-label: chapter_2
+label: chapter2
 authors:
   - Anne Kupczok
   - Rens Holmer
@@ -1226,6 +1226,4 @@ MSA
 ## References
 
 ```{bibliography}
-:filter: docname in docnames
-:labelprefix: 2W
 ```

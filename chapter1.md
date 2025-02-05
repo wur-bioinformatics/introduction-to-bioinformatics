@@ -1,6 +1,6 @@
 ---
 title: 1. Genes, Proteins, Databases, Genome annotation
-label: chapter_1
+label: chapter1
 authors:
   - Rens Holmer
   - Anne Kupczok
@@ -1837,6 +1837,4 @@ RNA
 ## References
 
 ```{bibliography}
-:filter: docname in docnames
-:labelprefix: 1W
 ```
