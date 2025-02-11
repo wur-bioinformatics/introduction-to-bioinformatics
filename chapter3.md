@@ -11,14 +11,14 @@ authors:
 - 3 
 :::
 
-In this chapter you will learn to use a _Multiple Sequence Alignment_ (MSA), like the ones you compiled in [chapter 2](chapter2), and visualize the variation it contains as a phylogenetic tree.
+In this chapter you will learn to use a _Multiple Sequence Alignment_ (MSA), like the ones you compiled in [chapter 2](#chapter2), and visualize the variation it contains as a phylogenetic tree.
 A phylogenetic tree is considered a highly efficient _data structure_ summarizing the data and its variation contained in your MSA.
 A tree is built from _characters_ which are the individual columns or positions in your MSA.
-Characters have states, which are in this case the individual nucleotide or amino acid _substitutions_ occurring in that position (see [Characters & trees](Week3_characters_trees) below).
+Characters have states, which are in this case the individual nucleotide or amino acid _substitutions_ occurring in that position (see [Characters & trees](#Week3_characters_trees) below).
 Invariable characters are columns or positions 'occupied' by just one type of nucleotide or amino acid, whereas variable characters may have up to 4 different nucleotides or up to 20 amino acids per position. 
 %#%Create cross-link to MSA in chapter 2 when written
 DNA and amino acid (AA) sequences contain the information necessary for building protein structure, comparing them in an MSA will enable insight how these structures, and their associated functions, may have changed over evolutionary times since they descended from an ancestral sequence.
-The more character state changes (i.e., substitutions) occur between sequences, the more _diverged_ they are and probably also less related (see [Related, diverged](Week3_related_diverged) below), and hence the further apart they will occur on your phylogenetic tree.
+The more character state changes (i.e., substitutions) occur between sequences, the more _diverged_ they are and probably also less related (see [Related, diverged](#Week3_related_diverged) below), and hence the further apart they will occur on your phylogenetic tree.
 The information contained in your tree is hierarchical in nature, meaning that it is built-up as nested sets of subtrees that are also known as _clades_.
 A _clade_ is a group containing an ancestor together with all its descendants and is also referred to as a _monophyletic_ group.
 
@@ -116,7 +116,7 @@ These individuals can represent genes, species or higher taxa, but they are neve
 Branches and nodes collectively build the _tree topology_, i.e., the structure of the tree.
 
 One of the most important aspects of a phylogenetic tree is whether it is rooted, meaning whether we can distinguish which nodes are old and which are more recent, and also what _clades_ are present.
-Rooting is done by selecting an _outgroup_, which is a reference taxon outside the group of interest (this is described in more detail in section [Rooting & clades](Week3_rooting_clades)).
+Rooting is done by selecting an _outgroup_, which is a reference taxon outside the group of interest (this is described in more detail in section [Rooting & clades](#Week3_rooting_clades)).
 It is important to realise that most phylogenetic reconstruction methods actually produce unrooted trees, which can then rooted using an outgroup to visualize in what direction evolution proceeded and which clades can be identified.
 
 ---
@@ -151,7 +151,7 @@ Made using imagery from: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0
 In a rooted phylogenetic tree, terminals sharing a more recent common ancestor are more closely related than terminals sharing a less recent common ancestor.
 Thus, in {numref}`MRCA_mammals_alt`, dog and bear are more related than dog and seal, because dog and bear share a more recent common ancestor.
 On the other hand, monkey and dog are as related as monkey and cat, because they all share the same _most recent common ancestor_ (MRCA).
-Being _related_ is not the same as being _diverged_, as divergence means the amount of change accumulated since the split of two lineages, which is reflected in the branch lengths (or in [distances](Week3_distance_based)).
+Being _related_ is not the same as being _diverged_, as divergence means the amount of change accumulated since the split of two lineages, which is reflected in the branch lengths (or in [distances](#Week3_distance_based)).
 In our example, raccoon and dog would be more diverged than raccoon and bear, but not more closely related.
 
 ---
@@ -221,7 +221,7 @@ In contrast, the _hard_ interpretation would be: instantaneous speciation, i.e.,
 An example is the late-Tertiary radiation of mammalian orders, after the fairly quick establishment of cold water around the Earth's poles, combined with that of the hot tropics.
 Several published mammalian phylogenetic trees contain unresolved spines or backbones.
 
-On the other hand, [_gene trees_](Week3_orthologs_paralogs) (used for studying gene families) may also contain polytomies and they are usually considered as soft (the data is not decisive enough to infer a branching order).
+On the other hand, [_gene trees_](#Week3_orthologs_paralogs) (used for studying gene families) may also contain polytomies and they are usually considered as soft (the data is not decisive enough to infer a branching order).
 _Whole genome duplications_ (auto-polyploidisations) are fairly well known, especially in the evolution of flowering plants. Following such an event, pairs of genes can be expected to form instantaneously, i.e., without accumulating unique substitutions, and may result in hard polytomies in gene trees.
 
 ---
@@ -393,7 +393,7 @@ We 'only' have our phylogenetic trees as estimates of the _true phylogeny_.
 In order to measure support for the nodes in our phylogenetic tree, rather than producing several replicates of our MSA (which will most likely all be identical), we can draw random samples from the MSA and use these _pseudo-replicate_ data sets to build trees ({numref}`bootstrap_resampling_alt`).
 Repeating this process many times (hundreds or thousands) and summarizing the variation among the trees thus reconstructed, provides insight in the structure of our data and how it supports the nodes in a tree.
 It actually measures the sampling _variance about the estimate_ of the phylogeny {numref}`bootstrap_resampling_alt`B.
-This process is called _bootstrap analysis_ and will be further discussed in [Maximum likelihood tree building](Week3_ML), after we have covered the _characters_ underlying our trees in the next section.
+This process is called _bootstrap analysis_ and will be further discussed in [Maximum likelihood tree building](#Week3_ML), after we have covered the _characters_ underlying our trees in the next section.
 
 %:::{figure} images/Week3/bootstrap-resampling.png
 %:alt: Comparison between an unlimited and limited data bootstrap resampling analysis approach.
@@ -455,7 +455,7 @@ After all, synapomorphies are relative (not absolute) entities: only in the cont
 For instance, when studying a gene family in which duplications have occurred during the evolution of its lineages, many taxa should be included in the MSA in order to capture the duplication events.
 Only adding more characters may amplify errors or artefacts caused by taxic under-sampling.
 This can lead to incorrectly inferred long branches with seemingly high support for their position and nodes.
-This phenomenon is referred to as long-branch attraction and is discussed further in [Estimating sequence divergence](Week3_estimating_sequence_divergence).
+This phenomenon is referred to as long-branch attraction and is discussed further in [Estimating sequence divergence](#Week3_estimating_sequence_divergence).
 
 ---
 
@@ -623,7 +623,7 @@ Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`un
 
 ### Newick tree notation
 
-Phylogenetic trees are graphical structures ('graphs') that are the outcome of phylogenetic reconstruction of sometimes hundreds or thousands of sequences, and especially when using character-based tree search (see below [Main approaches to tree building](Week3_tree_building)) there can be enormous amounts of 'best trees' that all will have to be taken into account, for instance by calculating a consensus tree (see [Tree space and heuristic search methods](Week3_tree_space)).
+Phylogenetic trees are graphical structures ('graphs') that are the outcome of phylogenetic reconstruction of sometimes hundreds or thousands of sequences, and especially when using character-based tree search (see below [Main approaches to tree building](#Week3_tree_building)) there can be enormous amounts of 'best trees' that all will have to be taken into account, for instance by calculating a consensus tree (see [Tree space and heuristic search methods](#Week3_tree_space)).
 In any case, handling large numbers of trees in phylogenetical and bioinformatic analytical pipelines requires the tree graphs to be in a format that can be easily read and produced, as a linear statement.
 For this, the Newick notation is commonly used in which brackets describe the structure of the tree.
 For instance, the rooted tree in {numref}`hcgob_alt` above would look like `((((H,C)G)O)B)` in Newick notation.
@@ -687,7 +687,7 @@ There can also be multiple equally parsimonious trees as a result, which leads t
 
 #### Tree space and heuristic search methods
 
-The number of possible bifurcating trees increases astronomically with increasing numbers of included taxa (terminals or sequences in your MSA) and cannot be calculated analytically (see [Box 3.3](Week3_bifurcating)).
+The number of possible bifurcating trees increases astronomically with increasing numbers of included taxa (terminals or sequences in your MSA) and cannot be calculated analytically (see [Box 3.3](#Week3_bifurcating)).
 For instance, the total number of unrooted bifurcating trees for 10 and for 30 sequences is $2,027,025$ and $4.95 × 10^{38}$ respectively.
 In fact, it quickly becomes practically impossible to compare all possible trees and find the _exact_ best one.
 To overcome this problem, random trees are generated that serve as starting points for tree search in remote and differently placed parts of the tree space.
@@ -724,7 +724,7 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 ```
 :::
 
-These _character-based_ tree building methods (as opposed to [_distance-based_](Week3_distance_based) methods, below) are attractive in that trees are made directly from sequence characters, enabling detailed analysis of what characters contribute where in the tree, or reconstructing what ancestral characters (and hence sequences) would have looked like.
+These _character-based_ tree building methods (as opposed to [_distance-based_](#Week3_distance_based) methods, below) are attractive in that trees are made directly from sequence characters, enabling detailed analysis of what characters contribute where in the tree, or reconstructing what ancestral characters (and hence sequences) would have looked like.
 This is a powerful feature of character-based tree building methods, which have become dominant in recent years.
 
 ---
@@ -779,8 +779,8 @@ Some characters may have changed only in one of the sequences (_autapomorphy_).
 When all characters in the MSA have been evaluated, the overall score of the fit of the data with that candidate tree is calculated by adding up the changes across all characters (as in {numref}`parsimony`).
 Then, another candidate tree is assumed and the process is carried out again.
 More and more trees are compared this way until either a single best or a group of _equally most parsimonious_ reconstructions remains.
-Given the vastness of tree spaces for even moderate numbers of terminals (see [Box 3.3](Week3_bifurcating)) this process may take some time to complete.
-Usually only heuristic search methods (see [Tree space and heuristic search methods](Week3_tree_space)) are applied in case of >15 terminals.
+Given the vastness of tree spaces for even moderate numbers of terminals (see [Box 3.3](#Week3_bifurcating)) this process may take some time to complete.
+Usually only heuristic search methods (see [Tree space and heuristic search methods](#Week3_tree_space)) are applied in case of >15 terminals.
 
 :::{figure} images/Week3/parsimony.svg
 :alt: Parsimony analysis, in which character state changes in the MSA are indicated on the resulting trees.
@@ -816,7 +816,7 @@ Maximum parsimony methods are included in the software ([MEGA11](https://www.meg
 
 Two other important character-based methods for tree building exist: _maximum likelihood_ (ML) analysis and _Bayesian Inference_ (BI).
 Both differ from parsimony analysis in that they do not merely count differences (as in parsimony analysis) but are based on explicit models of character evolution and operate in a probability framework.
-ML will be discussed in section [Maximum likelihood tree building](Week3_ML) below; BI is beyond the scope of this course and will therefore not be treated here.
+ML will be discussed in section [Maximum likelihood tree building](#Week3_ML) below; BI is beyond the scope of this course and will therefore not be treated here.
 
 ---
 
@@ -826,12 +826,12 @@ ML will be discussed in section [Maximum likelihood tree building](Week3_ML) bel
 
 The other main approach to tree building is _clustering_, which is _distance_-based, and is widely used in several applications, for instance in visualising BLAST searches as Neighbor Joining trees.
 _Distance-based_ means that instead of comparing one character at a time across all sequences in the MSA, only pairwise comparisons of entire sequences are made (i.e., all characters are compared at once), for all possible sequence pairs in the MSA ({numref}`character_distance_alt`) typically yielding a _triangular_ all-to-all distance matrix.
-Pairwise comparisons yield pairwise distances, which can be ultrametric or Euclidean (see [Box 3.4](Week3_distances)).
+Pairwise comparisons yield pairwise distances, which can be ultrametric or Euclidean (see [Box 3.4](#Week3_distances)).
 Keep in mind that the relation between Distance ($D$) and Similarity ($S$) is:
 
-$$
-1 – D = S
-$$
+```{math}
+1 - D = S
+```
 
 and that in different studies either $D$ or $S$ may be used for comparison.
 Which one is used can usually easily be inferred from the resulting pairwise distance matrix diagonals, where each sequence is compared with itself.
@@ -864,7 +864,7 @@ The same data set (MSA) of 7 characters observed over 4 terminals (sequences) an
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
 
-If the sequences would have accumulated substitutions in a clock-like manner (i.e., like radio-active decay) the resulting pairwise distances may even be ultrametric [(see Box 3.4)](Week3_distances).
+If the sequences would have accumulated substitutions in a clock-like manner (i.e., like radio-active decay) the resulting pairwise distances may even be ultrametric [(see Box 3.4)](#Week3_distances).
 This would mean that the distances in the triangular pairwise distance matrix are identical with the distances as measured over the resulting distance tree ({numref}`character_distance_alt`).
 However, such clean data is hardly ever found, and the distances measured over the tree may differ from the observed distances in the pairwise matrix.
 This is illustrated in {numref}`ultrametric_distance_alt` in which two trees are depicted: an ultrametric tree (A) and an additive tree (B) containing unequal sister branch lengths (to a and b).
@@ -1075,7 +1075,7 @@ There are up to 220 different models to choose from.
 It is good to realise that these models are reversible and therefore allow the reconstruction of unrooted trees only.
 Once these are determined they can be rooted using outgroup rooting.
 
-For amino acid sequence comparisons, instead of estimating parameter values from the data, amino acid substitution models are based on (pre-defined) _substitution cost matrices_ (see [chapter 2](Week2_substitution_matrices)) that are based on observations of amino acid substitutions found in over 30,000 protein sequences (e.g., the JTT, Blosum, Dayhoff, LG and WAG matrices).
+For amino acid sequence comparisons, instead of estimating parameter values from the data, amino acid substitution models are based on (pre-defined) _substitution cost matrices_ (see [chapter 2](#Week2_substitution_matrices)) that are based on observations of amino acid substitutions found in over 30,000 protein sequences (e.g., the JTT, Blosum, Dayhoff, LG and WAG matrices).
 
 ---
 
@@ -1104,13 +1104,13 @@ Subsequently, a candidate tree is considered and the likelihood L{sub}`D` of obs
 Then, another tree is considered whilst the same best-fitting model remains selected, and its parameter values are estimated again.
 The likelihood L{sub}`D` of observing the data (your MSA) is calculated again and this time the likelihood may actually be better.
 More trees are evaluated, and more model parameter values are considered, all the time keeping track of L{sub}`D` until no further increase L{sub}`D` can be obtained.
-This is usually achieved by using the heuristic tree search approaches as outlined in [Tree space and heuristic search methods](Week3_tree_space) and depending on the tree space, determined by the number of sequences in the MSA.
+This is usually achieved by using the heuristic tree search approaches as outlined in [Tree space and heuristic search methods](#Week3_tree_space) and depending on the tree space, determined by the number of sequences in the MSA.
 The end result is the maximum likelihood estimate (MLE): the combination of a tree and model parameter values that maximizes the likelihood of the data.
 This tree, which may not be the exact best MLE (it is after all heuristics), is then usually referred to as the ML tree.
 
 Phylogenetic tree reconstruction based on MLE has become the dominant tree building approach over the past decade.
 It is an efficient method that can consider differences in substitution rates and patterns between the sequences in an MSA.
-This would mean that non-clocklike or biased (non-random) accumulation of substitutions would be modelled, and this would minimize possible artefacts in inferring the ML tree topology, for instance LBA (see [above](Week3_estimating_sequence_divergence)).
+This would mean that non-clocklike or biased (non-random) accumulation of substitutions would be modelled, and this would minimize possible artefacts in inferring the ML tree topology, for instance LBA (see [above](#Week3_estimating_sequence_divergence)).
 
 The MLE pipeline for phylogenetic reconstruction is implemented in the software package [IQ-TREE](http://www.iqtree.org/) {cite}`iqtree_2020`, which includes I) model testing, II) ML tree search, and III) bootstrapping for both nucleotide and amino acid sequences.
 IQ-TREE will be demonstrated and used in this chapter's practical.
@@ -1123,7 +1123,7 @@ There, the substation models are applied to calculate 'corrected' pairwise seque
 ### Model-testing, ML tree search, Bootstrapping
 
 After an ML tree with branch lengths has been obtained, there is still no information on how nodes in the ML tree may differ in terms of support by the data (MSA).
-Therefore a bootstrap analysis is carried out, repeating the MLE process a number of times, based on pseudo-replicate data sets drawn from the MSA (see [Nodal support in phylogenetic trees: the bootstrap](Week3_bootstrap)).
+Therefore a bootstrap analysis is carried out, repeating the MLE process a number of times, based on pseudo-replicate data sets drawn from the MSA (see [Nodal support in phylogenetic trees: the bootstrap](#Week3_bootstrap)).
 After an ML tree is obtained for each pseudo-replicate data set, a 50% majority-rule consensus tree is calculated in order to see the group frequencies (the proportion of replicates in which each node is occurring).
 These frequencies are also referred to as _bootstrap values_.
 The idea is that the more synapomorphies a node has, the higher its bootstrap value will be.
@@ -1175,7 +1175,6 @@ Bayesian Inference, in which probabilities for nodes are calculated, and differe
 
 ```{list-table}
 :header-rows: 1
-:widths: auto
 
 * - Data →
   - Distances (pairwise)
@@ -1385,7 +1384,7 @@ _Questions:_
 
 Now close the Data Explorer and go to `Distance`, for computing a pairwise distance comparison among all sequences in the alignment.
 Select `Compute Pairwise Distances`.
-First you will make a crude, uncorrected, distance measure by selecting `p-difference`, which is basically the proportion of differing sites between any two sequences (like the %-identity score you have seen in [chapter 2](Week2_substitution_matrices)).
+First you will make a crude, uncorrected, distance measure by selecting `p-difference`, which is basically the proportion of differing sites between any two sequences (like the %-identity score you have seen in [chapter 2](#Week2_substitution_matrices)).
 Click in the areas in the _Setting_ part (next to the _Option_ part) of the `Analysis Preferences` window and use the following settings:
 
 - Variance estimation Method = None.
@@ -1664,7 +1663,6 @@ Try finding the LnL values in the cells marked with 'o' below.
 
 ```{list-table}
 :header-rows: 1
-:widths: auto
 :name: assignment_5_quiz
 
 * - Model
@@ -1725,7 +1723,6 @@ Now compare the best LogL score of your IQ-TREE analysis with the best log likel
 **Using the GTR + Gamma model the LnL value is 11894.34; however using the winning model from the IQ TREE analysis (TN + I + Gamma) this value is 11905.25, which is slightly worse. When repeating these analyses, this time with pairwise deletion the LnL’s become 13869.69 and 13882.63 respectively. In any case, these values are still much higher than those found in the IQ TREE search. The reason for that is probably that both analyses have been based on different number of positions from the same alignment (check in IQ TREE iq.tre files and in the MEGA Captions)**.
 ```{list-table}
 :header-rows: 1
-:widths: auto
 :name: assignment_5_quiz_answers
 
 * - Model
@@ -1855,9 +1852,7 @@ MAFFT alignment, IQ-TREE:
 ```
 :::::
 
-<div style="page-break-after: always; visibility: hidden"> 
-\pagebreak 
-</div>
++++
 
 :::{dropdown} Assignment VI answers
 :class-container: answers
@@ -1872,9 +1867,7 @@ One could argue that the deeper nodes in our IQ-TREE analysis appear to be poorl
 This means that the position of _Erwinia carotovora_, for which Zv&B state: "From its position, it will probably function in a similar way to either OXC or pyruvate oxi dase (POX), although it is also not far from the glyoxylate carboligase (GCL) cluster." But this is hard to support given the poor nodal support in this part of the tree, meaning its position is unsecure and could actually go in various places on this part of the tree.
 :::
 
-<div style="page-break-after: always; visibility: hidden"> 
-\pagebreak 
-</div>
++++
 
 :::::{admonition} **Project Preparation Exercise**
 :class: important

@@ -25,7 +25,7 @@ During the practical you will learn how to make pairwise and multiple-sequence a
 Comparing DNA and protein sequences is a key tool in the field of applied bioinformatics.
 By analyzing these sequences, researchers can annotate genes from new genomes, build models of protein structures, and investigate gene expression, i.e., which genes are turned on and off.
 It is important to notice that nature tends to stick with what works, rather than reinventing the wheel for each species.
-Instead, organisms evolve from ancestors, they accumulate mutations ([Chapter 1](Week1_substitutions)), and gradually develop new traits over time.
+Instead, organisms evolve from ancestors, they accumulate mutations ([Chapter 1](#Week1_substitutions)), and gradually develop new traits over time.
 That means that similar genes can be found in different organisms and the functional information can be transferred from one protein to another if both possess a certain degree of similarity.
 However, even though two proteins may look similar, they could also have different functions.
 Generally, similarities arise because of shared ancestry (divergent evolution), nevertheless, similarities can also appear independently (convergent evolution).
@@ -96,7 +96,7 @@ A screenshot of [dotlet](https://dotlet.vital-it.ch/) with sequence `MRRPDFMDALQ
 - (B) The histogram indicates how many hits with a particular similarity are shown; thus the slider can be adjusted to the right tail of the histogram.
 - \(C\) The two sliders that can adjust how the two sequences are positioned against each other.
 - (D) Serves a similar function as the two sliders of C but allows for arrow key navigation of the dotplot.
-- (E) Here you can select the window size of sequence comparison and the scoring matrix (window size is explained [below](Week2_blast_algorithm) and substitution matrices will also be explained [below](Week2_substitution_matrices)).
+- (E) Here you can select the window size of sequence comparison and the scoring matrix (window size is explained [below](#Week2_blast_algorithm) and substitution matrices will also be explained [below](#Week2_substitution_matrices)).
 - Credits: {cite}`dotlet_2000`.
   :::
 
@@ -166,7 +166,7 @@ Gap extend (score for each additional residue in a gap): -0.5
 
 #### Substitution matrices
 
-In [chapter 1](Week1_aminoacids), we learned that different amino acids have different chemical properties.
+In [chapter 1](#Week1_aminoacids), we learned that different amino acids have different chemical properties.
 When the protein structure and function are conserved, it is more likely that an amino acid gets exchanged by a chemically similar amino acid, compared to a very different one.
 When aligning protein sequences, we thus want to penalize the exchange of chemically dissimilar amino acids and reward the exchange of chemically similar amino acids.
 To this end, the score of matches and mismatches is generally determined by a **substitution matrix**, e.g., BLOSUM62 - **BLOSUM (BLOck SUbstitution Matrix)** ({numref}`blosum62`).
@@ -186,7 +186,7 @@ Credits: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) {cite}`
 ```{admonition} Box 2.1: Assignment
 :class: tip
 
-Look at the amino acid properties in the table in [chapter 1](Week1_aminoacids), choose some amino acids with the same properties and some with different properties.
+Look at the amino acid properties in the table in [chapter 1](#Week1_aminoacids), choose some amino acids with the same properties and some with different properties.
 Then look up these pairs in the BLOSUM62 matrix.
 What do you observe?
 ```
@@ -202,7 +202,7 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 :::
 
 Note that we motivated the use of amino acid substitution matrices by the chemical properties of amino acids; however, these properties were not directly used when determining these matrices.
-Instead, the BLOSUM matrix is determined by aligning conserved regions from Swiss-Prot ([chapter 1](Week1_uniprot)) and clustering them based on identity.
+Instead, the BLOSUM matrix is determined by aligning conserved regions from Swiss-Prot ([chapter 1](#Week1_uniprot)) and clustering them based on identity.
 Then, the substitutions between the different pairs of amino acids within a cluster are counted, which is used to compute the BLOSUM scores.
 Thus, these scores reflect directly which amino acids are exchanged more often with each other over evolutionary time and we can observe that this frequency is strongly correlated to their chemical properties.
 There are different versions of BLOSUM, for example BLOSUM62 was derived by clustering sequences with an identity of 62% and it is appropriate for comparing protein sequences having around 62% identity.
@@ -275,7 +275,7 @@ The Needleman-Wunsch algorithm was the first algorithm and can solve this task i
 ### Local alignments
 
 The previous example shows that some sequences might not be related over their full length.
-We have seen in [chapter 1](Week1_Interpro) that many proteins are composed of domains.
+We have seen in [chapter 1](#Week1_Interpro) that many proteins are composed of domains.
 When comparing two proteins, only some parts that correspond to the domains might be related.
 Then, it is more appropriate to perform a **local alignment**.
 Local alignment is also a good tool for identifying functional sites from which sequence patterns and motifs can be derived {numref}`alg_local`.
@@ -299,10 +299,10 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 
 ## Search in sequence databases
 
-In Chapter 1, we learned about different [sequence databases](Week1_databases).
+In Chapter 1, we learned about different [sequence databases](#Week1_databases).
 We often want to search novel sequences in these databases, for example to learn which other organisms have homologs.
 Two sequences that are highly similar, might also share the same function.
-This relationship is used for the [functional annotation](Week1_functional_annotation) of sequences, where the search in databases is an important step.
+This relationship is used for the [functional annotation](#Week1_functional_annotation) of sequences, where the search in databases is an important step.
 
 ```{admonition} Note 2.3: Similarity by chance
 :class: note
@@ -476,7 +476,7 @@ Arguably the simplest representation of a motif is the __consensus sequence__ ({
 An extension of the consensus sequence that can represent some variation in a motif is the __pattern string__ ({numref}`motif_concept`C).
 In pattern strings, unambigous positions are represented by single letters and there is a special syntax for representing variation:
 Positions in the MSA with more than one character are represented by multiple characters in between square brackets.
-A pattern string containing, for example, the pattern `[AG]` indicates that one position in the motif can be either `A` or `G`. As such, pattern strings take inspiration from [regular expressions](https://en.wikipedia.org/wiki/Regular_expression). Various types of pattern strings exist, for example `PROSITE` __REF__ strings used in the [Prosite database](Week1_prosite) contain syntax for representing positions in a motif where the residue is irrelevant (marked by an `*`). Pattern strings are capable of representing some variation in the motif, but they cannot express how likely the occurence of specific variants is (in the example `[AG]`, both `A` and `G` are equally likely to occur).
+A pattern string containing, for example, the pattern `[AG]` indicates that one position in the motif can be either `A` or `G`. As such, pattern strings take inspiration from [regular expressions](https://en.wikipedia.org/wiki/Regular_expression). Various types of pattern strings exist, for example `PROSITE` __REF__ strings used in the [Prosite database](#Week1_prosite) contain syntax for representing positions in a motif where the residue is irrelevant (marked by an `*`). Pattern strings are capable of representing some variation in the motif, but they cannot express how likely the occurence of specific variants is (in the example `[AG]`, both `A` and `G` are equally likely to occur).
 
 To express the likelihood of a specific residue occurring at a specific position, a __Position Specific Scoring Matrix (PSSM)__ can be used ({numref}`motif_concept`D).
 Every row represents one of the possible characters in the MSA and every column represents a column in the MSA, where numbers indicate the probability of observing a specific character at a specific position.
@@ -497,7 +497,7 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 
 ## Profile hidden Markov models (pHMMs)
 
-The previous sections on multiple sequence alignments and motifs explained some basics of how collections of similar sequences can be summarized and used. In this section we highlight a powerful approach for using the information in MSAs to perform sequence search and comparison: __profile hidden Markov models (pHMMs)__. Some of the fundamentals of general hidden Markov models have been covered in [Chapter 1](chapter1), here we introduce how a few simple adaptations to the general concept of HMMs unlocks a powerful sequence search approach.
+The previous sections on multiple sequence alignments and motifs explained some basics of how collections of similar sequences can be summarized and used. In this section we highlight a powerful approach for using the information in MSAs to perform sequence search and comparison: __profile hidden Markov models (pHMMs)__. Some of the fundamentals of general hidden Markov models have been covered in [Chapter 1](#chapter1), here we introduce how a few simple adaptations to the general concept of HMMs unlocks a powerful sequence search approach.
 
 The simplest introduction of profile hidden Markov models is to think of them as an extension of a position specific scoring matrix. Like a PSSM, a pHMM contains probabilities of observing certain characters at certain positions in an MSA. However, a pHMM adds the notion that the biological phenomenon of insertion and deletion of sequence elements requires unique distributions of observation probabilities. Following the hidden Markov model formulation: the _hidden states_ match/insert/delete all have their own unique _emission probabilities_ for the possible characters. In addition, a pHMM includes _transition probabilities_ between the  hidden states. A graphical representation of a simple profile HMM can be seen in {numref}`simple_hmm`. Just like in PSSMs, a probabilistic score can be calculated for a novel sequence matching an existing HMM.
 Due to the probabilistic nature of HMMs, the length of insertions is in principle unrestricted, whereas particular ranges are defined for PSSMs.
@@ -525,7 +525,7 @@ The ability to convert a multiple sequence alignment into a collection of probab
 
 ```{admonition} Box 2.5: pHMMs in databases
 :class: tip
-The ability to group biological sequences based on conserved/co-occurring regions and subsequently using this for sequence search is exploited in a wide range of biological sequence databases. Some of these databases have been introduced in [chapter 1](chapter1), here we briefly outline a few more details on how HMMs are incorporated into many of these resources by using [Pfam](Week1_pfam) as an example. All entries in the PFAM database are represented by profile HMMs. The entries are subdivided into one of six categories: family, domain, repeat, conserved site, coiled coil, or disordered. The main distinction between these six categories is the length of the matching sequences: a 'family' PFAM HMM is expected to match across the entire length of a protein sequence, a 'conserved site' is typically only a small region in a protein. As such, multiple PFAM HMMs can match a given protein sequence. The combination of matching PFAM HMMs on a given sequence can be used to give a fine-grained description of known elements in a sequence.
+The ability to group biological sequences based on conserved/co-occurring regions and subsequently using this for sequence search is exploited in a wide range of biological sequence databases. Some of these databases have been introduced in [chapter 1](#chapter1), here we briefly outline a few more details on how HMMs are incorporated into many of these resources by using [Pfam](#Week1_pfam) as an example. All entries in the PFAM database are represented by profile HMMs. The entries are subdivided into one of six categories: family, domain, repeat, conserved site, coiled coil, or disordered. The main distinction between these six categories is the length of the matching sequences: a 'family' PFAM HMM is expected to match across the entire length of a protein sequence, a 'conserved site' is typically only a small region in a protein. As such, multiple PFAM HMMs can match a given protein sequence. The combination of matching PFAM HMMs on a given sequence can be used to give a fine-grained description of known elements in a sequence.
 ```
 
 ## PCR primer design
@@ -536,7 +536,7 @@ Many laborary techniques in biomedical applications rely on the polymerase chain
 :class: tip
 Invented in 1983 by Kary B. Mullis, the polymerase chain reaction was first published in 1985 in a study on sickle cell anemia {cite}`saiki1985enzymatic`. Ten years after its discovery, PCR's many biomedical applications gained its inventor the 1993 Nobel prize (shared with Michael Smith for his work on site-directed mutagenesis).
 
-As a method for amplifying DNA, PCR relies on the naturally occurring process of DNA replication by the polymerase enzyme to duplicate DNA (See [Chapter 1](Week1_replication)). The reaction uses so-called primers to select which regions of DNA to amplify, and a temperature-cycling scheme to double the number of reaction products in each cycle ({numref}`PCR`). PCR primers are relatively short fragments of single stranded DNA that 'prime' the polymerase: they determine where DNA replication should start. Primers always come in pairs: by using a forward and reverse primer at opposing ends and strands of the desired DNA region, it is ensured that two copies of DNA can be made from one original DNA region.
+As a method for amplifying DNA, PCR relies on the naturally occurring process of DNA replication by the polymerase enzyme to duplicate DNA (See [Chapter 1](#Week1_replication)). The reaction uses so-called primers to select which regions of DNA to amplify, and a temperature-cycling scheme to double the number of reaction products in each cycle ({numref}`PCR`). PCR primers are relatively short fragments of single stranded DNA that 'prime' the polymerase: they determine where DNA replication should start. Primers always come in pairs: by using a forward and reverse primer at opposing ends and strands of the desired DNA region, it is ensured that two copies of DNA can be made from one original DNA region.
 
 During the reaction, typically three different temperature phases are alternated: (1.) the denaturation phase (~95°C) breaks up the double stranded DNA into single stranded DNA, (2.) the annealing phase (~55°C) allows the primers to bind to their complementary DNA, forming a small section of double stranded DNA, and (3.) the extension phase (~72°C) allows the polymerase enzyme to extend the double stranded section, creating two full double stranded copies of the original material. Repeating this process keeps on doubling the number of copies, which is why it is referred to as a chain reaction.
 A crucial discovery in the invention of the PCR reaction for biomedical applications is the use of a polymerase enzyme that can withstand the high temperatures of the denaturation phase. The first thermostable polymerase was extracted from a species of bacteria living in hot springs: _Thermus aquaticus_ (hence the name _Taq_ polymerase).

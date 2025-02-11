@@ -125,7 +125,7 @@ Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) modified 
 
 The error rate of DNA replication is remarkably low, about one erroneous base in 10<sup>9</sup> bases.
 This property preserves the genetic information during cell division, and also over generations.
-It also leads to mutations over evolutionary time ({numref}`dna_mutation`), as we will see later ([Substitutions](Week1_substitutions)).
+It also leads to mutations over evolutionary time ({numref}`dna_mutation`), as we will see later ([Substitutions](#Week1_substitutions)).
 
 :::{figure} images/Week1/dna_mutation.png
 :alt: DNA_mutation
@@ -224,7 +224,7 @@ As a result of the code degeneracy, the protein sequence can be deduced from the
 
 There are three codons that do not encode for an amino acid, but instead signal the end of the protein sequence, called **stop codons**.
 Furthermore, translation generally starts with the start codon AUG encoding methionine.
-More information of how protein information is encoded in genomes can be found in the section on [genome annotation](Week1_genome_annotation).
+More information of how protein information is encoded in genomes can be found in the section on [genome annotation](#Week1_genome_annotation).
 
 :::{figure} images/Week1/geneticcode.jpg
 :alt: The genetic code
@@ -297,7 +297,6 @@ It is important to know (by heart) the amino acids, their one-letter and three-l
 
 ```{list-table}
 :header-rows: 1
-:widths: auto
 :name: aminoacidtable
 
 * - Amino acid
@@ -431,7 +430,7 @@ The structure of a protein is critical for its function.
 For example, in an enzyme, the active site must be in the correct structure to be able to bind the substrate.
 Other proteins might bind proteins (and influence their activity) or bind DNA (and regulate gene expression).
 Additionally, some proteins are secreted from the cell or might function within the cell membrane.
-Finally, proteins are often modified after protein synthesis (see [Translation](Week1_translation)), called post-translational modification.
+Finally, proteins are often modified after protein synthesis (see [Translation](#Week1_translation)), called post-translational modification.
 These modifications can be important for protein function.
 
 ---
@@ -509,7 +508,7 @@ Although secondary structure elements are formed by hydrogen bonds between the b
 For example, methionine, alanine, leucine, and glutamic acid are favoured in α-helices, whereas proline, glycine, and tyrosine are disfavoured.
 Also, valine, isoleucine, tyrosine, cysteine, tryptophan, phenylalanine, and threonine are more frequently found in β-sheets, compared to α-helices.
 In turns, glycine, asparagine, proline, and serine are preferred.
-These preferences are used to predict secondary structure elements in proteins (see [chapter 4](Week4_secondary_structure_prediction)).
+These preferences are used to predict secondary structure elements in proteins (see [chapter 4](#Week4_secondary_structure_prediction)).
 :::
 
 The peptide bond is very rigid and planar, i.e., it cannot rotate to form the elements of protein structure.
@@ -684,8 +683,8 @@ The following section describes the most common steps in genome annotation.
 :class: note
 
 Several steps in the genome annotation process make use of algorithms that can search or align biological sequences, for example the BLAST algorithm.
-[Chapter 2](chapter2) covers sequence alignment and search in greater detail.
-For now, it is sufficient to know that these algorithms can quickly search very large collections of biological sequences to identify sequences that look similar (what we mean _exactly_ by 'similar' is also part of [chapter 2](chapter2)).
+[Chapter 2](#chapter2) covers sequence alignment and search in greater detail.
+For now, it is sufficient to know that these algorithms can quickly search very large collections of biological sequences to identify sequences that look similar (what we mean _exactly_ by 'similar' is also part of [chapter 2](#chapter2)).
 :::
 
 (Chapter1_repeat_masking)=
@@ -771,7 +770,7 @@ __A__: Graphical representation of a general hidden Markov model. Shaded circles
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_1_2024`.
 ```
 
-[Chapter 2](chapter2) and [Chapter 4](chapter4) cover various other applications of HMMs in bioinformatics, such as defining and prediction sequence domains, or transmembrane properties of proteins.
+[Chapter 2](#chapter2) and [Chapter 4](#chapter4) cover various other applications of HMMs in bioinformatics, such as defining and prediction sequence domains, or transmembrane properties of proteins.
 :::
 
 ### Evidence/prediction integration
@@ -789,7 +788,7 @@ So far, all described steps in the genome annotation process have dealt with wha
 To gain biological insight, the next step is to assign functional annotations to the predicted genes.
 This functional annotation step consists of using various sequence alignment and search tools to find sequences with a known function/description and to transfer the information of the known gene to the predicted gene.
 Several databases of high-quality known functions are often used, which are described in more detail in the next section of this chapter.
-In [Chapter 2](Week2_sequence_search) we will learn about approaches how to search these databases efficiently.
+In [Chapter 2](#Week2_sequence_search) we will learn about approaches how to search these databases efficiently.
 
 :::{admonition} Note 1.6: Visualizing gene structure
 :class: note
@@ -980,7 +979,7 @@ Patterns cannot deal with mismatches and are limited to exact matches to the pat
 Thus, they are not well suited to identify distant homologs.
 A Prosite **profile** is more general than a pattern and can also detect poorly conserved domains or families.
 They characterize protein domains over their entire length and do not just model the conserved parts.
-Profiles are estimated from multiple sequence alignments and we learn more about them in [chapter 2](chapter2).
+Profiles are estimated from multiple sequence alignments and we learn more about them in [chapter 2](#chapter2).
 For now, it is important to know that profiles model matches, insertions, and deletions.
 Importantly, profiles are **quantitative** representations, they will return a score how well the sequence fits to the profile.
 A threshold can be applied to get high-scoring profiles for a sequence.
@@ -995,12 +994,12 @@ ProRule is used to guide curated annotation of UniProtKB/Swiss-Prot.
 
 ### InterPro
 
-The Integrated Resource of Protein Families, Domains and Sites ([InterPro](https://www.ebi.ac.uk/interpro/)) integrates 13 member databases (including [Prosite](Week1_prosite) and [Pfam](Week1_pfam)) into a comprehensive secondary database.
+The Integrated Resource of Protein Families, Domains and Sites ([InterPro](https://www.ebi.ac.uk/interpro/)) integrates 13 member databases (including [Prosite](#Week1_prosite) and [Pfam](#Week1_pfam)) into a comprehensive secondary database.
 Additionally, it provides annotation from other tools, for example to annotate signal peptides and transmembrane regions.
 It allows to identify functionally important domains and conserved sites in a sequence by simultaneously annotating it using the member databases.
 Interpro can be used to find out which protein family a sequence belongs to, or what its putative function is.
 Additionally, one InterPro entry can integrate entries from the member databases, if they represent the same biological entity, reducing redundancy.
-InterPro entries are also linked to [Gene Ontology](Week1_gene_ontology).
+InterPro entries are also linked to [Gene Ontology](#Week1_gene_ontology).
 They are curated before being released.
 
 InterPro is updated every 8 weeks. The current release from the 25{sup}`th` of January 2024 contains ~41,000 entries, which represent different types:
@@ -1071,7 +1070,7 @@ You can find more information on InterPro entry types with examples [here](https
 
 Pfam is an important resource for protein domains.
 In Pfam, domains are classified according to profiles that are modelled as Hidden Markov models (HMMs).
-We will learn more on HMMs in [chapter 2](chapter2).
+We will learn more on HMMs in [chapter 2](#chapter2).
 %#% Create a direct cross-link to HMMs in chapter 2 when written.
 Pfam is now integrated in InterPro.
 Each Pfam domain can be represented with a logo, where the amino acids frequent at a particular position are represented as larger letters ({numref}`pfam-profile`).
@@ -1338,7 +1337,6 @@ Amino acids:           ......................
 
 ```{list-table}
 :header-rows: 1
-:widths: auto
 :name: assignment_1_13_taxonomy
 
 * - Species
@@ -1417,7 +1415,6 @@ Amino acids:           ......................
 13.
     ```{list-table}
     :header-rows: 1
-    :widths: auto
     :name: assignment_1_13_taxonomy_answers
 
     * - Species
@@ -1445,7 +1442,6 @@ Amino acids:           ......................
 
     ```{list-table}
     :header-rows: 0
-    :widths: auto
     :name: assignment_2_3_aa
 
     * - alanine
@@ -1504,7 +1500,6 @@ Amino acids:           ......................
 
 ```{list-table}
 :header-rows: 1
-:widths: auto
 :name: assignment_2_9_quiz
 
 * - #
@@ -1610,7 +1605,6 @@ Amino acids:           ......................
 9. Amino acid quiz
 ```{list-table}
 :header-rows: 1
-:widths: auto
 :name: assignment_2_9_quiz_answers
 
 * - #
