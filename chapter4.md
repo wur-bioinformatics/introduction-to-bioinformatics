@@ -7,8 +7,8 @@
 
 ## Predicting protein structures: the sequence-structure-function paradigm
 
-A lot of sequences have become available.
-However, for most, we do not yet know what type of proteins they represent, and what functionality they have.
+A lot of sequences have become available over the past decades.
+However, for most of them, we do not yet know what proteins they represent, and what functionality they have.
 
 Proteins are essential for life on earth.
 They have many kinds of functions in organisms such as supporting its structure (e.g., keratin in our skin), performing enzymatic reactions (e.g., Ribulose-1,5-bisphosphate carboxylase-oxygenase, a.k.a. Rubisco, in plants), or receptors for transduction of signals that mediate cell-to-cell communication.
