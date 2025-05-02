@@ -5,19 +5,19 @@
 -- Justin van der Hooft
 ```
 
-## Predicting protein structures: the sequence-structure-function paradigm
+## Protein structure and function
 
 A lot of sequences have become available over the past decades.
 However, for most of them, we do not yet know what proteins they represent, and what functionality they have.
 
 Proteins are essential for life on earth.
-They have many kinds of functions in organisms such as supporting its structure (e.g., keratin in our skin), performing enzymatic reactions (e.g., Ribulose-1,5-bisphosphate carboxylase-oxygenase, a.k.a. Rubisco, in plants), or receptors for transduction of signals that mediate cell-to-cell communication.
-As discussed in [chapter 1](Week1_genetic_code), only a relatively small amount of amino acid building blocks forms the basis of a structurally very diverse protein repertoire.
-Hence, to understand the function of proteins, knowing their structures is key. In [chapter 1](Week1_protein_structure) you have also learned that proteins are created as a long chain of amino acids held together by peptide bonds, i.e., a polypeptide chain (the primary structure), that folds into a three-dimensional (tertiary) structure, based on various types of interactions between amino acid side groups.
+They have many kinds of protein functions in organisms such as supporting tissue, organ, or cell structure (e.g., keratin in our skin), performing enzymatic reactions (e.g., Ribulose-1,5-bisphosphate carboxylase-oxygenase, a.k.a. Rubisco, in plants), or receptors for transduction of signals that mediate cell-to-cell communication.
+As discussed in [chapter 1](Week1_genetic_code), a very small amount of ~20 amino acid building blocks form the basis of a structurally very diverse protein repertoire in all life forms. Whilst amino acid sequences are abundantly available these days, either directly through proteomics measurements, or indirectly through translated genomic sequences. 
+In [chapter 1](Week1_protein_structure) you have also learned that proteins are created as a chain of amino acids held together by peptide bonds, i.e., a polypeptide chain (the primary structure), that folds into a three-dimensional (tertiary) structure, based on various types of interactions between amino acid side groups.
 Usually, during this folding process, shorter stretches of local 2D (secondary) structures form first, held together by hydrogen bonds.
-Interestingly, whereas the amino acid sequence of proteins may differ, their folding may still result in comparable 3D structures of the polypeptide chain – with comparable or even similar functionality (see {numref}`myoglobin`).
-Several folded polypeptide chains can form the final quaternary complex that is functional within the cell.
-Thus, the protein folding process is important, as it determines the 3D structure of polypeptide chains, and misfolding can lead to misfunctioning of the protein, for example by non-specific binding to other proteins, causing a disease in humans, or a less-performing mutant in plants.
+Interestingly, whereas the amino acid sequence of proteins may differ, their folding may still result in comparable 3D structures of the polypeptide chain – with comparable or even similar functionality that is conserved at a evolutionary timescale (see {numref}`myoglobin`).
+Finally, several folded polypeptide chains may form a quaternary complex.
+The protein folding process is important, as it determines the 3D structure of polypeptide chains, and misfolding can lead to misfunctioning of the protein, for example by non-specific binding to other proteins, causing a disease in humans, or a less-performing mutant in plants. Altogether, to understand the function of proteins, knowing their 3D structures is key. Consequently, predicting protein structures based on protein sequence information has been a topic of high interest and relevance to biochemists and scientists in general for many decades.
 
 :::{figure} images/Week4/myoglobin.png
 :alt: Different protein structures
@@ -25,24 +25,27 @@ Thus, the protein folding process is important, as it determines the 3D structur
 :width: 80%
 :name: myoglobin
 
-Protein structures of human myoglobin (top left), African elephant myoglobin (top right, 80% sequence identity to human structure analogue), blackfin tuna myoglobin (bottom right, 45% sequence identity to human analogue), and pigeon myoglobin (bottom left, 25% sequence identity to human analogue).
+Protein structures of human myoglobin (top left), African elephant myoglobin (top right, 80% sequence identity to human protein sequence), blackfin tuna myoglobin (bottom right, 45% sequence identity to human protein sequence), and pigeon myoglobin (bottom left, 25% sequence identity to human protein sequence).
 Myoglobin can be found in muscles and its main function is to supply oxygen to muscle cells.
 The protein structures in this figure illustrate how structure can be largely the same even for sequences that are quite different.
 Credits: {cite}`blopig_2021`.
 :::
 
-While current experimental methods can generate many sequences of hypothetical proteins present in organisms, it is still hard and expensive to determine the corresponding 3D protein structures experimentally.
+### Experimental protein structure determination
+
+While current bioinformatics methods can generate many hypothetical protein sequences from genome-sequenced organisms, it is still hard and expensive to determine the corresponding 3D protein structures experimentally.
 The main traditional experimental analytical techniques used are nuclear magnetic resonance (NMR) spectroscopy and X-ray crystallography.
-The former yields useful but often noisy measurements with usually multiple structural conformations; whereas the latter is more accurate, but easily costs 120,000 euros. Furthermore, it can take a year or even longer to fully elucidate the protein 3D structure from the data, and some structures cannot be measured at all, for example due to crystallization problems.
+The former results in useful but often noisy measurements as multiple structural conformations (i.e., the spatial arrangement of its constituent amino acids that together form the 3D shape) are generated; whereas the latter is more accurate, but also more expensive. Furthermore, it can take a year or even longer to fully elucidate the protein 3D structure from the data, and some structures cannot be measured at all, for example due to crystallization problems of the involved protein.
 Fortunately, fueled by recent technical advances, biological sequence data has become widely available, mostly in the form of genomic sequences.
-By translating these DNA sequences into possible amino acid sequences using the codon language you have learned about in [chapter 1](Week1_genetic_code), amino acid sequences can be inferred in which theoretical proteins can be predicted.
-However, the sheer number of biological sequences make manual analysis of such predicted protein sequences too daunting. Thus, alternative methods to derive 3D protein structures are needed to interpret the large amount of biological sequence data that has become available in the recent decades.
-Consequently, predicting protein structures based on protein sequence information has been a topic of high interest and relevance to biochemists and scientists in general for many decades.
+By translating these DNA sequences into possible amino acid sequences using the genetic code you have learned about in [chapter 1](Week1_genetic_code), amino acid sequences can be inferred and theoretical proteins can be predicted.
+However, the sheer number of different biological sequences makes manual analysis of such predicted protein sequences too daunting. Thus, alternative methods to derive 3D protein structures are needed to interpret the large amount of biological sequence data that has become available in the recent decades.
+
+### The sequence-structure-function paradigm
 
 The sequence-structure-function paradigm states that, _in principle_, all information to predict the folding of a protein, and thus its 3D structure and ultimately its function, is stored in its primary sequence.
 In practice, however, predicting structure from its sequence turned out to be a very complex and challenging task.
-One of the reasons for this complexity is due to the both short- and long-range interactions between protein local structure elements, i.e., interactions between secondary structure (2D) elements such as sheets and helices typically form anchor points upon which the tertiary (3D) structure is based.
-This chapter first describes 2D structure assignment and prediction, after which foundational 3D structure prediction approaches are discussed, including the main challenges and the three zones of tertiary structure prediction.
+One of the reasons for this complexity is due to the occurrence of both short- and long-range interactions between protein local, secondary (2D) structure elements. These interactions typically form anchor points upon which the tertiary (3D) structure is based.
+This chapter first describes 2D structure assignment and prediction, after which 3D structure prediction approaches are discussed, including the main challenges and the three zones of tertiary structure prediction.
 It ends with the most recent approaches to predict and compare tertiary structures: AlphaFold and Foldseek.
 
 ---
