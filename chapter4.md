@@ -52,8 +52,8 @@ It ends with the most recent approaches to predict and compare tertiary structur
 
 ## Secondary protein structure prediction
 Proteins consist of several locally defined secondary structure elements of which alpha helices (α-helices) and beta strands/sheets (β-strands/sheets) are the most commonly occurring ones.
-Please note here that a β-strand refers to one side of the β-sheet, where two strands come together to form the sheet structure.
-In this section, we will cover how to assign these two secondary structure elements using 3D protein structures, and how to predict these secondary structure elements based on sequence data.
+Please note here that a β-strand refers to one side of the β-sheet, where two strands come together to form the sheet structure (as we have learned in [chapter 1](Week1_secondary_structure)).
+In this section, we will cover how to assign these two secondary structure elements using 3D protein structures, and how to predict them based on sequence data.
 Furthermore, we will cover the prediction of two biologically relevant "special cases" of secondary structure elements: transmembrane sections and signaling peptides.
 
 ---
@@ -62,35 +62,35 @@ Furthermore, we will cover the prediction of two biologically relevant "special 
 
 ### Secondary structure assignment
 
-If we consider the 3D structure of folded protein chains, we typically observe that the more ordered parts of their structures usually contain more α-helices and β-strand stretches than the more randomly organized parts.
-As these elements fold locally, they can initiate folding of more complex tertiary folding patterns. Indeed, the presence/absence of α-helices and β-sheets and their specific conformation helps to categorize proteins.
-As a result, databases exist that categorize proteins according to specific fold types, in a structured, hierarchical way.
+If we consider the 3D structure of folded protein chains, we typically observe that the structurally more ordered parts of their 3D structures contain more α-helices and β-strand stretches than the more randomly shaped parts.
+As these 2D elements fold locally, they can initiate folding of more complex tertiary folding patterns. Indeed, the presence/absence of α-helices and β-sheets and their specific conformation helps to categorize proteins.
+As a result, databases exist that categorize proteins according to specific fold types, in a categorized, hierarchical way.
 Therefore, the assignment of amino acid residues to either α-helix, β-strand, or "random coil" (i.e., "other"), based on the 3D structure of a protein chain, can be seen as a first step to understand the protein structural configuration.
-Also, when we need training data to predict secondary structure elements based on the primary (1D) sequence, we would need sufficient labeled training data based on actual assignments.
+Also, when we need training data to predict secondary structure elements based on the primary (1D) sequence, we would need sufficient training data with labels based on actual structural assignments.
 Hence, several assignment tools were developed to replace the previously discussed daunting task of manual assignment of secondary structure elements based on known 3D information.
 
-The three options for an amino acid residue as mentioned above would translate into a so-called "three-state model", (α-helix, β-strand, or other) used by secondary structure assignment tools such as DSSP, PALSSE, and Stride, that use 3D structures as an input to assign three secondary structure labels.
-You will get hands-on experience with the interpretation of the outcome of these tools during the practical assignments. Please note that there are additional – less occurring – secondary structure elements that could be recognized, such as the β-turn, a sharp bend in the protein chain, and several special helices.
+The three options for an amino acid residue as mentioned above would translate into a so-called "three-state model", (α-helix, β-strand, or other) used by secondary structure assignment tools such as DSSP, PALSSE, and Stride. These tools use 3D structures as an input to assign three secondary structure labels.
+You will get hands-on experience with the interpretation of the outcome of these tools during the practical assignments. Please note that there are additional – less frequently occurring – secondary structure elements that could be recognized, such as the β-turn, a sharp bend in the protein chain, and several special helices.
 As a result, some tools will return eight states or even more. However, these can also be grouped in the three original states listed above. 
 
-Assigning or predicting the secondary structure of a protein is only useful if you have an idea of the accuracy of the assignments/predictions from a given program.
-The measured accuracy is used to help estimate its likely performance when presented with a sequence of an unknown structure.
-Accuracy can be measured either in respect of individual residue predictions or in relation to the numbers of correctly predicted helices and strands.
+Assigning or predicting the secondary structure of a protein is only useful if you have an idea of the accuracy of the assignments/predictions stemming from a given tool.
+Any accuracy prediction or measurment can help to estimate the performance of a tool when presented with a sequence of an unknown structure.
+Accuracy can be measured either with respect to individual residue predictions or in relation to the numbers of correctly predicted helices and strands.
 One commonly used and relatively straightforward method to assign accuracy to individual residues is the Q{sub}`3` measure.
 The values of Q{sub}`3` can range between 0 and 100%, with 100% equalling a perfect prediction.
-The value for a completely at random prediction depend on the number of different labels or "states" we predict: if we predict in the "three-state model", a random prediction would return 33% for Q{sub}`3`.
-Please note that the same value can mean completely different things ({numref}`Q3_alt`); hence, the values need to be considered together with the actual sequence aligments.
+The value for a completely random prediction depends on the number of different labels or "states" we predict: if we predict in the "three-state model", a random prediction would return 33% for Q{sub}`3`.
+Please note that the same Q3 score can mean completely different things when studying the actual alignment between the predicted secondary structure assingments with the correct ones ({numref}`Q3_alt`); hence, the values need to be considered together with the actual sequence alignments.
 Whilst it may seem natural to strive for a perfect prediction, the maximum Q{sub}`3` that is generally achievable is ~80%.
 This is mainly caused by difficulties in defining the start and end of secondary structure elements: the different tools that assign or predict secondary structure may well deviate at the borders of the predicted elements.
 Even as a human, manual annotation of secondary structure elements may pose challenges on which residues are inside or outside secondary structure elements.
-During the practical assignments, you will explore this phenonemon more. 
+During the practical assignments, you will explore this phenomenon more. 
 
 %:::{figure} images/Week4/Q3.png
 %:alt: Q{sub}`3` measure
 %:align: center
 %:name: Q3
 %
-%The Q{sub}`3` measure produces useful accuracy predictions when the resulting secondary structure prediction contains a slight shift compared to the actual structure (prediction 1). It is however not useful when the secondary structure elements have been interpreted incorrectly (E -> H in prediction 2).
+%The Q{sub}`3` measure produces useful accuracy predictions when the resulting secondary structure prediction contains a slight shift compared to the actual structure (prediction 1). It is however not useful when the secondary structure elements have been interpreted incorrectly, as the score does not take into account what the actual change is. For example, in prediction 2, the beta strand (E) turned into helix for several residues, making this a worse prediction than prediction 1, but returning the same Q3 score. 
 %:::
 %#% Unable to use figure Q3 due to copyright.
 
@@ -109,10 +109,10 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 
 ### Secondary structure prediction
 
-Here, we will describe approaches to predict secondary structure elements on the basis of sequence data alone.
-As these approaches form the foundation for tertiary structure prediction tools, it makes sense to study them first.
+Here, we will describe approaches that have emerged over the past decades to predict secondary structure elements on the basis of sequence data alone.
+As these approaches form the foundation for tertiary structure prediction tools, we will study them first.
 
-One of the first methods to predict secondary structures used statistics to infer a residue’s secondary structure and was the so-called Chou-Fasman approach that, starting in the 1970s, used an increasing set of reference protein 3D structures and 2D structure assignments to determine the natural tendency (propensity) for each amino acid type to either form, break, or be indifferent to form or break an α-helix or β-strand (see {numref}`chou_fasman_alt`).
+One of the first methods to predict secondary structures used statistics to infer a residue’s secondary structure and was the so-called Chou-Fasman approach. Since the 1970s, this strategy has been using an increasing set of reference protein 3D structures and 2D structure assignments to determine the natural tendency (propensity) for each amino acid type to either form, break, or be indifferent to form or break an α-helix or β-strand (see {numref}`chou_fasman_alt`).
 If we consider a stretch of amino acids, these propensities help to determine if and where an α-helix or β-strand starts or stops.
 For example, some amino acids have a strong tendency to form α-helices (e.g., Alanine) or β-strands (e.g., Isoleucine), whereas others tend to break these local structures.
 In particular, we can observe that Proline is a strong breaker of both structure elements.
@@ -125,9 +125,9 @@ Whilst now superseded, first by more accurate statistical methods and more recen
 %:align: center
 %:name: chou_fasman
 %
-%Chou and Fasman Propensities (P).
+%Chou and Fasman Propensities \(P\).
 %F stands for strong former, f weak former, while B and b stand for strong and weak breaker, respectively.
-%I (indifferent) indicates residues that are neither forming nor breaking helices or strands.
+%The designation I (indifferent) indicates residues that are neither forming nor breaking helices or strands.
 %We can see that Pro has the lowest propensity for forming a helix and a low one for strands as well.
 %However, many other residues that are either weak or indifferent have been reclassified since the propensities shown here have been reparameterized as more data have become available.
 %Credits: modified from {cite}`chou_fasman_1978`.
@@ -147,26 +147,26 @@ However, many other residues that are either weak or indifferent have been recla
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_4_2024`.
 :::
 
-In subsequent decades, several statistical-based methods were developed that improved sequence-based predictions of secondary structure elements.
+In subsequent decades, several statistics-based methods were developed that improved sequence-based predictions of secondary structure elements.
 They, for example, started to include information of multiple sequence alignments including residue conservation: such approaches first matched the query sequence to database sequences with known 3D structures and assigned secondary structure elements.
-Then, using the best matching sequences, the secondary structure state of amino acid residues of the query sequence stretch are inferred by averaging the states from the homologous sequences found, further adapted using additional information such as the conservedness of the residue.
+Then, using the best matching sequences, the secondary structure state of amino acid residues in the query sequence stretch are inferred by averaging the states from the best matching sequences found, further adapted using additional information such as the conservedness of the residue.
 An example of such an approach is Zpred.
-In general, the use of multiple sequences and additional information about the amino acid residue’s physicochemical properties and conservedness greatly enhanced the prediction performance.
-Next, machine learning took over in the form of neural networks.
+In general, the use of multiple sequences and additional information about the amino acid residue’s physicochemical properties and evolutionary conservation greatly enhanced the prediction performance.
+In the 2000's, machine learning took over in the form of neural networks.
 Such approaches use a so-called sliding window that encompass multiple amino acid residues of which the central one’s state is predicted using a model.
 They typically result in probabilities for each state that can be used to assign the most likely state, i.e., alpha-helical, beta-strand, or random coil (in a three-state model).
 Examples of such approaches are Jnet and RaptorX.
 
 Most recently, deep learning approaches have been introduced to predict secondary structure elements based on sequence information.
-The state-of-the-art approach is NetSurfP, of which version 3 is currently running.
+The state-of-the-art approach is NetSurfP, of which version 3 is currently available.
 You will gain hands-on experience with NetSurfP 3.0 during the practical assignments.
 Here, we will briefly explain how it works and how to assess its results.
 The prediction tool uses a deep neural network approach to accurately predict solvent accessibility and secondary structure using both three- and eight-state definitions, amongst other properties.
-To make this approach work, sufficient training data is needed of protein chains with known PDB 3D structures.
-To avoid over-fitting the model on predominant sequence stretches, each protein sequence that had more than 25% sequence identity to any other protein sequence already in the test set was removed.
+To make this approach work, sufficient training data of protein chains with known [PDB](https://www.rcsb.org) 3D structures is needed.
+From some protein sequences, there are many close variants present in the database, resulting in the abundant presence of some protein sequence stretches. To avoid over-fitting the model on predominant sequence stretches, each protein sequence that had more than 25% sequence identity to any other protein sequence already in the test set was removed. 
 To ensure good quality data, a resolution of 2.5 Angstrom or better was selected for.
 This resulted in ~10,000 protein sequences used for training.
-To obtain "ground truth", DSSP was used (see [Secondary structure assignment](Week4_secondary_structure_assignment)) to calculate properties such as solvent accessibility and secondary structure states, resulting in a labeled data set for training.
+To obtain "ground truth", DSSP was used (see [Secondary structure assignment](Week4_secondary_structure_assignment)) to calculate properties such as solvent accessibility and secondary structure states from the corresponding protein structures, resulting in a data set for training labeled with these properties.
 The parameters of the neural network were trained using small batches of protein sequences and their "ground truth" to result in a final model.
 
 :::{figure} images/Week4/netsurfp.png
@@ -180,7 +180,7 @@ Credits: {cite}`netsurfp_2022`. The 3D structure of this protein was obtained fr
 
 As we have seen in [chapter 1](Week1_secondary_structure), there are key similarities and differences between α-helices and β-sheets.
 Both secondary structure elements rely on hydrogen bonds between backbone atoms in the polypeptide chain.
-However, where residues involved in α-helices only have local interactions in the chain, β-sheet residues can have long-range interactions.
+However, whereas residues involved in α-helices only have local interactions in the chain, β-sheet residues can have long-range interactions.
 Consequently, β-sheets are more difficult to predict for sequence-based prediction tools.
 The availability of sufficient homologous proteins can alleviate this bottleneck and provide reliable predictions of β-sheets as well.
 Also, the development of 3D structure prediction tools (see [Tertiary protein structure prediction](Week4_tertiary_protein_structure_prediction)) is expected to lead to further improvements in predicting secondary structure elements and other per-residue properties like surface exposure/solvent accessibility based on sequence information alone.
@@ -189,13 +189,12 @@ Also, the development of 3D structure prediction tools (see [Tertiary protein st
 
 ### Transmembrane protein sections
 
-Cells are surrounded by a membrane that consists of a lipid bilayer.
-The membrane is literally what separates the inside of the cell with the outside world.
-Hence, if messages need to be passed on from outside to inside the cell, or vice versa, these messages will need to pass the apolar environment of the membrane.
+In most cellular proteins, amino acid residues with hydrophobic side chains are found buried inside the protein 3D structure, thus effectively shielded from the hydophilic (polar) environment inside the cell. Cells are surrounded by a membrane that literally separates the inside of the cell from the outside world.
+Hence, if messages need to be passed on from outside to inside the cell, or vice versa, these messages will need to pass the membrane. The cellular membrane is composed of a lipid bilayer that exposes its hydrophilic headgroups into the outside and cellular environments and that points its hydrophobic acyl chains towards each other.
 To do so, the cellular machinery is using proteins to assist in signal transduction across the membrane.
 Where globular proteins are present within the cell, so-called transmembrane proteins span the membrane at least once.
-It is estimated that ~30% of the proteins are transmembrane, indicating their functional importance.
-Due to restrictions of the protein exterior put on by the specific environment of the membrane in terms of size and polarity, only some local structural configurations are typically found to span the membrane.
+It is estimated that ~30% of the proteins in eukaryote cells are transmembrane, indicating their functional importance.
+The specific environment of the membrane in terms of its size (the thickness of the lipid bilayer) and polarity (the hydrophilic outsides and hydrophobic inside), only some local structural configurations are typically found to be able to span the membrane.
 These configurations are typically linked to the protein’s function: be it a receptor for signal transduction or a transporter of specific substances across the membrane.
 
 Let us consider size first: the average thickness of a membrane is ~30 angstrom (Å), which corresponds to an α-helix of between 15 and 30 residues to make it fit within the membrane layer.
@@ -210,7 +209,7 @@ Schematic representation of proteins with transmembrane sections, also called tr
 :::
 
 The simplest local transmembrane element is an alpha-helix of ~ 15-30 amino acid residues with mainly apolar side groups ({numref}`transmembrane_proteins`, 1).
-The length is restricted by the length of the lipid bilayer, whereas the apolar side groups will have favorable interactions with the acyl chains of the lipids in the membrane.
+The length is restricted by the thickness of the lipid bilayer, whereas the apolar side groups will have favorable interactions with the acyl chains of the lipids in the membrane.
 A transmembrane protein can span the membrane one or more times (i.e., {numref}`transmembrane_proteins`, 1 & 2), and in some cases a special configuration of the transmembrane proteins creates a "pore"-like structure.
 Here, some helical residues can be charged as the pore environment is completely shielded from the membrane bilayer.
 Another commonly used transmembrane configuration is the "beta-barrel". This element consists of 8 – 22 transmembrane β-strands (although larger ones with even more β-strands may well exist) that together form a "barrel shape" ({numref}`transmembrane_proteins`, 3), effectively separating the inside of the barrel from the outside, thereby creating a pore in the membrane.
@@ -248,7 +247,7 @@ Credits: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) modifie
 
 Given their functional clues, the prediction of transmembrane sections and signal peptides based on amino acid sequence alone is very advantageous when studying the possible functions of unknown proteins.
 DeepTMHMM is currently the top-performing tool to predict transmembrane sections and signaling peptides in protein sequences.
-The program predicts several labels for each amino acid in a sequence: signal peptide (S), inside cell/cytosol (I), alpha membrane (M), beta membrane (B), periplasm (P) and outside cell/lumen of ER/Golgi/lysosomes (O).
+The program predicts several labels for each amino acid in a sequence: signal peptide (S), inside cell/cytosol (I), alpha membrane (M), beta membrane (B), periplasm /(P/) and outside cell/lumen of ER/Golgi/lysosomes (O).
 
 Both transmembrane sections and signal peptides are largely defined by the physicochemical properties of the amino acid residues that they constitute, rather than a conserved motif or short sequence of residues.
 This makes it very hard to recognize these secondary structure elements using classical methods based on alignment.
@@ -257,7 +256,7 @@ The trained models can subsequently judge the properties of amino acids in unkno
 Hence, DeepTMHMM uses a deep learning model that takes a protein sequence as input, and then outputs the corresponding per-residue labels.
 Taken all together and considering their order within the amino acid sequence, the residue labels define the predicted topology of the protein.
 DeepTMHMM can predict five different topologies, namely alpha helical transmembrane proteins without a signal peptide (alpha TM), alpha helical transmembrane proteins with signal peptide (SP + alpha TM), beta-barrel transmembrane proteins (Beta), globular proteins with signal peptide (SP + Globular) and globular proteins without signal peptide (Globular).
-Importantly, the two secondary structure elelements predicted here share properties and the deep learning model needed sufficient example data to differentiate transmembrane sections from signal peptides.
+Importantly, the two secondary structure elements predicted here share properties and the deep learning model needed sufficient example data to differentiate transmembrane sections from signal peptides.
 
 In {numref}`alphatm` you can observe a typical output of DeepTMHMM - alpha TM for a multi-pass transmembrane protein.
 
@@ -316,7 +315,7 @@ The graph at the top consists of the following elements:
 
 The signal peptide score (the orange lines) is trained on the differentiation of signal peptides and other sequences and has a high value if the corresponding amino acid is part of the signal peptide.
 Therefore, amino acids of the mature protein have a low signal peptide score.
- The maximum cleavage score (the dashed geen line) occurs at the position of the first amino acid of the mature protein, so one position behind the cleavage site.
+ The maximum cleavage score (the dashed green line) occurs at the position of the first amino acid of the mature protein, so one position behind the cleavage site.
  The cleavage score analysis was trained on the recognition of the cleavage site between signal peptide and the protein sequence.
 
 The standard secretory signal peptide is called Sec/SPI and it is transported by the Sec translocon and cleaved by Signal Peptidase I (Lep).
@@ -371,8 +370,8 @@ According to the figure, as we can observe, below 20% sequence identity between 
 As such approaches are computationally heavy and as they also require a lot of expert knowledge, they are not widely used.
 In essence, such approaches aim to model the protein sequence folding process using physicochemical properties of the amino acid residues and their surroundings.
 As the sequence length increases, ever-increasing possible folds occur for the entire 3D structure, making it a computationally intensive task.
-For example, consider 100 amino acid residues that each have their psi, phi, and omega angles. If they would (only) have have 3 possibilies per angle, this would lead to 3^300 (= 10^143) possible folds for the sequence. 
-If each fold would take just 1 second to assess its likelihood to be realistic and energy-favorable, it would take us 10^126 years to analyze and come up with a suggested 3D structure, and that is just 100 amino acids under severe contraints.
+For example, consider 100 amino acid residues that each have their psi, phi, and omega angles. If they would (only) have 3 possibilities per angle, this would lead to 3^300 (= 10^143) possible folds for the sequence. 
+If each fold would take just 1 second to assess its likelihood to be realistic and energy-favorable, it would take us 10^126 years to analyze and come up with a suggested 3D structure, and that is just 100 amino acids under severe constraints.
 
 Fortunately, the database of experimentally derived protein 3D structures is constantly growing.
 Therefore, there is a good chance of having >20% sequence identity of your query sequence.
@@ -703,7 +702,7 @@ Akin to the mobile phone - smartphone development we have witnessed over the las
 :::{admonition} Note 4.1
 :class: note
 
-Recently, the [OpenFold Consortium](https://openfold.io/) has released their faithful but trainable PyTorch reproduction of DeepMind's AlphaFold 2. This is an open access machine-learning model that is publicly availble on their [GitHub](https://github.com/aqlaboratory/openfold).
+Recently, the [OpenFold Consortium](https://openfold.io/) has released their faithful but trainable PyTorch reproduction of DeepMind's AlphaFold 2. This is an open access machine-learning model that is publicly available on their [GitHub](https://github.com/aqlaboratory/openfold).
 OpenFold strives to deliver state-of-the-art AI-based protein modeling tools to researchers and commercial companies alike, who will be able to use, improve, and contribute to the development of the modeling tools themselves.
 Developments like this improve the FAIRness ([chapter 1](Week1_ontologies)) of the rapidly evolving field of tertiary structure prediction.
 :::
