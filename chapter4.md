@@ -5,19 +5,19 @@
 -- Justin van der Hooft
 ```
 
-## Predicting protein structures: the sequence-structure-function paradigm
+## Protein structure and function
 
-A lot of sequences have become available.
-However, for most, we do not yet know what type of proteins they represent, and what functionality they have.
+A lot of sequences have become available over the past decades.
+However, for most of them, we do not yet know what proteins they represent, and what functionality they have.
 
 Proteins are essential for life on earth.
-They have many kinds of functions in organisms such as supporting its structure (e.g., keratin in our skin), performing enzymatic reactions (e.g., Ribulose-1,5-bisphosphate carboxylase-oxygenase, a.k.a. Rubisco, in plants), or receptors for transduction of signals that mediate cell-to-cell communication.
-As discussed in [chapter 1](Week1_genetic_code), only a relatively small amount of amino acid building blocks forms the basis of a structurally very diverse protein repertoire.
-Hence, to understand the function of proteins, knowing their structures is key. In [chapter 1](Week1_protein_structure) you have also learned that proteins are created as a long chain of amino acids held together by peptide bonds, i.e., a polypeptide chain (the primary structure), that folds into a three-dimensional (tertiary) structure, based on various types of interactions between amino acid side groups.
+They have many kinds of protein functions in organisms such as supporting tissue, organ, or cell structure (e.g., keratin in our skin), performing enzymatic reactions (e.g., Ribulose-1,5-bisphosphate carboxylase-oxygenase, a.k.a. Rubisco, in plants), or receptors for transduction of signals that mediate cell-to-cell communication.
+As discussed in [chapter 1](Week1_genetic_code), a very small amount of ~20 amino acid building blocks form the basis of a structurally very diverse protein repertoire in all life forms. Whilst amino acid sequences are abundantly available these days, either directly through proteomics measurements, or indirectly through translated genomic sequences. 
+In [chapter 1](Week1_protein_structure) you have also learned that proteins are created as a chain of amino acids held together by peptide bonds, i.e., a polypeptide chain (the primary structure), that folds into a three-dimensional (tertiary) structure, based on various types of interactions between amino acid side groups.
 Usually, during this folding process, shorter stretches of local 2D (secondary) structures form first, held together by hydrogen bonds.
-Interestingly, whereas the amino acid sequence of proteins may differ, their folding may still result in comparable 3D structures of the polypeptide chain – with comparable or even similar functionality (see {numref}`myoglobin`).
-Several folded polypeptide chains can form the final quaternary complex that is functional within the cell.
-Thus, the protein folding process is important, as it determines the 3D structure of polypeptide chains, and misfolding can lead to misfunctioning of the protein, for example by non-specific binding to other proteins, causing a disease in humans, or a less-performing mutant in plants.
+Interestingly, whereas the amino acid sequence of proteins may differ, their folding may still result in comparable 3D structures of the polypeptide chain – with comparable or even similar functionality that is conserved at a evolutionary timescale (see {numref}`myoglobin`).
+Finally, several folded polypeptide chains may form a quaternary complex.
+The protein folding process is important, as it determines the 3D structure of polypeptide chains, and misfolding can lead to misfunctioning of the protein, for example by non-specific binding to other proteins, causing a disease in humans, or a less-performing mutant in plants. Altogether, to understand the function of proteins, knowing their 3D structures is key. Consequently, predicting protein structures based on protein sequence information has been a topic of high interest and relevance to biochemists and scientists in general for many decades.
 
 :::{figure} images/Week4/myoglobin.png
 :alt: Different protein structures
@@ -25,69 +25,72 @@ Thus, the protein folding process is important, as it determines the 3D structur
 :width: 80%
 :name: myoglobin
 
-Protein structures of human myoglobin (top left), African elephant myoglobin (top right, 80% sequence identity to human structure analogue), blackfin tuna myoglobin (bottom right, 45% sequence identity to human analogue), and pigeon myoglobin (bottom left, 25% sequence identity to human analogue).
+Protein structures of human myoglobin (top left), African elephant myoglobin (top right, 80% sequence identity to human protein sequence), blackfin tuna myoglobin (bottom right, 45% sequence identity to human protein sequence), and pigeon myoglobin (bottom left, 25% sequence identity to human protein sequence).
 Myoglobin can be found in muscles and its main function is to supply oxygen to muscle cells.
 The protein structures in this figure illustrate how structure can be largely the same even for sequences that are quite different.
 Credits: {cite}`blopig_2021`.
 :::
 
-While current experimental methods can generate many sequences of hypothetical proteins present in organisms, it is still hard and expensive to determine the corresponding 3D protein structures experimentally.
+### Experimental protein structure determination
+
+While current bioinformatics methods can generate many hypothetical protein sequences from genome-sequenced organisms, it is still hard and expensive to determine the corresponding 3D protein structures experimentally.
 The main traditional experimental analytical techniques used are nuclear magnetic resonance (NMR) spectroscopy and X-ray crystallography.
-The former yields useful but often noisy measurements with usually multiple structural conformations; whereas the latter is more accurate, but easily costs 120,000 euros. Furthermore, it can take a year or even longer to fully elucidate the protein 3D structure from the data, and some structures cannot be measured at all, for example due to crystallization problems.
+The former results in useful but often noisy measurements as multiple structural conformations (i.e., the spatial arrangement of its constituent amino acids that together form the 3D shape) are generated; whereas the latter is more accurate, but also more expensive. Furthermore, it can take a year or even longer to fully elucidate the protein 3D structure from the data, and some structures cannot be measured at all, for example due to crystallization problems of the involved protein.
 Fortunately, fueled by recent technical advances, biological sequence data has become widely available, mostly in the form of genomic sequences.
-By translating these DNA sequences into possible amino acid sequences using the codon language you have learned about in [chapter 1](Week1_genetic_code), amino acid sequences can be inferred in which theoretical proteins can be predicted.
-However, the sheer number of biological sequences make manual analysis of such predicted protein sequences too daunting. Thus, alternative methods to derive 3D protein structures are needed to interpret the large amount of biological sequence data that has become available in the recent decades.
-Consequently, predicting protein structures based on protein sequence information has been a topic of high interest and relevance to biochemists and scientists in general for many decades.
+By translating these DNA sequences into possible amino acid sequences using the genetic code you have learned about in [chapter 1](Week1_genetic_code), amino acid sequences can be inferred and theoretical proteins can be predicted.
+However, the sheer number of different biological sequences makes manual analysis of such predicted protein sequences too daunting. Thus, alternative methods to derive 3D protein structures are needed to interpret the large amount of biological sequence data that has become available in the recent decades.
+
+### The sequence-structure-function paradigm
 
 The sequence-structure-function paradigm states that, _in principle_, all information to predict the folding of a protein, and thus its 3D structure and ultimately its function, is stored in its primary sequence.
 In practice, however, predicting structure from its sequence turned out to be a very complex and challenging task.
-One of the reasons for this complexity is due to the both short- and long-range interactions between protein local structure elements, i.e., interactions between secondary structure (2D) elements such as sheets and helices typically form anchor points upon which the tertiary (3D) structure is based.
-This chapter first describes 2D structure assignment and prediction, after which foundational 3D structure prediction approaches are discussed, including the main challenges and the three zones of tertiary structure prediction.
+One of the reasons for this complexity is due to the occurrence of both short- and long-range interactions between protein local, secondary (2D) structure elements. These interactions typically form anchor points upon which the tertiary (3D) structure is based.
+This chapter first describes 2D structure assignment and prediction, after which 3D structure prediction approaches are discussed, including the main challenges and the three zones of tertiary structure prediction.
 It ends with the most recent approaches to predict and compare tertiary structures: AlphaFold and Foldseek.
 
 ---
 
 ## Secondary protein structure prediction
 Proteins consist of several locally defined secondary structure elements of which alpha helices (α-helices) and beta strands/sheets (β-strands/sheets) are the most commonly occurring ones.
-Please note here that a β-strand refers to one side of the β-sheet, where two strands come together to form the sheet structure.
-In this section, we will cover how to assign these two secondary structure elements using 3D protein structures, and how to predict these secondary structure elements based on sequence data.
+Please note here that a β-strand refers to one side of the β-sheet, where two strands come together to form the sheet structure (as we have learned in [chapter 1](Week1_secondary_structure)).
+In this section, we will cover how to assign these two secondary structure elements using 3D protein structures, and how to predict them based on sequence data.
 Furthermore, we will cover the prediction of two biologically relevant "special cases" of secondary structure elements: transmembrane sections and signaling peptides.
 
 ---
 
 (Week4_secondary_structure_assignment)=
 
-### Secondary structure assignment
+### Secondary structure assignment: labelling and accuracy
 
-If we consider the 3D structure of folded protein chains, we typically observe that the more ordered parts of their structures usually contain more α-helices and β-strand stretches than the more randomly organized parts.
-As these elements fold locally, they can initiate folding of more complex tertiary folding patterns. Indeed, the presence/absence of α-helices and β-sheets and their specific conformation helps to categorize proteins.
-As a result, databases exist that categorize proteins according to specific fold types, in a structured, hierarchical way.
+If we consider the 3D structure of folded protein chains, we typically observe that the structurally more ordered parts of their 3D structures contain more α-helices and β-strand stretches than the more randomly shaped parts.
+As these 2D elements fold locally, they can initiate folding of more complex tertiary folding patterns. Indeed, the presence/absence of α-helices and β-sheets and their specific conformation helps to categorize proteins.
+As a result, databases exist that categorize proteins according to specific fold types, in a categorized, hierarchical way.
 Therefore, the assignment of amino acid residues to either α-helix, β-strand, or "random coil" (i.e., "other"), based on the 3D structure of a protein chain, can be seen as a first step to understand the protein structural configuration.
-Also, when we need training data to predict secondary structure elements based on the primary (1D) sequence, we would need sufficient labeled training data based on actual assignments.
+Also, when we need training data to predict secondary structure elements based on the primary (1D) sequence, we would need sufficient training data with labels based on actual structural assignments.
 Hence, several assignment tools were developed to replace the previously discussed daunting task of manual assignment of secondary structure elements based on known 3D information.
 
-The three options for an amino acid residue as mentioned above would translate into a so-called "three-state model", (α-helix, β-strand, or other) used by secondary structure assignment tools such as DSSP, PALSSE, and Stride, that use 3D structures as an input to assign three secondary structure labels.
-You will get hands-on experience with the interpretation of the outcome of these tools during the practical assignments. Please note that there are additional – less occurring – secondary structure elements that could be recognized, such as the β-turn, a sharp bend in the protein chain, and several special helices.
+The three options for an amino acid residue as mentioned above would translate into a so-called "three-state model", (α-helix, β-strand, or other) used by secondary structure assignment tools such as DSSP, PALSSE, and Stride. These tools use 3D structures as an input to assign three secondary structure labels.
+You will get hands-on experience with the interpretation of the outcome of these tools during the practical assignments. Please note that there are additional – less frequently occurring – secondary structure elements that could be recognized, such as the β-turn, a sharp bend in the protein chain, and several special helices.
 As a result, some tools will return eight states or even more. However, these can also be grouped in the three original states listed above. 
 
-Assigning or predicting the secondary structure of a protein is only useful if you have an idea of the accuracy of the assignments/predictions from a given program.
-The measured accuracy is used to help estimate its likely performance when presented with a sequence of an unknown structure.
-Accuracy can be measured either in respect of individual residue predictions or in relation to the numbers of correctly predicted helices and strands.
+Assigning or predicting the secondary structure of a protein is only useful if you have an idea of the accuracy of the assignments/predictions stemming from a given tool.
+Any accuracy prediction or measurment can help to estimate the performance of a tool when presented with a sequence of an unknown structure.
+Accuracy can be measured either with respect to individual residue predictions or in relation to the numbers of correctly predicted helices and strands.
 One commonly used and relatively straightforward method to assign accuracy to individual residues is the Q{sub}`3` measure.
 The values of Q{sub}`3` can range between 0 and 100%, with 100% equalling a perfect prediction.
-The value for a completely at random prediction depend on the number of different labels or "states" we predict: if we predict in the "three-state model", a random prediction would return 33% for Q{sub}`3`.
-Please note that the same value can mean completely different things ({numref}`Q3_alt`); hence, the values need to be considered together with the actual sequence aligments.
+The value for a completely random prediction depends on the number of different labels or "states" we predict: if we predict in the "three-state model", a random prediction would return 33% for Q{sub}`3`.
+Please note that the same Q3 score can mean completely different things when studying the actual alignment between the predicted secondary structure assingments with the correct ones ({numref}`Q3_alt`); hence, the values need to be considered together with the actual sequence alignments.
 Whilst it may seem natural to strive for a perfect prediction, the maximum Q{sub}`3` that is generally achievable is ~80%.
 This is mainly caused by difficulties in defining the start and end of secondary structure elements: the different tools that assign or predict secondary structure may well deviate at the borders of the predicted elements.
 Even as a human, manual annotation of secondary structure elements may pose challenges on which residues are inside or outside secondary structure elements.
-During the practical assignments, you will explore this phenonemon more. 
+During the practical assignments, you will explore this phenomenon more. 
 
 %:::{figure} images/Week4/Q3.png
 %:alt: Q{sub}`3` measure
 %:align: center
 %:name: Q3
 %
-%The Q{sub}`3` measure produces useful accuracy predictions when the resulting secondary structure prediction contains a slight shift compared to the actual structure (prediction 1). It is however not useful when the secondary structure elements have been interpreted incorrectly (E -> H in prediction 2).
+%The Q{sub}`3` measure produces useful accuracy predictions when the resulting secondary structure prediction contains a slight shift compared to the actual structure (prediction 1). It is however not useful when the secondary structure elements have been interpreted incorrectly, as the score does not take into account what the actual change is. For example, in prediction 2, the beta strand (E) turned into helix for several residues, making this a worse prediction than prediction 1, but returning the same Q3 score. 
 %:::
 %#% Unable to use figure Q3 due to copyright.
 
@@ -104,12 +107,12 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 
 (Week4_secondary_structure_prediction)=
 
-### Secondary structure prediction
+### Secondary structure prediction: statistical and machine-learning based approaches
 
-Here, we will describe approaches to predict secondary structure elements on the basis of sequence data alone.
-As these approaches form the foundation for tertiary structure prediction tools, it makes sense to study them first.
+Here, we will describe approaches that have emerged over the past decades to predict secondary structure elements on the basis of sequence data alone.
+As these approaches form the foundation for tertiary structure prediction tools, we will study them first.
 
-One of the first methods to predict secondary structures used statistics to infer a residue’s secondary structure and was the so-called Chou-Fasman approach that, starting in the 1970s, used an increasing set of reference protein 3D structures and 2D structure assignments to determine the natural tendency (propensity) for each amino acid type to either form, break, or be indifferent to form or break an α-helix or β-strand (see {numref}`chou_fasman_alt`).
+One of the first methods to predict secondary structures used statistics to infer a residue’s secondary structure and was the so-called Chou-Fasman approach. Since the 1970s, this strategy has been using an increasing set of reference protein 3D structures and 2D structure assignments to determine the natural tendency (propensity) for each amino acid type to either form, break, or be indifferent to form or break an α-helix or β-strand (see {numref}`chou_fasman_alt`).
 If we consider a stretch of amino acids, these propensities help to determine if and where an α-helix or β-strand starts or stops.
 For example, some amino acids have a strong tendency to form α-helices (e.g., Alanine) or β-strands (e.g., Isoleucine), whereas others tend to break these local structures.
 In particular, we can observe that Proline is a strong breaker of both structure elements.
@@ -122,9 +125,9 @@ Whilst now superseded, first by more accurate statistical methods and more recen
 %:align: center
 %:name: chou_fasman
 %
-%Chou and Fasman Propensities (P).
+%Chou and Fasman Propensities \(P\).
 %F stands for strong former, f weak former, while B and b stand for strong and weak breaker, respectively.
-%I (indifferent) indicates residues that are neither forming nor breaking helices or strands.
+%The designation I (indifferent) indicates residues that are neither forming nor breaking helices or strands.
 %We can see that Pro has the lowest propensity for forming a helix and a low one for strands as well.
 %However, many other residues that are either weak or indifferent have been reclassified since the propensities shown here have been reparameterized as more data have become available.
 %Credits: modified from {cite}`chou_fasman_1978`.
@@ -144,26 +147,26 @@ However, many other residues that are either weak or indifferent have been recla
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_4_2024`.
 :::
 
-In subsequent decades, several statistical-based methods were developed that improved sequence-based predictions of secondary structure elements.
+In subsequent decades, several statistics-based methods were developed that improved sequence-based predictions of secondary structure elements.
 They, for example, started to include information of multiple sequence alignments including residue conservation: such approaches first matched the query sequence to database sequences with known 3D structures and assigned secondary structure elements.
-Then, using the best matching sequences, the secondary structure state of amino acid residues of the query sequence stretch are inferred by averaging the states from the homologous sequences found, further adapted using additional information such as the conservedness of the residue.
+Then, using the best matching sequences, the secondary structure state of amino acid residues in the query sequence stretch are inferred by averaging the states from the best matching sequences found, further adapted using additional information such as the conservedness of the residue.
 An example of such an approach is Zpred.
-In general, the use of multiple sequences and additional information about the amino acid residue’s physicochemical properties and conservedness greatly enhanced the prediction performance.
-Next, machine learning took over in the form of neural networks.
+In general, the use of multiple sequences and additional information about the amino acid residue’s physicochemical properties and evolutionary conservation greatly enhanced the prediction performance.
+In the 2000's, machine learning took over in the form of neural networks.
 Such approaches use a so-called sliding window that encompass multiple amino acid residues of which the central one’s state is predicted using a model.
 They typically result in probabilities for each state that can be used to assign the most likely state, i.e., alpha-helical, beta-strand, or random coil (in a three-state model).
 Examples of such approaches are Jnet and RaptorX.
 
 Most recently, deep learning approaches have been introduced to predict secondary structure elements based on sequence information.
-The state-of-the-art approach is NetSurfP, of which version 3 is currently running.
+The state-of-the-art approach is NetSurfP, of which version 3 is currently available.
 You will gain hands-on experience with NetSurfP 3.0 during the practical assignments.
 Here, we will briefly explain how it works and how to assess its results.
 The prediction tool uses a deep neural network approach to accurately predict solvent accessibility and secondary structure using both three- and eight-state definitions, amongst other properties.
-To make this approach work, sufficient training data is needed of protein chains with known PDB 3D structures.
-To avoid over-fitting the model on predominant sequence stretches, each protein sequence that had more than 25% sequence identity to any other protein sequence already in the test set was removed.
+To make this approach work, sufficient training data of protein chains with known [PDB](https://www.rcsb.org) 3D structures is needed.
+From some protein sequences, there are many close variants present in the database, resulting in the abundant presence of some protein sequence stretches. To avoid over-fitting the model on predominant sequence stretches, each protein sequence that had more than 25% sequence identity to any other protein sequence already in the test set was removed. 
 To ensure good quality data, a resolution of 2.5 Angstrom or better was selected for.
 This resulted in ~10,000 protein sequences used for training.
-To obtain "ground truth", DSSP was used (see [Secondary structure assignment](Week4_secondary_structure_assignment)) to calculate properties such as solvent accessibility and secondary structure states, resulting in a labeled data set for training.
+To obtain "ground truth", DSSP was used (see [Secondary structure assignment](Week4_secondary_structure_assignment)) to calculate properties such as solvent accessibility and secondary structure states from the corresponding protein structures, resulting in a data set for training labeled with these properties.
 The parameters of the neural network were trained using small batches of protein sequences and their "ground truth" to result in a final model.
 
 :::{figure} images/Week4/netsurfp.png
@@ -177,22 +180,21 @@ Credits: {cite}`netsurfp_2022`. The 3D structure of this protein was obtained fr
 
 As we have seen in [chapter 1](Week1_secondary_structure), there are key similarities and differences between α-helices and β-sheets.
 Both secondary structure elements rely on hydrogen bonds between backbone atoms in the polypeptide chain.
-However, where residues involved in α-helices only have local interactions in the chain, β-sheet residues can have long-range interactions.
+However, whereas residues involved in α-helices only have local interactions in the chain, β-sheet residues can have long-range interactions.
 Consequently, β-sheets are more difficult to predict for sequence-based prediction tools.
 The availability of sufficient homologous proteins can alleviate this bottleneck and provide reliable predictions of β-sheets as well.
 Also, the development of 3D structure prediction tools (see [Tertiary protein structure prediction](Week4_tertiary_protein_structure_prediction)) is expected to lead to further improvements in predicting secondary structure elements and other per-residue properties like surface exposure/solvent accessibility based on sequence information alone.
 
 ---
 
-### Transmembrane protein sections
+### Predicting transmembrane protein sections
 
-Cells are surrounded by a membrane that consists of a lipid bilayer.
-The membrane is literally what separates the inside of the cell with the outside world.
-Hence, if messages need to be passed on from outside to inside the cell, or vice versa, these messages will need to pass the apolar environment of the membrane.
+In most cellular proteins, amino acid residues with hydrophobic side chains are found buried inside the protein 3D structure, thus effectively shielded from the hydophilic (polar) environment inside the cell. Cells are surrounded by a membrane that literally separates the inside of the cell from the outside world.
+Hence, if messages need to be passed on from outside to inside the cell, or vice versa, these messages will need to pass the membrane. The cellular membrane is composed of a lipid bilayer that exposes its hydrophilic headgroups into the outside and cellular environments and that points its hydrophobic acyl chains towards each other.
 To do so, the cellular machinery is using proteins to assist in signal transduction across the membrane.
 Where globular proteins are present within the cell, so-called transmembrane proteins span the membrane at least once.
-It is estimated that ~30% of the proteins are transmembrane, indicating their functional importance.
-Due to restrictions of the protein exterior put on by the specific environment of the membrane in terms of size and polarity, only some local structural configurations are typically found to span the membrane.
+It is estimated that ~30% of the proteins in eukaryote cells are transmembrane, indicating their functional importance.
+The specific environment of the membrane in terms of its size (the thickness of the lipid bilayer) and polarity (the hydrophilic outsides and hydrophobic inside), only some local structural configurations are typically found to be able to span the membrane.
 These configurations are typically linked to the protein’s function: be it a receptor for signal transduction or a transporter of specific substances across the membrane.
 
 Let us consider size first: the average thickness of a membrane is ~30 angstrom (Å), which corresponds to an α-helix of between 15 and 30 residues to make it fit within the membrane layer.
@@ -207,7 +209,7 @@ Schematic representation of proteins with transmembrane sections, also called tr
 :::
 
 The simplest local transmembrane element is an alpha-helix of ~ 15-30 amino acid residues with mainly apolar side groups ({numref}`transmembrane_proteins`, 1).
-The length is restricted by the length of the lipid bilayer, whereas the apolar side groups will have favorable interactions with the acyl chains of the lipids in the membrane.
+The length is restricted by the thickness of the lipid bilayer, whereas the apolar side groups will have favorable interactions with the acyl chains of the lipids in the membrane.
 A transmembrane protein can span the membrane one or more times (i.e., {numref}`transmembrane_proteins`, 1 & 2), and in some cases a special configuration of the transmembrane proteins creates a "pore"-like structure.
 Here, some helical residues can be charged as the pore environment is completely shielded from the membrane bilayer.
 Another commonly used transmembrane configuration is the "beta-barrel". This element consists of 8 – 22 transmembrane β-strands (although larger ones with even more β-strands may well exist) that together form a "barrel shape" ({numref}`transmembrane_proteins`, 3), effectively separating the inside of the barrel from the outside, thereby creating a pore in the membrane.
@@ -219,13 +221,13 @@ Such pores can be sealed off with a "switch" in the form of a protein stretch th
 
 The place where proteins are built in the cell is usually not where they act.
 To exert their function at the right place, proteins need to be transported from where they are folded and formed.
-The cellular machinery has developed a signaling system that use "peptide tags" to enable effective transport of polypeptide chains to their site of action prior to becoming active.
-Such "tags" are called signal peptides that are peptide recognition signals for the cellular transporter machinery.
+The cellular machinery has developed a signaling system that use "peptide tags" to enable effective transport of polypeptide chains to their site of action.
+Such "tags" are called signal peptides. These are peptide recognition signals for the cellular transporter machinery.
 Typical sites of actions for which signal peptides exist include the cell membrane and the endoplasmic reticulum.
 Furthermore, signal peptides can steer proteins to be secreted from or imported into lysosomes.
 Hence, the presence of such a signal peptide can provide important clues as to what the site of action of a protein may be based on its amino acid sequence.
 
-The signal peptide is an N-terminal leader amino acid sequence that consists of ~ 15-30 residues added to the N-terminus of the mature protein ({numref}`signal_peptide`).
+The signal peptide is an N-terminal leader amino acid sequence that consists of ~ 15-30 residues at the N-terminus of the protein sequence ({numref}`signal_peptide`).
 The actual recognition of signal peptides by the cellular transporter machinery is not based on a conserved amino acid sequence, but it largely depends on the physicochemical properties of the amino acids in the signal peptide.
 A signal peptide typically consists of three regions: the first region (the n-region) usually contains 1–5 positively charged amino acids, the second region (the h-region) is made up of 5–15 hydrophobic amino acids, and the third region (the c-region) has 3–7 polar but mostly uncharged amino acids.
 
@@ -243,9 +245,9 @@ Credits: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) modifie
 
 ### Sequence-based prediction of transmembrane sections and signal peptides
 
-Given their functional clues, the prediction of transmembrane sections and signal peptides based on amino acid sequence alone is very advantageous when studying the possible functions of unknown proteins.
+Given their functional clues, the accurate prediction of transmembrane sections and signal peptides based on amino acid sequence alone is very advantageous when studying the possible functions of unknown proteins.
 DeepTMHMM is currently the top-performing tool to predict transmembrane sections and signaling peptides in protein sequences.
-The program predicts several labels for each amino acid in a sequence: signal peptide (S), inside cell/cytosol (I), alpha membrane (M), beta membrane (B), periplasm (P) and outside cell/lumen of ER/Golgi/lysosomes (O).
+The program predicts several labels for each amino acid in a sequence: signal peptide (S), inside cell/cytosol (I), alpha membrane (M), beta membrane (B), periplasm /(P/) and outside cell/lumen of Endoplasmic reticulum/Golgi/lysosomes (O).
 
 Both transmembrane sections and signal peptides are largely defined by the physicochemical properties of the amino acid residues that they constitute, rather than a conserved motif or short sequence of residues.
 This makes it very hard to recognize these secondary structure elements using classical methods based on alignment.
@@ -253,8 +255,9 @@ Using machine learning methods, however, the characteristics of a training data 
 The trained models can subsequently judge the properties of amino acids in unknown sequences, thereby allowing the recognition of transmembrane sections and signal peptides.
 Hence, DeepTMHMM uses a deep learning model that takes a protein sequence as input, and then outputs the corresponding per-residue labels.
 Taken all together and considering their order within the amino acid sequence, the residue labels define the predicted topology of the protein.
+We note how both DeepTMHMM and the below explained SignalP return probabilities (see also the conceptually similar likelihood in [chapter 3](chapter3))) rather than absolute predictions, which is adventageous in giving a direct clue on the reliability of the prediciton.
 DeepTMHMM can predict five different topologies, namely alpha helical transmembrane proteins without a signal peptide (alpha TM), alpha helical transmembrane proteins with signal peptide (SP + alpha TM), beta-barrel transmembrane proteins (Beta), globular proteins with signal peptide (SP + Globular) and globular proteins without signal peptide (Globular).
-Importantly, the two secondary structure elelements predicted here share properties and the deep learning model needed sufficient example data to differentiate transmembrane sections from signal peptides.
+Importantly, the two secondary structure elements predicted here share properties and the deep learning model needed sufficient example data to differentiate transmembrane sections from signal peptides.
 
 In {numref}`alphatm` you can observe a typical output of DeepTMHMM - alpha TM for a multi-pass transmembrane protein.
 
@@ -265,7 +268,7 @@ In {numref}`alphatm` you can observe a typical output of DeepTMHMM - alpha TM fo
 :name: alphatm
 
 Left, output of DeepTMHMM - alpha TM prediction on Bovine Adhesion G protein-coupled receptor G7 (ADGRG7, A4IFD4).
-Right, a gff file of the same protein where the number of transmembrane structures (α-helices), their amino acid positions, and whether the residues are inside or outside the membrane indicated.
+Right, a gff file of the same protein listing the number of transmembrane structures (α-helices), their amino acid positions, and whether the residues are inside or outside the membrane.
 Credits: {cite}`deeptmhmm_2022`.
 :::
 
@@ -278,7 +281,7 @@ Credits: {cite}`deeptmhmm_2022`.
 :name: betatm
 
 Left, output of DeepTMHMM - beta prediction on the outer membrane protein C (precursor) of _Salmonella typhimurium_ (OMPC-SALTY, P0A263).
-Right, a gff file of the same protein where the signal peptide position, the number of transmembrane structures (β-sheets), their amino acid positions, and whether the residues are in the periplasm or outside the membrane indicated.
+Right, a gff file of the same protein listing the signal peptide position, the number of transmembrane structures (β-sheets), their amino acid positions, and whether the residues are in the periplasm or outside the membrane.
 Credits: {cite}`deeptmhmm_2022`.
 :::
 
@@ -286,7 +289,7 @@ Credits: {cite}`deeptmhmm_2022`.
 
 ### SignalP
 
-In the previous section it was covered how DeepTMHMM can be used to predict the presence of signal peptides; however, more dedicated tools exist for the discrimination between signal peptides types, such as SignalP 6.0.
+In the previous section it was covered how DeepTMHMM can be used to predict the presence of signal peptides; however, more dedicated tools exist for the discrimination between signal peptide types, such as SignalP 6.0.
 This tool can predict signal peptides from sequence data for all known types of signal peptides in Archea, Eukaryota, and Bacteria.
 Additionally, SignalP 6.0 predicts the regions of signal peptides. Depending on the type, the positions of n-, h- and c-regions as well as of other distinctive features are predicted.
 
@@ -308,19 +311,19 @@ The graph at the top consists of the following elements:
 - The yellow line (Sec/SPI c) indicates the probability of a specific region being identified as the c-region, which is also displayed as the letter "C" underneath the line.
 - The dashed orange line (OTHER) indicates the probability of a specific region being identified as something other than the signal peptides subsections, such as the mature protein itself.
   This is also displayed as the letter "O" underneath the line.
-- The dashed green line (CS) indicates the probability of a specific region being identified as the cleavage site.
+- The dashed green line (CS) indicates the probability of a specific region being identified as the cleavage site, i.e., the point where the signal peptide gets separated from the rest of the protein sequence.
 - The protein sequence underneath the letters that indicate which section a region belongs to.
 
 The signal peptide score (the orange lines) is trained on the differentiation of signal peptides and other sequences and has a high value if the corresponding amino acid is part of the signal peptide.
 Therefore, amino acids of the mature protein have a low signal peptide score.
- The maximum cleavage score (the dashed geen line) occurs at the position of the first amino acid of the mature protein, so one position behind the cleavage site.
+ The maximum cleavage score (the dashed green line) occurs at the position of the first amino acid of the mature protein, so one position after the cleavage site,
  The cleavage score analysis was trained on the recognition of the cleavage site between signal peptide and the protein sequence.
 
 The standard secretory signal peptide is called Sec/SPI and it is transported by the Sec translocon and cleaved by Signal Peptidase I (Lep).
-There are four other signal peptide types (see, see also box below) but they are beyond the scope of this course.
-However, it is important to know that tools like signalP are able to distinguish between the different signal peptide types and make accurate predictions about their probabilities.
+There are four other signal peptide types (see also box below) but they are beyond the scope of this course.
+However, it is important to know that tools like signalP are able to distinguish between the different signal peptide types and make accurate predictions about their probabilities, based on probabilities.
 
-The information below the graph consists of the following elements:
+The information below the graph in {numref}`signalp` consists of the following elements:
 - The prediction indicates the most probable type of signal peptide for the given sequence.
 - The cleavage site shows the amino acid location in the protein sequence where the cleavage site is located, as well as its probability.
 
@@ -350,7 +353,7 @@ It will also be high if a signal peptide has been predicted.
 ## Tertiary protein structure prediction
 
 First, it is good to realize that the prediction of secondary structure elements has formed the foundation of tools that predict 3D structures of proteins.
-We will first explore the three traditional structure prediction approaches, which will be followed up by the most prominent new approach in structure prediction ([AlphaFold](Week4_alphafold)) that relies on several concepts of the traditional approaches.
+We will first explore the three traditional structure prediction approaches, which will be followed up by the most prominent new approach in 3D structure prediction ([AlphaFold](Week4_alphafold)) that relies on several concepts of the traditional approaches.
 
 :::{figure} images/Week4/three-zones.svg
 :alt: The three zones of tertiary structure prediction approaches
@@ -363,28 +366,27 @@ Credits: [CC BY-NC 4.0] {cite}`own_4_2024`.
 :::
 
 Various approaches including _ab initio_, threading (also called fragment-based modelling), and homology modelling have been proposed and used to go from sequence to structure, with both sequence identity and alignment length as the most important factors to decide which approach to choose.
-To make an effective choice between these three traditional structure prediction approaches, the so-called three zones were introduced ({numref}`three_zones`).
+To make an effective choice between these three traditional structure prediction approaches, a so-called three zones concept was proposed ({numref}`three_zones`).
 According to the figure, as we can observe, below 20% sequence identity between the query protein sequence and sequences with experimentally derived structures, one needs to refer to _ab initio_ approaches, literally translating as: from the start.
 As such approaches are computationally heavy and as they also require a lot of expert knowledge, they are not widely used.
 In essence, such approaches aim to model the protein sequence folding process using physicochemical properties of the amino acid residues and their surroundings.
-As the sequence length increases, ever-increasing possible folds occur for the entire 3D structure, making it a computationally intensive task.
-For example, consider 100 amino acid residues that each have their psi, phi, and omega angles. If they would (only) have have 3 possibilies per angle, this would lead to 3^300 (= 10^143) possible folds for the sequence. 
-If each fold would take just 1 second to assess its likelihood to be realistic and energy-favorable, it would take us 10^126 years to analyze and come up with a suggested 3D structure, and that is just 100 amino acids under severe contraints.
+As the sequence length used increases, ever-increasing possible folds occur for the entire 3D structure, making it a computationally intensive task.
+For example, consider 100 amino acid residues that each have their psi, phi, and omega angles. If they would (only) have 3 possibilities per angle, this would lead to 3^300 (= 10^143) possible folds for the sequence. 
+If each fold would take just 1 second to assess its likelihood to be realistic and energy-favorable, it would take us 10^126 years to analyze and come up with a suggested 3D structure, and that is just 100 amino acids under severe constraints.
 
 Fortunately, the database of experimentally derived protein 3D structures is constantly growing.
 Therefore, there is a good chance of having >20% sequence identity of your query sequence.
 As we can see in {numref}`three_zones`, the length of the sequence alignment is another crucial factor: if a shorter stretch is matching, the threading (or fragment-based) approach can be used.
 This approach focuses on matching these stretches to known folds, i.e., local structure often consisting of secondary structure elements.
 This can already help to hypothesize on the protein’s function, if a functional domain is matched to the query sequence.
-As this approach is also relatively computationally demanding, and newer approaches as discussed below (i.e., [AlphaFold](Week4_alphafold)) excel in recognizing such folds, we will not gain practical experience with the approach during this course. 
+As this approach is also relatively computationally demanding, and newer approaches as discussed below (i.e., [AlphaFold](Week4_alphafold)) excel in recognizing such folds, we will not gain practical experience with the threading approach during this course. 
 
 If both the query sequence identity and length of the alignment are large enough, homology modelling can be attempted to create a structure model.
 So-called "template sequences" have to be found in the protein structure database that are "similar enough" to serve as a structural blueprint for the 3D prediction.
 
-Nowadays, [SWISS-MODEL](https://swissmodel.expasy.org/) provides precalculated 3D homology models. It is important to note that SWISS-MODEL now also contains the AlphaFold deep learning-based models (see [AlphaFold](Week4_alphafold) section).
-Hence, it is important to notice the origin of the 3D structure models, and all will need to be evaluated on their reliability. You will learn how to do that for homology modelling during the practical assignments.
+Nowadays, [SWISS-MODEL](https://swissmodel.expasy.org/) provides precalculated 3D homology models. It is important to note that SWISS-MODEL now also contains the AlphaFold deep learning-based models (see [AlphaFold](Week4_alphafold) section). A key aspect of working with models is to assess how reliable they are. Since homology modelling and AlphaFold's models have different ways of checking their reliability, it is important to notice the origin of the 3D structure models. You will learn how to do that for homology modelling and for AlphaFold models during the practical assignments.
 
-Still, new protein sequences that bear almost no resemblance to existing ones are discovered almost every day.
+Still, new protein sequences that with little 3D structural resemblance to existing ones are discovered almost every day, thus falling in the midnight zone of {numref}`three_zones`.
 Hence, the scientific community has been adopting various artificial intelligence-based approaches of which AlphaFold is the most prominent one to date.
 
 ---
@@ -393,23 +395,21 @@ Hence, the scientific community has been adopting various artificial intelligenc
 
 ### AlphaFold
 
+In 2018, the DeepMind team of Google introduced a machine learning-based approach called AlphaFold, with AlphaFold 2 following in 2020, and most recentlty version 3 was released in 2024. In this reader, we will mainly discuss AlphaFold 2 and refer to it as AlphaFold.
+This reader describes how AlphaFold builds on previous approaches and has already had substantial impact in biochemistry and bioinformatics.
+When it comes to the suite of possibilities as well as the disruption AlphaFold has caused, an analogy could be made to the introduction of the smartphone: whereas previously, one needed to go to the library to find a computer and connect to the internet to get to a weather forecast, one now simply takes the phone and looks up the weather.
+This section explains why AlphaFold could be developed and work only in the present time, how it was compared to other approaches in a fair manner, how it relies on database search and multiple sequence alignment, and what the introduction of the AlphaFold Protein Structure Database (AlphaFold DB), that contains AlphaFold-predicted structure models, means for discovery pipelines.
+
 :::{figure} images/Week4/PDB-stats.png
 :alt: Protein structures in the Protein Data Bank
 :align: center
 :name: PDB_stats
 
-Top: Number of unique 3D protein structures (based on their sequence) at 95% sequence identity that have been added annually to the Protein Data Bank from 1976 – present time.
-Bottom: Number of 3D protein structures that have been added to the Protein Data Bank from 1976 – present time.
+Actual (top) and cumulative (bottom) number of unique 3D protein structures (based on their sequence) at 95% sequence identity that have been added annually to the Protein Data Bank from 1976 – present time.
 Note: the low number of structures in 2024 is caused by these statistics being taken from PDB early in the year, meaning many more structures are likely to be generated over the rest of 2024.
 Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`PDB_stats_2024`.
 :::
 
-Recently, the DeepMind team of Google introduced a machine learning-based approach called AlphaFold.
-This reader describes how AlphaFold builds on previous approaches and has already had substantial impact in biochemistry and bioinformatics.
-An analogy could be made to the introduction of the smartphone: whereas previously, one needed to go to the library to find a computer and connect to the internet to get to a weather forecast, one now simply takes the phone and looks up the weather.
-The reader explains why AlphaFold could be developed and work only now, how it was compared to other approaches in a fair manner, how it relies on database search and multiple sequence alignment, and what the introduction of the AlphaFold Protein Structure Database (AlphaFold DB), that contains AlphaFold-predicted structure models, means for discovery pipelines.
-
-It is good to realize why AlphaFold could work in the first place.
 The AlphaFold approach is based on machine learning, i.e., computer algorithms that fit a predictive model based on training data.
 Such a model can then predict the structure, when given a sequence that it has not seen before.
 DeepMind made use of very large neural network models, so-called deep learning.
@@ -418,16 +418,16 @@ The Protein Data Bank (PDB) collects such experimental training data, i.e., meas
 By now, ~218,000 PDB entries are available of ~150,000 unique protein sequences at 95% sequence similarity ({numref}`PDB_stats`, top).
 The latter number is important, as a sufficiently diverse set of examples will ensure that there are enough examples in the training data to recognize relevant patterns of various protein folds and other structural features.
 
-As input for their most recent machine learning model, the DeepMind team predicted the structure of 100,000 protein sequences and added those to the training data, a technique called data augmentation.
+As input for their most recent machine learning model, the DeepMind team predicted the structure of many protein sequences, and after filtering for high-quality and reliable predictions, 100,000 protein sequences were added to the training data, a technique called data augmentation.
 Thus, at the time of model training, the team could use around 300,000 protein sequences - 3D structure combinations to train their AlphaFold model that uses a FASTA file as input and outputs a 3D structure model that is described in the [Assessing a protein structure model quality](Week4_model_quality) section.
 
 ---
 
 (Week4_alphafold_impact)=
 
-#### The impact of AlphaFold on biochemistry
+#### The impact of AlphaFold on the biochemistry field
 
-The true impact of AlphaFold would be difficult to assess without an independent test.
+The true impact of AlphaFold would be difficult to assess without an independent test data set.
 Since protein folding and 3D structure prediction is one of the grand challenges of biochemistry, the Critical Assessment of protein Structure Prediction ([CASP](https://predictioncenter.org/)) competition was founded in 1994.
 CASP is a community-wide competition where research groups are required to predict 3D structures from protein sequences that do not have any public 3D structure available.
 More than 100 research groups worldwide join the CASP competition every two years.
@@ -443,15 +443,12 @@ Right: Schematic view of amino acid residue in protein backbone with key atoms l
 Credits: Left: {cite}`GDT_2020` and right: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) {cite}`alpha_carbon_2018`.
 :::
 
-The left side of {numref}`casp` shows both the progress the subsequent AlphaFold models have made, as well as the general impact on the field.
-On the y-axis, the main evaluation metric that CASP uses is plotted: the Global Distance Test – Total Score (GDT-TS), as an average over the challenges (i.e., protein sequences with no publicly known 3D structures).
+The left side of {numref}`casp`plots on the y-axis the main evaluation metric that CASP uses: the Global Distance Test – Total Score (GDT-TS) as an average over the challenges (i.e., protein sequences with no publicly known 3D structures).
 It measures what percentage of α-carbons ({numref}`casp`, right) of the amino acids in the predicted structure are within a threshold distance in Ångstroms (to be precise, the average of four thresholds: 1, 2, 4, 8 Å) of the known structure, for the best possible alignment of the two.
-{numref}`casp` shows how after years of stagnation, in 2018 AlphaFold clearly made a substantial improvement over the results of earlier years.
-In 2020, the prediction results of their updated system, AlphaFold 2, were so good that the structure prediction problem had been dubbed as solved by some.
+{numref}`casp` shows how after years of stagnation, in 2018 AlphaFold clearly made a substantial improvement over the results of earlier years, thereby showing the general impact on the field that AlphaFold has made. Furthermore, the progress of the subsequent AlphaFold models is also visible in the increase in GDT-TS.
+In 2020, the prediction results of their updated system, AlphaFold 2, were so accurate that the structure prediction problem had been dubbed as 'solved' by some.
 In May 2024, the Google DeepMind team released AlphaFold 3.
-Unfortunately, the next iteration of CASP (CASP16) is still in progress.
-Results are estimated to be published by December 2024.
-It will be interesting to see how much the accuracy of the model has improved in an independent test.
+The results of the next iteration of CASP (CASP16) are still being summarized at the time of writing, but the results are still dominated by AlphaFold, and in the meantime new challenges include protein-ligand docking, something that AlphaFold 3 has started to predict as well.
 It is good to note that a score of 100 is not feasible by any predictive method, since there are areas in the protein structure that are inherently difficult to model, i.e., very flexible parts or transitions between, e.g., helix and a random coil.
 Hence, a score between 90-95% is considered equally well as an experimentally derived 3D structure, a score that AlphaFold 2 nearly reached.
 
@@ -464,7 +461,7 @@ Now that we better understand the impact of AlphaFold, let us find out more abou
 
 :::{seealso}
 Although there are no independent test results yet on the accuracy of AlphaFold 3, the Google DeepMind team has provided accuracy metrics in [AlphaFold 3's publication](https://doi.org/10.1038/s41586-024-07487-w).
-They show a marginal increase in the accuracy of structure prediction of monomers between AlphaFold-Multimer 2.3 and AlphaFold 3 (85.5 to 86.9 mean LDDT), a significant increase in protein-protein (67.5% to 76.6% dockq > 0.23), and a very significant increase in protein-antibody (29.6% to 62.9% dockq > 0.23).
+They show a marginal increase in the accuracy of structure prediction of monomers between AlphaFold-Multimer 2.3 and AlphaFold 3 (85.5 to 86.9 mean LDDT), a significant increase in protein-protein (67.5% to 76.6% dockq > 0.23), and a very significant increase in protein-antibody predictions (29.6% to 62.9% dockq > 0.23).
 :::
 
 ---
@@ -476,32 +473,32 @@ They show a marginal increase in the accuracy of structure prediction of monomer
 To make a prediction with AlphaFold, all you need is a FASTA file with the protein primary sequence of interest.
 The core of AlphaFold’s working is a sophisticated machine learning model.
 However, it was not built from scratch: it heavily builds on previously developed approaches to create reliable structure models.
-The most recent AlphaFold implementation can be summarized in three key steps that are recognizable modules linking to previous concepts and knowledge.
+The most recent AlphaFold implementation can be summarized in three key modules that link to previous concepts and knowledge in this reader. These three modules will be explained below.
 
 The first module processes the protein sequences into so-called numeric "representations" that can be used as input for the machine learning model.
 To create these representations, first a database search is performed ([chapter 2](chapter2)).
-Following that, two representations are created (i.e., the two paths in {numref}`alphafold_approach`): a multiple sequence alignment (MSA – a concept introduced and used in [chapter 2](chapter2) and [chapter 3](chapter3)), which captures sequence variation; and a representation of how likely all residues interact with each other (i.e., that are close to each other in the 3D structure), in the form of a contact map.
+Following that, two representations are created (i.e., the two paths in {numref}`alphafold_approach`): a multiple sequence alignment (MSA – a concept introduced in [chapter 2](chapter2) and used in [chapter 3](chapter3)), which captures sequence variation; and a representation of how likely all residues interact with each other (i.e., that are close to each other in the 3D structure), in the form of a contact map.
 The database search is also used to find if there are any suitable "templates" in the PDB database.
 Up to four top templates can be chosen to serve as a starting position for the prediction models.
-Please note that this is the first step in homology modelling as well, and that AlphaFold can make "good" predictions on a good quality multiple sequence alignment (MSA) alone; hence, there is no need for templates to be there.
+Please note that this is the first step in homology modelling as well, and that AlphaFold can make "good" predictions on a good quality multiple sequence alignment (MSA - see [chapter 2](chapter2)) alone; hence, there is no need for templates.
 %#% Create direct cross-links to MSA in chapter 2 when written.
 It is important to realize that AlphaFold bases itself largely on co-evolutionary information.
 Let us briefly reflect on why this is relevant for structure prediction.
-As you may have realized by now, the residue position in the protein primary sequence does not reflect its final position in 3D space: residues far away in the primary sequence may end up close to each other after folding and have specific interactions.
+As you may have realized by now, the residue position in the protein primary sequence does not reflect its final position in 3D space: residues far away in the primary sequence may end up close to each other after folding and they may have specific interactions with each other that stabilize the 3D structure.
 The concept of co-evolution implies that if two interacting residues are important for the protein’s function, they are likely to co-evolve.
 In other words, if one of them changes into a different amino acid, the other will likely have to change as well to maintain the interaction to support the protein’s 3D structure.
 Such genomic signals can only be extracted when we compare many protein sequences with each other.
 Therefore, a deep MSA of high quality is essential for good predictions.
 Here, AlphaFold uses MSA to extract evolutionary signals and predict co-evolution of residues.
 
-The second module uses the representations and aims to find restrictions in how the protein sequence folds into its 3D structure.
+The second module uses the representations from the first module and aims to find restrictions in how the protein sequence folds into its 3D structure.
 This part is the actual machine learning model, and we will consider it largely as a black box.
 The model uses deep learning to learn which input features are important to predict the protein folding based on data-driven pattern recognition.
 The model passes information back and forth between the sequence-residue (MSA) and residue-residue (contact map) representations.
 This part requires a lot of computation time and effort and thus needs a good infrastructure that is not available to all laboratories.
 The DeepMind team had the powerful resources needed to train the extensive machine learning model.
 
-The third and final module is the structure builder where the actual folding and refinement of the structure model takes place using the phi, psi, and omega angles (see also [chapter 1](Week1_secondary_structure)).
+The third and final module is the structure builder where the actual folding and refinement of the structure model takes place using the phi, psi, and omega angles of the amino acid atomic bonds (see also [chapter 1](Week1_secondary_structure)).
 Furthermore, local and global confidence scores are determined.
 Several prediction cycles usually take place where the predicted 3D structure model serves as a new input (i.e., template) for the structure prediction to allow for further fine-tuning.
 The structure builder takes input from several independently trained models.
@@ -567,10 +564,7 @@ The computation of AlphaFold predictive models costs a lot of computation time a
 To avoid running AlphaFold over and over on the same protein sequences and to facilitate the dissemination and inspection of AlphaFold protein structure models, the DeepMind team collaborated with EMBL’s European Bioinformatics Institute ([EMBL-EBI](https://www.ebi.ac.uk/)) to create the AlphaFold Protein Structure Database ([AlphaFold DB](https://alphafold.ebi.ac.uk/)).
 Currently, the resource contains over 200,000,000 structure models.
 The first AlphaFold DB release covered the human proteome, along with several other key organisms such as _Arabidopsis thaliana_ and _Escherichia coli_.
-Actually, for these species, most protein sequences in their UniProt reference proteome were folded by AlphaFold.
-The second release more than doubled the size of the database by adding most of Swiss-Prot (the subset of the UniProt protein database that is manually curated by experts), for all species.
-The third release focused on organisms with a UniProt reference proteome that are relevant to Neglected Tropical Disease or antimicrobial resistance.
-The selection was based on priority lists compiled by the World Health Organisation.
+Actually, for these species, most protein sequences in their UniProt reference proteome were folded by AlphaFold. Subsequent releases expanded the list of included organisms.
 The most recent release contains predicted structures for nearly all catalogued proteins known to science, which will expand the AlphaFold DB by over 200x - from nearly 1 million structures to over 200 million structures (see {numref}`alphafolddb`), covering most of UniProt.
 It is expected that in the coming years all hypothetical proteins will be added to AlphaFold DB.
 This will then – for example – also include viral proteins that are currently excluded.
@@ -610,9 +604,9 @@ Credits: {cite}`blopig_2021`.
 Predictive models only have true value when they produce some measure of confidence, because without any idea of certainty about the predictions, it is hard to interpret results and draw conclusions.
 To get an idea of how well predictions fit the reality, one needs to compare the model with the true situation.
 {numref}`7mbf` shows how this can be done by manual visual inspection of two super-imposed structures, the "real" (experimentally derived) one and a predicted one.
-However, to quantitatively assess differences between models, some sort of numeric score is needed.
+However, to quantitatively assess differences between models, some sort of numeric score is needed. Here, we will list several of them that you will encounter during this week.
 In this reader, we have seen one such comparative measure for 3D protein structure models in the CASP section: the Global Distance Test – Total Score ({numref}`casp`).
-Another score you may encounter more often is the root mean squared error (RMSE), based on the difference in position of the α-carbons as input to calculate the score.
+Another score you may encounter is the root mean squared error (RMSE), based on the difference in position of the α-carbons as input to calculate the score.
 In principle, the smaller the RMSE of a model is, the better.
 The QMEAN-DISCO score used by SWISS-MODEL is also used.
 This score is an ensemble of various metrics that together provide insight into the quality of the model.
@@ -637,7 +631,7 @@ The structure model can be used to validate the protein’s predicted function a
 Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`arf16_2022`.
 :::
 
-As you may have started to realize when using databases, they can also contain erratic entries.
+When using databases, you may have started to realize that they can also contain erratic entries.
 To investigate the quality of both known and predicted 3D protein structures, the Ramachandran plot can be used ([chapter 1](Week1_secondary_structure)).
 You will work with the Ramachandran plot during the practical assignments.
 It is important to note here that some disordered proteins only come into orderly arrangement in the presence of their various protein partners; and other proteins never have ordered structures under any conditions, a property that may be essential to their function.
@@ -647,8 +641,8 @@ The above-described confidence measures are also useful in highlighting limitati
 In the AlphaFold-related practical assignment, you will see some examples of this.
 The main lesson is that you must treat a prediction as a prediction: it is a model of reality and may not accurately represent it.
 Also, keep in mind that there are parts of the 3D protein structure that we can naturally be more confident about.
-For example, secondary structure oftentimes supports the 3D protein structure, and parts of the protein that are naturally more disordered such as random loops are harder to predict correctly.
-Such parts can typically represent parts of the protein structure that are more flexible in their biological environment and any prediction of (very) flexible parts should be considered as a snapshot of the protein structure.
+For example, secondary structure oftentimes supports the 3D protein structure, and parts of the protein that are naturally more disordered, such as random loops, are harder to predict correctly.
+Such parts can typically represent parts of the protein structure that are more flexible in their biological environment and any prediction of (very) flexible parts should therefore be considered as a snapshot of the protein structure.
 If you study {numref}`7mbf` in more detail, you will see this reflected in the superimposed image of the PDB (experimental) 3D structure and the AlphaFold structure model. In figure {numref}`arf16` you can see the prediction model is more confident with the less flexible parts in the center of the protein and less confident with the flexible parts on the outer edges of the protein.
 
 ---
@@ -656,19 +650,19 @@ If you study {numref}`7mbf` in more detail, you will see this reflected in the s
 #### A protein structure model: and now?!
 
 Imagine you have generated a protein structure model, such as the one in {numref}`7mbf`.
-What can you do with it? As mentioned above, it can yield insights into its possible function and role in biochemistry.
+What can you do with it? As mentioned above, it can yield insights into its possible biochemical function and role.
 In other words, you can start to form hypotheses that can be experimentally tested in the lab.
 You can also start to make predictions of protein-protein interactions.
 Since such interactions are typically driven by 3D structural elements (clefts, pockets, etc.), predicting such 3D structure elements from sequences will contribute to more confidently predicting protein-protein interactions.
-Furthermore, you have seen how comparing protein sequences in multiple sequence alignments helps to gain insight into their relationships; by using 3D structure models as an input, a similar comparison could be done at the structural level.
-As we are increasingly aware, sequences may deviate more than structural elements; thus, (multiple) structure alignments at the level of folds or subunits may give a different view on protein relationships.
+Furthermore, you have seen how comparing protein sequences in multiple sequence alignments helps to gain insight into their evolutationary and functional relationships; by using 3D structure models as an input, a similar comparison could be done at the structural level.
+We are increasingly aware that structure is more conserved than sequence; thus, (multiple) structure alignments at the level of folds or subunits may give a deeper view on protein relationships.
 
 ---
 
 ### Foldseek
 
-A recent tool that allows to do structure-based alignments based on protein structure input in a reasonable timeframe is [Foldseek](https://search.foldseek.com/) {cite}`foldseek_2024`.
-By designing a novel 3D-interactions (3Di) alphabet, the team behind Foldseek overcame the mounting task of doing structure-based comparisons at the very large scale that the availability of >200 million structures, sparked by AlphaFold, requires.
+A recent tool that allows us to do structure-based alignments based on protein structure input in a reasonable time frame is [Foldseek](https://search.foldseek.com/) {cite}`foldseek_2024`.
+Foldseek uses a novel 3D-interactions (3Di) alphabet together with an extremely fast BLAST-like sequence search method. This way, the team behind Foldseek overcame the mounting task of doing structure-based comparisons at the very large scale that the availability of >200 million AlphaFold structures requires.
 For example, a traditional structure-based alignment tool would take ~1 month to compare one structure to 100 million ones in the database.
 %#% Add section about the 3Di alphabet and the use of substitution matrices in comparison to chapter 2 + a figure to visualise this.
 During the practical assignments, you will explore how the combination of AlphaFold and Foldseek can be used to explore possible functions for a protein sequence of interest.
@@ -700,7 +694,7 @@ Akin to the mobile phone - smartphone development we have witnessed over the las
 :::{admonition} Note 4.1
 :class: note
 
-Recently, the [OpenFold Consortium](https://openfold.io/) has released their faithful but trainable PyTorch reproduction of DeepMind's AlphaFold 2. This is an open access machine-learning model that is publicly availble on their [GitHub](https://github.com/aqlaboratory/openfold).
+Recently, the [OpenFold Consortium](https://openfold.io/) has released a reproduction of DeepMind's AlphaFold 2. This is an open access machine-learning model that is publicly available on their [GitHub](https://github.com/aqlaboratory/openfold).
 OpenFold strives to deliver state-of-the-art AI-based protein modeling tools to researchers and commercial companies alike, who will be able to use, improve, and contribute to the development of the modeling tools themselves.
 Developments like this improve the FAIRness ([chapter 1](Week1_ontologies)) of the rapidly evolving field of tertiary structure prediction.
 :::
