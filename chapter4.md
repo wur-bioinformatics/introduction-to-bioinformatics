@@ -366,11 +366,11 @@ Credits: [CC BY-NC 4.0] {cite}`own_4_2024`.
 :::
 
 Various approaches including _ab initio_, threading (also called fragment-based modelling), and homology modelling have been proposed and used to go from sequence to structure, with both sequence identity and alignment length as the most important factors to decide which approach to choose.
-To make an effective choice between these three traditional structure prediction approaches, the so-called three zones were introduced ({numref}`three_zones`).
+To make an effective choice between these three traditional structure prediction approaches, a so-called three zones concept was proposed ({numref}`three_zones`).
 According to the figure, as we can observe, below 20% sequence identity between the query protein sequence and sequences with experimentally derived structures, one needs to refer to _ab initio_ approaches, literally translating as: from the start.
 As such approaches are computationally heavy and as they also require a lot of expert knowledge, they are not widely used.
 In essence, such approaches aim to model the protein sequence folding process using physicochemical properties of the amino acid residues and their surroundings.
-As the sequence length increases, ever-increasing possible folds occur for the entire 3D structure, making it a computationally intensive task.
+As the sequence length used increases, ever-increasing possible folds occur for the entire 3D structure, making it a computationally intensive task.
 For example, consider 100 amino acid residues that each have their psi, phi, and omega angles. If they would (only) have 3 possibilities per angle, this would lead to 3^300 (= 10^143) possible folds for the sequence. 
 If each fold would take just 1 second to assess its likelihood to be realistic and energy-favorable, it would take us 10^126 years to analyze and come up with a suggested 3D structure, and that is just 100 amino acids under severe constraints.
 
@@ -379,7 +379,7 @@ Therefore, there is a good chance of having >20% sequence identity of your query
 As we can see in {numref}`three_zones`, the length of the sequence alignment is another crucial factor: if a shorter stretch is matching, the threading (or fragment-based) approach can be used.
 This approach focuses on matching these stretches to known folds, i.e., local structure often consisting of secondary structure elements.
 This can already help to hypothesize on the protein’s function, if a functional domain is matched to the query sequence.
-As this approach is also relatively computationally demanding, and newer approaches as discussed below (i.e., [AlphaFold](Week4_alphafold)) excel in recognizing such folds, we will not gain practical experience with the approach during this course. 
+As this approach is also relatively computationally demanding, and newer approaches as discussed below (i.e., [AlphaFold](Week4_alphafold)) excel in recognizing such folds, we will not gain practical experience with the threading approach during this course. 
 
 If both the query sequence identity and length of the alignment are large enough, homology modelling can be attempted to create a structure model.
 So-called "template sequences" have to be found in the protein structure database that are "similar enough" to serve as a structural blueprint for the 3D prediction.
@@ -395,6 +395,11 @@ Hence, the scientific community has been adopting various artificial intelligenc
 
 ### AlphaFold
 
+In 2018, the DeepMind team of Google introduced a machine learning-based approach called AlphaFold, with AlphaFold 2 following in 2020, and most recentlty version 3 was released in 2024. In this reader, we will mainly discuss AlphaFold 2 and refer to it as AlphaFold.
+This reader describes how AlphaFold builds on previous approaches and has already had substantial impact in biochemistry and bioinformatics.
+When it comes to the suite of possibilities as well as the disruption AlphaFold has caused, an analogy could be made to the introduction of the smartphone: whereas previously, one needed to go to the library to find a computer and connect to the internet to get to a weather forecast, one now simply takes the phone and looks up the weather.
+This section explains why AlphaFold could be developed and work only in the present time, how it was compared to other approaches in a fair manner, how it relies on database search and multiple sequence alignment, and what the introduction of the AlphaFold Protein Structure Database (AlphaFold DB), that contains AlphaFold-predicted structure models, means for discovery pipelines.
+
 :::{figure} images/Week4/PDB-stats.png
 :alt: Protein structures in the Protein Data Bank
 :align: center
@@ -405,12 +410,6 @@ Note: the low number of structures in 2024 is caused by these statistics being t
 Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`PDB_stats_2024`.
 :::
 
-In 2018, the DeepMind team of Google introduced a machine learning-based approach called AlphaFold, with AlphaFold 2 following in 2020, and most recentlty version 3 was released in 2024. In this reader, we will mainly discuss AlphaFold 2 and refer to it as AlphaFold.
-This reader describes how AlphaFold builds on previous approaches and has already had substantial impact in biochemistry and bioinformatics.
-When it comes to the suite of possibilities as well as the disruption AlphaFold has caused, an analogy could be made to the introduction of the smartphone: whereas previously, one needed to go to the library to find a computer and connect to the internet to get to a weather forecast, one now simply takes the phone and looks up the weather.
-The reader explains why AlphaFold could be developed and work only now, how it was compared to other approaches in a fair manner, how it relies on database search and multiple sequence alignment, and what the introduction of the AlphaFold Protein Structure Database (AlphaFold DB), that contains AlphaFold-predicted structure models, means for discovery pipelines.
-
-It is good to realize why AlphaFold could work in the first place.
 The AlphaFold approach is based on machine learning, i.e., computer algorithms that fit a predictive model based on training data.
 Such a model can then predict the structure, when given a sequence that it has not seen before.
 DeepMind made use of very large neural network models, so-called deep learning.
@@ -426,7 +425,7 @@ Thus, at the time of model training, the team could use around 300,000 protein s
 
 (Week4_alphafold_impact)=
 
-#### The impact of AlphaFold on biochemistry
+#### The impact of AlphaFold on the biochemistry field
 
 The true impact of AlphaFold would be difficult to assess without an independent test data set.
 Since protein folding and 3D structure prediction is one of the grand challenges of biochemistry, the Critical Assessment of protein Structure Prediction ([CASP](https://predictioncenter.org/)) competition was founded in 1994.
@@ -444,15 +443,12 @@ Right: Schematic view of amino acid residue in protein backbone with key atoms l
 Credits: Left: {cite}`GDT_2020` and right: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) {cite}`alpha_carbon_2018`.
 :::
 
-The left side of {numref}`casp` shows both the progress the subsequent AlphaFold models have made, as well as the general impact on the field.
-On the y-axis, the main evaluation metric that CASP uses is plotted: the Global Distance Test – Total Score (GDT-TS), as an average over the challenges (i.e., protein sequences with no publicly known 3D structures).
+The left side of {numref}`casp`plots on the y-axis the main evaluation metric that CASP uses: the Global Distance Test – Total Score (GDT-TS) as an average over the challenges (i.e., protein sequences with no publicly known 3D structures).
 It measures what percentage of α-carbons ({numref}`casp`, right) of the amino acids in the predicted structure are within a threshold distance in Ångstroms (to be precise, the average of four thresholds: 1, 2, 4, 8 Å) of the known structure, for the best possible alignment of the two.
-{numref}`casp` shows how after years of stagnation, in 2018 AlphaFold clearly made a substantial improvement over the results of earlier years.
-In 2020, the prediction results of their updated system, AlphaFold 2, were so good that the structure prediction problem had been dubbed as solved by some.
+{numref}`casp` shows how after years of stagnation, in 2018 AlphaFold clearly made a substantial improvement over the results of earlier years, thereby showing the general impact on the field that AlphaFold has made. Furthermore, the progress of the subsequent AlphaFold models is also visible in the increase in GDT-TS.
+In 2020, the prediction results of their updated system, AlphaFold 2, were so accurate that the structure prediction problem had been dubbed as 'solved' by some.
 In May 2024, the Google DeepMind team released AlphaFold 3.
-Unfortunately, the next iteration of CASP (CASP16) is still in progress.
-Results are estimated to be published by December 2024.
-It will be interesting to see how much the accuracy of the model has improved in an independent test.
+The results of the next iteration of CASP (CASP16) are still being summarized at the time of writing, but the results are still dominated by AlphaFold, and in the meantime new challenges include protein-ligand docking, something that AlphaFold 3 has started to predict as well.
 It is good to note that a score of 100 is not feasible by any predictive method, since there are areas in the protein structure that are inherently difficult to model, i.e., very flexible parts or transitions between, e.g., helix and a random coil.
 Hence, a score between 90-95% is considered equally well as an experimentally derived 3D structure, a score that AlphaFold 2 nearly reached.
 
@@ -477,32 +473,32 @@ They show a marginal increase in the accuracy of structure prediction of monomer
 To make a prediction with AlphaFold, all you need is a FASTA file with the protein primary sequence of interest.
 The core of AlphaFold’s working is a sophisticated machine learning model.
 However, it was not built from scratch: it heavily builds on previously developed approaches to create reliable structure models.
-The most recent AlphaFold implementation can be summarized in three key steps that are recognizable modules linking to previous concepts and knowledge.
+The most recent AlphaFold implementation can be summarized in three key modules that link to previous concepts and knowledge in this reader. These three modules will be explained below.
 
 The first module processes the protein sequences into so-called numeric "representations" that can be used as input for the machine learning model.
 To create these representations, first a database search is performed ([chapter 2](chapter2)).
 Following that, two representations are created (i.e., the two paths in {numref}`alphafold_approach`): a multiple sequence alignment (MSA – a concept introduced in [chapter 2](chapter2) and used in [chapter 3](chapter3)), which captures sequence variation; and a representation of how likely all residues interact with each other (i.e., that are close to each other in the 3D structure), in the form of a contact map.
 The database search is also used to find if there are any suitable "templates" in the PDB database.
 Up to four top templates can be chosen to serve as a starting position for the prediction models.
-Please note that this is the first step in homology modelling as well, and that AlphaFold can make "good" predictions on a good quality multiple sequence alignment (MSA) alone; hence, there is no need for templates to be there.
+Please note that this is the first step in homology modelling as well, and that AlphaFold can make "good" predictions on a good quality multiple sequence alignment (MSA - see [chapter 2](chapter2)) alone; hence, there is no need for templates.
 %#% Create direct cross-links to MSA in chapter 2 when written.
 It is important to realize that AlphaFold bases itself largely on co-evolutionary information.
 Let us briefly reflect on why this is relevant for structure prediction.
-As you may have realized by now, the residue position in the protein primary sequence does not reflect its final position in 3D space: residues far away in the primary sequence may end up close to each other after folding and have specific interactions.
+As you may have realized by now, the residue position in the protein primary sequence does not reflect its final position in 3D space: residues far away in the primary sequence may end up close to each other after folding and they may have specific interactions with each other that stabilize the 3D structure.
 The concept of co-evolution implies that if two interacting residues are important for the protein’s function, they are likely to co-evolve.
 In other words, if one of them changes into a different amino acid, the other will likely have to change as well to maintain the interaction to support the protein’s 3D structure.
 Such genomic signals can only be extracted when we compare many protein sequences with each other.
 Therefore, a deep MSA of high quality is essential for good predictions.
 Here, AlphaFold uses MSA to extract evolutionary signals and predict co-evolution of residues.
 
-The second module uses the representations and aims to find restrictions in how the protein sequence folds into its 3D structure.
+The second module uses the representations from the first module and aims to find restrictions in how the protein sequence folds into its 3D structure.
 This part is the actual machine learning model, and we will consider it largely as a black box.
 The model uses deep learning to learn which input features are important to predict the protein folding based on data-driven pattern recognition.
 The model passes information back and forth between the sequence-residue (MSA) and residue-residue (contact map) representations.
 This part requires a lot of computation time and effort and thus needs a good infrastructure that is not available to all laboratories.
 The DeepMind team had the powerful resources needed to train the extensive machine learning model.
 
-The third and final module is the structure builder where the actual folding and refinement of the structure model takes place using the phi, psi, and omega angles (see also [chapter 1](Week1_secondary_structure)).
+The third and final module is the structure builder where the actual folding and refinement of the structure model takes place using the phi, psi, and omega angles of the amino acid atomic bonds (see also [chapter 1](Week1_secondary_structure)).
 Furthermore, local and global confidence scores are determined.
 Several prediction cycles usually take place where the predicted 3D structure model serves as a new input (i.e., template) for the structure prediction to allow for further fine-tuning.
 The structure builder takes input from several independently trained models.
@@ -645,8 +641,8 @@ The above-described confidence measures are also useful in highlighting limitati
 In the AlphaFold-related practical assignment, you will see some examples of this.
 The main lesson is that you must treat a prediction as a prediction: it is a model of reality and may not accurately represent it.
 Also, keep in mind that there are parts of the 3D protein structure that we can naturally be more confident about.
-For example, secondary structure oftentimes supports the 3D protein structure, and parts of the protein that are naturally more disordered such as random loops are harder to predict correctly.
-Such parts can typically represent parts of the protein structure that are more flexible in their biological environment and any prediction of (very) flexible parts should be considered as a snapshot of the protein structure.
+For example, secondary structure oftentimes supports the 3D protein structure, and parts of the protein that are naturally more disordered, such as random loops, are harder to predict correctly.
+Such parts can typically represent parts of the protein structure that are more flexible in their biological environment and any prediction of (very) flexible parts should therefore be considered as a snapshot of the protein structure.
 If you study {numref}`7mbf` in more detail, you will see this reflected in the superimposed image of the PDB (experimental) 3D structure and the AlphaFold structure model. In figure {numref}`arf16` you can see the prediction model is more confident with the less flexible parts in the center of the protein and less confident with the flexible parts on the outer edges of the protein.
 
 ---
@@ -654,11 +650,11 @@ If you study {numref}`7mbf` in more detail, you will see this reflected in the s
 #### A protein structure model: and now?!
 
 Imagine you have generated a protein structure model, such as the one in {numref}`7mbf`.
-What can you do with it? As mentioned above, it can yield insights into its possible function and role in biochemistry.
+What can you do with it? As mentioned above, it can yield insights into its possible biochemical function and role.
 In other words, you can start to form hypotheses that can be experimentally tested in the lab.
 You can also start to make predictions of protein-protein interactions.
 Since such interactions are typically driven by 3D structural elements (clefts, pockets, etc.), predicting such 3D structure elements from sequences will contribute to more confidently predicting protein-protein interactions.
-Furthermore, you have seen how comparing protein sequences in multiple sequence alignments helps to gain insight into their relationships; by using 3D structure models as an input, a similar comparison could be done at the structural level.
+Furthermore, you have seen how comparing protein sequences in multiple sequence alignments helps to gain insight into their evolutationary and functional relationships; by using 3D structure models as an input, a similar comparison could be done at the structural level.
 We are increasingly aware that structure is more conserved than sequence; thus, (multiple) structure alignments at the level of folds or subunits may give a deeper view on protein relationships.
 
 ---
