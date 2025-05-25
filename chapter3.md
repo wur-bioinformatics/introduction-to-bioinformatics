@@ -9,7 +9,7 @@ In this chapter you will learn to use a _Multiple Sequence Alignment_ (MSA), lik
 A phylogenetic tree is considered a highly efficient _data structure_ summarizing the data and its variation contained in your MSA.
 A tree is built from _characters_ which are the individual columns or positions in your MSA.
 Characters have states, which are in this case the individual nucleotide or amino acid _substitutions_ occurring in that position (see [Characters & trees](Week3_characters_trees) below).
-Invariable characters are columns or positions 'occupied' by just one type of nucleotide or amino acid, whereas variable characters may have up to 4 different nucleotides or up to 20 amino acids per position. 
+Invariable characters are columns or positions 'occupied' by just one type of nucleotide or amino acid, whereas variable characters may have up to 4 different nucleotides or up to 20 amino acids per position.
 %#%Create cross-link to MSA in chapter 2 when written
 DNA and amino acid (AA) sequences contain the information necessary for building protein structure, comparing them in an MSA will enable insight how these structures, and their associated functions, may have changed over evolutionary times since they descended from an ancestral sequence.
 The more character state changes (i.e., substitutions) occur between sequences, the more _diverged_ they are and probably also less related (see [Related, diverged](Week3_related_diverged) below), and hence the further apart they will occur on your phylogenetic tree.
@@ -44,7 +44,7 @@ Why should we study phylogenetics and what is it about?
 Ever since Darwin we know that all living things are connected in a tapestry of life, forming a phylogenetic tree of everything ({numref}`tree_of_life_alt`).
 Phylogenetics aims at understanding evolutionary relationships among genes, species, and higher taxa and as such it is relevant to almost all biological questions.
 Why? Because an evolutionary context (rather than a 'snapshot' perspective) allows identifying evolutionary lineages and their origins, and can provide information on how lifeforms and sequences change and adapt across millions of years.
-Examples are studying the evolution of gene families within genomes, or the build-up of species relationships in a lineage. 
+Examples are studying the evolution of gene families within genomes, or the build-up of species relationships in a lineage.
 
 :::{figure} images/Week3/sars-cov-2.svg
 :alt: The SARS-CoV-2 phylogenetic tree
@@ -296,7 +296,7 @@ Three of them are inferred from the presence of multiple copies of IL in the sam
 Duplication δ3 is required to explain the incongruence between the mammalian species tree and the IL-1β phylogeny.
 The incongruence is that in the gene tree human and mouse are more closely related than either is to bovine/sheep.
 The species tree however indicates human to be more closely related to bovine/sheep than to mouse.
-In order to resolve (reconcile) this, δ3 is suggested as indicated in {numref}`IL_reconciled_alt`. 
+In order to resolve (reconcile) this, δ3 is suggested as indicated in {numref}`IL_reconciled_alt`.
 
 %In fact, we can deduce that four gene duplication events must have happened, to explain the occurrence of for instance 'human' at three positions in the gene tree (indicated with green boxes in {numref}`IL_tree_alt`), namely I) in the IL-1α clade, II) in the IL-1rα clade, and III) as a sister pair in the IL-1β clade.
 %The fourth duplication event would be necessary to assume to explain the IL-1β versus IL-1βm copies.
@@ -343,7 +343,7 @@ Apart from four gene duplications (marked δ{sub}`1`, δ{sub}`2`, δ{sub}`3` and
 :align: center
 :name: IL_reconciled_alt
 
-Reconciled tree for the mammalian interleukin-1 gene tree shown in {numref}`IL_tree_alt`. 
+Reconciled tree for the mammalian interleukin-1 gene tree shown in {numref}`IL_tree_alt`.
 Gene losses are indicated in light grey.
 Of the four duplications required, three are supported by the presence of multiple copies of IL in the same mammal species, and one (δ{sub}`3`) is required to explain the incongruence between IL-1 and mammalian phylogeny.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
@@ -839,7 +839,7 @@ In this case the distance values perfectly fit the resulting distance tree.
 Note that both trees in {numref}`characters` and {numref}`character_distance_alt` have the same topology, but the parsimony tree contains more information: in addition to the branching pattern and branch lengths it also contains information on what character changed where on the tree.
 
 %:::{figure} images/Week3/character-distance_alt.png
-%:alt: Comparison between the parsimony and distance approaches in reconstructing a phylogenetic tree of sequences that accumulated substitutions in a clock-like manner. 
+%:alt: Comparison between the parsimony and distance approaches in reconstructing a phylogenetic tree of sequences that accumulated substitutions in a clock-like manner.
 %:width: 100%
 %:name: character_distance
 %
@@ -849,7 +849,7 @@ Note that both trees in {numref}`characters` and {numref}`character_distance_alt
 %#% Unable to use figure character_distance due to copyright.
 
 :::{figure} images/Week3/character-distance_alt.svg
-:alt: The distance approach in reconstructing a phylogenetic tree of sequences that accumulated substitutions in a clock-like manner. 
+:alt: The distance approach in reconstructing a phylogenetic tree of sequences that accumulated substitutions in a clock-like manner.
 :width: 100%
 :name: character_distance_alt
 
@@ -948,7 +948,7 @@ NJ is implemented in [MEGA11](https://www.megasoftware.net/){cite}`mega_2021`) a
 % :alt: Stepwise process involved in the neighbor joining computational process.
 % :width: 100%
 % :name: neighbor-joining-kimura
-% 
+%
 % Neighbor Joining.
 % An illustration of the computational process.
 % Tree length S is the sum of all branch lengths, and is minimized (F) by iteratively joining neighbors, starting from the star tree (A) (From Kimura 2004)
@@ -1376,8 +1376,8 @@ With these steps you have gone from a tree generated in MEGA 11 to a nice tree p
 Also, use iTOL to store your trees and keep an overview of all trees generated.
 :::::
 
-<div style="page-break-after: always; visibility: hidden"> 
-\pagebreak 
+<div style="page-break-after: always; visibility: hidden">
+\pagebreak
 </div>
 
 :::{dropdown} Assignment I answers
@@ -1434,8 +1434,8 @@ _Questions:_
 4. Given that our trees will be unrooted can we still infer monophyly of the different Proteobacterial classes?
 :::::
 
-<div style="page-break-after: always; visibility: hidden"> 
-\pagebreak 
+<div style="page-break-after: always; visibility: hidden">
+\pagebreak
 </div>
 
 :::{dropdown} Assignment II answers
@@ -1448,8 +1448,8 @@ _Questions:_
 4. No, strictly speaking not ("no rooting no monophyly.."). We would need that outgroup! On the other hand, it is tempting to consider the main 'clades' in your tree as clades indeed, especially when the MRCAs for each are on long branches apart from each other. Wilkinson et al. have suggested to call these 'clans' instead of 'clades'. Possibly, the different clades may not change so much upon different rooting scenarios. Their relative branching order may well do.
 :::
 
-<div style="page-break-after: always; visibility: hidden"> 
-\pagebreak 
+<div style="page-break-after: always; visibility: hidden">
+\pagebreak
 </div>
 
 :::::{admonition} _Assignment III: Estimating sequence divergence: Pairwise distances (30 minutes)_
@@ -1547,8 +1547,8 @@ _Questions:_
 1. Keeping in mind the dependence on root-choice, what can you say about monophyly of the α-, β-, γ-, δ-, and ε- Proteobacteria based on this sequence alignment?
 2. Applying the rooting as above (assigning _Bdellovibrio_ and _Heliobacter_ as outgroup, are your NJ trees congruent with those depicted in that figure? If not, what could be the cause?
 :::::
-<div style="page-break-after: always; visibility: hidden"> 
-\pagebreak 
+<div style="page-break-after: always; visibility: hidden">
+\pagebreak
 </div>
 
 :::{dropdown} Assignment IV answers
@@ -1772,8 +1772,8 @@ The extension 'contree' refers to the fact that you are dealing with a bootstrap
 Make a nice tree picture, make sure it is in the same orientation and (un)rooting, after which you can save it by exporting in .svg graphics format.
 Compare this to the figure in assignment II, above, and discuss any differences, both topological and in terms of nodal support, that you may see.
 :::::
-<div style="page-break-after: always; visibility: hidden"> 
-\pagebreak 
+<div style="page-break-after: always; visibility: hidden">
+\pagebreak
 </div>
 
 :::{dropdown} Assignment V answers
@@ -1822,12 +1822,12 @@ Now compare the best LogL score of your IQ-TREE analysis with the best log likel
 ```
  Once again this shows that LnL values should not be compared **between datasets**, but between **models (or trees)** on **one and the same dataset!**
 
-1. Why are the LnL values so different among character sets (deletion treatments) but not among models? 
+1. Why are the LnL values so different among character sets (deletion treatments) but not among models?
 **Using differing number of sites apparently has a large effect on LnL calculation; as indicated above, likelihood values should only be compared from the same dataset. Comparing models has a much smaller effect as only one or two**
-2. Why don’t we just go straight to the most complex model, surely that one would fit any data set best? 
+2. Why don’t we just go straight to the most complex model, surely that one would fit any data set best?
 **Tempting as it may be, the most complex model will contain the largest amount of parameters, for each of which a value needs to be estimated from the 'signal' in the data. There may not be enough signal however to feed all parameters, potentially resulting in imprecise likelihood calculations.**
 
-Compare this to the figure in assignment II, above, and discuss any differences, both topological and in terms of nodal support, that you may see. 
+Compare this to the figure in assignment II, above, and discuss any differences, both topological and in terms of nodal support, that you may see.
 **Make sure your rooting is correct, try to find clades in common between your ML tree and the trees in the figure in assignment II; ideally the coloured labels will help you 'find' the clades or establish groups are paraphyletic (or even polyphyletic). Also check the bootstrap support for nodes and explore whether they correlate with the length of their branches.**
 :::
 
@@ -1926,8 +1926,8 @@ MAFFT alignment, IQ-TREE:
 ```
 :::::
 
-<div style="page-break-after: always; visibility: hidden"> 
-\pagebreak 
+<div style="page-break-after: always; visibility: hidden">
+\pagebreak
 </div>
 
 :::{dropdown} Assignment VI answers
@@ -1943,8 +1943,8 @@ One could argue that the deeper nodes in our IQ-TREE analysis appear to be poorl
 This means that the position of _Erwinia carotovora_, for which Zv&B state: "From its position, it will probably function in a similar way to either OXC or pyruvate oxi dase (POX), although it is also not far from the glyoxylate carboligase (GCL) cluster." But this is hard to support given the poor nodal support in this part of the tree, meaning its position is unsecure and could actually go in various places on this part of the tree.
 :::
 
-<div style="page-break-after: always; visibility: hidden"> 
-\pagebreak 
+<div style="page-break-after: always; visibility: hidden">
+\pagebreak
 </div>
 
 :::::{admonition} **Project Preparation Exercise**
