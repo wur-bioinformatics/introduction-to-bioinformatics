@@ -24,11 +24,24 @@ During the practical you will learn how to make pairwise and multiple sequence a
 Comparing sequences is a key tool in the field of applied bioinformatics.
 By analyzing DNA and protein sequences, researchers can annotate genes in new genomes, build models of protein structures, and investigate gene expression.
 It is important to notice that nature tends to stick with what works, rather than reinventing the wheel for each species.
-Organisms evolve from ancestors, accumulate mutations ([Chapter 1](Week1_substitutions)), and gradually develop new traits over time.
-These evolutionary relationships mean that similar genes can be found in different organisms and the functional annotation can be transferred from one protein to another if both possess a certain degree of similarity.
+Organisms evolve from ancestors and accumulate mutations.
+Here we deal with __small-scale__ mutations, that affect a few characters: substitutions (see also [Chapter 1](Week1_substitutions)) and small insertions and deletions ({numref}`mutations`).
+Later in the book, we will also look at [large-scale genome variations](Week5_large-scale_genome_variation).
+
+:::{figure} images/Week2/mutations.png
+:alt: Types of mutations
+:align: right
+:width: 60%
+:name: mutations
+
+Different types of small-scale mutations.
+Credits: https://evolution.berkeley.edu/, [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+:::
+
+Via mutations, organisms can gradually develop new traits over time.
+These evolutionary relationships also mean that similar genes can be found in different organisms and the functional annotation can be transferred from one protein to another if both possess a certain degree of similarity.
 However, even though two proteins may look similar, they could have different functions.
 Generally, similarities arise because of shared ancestry (divergent evolution), nevertheless, similarities can also appear independently (convergent evolution).
-
 Before diving into the analysis of whether sequences are related, it is important to understand some key terms.
 
 ```{admonition} Homology and similarity
@@ -94,7 +107,7 @@ This feature is implemented in a webserver to visualize dotplots, [dotlet](https
 
 A screenshot of [dotlet](https://dotlet.vital-it.ch/) with the following protein sequence submitted as Sequence 1 and Sequence 2: `MRRPDFMDALQGFLSPLNPAHQLDFMDSLGNLRLEECRIM`.
 
-- (A) The two sliders to change the appearence of the plot: The top slider can adjust the sensitivity, moving it to the right, fewer similar regions are shown; moving it to the left, also regions with lower similarity appear.
+- (A) The two sliders to change the appearance of the plot: The top slider can adjust the sensitivity, moving it to the right, fewer similar regions are shown; moving it to the left, also regions with lower similarity appear.
   The bottom slider adjusts the color scheme and is less relevant compared to the top slider.
 - (B) The histogram indicates how many hits with a particular similarity are shown; thus the slider can be adjusted to the right tail of the histogram.
 - \(C\) The two sliders that can adjust how the two sequences are positioned against each other.
@@ -122,7 +135,7 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 
 ### Alignments of DNA sequences
 
-Every position in a sequence could potentially have an instertion or a deletion, so there are many possible locations and combinations for gaps and thus many potential alignments.
+Every position in a sequence could potentially have an insertion or a deletion, so there are many possible locations and combinations for gaps and thus many potential alignments.
 The final alignment will be the one with the maximum total alignment score.
 This score is determined by so-called _scoring parameters_, which are chosen before the alignment calculation.
 An example of DNA sequence scoring parameters could be that matches score 1, mismatches -1, and a gap has a penalty of -1.
@@ -573,7 +586,7 @@ Positions in the MSA with more than one character are represented by multiple ch
 A pattern string containing, for example, the pattern `[AG]` indicates that one position in the motif can be either `A` or `G`.
 As such, pattern strings take inspiration from [regular expressions](https://en.wikipedia.org/wiki/Regular_expression).
 Various types of pattern strings exist; for example, `PROSITE` __REF__ strings used in the [Prosite database](Week1_prosite) contain the syntax for representing positions in a motif where the residue is irrelevant (marked by an `*`).
-Pattern strings are capable of representing some variation in the motif, but they cannot express how likely the occurence of specific variants is (in the example of `[AG]`, both `A` and `G` are equally likely to occur).
+Pattern strings are capable of representing some variation in the motif, but they cannot express how likely the occurrence of specific variants is (in the example of `[AG]`, both `A` and `G` are equally likely to occur).
 
 To express the likelihood of a specific residue occurring at a specific position, a __Position Specific Scoring Matrix (PSSM)__ can be used ({numref}`motif_concept`D).
 Every row represents one of the possible characters in the MSA and every column represents a column in the MSA, where numbers indicate the probability of observing a specific character at a specific position.
