@@ -2,7 +2,7 @@
 title: 3. Phylogenetics and tree reconstruction
 label: chapter3
 authors:
-  - Freek Bakker
+  - freekbakker
 ---
 
 :::{important} Learning outcomes

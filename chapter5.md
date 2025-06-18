@@ -2,8 +2,8 @@
 title: 5. Omics data analysis
 label: chapter5
 authors:
-  - Judith Risse
-  - Dick de Ridder
+  - judithrisse
+  - dickderidder
 ---
 
 :::{important} Learning outcomes

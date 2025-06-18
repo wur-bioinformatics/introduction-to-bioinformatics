@@ -2,7 +2,7 @@
 title: 4. Protein structure prediction
 label: chapter4
 authors:
-  - Justin van der Hooft
+  - justinvanderhooft
 ---
 
 :::{important} Learning outcomes
@@ -300,12 +300,12 @@ Additionally, SignalP 6.0 predicts the regions of signal peptides. Depending on 
 :alt: example output of SignalP
 :align: center
 :width: 100%
-:name: signalp
+:name: signalp_figure
 
 SignalP output on the outer membrane protein C (precursor) of _Salmonella typhimurium_ (OMPC-SALTY, P0A263). Credits: {cite}`signalp_2022`.
 :::
 
-In {numref}`signalp` an example output of SignalP 6.0 is shown (note the resemblance of the structure of the signal peptide to {numref}`signal_peptide`).
+In {numref}`signalp_figure` an example output of SignalP 6.0 is shown (note the resemblance of the structure of the signal peptide to {numref}`signal_peptide`).
 The figure contains several elements:
 
 The graph at the top consists of the following elements:

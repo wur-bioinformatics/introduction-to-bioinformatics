@@ -2,8 +2,8 @@
 title: 2. Alignment, sequence search, and primer design
 label: chapter2
 authors:
-  - Anne Kupczok
-  - Rens Holmer
+  - annekupczok
+  - rensholmer
 ---
 
 :::{important} Learning outcomes

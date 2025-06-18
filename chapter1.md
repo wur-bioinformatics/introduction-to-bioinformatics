@@ -2,9 +2,9 @@
 title: 1. Genes, Proteins, Databases, Genome annotation
 label: chapter1
 authors:
-  - Rens Holmer
-  - Anne Kupczok
-  - Tomer Sardjoe
+  - rensholmer
+  - annekupczok
+  - tomersardjoe
 ---
 
 :::{important} Learning outcomes
@@ -295,9 +295,10 @@ Amino acids differ in their chemical properties, which are determined by their R
 It is important to know (by heart) the amino acids, their one-letter and three-letter abbreviation, and their fundamental properties as given in the table.
 :::
 
-```{list-table}
+```{list-table} Amino acids and their abbreviations and basic properties
 :header-rows: 1
 :name: aminoacidtable
+:class: aminoacidtable
 
 * - Amino acid
   - Three-letter code
