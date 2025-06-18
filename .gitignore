@@ -1,3 +1,4 @@
+build.log
 _build/*
 .venv/*
 _answers/*

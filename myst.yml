@@ -44,6 +44,7 @@ project:
     - references.bib
   exports:
     - format: typst
+      template: https://github.com/rowanc1/typst-book.git
       output: exports/BIF20306book.typst.pdf
     - format: pdf+tex
       template: plain_latex_book

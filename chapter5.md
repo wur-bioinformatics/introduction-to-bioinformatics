@@ -2376,7 +2376,7 @@ To gain some experience, we will explore a pre-processed online compendium of hu
 The data is hosted on the [Cancer Dependency Portal (DepMap)](https://depmap.org/portal/ccle/) by the Broad Institute, a collaboration between Harvard and MIT, as part of the Broad Cancer Dependency Map.
 
 The CCLE project stores among others the expression of all human genes, measured using RNAseq.
-RNAseq measurements are in log<sub>2</sub>(TPM+1), where TPM stands for Transcripts Per Million (a normalised count of reads per gene).
+RNAseq measurements are in $log_{2}(TPM + 1)$, where TPM stands for Transcripts Per Million (a normalised count of reads per gene).
 The project also includes measurements on copy number (CN) variation, DNA methylation etc.
 
 Again, <u>**use Google Chrome or Firefox**</u>, and do not forget that in most tools you can get additional information on plot elements by hovering your mouse over it.
