@@ -289,8 +289,7 @@ It is important to know (by heart) the amino acids, their one-letter and three-l
 
 ```{list-table}
 :header-rows: 1
-:widths: auto
-:name: aminoacidtable
+:label: aminoacidtable
 
 * - Amino acid
   - Three-letter code
