@@ -1,0 +1,28 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id: a7ba8462-7a85-4be5-b970-bbe14196ce5e
+  license: CC-BY-NC-4.0
+  open_access: true
+  title: Introduction to Bioinformatics
+  # description:
+  # keywords: []
+  authors: [Wageningen University & Reseach, Dick de Ridder, Anne Kupczok, Rens Holmer, Freek Bakker, Justin van der Hooft, Judith Risse, Jorge Navarro, Tomer Sardjoe]
+  github: https://github.com/wur-bioinformatics/introduction-to-bioinformatics
+  # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
+  toc:
+    - file: intro.md
+    - file: chapter1.md
+    - file: chapter2.md
+    - file: chapter3.md
+    - file: chapter4.md
+    - file: chapter5.md
+  bibliography:
+    - references.bib
+    
+site:
+  template: book-theme
+  options:
+  # favicon: favicon.ico
+    logo: BIF logo.png
+    style: _static/custom.css
