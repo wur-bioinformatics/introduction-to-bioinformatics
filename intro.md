@@ -13,7 +13,7 @@ The first activities in bioinformatics trace back to the 1950s, when
 researchers such as Frederick Sanger started to experimentally elucidate the
 sequences of proteins and - later - DNA.  Margaret Dayhoff was among the
 first to develop algorithms to analyse such sequences
-{cite}`dayhoff_comprotein_1962`.  The term "bioinformatics" was subsequently coined
+[@dayhoff_comprotein_1962]. The term "bioinformatics" was subsequently coined
 by Paulien Hogeweg and Ben Hesper in 1970
 {cite}`hesper_bioinformatics_2021`, to describe "the study of informatic
 processes in biotic systems", and gradually became used to denote the entire
