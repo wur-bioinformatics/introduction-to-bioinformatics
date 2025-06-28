@@ -1,3 +1,4 @@
+build.log
 _build/*
 .venv/*
 _answers/*
@@ -5,5 +6,5 @@ _answers/*
 .DS_Store
 *.ipynb_checkpoints
 .vscode
-# MyST build outputs
+# Jupyter Book (via myst) build outputs
 _build

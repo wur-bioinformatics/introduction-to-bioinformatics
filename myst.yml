@@ -1,15 +1,56 @@
-# See docs at: https://mystmd.org/guide/frontmatter
 version: 1
 project:
-  id: a7ba8462-7a85-4be5-b970-bbe14196ce5e
+  title: Introduction to Bioinformatics
   license: CC-BY-NC-4.0
   open_access: true
-  title: Introduction to Bioinformatics
-  # description:
-  # keywords: []
-  authors: [Wageningen University & Reseach, Dick de Ridder, Anne Kupczok, Rens Holmer, Freek Bakker, Justin van der Hooft, Judith Risse, Jorge Navarro, Tomer Sardjoe]
   github: https://github.com/wur-bioinformatics/introduction-to-bioinformatics
-  # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
+  authors:
+    - name: Dick de Ridder
+      id: dickderidder
+      affiliations: WUR Bioinformatics
+    - name: Anne Kupczok
+      id: annekupczok
+      affiliations: WUR Bioinformatics
+    - name: Rens Holmer
+      id: rensholmer
+      orcid: 0000-0002-1080-1763
+      github: holmrenser
+      affiliations: WUR Bioinformatics
+      corresponding: true
+      email: introduction@bioinformatics.nl
+    - name: Freek Bakker
+      id: freekbakker
+      affiliations: WUR Biosystematics
+    - name: Justin van der Hooft
+      id: justinvanderhooft
+      affiliations: WUR Bioinformatics
+    - name: Judith Risse
+      id: judithrisse
+      affiliations: WUR Bioinformatics
+    - name: Jorge Navarro
+      id: jorgenavarro
+      affiliations: WUR Bioinformatics
+    - name: Tomer Sardjoe
+      id: tomersardjoe
+      orcid: 0009-0006-5393-0908
+      github: Tomersardjoe
+      affiliations: WUR Bioinformatics
+  affiliations:
+   - id: wurbif
+     institution: Wageningen University & Reseach
+     department: Bioinformatics
+   - id: wurbis
+     institution: Wageningen University & Reseach
+     department: Biosystematics
+  bibliography:
+    - references.bib
+  exports:
+    - format: typst
+      template: https://github.com/rowanc1/typst-book.git
+      output: exports/BIF20306book.typst.pdf
+    - format: pdf+tex
+      template: plain_latex_book
+      output: exports/BIF20306book.tex.pdf
   toc:
     - file: intro.md
     - file: chapter1.md
@@ -17,12 +58,11 @@ project:
     - file: chapter3.md
     - file: chapter4.md
     - file: chapter5.md
-  bibliography:
-    - references.bib
-    
+  plugins:
+    - plugins/table-plugin.mjs
 site:
-  template: book-theme
+  github: http://github.com/wur-bioinformatics/introduction-to-bioinformatics
   options:
-  # favicon: favicon.ico
     logo: BIF logo.png
-    style: _static/custom.css
+    style: style/custom.css
+  template: book-theme
