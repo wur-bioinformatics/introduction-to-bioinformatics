@@ -33,7 +33,7 @@ That means that similar genes can be found in different organisms and the functi
 However, even though two proteins may look similar, they could also have different functions.
 Generally, similarities arise because of shared ancestry (divergent evolution), nevertheless, similarities can also appear independently (convergent evolution).
 
-:::{figure} images/Week2/mutations.png
+:::{figure} images/chapter2/mutations.png
 :alt: Types of mutations
 :align: right
 :width: 60%
@@ -475,7 +475,7 @@ Repeating this process keeps on doubling the number of copies, which is why it i
 A crucial discovery in the invention of the PCR reaction for biomedical applications is the use of a polymerase enzyme that can withstand the high temperatures of the denaturation phase.
 The first thermostable polymerase was extracted from a species of bacteria living in hot springs: _Thermus aquaticus_ (hence, it is called after this species _Taq_ polymerase).
 
-:::{figure} images/Week2/PCR.jpg
+:::{figure} images/chapter2/PCR.jpg
 :alt: PCR reaction product doubling
 :width: 100%
 :name: PCR
@@ -506,6 +506,8 @@ where A, C, G, and T are the number of respective nucleotides in the primer.
 ```
 
 ## Comparisons of multiple sequences
+
+(chapter2_multiple_sequence_alignment)=
 
 ### Multiple sequence alignment
 
@@ -567,7 +569,7 @@ Since iterative refinement methods typically start with a progressive alignment 
 :class: tip
 For iterative refinement, various scoring and rearranging strategies exist. Here we outline a common approach for both: the weighted sum-of-pairs scoring function and the partitioning rearrangement strategy.
 
-__Weighted sum-of-pairs scoring__: The sum-of-pairs method calculates and sums all possible pairwise alignment scores. The weighted version consists of adding specific weighing factors to each pair, where the weights are determined by the [phylogenetic relationship](chapter3) between the sequences.
+__Weighted sum-of-pairs scoring__: The sum-of-pairs method calculates and sums all possible pairwise alignment scores. The weighted version consists of adding specific weighing factors to each pair, where the weights are determined by the [phylogenetic relationship](#chapter3) between the sequences.
 
 __Partitioning rearrangement__: Following a guide tree, the multiple sequence alignment is partitioned into two sub-alignments (or blocks) along each branch of the tree. Each pair of blocks is then realigned, but the resulting alignment is only kept if the score of the realigned blocks has increased.
 ```
@@ -671,7 +673,7 @@ Many laborary techniques in biomedical applications rely on the polymerase chain
 :class: tip
 Invented in 1983 by Kary B. Mullis, the polymerase chain reaction was first published in 1985 in a study on sickle cell anemia {cite}`saiki1985enzymatic`. Ten years after its discovery, PCR's many biomedical applications gained its inventor the 1993 Nobel prize (shared with Michael Smith for his work on site-directed mutagenesis).
 
-As a method for amplifying DNA, PCR relies on the naturally occurring process of DNA replication by the polymerase enzyme to duplicate DNA (See [Chapter 1](#chapter1_replication)). The reaction uses so-called primers to select which regions of DNA to amplify, and a temperature-cycling scheme to double the number of reaction products in each cycle ({numref}`PCR`). PCR primers are relatively short fragments of single stranded DNA that 'prime' the polymerase: they determine where DNA replication should start. Primers always come in pairs: by using a forward and reverse primer at opposing ends and strands of the desired DNA region, it is ensured that two copies of DNA can be made from one original DNA region.
+As a method for amplifying DNA, PCR relies on the naturally occurring process of DNA replication by the polymerase enzyme to duplicate DNA (See [Chapter 1](#chapter1_replication)). The reaction uses so-called primers to select which regions of DNA to amplify, and a temperature-cycling scheme to double the number of reaction products in each cycle ({numref}`PCR_fig`). PCR primers are relatively short fragments of single stranded DNA that 'prime' the polymerase: they determine where DNA replication should start. Primers always come in pairs: by using a forward and reverse primer at opposing ends and strands of the desired DNA region, it is ensured that two copies of DNA can be made from one original DNA region.
 
 During the reaction, typically three different temperature phases are alternated: (1.) the denaturation phase (~95°C) breaks up the double stranded DNA into single stranded DNA, (2.) the annealing phase (~55°C) allows the primers to bind to their complementary DNA, forming a small section of double stranded DNA, and (3.) the extension phase (~72°C) allows the polymerase enzyme to extend the double stranded section, creating two full double stranded copies of the original material. Repeating this process keeps on doubling the number of copies, which is why it is referred to as a chain reaction.
 A crucial discovery in the invention of the PCR reaction for biomedical applications is the use of a polymerase enzyme that can withstand the high temperatures of the denaturation phase. The first thermostable polymerase was extracted from a species of bacteria living in hot springs: _Thermus aquaticus_ (hence the name _Taq_ polymerase).
@@ -679,7 +681,7 @@ A crucial discovery in the invention of the PCR reaction for biomedical applicat
 :::{figure} images/chapter2/PCR.jpg
 :alt: PCR reaction product doubling
 :width: 100%
-:name: PCR
+:name: PCR_fig
 
 The polymerase chain reaction uses primers to select a desired region of DNA, and doubles it's reaction products every cycle.
 Credits: {cite}`PCR_NHGR`.

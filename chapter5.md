@@ -139,7 +139,7 @@ Credits: [CC-BY 2.0](https://creativecommons.org/licenses/by/2.0) {cite}`timelin
 
 ---
 
-### Genomes
+## Genomes
 
 The history of genome sequencing and the importance of the human genome project
 in the development of sequencing methods is described in [Box 1](#w5box1).
@@ -226,7 +226,7 @@ correlated entirely with organism complexity.
 
 ---
 
-#### Genome sequencing technologies
+### Genome sequencing technologies
 
 The process of generating a genome starts with DNA sequencing, the detection
 of nucleotides and their order along a strand of DNA. Conceptually, there
@@ -273,7 +273,7 @@ Oxford Nanopore MinION/PromethION and Pacbio Sequel II devices. Credits:
 
 (chapter5_sangersequencing)=
 
-##### Sanger sequencing
+#### Sanger sequencing
 
 Sanger sequencing was the first 'high-throughput' method of DNA sequencing. 
 For more details on its history and how it works, see [Box 3](#w5box3). 
@@ -359,7 +359,7 @@ orientation of genes in cloned vectors, or in microsatellite studies.
 
 (chapter5_ngs)=
 
-##### Next generation sequencing
+#### Next generation sequencing
 
 Next-generation sequencing (NGS) technologies allow much higher throughput
 at far lower cost than Sanger sequencing, although it comes at a price:
@@ -434,7 +434,7 @@ Overall, Illumina reads are cheap, short and highly accurate.
 
 (chapter5_3rd_generation)=
 
-##### 3rd Generation sequencing
+#### 3rd Generation sequencing
 
 After the success of NGS, alternative so-called 3rd generation technologies
 were introduced to overcome some of the shortcomings, mainly the limited
@@ -445,7 +445,7 @@ continuous way, there is no need for individual cycles like in NGS.
 
 (chapter5_pacbio)=
 
-###### PacBio
+##### PacBio
 
 The most established method is PacBio single molecule real time (SMRT)
 sequencing. Compared to other methods it does not include a PCR step to
@@ -509,7 +509,7 @@ base.
 
 (chapter5_nanopore)=
 
-###### Nanopore sequencing
+##### Nanopore sequencing
 
 The newest technology is nanopore sequencing, currently provided by Oxford
 Nanopore on the MinION and related devices ({numref}`minion`). This
@@ -575,7 +575,7 @@ the International Space Station.
 - good for genome assembly
 ::::
 
-##### Quality control
+#### Quality control
 
 :::{figure} images/chapter5/ladybug_aphid.png
 :alt: Sequencing contamination
@@ -604,7 +604,7 @@ further analysis.
 
 ---
 
-#### Genome assembly
+### Genome assembly
 
 When no reference genome is available for a species, we need to assemble
 one, i.e. build one from scratch by putting together DNA sequence reads.
@@ -618,7 +618,7 @@ detection of structural variation are discussed.
 
 (chapter5_reference_genome_quality)=
 
-##### Reference genome quality
+#### Reference genome quality
 
 :::{figure} images/chapter5/co-segregation_alt.svg
 :alt: Co-segregation of alleles

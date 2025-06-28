@@ -260,7 +260,7 @@ Using machine learning methods, however, the characteristics of a training data 
 The trained models can subsequently judge the properties of amino acids in unknown sequences, thereby allowing the recognition of transmembrane sections and signal peptides.
 Hence, DeepTMHMM uses a deep learning model that takes a protein sequence as input, and then outputs the corresponding per-residue labels.
 Taken all together and considering their order within the amino acid sequence, the residue labels define the predicted topology of the protein.
-We note how both DeepTMHMM and the below explained SignalP return probabilities (see also the conceptually similar likelihood in [chapter 3](chapter3))) rather than absolute predictions, which is adventageous in giving a direct clue on the reliability of the prediciton.
+We note how both DeepTMHMM and the below explained SignalP return probabilities (see also the conceptually similar likelihood in [chapter 3](#chapter3))) rather than absolute predictions, which is adventageous in giving a direct clue on the reliability of the prediciton.
 DeepTMHMM can predict five different topologies, namely alpha helical transmembrane proteins without a signal peptide (alpha TM), alpha helical transmembrane proteins with signal peptide (SP + alpha TM), beta-barrel transmembrane proteins (Beta), globular proteins with signal peptide (SP + Globular) and globular proteins without signal peptide (Globular).
 Importantly, the two secondary structure elements predicted here share properties and the deep learning model needed sufficient example data to differentiate transmembrane sections from signal peptides.
 
@@ -481,7 +481,7 @@ To create these representations, first a database search is performed ([chapter 
 Following that, two representations are created (i.e., the two paths in {numref}`alphafold_approach`): a multiple sequence alignment (MSA – a concept introduced and used in [chapter 2](#chapter2) and [chapter 3](#chapter3)), which captures sequence variation; and a representation of how likely all residues interact with each other (i.e., that are close to each other in the 3D structure), in the form of a contact map.
 The database search is also used to find if there are any suitable "templates" in the PDB database.
 Up to four top templates can be chosen to serve as a starting position for the prediction models.
-Please note that this is the first step in homology modelling as well, and that AlphaFold can make "good" predictions on a good quality multiple sequence alignment (MSA - see [chapter 2](chapter2)) alone; hence, there is no need for templates.
+Please note that this is the first step in homology modelling as well, and that AlphaFold can make "good" predictions on a good quality multiple sequence alignment (MSA - see [chapter 2](#chapter2)) alone; hence, there is no need for templates.
 %#% Create direct cross-links to MSA in chapter 2 when written.
 It is important to realize that AlphaFold bases itself largely on co-evolutionary information.
 Let us briefly reflect on why this is relevant for structure prediction.
