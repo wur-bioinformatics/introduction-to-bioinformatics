@@ -2,9 +2,9 @@ const COLOURS = {
   "positively charged": "#CBE4F9",
   "negatively charged": "#CDF5F6",
   "polar uncharged": "#EFF9DA",
-  hydrophobic: "#F9EBDF",
+  "hydrophobic": "#F9EBDF",
   "hydrophobic and aromatic": "#F9D8D6",
-  special: "#D6CDEA",
+  "special": "#D6CDEA",
 };
 
 const plugin = {
@@ -18,7 +18,7 @@ const plugin = {
         utils
           // Find the rows of all tables with label "amino-acids"
           .selectAll("container[class^=aminoacidtable] table tableRow", node)
-          .forEach((tableRow) => {
+          .forEach((tableRow, index) => {
             const tableCells = utils.selectAll("tableCell", tableRow);
             const tableCellValues = tableCells.map((tableCell) =>
               // Check if the text representation of the cell starts with our pattern
@@ -33,14 +33,24 @@ const plugin = {
             for (const [pattern, colour] of Object.entries(COLOURS)) {
               if (
                 tableCellValues.some((value) =>
-                  // Check if the text representation of the cell starts with our pattern
                   value.startsWith(pattern)
                 )
               ) {
                 tableRow["style"] = {
+                  ...(tableRow["style"] || {}),
                   "background-color": colour,
                 };
               }
+            }
+
+            // Add a CSS class for the first row
+            if (index === 0) {
+              // Ensure 'attributes' object exists
+              tableRow.attributes = tableRow.attributes || {};
+
+              // Append to any existing class names
+              const existingClass = tableRow.attributes.class || "";
+              tableRow.attributes.class = `${existingClass} first-row`.trim();
             }
           });
       },
