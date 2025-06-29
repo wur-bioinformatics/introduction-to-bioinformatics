@@ -33,7 +33,7 @@ jobs:
         working-directory: docs
       - name: Build HTML Assets
         run: npx myst build --html --execute
-        working-directory: .
+        working-directory: docs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
