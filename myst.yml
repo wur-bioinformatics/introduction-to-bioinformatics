@@ -7,9 +7,11 @@ project:
   authors:
     - name: Dick de Ridder
       id: dickderidder
+      orcid: 0000-0002-4944-4310
       affiliations: WUR Bioinformatics
     - name: Anne Kupczok
       id: annekupczok
+      orcid: 0000-0001-5237-1899
       affiliations: WUR Bioinformatics
     - name: Rens Holmer
       id: rensholmer
@@ -20,15 +22,19 @@ project:
       email: introduction@bioinformatics.nl
     - name: Freek Bakker
       id: freekbakker
+      orcid: 0000-0003-0227-6687
       affiliations: WUR Biosystematics
     - name: Justin van der Hooft
       id: justinvanderhooft
+      orcid: 0000-0002-9340-5511
       affiliations: WUR Bioinformatics
     - name: Judith Risse
       id: judithrisse
+      orcid: 0000-0001-9072-8633
       affiliations: WUR Bioinformatics
     - name: Jorge Navarro
       id: jorgenavarro
+      orcid: 0000-0003-2992-1607
       affiliations: WUR Bioinformatics
     - name: Tomer Sardjoe
       id: tomersardjoe
