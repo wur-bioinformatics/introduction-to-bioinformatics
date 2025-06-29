@@ -1,4 +1,5 @@
 const COLOURS = {
+  "property": "#FFFFFF",
   "positively charged": "#CBE4F9",
   "negatively charged": "#CDF5F6",
   "polar uncharged": "#EFF9DA",
@@ -18,7 +19,7 @@ const plugin = {
         utils
           // Find the rows of all tables with label "amino-acids"
           .selectAll("container[class^=aminoacidtable] table tableRow", node)
-          .forEach((tableRow, index) => {
+          .forEach((tableRow) => {
             const tableCells = utils.selectAll("tableCell", tableRow);
             const tableCellValues = tableCells.map((tableCell) =>
               // Check if the text representation of the cell starts with our pattern
@@ -41,16 +42,6 @@ const plugin = {
                   "background-color": colour,
                 };
               }
-            }
-
-            // Add a CSS class for the first row
-            if (index === 0) {
-              // Ensure 'attributes' object exists
-              tableRow.attributes = tableRow.attributes || {};
-
-              // Append to any existing class names
-              const existingClass = tableRow.attributes.class || "";
-              tableRow.attributes.class = `${existingClass} first-row`.trim();
             }
           });
       },

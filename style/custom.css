@@ -10,18 +10,12 @@ div.citation p {
     text-align: center;
 }
 
-/* Dark mode */
+/* Dark mode readability improvements */
 @media (prefers-color-scheme: dark) {
   /* Default text color for all rows */
   .aminoacidtable tbody tr,
   .aminoacidtable tbody tr td {
     color: black !important;
-  }
-
-  /* First row should be white - CURRENTLY DOESN'T WORK - first-row CLASS DOES NOT GET APPLIED*/
-  .aminoacidtable tbody tr.first-row,
-  .aminoacidtable tbody tr.first-row td {
-    color: white !important;
   }
 
   /* Hover behavior */
