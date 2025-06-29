@@ -1,10 +1,11 @@
 build.log
-_build/*
+_build/cache/*
+_build/execute/*
+_build/html/*
+_build/site/*
 .venv/*
 _answers/*
 
 .DS_Store
 *.ipynb_checkpoints
 .vscode
-# Jupyter Book (via myst) build outputs
-_build
