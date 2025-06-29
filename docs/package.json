@@ -1,0 +1,22 @@
+{
+  "name": "introduction-to-bioinformatics",
+  "version": "1.0.0",
+  "description": "Information for contributors",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wur-bioinformatics/introduction-to-bioinformatics.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wur-bioinformatics/introduction-to-bioinformatics/issues"
+  },
+  "homepage": "https://github.com/wur-bioinformatics/introduction-to-bioinformatics#readme"
+}
