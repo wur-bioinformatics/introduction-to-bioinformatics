@@ -1,7 +1,7 @@
 {
-  "name": "introduction-to-bioinformatics",
+  "name": "docs",
   "version": "1.0.0",
-  "description": "Information for contributors",
+  "description": "Utilities for Jupyter Book docs",
   "main": "index.js",
   "directories": {
     "doc": "docs"
@@ -13,10 +13,16 @@
     "type": "git",
     "url": "git+https://github.com/wur-bioinformatics/introduction-to-bioinformatics.git"
   },
-  "author": "",
+  "author": "Wageningen Univeristy and Research",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/wur-bioinformatics/introduction-to-bioinformatics/issues"
   },
-  "homepage": "https://github.com/wur-bioinformatics/introduction-to-bioinformatics#readme"
+  "homepage": "https://github.com/wur-bioinformatics/introduction-to-bioinformatics#readme",
+"devDependencies": {
+    "myst-directives": "^1.5.8",
+    "myst-roles": "^1.5.8",
+    "mystmd": "^1.3.17",
+    "unist-builder": "^4.0.0"
+  }
 }
