@@ -1,4 +1,4 @@
-name: MyST GitHub Pages Deploy
+name: MyST GitHub Pages Deploy v1
 on:
   push:
     # Runs on pushes targeting the default branch
