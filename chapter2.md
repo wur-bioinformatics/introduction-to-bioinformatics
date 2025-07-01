@@ -666,7 +666,83 @@ The main distinction between these six categories is the length of the matching 
 As such, multiple Pfam HMMs can match a given protein sequence. The combination of matching Pfam HMMs on a given sequence can be used to give a fine-grained description of known elements in a sequence.
 ```
 
+## Glossary
 
+This glossary contains the most important terms from this chapter.
+
+:::{admonition} Glossary
+:class: important
+```{glossary}
+Affine gap costs
+  Alignment scoring scheme that distinguishes between gap opening and gap extension costs
+
+BLAST
+  Basic Local Alignment Search Tool
+
+BLOSUM
+  BLOck SUbstitution Matrix - a group of protein substitution matrices
+
+Consensus sequence
+  Sequence of most frequently occurring residues in an alignment
+
+E-value
+  Expectation value - the number of hits with the observed score or higher that you expect to see by chance in the database (e.g., with BLAST)
+
+Global alignment
+  Alignment strategy, where the complete sequences are aligned
+
+Guide tree
+  A tree based on clustering of the sequences based on their pairwise distances that is used for constructing MSAs
+
+Heuristic algorithm
+  A method that is not guaranteed to find the solution with the best score, but instead employs rules-of-thumb that generally lead to good results
+
+Homology
+  Homologous sequences share a common ancestor
+
+Iterative refinement
+  Heuristic to improve an MSA
+
+Local alignment
+  Alignment strategy, where regions of local similarity are identified
+
+Motif
+  Commonly occurring sequence pattern
+
+MSA
+  Multiple sequence alignment - alignment of more than two sequences
+
+Pairwise sequence alignment
+  Alignment of two sequences by introducing gaps such that a score is maximized
+
+PAM
+  Point Accepted Mutation - a group of protein substitution matrices
+
+PCR
+  Polymerase chain reaction
+
+pHMM
+  profile hidden Markov model - probabilistic representation of an MSA that allows to search sequences against domain databases
+
+Primers
+  Short fragments of single stranded DNA that are used during PCR to prime the polymerase
+
+Progressive alignment
+  Heuristic method of MSA building based on a guide tree
+
+Protein identity
+  Number of identical amino acids in a pairwise alignment divided by the alignment length
+
+Protein similarity
+  Number of similar and identical amino acids in a pairwise alignment divided by the alignment length
+
+PSSM
+  Position Specific Scoring Matrix
+
+Sequence logo
+  Graphical representation of an alignment showing the information in that column
+```
+:::
 ---
 
 ## Practical assignments
