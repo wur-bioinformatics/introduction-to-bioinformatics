@@ -72,3 +72,5 @@ site:
     logo: BIF logo.png
     style: style/custom.css
   template: book-theme
+  options:
+    extra_footer: style/footer.html

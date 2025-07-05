@@ -46,9 +46,9 @@ jobs:
           node-version: 18.x
       - name: Install MyST Markdown
         run: npm install -g mystmd
-      - name: Inject version into intro
+      - name: Create footer with version
         run: |
-          echo -e "\n\n📘 You are viewing version: **${{ github.ref_name }}**" >> intro.md
+          echo '<div class="footer-item">📘 Version: '${{ github.ref_name }}'</div>' > style/footer.html
       - name: Build HTML Assets
         run: myst build --html
       - name: Upload artifact
