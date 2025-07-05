@@ -23,6 +23,8 @@ jobs:
   tagged-release:
     name: Tagged Release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Automatic Releases
         uses: marvinpinto/action-automatic-releases@v1.2.1
