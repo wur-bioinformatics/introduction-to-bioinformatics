@@ -68,9 +68,8 @@ project:
     - plugins/table-plugin.mjs
 site:
   github: http://github.com/wur-bioinformatics/introduction-to-bioinformatics
+  template: book-theme
   options:
     logo: BIF logo.png
     style: style/custom.css
-  template: book-theme
-  options:
     extra_footer: style/footer.html
