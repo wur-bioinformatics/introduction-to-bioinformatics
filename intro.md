@@ -1,5 +1,16 @@
-# Introduction to Bioinformatics
-
+---
+title: Introduction to Bioinformatics
+label: intro
+authors:
+  - dickderidder
+  - annekupczok
+  - rensholmer
+  - freekbakker
+  - justinvanderhooft
+  - judithrisse
+  - jorgenavarro
+  - tomersardjoe
+---
 ## What is bioinformatics?
 
 The field of bioinformatics deals with research, development and application
