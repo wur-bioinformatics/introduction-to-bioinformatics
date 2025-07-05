@@ -49,10 +49,21 @@ jobs:
       - name: Prepend version to each page
         run: |
           for file in $(find . -name "*.md"); do
-            tmpfile=$(mktemp)
-            echo -e "> 📘 This content is part of version: **${{ github.ref_name }}**\n" > "$tmpfile"
-            cat "$file" >> "$tmpfile"
-            mv "$tmpfile" "$file"
+            awk -v version="${{ github.ref_name }}" '
+              BEGIN { in_frontmatter = 0; inserted = 0 }
+              /^---$/ {
+                if (in_frontmatter == 0) {
+                  in_frontmatter = 1
+                } else if (in_frontmatter == 1) {
+                  in_frontmatter = 2
+                  print "---"
+                  print "\n> 📘 This content is part of version: **" version "**"
+                  inserted = 1
+                  next
+                }
+              }
+              { print }
+            ' "$file" > tmp && mv tmp "$file"
           done
       - name: Build HTML Assets
         run: myst build --html
