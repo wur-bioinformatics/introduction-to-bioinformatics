@@ -1,11 +1,9 @@
-# This file was created automatically with `myst init --gh-pages` 🪄 💚
-# Ensure your GitHub Pages settings for this repository are set to deploy with **GitHub Actions**.
-
-name: MyST GitHub Pages Deploy
+---
+name: "tagged-release"
 on:
   push:
-    # Runs on pushes targeting the default branch
-    branches: [experimental]
+    tags:
+      - "v*"
 env:
   # `BASE_URL` determines the website is served from, including CSS & JS assets
   # You may need to change this to `BASE_URL: ''`
@@ -22,6 +20,9 @@ concurrency:
   group: 'pages'
   cancel-in-progress: false
 jobs:
+  tagged-release:
+    name: "Tagged Release"
+    runs-on: ubuntu-latest
   deploy:
     environment:
       name: github-pages
@@ -45,3 +46,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - uses: "marvinpinto/action-automatic-releases@v1.2.1"
+          with:
+            repo_token: "${{ secrets.GITHUB_TOKEN }}"
+            prerelease: false
+            files: |
+              null
