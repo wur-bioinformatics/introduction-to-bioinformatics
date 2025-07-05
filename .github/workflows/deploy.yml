@@ -1,9 +1,15 @@
-name: MyST GitHub Pages Deploy v1
+# This file was created automatically with `myst init --gh-pages` 🪄 💚
+# Ensure your GitHub Pages settings for this repository are set to deploy with **GitHub Actions**.
+
+name: MyST GitHub Pages Deploy
 on:
   push:
     # Runs on pushes targeting the default branch
     branches: [experimental]
-  workflow_dispatch:
+env:
+  # `BASE_URL` determines the website is served from, including CSS & JS assets
+  # You may need to change this to `BASE_URL: ''`
+  BASE_URL: /${{ github.event.repository.name }}
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -13,7 +19,7 @@ permissions:
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: false
 jobs:
   deploy:
@@ -28,16 +34,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18.x
-      - name: Install MyST Markdown & Deps
-        run: npm install
-        working-directory: docs
+      - name: Install MyST Markdown
+        run: npm install -g mystmd
       - name: Build HTML Assets
-        run: npx myst build --html --execute
-        working-directory: docs
+        run: myst build --html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "./_build/html"
+          path: './_build/html'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
