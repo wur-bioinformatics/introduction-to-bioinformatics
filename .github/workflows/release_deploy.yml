@@ -1,5 +1,5 @@
 ---
-name: Deploy - ${{ env.ENVIRONMENT }} - ${{ github.ref_name }}
+name: Deploy - ${{ github.ref_name }}
 run-name: Introduction to Bioinformatics ${{ github.ref_name }}
 on:
   push:
