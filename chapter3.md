@@ -1398,7 +1398,7 @@ _Questions:_
 
 After having computed **Pairwise Distances** among the sequences, you will now perform **distance tree** analysis (NJ), converting pairwise sequence distances into (distance) trees.
 
-Using MEGA 11, under the `Phylogeny` menu construct two Neigbor Joining trees: one based on _p_-difference and use `Uniform rates` (for 'Rates among Sites'), `Complete deletion` (for 'Gaps/Missing Data Treatment') and one based on what you consider the best model/treatment given your answer to assignment III, question 4 above, including 'Gamma Distributed' rates.
+Using MEGA 11, under the `Phylogeny` menu construct two Neighbor Joining trees: one based on _p_-difference and use `Uniform rates` (for 'Rates among Sites'), `Complete deletion` (for 'Gaps/Missing Data Treatment') and one based on what you consider the best model/treatment given your answer to assignment III, question 4 above, including 'Gamma Distributed' rates.
 Can you see a difference in (tree) result?
 
 Now repeat the _best model_+Gamma analysis, this time using `Pairwise deletion` (instead of `Complete deletion`).
