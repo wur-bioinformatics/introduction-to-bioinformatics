@@ -1,62 +1,56 @@
----
 name: tagged release deployment
 run-name: Introduction to Bioinformatics ${{ github.ref_name }}
+
 on:
   push:
     tags:
       - "v*"
+
 env:
   BASE_URL: /${{ github.event.repository.name }}
+
 permissions:
   contents: read
   pages: write
   id-token: write
-  deployments: write
+
 concurrency:
   group: 'pages'
   cancel-in-progress: false
+
 jobs:
   tagged-release:
     name: Tagged Release
     runs-on: ubuntu-latest
     permissions:
-        contents: write
+      contents: write
     steps:
-        - name: Checkout code
-          uses: actions/checkout@v4
-
-        - name: Get tag message
-          id: tag_message
-          run: |
-            TAG_NAME="${GITHUB_REF#refs/tags/}"
-            TAG_MESSAGE=$(git for-each-ref refs/tags/$TAG_NAME --format='%(contents)')
-            echo "message<<EOF" >> $GITHUB_OUTPUT
-            echo "$TAG_MESSAGE" >> $GITHUB_OUTPUT
-            echo "EOF" >> $GITHUB_OUTPUT
-
-        - name: Create GitHub Release
-          uses: softprops/action-gh-release@v1
-          with:
-            tag_name: ${{ github.ref_name }}
-            name: ${{ steps.tag_message.outputs.message }}
-            body: ${{ steps.tag_message.outputs.message }}
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Automatic Releases
+        uses: marvinpinto/action-automatic-releases@v1.2.1
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          prerelease: false
 
   deploy:
+    name: Deploy to GitHub Pages
+    needs: tagged-release
     environment:
       name: Introduction to Bioinformatics
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Setup Pages
         uses: actions/configure-pages@v3
+
       - uses: actions/setup-node@v4
         with:
           node-version: 18.x
+
       - name: Install MyST Markdown
         run: npm install -g mystmd
+
       - name: Prepend version to each page
         run: |
           for file in $(find . -name "*.md"); do
@@ -76,12 +70,30 @@ jobs:
               { print }
             ' "$file" > tmp && mv tmp "$file"
           done
+
       - name: Build HTML Assets
         run: myst build --html
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: './_build/html'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  cleanup-releases:
+    name: Cleanup Old Releases
+    needs: deploy
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Delete older releases
+        uses: dev-drprasad/delete-older-releases@v0.3.3
+        with:
+          keep_latest: 5
+          delete_tags: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
