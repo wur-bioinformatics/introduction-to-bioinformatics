@@ -7,17 +7,12 @@ authors:
 ---
 
 :::{important} Learning outcomes
-In this chapter, you will study sequence alignment.
+- 1 After studying this chapter you should be familiar with what DNA and protein alignments are used for and you can explain the differences between local and global alignments.
+- 2 You should have knowledge of concepts related to alignments and sequence search, like dotplots, alignment scores, E-values, and substitution matrices.
+- 3 Make sure you understand what multiple alignments are used for and that you can explain the differences between different solutions for the MSA problem.
+- 4 You should understand what motifs are and the basics of profile hidden Markov models.
 
-```{admonition} Learning goals
-:class: important A yellow box
-After studying this chapter you should be familiar with what DNA and protein alignments are used for and you can explain the differences between local and global alignments.
-You should have knowledge of concepts related to alignments and sequence search, like dotplots, alignment scores, E-values, and substitution matrices.
-Make sure you understand what multiple alignments are used for and that you can explain the differences between different solutions for the MSA problem.
-You should understand what motifs are and the basics of profile hidden Markov models.
-```
-
-During the practical you will learn how to make pairwise and multiple-sequence alignments, perform sequence searches and motif analyses, design primers, and discuss the results.
+During the practical assignments you will learn how to make pairwise and multiple sequence alignments, perform sequence searches and motif analyses, design primers, and discuss the results.
 :::
 
 ## Introduction
@@ -28,12 +23,11 @@ Comparing sequences is a key tool in the field of applied bioinformatics.
 By analyzing DNA and protein sequences, researchers can annotate genes in new genomes, build models of protein structures, and investigate gene expression.
 It is important to notice that nature tends to stick with what works, rather than reinventing the wheel for each species.
 
-Instead, organisms evolve from ancestors, they accumulate mutations ([Chapter 1](#chapter1_substitutions)), and gradually develop new traits over time.
-That means that similar genes can be found in different organisms and the functional information can be transferred from one protein to another if both possess a certain degree of similarity.
-However, even though two proteins may look similar, they could also have different functions.
-Generally, similarities arise because of shared ancestry (divergent evolution), nevertheless, similarities can also appear independently (convergent evolution).
+Organisms evolve from ancestors and accumulate mutations.
+Here we deal with __small-scale__ mutations, that affect a few characters: substitutions (see also [Chapter 1](Week1_substitutions)) and small insertions and deletions ({numref}`mutations`).
+Later in the book, we will also look at [large-scale genome variations](Week5_large-scale_genome_variation).
 
-:::{figure} images/chapter2/mutations.png
+:::{figure} images/Week2/mutations.png
 :alt: Types of mutations
 :align: right
 :width: 60%
@@ -45,7 +39,7 @@ Credits: https://evolution.berkeley.edu/, [CC BY-NC-SA 4.0](https://creativecomm
 
 Via mutations, organisms can gradually develop new traits over time.
 These evolutionary relationships also mean that similar genes can be found in different organisms and the functional annotation can be transferred from one protein to another if both possess a certain degree of similarity.
-However, even though two proteins may look similar, they could have different functions.
+However, even though two proteins may look similar, they could also have different functions.
 Generally, similarities arise because of shared ancestry (divergent evolution), nevertheless, similarities can also appear independently (convergent evolution).
 Before diving into the analysis of whether sequences are related, it is important to understand some key terms.
 
@@ -92,8 +86,6 @@ A small example of a dotplot. \
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
 :::
 
-A sequence can also be compared to itself, then the main diagonal will be filled with dots and additional repeats are on the off-diagonal ({numref}`dotlarge`).
-
 :::{figure} images/chapter2/dot_large.png
 :alt: Large dotplot example
 :width: 80%
@@ -119,9 +111,9 @@ A screenshot of [dotlet](https://dotlet.vital-it.ch/) with the following protein
 - (B) The histogram indicates how many hits with a particular similarity are shown; thus the slider can be adjusted to the right tail of the histogram.
 - \(C\) The two sliders that can adjust how the two sequences are positioned against each other.
 - (D) Serves a similar function as the two sliders of C but allows for arrow key navigation of the dotplot.
-- (E) Here you can select the window size of sequence comparison and the scoring matrix (window size is explained [below](#chapter2_blast_algorithm) and substitution matrices will also be explained [below](#chapter2_substitution_matrices)).
+- (E) Here you can select the window size of sequence comparison and the scoring matrix (window size is explained [below](#chapter2_blast_algorithm) and substitution matrices are also explained [below](#chapter2_substitution_matrices)).
 - Credits: {cite}`dotlet_2000`.
-  :::
+:::
 
 ## Pairwise alignment
 
@@ -161,7 +153,6 @@ This results in a total score of 1 for this alignment.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
 :::
 
-
 :::{figure} images/chapter2/alg_exercise.png
 :alt: Exercise to score alignments
 :width: 100%
@@ -199,9 +190,9 @@ The Needleman-Wunsch algorithm was the first algorithm and can solve this task i
 
 #### Substitution matrices
 
-In [chapter 1](#chapter1_aminoacids), we learned that different amino acids have different chemical properties.
-When the protein structure and function are conserved, it is more likely that an amino acid gets exchanged by a chemically similar amino acid, compared to a very different one.
-When aligning protein sequences, we thus want to penalize the exchange of chemically dissimilar amino acids and reward the exchange of chemically similar amino acids.
+In [Chapter 1](#chapter1_aminoacids), we learned that different amino acids have different chemical properties.
+When protein structure and function are conserved, it is more likely that an amino acid gets replaced by a chemically similar one than a very different one.
+When aligning protein sequences, we thus want to penalize the substitution of chemically dissimilar amino acids and reward the substitution of chemically similar ones.
 To this end, the score of matches and mismatches is generally determined by a **substitution matrix**, e.g., BLOSUM62 - **BLOSUM (BLOck SUbstitution Matrix)** ({numref}`blosum62`).
 The substitution matrix and the gap parameters then determine the alignment score ({numref}`aa_alg`).
 
@@ -218,7 +209,7 @@ Credits: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) {cite}`
 ```{admonition} Box 2.1: Assignment
 :class: tip
 
-Look at the amino acid properties in the table in [chapter 1](#chapter1_aminoacids), choose some amino acids with the same properties and some with different properties.
+Look at the amino acid properties in the table in [Chapter 1](#chapter1_aminoacids), choose some amino acids with the same properties and some with different properties.
 Then look up these pairs in the BLOSUM62 matrix.
 What do you observe?
 ```
@@ -234,7 +225,7 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 :::
 
 Note that we motivated the use of amino acid substitution matrices by the chemical properties of amino acids; however, these properties were not directly used when determining these matrices.
-Instead, the BLOSUM matrix is determined by aligning conserved regions from Swiss-Prot ([chapter 1](#chapter1_uniprot)) and clustering them based on identity.
+Instead, the BLOSUM matrix is determined by aligning conserved regions from Swiss-Prot ([Chapter 1](#chapter1_uniprot)) and clustering them based on identity.
 Then, the substitutions between the different pairs of amino acids within a cluster are counted, which is used to compute the BLOSUM scores.
 Thus, these scores reflect directly which amino acids are replaced more often with each other during evolution and we can observe that this frequency is strongly correlated with their chemical properties.
 There are different versions of BLOSUM; for example, BLOSUM62 was derived by clustering sequences with an identity of 62% and is appropriate for comparing protein sequences having around 62% identity.
@@ -299,10 +290,9 @@ Up until now, we have only considered pairwise alignments, where both sequences 
 
 ### Local alignments
 
-The previous example shows that some sequences might not be related over their full length.
-We have seen in [chapter 1](#chapter1_Interpro) that many proteins are composed of domains.
-When comparing two proteins, only some parts that correspond to the domains might be related.
-Then, it is more appropriate to perform a **local alignment**.
+We have seen in [Chapter 1](#chapter1_Interpro) that many proteins are composed of domains.
+Thus, some sequences might not be related over their full length, but only share similarity over parts of their sequences that correspond to domains.
+When comparing such proteins, it is more appropriate to perform a **local alignment**.
 Local alignment is also a good tool for identifying functional sites from which sequence patterns and motifs can be derived {numref}`alg_local`.
 
 The aim of a local alignment is to find the best subsequences of both input sequences that result in the maximum alignment score given the alignment parameters.
@@ -326,7 +316,7 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 
 In Chapter 1, we learned about different [sequence databases](#chapter1_databases).
 We often want to search novel sequences in these databases, for example to learn which other organisms have homologs.
-Two sequences that are highly similar, might also share the same function.
+Two sequences that are highly similar might also share the same function.
 This relationship is used for the [functional annotation](#chapter1_functional_annotation) of sequences, where the search in databases is an important step.
 
 ```{admonition} Note 2.3: Similarity by chance
@@ -366,14 +356,13 @@ Both the standalone and web version of BLAST are available from the National Cen
 The starting point of BLAST is the set of words that two sequences have in common, where a __word__ is a part of a sequence of a fixed length.
 For protein blast, the default word size is 5 and for nucleotide blast it is 11.
 To find these common words, first a lookup table of the query words is reconstructed ({numref}`blast_figure`A), where neighborhood words are listed as well.
-Neighborhood words are all the words that have a high alignment score with the query word ({numref}`blast_figure`B).
+__Neighborhood words__ are all the words that have a high alignment score with the query word ({numref}`blast_figure`B).
 Then, BLAST scans the database for word matches.
-For protein blast, two matches within 40 residues must be found such that the BLAST considers the hit as an initial match ({numref}`blast_figure`C).
-Note that for nucleotides, initial hits are found in a simpler way:
-only one exact match must be found, i.e., no neighborhood is considered.
+For protein blast, two matches within 40 residues must be found for BLAST to consider it as an __initial hit__ ({numref}`blast_figure`C).
+Note that for nucleotides, initial hits are found in a simpler way: only one exact match must be found, i.e., no neighborhood is considered.
 
-After finding initial matches, BLAST extends these matches into local alignments ({numref}`blast_figure`D).
-As this extension happens, the alignment score increases or decreases.
+After finding initial hits, BLAST extends these to local alignments ({numref}`blast_figure`D).
+As this __extension__ happens, the alignment score increases or decreases.
 When the alignment score drops below a set level, the extension stops.
 This prevents the alignment from stretching into areas where there is very little similarity between the query and hit sequences.
 If the obtained alignment receives a score above a certain threshold, it will be included in the final BLAST result.
@@ -450,15 +439,16 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 
 ### PCR primer design
 
-A special use case of sequence comparisons is designing __primers__ for the polymerase chain reaction (PCR, see box 2.6).
+A special use case of sequence comparisons is designing __primers__ for the polymerase chain reaction (PCR, see [Box 2.2](#chapter2_PCRbox)).
 Many laborary techniques in biomedical applications rely on PCR for amplifying specific fragments of DNA.
 Examples include pathogen detection, analyzing genetic variation, targeted mutagenesis, _de novo_ protein synthesis, and studying gene expression patterns.
 Which DNA fragments are amplified is determined largely by which PCR __primers__ are used.
 To design primers that successfully amplify the DNA of interest, several computational steps are combined.
 This section highlights some of these bioinformatic considerations.
 
-:::::{admonition} Box 2.6: The polymerase chain reaction (PCR)
+:::::{admonition} Box 2.2: The polymerase chain reaction (PCR)
 :class: tip
+:name: chapter2_PCRbox
 Invented in 1983 by Kary B. Mullis, the polymerase chain reaction was first published in 1985 in a study on sickle cell anemia {cite}`saiki1985enzymatic`. Ten years after its discovery, PCR's many biomedical applications gained its inventor the 1993 Nobel prize (shared with Michael Smith for his work on site-directed mutagenesis).
 
 As a method for amplifying DNA, PCR relies on the naturally occurring process of DNA replication by the polymerase enzyme to duplicate DNA (See [Chapter 1](Week1_replication)).
@@ -527,23 +517,24 @@ The resulting alignment can be thought of as a square matrix: rows represent the
 Conceptual diagram depicting multiple sequence alignment. Colored dots represent similar sequence elements, in the multiple sequence diagram on the right these elements align in vertical columns. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
 :::
 
-%#% INSERT: SOME SECTION ON RELEVANCE OF MSA
+%#%[TODO INSERT: SOME SECTION ON RELEVANCE OF MSA]
 
 In contrast to pairwise alignment, it is computationally not feasible to calculate the best multiple sequence alignment for a set of sequences and scoring parameters.
 Instead, various heuristic algorithms (Note 2.4) for creating multiple sequence alignments exist.
 Here we will go over two main concepts that are adopted by many tools: progressive alignment and iterative alignment.
 
 #### Progressive alignment
-Progressive alignment builds the alignment using a so-called __guide tree__ (Box 2.2).
+Progressive alignment builds the alignment using a so-called __guide tree__ ([Box 2.3](#chapter2_guidetree)).
 The guide tree is a crude representation of similarity between all sequences to be aligned.
 Progressive alignment picks the two most similar sequences using the guide tree and initializes the multiple sequence alignment by aligning these two sequences with a global alignment strategy.
 Subsequently, the guide tree is used to determine the order in which sequences are added to the alignment.
 One way of thinking about this is that progressive alignment creates increasingly large 'blocks' of sequences, where a block is always treated as a unit (e.g., introducing a gap will happen for all sequences in the block).
 By going through the guide tree, this alignment strategy _progresses_ to the final result, hence the name _progressive alignment_.
 
-```{admonition} Box 2.2: Constructing a guide tree
+```{admonition} Box 2.3: Constructing a guide tree
 :class: tip
-The guide tree that is used by the progressive alignment strategy is typically created with a clustering algorithm that takes as input all pairwise distances between sequences (see [Chapter 3](Week3_neighbor_joining)).
+:name: chapter2_guidetree
+The guide tree that is used by the progressive alignment strategy is typically created with a clustering algorithm that takes as input all pairwise distances between sequences (see [Chapter 3](chapter3_neighbor_joining)).
 Obtaining these pairwise distances can be done through, e.g., local alignment scores, but another common approach is to count the number of subsequences of length $k$ (also known as $k$-mers) that are present in both sequences.
 The downside of this k-mer based strategy is that it provides a crude distance measure (and is therefore not very accurate), the benefit is that it is very fast.
 
@@ -552,7 +543,7 @@ This recomputing of the guide tree could in theory be repeated a lot of times (e
 The often used multiple sequence alignment program `mafft` implements recomputing the guide tree in the `FFT-NS-2` algorithm.
 ```
 
-%#% TODO: It would be nice to have a visualization here, all good ones are with copyright, need to redo it
+%#%[TODO: It would be nice to have a visualization here, all good ones are with copyright, need to redo it]
 
 #### Iterative refinement
 One potential downside of the progressive alignment strategy is that some of the intermediate blocks may represent sub-optimal alignments.
@@ -565,7 +556,7 @@ This process is typically repeated until the score no longer increases (or for a
 
 Since iterative refinement methods typically start with a progressive alignment and improve its score, programs that implement an iterative refinement strategy (e.g., the `FFT-NS-i` method in `mafft`) typically perform better, but also need more time, than programs that are based on progressive alignment (e.g., the `FFT-NS-2` method in `mafft` and the Clustal program) {cite}`katoh_mafft_2014`.
 
-```{admonition} Box 2.3: Scoring and rearranging multiple sequence alignments
+```{admonition} Box 2.4: Scoring and rearranging multiple sequence alignments
 :class: tip
 For iterative refinement, various scoring and rearranging strategies exist. Here we outline a common approach for both: the weighted sum-of-pairs scoring function and the partitioning rearrangement strategy.
 
@@ -583,7 +574,9 @@ Motifs can be found by summarizing the _columns_ of the multiple sequence alignm
 
 ```{admonition} Note 2.5: Multiple sequence alignments vs. motifs
 :class: note
-Since motifs are based on multiple sequence alignments, it may seem tempting to use the terms interchangeably. A key distinction is that a motif always represent a commonly occurring pattern, whereas a multiple sequence alignment can also contain regions of low conservation/similarity. In addition, one multiple sequence alignment can contain multiple motifs.
+Since motifs are based on multiple sequence alignments, it may seem tempting to use the terms interchangeably.
+A key distinction is that a motif always represent a commonly occurring pattern, whereas a multiple sequence alignment can also contain regions of low conservation/similarity.
+In addition, one multiple sequence alignment can contain multiple motifs.
 ```
 
 The simplest representation of a motif is the __consensus sequence__ ({numref}`motif_concept`B), where every column of the multiple sequence alignment is represented by the most frequently occurring residue (i.e., the majority consensus).
@@ -592,7 +585,10 @@ The downside of a consensus sequence is that it does not represent any of the va
 An extension of the consensus sequence that can represent some variation in a motif is the __pattern string__ ({numref}`motif_concept`C).
 In pattern strings, unambigous positions are represented by single letters and there is a special syntax for representing variation:
 Positions in the MSA with more than one character are represented by multiple characters in between square brackets.
-A pattern string containing, for example, the pattern `[AG]` indicates that one position in the motif can be either `A` or `G`. As such, pattern strings take inspiration from [regular expressions](https://en.wikipedia.org/wiki/Regular_expression). Various types of pattern strings exist, for example `PROSITE` __REF__ strings used in the [Prosite database](#chapter1_prosite) contain syntax for representing positions in a motif where the residue is irrelevant (marked by an `*`). Pattern strings are capable of representing some variation in the motif, but they cannot express how likely the occurence of specific variants is (in the example `[AG]`, both `A` and `G` are equally likely to occur).
+A pattern string containing, for example, the pattern `[AG]` indicates that one position in the motif can be either `A` or `G`.
+As such, pattern strings take inspiration from [regular expressions](https://en.wikipedia.org/wiki/Regular_expression).
+Various types of pattern strings exist, for example `PROSITE` __REF__ strings used in the [Prosite database](#chapter1_prosite) contain syntax for representing positions in a motif where the residue is irrelevant (marked by an `*`).
+Pattern strings are capable of representing some variation in the motif, but they cannot express how likely the occurrence of specific variants is (in the example `[AG]`, both `A` and `G` are equally likely to occur).
 
 To express the likelihood of a specific residue occurring at a specific position, a __Position Specific Scoring Matrix ({term}`PSSM`)__ can be used ({numref}`motif_concept`D).
 Every row represents one of the possible characters in the MSA and every column represents a column in the MSA, where numbers indicate the probability of observing a specific character at a specific position.
@@ -619,7 +615,9 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 
 ### Profile hidden Markov models (pHMMs)
 
-The previous sections on multiple sequence alignments and motifs explained some basics of how collections of similar sequences can be summarized and used. In this section we highlight a powerful approach for using the information in MSAs to perform sequence search and comparison: __profile hidden Markov models (pHMMs)__. Some of the fundamentals of general hidden Markov models ({term}`HMM`) have been covered in [Chapter 1](#chapter1), here we introduce how a few simple adaptations to the general concept of HMMs unlocks a powerful sequence search approach.
+The previous sections on multiple sequence alignments and motifs explained some basics of how collections of similar sequences can be summarized and used.
+In this section we highlight a powerful approach for using the information in MSAs to perform sequence search and comparison: __profile hidden Markov models (pHMMs)__.
+Some of the fundamentals of general hidden Markov models ({term}`HMM`) have been covered in [Chapter 1](#chapter1); here we introduce how a few simple adaptations to the general concept of HMMs unlocks a powerful sequence search approach.
 
 We can think of a profile hidden Markov model as an extension of a position specific scoring matrix.
 Like a PSSM, a pHMM contains probabilities of observing certain characters at certain positions in an MSA.
@@ -641,7 +639,7 @@ Emission probabilities are indicated inside the hidden states, transition probab
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
 :::
 
-```{admonition} Box 2.4: Calculating the probability of a sequence
+```{admonition} Box 2.5: Calculating the probability of a sequence
 :class: tip
 In principle, the information in {numref}`simple_hmm` is enough to calculate the probability of a sequence belonging to this pHMM.
 For example, the sequence `GAT` represented by match states would get a probability of $(0.8 * 0.6) * (0.4 * 0.7) * (0.3 * 0.4) * 0.8 = 0.013$.
@@ -660,46 +658,95 @@ In practice, this means that matching sequences can be identified over larger ev
 Tools that implement some version of this approach are `psiBLAST` (which uses PSSMs) and various `HMMer` tools (all using pHMMs).
 ```
 
-```{admonition} Box 2.5: pHMMs in databases
+```{admonition} Box 2.6: pHMMs in databases
 :class: tip
-The ability to group biological sequences based on conserved/co-occurring regions and subsequently using this for sequence search is exploited in a wide range of biological sequence databases. Some of these databases have been introduced in [chapter 1](#chapter1), here we briefly outline a few more details on how HMMs are incorporated into many of these resources by using [Pfam](#chapter1_pfam) as an example. All entries in the PFAM database are represented by profile HMMs. The entries are subdivided into one of six categories: family, domain, repeat, conserved site, coiled coil, or disordered. The main distinction between these six categories is the length of the matching sequences: a 'family' PFAM HMM is expected to match across the entire length of a protein sequence, a 'conserved site' is typically only a small region in a protein. As such, multiple PFAM HMMs can match a given protein sequence. The combination of matching PFAM HMMs on a given sequence can be used to give a fine-grained description of known elements in a sequence.
+The ability to group biological sequences based on conserved/co-occurring regions and subsequently using this for sequence search is exploited in a wide range of biological sequence databases.
+Some of these databases have been introduced in [Chapter 1](#chapter1), here we briefly outline a few more details on how HMMs are incorporated into many of these resources by using [Pfam](#chapter1_pfam) as an example.
+All entries in the PFAM database are represented by profile HMMs.
+The entries are subdivided into one of six categories: family, domain, repeat, conserved site, coiled coil, or disordered.
+The main distinction between these six categories is the length of the matching sequences: a 'family' PFAM HMM is expected to match across the entire length of a protein sequence, a 'conserved site' is typically only a small region in a protein.
+As such, multiple PFAM HMMs can match a given protein sequence.
+The combination of matching PFAM HMMs on a given sequence can be used to give a fine-grained description of known elements in a sequence.
 ```
 
-## PCR primer design
+---
 
-Many laborary techniques in biomedical applications rely on the polymerase chain reaction (PCR, see box 2.6) for amplifying specific fragments of DNA. Examples include pathogen detection, analyzing genetic variation, targeted mutagenesis, de novo protein synthesis, and studying gene expression patterns. Which DNA fragments are amplified is determined largely by which PCR _primers_ are used. To design primers that succesfully amplify the DNA of interest, several computational steps are combined. This section highlight some of these bioinformatic considerations.
+## Glossary
+This glossary contains the most important terms from this chapter.
 
-:::::{admonition} Box 2.6: The polymerase chain reaction (PCR)
-:class: tip
-Invented in 1983 by Kary B. Mullis, the polymerase chain reaction was first published in 1985 in a study on sickle cell anemia {cite}`saiki1985enzymatic`. Ten years after its discovery, PCR's many biomedical applications gained its inventor the 1993 Nobel prize (shared with Michael Smith for his work on site-directed mutagenesis).
-
-As a method for amplifying DNA, PCR relies on the naturally occurring process of DNA replication by the polymerase enzyme to duplicate DNA (See [Chapter 1](#chapter1_replication)). The reaction uses so-called primers to select which regions of DNA to amplify, and a temperature-cycling scheme to double the number of reaction products in each cycle ({numref}`PCR_fig`). PCR primers are relatively short fragments of single stranded DNA that 'prime' the polymerase: they determine where DNA replication should start. Primers always come in pairs: by using a forward and reverse primer at opposing ends and strands of the desired DNA region, it is ensured that two copies of DNA can be made from one original DNA region.
-
-During the reaction, typically three different temperature phases are alternated: (1.) the denaturation phase (~95°C) breaks up the double stranded DNA into single stranded DNA, (2.) the annealing phase (~55°C) allows the primers to bind to their complementary DNA, forming a small section of double stranded DNA, and (3.) the extension phase (~72°C) allows the polymerase enzyme to extend the double stranded section, creating two full double stranded copies of the original material. Repeating this process keeps on doubling the number of copies, which is why it is referred to as a chain reaction.
-A crucial discovery in the invention of the PCR reaction for biomedical applications is the use of a polymerase enzyme that can withstand the high temperatures of the denaturation phase. The first thermostable polymerase was extracted from a species of bacteria living in hot springs: _Thermus aquaticus_ (hence the name _Taq_ polymerase).
-
-:::{figure} images/chapter2/PCR.jpg
-:alt: PCR reaction product doubling
-:width: 100%
-:name: PCR_fig
-
-The polymerase chain reaction uses primers to select a desired region of DNA, and doubles it's reaction products every cycle.
-Credits: {cite}`PCR_NHGR`.
-:::
-:::::
-
-PCR primers typically have to meet several requirements to result in a successful PCR product: they have to be biochemically feasible (i.e. denature, anneal, and extend at the right temperature), they have to be specific (only amplify the region of interest), they should produce a product of a reasonable size (~500-1000 nucleotides, depending on the application), and they should be stable as single stranded DNA. The combination of these requirements typically allows primers of ~18-30 nucleotides long. To aid in the quick design of potentially successful primers, tools such as Primer-BLAST or Primer3+ automatically check most of the mentioned requirements. For example, Primer-BLAST lets a user upload a sequence of DNA that should be amplified, and can be configured to find primer products of a specific size. In addition, putative off-target amplification (i.e. specificity) is checked using BLAST on a database of choice, and several desired temperatures can be configured.
-
-```{admonition} Approximating PCR denaturation temperature $T_m$
+:::{admonition} Glossary
 :class: important
-The temperature at which approximately half of the DNA strands in a solution are in a denatured stated is referred to as the _melting temperature_ $T_m$, and is an important parameter in primer design. The exact melting temperature depends on the exact length and nucleotide composition of the DNA fragment, but for short sequences a useful approximation exists. This approximation can come in handy for quick checks and predictions.
+```{glossary}
+Affine gap costs
+  Alignment scoring scheme that distinguishes between gap opening and gap extension costs
 
-For primers shorter than 14 nucleotides, the melting temperature can be approximated with the following formula:
+BLAST
+  Basic Local Alignment Search Tool
 
-$T_m = 2 * (A + T) + 4 * (G + C)$
+BLOSUM
+  BLOck SUbstitution Matrix - a group of protein substitution matrices
 
-Where A, C, G, and T are the number of respective nucleotides in the primer.
+Consensus sequence
+  Sequence of most frequently occurring residues in an alignment
+
+E-value
+  Expectation value - the number of hits with the observed score or higher that you expect to see by chance in the database (e.g., with BLAST)
+
+Global alignment
+  Alignment strategy, where the complete sequences are aligned
+
+Guide tree
+  A tree based on clustering of the sequences based on their pairwise distances that is used for constructing MSAs
+
+Heuristic algorithm
+  A method that is not guaranteed to find the solution with the best score, but instead employs rules-of-thumb that generally lead to good results
+
+Homology
+  Homologous sequences share a common ancestor
+
+Iterative refinement
+  Heuristic to improve an MSA
+
+Local alignment
+  Alignment strategy, where regions of local similarity are identified
+
+Motif
+  Commonly occurring sequence pattern
+
+MSA
+  Multiple sequence alignment - alignment of more than two sequences
+
+Pairwise sequence alignment
+  Alignment of two sequences by introducing gaps such that a score is maximized
+
+PAM
+  Point Accepted Mutation - a group of protein substitution matrices
+
+PCR
+  Polymerase chain reaction
+
+pHMM
+  profile hidden Markov model - probabilistic representation of an MSA that allows to search sequences against domain databases
+
+Primers
+  Short fragments of single stranded DNA that are used during PCR to prime the polymerase
+
+Progressive alignment
+  Heuristic method of MSA building based on a guide tree
+
+Protein identity
+  Number of identical amino acids in a pairwise alignment divided by the alignment length
+
+Protein similarity
+  Number of similar and identical amino acids in a pairwise alignment divided by the alignment length
+
+PSSM
+  Position Specific Scoring Matrix
+
+Sequence logo
+  Graphical representation of an alignment showing the information in that column
 ```
+:::
 
 ---
 
@@ -729,7 +776,7 @@ To this end, we search in two different databases and compare the results.
 6. The NCBI blast service is an important bioinformatics tool, that you should practice. However, we have experienced that high usage from one location at the same time (like during BIF20306 practicals) results in a delayed response of the web service. To mitigate long waiting times, we set up a [server](http://bioinformatics.nl/blast) with the most important NCBI blast functionalities. Run the previous search also with this server and look at the results. Note that with the run url you will also be able to retrieve the results later. Preferably, do all the following blast exercises in Assignments I and II with this server.
 7. Next, we want to find more homologous sequences; thus we search in the RefSeq protein database (Blast database refseq_protein). How many hits do you find? Look at the last hit, do you think that all similar sequences in that database have been found? **Note**: We still need the results in Swissprot. Save the urls, so you can retrieve them later or leave these results open and perform the new search in a new browser window or tab.
 8. Perform the same search as in (7), but now allow for finding a larger number of hits (Change Max target sequences under Algorithm parameters to the maximum available). How many hits do you find? Would you consider all of them as homologous to the yeast Vps36?
-9. Go back to the Swissprot results and look at the first hit that is not the query sequence itself. Compare the blast results (score, query coverage, e-value, percent identity, alignment length) to the hit of the same species found in RefSeq. What do you observe?
+9. Go back to the Swissprot results and look at the first hit that is not the query sequence itself. Compare the blast results (score, query coverage, E-value, percent identity, alignment length) to the hit of the same species found in RefSeq. What do you observe?
 ```
 
 +++
