@@ -1,5 +1,5 @@
 ---
-name: i2b ${{ github.ref_name }}
+run-name: Introduction to Bioinformatics ${{ github.ref_name }}
 on:
   push:
     tags:
