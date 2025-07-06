@@ -20,13 +20,28 @@ jobs:
     name: Tagged Release
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+        contents: write
     steps:
-      - name: Automatic Releases
-        uses: marvinpinto/action-automatic-releases@v1.2.1
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          prerelease: false
+        - name: Checkout code
+          uses: actions/checkout@v4
+
+        - name: Get tag message
+          id: tag_message
+          run: |
+            TAG_NAME="${GITHUB_REF#refs/tags/}"
+            TAG_MESSAGE=$(git for-each-ref refs/tags/$TAG_NAME --format='%(contents)')
+            echo "message<<EOF" >> $GITHUB_OUTPUT
+            echo "$TAG_MESSAGE" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+
+        - name: Create GitHub Release
+          uses: softprops/action-gh-release@v1
+          with:
+            tag_name: ${{ github.ref_name }}
+            name: ${{ steps.tag_message.outputs.message }}
+            body: ${{ steps.tag_message.outputs.message }}
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   deploy:
     environment:
