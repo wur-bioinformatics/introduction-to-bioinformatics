@@ -15,7 +15,7 @@ In this chapter you will learn to use a _Multiple Sequence Alignment_ ({term}`MS
 A phylogenetic tree is considered a highly efficient _data structure_ summarizing the data and its variation contained in your MSA.
 A tree is built from _characters_ which are the individual columns or positions in your MSA.
 Characters have states, which are in this case the individual nucleotide or amino acid _substitutions_ occurring in that position (see [Characters & trees](#chapter3_characters_trees) below).
-Invariable characters are columns or positions 'occupied' by just one type of nucleotide or amino acid, whereas variable characters may have up to 4 different nucleotides or up to 20 amino acids per position. 
+Invariable characters are columns or positions 'occupied' by just one type of nucleotide or amino acid, whereas variable characters may have up to 4 different nucleotides or up to 20 amino acids per position.
 DNA and amino acid (AA) sequences contain the information necessary for building protein structure, comparing them in an MSA will enable insight how these structures, and their associated functions, may have changed over evolutionary times since they descended from an ancestral sequence.
 The more character state changes (i.e., substitutions) occur between sequences, the more _diverged_ they are and probably also less related (see [Related, diverged](#chapter3_related_diverged) below), and hence the further apart they will occur on your phylogenetic tree.
 The information contained in your tree is hierarchical in nature, meaning that it is built-up as nested sets of subtrees that are also known as _clades_.
@@ -843,7 +843,7 @@ In this case the distance values perfectly fit the resulting distance tree.
 Note that both trees in {numref}`characters` and {numref}`character_distance_alt` have the same topology, but the parsimony tree contains more information: in addition to the branching pattern and branch lengths it also contains information on what character changed where on the tree.
 
 %:::{figure} images/chapter3/character-distance_alt.png
-%:alt: Comparison between the parsimony and distance approaches in reconstructing a phylogenetic tree of sequences that accumulated substitutions in a clock-like manner. 
+%:alt: Comparison between the parsimony and distance approaches in reconstructing a phylogenetic tree of sequences that accumulated substitutions in a clock-like manner.
 %:width: 100%
 %:name: character_distance
 %
@@ -853,7 +853,7 @@ Note that both trees in {numref}`characters` and {numref}`character_distance_alt
 %#% Unable to use figure character_distance due to copyright.
 
 :::{figure} images/chapter3/character-distance_alt.svg
-:alt: The distance approach in reconstructing a phylogenetic tree of sequences that accumulated substitutions in a clock-like manner. 
+:alt: The distance approach in reconstructing a phylogenetic tree of sequences that accumulated substitutions in a clock-like manner.
 :width: 100%
 :name: character_distance_alt
 
