@@ -98,5 +98,7 @@ jobs:
         with:
           keep_latest: 5
           delete_tags: true
+          delete_prerelease_only: false
+          repo: ${{ github.repository }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
