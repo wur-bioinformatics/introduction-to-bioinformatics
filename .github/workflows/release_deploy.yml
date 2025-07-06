@@ -1,5 +1,5 @@
 ---
-name: Deploy - ${{ github.ref_name }}
+name: tagged release workflow
 run-name: Introduction to Bioinformatics ${{ github.ref_name }}
 on:
   push:
@@ -11,6 +11,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  deployments: write
 concurrency:
   group: 'pages'
   cancel-in-progress: false
@@ -69,3 +70,39 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Create GitHub Deployment
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+          REF_NAME: ${{ github.ref_name }}
+        run: |
+          curl -X POST \
+            -H "Authorization: Bearer $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/$REPO/deployments \
+            -d "$(jq -n \
+              --arg ref "$SHA" \
+              --arg env "Introduction to Bioinformatics" \
+              --arg desc "Deployed version: $REF_NAME" \
+              --arg url "${{ steps.deployment.outputs.page_url }}" \
+              '{
+                ref: $ref,
+                environment: $env,
+                description: $desc,
+                required_contexts: [],
+                auto_merge: false,
+                environment_url: $url
+              }')" > deployment.json
+
+      - name: Mark Deployment as Successful
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          DEPLOYMENT_ID=$(jq '.id' deployment.json)
+          curl -X POST \
+            -H "Authorization: Bearer $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/$REPO/deployments/$DEPLOYMENT_ID/statuses \
+            -d '{"state": "success"}'
