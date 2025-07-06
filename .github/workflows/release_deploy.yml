@@ -85,6 +85,13 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        
+      - name: List releases for debugging
+        run: |
+          curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          https://api.github.com/repos/${{ github.repository }}/releases \
+          | jq '.[] | {name, tag_name, draft, prerelease, id}'
+
 
   cleanup-releases:
     name: Cleanup Old Releases
