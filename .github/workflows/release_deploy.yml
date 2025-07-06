@@ -1,5 +1,5 @@
 ---
-name: tagged-release
+name: i2b ${{ github.ref_name }}
 on:
   push:
     tags:
@@ -34,7 +34,7 @@ jobs:
 
   deploy:
     environment:
-      name: Introduction to Bioinformatics ${{ github.ref_name }}
+      name: Introduction to Bioinformatics
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
