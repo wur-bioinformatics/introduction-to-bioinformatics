@@ -85,13 +85,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        
-      - name: List releases for debugging
-        run: |
-          curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-          https://api.github.com/repos/${{ github.repository }}/releases \
-          | jq '.[] | {name, tag_name, draft, prerelease, id}'
-
 
   cleanup-releases:
     name: Cleanup Old Releases
@@ -100,13 +93,18 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Delete older releases
-        uses: dev-drprasad/delete-older-releases@v0.3.3
-        with:
-          keep_latest: 5
-          delete_tags: true
-          delete_prerelease_only: false
-          delete_draft_only: false
-          repo: ${{ github.repository }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install GitHub CLI
+        run: sudo apt-get install gh -y
+
+      - name: Authenticate GitHub CLI
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
+
+      - name: Delete older releases and tags (keep latest 5)
+        run: |
+          gh release list --limit 100 | sort -r -k3 | tail -n +6 | while read -r tag name _; do
+            echo "Deleting release: $tag"
+            gh release delete "$tag" --yes
+            echo "Deleting tag: $tag"
+            git push origin --delete "$tag"
+          done
+
