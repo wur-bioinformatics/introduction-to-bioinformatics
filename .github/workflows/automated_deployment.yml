@@ -1,0 +1,152 @@
+name: Deploy reader
+
+on:
+  push:
+    branches:
+      - experimental
+
+env:
+  BASE_URL: /${{ github.event.repository.name }}
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: false
+
+jobs:
+  auto-tag:
+    name: 🏷️ Generate Version Tag
+    runs-on: ubuntu-latest
+    outputs:
+      new_tag: ${{ steps.set_tag.outputs.NEW_TAG }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+      - name: Check Bump Keyword and Tag
+        id: set_tag
+        run: |
+          COMMIT_MSG=$(git log --format=%B -n 1 HEAD)
+          BUMP=$(echo "$COMMIT_MSG" | grep -E '#major|#minor|#patch' || true)
+          if [ -z "$BUMP" ]; then
+            echo "No bump keyword found; skipping tag."
+            echo "NEW_TAG=" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          VERSION=$(git describe --abbrev=0 --tags --match="v[0-9]*" || echo "v0.0.0")
+          VNUM1=$(echo "$VERSION" | cut -d"." -f1 | sed 's/v//')
+          VNUM2=$(echo "$VERSION" | cut -d"." -f2)
+          VNUM3=$(echo "$VERSION" | cut -d"." -f3)
+
+          if echo "$COMMIT_MSG" | grep '#major'; then
+              VNUM1=$((VNUM1+1)); VNUM2=0; VNUM3=0
+          elif echo "$COMMIT_MSG" | grep '#minor'; then
+              VNUM2=$((VNUM2+1)); VNUM3=0
+          else
+              VNUM3=$((VNUM3+1))
+          fi
+
+          NEW_TAG="v$VNUM1.$VNUM2.$VNUM3"
+          git tag $NEW_TAG
+          git push origin $NEW_TAG
+          echo "NEW_TAG=$NEW_TAG" >> $GITHUB_OUTPUT
+
+  release:
+    name: 📦 Create GitHub Release
+    needs: auto-tag
+    if: needs.auto-tag.outputs.new_tag != ''
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ needs.auto-tag.outputs.new_tag }}
+          name: ${{ needs.auto-tag.outputs.new_tag }}
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  deploy:
+    name: 🌐 Deploy JupyterBook
+    needs: release
+    if: needs.auto-tag.outputs.new_tag != ''
+    environment:
+      name: Introduction to Bioinformatics
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v3
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+
+      - name: Install MyST Markdown
+        run: npm install -g mystmd
+
+      - name: Prepend Version Tag to Markdown
+        run: |
+          for file in $(find . -name "*.md"); do
+            awk -v version="${{ needs.auto-tag.outputs.new_tag }}" '
+              BEGIN { in_frontmatter = 0; inserted = 0 }
+              /^---$/ {
+                if (in_frontmatter == 0) {
+                  in_frontmatter = 1
+                } else if (in_frontmatter == 1) {
+                  in_frontmatter = 2
+                  print "---"
+                  print "\n> 📘 This content is part of version: **" version "**"
+                  inserted = 1
+                  next
+                }
+              }
+              { print }
+            ' "$file" > tmp && mv tmp "$file"
+          done
+
+      - name: Build HTML
+        run: myst build --html
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './_build/html'
+
+      - name: Deploy to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  cleanup:
+    name: 🧹 Clean Up Old Releases
+    needs: deploy
+    if: needs.auto-tag.outputs.new_tag != ''
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install GitHub CLI
+        run: sudo apt-get install gh -y
+
+      - name: Auth with GitHub CLI
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
+
+      - name: Delete Old Tags & Releases (Keep Latest 5)
+        run: |
+          gh release list --limit 100 | sort -r -k3 | tail -n +6 | while read -r tag _ _; do
+            echo "Deleting release: $tag"
+            gh release delete "$tag" --yes
+            echo "Deleting tag: $tag"
+            git push origin --delete "$tag"
+          done
