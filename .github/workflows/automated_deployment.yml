@@ -88,7 +88,20 @@ jobs:
             exit 1
           fi
 
-
+  release:
+    name: 📦 Create GitHub Release
+    needs: auto-tag
+    if: needs.auto-tag.outputs.new_tag != ''
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ needs.auto-tag.outputs.new_tag }}
+          name: ${{ needs.auto-tag.outputs.new_tag }}
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   deploy:
     name: 🌐 Deploy JupyterBook
