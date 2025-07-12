@@ -133,6 +133,8 @@ jobs:
       name: Introduction to Bioinformatics
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    env:
+      VERSION_TAG: ${{ needs.auto-tag.outputs.new_tag }}
     steps:
       - uses: actions/checkout@v4
 
@@ -149,7 +151,7 @@ jobs:
       - name: Prepend Version Tag to Markdown
         run: |
           for file in $(find . -name "*.md"); do
-            awk -v version="${{ env.NEW_TAG }}" '
+            awk -v version="$VERSION_TAG" '
               BEGIN { in_frontmatter = 0; inserted = 0 }
               /^---$/ {
                 if (in_frontmatter == 0) {
@@ -192,7 +194,7 @@ jobs:
       - name: Auth with GitHub CLI
         run: echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
 
-      - name: Delete Old Tags & Releases (Keep Latest 5)
+      - name: Delete Releases (Keep Latest 5)
         run: |
           gh release list --limit 100 | sort -r -k3 | tail -n +6 | while read -r tag _ _; do
             echo "Deleting release: $tag"
