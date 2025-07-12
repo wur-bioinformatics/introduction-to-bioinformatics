@@ -143,7 +143,7 @@ jobs:
 
       - name: Prepend Version Tag to Markdown
         run: |
-          VERSION="${{ env.VERSION_TAG }}"
+          VERSION="$VERSION_TAG"
           echo "📦 Using tag: $VERSION"
 
           for file in $(find . -name "*.md"); do
