@@ -165,6 +165,4 @@ jobs:
           gh release list --limit 100 | sort -r -k3 | tail -n +6 | while read -r tag _ _; do
             echo "Deleting release: $tag"
             gh release delete "$tag" --yes
-            echo "Deleting tag: $tag"
-            git push origin --delete "$tag"
           done
