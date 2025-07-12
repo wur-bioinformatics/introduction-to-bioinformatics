@@ -147,8 +147,11 @@ jobs:
           echo "📦 Using tag: $VERSION"
 
           for file in $(find . -name "*.md"); do
+            VERSION=$(echo "$VERSION" | tr -d '\r\n' | xargs)
+            echo "🔍 VERSION_TAG: $VERSION"
             awk -v version="$VERSION" '
               BEGIN {
+                print "DEBUG version:", version
                 in_frontmatter = 0
                 banner = ""
                 if (version ~ /^v[0-9]+\.[0-9]+\.[0-9]+$/) {
