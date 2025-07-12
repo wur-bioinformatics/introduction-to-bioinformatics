@@ -120,8 +120,9 @@ jobs:
         run: npm install -g mystmd
 
       - name: Prepend Version Tag to Markdown
-        run: |
+        env:
           VERSION="${{ needs.auto-tag.outputs.new_tag }}"
+        run: |
           echo "📦 Using tag: $VERSION"
 
           for file in $(find . -name "*.md"); do
