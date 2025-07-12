@@ -31,18 +31,18 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
 
-      - name: Check Bump Keyword and Tag
+      - name: Check Bump Keyword and Create Tag
         id: set_tag
         run: |
           COMMIT_MSG=$(git log --format=%B -n 1 HEAD)
           BUMP=$(echo "$COMMIT_MSG" | grep -E '#major|#minor|#patch' || true)
           if [ -z "$BUMP" ]; then
             echo "No bump keyword found; skipping tag."
-            echo "NEW_TAG=" >> $GITHUB_ENV
+            echo "NEW_TAG=" >> $GITHUB_OUTPUT
             exit 0
           fi
 
-          VERSION=$(git describe --abbrev=0 --tags --match="v[0-9]*" || echo "v0.0.0")
+          VERSION=$(git describe --abbrev=0 --tags --match="v[0-9]*" 2>/dev/null || echo "v0.0.0")
           VNUM1=$(echo "$VERSION" | cut -d"." -f1 | sed 's/v//')
           VNUM2=$(echo "$VERSION" | cut -d"." -f2)
           VNUM3=$(echo "$VERSION" | cut -d"." -f3)
@@ -56,9 +56,27 @@ jobs:
           fi
 
           NEW_TAG="v$VNUM1.$VNUM2.$VNUM3"
+          GIT_COMMIT=$(git rev-parse HEAD)
+          EXISTING_TAG=$(git tag --contains "$GIT_COMMIT" | grep "^v")
+
+          if [ -n "$EXISTING_TAG" ]; then
+            echo "Latest commit already tagged with $EXISTING_TAG — skipping"
+            echo "NEW_TAG=" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          if git rev-parse "$NEW_TAG" >/dev/null 2>&1; then
+            echo "Tag $NEW_TAG already exists — skipping push"
+            echo "NEW_TAG=" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          echo "NEW_TAG=$NEW_TAG" >> $GITHUB_ENV
+          echo "NEW_TAG=$NEW_TAG" >> $GITHUB_OUTPUT
+
           git tag $NEW_TAG
           git push origin $NEW_TAG
-          echo "NEW_TAG=$NEW_TAG" >> $GITHUB_OUTPUT
+
 
   release:
     name: 📦 Create GitHub Release
