@@ -79,7 +79,6 @@ jobs:
           echo "NEW_TAG=$NEW_TAG" >> $GITHUB_OUTPUT
 
           git remote set-url origin "https://x-access-token:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
-
           git tag "$NEW_TAG"
           git push origin "$NEW_TAG"
 
@@ -121,7 +120,7 @@ jobs:
 
       - name: Prepend Version Tag to Markdown
         env:
-          VERSION="${{ needs.auto-tag.outputs.new_tag }}"
+          VERSION: ${{ needs.auto-tag.outputs.new_tag }}
         run: |
           echo "📦 Using tag: $VERSION"
 
