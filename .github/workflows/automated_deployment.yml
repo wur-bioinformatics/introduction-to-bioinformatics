@@ -80,8 +80,23 @@ jobs:
           echo "NEW_TAG=$NEW_TAG" >> $GITHUB_OUTPUT
 
           git remote set-url origin "https://x-access-token:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
-          echo git remote -v
+          echo "Remote URL:"
+          git remote -v
+
+          echo "Local tags:"
+          git tag --list
+
+          echo "Remote tags:"
+          git ls-remote --tags origin | grep "$NEW_TAG"
+
           git tag "$NEW_TAG"
+
+          if [ -z "$NEW_TAG" ]; then
+            echo "🚨 NEW_TAG is empty — skipping push"
+            exit 0
+          fi
+
+          echo "🚀 Preparing to push tag: $NEW_TAG"
 
           if ! git push origin "$NEW_TAG"; then
             echo "Failed to push tag $NEW_TAG"
