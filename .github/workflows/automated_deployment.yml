@@ -38,7 +38,7 @@ jobs:
           BUMP=$(echo "$COMMIT_MSG" | grep -E '#major|#minor|#patch' || true)
           if [ -z "$BUMP" ]; then
             echo "No bump keyword found; skipping tag."
-            echo "NEW_TAG=" >> $GITHUB_OUTPUT
+            echo "NEW_TAG=" >> $GITHUB_ENV
             exit 0
           fi
 
@@ -99,7 +99,7 @@ jobs:
       - name: Prepend Version Tag to Markdown
         run: |
           for file in $(find . -name "*.md"); do
-            awk -v version="${{ needs.auto-tag.outputs.new_tag }}" '
+            awk -v version="${{ env.NEW_TAG }}" '
               BEGIN { in_frontmatter = 0; inserted = 0 }
               /^---$/ {
                 if (in_frontmatter == 0) {
