@@ -65,8 +65,8 @@ jobs:
             exit 0
           fi
 
-          if git rev-parse "$NEW_TAG" >/dev/null 2>&1; then
-            echo "Tag $NEW_TAG already exists — skipping push"
+          if git ls-remote --tags origin | grep -q "refs/tags/$NEW_TAG$"; then
+            echo "Tag $NEW_TAG already exists remotely — skipping tag push"
             echo "NEW_TAG=" >> $GITHUB_OUTPUT
             exit 0
           fi
@@ -74,8 +74,9 @@ jobs:
           echo "NEW_TAG=$NEW_TAG" >> $GITHUB_ENV
           echo "NEW_TAG=$NEW_TAG" >> $GITHUB_OUTPUT
 
-          git tag $NEW_TAG
-          git push origin $NEW_TAG
+          git tag "$NEW_TAG"
+          git push origin "$NEW_TAG"
+
 
 
   release:
