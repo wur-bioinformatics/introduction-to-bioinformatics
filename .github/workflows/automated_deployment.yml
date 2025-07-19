@@ -126,7 +126,8 @@ jobs:
                   type = (parts[2] == "0" && parts[3] == "0") ? "Major" :
                          (parts[3] == "0") ? "Minor" : "Patch"
                   banner = "> 📘 This content is part of version: **" version "** (" type " release)" "\n" \
-                           "\n> ⚠️ This is a pre-1.0 version and may be subject to breaking changes."
+                  if (version ~ /^v0\./) {
+                    banner = banner "\n> ⚠️ This is a pre-1.0 version and may be subject to breaking changes."
                   }
                 }
               }
