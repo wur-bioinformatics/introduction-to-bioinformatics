@@ -22,7 +22,7 @@ jobs:
     name: 🏷️ Generate Version Tag
     runs-on: ubuntu-latest
     outputs:
-      new_tag: ${{ steps.set_tag.outputs.NEW_TAG }}
+      new_tag: ${{ steps.tag_output.outputs.NEW_TAG }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -34,8 +34,8 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
 
-      - name: Check Bump Keyword and Create Tag
-        id: set_tag
+      - name: Determine and Create Tag
+        id: create_tag
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
@@ -44,7 +44,7 @@ jobs:
           BUMP=$(echo "$COMMIT_MSG" | grep -E '#major|#minor|#patch' || true)
 
           if [ -z "$BUMP" ]; then
-            echo "NEW_TAG=" >> $GITHUB_OUTPUT
+            echo "NEW_TAG=" >> $GITHUB_ENV
             exit 0
           fi
 
@@ -62,25 +62,25 @@ jobs:
           fi
 
           NEW_TAG="v$VNUM1.$VNUM2.$VNUM3"
-          GIT_COMMIT=$(git rev-parse HEAD)
+          echo "NEW_TAG=$NEW_TAG" >> $GITHUB_ENV
 
+          GIT_COMMIT=$(git rev-parse HEAD)
           EXISTING_TAG=$(git tag --contains "$GIT_COMMIT" | grep "^v" || true)
           if [ -n "$EXISTING_TAG" ]; then
-            echo "NEW_TAG=" >> $GITHUB_OUTPUT
             exit 0
           fi
 
           if git ls-remote --tags origin | grep -q "refs/tags/$NEW_TAG$"; then
-            echo "NEW_TAG=" >> $GITHUB_OUTPUT
             exit 0
           fi
-
-          echo "NEW_TAG=$NEW_TAG" >> $GITHUB_ENV
-          echo "NEW_TAG=$NEW_TAG" >> $GITHUB_OUTPUT
 
           git remote set-url origin "https://x-access-token:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
           git tag "$NEW_TAG"
           git push origin "$NEW_TAG"
+
+      - name: Set Output
+        id: tag_output
+        run: echo "NEW_TAG=${{ env.NEW_TAG }}" >> $GITHUB_OUTPUT
 
   release:
     name: 📦 Create GitHub Release
