@@ -98,7 +98,7 @@ jobs:
 
   deploy:
     name: 🌐 Deploy JupyterBook
-    needs: release
+    needs: [auto-tag, release]
     if: needs.auto-tag.outputs.new_tag != ''
     environment:
       name: Introduction to Bioinformatics
