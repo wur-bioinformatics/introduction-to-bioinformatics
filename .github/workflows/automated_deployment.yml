@@ -119,13 +119,12 @@ jobs:
         run: npm install -g mystmd
 
       - name: Prepend Version Tag to Markdown
-        env:
-          VERSION_TAG: ${{ needs.auto-tag.outputs.new_tag }}
         run: |
-          echo "📦 Using tag: $VERSION_TAG"
+          VERSION="${{ needs.auto-tag.outputs.new_tag }}"
+          echo "📦 Using tag: $VERSION"
 
           for file in $(find . -name "*.md"); do
-            CLEANED_VERSION=$(echo "$VERSION_TAG" | tr -d '\r\n' | xargs)
+            CLEANED_VERSION=$(echo "$VERSION" | tr -d '\r\n' | xargs)
             echo "🔍 VERSION_TAG: $CLEANED_VERSION"
             awk -v version="$CLEANED_VERSION" '
               BEGIN {
