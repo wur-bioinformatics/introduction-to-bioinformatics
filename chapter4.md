@@ -70,7 +70,7 @@ Whilst a cheaper and more scalable alternative to experimental 3D structure dete
 
 ## Secondary protein structure prediction
 Proteins consist of several locally defined secondary structure elements of which alpha helices (α-helices) and beta strands/sheets (β-strands/sheets) are the most commonly occurring ones.
-Please note here that a β-strand refers to one side of the β-sheet, where two strands come together to form the sheet structure (as we have learned in [chapter 1](Week1_secondary_structure)).
+Please note here that a β-strand refers to one side of the β-sheet, where two strands come together to form the sheet structure (as we have learned in [chapter 1](chapter1_secondary_structure)).
 In this section, we will cover how to assign these two secondary structure elements using 3D protein structures, and how to predict them based on sequence data.
 Furthermore, we will cover the prediction of two biologically relevant "special cases" of secondary structure elements: transmembrane sections and signaling peptides.
 
