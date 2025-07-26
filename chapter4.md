@@ -6,9 +6,13 @@ authors:
 ---
 
 :::{important} Learning outcomes
-- 1
-- 2
-- 3 
+In this chapter, you will learn approaches for protein structure prediction from amino acid sequences.
+
+- 1 After studying this chapter, you are excepted to understand the protein sequence to structure paradigm.
+- 2 You should be able to discuss the relevance of predicting biomolecular structures.
+- 3 List and explain the main approaches to predict secondary and tertiary protein structure, as well as transmembrane and signaling peptide sequences.
+- 4 Combining the theory of this chapter with this week's practical, you should be able to apply several current methods for predicting secondary structure elements (NetSurfP3.0), including transmembrane (DeepTMHMM) and signal peptides (SignalP), and tertiary structure (AlphaFold-PSD, SWISS-Model, Foldseek), and assess the confidence in their predicted results.
+- 5 Finally, based on the above, given a sequence, you should be able to select a (combination of) method(s) to derive structure and function and analyze the results including their quality.
 :::
 
 ## Protein structure and function
