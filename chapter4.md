@@ -1028,15 +1028,6 @@ We encourage you to discuss your results with fellow students and the TAs and te
 Oftentimes, they may have found different but complementary information, and together you will be able to paint a more complete picture of the protein families.
 :::::
 
-## Glossary
-
-:::{glossary}
-3D structure
-: protein structure
-
-
-:::
-
 ## References
 
 ```{bibliography}
