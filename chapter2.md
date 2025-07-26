@@ -24,8 +24,8 @@ By analyzing DNA and protein sequences, researchers can annotate genes in new ge
 It is important to notice that nature tends to stick with what works, rather than reinventing the wheel for each species.
 
 Organisms evolve from ancestors and accumulate mutations.
-Here we deal with __small-scale__ mutations, that affect a few characters: substitutions (see also [Chapter 1](Week1_substitutions)) and small insertions and deletions ({numref}`mutations`).
-Later in the book, we will also look at [large-scale genome variations](Week5_large-scale_genome_variation).
+Here we deal with __small-scale__ mutations, that affect a few characters: substitutions (see also [Chapter 1](#Week1_substitutions)) and small insertions and deletions ({numref}`mutations`).
+Later in the book, we will also look at [large-scale genome variations](#Week5_large-scale_genome_variation).
 
 :::{figure} images/chapter2/mutations.png
 :alt: Types of mutations
@@ -534,7 +534,7 @@ By going through the guide tree, this alignment strategy _progresses_ to the fin
 ```{admonition} Box 2.3: Constructing a guide tree
 :class: tip
 :name: chapter2_guidetree
-The guide tree that is used by the progressive alignment strategy is typically created with a clustering algorithm that takes as input all pairwise distances between sequences (see [Chapter 3](chapter3_neighbor_joining)).
+The guide tree that is used by the progressive alignment strategy is typically created with a clustering algorithm that takes as input all pairwise distances between sequences (see [Chapter 3](#chapter3_neighbor_joining)).
 Obtaining these pairwise distances can be done through, e.g., local alignment scores, but another common approach is to count the number of subsequences of length $k$ (also known as $k$-mers) that are present in both sequences.
 The downside of this k-mer based strategy is that it provides a crude distance measure (and is therefore not very accurate), the benefit is that it is very fast.
 

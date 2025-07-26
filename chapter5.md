@@ -811,7 +811,7 @@ pieces (i.e., longer contigs), we can also understand more about the long
 distance regulatory elements that play a role in regulation of gene
 expression ({numref}`Pax6_locus`).
 
-:::{figure} images/chapter5/Pax6_operon.jpg
+:::{figure} images/chapter5/PAX6_operon.jpg
 :alt: PAX6 locus
 :align: center
 :name: Pax6_locus

@@ -166,7 +166,7 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 :::
 
 In subsequent decades, several statistics-based methods were developed that improved sequence-based predictions of secondary structure elements.
-They, for example, started to include information of multiple sequence alignments (MSA – a concept introduced in [Chapter 2](chapter2_multiple_sequence_alignment) and used in [Chapter 3](#chapter3)) including residue conservation: such approaches first matched the query sequence to database sequences with known 3D structures and assigned secondary structure elements.
+They, for example, started to include information of multiple sequence alignments (MSA – a concept introduced in [Chapter 2](#chapter2_multiple_sequence_alignment) and used in [Chapter 3](#chapter3)) including residue conservation: such approaches first matched the query sequence to database sequences with known 3D structures and assigned secondary structure elements.
 Then, using the best matching sequences, the secondary structure state of amino acid residues in the query sequence stretch are inferred by averaging the states from the best matching sequences found, further adapted using additional information such as the conservedness of the residue.
 An example of such an approach is Zpred.
 In general, the use of multiple sequences and additional information about the amino acid residue’s physicochemical properties and evolutionary conservation greatly enhanced the prediction performance.
@@ -508,8 +508,8 @@ However, it was not built from scratch: it heavily builds on previously develope
 The most recent AlphaFold implementation can be summarized in three key modules that link to previous concepts and knowledge in this reader. These three modules will be explained below.
 
 The first module processes the protein sequences into so-called numeric "representations" that can be used as input for the machine learning model.
-To create these representations, first a database search is performed ([Chapter 2](chapter2_sequence_search)) to find the most suitable sequences based on similarity.
-Following that, two representations are created (i.e., the upper and lower path in {numref}`alphafold_approach`): a multiple sequence alignment (MSA – a concept introduced and used in [Chapter 2](chapter2_multiple_sequence_alignment) and [Chapter 3](#chapter3)), which captures sequence variation; and a representation of how likely all residues interact with each other (i.e., that are close to each other in the 3D structure), in the form of a contact map.
+To create these representations, first a database search is performed ([Chapter 2](#chapter2_sequence_search)) to find the most suitable sequences based on similarity.
+Following that, two representations are created (i.e., the upper and lower path in {numref}`alphafold_approach`): a multiple sequence alignment (MSA – a concept introduced and used in [Chapter 2](#chapter2_multiple_sequence_alignment) and [Chapter 3](#chapter3)), which captures sequence variation; and a representation of how likely all residues interact with each other (i.e., that are close to each other in the 3D structure), in the form of a contact map.
 The database search is also used to find if there are any suitable "templates" in the PDB database.
 Up to four top templates can be chosen to serve as a starting position for the prediction models.
 Please note that this is the first step in homology modelling as well, and that AlphaFold can make "good" predictions on a good quality multiple sequence alignment alone; hence, there is no need for templates.
