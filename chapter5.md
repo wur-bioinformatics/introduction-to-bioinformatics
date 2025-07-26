@@ -974,7 +974,7 @@ Credits: [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/) {cite}`BRCA_al
 
 ---
 
-(Week5_large-scale_genome_variation)=
+(chapter5_large-scale_genome_variation)=
 
 #### Large-scale genome variation
 

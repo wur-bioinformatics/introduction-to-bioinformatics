@@ -24,8 +24,8 @@ By analyzing DNA and protein sequences, researchers can annotate genes in new ge
 It is important to notice that nature tends to stick with what works, rather than reinventing the wheel for each species.
 
 Organisms evolve from ancestors and accumulate mutations.
-Here we deal with __small-scale__ mutations, that affect a few characters: substitutions (see also [Chapter 1](#Week1_substitutions)) and small insertions and deletions ({numref}`mutations`).
-Later in the book, we will also look at [large-scale genome variations](#Week5_large-scale_genome_variation).
+Here we deal with __small-scale__ mutations, that affect a few characters: substitutions (see also [Chapter 1](#chapter1_substitutions)) and small insertions and deletions ({numref}`mutations`).
+Later in the book, we will also look at [large-scale genome variations](#chapter5_large-scale_genome_variation).
 
 :::{figure} images/chapter2/mutations.png
 :alt: Types of mutations
