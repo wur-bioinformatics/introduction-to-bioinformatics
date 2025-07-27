@@ -236,7 +236,7 @@ The entries in a PAM matrix denote the substitution probabilities of amino acids
 For example, PAM1 represents one substitution per 100 amino acid residues and is thus appropriate for very closely related sequences.
 A commonly used matrix is PAM250, which means that 250 mutations happened over 100 residues; that is, many residues have been affected by more than one mutation.
 
-:::{figure} images/chapter2/submat.svg
+:::{figure} images/chapter2/submat.jpg
 :alt: Example calculation for identity and similarity
 :width: 80%
 :name: submat
@@ -648,7 +648,6 @@ Note that the hidden states are generally unknown; thus, determining the relevan
 Efficient algorithms for determining the optimal path through the HMM graph exist, but are outside of the scope of this book.
 Also, we do not expect that you can perform these calculation by hand.
 ```
-
 
 ```{admonition} Sequence search with MSAs
 :class: important
