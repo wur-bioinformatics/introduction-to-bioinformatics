@@ -1,285 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:xhtml="http://www.w3.org/1999/xhtml"
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   inkscape:export-ydpi="400"
-   inkscape:export-xdpi="400"
-   inkscape:export-filename="/Users/akupczok/Desktop/hmm.png"
-   inkscape:version="1.0 (4035a4f, 2020-05-01)"
+   inkscape:export-ydpi="200"
+   inkscape:export-xdpi="200"
+   inkscape:export-filename="hmm.jpg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
    sodipodi:docname="hmm.svg"
    id="svg664"
-   content="&lt;mxfile host=&quot;app.diagrams.net&quot; modified=&quot;2024-07-19T13:13:24.371Z&quot; agent=&quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:127.0) Gecko/20100101 Firefox/127.0&quot; etag=&quot;P_PJlGlTMbDX-j1Tkc7f&quot; version=&quot;24.7.1&quot; type=&quot;device&quot;&gt;
-  &lt;diagram name=&quot;Page-1&quot; id=&quot;tSeEg2C6BEcwPeMNgLwE&quot;&gt;
-    &lt;mxGraphModel dx=&quot;933&quot; dy=&quot;580&quot; grid=&quot;0&quot; gridSize=&quot;10&quot; guides=&quot;1&quot; tooltips=&quot;1&quot; connect=&quot;1&quot; arrows=&quot;1&quot; fold=&quot;1&quot; page=&quot;1&quot; pageScale=&quot;1&quot; pageWidth=&quot;700&quot; pageHeight=&quot;500&quot; math=&quot;0&quot; shadow=&quot;0&quot;&gt;
-      &lt;root&gt;
-        &lt;mxCell id=&quot;0&quot; /&gt;
-        &lt;mxCell id=&quot;1&quot; parent=&quot;0&quot; /&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-5&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;dI5EF0vsMt2n0EolOHRH-1&quot; target=&quot;dI5EF0vsMt2n0EolOHRH-2&quot;&gt;
-          &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-1&quot; value=&quot;&amp;lt;div&amp;gt;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot; data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot;&amp;gt;A&amp;lt;span style=&amp;quot;white-space: pre;&amp;quot;&amp;gt;&amp;#x9;&amp;lt;/span&amp;gt;0.1&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot; data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot;&amp;gt;C&amp;lt;span style=&amp;quot;white-space: pre;&amp;quot;&amp;gt;&amp;#x9;&amp;lt;/span&amp;gt;0.2&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;G&amp;lt;span style=&amp;quot;white-space: pre;&amp;quot;&amp;gt;&amp;#x9;&amp;lt;/span&amp;gt;0.6&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;T&amp;lt;span style=&amp;quot;white-space: pre;&amp;quot;&amp;gt;&amp;#x9;&amp;lt;/span&amp;gt;0.1&amp;lt;br&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&quot; style=&quot;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=3;opacity=80;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;147&quot; y=&quot;255&quot; width=&quot;80&quot; height=&quot;80&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-6&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;dI5EF0vsMt2n0EolOHRH-2&quot; target=&quot;dI5EF0vsMt2n0EolOHRH-3&quot;&gt;
-          &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-2&quot; value=&quot;&amp;lt;div&amp;gt;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot; data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot;&amp;gt;A&amp;lt;span style=&amp;quot;white-space: pre;&amp;quot;&amp;gt;&amp;#x9;&amp;lt;/span&amp;gt;0.7&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;C&amp;lt;span style=&amp;quot;white-space: pre;&amp;quot;&amp;gt;&amp;#x9;&amp;lt;/span&amp;gt;0.1&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;G&amp;lt;span style=&amp;quot;white-space: pre;&amp;quot;&amp;gt;&amp;#x9;&amp;lt;/span&amp;gt;0.1&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;T&amp;lt;span style=&amp;quot;white-space: pre;&amp;quot;&amp;gt;&amp;#x9;&amp;lt;/span&amp;gt;0.1&amp;lt;br&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&quot; style=&quot;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=3;opacity=80;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;307&quot; y=&quot;255&quot; width=&quot;80&quot; height=&quot;80&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-3&quot; value=&quot;&amp;lt;div&amp;gt;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot; data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot;&amp;gt;A&amp;lt;span style=&amp;quot;white-space: pre;&amp;quot;&amp;gt;&amp;#x9;&amp;lt;/span&amp;gt;0.1&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;C&amp;lt;span style=&amp;quot;white-space: pre;&amp;quot;&amp;gt;&amp;#x9;&amp;lt;/span&amp;gt;0.1&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;G&amp;lt;span style=&amp;quot;white-space: pre;&amp;quot;&amp;gt;&amp;#x9;&amp;lt;/span&amp;gt;0.4&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;T&amp;lt;span style=&amp;quot;white-space: pre;&amp;quot;&amp;gt;&amp;#x9;&amp;lt;/span&amp;gt;0.4&amp;lt;br&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&quot; style=&quot;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=3;opacity=80;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;467&quot; y=&quot;255&quot; width=&quot;80&quot; height=&quot;80&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-7&quot; value=&quot;&amp;lt;div&amp;gt;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot; data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot;&amp;gt;ACGT&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.25&amp;lt;br&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&quot; style=&quot;rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=3;opacity=80;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;147&quot; y=&quot;115&quot; width=&quot;80&quot; height=&quot;80&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-8&quot; value=&quot;&amp;lt;div&amp;gt;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot; data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot;&amp;gt;ACGT&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot; data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot;&amp;gt;0.25&amp;lt;/font&amp;gt;&amp;lt;font face=&amp;quot;9ip9ZgYU6Wx63PDGPGhh&amp;quot; data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Space+mono&amp;quot;&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&quot; style=&quot;rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=3;opacity=80;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;307&quot; y=&quot;115&quot; width=&quot;80&quot; height=&quot;80&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-9&quot; value=&quot;&amp;lt;div align=&amp;quot;center&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot; data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot;&amp;gt;ACGT&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div align=&amp;quot;center&amp;quot;&amp;gt;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.25&amp;lt;br&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&quot; style=&quot;rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=3;opacity=80;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;467&quot; y=&quot;115&quot; width=&quot;80&quot; height=&quot;80&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-10&quot; value=&quot;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;1.0&amp;lt;/font&amp;gt;&quot; style=&quot;ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=3;opacity=80;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;157&quot; y=&quot;395&quot; width=&quot;60&quot; height=&quot;60&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-14&quot; value=&quot;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;Start&amp;lt;/font&amp;gt;&quot; style=&quot;rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#000000;strokeWidth=2;perimeterSpacing=0;opacity=60;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;27&quot; y=&quot;275&quot; width=&quot;40&quot; height=&quot;40&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-15&quot; value=&quot;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;End&amp;lt;/font&amp;gt;&quot; style=&quot;rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;strokeWidth=2;opacity=80;shadow=0;glass=0;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;627&quot; y=&quot;275&quot; width=&quot;40&quot; height=&quot;40&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-18&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;exitX=0.956;exitY=0.034;exitDx=0;exitDy=0;exitPerimeter=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;dI5EF0vsMt2n0EolOHRH-14&quot; target=&quot;dI5EF0vsMt2n0EolOHRH-7&quot;&gt;
-          &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;
-            &lt;mxPoint x=&quot;67&quot; y=&quot;275&quot; as=&quot;sourcePoint&quot; /&gt;
-            &lt;mxPoint x=&quot;117&quot; y=&quot;225&quot; as=&quot;targetPoint&quot; /&gt;
-          &lt;/mxGeometry&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-19&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;dI5EF0vsMt2n0EolOHRH-14&quot; target=&quot;dI5EF0vsMt2n0EolOHRH-1&quot;&gt;
-          &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;
-            &lt;mxPoint x=&quot;77&quot; y=&quot;285&quot; as=&quot;sourcePoint&quot; /&gt;
-            &lt;mxPoint x=&quot;177&quot; y=&quot;185&quot; as=&quot;targetPoint&quot; /&gt;
-          &lt;/mxGeometry&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-20&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;exitX=0.955;exitY=0.955;exitDx=0;exitDy=0;exitPerimeter=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;dI5EF0vsMt2n0EolOHRH-14&quot; target=&quot;dI5EF0vsMt2n0EolOHRH-10&quot;&gt;
-          &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;
-            &lt;mxPoint x=&quot;67&quot; y=&quot;315&quot; as=&quot;sourcePoint&quot; /&gt;
-            &lt;mxPoint x=&quot;157&quot; y=&quot;305&quot; as=&quot;targetPoint&quot; /&gt;
-          &lt;/mxGeometry&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-21&quot; value=&quot;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;1.0&amp;lt;/font&amp;gt;&quot; style=&quot;ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=3;fillColor=#f8cecc;strokeColor=#b85450;opacity=80;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;317&quot; y=&quot;395&quot; width=&quot;60&quot; height=&quot;60&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-22&quot; value=&quot;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;1.0&amp;lt;/font&amp;gt;&quot; style=&quot;ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=3;opacity=80;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;477&quot; y=&quot;395&quot; width=&quot;60&quot; height=&quot;60&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-23&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; target=&quot;dI5EF0vsMt2n0EolOHRH-21&quot;&gt;
-          &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;
-            &lt;mxPoint x=&quot;217&quot; y=&quot;424.5&quot; as=&quot;sourcePoint&quot; /&gt;
-            &lt;mxPoint x=&quot;297&quot; y=&quot;424.5&quot; as=&quot;targetPoint&quot; /&gt;
-          &lt;/mxGeometry&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-24&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; target=&quot;dI5EF0vsMt2n0EolOHRH-22&quot;&gt;
-          &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;
-            &lt;mxPoint x=&quot;377&quot; y=&quot;424.5&quot; as=&quot;sourcePoint&quot; /&gt;
-            &lt;mxPoint x=&quot;457&quot; y=&quot;424.5&quot; as=&quot;targetPoint&quot; /&gt;
-          &lt;/mxGeometry&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-25&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;dI5EF0vsMt2n0EolOHRH-10&quot; target=&quot;dI5EF0vsMt2n0EolOHRH-2&quot;&gt;
-          &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;
-            &lt;mxPoint x=&quot;207&quot; y=&quot;405&quot; as=&quot;sourcePoint&quot; /&gt;
-            &lt;mxPoint x=&quot;307&quot; y=&quot;305&quot; as=&quot;targetPoint&quot; /&gt;
-          &lt;/mxGeometry&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-26&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;
-            &lt;mxPoint x=&quot;368&quot; y=&quot;404&quot; as=&quot;sourcePoint&quot; /&gt;
-            &lt;mxPoint x=&quot;467&quot; y=&quot;315&quot; as=&quot;targetPoint&quot; /&gt;
-          &lt;/mxGeometry&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-27&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0.041;entryY=0.962;entryDx=0;entryDy=0;entryPerimeter=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; target=&quot;dI5EF0vsMt2n0EolOHRH-15&quot;&gt;
-          &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;
-            &lt;mxPoint x=&quot;528&quot; y=&quot;404&quot; as=&quot;sourcePoint&quot; /&gt;
-            &lt;mxPoint x=&quot;627&quot; y=&quot;315&quot; as=&quot;targetPoint&quot; /&gt;
-          &lt;/mxGeometry&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-28&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;dI5EF0vsMt2n0EolOHRH-1&quot; target=&quot;dI5EF0vsMt2n0EolOHRH-7&quot;&gt;
-          &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;
-            &lt;mxPoint x=&quot;388&quot; y=&quot;424&quot; as=&quot;sourcePoint&quot; /&gt;
-            &lt;mxPoint x=&quot;487&quot; y=&quot;335&quot; as=&quot;targetPoint&quot; /&gt;
-          &lt;/mxGeometry&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-29&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;
-            &lt;mxPoint x=&quot;346.5&quot; y=&quot;255&quot; as=&quot;sourcePoint&quot; /&gt;
-            &lt;mxPoint x=&quot;346.5&quot; y=&quot;195&quot; as=&quot;targetPoint&quot; /&gt;
-          &lt;/mxGeometry&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-30&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;
-            &lt;mxPoint x=&quot;506.5&quot; y=&quot;255&quot; as=&quot;sourcePoint&quot; /&gt;
-            &lt;mxPoint x=&quot;506.5&quot; y=&quot;195&quot; as=&quot;targetPoint&quot; /&gt;
-          &lt;/mxGeometry&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-31&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;&gt;
-            &lt;mxPoint x=&quot;547&quot; y=&quot;294.5&quot; as=&quot;sourcePoint&quot; /&gt;
-            &lt;mxPoint x=&quot;627&quot; y=&quot;294.5&quot; as=&quot;targetPoint&quot; /&gt;
-            &lt;Array as=&quot;points&quot;&gt;
-              &lt;mxPoint x=&quot;577&quot; y=&quot;294.5&quot; /&gt;
-              &lt;mxPoint x=&quot;577&quot; y=&quot;294.5&quot; /&gt;
-            &lt;/Array&gt;
-          &lt;/mxGeometry&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-32&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;dI5EF0vsMt2n0EolOHRH-1&quot; target=&quot;dI5EF0vsMt2n0EolOHRH-21&quot;&gt;
-          &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;
-            &lt;mxPoint x=&quot;227&quot; y=&quot;335&quot; as=&quot;sourcePoint&quot; /&gt;
-            &lt;mxPoint x=&quot;325&quot; y=&quot;425&quot; as=&quot;targetPoint&quot; /&gt;
-          &lt;/mxGeometry&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-33&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;exitX=1.005;exitY=0.773;exitDx=0;exitDy=0;exitPerimeter=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;dI5EF0vsMt2n0EolOHRH-2&quot;&gt;
-          &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;
-            &lt;mxPoint x=&quot;387&quot; y=&quot;325&quot; as=&quot;sourcePoint&quot; /&gt;
-            &lt;mxPoint x=&quot;482&quot; y=&quot;408&quot; as=&quot;targetPoint&quot; /&gt;
-          &lt;/mxGeometry&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-35&quot; value=&quot;&quot; style=&quot;curved=1;endArrow=classic;html=1;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;dI5EF0vsMt2n0EolOHRH-7&quot; target=&quot;dI5EF0vsMt2n0EolOHRH-7&quot;&gt;
-          &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;
-            &lt;mxPoint x=&quot;207&quot; y=&quot;175&quot; as=&quot;sourcePoint&quot; /&gt;
-            &lt;mxPoint x=&quot;257&quot; y=&quot;125&quot; as=&quot;targetPoint&quot; /&gt;
-            &lt;Array as=&quot;points&quot;&gt;
-              &lt;mxPoint x=&quot;147&quot; y=&quot;105&quot; /&gt;
-              &lt;mxPoint x=&quot;157&quot; y=&quot;65&quot; /&gt;
-              &lt;mxPoint x=&quot;187&quot; y=&quot;55&quot; /&gt;
-              &lt;mxPoint x=&quot;217&quot; y=&quot;65&quot; /&gt;
-              &lt;mxPoint x=&quot;227&quot; y=&quot;105&quot; /&gt;
-            &lt;/Array&gt;
-          &lt;/mxGeometry&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-37&quot; value=&quot;&quot; style=&quot;curved=1;endArrow=classic;html=1;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;
-            &lt;mxPoint x=&quot;327&quot; y=&quot;135&quot; as=&quot;sourcePoint&quot; /&gt;
-            &lt;mxPoint x=&quot;367&quot; y=&quot;135&quot; as=&quot;targetPoint&quot; /&gt;
-            &lt;Array as=&quot;points&quot;&gt;
-              &lt;mxPoint x=&quot;307&quot; y=&quot;105&quot; /&gt;
-              &lt;mxPoint x=&quot;317&quot; y=&quot;65&quot; /&gt;
-              &lt;mxPoint x=&quot;347&quot; y=&quot;55&quot; /&gt;
-              &lt;mxPoint x=&quot;377&quot; y=&quot;65&quot; /&gt;
-              &lt;mxPoint x=&quot;387&quot; y=&quot;105&quot; /&gt;
-            &lt;/Array&gt;
-          &lt;/mxGeometry&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-38&quot; value=&quot;&quot; style=&quot;curved=1;endArrow=classic;html=1;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;
-            &lt;mxPoint x=&quot;487&quot; y=&quot;135&quot; as=&quot;sourcePoint&quot; /&gt;
-            &lt;mxPoint x=&quot;527&quot; y=&quot;135&quot; as=&quot;targetPoint&quot; /&gt;
-            &lt;Array as=&quot;points&quot;&gt;
-              &lt;mxPoint x=&quot;467&quot; y=&quot;105&quot; /&gt;
-              &lt;mxPoint x=&quot;477&quot; y=&quot;65&quot; /&gt;
-              &lt;mxPoint x=&quot;507&quot; y=&quot;55&quot; /&gt;
-              &lt;mxPoint x=&quot;537&quot; y=&quot;65&quot; /&gt;
-              &lt;mxPoint x=&quot;547&quot; y=&quot;105&quot; /&gt;
-            &lt;/Array&gt;
-          &lt;/mxGeometry&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-39&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;dI5EF0vsMt2n0EolOHRH-7&quot; target=&quot;dI5EF0vsMt2n0EolOHRH-2&quot;&gt;
-          &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;
-            &lt;mxPoint x=&quot;209&quot; y=&quot;175&quot; as=&quot;sourcePoint&quot; /&gt;
-            &lt;mxPoint x=&quot;307&quot; y=&quot;265&quot; as=&quot;targetPoint&quot; /&gt;
-          &lt;/mxGeometry&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-40&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;
-            &lt;mxPoint x=&quot;367&quot; y=&quot;175&quot; as=&quot;sourcePoint&quot; /&gt;
-            &lt;mxPoint x=&quot;467&quot; y=&quot;275&quot; as=&quot;targetPoint&quot; /&gt;
-          &lt;/mxGeometry&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-41&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;entryX=0.069;entryY=0.039;entryDx=0;entryDy=0;entryPerimeter=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; target=&quot;dI5EF0vsMt2n0EolOHRH-15&quot;&gt;
-          &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;
-            &lt;mxPoint x=&quot;527&quot; y=&quot;175&quot; as=&quot;sourcePoint&quot; /&gt;
-            &lt;mxPoint x=&quot;627&quot; y=&quot;275&quot; as=&quot;targetPoint&quot; /&gt;
-          &lt;/mxGeometry&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-42&quot; value=&quot;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.8&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;87&quot; y=&quot;273&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-45&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.4&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;247&quot; y=&quot;273&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-46&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.3&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;407&quot; y=&quot;273&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-47&quot; value=&quot;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.8&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;567&quot; y=&quot;273&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-48&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.1&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;87&quot; y=&quot;205&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-49&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.1&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;87&quot; y=&quot;355&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-50&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.2&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;247&quot; y=&quot;205&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-51&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.9&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;407&quot; y=&quot;205&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-52&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.9&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;567&quot; y=&quot;205&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-53&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.1&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;177&quot; y=&quot;215&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-54&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.3&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;337&quot; y=&quot;215&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-55&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.2&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;497&quot; y=&quot;215&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-56&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.9&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=12;fontColor=default;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;217&quot; y=&quot;378&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-57&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.1&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;247&quot; y=&quot;403&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-58&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.2&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;407&quot; y=&quot;403&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-60&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.5&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;282&quot; y=&quot;355&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-61&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.4&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;438&quot; y=&quot;355&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-62&quot; value=&quot;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.8&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=12;fontColor=default;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;377&quot; y=&quot;378&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-63&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;1.0&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=12;fontColor=default;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;537&quot; y=&quot;378&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-64&quot; value=&quot;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.8&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;167&quot; y=&quot;35&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-65&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.1&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;327&quot; y=&quot;35&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-        &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-66&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.1&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;
-          &lt;mxGeometry x=&quot;487&quot; y=&quot;35&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;
-        &lt;/mxCell&gt;
-      &lt;/root&gt;
-    &lt;/mxGraphModel&gt;
-  &lt;/diagram&gt;
-&lt;/mxfile&gt;
-"
+   content="&lt;mxfile host=&quot;app.diagrams.net&quot; modified=&quot;2024-07-19T13:13:24.371Z&quot; agent=&quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:127.0) Gecko/20100101 Firefox/127.0&quot; etag=&quot;P_PJlGlTMbDX-j1Tkc7f&quot; version=&quot;24.7.1&quot; type=&quot;device&quot;&gt;   &lt;diagram name=&quot;Page-1&quot; id=&quot;tSeEg2C6BEcwPeMNgLwE&quot;&gt;     &lt;mxGraphModel dx=&quot;933&quot; dy=&quot;580&quot; grid=&quot;0&quot; gridSize=&quot;10&quot; guides=&quot;1&quot; tooltips=&quot;1&quot; connect=&quot;1&quot; arrows=&quot;1&quot; fold=&quot;1&quot; page=&quot;1&quot; pageScale=&quot;1&quot; pageWidth=&quot;700&quot; pageHeight=&quot;500&quot; math=&quot;0&quot; shadow=&quot;0&quot;&gt;       &lt;root&gt;         &lt;mxCell id=&quot;0&quot; /&gt;         &lt;mxCell id=&quot;1&quot; parent=&quot;0&quot; /&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-5&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;dI5EF0vsMt2n0EolOHRH-1&quot; target=&quot;dI5EF0vsMt2n0EolOHRH-2&quot;&gt;           &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-1&quot; value=&quot;&amp;lt;div&amp;gt;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot; data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot;&amp;gt;A&amp;lt;span style=&amp;quot;white-space: pre;&amp;quot;&amp;gt;&amp;#x9;&amp;lt;/span&amp;gt;0.1&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot; data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot;&amp;gt;C&amp;lt;span style=&amp;quot;white-space: pre;&amp;quot;&amp;gt;&amp;#x9;&amp;lt;/span&amp;gt;0.2&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;G&amp;lt;span style=&amp;quot;white-space: pre;&amp;quot;&amp;gt;&amp;#x9;&amp;lt;/span&amp;gt;0.6&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;T&amp;lt;span style=&amp;quot;white-space: pre;&amp;quot;&amp;gt;&amp;#x9;&amp;lt;/span&amp;gt;0.1&amp;lt;br&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&quot; style=&quot;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=3;opacity=80;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;147&quot; y=&quot;255&quot; width=&quot;80&quot; height=&quot;80&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-6&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;dI5EF0vsMt2n0EolOHRH-2&quot; target=&quot;dI5EF0vsMt2n0EolOHRH-3&quot;&gt;           &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-2&quot; value=&quot;&amp;lt;div&amp;gt;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot; data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot;&amp;gt;A&amp;lt;span style=&amp;quot;white-space: pre;&amp;quot;&amp;gt;&amp;#x9;&amp;lt;/span&amp;gt;0.7&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;C&amp;lt;span style=&amp;quot;white-space: pre;&amp;quot;&amp;gt;&amp;#x9;&amp;lt;/span&amp;gt;0.1&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;G&amp;lt;span style=&amp;quot;white-space: pre;&amp;quot;&amp;gt;&amp;#x9;&amp;lt;/span&amp;gt;0.1&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;T&amp;lt;span style=&amp;quot;white-space: pre;&amp;quot;&amp;gt;&amp;#x9;&amp;lt;/span&amp;gt;0.1&amp;lt;br&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&quot; style=&quot;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=3;opacity=80;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;307&quot; y=&quot;255&quot; width=&quot;80&quot; height=&quot;80&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-3&quot; value=&quot;&amp;lt;div&amp;gt;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot; data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot;&amp;gt;A&amp;lt;span style=&amp;quot;white-space: pre;&amp;quot;&amp;gt;&amp;#x9;&amp;lt;/span&amp;gt;0.1&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;C&amp;lt;span style=&amp;quot;white-space: pre;&amp;quot;&amp;gt;&amp;#x9;&amp;lt;/span&amp;gt;0.1&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;G&amp;lt;span style=&amp;quot;white-space: pre;&amp;quot;&amp;gt;&amp;#x9;&amp;lt;/span&amp;gt;0.4&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;T&amp;lt;span style=&amp;quot;white-space: pre;&amp;quot;&amp;gt;&amp;#x9;&amp;lt;/span&amp;gt;0.4&amp;lt;br&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&quot; style=&quot;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=3;opacity=80;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;467&quot; y=&quot;255&quot; width=&quot;80&quot; height=&quot;80&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-7&quot; value=&quot;&amp;lt;div&amp;gt;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot; data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot;&amp;gt;ACGT&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.25&amp;lt;br&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&quot; style=&quot;rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=3;opacity=80;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;147&quot; y=&quot;115&quot; width=&quot;80&quot; height=&quot;80&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-8&quot; value=&quot;&amp;lt;div&amp;gt;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot; data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot;&amp;gt;ACGT&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot; data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot;&amp;gt;0.25&amp;lt;/font&amp;gt;&amp;lt;font face=&amp;quot;9ip9ZgYU6Wx63PDGPGhh&amp;quot; data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Space+mono&amp;quot;&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&quot; style=&quot;rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=3;opacity=80;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;307&quot; y=&quot;115&quot; width=&quot;80&quot; height=&quot;80&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-9&quot; value=&quot;&amp;lt;div align=&amp;quot;center&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot; data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot;&amp;gt;ACGT&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div align=&amp;quot;center&amp;quot;&amp;gt;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.25&amp;lt;br&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&quot; style=&quot;rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=3;opacity=80;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;467&quot; y=&quot;115&quot; width=&quot;80&quot; height=&quot;80&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-10&quot; value=&quot;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;1.0&amp;lt;/font&amp;gt;&quot; style=&quot;ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=3;opacity=80;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;157&quot; y=&quot;395&quot; width=&quot;60&quot; height=&quot;60&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-14&quot; value=&quot;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;Start&amp;lt;/font&amp;gt;&quot; style=&quot;rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#000000;strokeWidth=2;perimeterSpacing=0;opacity=60;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;27&quot; y=&quot;275&quot; width=&quot;40&quot; height=&quot;40&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-15&quot; value=&quot;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;End&amp;lt;/font&amp;gt;&quot; style=&quot;rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;strokeWidth=2;opacity=80;shadow=0;glass=0;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;627&quot; y=&quot;275&quot; width=&quot;40&quot; height=&quot;40&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-18&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;exitX=0.956;exitY=0.034;exitDx=0;exitDy=0;exitPerimeter=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;dI5EF0vsMt2n0EolOHRH-14&quot; target=&quot;dI5EF0vsMt2n0EolOHRH-7&quot;&gt;           &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;             &lt;mxPoint x=&quot;67&quot; y=&quot;275&quot; as=&quot;sourcePoint&quot; /&gt;             &lt;mxPoint x=&quot;117&quot; y=&quot;225&quot; as=&quot;targetPoint&quot; /&gt;           &lt;/mxGeometry&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-19&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;dI5EF0vsMt2n0EolOHRH-14&quot; target=&quot;dI5EF0vsMt2n0EolOHRH-1&quot;&gt;           &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;             &lt;mxPoint x=&quot;77&quot; y=&quot;285&quot; as=&quot;sourcePoint&quot; /&gt;             &lt;mxPoint x=&quot;177&quot; y=&quot;185&quot; as=&quot;targetPoint&quot; /&gt;           &lt;/mxGeometry&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-20&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;exitX=0.955;exitY=0.955;exitDx=0;exitDy=0;exitPerimeter=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;dI5EF0vsMt2n0EolOHRH-14&quot; target=&quot;dI5EF0vsMt2n0EolOHRH-10&quot;&gt;           &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;             &lt;mxPoint x=&quot;67&quot; y=&quot;315&quot; as=&quot;sourcePoint&quot; /&gt;             &lt;mxPoint x=&quot;157&quot; y=&quot;305&quot; as=&quot;targetPoint&quot; /&gt;           &lt;/mxGeometry&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-21&quot; value=&quot;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;1.0&amp;lt;/font&amp;gt;&quot; style=&quot;ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=3;fillColor=#f8cecc;strokeColor=#b85450;opacity=80;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;317&quot; y=&quot;395&quot; width=&quot;60&quot; height=&quot;60&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-22&quot; value=&quot;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;1.0&amp;lt;/font&amp;gt;&quot; style=&quot;ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=3;opacity=80;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;477&quot; y=&quot;395&quot; width=&quot;60&quot; height=&quot;60&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-23&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; target=&quot;dI5EF0vsMt2n0EolOHRH-21&quot;&gt;           &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;             &lt;mxPoint x=&quot;217&quot; y=&quot;424.5&quot; as=&quot;sourcePoint&quot; /&gt;             &lt;mxPoint x=&quot;297&quot; y=&quot;424.5&quot; as=&quot;targetPoint&quot; /&gt;           &lt;/mxGeometry&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-24&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; target=&quot;dI5EF0vsMt2n0EolOHRH-22&quot;&gt;           &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;             &lt;mxPoint x=&quot;377&quot; y=&quot;424.5&quot; as=&quot;sourcePoint&quot; /&gt;             &lt;mxPoint x=&quot;457&quot; y=&quot;424.5&quot; as=&quot;targetPoint&quot; /&gt;           &lt;/mxGeometry&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-25&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;dI5EF0vsMt2n0EolOHRH-10&quot; target=&quot;dI5EF0vsMt2n0EolOHRH-2&quot;&gt;           &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;             &lt;mxPoint x=&quot;207&quot; y=&quot;405&quot; as=&quot;sourcePoint&quot; /&gt;             &lt;mxPoint x=&quot;307&quot; y=&quot;305&quot; as=&quot;targetPoint&quot; /&gt;           &lt;/mxGeometry&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-26&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;             &lt;mxPoint x=&quot;368&quot; y=&quot;404&quot; as=&quot;sourcePoint&quot; /&gt;             &lt;mxPoint x=&quot;467&quot; y=&quot;315&quot; as=&quot;targetPoint&quot; /&gt;           &lt;/mxGeometry&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-27&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0.041;entryY=0.962;entryDx=0;entryDy=0;entryPerimeter=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; target=&quot;dI5EF0vsMt2n0EolOHRH-15&quot;&gt;           &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;             &lt;mxPoint x=&quot;528&quot; y=&quot;404&quot; as=&quot;sourcePoint&quot; /&gt;             &lt;mxPoint x=&quot;627&quot; y=&quot;315&quot; as=&quot;targetPoint&quot; /&gt;           &lt;/mxGeometry&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-28&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;dI5EF0vsMt2n0EolOHRH-1&quot; target=&quot;dI5EF0vsMt2n0EolOHRH-7&quot;&gt;           &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;             &lt;mxPoint x=&quot;388&quot; y=&quot;424&quot; as=&quot;sourcePoint&quot; /&gt;             &lt;mxPoint x=&quot;487&quot; y=&quot;335&quot; as=&quot;targetPoint&quot; /&gt;           &lt;/mxGeometry&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-29&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;             &lt;mxPoint x=&quot;346.5&quot; y=&quot;255&quot; as=&quot;sourcePoint&quot; /&gt;             &lt;mxPoint x=&quot;346.5&quot; y=&quot;195&quot; as=&quot;targetPoint&quot; /&gt;           &lt;/mxGeometry&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-30&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;             &lt;mxPoint x=&quot;506.5&quot; y=&quot;255&quot; as=&quot;sourcePoint&quot; /&gt;             &lt;mxPoint x=&quot;506.5&quot; y=&quot;195&quot; as=&quot;targetPoint&quot; /&gt;           &lt;/mxGeometry&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-31&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;&gt;             &lt;mxPoint x=&quot;547&quot; y=&quot;294.5&quot; as=&quot;sourcePoint&quot; /&gt;             &lt;mxPoint x=&quot;627&quot; y=&quot;294.5&quot; as=&quot;targetPoint&quot; /&gt;             &lt;Array as=&quot;points&quot;&gt;               &lt;mxPoint x=&quot;577&quot; y=&quot;294.5&quot; /&gt;               &lt;mxPoint x=&quot;577&quot; y=&quot;294.5&quot; /&gt;             &lt;/Array&gt;           &lt;/mxGeometry&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-32&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;dI5EF0vsMt2n0EolOHRH-1&quot; target=&quot;dI5EF0vsMt2n0EolOHRH-21&quot;&gt;           &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;             &lt;mxPoint x=&quot;227&quot; y=&quot;335&quot; as=&quot;sourcePoint&quot; /&gt;             &lt;mxPoint x=&quot;325&quot; y=&quot;425&quot; as=&quot;targetPoint&quot; /&gt;           &lt;/mxGeometry&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-33&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;exitX=1.005;exitY=0.773;exitDx=0;exitDy=0;exitPerimeter=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;dI5EF0vsMt2n0EolOHRH-2&quot;&gt;           &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;             &lt;mxPoint x=&quot;387&quot; y=&quot;325&quot; as=&quot;sourcePoint&quot; /&gt;             &lt;mxPoint x=&quot;482&quot; y=&quot;408&quot; as=&quot;targetPoint&quot; /&gt;           &lt;/mxGeometry&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-35&quot; value=&quot;&quot; style=&quot;curved=1;endArrow=classic;html=1;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;dI5EF0vsMt2n0EolOHRH-7&quot; target=&quot;dI5EF0vsMt2n0EolOHRH-7&quot;&gt;           &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;             &lt;mxPoint x=&quot;207&quot; y=&quot;175&quot; as=&quot;sourcePoint&quot; /&gt;             &lt;mxPoint x=&quot;257&quot; y=&quot;125&quot; as=&quot;targetPoint&quot; /&gt;             &lt;Array as=&quot;points&quot;&gt;               &lt;mxPoint x=&quot;147&quot; y=&quot;105&quot; /&gt;               &lt;mxPoint x=&quot;157&quot; y=&quot;65&quot; /&gt;               &lt;mxPoint x=&quot;187&quot; y=&quot;55&quot; /&gt;               &lt;mxPoint x=&quot;217&quot; y=&quot;65&quot; /&gt;               &lt;mxPoint x=&quot;227&quot; y=&quot;105&quot; /&gt;             &lt;/Array&gt;           &lt;/mxGeometry&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-37&quot; value=&quot;&quot; style=&quot;curved=1;endArrow=classic;html=1;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;             &lt;mxPoint x=&quot;327&quot; y=&quot;135&quot; as=&quot;sourcePoint&quot; /&gt;             &lt;mxPoint x=&quot;367&quot; y=&quot;135&quot; as=&quot;targetPoint&quot; /&gt;             &lt;Array as=&quot;points&quot;&gt;               &lt;mxPoint x=&quot;307&quot; y=&quot;105&quot; /&gt;               &lt;mxPoint x=&quot;317&quot; y=&quot;65&quot; /&gt;               &lt;mxPoint x=&quot;347&quot; y=&quot;55&quot; /&gt;               &lt;mxPoint x=&quot;377&quot; y=&quot;65&quot; /&gt;               &lt;mxPoint x=&quot;387&quot; y=&quot;105&quot; /&gt;             &lt;/Array&gt;           &lt;/mxGeometry&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-38&quot; value=&quot;&quot; style=&quot;curved=1;endArrow=classic;html=1;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;             &lt;mxPoint x=&quot;487&quot; y=&quot;135&quot; as=&quot;sourcePoint&quot; /&gt;             &lt;mxPoint x=&quot;527&quot; y=&quot;135&quot; as=&quot;targetPoint&quot; /&gt;             &lt;Array as=&quot;points&quot;&gt;               &lt;mxPoint x=&quot;467&quot; y=&quot;105&quot; /&gt;               &lt;mxPoint x=&quot;477&quot; y=&quot;65&quot; /&gt;               &lt;mxPoint x=&quot;507&quot; y=&quot;55&quot; /&gt;               &lt;mxPoint x=&quot;537&quot; y=&quot;65&quot; /&gt;               &lt;mxPoint x=&quot;547&quot; y=&quot;105&quot; /&gt;             &lt;/Array&gt;           &lt;/mxGeometry&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-39&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;dI5EF0vsMt2n0EolOHRH-7&quot; target=&quot;dI5EF0vsMt2n0EolOHRH-2&quot;&gt;           &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;             &lt;mxPoint x=&quot;209&quot; y=&quot;175&quot; as=&quot;sourcePoint&quot; /&gt;             &lt;mxPoint x=&quot;307&quot; y=&quot;265&quot; as=&quot;targetPoint&quot; /&gt;           &lt;/mxGeometry&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-40&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;             &lt;mxPoint x=&quot;367&quot; y=&quot;175&quot; as=&quot;sourcePoint&quot; /&gt;             &lt;mxPoint x=&quot;467&quot; y=&quot;275&quot; as=&quot;targetPoint&quot; /&gt;           &lt;/mxGeometry&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-41&quot; value=&quot;&quot; style=&quot;endArrow=classic;html=1;rounded=0;entryX=0.069;entryY=0.039;entryDx=0;entryDy=0;entryPerimeter=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; target=&quot;dI5EF0vsMt2n0EolOHRH-15&quot;&gt;           &lt;mxGeometry width=&quot;50&quot; height=&quot;50&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;             &lt;mxPoint x=&quot;527&quot; y=&quot;175&quot; as=&quot;sourcePoint&quot; /&gt;             &lt;mxPoint x=&quot;627&quot; y=&quot;275&quot; as=&quot;targetPoint&quot; /&gt;           &lt;/mxGeometry&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-42&quot; value=&quot;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.8&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;87&quot; y=&quot;273&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-45&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.4&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;247&quot; y=&quot;273&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-46&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.3&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;407&quot; y=&quot;273&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-47&quot; value=&quot;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.8&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;567&quot; y=&quot;273&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-48&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.1&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;87&quot; y=&quot;205&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-49&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.1&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;87&quot; y=&quot;355&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-50&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.2&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;247&quot; y=&quot;205&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-51&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.9&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;407&quot; y=&quot;205&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-52&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.9&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;567&quot; y=&quot;205&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-53&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.1&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;177&quot; y=&quot;215&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-54&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.3&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;337&quot; y=&quot;215&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-55&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.2&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;497&quot; y=&quot;215&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-56&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.9&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=12;fontColor=default;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;217&quot; y=&quot;378&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-57&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.1&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;247&quot; y=&quot;403&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-58&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.2&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;407&quot; y=&quot;403&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-60&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.5&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;282&quot; y=&quot;355&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-61&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.4&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;438&quot; y=&quot;355&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-62&quot; value=&quot;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.8&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=12;fontColor=default;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;377&quot; y=&quot;378&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-63&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;1.0&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=12;fontColor=default;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;537&quot; y=&quot;378&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-64&quot; value=&quot;&amp;lt;font data-font-src=&amp;quot;https://fonts.googleapis.com/css?family=Inconsolata&amp;quot; face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.8&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;167&quot; y=&quot;35&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-65&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.1&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;327&quot; y=&quot;35&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;         &lt;mxCell id=&quot;dI5EF0vsMt2n0EolOHRH-66&quot; value=&quot;&amp;lt;font face=&amp;quot;Inconsolata&amp;quot;&amp;gt;0.1&amp;lt;/font&amp;gt;&quot; style=&quot;text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;           &lt;mxGeometry x=&quot;487&quot; y=&quot;35&quot; width=&quot;40&quot; height=&quot;30&quot; as=&quot;geometry&quot; /&gt;         &lt;/mxCell&gt;       &lt;/root&gt;     &lt;/mxGraphModel&gt;   &lt;/diagram&gt; &lt;/mxfile&gt; "
    viewBox="-0.5 -0.5 664.35425 421.5"
    height="421.5"
    width="664.35425"
-   version="1.1">
+   version="1.1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <metadata
      id="metadata668">
     <rdf:RDF>
@@ -288,7 +28,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -299,10 +39,10 @@
      fit-margin-top="0"
      inkscape:current-layer="g650"
      inkscape:window-maximized="0"
-     inkscape:window-y="25"
-     inkscape:window-x="46"
-     inkscape:cy="219.336"
-     inkscape:cx="288.49492"
+     inkscape:window-y="0"
+     inkscape:window-x="28"
+     inkscape:cy="220.12667"
+     inkscape:cx="288.54909"
      inkscape:zoom="1.4468942"
      showgrid="false"
      id="namedview666"
@@ -315,7 +55,10 @@
      objecttolerance="10"
      borderopacity="1"
      bordercolor="#666666"
-     pagecolor="#ffffff" />
+     pagecolor="#ffffff"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1" />
   <defs
      id="defs10" />
   <g
@@ -370,6 +113,7 @@
                              face="Inconsolata"
                              data-font-src="https://fonts.googleapis.com/css?family=Inconsolata">A<xhtml:span
    style="white-space: pre;" />
+
 0.1</xhtml:font>
                         </xhtml:div>
                         <xhtml:div>
@@ -377,6 +121,7 @@
                              face="Inconsolata"
                              data-font-src="https://fonts.googleapis.com/css?family=Inconsolata">C<xhtml:span
    style="white-space: pre;" />
+
 0.2</xhtml:font>
                         </xhtml:div>
                         <xhtml:div>
@@ -384,6 +129,7 @@
                              data-font-src="https://fonts.googleapis.com/css?family=Inconsolata"
                              face="Inconsolata">G<xhtml:span
    style="white-space: pre;" />
+
 0.6</xhtml:font>
                         </xhtml:div>
                         <xhtml:div>
@@ -391,6 +137,7 @@
                              data-font-src="https://fonts.googleapis.com/css?family=Inconsolata"
                              face="Inconsolata">T<xhtml:span
    style="white-space: pre;" />
+
 0.1<xhtml:br />
 </xhtml:font>
                         </xhtml:div>
@@ -474,6 +221,7 @@
                              face="Inconsolata"
                              data-font-src="https://fonts.googleapis.com/css?family=Inconsolata">A<xhtml:span
    style="white-space: pre;" />
+
 0.7</xhtml:font>
                         </xhtml:div>
                         <xhtml:div>
@@ -481,6 +229,7 @@
                              data-font-src="https://fonts.googleapis.com/css?family=Inconsolata"
                              face="Inconsolata">C<xhtml:span
    style="white-space: pre;" />
+
 0.1</xhtml:font>
                         </xhtml:div>
                         <xhtml:div>
@@ -488,6 +237,7 @@
                              data-font-src="https://fonts.googleapis.com/css?family=Inconsolata"
                              face="Inconsolata">G<xhtml:span
    style="white-space: pre;" />
+
 0.1</xhtml:font>
                         </xhtml:div>
                         <xhtml:div>
@@ -495,6 +245,7 @@
                              data-font-src="https://fonts.googleapis.com/css?family=Inconsolata"
                              face="Inconsolata">T<xhtml:span
    style="white-space: pre;" />
+
 0.1<xhtml:br />
 </xhtml:font>
                         </xhtml:div>
@@ -557,6 +308,7 @@
                              face="Inconsolata"
                              data-font-src="https://fonts.googleapis.com/css?family=Inconsolata">A<xhtml:span
    style="white-space: pre;" />
+
 0.1</xhtml:font>
                         </xhtml:div>
                         <xhtml:div>
@@ -564,6 +316,7 @@
                              data-font-src="https://fonts.googleapis.com/css?family=Inconsolata"
                              face="Inconsolata">C<xhtml:span
    style="white-space: pre;" />
+
 0.1</xhtml:font>
                         </xhtml:div>
                         <xhtml:div>
@@ -571,6 +324,7 @@
                              data-font-src="https://fonts.googleapis.com/css?family=Inconsolata"
                              face="Inconsolata">G<xhtml:span
    style="white-space: pre;" />
+
 0.4</xhtml:font>
                         </xhtml:div>
                         <xhtml:div>
@@ -578,6 +332,7 @@
                              data-font-src="https://fonts.googleapis.com/css?family=Inconsolata"
                              face="Inconsolata">T<xhtml:span
    style="white-space: pre;" />
+
 0.4<xhtml:br />
 </xhtml:font>
                         </xhtml:div>
