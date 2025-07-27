@@ -612,7 +612,7 @@ Conceptual diagram depicting various representations of a conserved motif. __A:_
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
 :::
 
-
+(chapter2_phhms)=
 ### Profile hidden Markov models (pHMMs)
 
 The previous sections on multiple sequence alignments and motifs explained some basics of how collections of similar sequences can be summarized and used.
