@@ -65,16 +65,6 @@ The sugar and phosphate are on the outside forming the helix's backbone and the 
 Thereby A pairs with T via two hydrogen bonds and C pairs with G via three hydrogen bonds, they are **complementary** bases.
 These pairings are also called Watson-Crick base-pairing, named after the discoverers of DNA.
 
-%:::{figure} images/chapter1/dna.jpg
-%:alt: DNA structure
-%:width: 70%
-%:name: dna
-%
-%The DNA structure.
-%Credits: {cite}`dna_2008`.
-%:::
-%#% Unable to use figure dna due to copyright.
-
 :::{figure} images/chapter1/dna_alt.jpg
 :alt: DNA structure
 :width: 80%
@@ -99,18 +89,6 @@ For example, the reverse complement of AAGT is ACTT, where both strands are give
 As the two DNA strands are only connected via hydrogen bonds, they can be separated relatively easily, for example during DNA replication ({numref}`replication_alt`).
 The separated strands each serve as a template on which a new complementary strand is synthesized by the enzyme DNA polymerase in 5' to 3' direction.
 This mode of replication is called semiconservative.
-
-%:::{figure} images/chapter1/replication.jpg
-%:alt: Replication
-%:width: 50%
-%:name: replication
-%
-%A) The process of DNA replication.
-%Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`replication_a_2013`.
-%B) Semiconservative DNA replication, where the two copies each contain one original strand and one new strand.
-%Credits: [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/) {cite}`replication_b_2005`.
-%:::
-%#% Unable to use figure replication due to copyright.
 
 :::{figure} images/chapter1/replication_alt.png
 :alt: Replication
@@ -188,17 +166,7 @@ Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`sp
 During protein translation, ribosomes synthesize polypeptides from messenger RNA (mRNA) ({numref}`translation_alt`).
 During this process tRNAs decode the information on the RNA into amino acids, where a codon consisting of three nucleotides encodes the information for one amino acid.
 
-%:::{figure} images/chapter1/translation.jpg
-%:alt: Translation
-%:width: 70%
-%:name: translation
-%
-%The translation process, where ribosomes with tRNA molecules "read" codons on the mRNA using anticodons, which then get translated into their corresponding amino acids.
-%These amino acids are linked together by peptide bonds to form a polypeptide chain.
-%:::
-%#% Unable to use figure translation due to copyright.
-
-:::{figure} images/chapter1/translation_alt.svg
+:::{figure} images/chapter1/translation_alt.jpg
 :alt: Translation
 :width: 70%
 :name: translation_alt
@@ -246,17 +214,7 @@ When needed, it will also be provided in the exam.
 According to the central dogma of molecular biology, the flow of genetic information is essentially in one direction: from DNA via RNA to proteins ({numref}`dogma_alt`).
 Nevertheless, there are also genes that do not code for proteins, but where functional RNA is the end product. Furthermore, mobile genetic elements and viruses can encode reverse transcriptases (which can synthesize DNA from an RNA template) or RNA dependent RNA polymerases (which can replicate RNA).
 
-%:::{figure} images/chapter1/dogma.jpg
-%:alt: Central dogma
-%:width: 35%
-%:name: dogma
-%
-%The central dogma of molecular biology.
-%Credits: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) {cite}`dogma_2008`.
-%:::
-%#% Unable to use figure dogma due to copyright.
-
-:::{figure} images/chapter1/dogma_alt.svg
+:::{figure} images/chapter1/dogma_alt.jpg
 :alt: Central dogma
 :width: 80%
 :name: dogma_alt
@@ -408,17 +366,7 @@ A protein is made up of one or more long, folded chains of amino acids (each cal
 The 3D structure of a protein is also called its **conformation**.
 The protein conformation is described on four levels - primary to quaternary structure ({numref}`struclevels_alt`).
 
-%:::{figure} images/chapter1/struclevels.jpg
-%:alt: The four levels of protein structure
-%:width: 90%
-%:name: struclevels
-%
-%The four levels of protein structure.
-%Credits: Rao, A. Ryan, K. and Tag, A. Department of Biology, Texas A&M University.
-%:::
-%#% Unable to use figure struclevels due to copyright.
-
-:::{figure} images/chapter1/struclevels_alt.svg
+:::{figure} images/chapter1/struclevels_alt.jpg
 :alt: The four levels of protein structure
 :width: 60%
 :name: struclevels_alt
@@ -478,18 +426,7 @@ Every helical turn has 3.6 amino acids residues and the side chains stick out of
 The strands have a direction determined by the N- and C-terminus of the protein and are usually depicted as an arrow pointing towards the C-terminus.
 Depending on the direction, strands can align parallel or antiparallel to each other.
 
-%:::{figure} images/chapter1/secstructure.jpg
-%:alt: Secondary structure elements
-%:width: 80%
-%:name: secstructure
-%
-%α-helices and β-sheets are stablized by hydrogen bonds between the backbone of proteins, i.e., the side chains are not involved.
-%The hydrogen bonds form between the oxygen atom in the C group in one amino acid and the hydrogen in the N group.
-%Black = carbon, white = hydrogen, blue = nitrogen, and red = oxygen. Credits: Rao, A., Tag, A. Ryan, K. and Fletcher, S. Department of Biology, Texas A&M University.
-%:::
-%#% Unable to use figure secstructure due to copyright.
-
-:::{figure} images/chapter1/secstructure_alt.jpg
+:::{figure} images/chapter1/secstructure_alt.png
 :alt: Secondary structure elements
 :width: 80%
 :name: secstructure_alt
@@ -524,20 +461,7 @@ The regular secondary structure elements (α-helix and β-sheet) contain consecu
 These regions are typically highly populated in a Ramachandran plot.
 Thus, the Ramachandran plot can be used to assess how plausible a predicted protein structure is.
 
-%:::{figure} images/chapter1/phipsi.jpg
-%:alt: Phi, psi, and Ramachandran plot
-%:width: 70%
-%:name: phipsi
-%
-%A) Peptide bond, φ, and ψ.
-%B) A typical Ramachandran plot. The regions marked "core" do not have any steric hindrance.
-%Yellow areas are generally allowed.
-%White areas represent conformations that are generally sterically unfavorable.
-%Credits: {cite}`phipsi_2014`.
-%:::
-%#% Unable to use figure phipsi due to copyright.
-
-:::{figure} images/chapter1/phipsi_alt.svg
+:::{figure} images/chapter1/phipsi_alt.jpg
 :alt: Phi, psi, and Ramachandran plot
 :width: 50%
 :name: phipsi_alt
@@ -688,7 +612,7 @@ Several steps in the genome annotation process make use of algorithms that can s
 For now, it is sufficient to know that these algorithms can quickly search very large collections of biological sequences to identify sequences that look similar (what we mean _exactly_ by 'similar' is also part of [chapter 2](#chapter2)).
 :::
 
-(Chapter1_repeat_masking)=
+(chapter1_repeat_masking)=
 ### Repeat masking
 
 Repeat masking involves the identification and masking (hiding) of repetitive sequences within a genome.
@@ -706,7 +630,7 @@ Subsequently, the genome to be annotated is compared against this repeat library
 When a match is found, the corresponding region in the genome is 'masked' or annotated as a repetitive element.
 This means that these regions are excluded from further analysis or labeled as repetitive.
 
-(Chapter1_gene_prediction)=
+(chapter1_gene_prediction)=
 ### Gene prediction
 
 The process of finding protein coding genes differs between prokaryotic and eukaryotic genomes.
@@ -749,20 +673,27 @@ In eukaryotic genome prediction these models become quite complex because they h
 How _exactly_ a model decides what annotation score to give to which nucleotide is part of the model architecture and parameterization.
 In all cases, the model parameters are chosen to accurately reproduce a known genome annotation.
 If sufficient data is used to learn the model parameters, it is assumed that these models can be used to predict annotations on novel genome sequences.
-Like homology-based prediction, this model-based approach works best for closely related organisms. In the past, almost all ab initio prediction methods were formulated as hidden Markov models (HMMs) (see Note 1.5). Examples of tools implementing HMM based ab initio prediction are SNAP, GeneMark, and Augustus. With the availability of more high quality data (genome sequences and accompanying annotations), approaches based on deep learning and generative AI have proven to frequently perform better than HMM based approaches.
+Like homology-based prediction, this model-based approach works best for closely related organisms. In the past, almost all ab initio prediction methods were formulated as hidden Markov models (HMMs) (see Note 1.5).
+Examples of tools implementing HMM based ab initio prediction are SNAP, GeneMark, and Augustus.
+With the availability of more high quality data (genome sequences and accompanying annotations), approaches based on deep learning and generative AI have proven to frequently perform better than HMM based approaches.
 
 :::{admonition} Note 1.5: Hidden Markov models (HMMs)
 :class: note
 
-Hidden Markov models (HMMs) are useful for the statistical modelling of general sequence characteristics. As such they find widespread adoption in bioinformatics to study biological sequences. Providing a full technical description of all aspects of HMMs is outside of the scope of this book. Here we will stick to a somewhat simplistic description to provide a first introduction.
+Hidden Markov models (HMMs) are useful for the statistical modelling of general sequence characteristics.
+As such they find widespread adoption in bioinformatics to study biological sequences.
+Providing a full technical description of all aspects of HMMs is outside of the scope of this book.
+Here we will stick to a somewhat simplistic description to provide a first introduction.
+A hidden Markov model can be used to predict some unobserved labelling across a sequence of observations.
+For example: in genome annotation, coding and non-coding regions of a genome can be treated as an unobserved characteristic, where the nucleotides are the sequence of observations.
+As such, 'hidden' refers to the _unobserved labelling_.
+In addition, 'Markov' refers to some useful statistical assumptions on the nature of independence between observations and labellings that enable efficient computation.
+More formally, the unobserved labellings are referred to as the 'hidden states', and every hidden state contains some probabilities of observing our sequence of interest, called the 'emission probabilities'.
+To complete our HMM definition, we define 'transition probabilities' between hidden states.
+The combination of hidden states, emission probabilities, and transition probabilities enable asking questions such as 'given my current observation and a certain label of my previous observation, what is the most likely label for my current observation?'.
+In the context of genome annotation this would translate to for example 'given that I see a stop-codon, and that my previous label was coding sequence, what is my current most likely label?', the answer to which would be 'non-coding' (See {numref}`coding_hmm`).
 
-A hidden Markov model can be used to predict some unobserved labelling across a sequence of observations. For example: in genome annotation, coding and non-coding regions of a genome can be treated as an unobserved characteristic, where the nucleotides are the sequence of observations. As such, 'hidden' refers to the _unobserved labelling_. In addition, 'Markov' refers to some useful statistical assumptions on the nature of independence between observations and labellings that enable efficient computation.
-
-More formally, the unobserved labellings are referred to as the 'hidden states', and every hidden state contains some probabilities of observing our sequence of interest, called the 'emission probabilities'. To complete our HMM definition, we define 'transition probabilities' between hidden states.
-
-The combination of hidden states, emission probabilities, and transition probabilities enable asking questions such as 'given my current observation and a certain label of my previous observation, what is the most likely label for my current observation?'. In the context of genome annotation this would translate to for example 'given that I see a stop-codon, and that my previous label was coding sequence, what is my current most likely label?', the answer to which would be 'non-coding' (See {numref}`coding_hmm`).
-
-```{figure} images/chapter1/coding_hmm.svg
+```{figure} images/chapter1/coding_hmm.jpg
 :alt: Coding HMM
 :width: 100%
 :name: coding_hmm
@@ -980,7 +911,7 @@ Patterns cannot deal with mismatches and are limited to exact matches to the pat
 Thus, they are not well suited to identify distant homologs.
 A Prosite **profile** is more general than a pattern and can also detect poorly conserved domains or families.
 They characterize protein domains over their entire length and do not just model the conserved parts.
-Profiles are estimated from multiple sequence alignments and we learn more about them in [chapter 2](#chapter2).
+Profiles are estimated from multiple sequence alignments and we learn more about them in [Chapter 2](#chapter2).
 For now, it is important to know that profiles model matches, insertions, and deletions.
 Importantly, profiles are **quantitative** representations, they will return a score how well the sequence fits to the profile.
 A threshold can be applied to get high-scoring profiles for a sequence.
@@ -1071,8 +1002,7 @@ You can find more information on InterPro entry types with examples [here](https
 
 Pfam is an important resource for protein domains.
 In Pfam, domains are classified according to profiles that are modelled as Hidden Markov models (HMMs).
-We will learn more on HMMs in [chapter 2](#chapter2).
-%#% Create a direct cross-link to HMMs in chapter 2 when written.
+We will learn more on HMMs in [Chapter 2](#chapter2_phhms).
 Pfam is now integrated in InterPro.
 Each Pfam domain can be represented with a logo, where the amino acids frequent at a particular position are represented as larger letters ({numref}`pfam-profile`).
 
@@ -1170,7 +1100,6 @@ Examples include the bam format, which is a binary version of the sam format or 
 Gzip is used for compressing text files without the loss of information.
 For large files, lots of disk space can be saved this way.
 
-
 ---
 
 (chapter1_ontologies)=
@@ -1198,8 +1127,9 @@ A key concept in scientific reproducibility are the FAIR principles, with FAIR s
 This reader does not describe them in detail, but you should read the following online resource to familiarize yourself with the [FAIR principles](https://www.go-fair.org/fair-principles/).
 :::
 
-Ontologies typically form a hierarchy, where specific terms point to more generic terms. More generally, most ontologies are represented as a graph, where ontology terms are the nodes and relationships between terms are edges. As such, one ontology term may have more than one parent term.
-
+Ontologies typically form a hierarchy, where specific terms point to more generic terms.
+More generally, most ontologies are represented as a graph, where ontology terms are the nodes and relationships between terms are edges.
+As such, one ontology term may have more than one parent term.
 A variety of ontologies are frequently used in the life sciences, some of which are discussed in greater detail below.
 
 (chapter1_gene_ontology)=
