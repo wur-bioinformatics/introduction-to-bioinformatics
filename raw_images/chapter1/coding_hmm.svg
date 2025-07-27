@@ -1,0 +1,1047 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 27.6.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 587 395"
+   xml:space="preserve"
+   sodipodi:docname="coding_hmm.svg"
+   width="587"
+   height="395"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   inkscape:export-filename="coding_hmm.jpg"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs447" /><sodipodi:namedview
+   id="namedview445"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   showgrid="false"
+   inkscape:zoom="1.0479798"
+   inkscape:cx="118.8"
+   inkscape:cy="178.91566"
+   inkscape:window-width="1920"
+   inkscape:window-height="991"
+   inkscape:window-x="-9"
+   inkscape:window-y="-9"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="layer1" />
+<style
+   type="text/css"
+   id="style2">
+	.st0{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
+	.st1{fill:#BCBEC0;stroke:#000000;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st3{font-family:'Menlo-Regular';}
+	.st4{font-size:12px;}
+	.st5{font-size:8px;}
+	.st6{font-family:'Helvetica';}
+	.st7{font-family:'Courier';}
+	.st8{fill:none;}
+	.st9{fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:1.0006,2.0011;}
+	.st10{fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:0.971,1.9419;}
+	.st11{fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:1.0207,2.0415;}
+	.st12{fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:1.0144,2.0288;}
+	.st13{fill:#EE2A7B;}
+	.st14{fill:#1C75BC;}
+	.st15{fill:#EC008C;}
+	.st16{fill:#FBB040;}
+	.st17{fill:#00A651;}
+	.st18{fill:#ED1C24;}
+	.st19{fill:#00A14B;}
+	.st20{fill:#00AEEF;}
+	.st21{font-family:'Helvetica-Bold';}
+	.st22{font-size:20px;}
+</style>
+<g
+   id="g160"
+   transform="translate(-1.0950012,-0.5)">
+	<g
+   inkscape:groupmode="layer"
+   id="layer1"
+   inkscape:label="Background"
+   style="display:inline"><rect
+     style="fill:#ffffff;stroke-width:2.52936;stroke-linecap:square"
+     id="rect921"
+     width="587"
+     height="395"
+     x="1.0950012"
+     y="0.5" /></g><circle
+   class="st0"
+   cx="168.32001"
+   cy="83.849998"
+   r="10"
+   id="circle4" />
+	<circle
+   class="st1"
+   cx="168.32001"
+   cy="136.99001"
+   r="10"
+   id="circle6" />
+	<circle
+   class="st1"
+   cx="220.2"
+   cy="136.99001"
+   r="10"
+   id="circle8" />
+	<circle
+   class="st1"
+   cx="272.07999"
+   cy="136.99001"
+   r="10"
+   id="circle10" />
+	<circle
+   class="st1"
+   cx="323.95999"
+   cy="136.99001"
+   r="10"
+   id="circle12" />
+	<circle
+   class="st1"
+   cx="375.82999"
+   cy="136.99001"
+   r="10"
+   id="circle14" />
+	<g
+   id="g24">
+		<g
+   id="g22">
+			<line
+   class="st2"
+   x1="178.32001"
+   y1="83.849998"
+   x2="203.02"
+   y2="83.849998"
+   id="line16" />
+			<g
+   id="g20">
+				<polygon
+   points="201.56,78.86 201.56,88.83 210.2,83.85 "
+   id="polygon18" />
+			</g>
+		</g>
+	</g>
+	<circle
+   class="st0"
+   cx="220.2"
+   cy="83.849998"
+   r="10"
+   id="circle26" />
+	<g
+   id="g36">
+		<g
+   id="g34">
+			<line
+   class="st2"
+   x1="230.2"
+   y1="83.849998"
+   x2="254.89999"
+   y2="83.849998"
+   id="line28" />
+			<g
+   id="g32">
+				<polygon
+   points="253.44,78.86 253.44,88.83 262.08,83.85 "
+   id="polygon30" />
+			</g>
+		</g>
+	</g>
+	<circle
+   class="st0"
+   cx="272.07999"
+   cy="83.849998"
+   r="10"
+   id="circle38" />
+	<g
+   id="g48">
+		<g
+   id="g46">
+			<line
+   class="st2"
+   x1="282.07999"
+   y1="83.849998"
+   x2="306.78"
+   y2="83.849998"
+   id="line40" />
+			<g
+   id="g44">
+				<polygon
+   points="305.32,78.86 305.32,88.83 313.96,83.85 "
+   id="polygon42" />
+			</g>
+		</g>
+	</g>
+	<circle
+   class="st0"
+   cx="323.95999"
+   cy="83.849998"
+   r="10"
+   id="circle50" />
+	<g
+   id="g60">
+		<g
+   id="g58">
+			<line
+   class="st2"
+   x1="333.95999"
+   y1="83.849998"
+   x2="358.66"
+   y2="83.849998"
+   id="line52" />
+			<g
+   id="g56">
+				<polygon
+   points="357.2,78.86 357.2,88.83 365.83,83.85 "
+   id="polygon54" />
+			</g>
+		</g>
+	</g>
+	<circle
+   class="st0"
+   cx="375.82999"
+   cy="83.849998"
+   r="10"
+   id="circle62" />
+	<g
+   id="g72">
+		<g
+   id="g70">
+			<line
+   class="st2"
+   x1="385.82999"
+   y1="83.849998"
+   x2="410.54001"
+   y2="83.849998"
+   id="line64" />
+			<g
+   id="g68">
+				<polygon
+   points="409.08,78.86 409.08,88.83 417.71,83.85 "
+   id="polygon66" />
+			</g>
+		</g>
+	</g>
+	<g
+   id="g82">
+		<g
+   id="g80">
+			<line
+   class="st2"
+   x1="168.32001"
+   y1="93.849998"
+   x2="168.32001"
+   y2="119.81"
+   id="line74" />
+			<g
+   id="g78">
+				<polygon
+   points="173.31,118.36 163.33,118.36 168.32,126.99 "
+   id="polygon76" />
+			</g>
+		</g>
+	</g>
+	<g
+   id="g92">
+		<g
+   id="g90">
+			<line
+   class="st2"
+   x1="220.2"
+   y1="93.849998"
+   x2="220.2"
+   y2="119.81"
+   id="line84" />
+			<g
+   id="g88">
+				<polygon
+   points="225.18,118.36 215.21,118.36 220.2,126.99 "
+   id="polygon86" />
+			</g>
+		</g>
+	</g>
+	<g
+   id="g102">
+		<g
+   id="g100">
+			<line
+   class="st2"
+   x1="272.07999"
+   y1="93.849998"
+   x2="272.07999"
+   y2="119.81"
+   id="line94" />
+			<g
+   id="g98">
+				<polygon
+   points="277.06,118.36 267.09,118.36 272.08,126.99 "
+   id="polygon96" />
+			</g>
+		</g>
+	</g>
+	<g
+   id="g112">
+		<g
+   id="g110">
+			<line
+   class="st2"
+   x1="323.95999"
+   y1="93.849998"
+   x2="323.95999"
+   y2="119.81"
+   id="line104" />
+			<g
+   id="g108">
+				<polygon
+   points="328.94,118.36 318.97,118.36 323.96,126.99 "
+   id="polygon106" />
+			</g>
+		</g>
+	</g>
+	<g
+   id="g122">
+		<g
+   id="g120">
+			<line
+   class="st2"
+   x1="375.82999"
+   y1="93.849998"
+   x2="375.82999"
+   y2="119.81"
+   id="line114" />
+			<g
+   id="g118">
+				<polygon
+   points="380.82,118.36 370.85,118.36 375.83,126.99 "
+   id="polygon116" />
+			</g>
+		</g>
+	</g>
+	<text
+   transform="translate(162.3518,86.4043)"
+   class="st3 st4"
+   id="text124">l</text>
+	<text
+   transform="matrix(0.583,0,0,0.583,169.5764,90.4004)"
+   class="st3 st4"
+   id="text126">1</text>
+	<text
+   transform="translate(214.2381,86.4041)"
+   class="st3 st4"
+   id="text128">l</text>
+	<text
+   transform="matrix(0.583,0,0,0.583,221.4627,90.4002)"
+   class="st3 st4"
+   id="text130">2</text>
+	<text
+   transform="translate(266.124,86.4041)"
+   class="st3 st4"
+   id="text132">l</text>
+	<text
+   transform="matrix(0.583,0,0,0.583,273.3486,90.4002)"
+   class="st3 st4"
+   id="text134">3</text>
+	<text
+   transform="translate(318.0102,86.4038)"
+   class="st3 st5"
+   id="text136">...</text>
+	<text
+   transform="translate(369.8964,86.404)"
+   class="st3 st4"
+   id="text138">l</text>
+	<text
+   transform="matrix(0.583,0,0,0.583,377.121,90.4001)"
+   class="st3 st4"
+   id="text140">N</text>
+	<text
+   transform="translate(162.5119,139.7503)"
+   class="st3 st4"
+   id="text142">o</text>
+	<text
+   transform="matrix(0.583,0,0,0.583,169.7365,143.7464)"
+   class="st3 st4"
+   id="text144">1</text>
+	<text
+   transform="translate(214.3982,139.7502)"
+   class="st3 st4"
+   id="text146">o</text>
+	<text
+   transform="matrix(0.583,0,0,0.583,221.6228,143.7462)"
+   class="st3 st4"
+   id="text148">2</text>
+	<text
+   transform="translate(266.2841,139.7502)"
+   class="st3 st4"
+   id="text150">o</text>
+	<text
+   transform="matrix(0.583,0,0,0.583,273.5087,143.7462)"
+   class="st3 st4"
+   id="text152">3</text>
+	<text
+   transform="translate(318.1703,139.7498)"
+   class="st3 st5"
+   id="text154">...</text>
+	<text
+   transform="translate(370.0564,139.75)"
+   class="st3 st4"
+   id="text156">o</text>
+	<text
+   transform="matrix(0.583,0,0,0.583,377.281,143.7461)"
+   class="st3 st4"
+   id="text158">N</text>
+</g>
+<text
+   class="st6 st4"
+   id="text162"
+   x="40.342697"
+   y="52.526699">Labellings (states)</text>
+<text
+   class="st6 st4"
+   id="text164"
+   x="38.9636"
+   y="151.3714">Observations</text>
+<text
+   class="st6 st4"
+   id="text166"
+   x="298.767"
+   y="31.4259">Transition probabilities </text>
+<text
+   class="st7 st4"
+   id="text168"
+   x="328.7963"
+   y="45.825802">P(l</text>
+<text
+   class="st7 st4"
+   id="text170"
+   x="350.39981"
+   y="49.821899"
+   style="stroke-width:0.583">i</text>
+<text
+   class="st7 st4"
+   id="text172"
+   x="354.59799"
+   y="45.825802">|l</text>
+<text
+   class="st7 st4"
+   id="text174"
+   x="369.0004"
+   y="49.821899"
+   style="stroke-width:0.583">i-1</text>
+<text
+   class="st7 st4"
+   id="text176"
+   x="381.59509"
+   y="45.825802">)</text>
+<text
+   class="st6 st4"
+   id="text178"
+   x="445.75589"
+   y="106.8204">Emission probabilities </text>
+<text
+   class="st7 st4"
+   id="text180"
+   x="477.97949"
+   y="121.2203">P(o</text>
+<text
+   class="st7 st4"
+   id="text182"
+   x="499.58301"
+   y="125.2163"
+   style="stroke-width:0.583">i</text>
+<text
+   class="st7 st4"
+   id="text184"
+   x="503.78131"
+   y="121.2203">|l</text>
+<text
+   class="st7 st4"
+   id="text186"
+   x="518.18359"
+   y="125.2163"
+   style="stroke-width:0.583">i</text>
+<text
+   class="st7 st4"
+   id="text188"
+   x="522.38177"
+   y="121.2203">)</text>
+<line
+   class="st8"
+   x1="94.875"
+   y1="73.349998"
+   x2="147.675"
+   y2="80.339996"
+   id="line190" />
+<g
+   id="g204"
+   transform="translate(-1.0950012,-0.5)">
+	<g
+   id="g202">
+		<line
+   class="st2"
+   x1="94.18"
+   y1="58.07"
+   x2="94.639999"
+   y2="58.259998"
+   id="line192" />
+		<line
+   class="st9"
+   x1="96.510002"
+   y1="58.990002"
+   x2="148.67999"
+   y2="79.440002"
+   id="line194" />
+		<line
+   class="st2"
+   x1="149.61"
+   y1="79.800003"
+   x2="150.07001"
+   y2="79.980003"
+   id="line196" />
+		<g
+   id="g200">
+			<polygon
+   points="150.3,77.4 148.48,82.04 153.41,81.29 "
+   id="polygon198" />
+		</g>
+	</g>
+</g>
+<g
+   id="g218"
+   transform="translate(-1.0950012,-0.5)">
+	<g
+   id="g216">
+		<line
+   class="st2"
+   x1="115.23"
+   y1="143.84"
+   x2="115.72"
+   y2="143.75999"
+   id="line206" />
+		<line
+   class="st10"
+   x1="117.64"
+   y1="143.41"
+   x2="148.21001"
+   y2="137.89"
+   id="line208" />
+		<line
+   class="st2"
+   x1="149.17"
+   y1="137.72"
+   x2="149.66"
+   y2="137.63"
+   id="line210" />
+		<g
+   id="g214">
+			<polygon
+   points="148.5,135.3 149.38,140.21 153.19,136.99 "
+   id="polygon212" />
+		</g>
+	</g>
+</g>
+<g
+   id="g232"
+   transform="translate(-1.0950012,-0.5)">
+	<g
+   id="g230">
+		<line
+   class="st2"
+   x1="353.98001"
+   y1="55.689999"
+   x2="353.88"
+   y2="56.18"
+   id="line220" />
+		<line
+   class="st11"
+   x1="353.5"
+   y1="58.189999"
+   x2="350.84"
+   y2="72.230003"
+   id="line222" />
+		<line
+   class="st2"
+   x1="350.66"
+   y1="73.230003"
+   x2="350.56"
+   y2="73.720001"
+   id="line224" />
+		<g
+   id="g228">
+			<polygon
+   points="353.15,73.47 348.25,72.54 349.89,77.25 "
+   id="polygon226" />
+		</g>
+	</g>
+</g>
+<g
+   id="g246"
+   transform="translate(-1.0950012,-0.5)">
+	<g
+   id="g244">
+		<line
+   class="st2"
+   x1="454.47"
+   y1="112.02"
+   x2="453.97"
+   y2="112"
+   id="line234" />
+		<line
+   class="st12"
+   x1="451.95001"
+   y1="111.88"
+   x2="386.10999"
+   y2="108.19"
+   id="line236" />
+		<line
+   class="st2"
+   x1="385.10001"
+   y1="108.13"
+   x2="384.60001"
+   y2="108.1"
+   id="line238" />
+		<g
+   id="g242">
+			<polygon
+   points="385.19,110.63 385.47,105.65 381.02,107.9 "
+   id="polygon240" />
+		</g>
+	</g>
+</g>
+<circle
+   class="st0"
+   cx="161.285"
+   cy="294.29999"
+   r="10"
+   id="circle248" />
+<g
+   id="g258"
+   transform="translate(-1.0950012,-0.5)">
+	<g
+   id="g256">
+		<line
+   class="st2"
+   x1="172.38"
+   y1="294.79999"
+   x2="197.08"
+   y2="294.79999"
+   id="line250" />
+		<g
+   id="g254">
+			<polygon
+   points="195.62,289.82 195.62,299.79 204.26,294.8 "
+   id="polygon252" />
+		</g>
+	</g>
+</g>
+<circle
+   class="st0"
+   cx="213.16499"
+   cy="294.29999"
+   r="10"
+   id="circle260" />
+<g
+   id="g270"
+   transform="translate(-1.0950012,-0.5)">
+	<g
+   id="g268">
+		<line
+   class="st2"
+   x1="224.25999"
+   y1="294.79999"
+   x2="248.96001"
+   y2="294.79999"
+   id="line262" />
+		<g
+   id="g266">
+			<polygon
+   points="247.5,289.82 247.5,299.79 256.14,294.8 "
+   id="polygon264" />
+		</g>
+	</g>
+</g>
+<circle
+   class="st0"
+   cx="265.04501"
+   cy="294.29999"
+   r="10"
+   id="circle272" />
+<g
+   id="g282"
+   transform="translate(-1.0950012,-0.5)">
+	<g
+   id="g280">
+		<line
+   class="st2"
+   x1="276.14001"
+   y1="294.79999"
+   x2="300.84"
+   y2="294.79999"
+   id="line274" />
+		<g
+   id="g278">
+			<polygon
+   points="299.38,289.82 299.38,299.79 308.02,294.8 "
+   id="polygon276" />
+		</g>
+	</g>
+</g>
+<circle
+   class="st0"
+   cx="316.92499"
+   cy="294.29999"
+   r="10"
+   id="circle284" />
+<g
+   id="g294"
+   transform="translate(-1.0950012,-0.5)">
+	<g
+   id="g292">
+		<line
+   class="st2"
+   x1="328.01999"
+   y1="294.79999"
+   x2="352.72"
+   y2="294.79999"
+   id="line286" />
+		<g
+   id="g290">
+			<polygon
+   points="351.26,289.82 351.26,299.79 359.89,294.8 "
+   id="polygon288" />
+		</g>
+	</g>
+</g>
+<circle
+   class="st0"
+   cx="368.79501"
+   cy="294.29999"
+   r="10"
+   id="circle296" />
+<g
+   id="g306"
+   transform="translate(-1.0950012,-0.5)">
+	<g
+   id="g304">
+		<line
+   class="st2"
+   x1="379.89001"
+   y1="294.79999"
+   x2="404.60001"
+   y2="294.79999"
+   id="line298" />
+		<g
+   id="g302">
+			<polygon
+   points="403.14,289.82 403.14,299.79 411.77,294.8 "
+   id="polygon300" />
+		</g>
+	</g>
+</g>
+<g
+   id="g316"
+   transform="translate(-1.0950012,-0.5)">
+	<g
+   id="g314">
+		<line
+   class="st2"
+   x1="162.38"
+   y1="304.79999"
+   x2="162.38"
+   y2="330.76999"
+   id="line308" />
+		<g
+   id="g312">
+			<polygon
+   points="167.37,329.31 157.39,329.31 162.38,337.95 "
+   id="polygon310" />
+		</g>
+	</g>
+</g>
+<g
+   id="g326"
+   transform="translate(-1.0950012,-0.5)">
+	<g
+   id="g324">
+		<line
+   class="st2"
+   x1="214.25999"
+   y1="304.79999"
+   x2="214.25999"
+   y2="330.76999"
+   id="line318" />
+		<g
+   id="g322">
+			<polygon
+   points="219.25,329.31 209.27,329.31 214.26,337.95 "
+   id="polygon320" />
+		</g>
+	</g>
+</g>
+<g
+   id="g336"
+   transform="translate(-1.0950012,-0.5)">
+	<g
+   id="g334">
+		<line
+   class="st2"
+   x1="266.14001"
+   y1="304.79999"
+   x2="266.14001"
+   y2="330.76999"
+   id="line328" />
+		<g
+   id="g332">
+			<polygon
+   points="271.12,329.31 261.15,329.31 266.14,337.95 "
+   id="polygon330" />
+		</g>
+	</g>
+</g>
+<g
+   id="g346"
+   transform="translate(-1.0950012,-0.5)">
+	<g
+   id="g344">
+		<line
+   class="st2"
+   x1="318.01999"
+   y1="304.79999"
+   x2="318.01999"
+   y2="330.76999"
+   id="line338" />
+		<g
+   id="g342">
+			<polygon
+   points="323,329.31 313.03,329.31 318.02,337.95 "
+   id="polygon340" />
+		</g>
+	</g>
+</g>
+<g
+   id="g356"
+   transform="translate(-1.0950012,-0.5)">
+	<g
+   id="g354">
+		<line
+   class="st2"
+   x1="369.89001"
+   y1="304.79999"
+   x2="369.89001"
+   y2="330.76999"
+   id="line348" />
+		<g
+   id="g352">
+			<polygon
+   points="374.88,329.31 364.91,329.31 369.89,337.95 "
+   id="polygon350" />
+		</g>
+	</g>
+</g>
+<text
+   class="st13 st3 st4"
+   id="text358"
+   x="152.25571"
+   y="298.66229">NC</text>
+<text
+   class="st14 st3 st4"
+   id="text360"
+   x="208.873"
+   y="298.66229">C</text>
+<text
+   class="st14 st3 st4"
+   id="text362"
+   x="260.75302"
+   y="298.66229">C</text>
+<text
+   class="st15 st3 st4"
+   id="text364"
+   x="359.76572"
+   y="298.66229">NC</text>
+<text
+   id="text370"
+   x="151.2852"
+   y="350.76389"><tspan
+     x="151.2852"
+     y="350.76389"
+     class="st16 st3 st4"
+     id="tspan366">G</tspan><tspan
+     x="158.5052"
+     y="350.76389"
+     class="st17 st3 st4"
+     id="tspan368">TT</tspan></text>
+<text
+   id="text378"
+   x="203.1638"
+   y="350.93179"><tspan
+     x="203.1638"
+     y="350.93179"
+     class="st18 st3 st4"
+     id="tspan372">A</tspan><tspan
+     x="210.3838"
+     y="350.93179"
+     class="st17 st3 st4"
+     id="tspan374">T</tspan><tspan
+     x="217.6138"
+     y="350.93179"
+     class="st16 st3 st4"
+     id="tspan376">G</tspan></text>
+<text
+   id="text386"
+   x="255.04269"
+   y="350.76379"><tspan
+     x="255.04269"
+     y="350.76379"
+     class="st16 st3 st4"
+     id="tspan380">G</tspan><tspan
+     x="262.2627"
+     y="350.76379"
+     class="st18 st3 st4"
+     id="tspan382">A</tspan><tspan
+     x="269.49271"
+     y="350.76379"
+     class="st17 st3 st4"
+     id="tspan384">T</tspan></text>
+<text
+   id="text392"
+   x="306.9213"
+   y="350.9317"><tspan
+     x="306.9213"
+     y="350.9317"
+     class="st19 st3 st4"
+     id="tspan388">T</tspan><tspan
+     x="314.1413"
+     y="350.9317"
+     class="st18 st3 st4"
+     id="tspan390">AA</tspan></text>
+<text
+   id="text398"
+   x="356.72559"
+   y="350.7637"><tspan
+     x="356.72559"
+     y="350.7637"
+     class="st20 st3 st4"
+     id="tspan394">CC</tspan><tspan
+     x="371.1756"
+     y="350.7637"
+     class="st16 st3 st4"
+     id="tspan396">G</tspan></text>
+<text
+   class="st6 st4"
+   id="text400"
+   x="30.483398"
+   y="262.32291">Coding / non-coding</text>
+<text
+   id="text406"
+   x="29.1043"
+   y="361.16751"><tspan
+     x="29.1043"
+     y="361.16751"
+     class="st6 st4"
+     id="tspan402">DNA (codon)</tspan><tspan
+     x="29.1043"
+     y="375.5675"
+     class="st6 st4"
+     id="tspan404">sequence</tspan></text>
+<line
+   class="st8"
+   x1="85.014999"
+   y1="283.14001"
+   x2="137.815"
+   y2="290.14001"
+   id="line408" />
+<g
+   id="g422"
+   transform="translate(-1.0950012,-0.5)">
+	<g
+   id="g420">
+		<line
+   class="st2"
+   x1="84.32"
+   y1="267.87"
+   x2="84.790001"
+   y2="268.04999"
+   id="line410" />
+		<line
+   class="st9"
+   x1="86.650002"
+   y1="268.78"
+   x2="138.82001"
+   y2="289.23001"
+   id="line412" />
+		<line
+   class="st2"
+   x1="139.75"
+   y1="289.60001"
+   x2="140.21001"
+   y2="289.78"
+   id="line414" />
+		<g
+   id="g418">
+			<polygon
+   points="140.44,287.19 138.62,291.84 143.55,291.09 "
+   id="polygon416" />
+		</g>
+	</g>
+</g>
+<g
+   id="g436"
+   transform="translate(-1.0950012,-0.5)">
+	<g
+   id="g434">
+		<line
+   class="st2"
+   x1="105.37"
+   y1="353.64001"
+   x2="105.87"
+   y2="353.54999"
+   id="line424" />
+		<line
+   class="st10"
+   x1="107.78"
+   y1="353.20999"
+   x2="138.35001"
+   y2="347.69"
+   id="line426" />
+		<line
+   class="st2"
+   x1="139.31"
+   y1="347.51001"
+   x2="139.8"
+   y2="347.42001"
+   id="line428" />
+		<g
+   id="g432">
+			<polygon
+   points="138.64,345.1 139.52,350.01 143.33,346.79 "
+   id="polygon430" />
+		</g>
+	</g>
+</g>
+<text
+   class="st21 st22"
+   id="text438"
+   x="8.9210987"
+   y="22.797899">A</text>
+<text
+   class="st21 st22"
+   id="text440"
+   x="9.0970984"
+   y="239.80029">B</text>
+<text
+   class="st15 st3 st4"
+   id="text442"
+   x="307.89569"
+   y="298.66229"
+   inkscape:label="text442">NC</text>
+</svg>

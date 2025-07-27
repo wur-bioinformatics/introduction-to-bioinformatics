@@ -9,6 +9,9 @@
    sodipodi:docname="dogma_alt.svg"
    viewBox="0 0 209.65665 91.526421"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   inkscape:export-filename="dogma_alt.jpg"
+   inkscape:export-xdpi="150"
+   inkscape:export-ydpi="150"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -24,13 +27,13 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
-     inkscape:zoom="1.3592067"
-     inkscape:cx="919.65409"
-     inkscape:cy="495.14176"
-     inkscape:window-width="3840"
-     inkscape:window-height="2054"
-     inkscape:window-x="-11"
-     inkscape:window-y="-11"
+     inkscape:zoom="0.48055214"
+     inkscape:cx="682.54821"
+     inkscape:cy="379.77149"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg2" />
   <defs
@@ -57,6 +60,13 @@
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(-0.9706967,0.1687529,-0.2730853,-1.493508,111.23929,470.10985)" />
   </defs>
+  <rect
+     width="209.71428"
+     height="91.09288"
+     x="0"
+     y="0.41435078"
+     id="rect1664"
+     style="display:inline;overflow:visible;visibility:visible;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2.02026;marker:none;enable-background:accumulate" />
   <rect
      width="209.65665"
      height="22.324863"
