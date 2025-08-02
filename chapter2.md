@@ -196,7 +196,7 @@ When aligning protein sequences, we thus want to penalize the substitution of ch
 To this end, the score of matches and mismatches is generally determined by a **substitution matrix**, e.g., BLOSUM62 - **BLOSUM (BLOck SUbstitution Matrix)** ({numref}`blosum62`).
 The substitution matrix and the gap parameters then determine the alignment score ({numref}`aa_alg`).
 
-:::{figure} images/chapter2/blosum62.svg
+:::{figure} images/chapter2/blosum62.png
 :alt: Blosum 62 matrix
 :width: 100%
 :name: blosum62
@@ -509,7 +509,7 @@ Instead, in cases where we want to compare 3 or more sequences with each other, 
 The objective of performing multiple sequence alignment is to identify matching residues (DNA, RNA, or amino acids) across multiple sequences of potentially differing lengths.
 The resulting alignment can be thought of as a square matrix: rows represent the sequences that we started with, columns represent homologous residues across sequences, and the entries are either residues or gaps ({numref}`msa_concept`).
 
-:::{figure} images/chapter2/msa.svg
+:::{figure} images/chapter2/msa.png
 :alt: Multiple Sequence Alignment (conceptual)
 :width: 80%
 :name: msa_concept
@@ -603,7 +603,7 @@ Every position in the sequence logo represents a position in the MSA.
 The total height of the logo at a position indicates the _information_ that this column contains, i.e., an unambiguous position has a high information content, whereas a position with equal frequencies of characters has a low information content.
 Additionally, the characters are scaled proportional to their probability of being observed at their respective positions.
 
-:::{figure} images/chapter2/msa-pattern-pssm-logo.svg
+:::{figure} images/chapter2/msa-pattern-pssm-logo.png
 :alt: Various representations of a motif
 :width: 60%
 :name: motif_concept
@@ -628,7 +628,7 @@ A graphical representation of a simple profile HMM can be seen in {numref}`simpl
 Just like for PSSMs, a probabilistic score can be calculated for a novel sequence matching an existing HMM.
 Efficient algorithms for working with pHMMs exist and have been implemented in for example the [HMMer suite](http://hmmer.org/).
 
-:::{figure} images/chapter2/hmm.svg
+:::{figure} images/chapter2/hmm.png
 :alt: DNA profile HMM with three positions and three states (match, insertion, deletion)
 :width: 60%
 :name: simple_hmm
