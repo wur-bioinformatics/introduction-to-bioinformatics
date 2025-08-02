@@ -112,7 +112,7 @@ During the practical assignments, you will explore this phenomenon more.
 %:::
 %#% Unable to use figure Q3 due to copyright.
 
-:::{figure} images/chapter4/Q3_alt.svg
+:::{figure} images/chapter4/Q3_alt.png
 :alt: Q{sub}`3` measure
 :align: center
 :name: Q3_alt
@@ -152,7 +152,7 @@ Whilst now superseded, first by more accurate statistical methods and more recen
 %:::
 %#% Unable to use figure chou_fasman due to copyright.
 
-:::{figure} images/chapter4/chou-fasman_alt.svg
+:::{figure} images/chapter4/chou-fasman_alt.png
 :alt: The Chou-Fasman approach
 :align: center
 :name: chou_fasman_alt
@@ -255,7 +255,7 @@ The signal peptide is an N-terminal leader amino acid sequence that consists of 
 The actual recognition of signal peptides by the cellular transporter machinery is not based on a conserved amino acid sequence, but it largely depends on the physicochemical properties of the amino acids in the signal peptide.
 A signal peptide typically consists of three regions: the first region (the n-region) usually contains 1–5 positively charged amino acids, the second region (the h-region) is made up of 5–15 hydrophobic amino acids, and the third region (the c-region) has 3–7 polar but mostly uncharged amino acids.
 
-:::{figure} images/chapter4/signal-peptide.svg
+:::{figure} images/chapter4/signal-peptide.png
 :alt: Signal sequence (signal peptide) with a hydrophobic core-region (h) and hydrophilic N- (n) and C-terminal (c) flanking regions
 :align: center
 :width: 100%
@@ -384,7 +384,7 @@ It will also be high if a signal peptide has been predicted.
 First, it is good to realize that the prediction of secondary structure elements has formed the foundation of tools that predict 3D structures of proteins.
 We will first explore the three traditional structure prediction approaches, which will be followed up by the most prominent new approach in structure prediction ([AlphaFold](#chapter4_alphafold)) that relies on several concepts of the traditional approaches.
 
-:::{figure} images/chapter4/three-zones.svg
+:::{figure} images/chapter4/three-zones.png
 :alt: The three zones of tertiary structure prediction approaches
 :align: center
 :width: 80%
@@ -580,7 +580,7 @@ Credits: modified from {cite}`alphafold_approach_2021`.
 %
 %To summarize the AlphaFold 3 process, database searches are done to construct MSAs and find templates, amino acids get tokenized and have their chemical structure embedded in their representation, which serves as input for the pairformer where further processing happens. The ouput then enters the diffusion model where the structure is predicted by denoising the atom coordinates to find the most accurate model.
 %
-%:::{figure} images/chapter4/alphafold3-approach.svg
+%:::{figure} images/chapter4/alphafold3-approach.png
 %:alt: AlphaFold3 approach
 %:align: center
 %:name: alphafold3_approach
@@ -606,7 +606,7 @@ In one of the practical assignments, you will learn how to work with AlphaFold D
 One important remaining question is: how do we know if we can trust the predictions?
 In other words, how do we know if we can be confident in the 3D structure models that AlphaFold predicts and that AlphaFold DB contains?
 
-:::{figure} images/chapter4/alphafolddb.svg
+:::{figure} images/chapter4/alphafolddb.png
 :alt: AlphaFold - Number of protein structures
 :align: center
 :width: 80%
@@ -965,7 +965,7 @@ Here, we will assess pre-computed ready-made AlphaFold2 models through the [Alph
     INLQQSEDGEFPQQEIIGVFNKNCMISYSEYRNIFPIWALGFAIRDATAWISE
     ```
     You decide to help her, and you input the results into Uniprot Blast. Below the top results are presented ({numref}`alphafolddb_blast_results`, click to enlarge).
-    :::{figure} images/chapter4/alphafolddb-blast-results.svg
+    :::{figure} images/chapter4/alphafolddb-blast-results.png
     :alt: Top BLAST hits for running blastp against the Uniprot + alphafold database
     :align: center
     :width: 70%
