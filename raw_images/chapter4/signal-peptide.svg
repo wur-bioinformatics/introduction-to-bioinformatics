@@ -8,6 +8,9 @@
    id="svg2"
    sodipodi:docname="signal-peptide.svg"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   inkscape:export-filename="signal-peptide.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,16 +26,25 @@
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
      inkscape:zoom="3.4876331"
-     inkscape:cx="266.94322"
-     inkscape:cy="62.219848"
-     inkscape:window-width="3840"
-     inkscape:window-height="2054"
-     inkscape:window-x="-11"
-     inkscape:window-y="-11"
+     inkscape:cx="331.45688"
+     inkscape:cy="111.68033"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g4332" />
+     inkscape:current-layer="svg2" />
   <defs
      id="defs4" />
+  <rect
+     style="fill:#ffffff;stroke-width:4.13977;stroke-linecap:square"
+     id="rect278"
+     width="1015.0846"
+     height="243.05385"
+     x="-177.13318"
+     y="275.65158"
+     transform="matrix(0.6107832,0,0,0.6107832,108.18997,-168.36784)"
+     inkscape:label="Background" />
   <g
      transform="translate(160.76076,-353.85676)"
      id="layer1">

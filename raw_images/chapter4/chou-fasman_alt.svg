@@ -5,8 +5,11 @@
    viewBox="0 0 1340.4649 610.656"
    version="1.1"
    id="svg1374"
-   sodipodi:docname="Propensities.svg"
+   sodipodi:docname="chou-fasman_alt.svg"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   inkscape:export-filename="chou-fasman_alt.png"
+   inkscape:export-xdpi="96.699997"
+   inkscape:export-ydpi="96.699997"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -24,14 +27,14 @@
      inkscape:document-units="pt"
      showgrid="false"
      inkscape:zoom="0.70710678"
-     inkscape:cx="919.23881"
-     inkscape:cy="364.15999"
-     inkscape:window-width="1916"
-     inkscape:window-height="2041"
-     inkscape:window-x="1911"
+     inkscape:cx="804.68752"
+     inkscape:cy="369.81685"
+     inkscape:window-width="1902"
+     inkscape:window-height="1033"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
-     inkscape:current-layer="surface1" />
+     inkscape:current-layer="svg1374" />
   <defs
      id="defs505">
     <rect
@@ -1140,6 +1143,15 @@
          id="path502" />
     </clipPath>
   </defs>
+  <rect
+     style="display:inline;fill:#ffffff;stroke-width:1.89638;stroke-linecap:square"
+     id="rect1256"
+     width="1340.9725"
+     height="611.00653"
+     x="-462.74854"
+     y="-46.39426"
+     transform="translate(462.71538,46.327967)"
+     inkscape:label="Background" />
   <g
      id="surface1"
      style="display:inline"
