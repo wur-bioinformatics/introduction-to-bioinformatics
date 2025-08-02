@@ -9,6 +9,9 @@
    viewBox="0 0 1319.0001 523"
    sodipodi:docname="gene-duplication-speciation_alt.svg"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   inkscape:export-filename="gene-duplication-speciation_alt.png"
+   inkscape:export-xdpi="150"
+   inkscape:export-ydpi="150"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -158,13 +161,13 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
-     inkscape:zoom="2"
-     inkscape:cx="619.5"
-     inkscape:cy="174.5"
-     inkscape:window-width="3840"
-     inkscape:window-height="2054"
-     inkscape:window-x="-11"
-     inkscape:window-y="-11"
+     inkscape:zoom="1"
+     inkscape:cx="669"
+     inkscape:cy="347.5"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
      inkscape:window-maximized="1"
      inkscape:current-layer="g2358" />
   <g
@@ -178,7 +181,8 @@
        width="1319"
        height="523"
        x="-1"
-       y="-2" />
+       y="-2"
+       inkscape:label="Background" />
     <path
        style="display:inline;fill:url(#linearGradient2810);fill-opacity:1;stroke-width:2;stroke-linecap:square"
        d="M 117.54278,44.83027 V 223.39963 H 289.27825 V 44.386068 C 260.37779,28.645731 141.24822,28.328956 117.54278,44.83027 Z"
@@ -652,7 +656,7 @@
          sodipodi:role="line"
          id="tspan10504"
          x="200"
-         y="117"></tspan></text>
+         y="117" /></text>
     <text
        xml:space="preserve"
        style="font-size:21.3333px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#5cdb41;fill-opacity:1;stroke:none;stroke-width:7.55906;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
