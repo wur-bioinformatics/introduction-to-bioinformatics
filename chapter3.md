@@ -41,7 +41,7 @@ Phylogenetics aims at understanding evolutionary relationships among genes, spec
 Why? Because an evolutionary context (rather than a 'snapshot' perspective) allows identifying evolutionary lineages and their origins, and can provide information on how lifeforms and sequences change and adapt across millions of years.
 Examples are studying the evolution of gene families within genomes, or the build-up of species relationships in a lineage.
 
-:::{figure} images/chapter3/sars-cov-2.svg
+:::{figure} images/chapter3/sars-cov-2.png
 :alt: The SARS-CoV-2 phylogenetic tree
 :width: 100%
 :name: sars-cov-2
@@ -55,7 +55,7 @@ Or, studying population history within a species, reconstructing historical biog
 By _accurate_ we mean estimating relationships that are as close as possible to the actual (historic) relationships, which we cannot know for sure.
 As they happened in the past we cannot _prove_ them, but they are hypotheses (of relationships) that we can only _corroborate_ (confirm, seek support for).
 
-:::{figure} images/chapter3/ancestral-states_alt.svg
+:::{figure} images/chapter3/ancestral-states_alt.png
 :alt: A phylogenetic tree with ancestral states
 :width: 100%
 :name: ancestral_states_alt
@@ -105,7 +105,7 @@ It is important to realise that most phylogenetic reconstruction methods actuall
 
 ### Related, diverged
 
-:::{figure} images/chapter3/MRCA-mammals_alt.svg
+:::{figure} images/chapter3/MRCA-mammals_alt.png
 :alt: An additive phylogenetic tree rooted at monkey
 :width: 100%
 :name: MRCA_mammals_alt
@@ -166,7 +166,7 @@ Polytomies represent parts of the phylogenetic tree that are uncertain in terms 
 This can be due to there being insufficient information in the MSA for resolving the lineages, or ample but conflicting signal.
 Polytomies are usually interpreted as _soft_, meaning that the data used does not allow to resolve the lineages inferred ({numref}`polytomies_alt`).
 
-:::{figure} images/chapter3/polytomies_alt.svg
+:::{figure} images/chapter3/polytomies_alt.png
 :alt: Hard and soft polytomies
 :width: 60%
 :name: polytomies_alt
@@ -197,7 +197,7 @@ In contrast, _paralogy_ is the occurrence of similar genes resulting not from sp
 For example, proteins from a gene family with different functions in the same species. Such similar genes are referred to as _paralogs_, which are visualized as multiple occurences of particular terminals on the tree.
 {numref}`ortho_para`A and B illustrates the process of gene duplication followed by speciation, resulting in two parallel subtress (the grey X tree and the green X' tree). {numref}`ortho_para`C shows the challenge with using both orthologs and paralogs in phylogenetic analysis when not all members of a gene family have been sampled.
 
-:::{figure} images/chapter3/ortho-para.svg
+:::{figure} images/chapter3/ortho-para.png
 :alt: The challenge of paralogs
 :width: 100%
 :name: ortho_para
@@ -230,7 +230,7 @@ The Bα and Bγ genes are paralogous, as are any other combinations except the o
 Note that Aα and Bγ are orthologs despite their different functions.
 The gene tree inferred from these five genes has multiple occurrences of both species A and B ({numref}`gene_duplication_speciation_alt`B).
 
-:::{figure} images/chapter3/gene-duplication-speciation_alt.svg
+:::{figure} images/chapter3/gene-duplication-speciation_alt.png
 :alt: Evolutionary history of a gene after duplication and speciation events.
 :width: 100%
 :name: gene_duplication_speciation_alt
@@ -252,7 +252,7 @@ The incongruence is that in the gene tree human and mouse are more closely relat
 The species tree however indicates human to be more closely related to bovine/sheep than to mouse.
 In order to resolve (reconcile) this, δ3 is suggested as indicated in {numref}`IL_reconciled_alt`.
 
-:::{figure} images/chapter3/IL-tree_alt.svg
+:::{figure} images/chapter3/IL-tree_alt.png
 :alt: Species tree and a gene tree of mammalian Interleukin-1 genes.
 :width: 100%
 :name: IL_tree_alt
@@ -267,7 +267,7 @@ Made using imagery from: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0
 The tree in {numref}`IL_reconciled_alt` is a so-called _reconciled tree_, which has been inferred as an _extended tree_ that would be necessary to assume in order to explain the position and distribution of all IL sequence types in the gene tree.
 Apart from four gene duplications (marked δ{sub}`1`, δ{sub}`2`, δ{sub}`3` and δ{sub}`4`), several _gene losses_ (indicated with light grey branches) too would need to be assumed to explain the pattern in the gene tree in {numref}`IL_tree_alt`.
 
-:::{figure} images/chapter3/IL-reconciled_alt.svg
+:::{figure} images/chapter3/IL-reconciled_alt.png
 :alt: A reconciled tree of the species tree and gene tree of mammalian Interleukin-1 genes.
 :width: 60%
 :align: center
@@ -319,7 +319,7 @@ Repeating this process many times (hundreds or thousands) and summarizing the va
 It actually measures the sampling _variance about the estimate_ of the phylogeny {numref}`bootstrap_resampling_alt`B.
 This process is called _bootstrap analysis_ and will be further discussed in [Maximum likelihood tree building](#chapter3_ML), after we have covered the _characters_ underlying our trees in the next section.
 
-:::{figure} images/chapter3/bootstrap-resampling_alt.svg
+:::{figure} images/chapter3/bootstrap-resampling_alt.png
 :alt: Comparison between an unlimited and limited data bootstrap resampling analysis approach.
 :width: 100%
 :name: bootstrap_resampling_alt
@@ -347,7 +347,7 @@ Shared substitutions are informative for building the branches of your tree, as 
 Unique substitutions on the other hand only contribute to the _twigs_ or external branch lengths and have no grouping power.
 The more shared substitutions occur for a set of sequences in your MSA, the stronger the resulting node in the phylogenetic tree will be supported.
 
-:::{figure} images/chapter3/MSA_alt.svg
+:::{figure} images/chapter3/MSA_alt.png
 :alt: Multiple sequence alignments and autapomorphies and synapomorphies.
 :width: 80%
 :name: MSA_alt
@@ -386,7 +386,7 @@ Clades are indeed usually nested into each other, i.e., a clade is a subset of a
 Apart from being nested, clades can also be each other's _sisters_, which means they share an exclusive most recent common ancestor (MRCA) with no other clades included ({numref}`nested_clades_alt`).
 Such _sister groups_ are highly useful in, for instance, evolutionary and comparative studies, as they represent lineages of exact equal age.
 
-:::{figure} images/chapter3/nested-clades_alt.svg
+:::{figure} images/chapter3/nested-clades_alt.png
 :alt: A depiction of a rooted nested tree and nested and sister clades with MRCA.
 :width: 100%
 :name: nested_clades_alt
@@ -415,7 +415,7 @@ Thus, a new, internally placed, brown bird is inferred as the MRCA, to which the
 This however makes the brown birds paraphyletic with regards to the white birds, because not all descendants from the brown MRCA are brown, some are white.
 The white birds themselves are now monophyletic.
 
-:::{figure} images/chapter3/rooted-trees_alt.svg
+:::{figure} images/chapter3/rooted-trees_alt.png
 :alt: Unrooted and rooted tree depictions.
 :width: 100%
 :name: rooted_trees_alt
@@ -438,7 +438,7 @@ This indicates that care should be taken in selecting and assigning a suitable o
 In that case, one usually considers a copy of the gene of interest with sufficient similarity to be considered homologous, in a far-related evolutionary lineage (such as _Amborella_, for angiosperm plants) as a suitable outgroup for rooting that gene tree.
 {numref}`unrooted_tree` shows an example of an unrooted tree with additive branch lengths.
 
-:::{figure} images/chapter3/hcgob_alt.svg
+:::{figure} images/chapter3/hcgob_alt.png
 :alt: A properly rooted tree and an unrooted version of the same tree, with the proper root indicated.
 :width: 60%
 :name: hcgob_alt
@@ -449,7 +449,7 @@ The position of this root is indicated, both in the rooted and unrooted tree.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
 
-:::{figure} images/chapter3/hcgob-roots_alt.svg
+:::{figure} images/chapter3/hcgob-roots_alt.png
 :alt: Seven rooted trees derived from placing the root on a different branch of the unrooted tree.
 :width: 100%
 :name: hcgob_roots_alt
@@ -461,7 +461,7 @@ Terminal labels as for {numref}`hcgob_alt`; the orange shape indicates monophyly
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
 
-:::{figure} images/chapter3/unrooted-tree.svg
+:::{figure} images/chapter3/unrooted-tree.png
 :alt: An unrooted tree of groups of archea, bacteria and eukarya.
 :width: 100%
 :name: unrooted_tree
@@ -516,7 +516,7 @@ The task is then to find the tree with the best overall score _across all charac
 This score, which is also known as an _optimality criterion_, is a measure of how well the data (the characters in your MSA) fit on to a particular tree under consideration.
 This is then repeated with another tree, and again another etc. -_the better the fit, the better the tree_.
 
-:::{figure} images/chapter3/characters.svg
+:::{figure} images/chapter3/characters.png
 :alt: Character-based tree building.
 :width: 100%
 :name: characters
@@ -554,7 +554,7 @@ Answers represent estimates, and whether or not the 'best tree' is actually foun
 This number increases very rapidly with increasing _n_.
 Note: the number of unrooted ('unordered') trees follows that of rooted trees.
 
-```{figure} images/chapter3/bifurcating_alt.svg
+```{figure} images/chapter3/bifurcating_alt.png
 :alt: A calculation of how many bifurcating trees are possible, given a number of unrooted and rooted trees.
 :width: 100%
 :name: bifurcating_alt
@@ -587,7 +587,7 @@ Clade ABC is present in all trees and gets 100%.
 Clade ABCD is present in Tree 1 and Tree 2 and gets 67%.
 DE occurs only once and gets 33%, which is below the majority of 50% and therefore does not occur in the 50% majority-rule consensus tree.
 
-:::{figure} images/chapter3/consensus_alt.svg
+:::{figure} images/chapter3/consensus_alt.png
 :alt: Three primary trees with their strict and majority-rule consensus trees.
 :width: 80%
 :name: consensus_alt
@@ -612,7 +612,7 @@ More and more trees are compared this way until either a single best or a group 
 Given the vastness of tree spaces for even moderate numbers of terminals (see [Box 3.3](#chapter3_bifurcating)) this process may take some time to complete.
 Usually only heuristic search methods (see [Tree space and heuristic search methods](#chapter3_tree_space)) are applied in case of >15 terminals.
 
-:::{figure} images/chapter3/parsimony.svg
+:::{figure} images/chapter3/parsimony.png
 :alt: Parsimony analysis, in which character state changes in the MSA are indicated on the resulting trees.
 :width: 100%
 :name: parsimony
@@ -674,7 +674,7 @@ In this case the distance values perfectly fit the resulting distance tree.
 
 Note that both trees in {numref}`characters` and {numref}`character_distance_alt` have the same topology, but the parsimony tree contains more information: in addition to the branching pattern and branch lengths it also contains information on what character changed where on the tree.
 
-:::{figure} images/chapter3/character-distance_alt.svg
+:::{figure} images/chapter3/character-distance_alt.png
 :alt: The distance approach in reconstructing a phylogenetic tree of sequences that accumulated substitutions in a clock-like manner.
 :width: 100%
 :name: character_distance_alt
@@ -690,7 +690,7 @@ However, such clean data is hardly ever found, and the distances measured over t
 This is illustrated in {numref}`ultrametric_distance_alt` in which two trees are depicted: an ultrametric tree (A) and an additive tree (B) containing unequal sister branch lengths (to a and b).
 In the additive distance matrix (matrix B), due to the difference in length towards a and b, the most similar sequences (i.e., b and c) may actually not be the most closely related (i.e., a and b).
 
-:::{figure} images/chapter3/ultrametric-distance_alt.svg
+:::{figure} images/chapter3/ultrametric-distance_alt.png
 :alt: Comparison between ultrametric distance matrix and tree to additive distance matrix and tree.
 :width: 100%
 :name: ultrametric_distance_alt
@@ -726,7 +726,7 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) \
 {cite}`own_3_2024`
 ```
 
-```{figure} images/chapter3/inequality_alt.svg
+```{figure} images/chapter3/inequality_alt.png
 :alt: Metric distances adhering to the triangle inequality and ultrametric distances adhering to the ultrametric inequality.
 :width: 300px
 :align: right
@@ -758,7 +758,7 @@ Neighbor Joining produces unrooted trees and therefore, if needed, outgroup root
 There is no molecular clock assumption, which allows differences in branch lengths between neighbors (sisters) to be reconstructed.
 NJ is implemented in [MEGA11](https://www.megasoftware.net/){cite}`mega_2021`) and used in the practical.
 
-:::{figure} images/chapter3/neighbor-joining-process_alt.svg
+:::{figure} images/chapter3/neighbor-joining-process_alt.png
 :alt: Stepwise process involved in the neighbor joining computational process.
 :width: 100%
 :name: neighbor-joining-process_alt
@@ -825,7 +825,7 @@ In this case the relative rates for all six substitution types are assumed to be
 Another assumption in this model is that the base composition across the MSA is equal, assuming a 25% probability of finding of each base at each position in each sequence.
 The JC model is considered a fairly simple, one parameter, model.
 
-:::{figure} images/chapter3/JC_alt.svg
+:::{figure} images/chapter3/JC_alt.png
 :alt:
 :align: center
 :name: JC_alt
@@ -843,7 +843,7 @@ $$
 d = \frac{1}{2} \ln{\left[ \frac{1}{1 - 2P - Q} \right]} + \frac{1}{4} \ln{\left[ \frac{1}{1 - 2Q} \right]}
 $$
 
-:::{figure} images/chapter3/K2P.svg
+:::{figure} images/chapter3/K2P.png
 :alt: The Kimura 2-parameter substitution model.
 :width: 300px
 :align: right
@@ -924,7 +924,7 @@ Bootstrap values of 62% are usually obtained for MSAs containing one synapomorph
 That is indeed the trade-off: visualizing lots of nice but poorly supported resolution _versus_ only focusing on strong nodes.
 Usually, we want to see both.
 
-:::{figure} images/chapter3/bootstrap-collapse_alt.svg
+:::{figure} images/chapter3/bootstrap-collapse_alt.png
 :alt: ML tree with bootstrap values and the same ML tree with low support bootstrap values collapsed.
 :width: 100%
 :name: bootstrap_collapse_alt
