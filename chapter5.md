@@ -71,7 +71,7 @@ phenomics, as well as the main types of data analysis involved.
 
 :::{figure} images/chapter5/central-dogma.png
 :alt: Central dogma of molecular biology
-:align: right
+:align: left
 :width: 360px
 :name: central_dogma
 
@@ -578,7 +578,7 @@ the International Space Station.
 
 :::{figure} images/chapter5/ladybug_aphid.png
 :alt: Sequencing contamination
-:align: right
+:align: left
 :width: 300px
 :name: ladybug_aphid
 
@@ -622,7 +622,7 @@ detection of structural variation are discussed.
 :::{figure} images/chapter5/co-segregation_alt.png
 :alt: Co-segregation of alleles
 :width: 300px
-:align: right
+:align: left
 :name: co_segregation_alt
 
 Co-segregation of alleles. \
@@ -855,7 +855,7 @@ Small variants can have large phenotypic effects.
 :::{figure} images/chapter5/carrots.jpg
 :alt: carrot phenotypic diversity
 :width: 200px
-:align: right
+:align: left
 :name: carrots
 
 Colour variations in carrots. \
@@ -994,7 +994,7 @@ Different types of structural variants on chromosome level. Credits: [CC0 1.0](h
 
 :::{figure} images/chapter5/cri-du-chat.png
 :alt: cri du chat mutation and phenotype
-:align: right
+:align: left
 :width: 200px
 :name: cri_du_chat
 :::
@@ -1393,7 +1393,7 @@ level should be interpreted (see box below).
 :alt: Differential display gel
 :width: 184px
 :height: 367px
-:align: right
+:align: left
 :name: differential_gel_alt
 
 Example of differential \
@@ -1567,7 +1567,7 @@ assembled transcriptome (a reference sequence that only contains RNA
 sequences) or to prokaryotic genomes.
 :::{figure} images/chapter5/spliced-alignment.png
 :alt: Spiced read alignment
-:align: right
+:align: left
 :name: spliced_alignment
 
 Mapping of mRNA reads to genomic reference with splice aware aligner.
@@ -1615,7 +1615,7 @@ data comparable. The main methods are:
 
 :::{figure} images/chapter5/CPM.png
 :alt: Counting reads
-:align: right
+:align: left
 :name: CPM
 
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
@@ -1632,7 +1632,7 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 
 :::{figure} images/chapter5/comparing-transcripts.png
 :alt: Comparing transcript levels
-:align: right
+:align: left
 :name: comparing_transcripts
 
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
