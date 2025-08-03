@@ -29,7 +29,7 @@ Later in the book, we will also look at [large-scale genome variations](#chapter
 
 :::{figure} images/chapter2/mutations.png
 :alt: Types of mutations
-:align: right
+:align: left
 :width: 60%
 :name: mutations
 
@@ -78,7 +78,7 @@ A sequence can also be compared to itself, then the main diagonal will be filled
 
 :::{figure} images/chapter2/dot_small2.png
 :alt: Small dotplot example
-:align: right
+:align: left
 :width: 100%
 :name: dotsmall
 

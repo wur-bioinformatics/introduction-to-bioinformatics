@@ -28,7 +28,7 @@ A _clade_ is a group containing an ancestor together with all its descendants an
 :::{figure} images/chapter3/tree-of-life_alt.png
 :alt: Simplified Tree of Life
 :width: 400px
-:align: right
+:align: left
 :name: tree_of_life_alt
 
 Simplified Tree of Life. Credits: \
@@ -285,7 +285,7 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 ```{figure} images/chapter3/embedded-tree.png
 :alt: Gene trees embedded in a species tree of western pocket gophers (Geomyidae, Thomomys).
 :width: 350px
-:align: right
+:align: left
 :name: embedded_tree
 
 Gene trees, in color, embedded in the \
@@ -629,7 +629,7 @@ The tree that minimizes the number of changes also minimizes the number of _ad h
 :::{figure} images/chapter3/ockham.jpg
 :alt: William of Ockham
 :width: 310px
-:align: right
+:align: left
 :name: ockham
 
 William of Ockham, 'father of parsimony', \
@@ -719,7 +719,7 @@ Clustering usually produces one tree, no alternative 'equally good' trees are sh
 ```{figure} images/chapter3/distances.png
 :alt: The different distance measures.
 :width: 300px
-:align: right
+:align: left
 :name: distances
 
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) \
@@ -729,7 +729,7 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) \
 ```{figure} images/chapter3/inequality_alt.png
 :alt: Metric distances adhering to the triangle inequality and ultrametric distances adhering to the ultrametric inequality.
 :width: 300px
-:align: right
+:align: left
 :name: inequality_alt
 
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) \
@@ -846,7 +846,7 @@ $$
 :::{figure} images/chapter3/K2P.png
 :alt: The Kimura 2-parameter substitution model.
 :width: 300px
-:align: right
+:align: left
 :name: K2P
 
 The Kimura 2-parameter substitution \
@@ -1428,7 +1428,7 @@ Whereas this approach is fast and powerful, there are known problems in case of 
 
 ```{image} images/chapter3/assignment_6_1.png
 :alt: Divide-and-conquer method.
-:align: right
+:align: left
 :width: 400px
 :name: assignment_6_1
 ```
