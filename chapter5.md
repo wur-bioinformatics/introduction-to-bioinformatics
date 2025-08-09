@@ -2429,9 +2429,6 @@ Fold change
 GC bias
 : Deviation in sequencing coverage due to differences in GC content of DNA.
 
-Gene duplication
-: A structural variant that increases the number of gene copies within a genome.
-
 Genome browser
 : A tool for visually inspecting genomic regions, annotations, and experimental data tracks.
 

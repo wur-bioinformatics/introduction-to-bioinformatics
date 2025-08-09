@@ -804,7 +804,7 @@ Intuitively, when comparing two sequences, one would just take the proportion of
 However, this so-called _p-difference_ does not necessarily consider _all_ substitutions that historically occurred during divergence of the two sequences (which may include reversals to the original state).
 Estimating 'true' sequence divergence means that we need to find substitutions that _did_ happen but are not visible in your MSA.
 Variable sites can actually keep on changing during evolution, causing multiple substitutions to occur at the same position, which can lead to saturation of change.
-In this way several substitutions may go unnoticed, and a mere {term}`_p_-difference` will underestimate actual sequence divergence.
+In this way several substitutions may go unnoticed, and a mere {term}`p-difference` will underestimate actual sequence divergence.
 
 ---
 
@@ -1619,7 +1619,7 @@ Outgroup
 Paraphyly
 : For a group, not all members being derived from one MRCA.
 
-_p_-difference
+p-difference
 : Proportional difference, uncorrected.
 
 Phylogenetics
@@ -1669,9 +1669,6 @@ Ultrametric tree
 
 Triangle inequality
 : In any triplet, the distance a–b ≤ a–c + c–b.
-
-OTU
-: Operational taxonomic unit; a tip (external node) representing an observed sequence or individual.
 :::
 
 ```{bibliography}
