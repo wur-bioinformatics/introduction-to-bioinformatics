@@ -2509,6 +2509,7 @@ Translocation
 
 Variant calling
 : Computational process of identifying and annotating sequence differences compared to a reference genome.
+:::
 
 ## References
 
