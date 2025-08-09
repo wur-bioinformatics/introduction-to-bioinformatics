@@ -24,7 +24,7 @@ By analyzing DNA and protein sequences, researchers can annotate genes in new ge
 It is important to notice that nature tends to stick with what works, rather than reinventing the wheel for each species.
 
 Organisms evolve from ancestors and accumulate mutations.
-Here we deal with __small-scale__ mutations, that affect a few characters: substitutions (see also [Chapter 1](#chapter1_substitutions)) and small insertions and deletions ({numref}`mutations`).
+Here we deal with __small-scale__ mutations, that affect a few characters: substitutions (see also [Chapter 1](#chapter1_substitutions)) and small {term}`Insertions` and {term}`Deletions` ({numref}`mutations`).
 Later in the book, we will also look at [large-scale genome variations](#chapter5_large-scale_genome_variation).
 
 :::{figure} images/chapter2/mutations.png
@@ -46,12 +46,12 @@ Before diving into the analysis of whether sequences are related, it is importan
 ```{admonition} Homology and similarity
 :class: important
 
-**Homology** means that sequences share a common evolutionary history and therefore have a common ancestor.
+{term}`Homology` means that sequences share a common evolutionary history and therefore have a common ancestor.
 Homology is not quantifiable.
 If two sequences have a common ancestor, they are __homologous__.
 Thus, two sequences are either homologous or they are not.
 
-**Sequence identity** and **sequence similarity** are often used to infer whether two sequences are homologous.
+{term}`Sequence identity` and {term}`Sequence similarity` are often used to infer whether two sequences are homologous.
 We can measure the identity or similarity between sequences and we will see how to do this later in this chapter.
 
 In contrast, we cannot measure homology, but we can only infer it.
@@ -63,14 +63,15 @@ In contrast, we cannot measure homology, but we can only infer it.
 Here is a classic paper, where homologous protein families are introduced: [Tatusov et al., 1997](https://pubmed.ncbi.nlm.nih.gov/9381173/).
 ```
 
-This chapter covers the basics of sequence comparisons. We will describe how two sequences can be compared with dot plots or with a pairwise sequence alignment.
+This chapter covers the basics of sequence comparisons.
+We will describe how two sequences can be compared with dot plots or with a pairwise sequence {term}`Alignment`.
 Then, the search of similar sequences in databases is described.
 Different approaches for comparing multiple sequences are covered: multiple sequence alignments to align them, motifs to find common sequences and profile hidden markov models to represent multiple sequences.
 This chapter concludes with a section on PCR primer design as an example on the use of sequence alignment algorithms in practice.
 
 ## Dot plots
 
-Dot plots are a simple way to visualize similar regions between two sequences.
+{term}`Dot plot`s are a simple way to visualize similar regions between two sequences.
 They are represented by a matrix, where one sequence is written vertically and the other horizontally.
 A dot is placed in a cell where the residues are identical.
 In the resulting plot, similar regions appear as diagonal stretches and insertions and deletions appear as discontinuities in the diagonal lines ({numref}`dotsmall`).
@@ -118,10 +119,10 @@ A screenshot of [dotlet](https://dotlet.vital-it.ch/) with the following protein
 ## Pairwise alignment
 
 Dot plots provide a visual way to compare two sequences, but do not provide the similarity between two sequences.
-To calculate sequence similarity or sequence identity, we need to perform a **pairwise sequence alignment**.
+To calculate sequence similarity or sequence identity, we need to perform a {term}`Pairwise sequence alignment`.
 In an alignment, the two sequences will be placed above each other and gaps can be introduced to represent insertions or deletions of residues.
 We also say that the two sequences will be **aligned**.
-The resulting alignment contains matches, mismatches, and gaps ({numref}`algterm`)
+The resulting alignment contains {term}`Match`es, {term}`Mismatch`es, and gaps ({numref}`algterm`)
 
 :::{figure} images/chapter2/alg_term.png
 :alt: Small alignment example
@@ -167,7 +168,7 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 
 The DNA and protein sequences that we want to align often have varying lengths, which is the result of insertions and deletions during evolution.
 Insertion and deletion events can affect one or multiple residues, where one event of length 2 is more likely to happen than two independent events of length 1.
-To include this in the scoring scheme, alignment programs use **affine gap costs** that distinguish between opening a gap and extending a gap.
+To include this in the scoring scheme, alignment programs use {term}`Affine gap costs` that distinguish between opening a gap and extending a gap.
 For example, the default parameters of the pairwise alignment program [needle](https://www.ebi.ac.uk/jdispatcher/psa/emboss_needle) {cite}`EMBL_tools_2022` are:
 
 Gap open (score for the first residue in a gap): -10
@@ -181,7 +182,7 @@ Gap extend (score for each additional residue in a gap): -0.5
 A huge number of alignments are possible for two sequences, since the gaps can be placed in many different ways.
 However, to find the **optimal alignment**, i.e., the one with the highest score, it is not necessary to explore all these possibilities.
 Efficient algorithms exist that guarantee to find the optimal alignment.
-The Needleman-Wunsch algorithm was the first algorithm and can solve this task in a time that is quadratic to the length of the input sequences.
+The {term}`Needleman-Wunsch algorithm` was the first algorithm and can solve this task in a time that is quadratic to the length of the input sequences.
 ```
 
 ### Alignments of protein sequences
@@ -193,7 +194,7 @@ The Needleman-Wunsch algorithm was the first algorithm and can solve this task i
 In [Chapter 1](#chapter1_aminoacids), we learned that different amino acids have different chemical properties.
 When protein structure and function are conserved, it is more likely that an amino acid gets replaced by a chemically similar one than a very different one.
 When aligning protein sequences, we thus want to penalize the substitution of chemically dissimilar amino acids and reward the substitution of chemically similar ones.
-To this end, the score of matches and mismatches is generally determined by a **substitution matrix**, e.g., BLOSUM62 - **BLOSUM (BLOck SUbstitution Matrix)** ({numref}`blosum62`).
+To this end, the score of matches and mismatches is generally determined by a {term}`Substitution matrix`, e.g., BLOSUM62 - {term}`BLOSUM` (BLOck SUbstitution Matrix)** ({numref}`blosum62`).
 The substitution matrix and the gap parameters then determine the alignment score ({numref}`aa_alg`).
 
 :::{figure} images/chapter2/blosum62.png
@@ -231,7 +232,7 @@ Thus, these scores reflect directly which amino acids are replaced more often wi
 There are different versions of BLOSUM; for example, BLOSUM62 was derived by clustering sequences with an identity of 62% and is appropriate for comparing protein sequences having around 62% identity.
 Other available matrices are for example BLOSUM45 (for more divergent sequences) and BLOSUM80 (for more similar sequences) ({numref}`submat`).
 
-Another group of matrices, that was derived even before BLOSUM, is **PAM (Point Accepted Mutation)**.
+Another group of matrices, that was derived even before BLOSUM, is {term}`PAM` **(Point Accepted Mutation)**.
 The entries in a PAM matrix denote the substitution probabilities of amino acids over a defined unit of evolutionary change.
 For example, PAM1 represents one substitution per 100 amino acid residues and is thus appropriate for very closely related sequences.
 A commonly used matrix is PAM250, which means that 250 mutations happened over 100 residues; that is, many residues have been affected by more than one mutation.
@@ -256,8 +257,8 @@ An introduction into PAM and BLOSUM substitution matrices.
 #### Protein identity and similarity
 
 For two protein sequences, we can distinguish two different measures of how much they are alike, identity and similarity, which are defined slightly differently.
-The **protein identity** is given by the number of identical amino acids divided by the alignment length.
-The **protein similarity** is given by the number of similar amino acids _and_ the number of identical amino acids divided by the alignment length.
+The {term}`Protein identity` is given by the number of identical amino acids divided by the alignment length.
+The {term}`Protein similarity` is given by the number of similar amino acids _and_ the number of identical amino acids divided by the alignment length.
 In the pairwise alignment program [needle](https://www.ebi.ac.uk/jdispatcher/psa/emboss_needle), **identical amino acids** are marked by a vertical line ( | ), **similar amino acids** are marked by a colon (:) and defined by pairs that have a positive score (i.e., >0) in the chosen substitution matrix ({numref}`aa_sim`).
 
 :::{figure} images/chapter2/aa_sim.png
@@ -286,18 +287,18 @@ B) BLOSUM62 matrix, gap open: -5, gap extend: -0.5. Identity = 305/1166 (26.2%),
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024` made using [needle](https://www.ebi.ac.uk/jdispatcher/psa/emboss_needle) {cite}`EMBL_tools_2022`.
 :::
 
-Up until now, we have only considered pairwise alignments, where both sequences are aligned completely; these are called **global alignments**.
+Up until now, we have only considered pairwise alignments, where both sequences are aligned completely; these are called {term}`Global alignment`s.
 
 ### Local alignments
 
 We have seen in [Chapter 1](#chapter1_Interpro) that many proteins are composed of domains.
 Thus, some sequences might not be related over their full length, but only share similarity over parts of their sequences that correspond to domains.
-When comparing such proteins, it is more appropriate to perform a **local alignment**.
+When comparing such proteins, it is more appropriate to perform a {term}`Local alignment`.
 Local alignment is also a good tool for identifying functional sites from which sequence patterns and motifs can be derived {numref}`alg_local`.
 
 The aim of a local alignment is to find the best subsequences of both input sequences that result in the maximum alignment score given the alignment parameters.
 As for global alignment, efficient algorithms exist to solve this task.
-The Smith-Waterman algorithm can solve this task in a time that is quadratic in the length of the input sequences, just like the Needleman-Wunsch algorithm for global alignments.
+The {term}`Smith-Waterman algorithm` can solve this task in a time that is quadratic in the length of the input sequences, just like the Needleman-Wunsch algorithm for global alignments.
 
 :::{figure} images/chapter2/alg_local.png
 :alt: Local alignment
@@ -339,13 +340,13 @@ We thus need even more efficient algorithms.
 :class: note
 
 The Needleman-Wunsch and the Smith-Waterman algorithm described in the previous section guarantee to find the alignment with the best score for the given sequences and parameters.
-In contrast, a **heuristic algorithm** employs some rules-of-thumb, which generally lead to good results and which make the algorithm much faster.
+In contrast, a {term}`Heuristic algorithm` employs some rules-of-thumb, which generally lead to good results and which make the algorithm much faster.
 However, such a method does not guarantee to find the optimal score anymore.
 ```
 
 ### BLAST
 
-Basic Local Alignment Search Tool (**BLAST**) is a heuristic method to find regions of local similarity between protein or nucleotide sequences.
+Basic Local Alignment Search Tool ({term}`BLAST`) is a heuristic method to find regions of local similarity between protein or nucleotide sequences.
 The program compares nucleotide or protein sequences to sequences in a database and calculates the statistical significance of the matches.
 Both the standalone and web version of BLAST are available from the National Center for Biotechnology Information ([NCBI](https://www.ncbi.nlm.nih.gov)).
 
@@ -393,7 +394,7 @@ Credits: {cite}`blast_2009`
 ```{admonition} Note 2.5: E-value
 :class: note
 
-An important output statistic is the expectation value (**E-value**), which is the number of BLAST hits with the observed score or higher that you expect to see by chance in the database.
+An important output statistic is the expectation value ({term}`E-value`), which is the number of BLAST hits with the observed score or higher that you expect to see by chance in the database.
 Note that due to this definition, the E-value depends on the database size.
 Since it is more likely to find something by chance in a larger database, the E-value for the same hit would be higher compared to a smaller database.
 Thus, to find as many good hits as possible, it makes sense to use the smallest specific database that contains all the sequences you are interested in.
@@ -439,7 +440,7 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 
 ### PCR primer design
 
-A special use case of sequence comparisons is designing __primers__ for the polymerase chain reaction (PCR, see [Box 2.2](#chapter2_PCRbox)).
+A special use case of sequence comparisons is designing {term}`Primers` for the polymerase chain reaction ({term}`PCR`, see [Box 2.2](#chapter2_PCRbox)).
 Many laborary techniques in biomedical applications rely on PCR for amplifying specific fragments of DNA.
 Examples include pathogen detection, analyzing genetic variation, targeted mutagenesis, _de novo_ protein synthesis, and studying gene expression patterns.
 Which DNA fragments are amplified is determined largely by which PCR __primers__ are used.
@@ -504,7 +505,7 @@ where A, C, G, and T are the number of respective nucleotides in the primer.
 One straightforward observation from a sequence search is that one query sequence is often similar to multiple sequences ({numref}`blast_output`).
 This can lead to research questions on evolution (where do these sequences come from?), function (why are some sequences more similar to each other than to others?), or structure (are all parts of these sequences equally similar/dissimilar?).
 Comparing all of these sequences with each other using a pairwise alignment strategy would quickly lead to a large number of comparisons and would be difficult to interpret.
-Instead, in cases where we want to compare 3 or more sequences with each other, we use a **multiple sequence alignment (MSA)**.
+Instead, in cases where we want to compare 3 or more sequences with each other, we use a **multiple sequence alignment** ({term}`MSA`).
 
 The objective of performing multiple sequence alignment is to identify matching residues (DNA, RNA, or amino acids) across multiple sequences of potentially differing lengths.
 The resulting alignment can be thought of as a square matrix: rows represent the sequences that we started with, columns represent homologous residues across sequences, and the entries are either residues or gaps ({numref}`msa_concept`).
@@ -524,7 +525,7 @@ Instead, various heuristic algorithms (Note 2.4) for creating multiple sequence 
 Here we will go over two main concepts that are adopted by many tools: progressive alignment and iterative alignment.
 
 #### Progressive alignment
-Progressive alignment builds the alignment using a so-called __guide tree__ ([Box 2.3](#chapter2_guidetree)).
+{term}`Progressive alignment` builds the alignment using a so-called {term}`Guide tree` ([Box 2.3](#chapter2_guidetree)).
 The guide tree is a crude representation of similarity between all sequences to be aligned.
 Progressive alignment picks the two most similar sequences using the guide tree and initializes the multiple sequence alignment by aligning these two sequences with a global alignment strategy.
 Subsequently, the guide tree is used to determine the order in which sequences are added to the alignment.
@@ -548,7 +549,7 @@ The often used multiple sequence alignment program `mafft` implements recomputin
 #### Iterative refinement
 One potential downside of the progressive alignment strategy is that some of the intermediate blocks may represent sub-optimal alignments.
 For example, when a gap is introduced during an early stage of the progressive approach, it is never removed from the alignment.
-Identifying and potentially improving such cases is often referred to as __iterative refinement__ and typically happens on a multiple sequence alignment that was created with a progressive strategy.
+Identifying and potentially improving such cases is often referred to as {term}`Iterative refinement` and typically happens on a multiple sequence alignment that was created with a progressive strategy.
 
 Iterative refinement takes as input a multiple sequence alignment, a scoring function for the multiple sequence alignment, and a function to rearrange the multiple sequence alignment.
 It produces a _refined_ multiple sequence alignment by rearranging the multiple sequence alignment and only keeping the new multiple sequence alignment if the score has increased.
@@ -569,7 +570,7 @@ __Partitioning rearrangement__: Following a guide tree, the multiple sequence al
 
 Having established how to obtain a multiple sequence alignment, we now focus on several interpretations.
 One possible interpretation is the identification of (and search for) commonly occurring sequence patterns.
-A frequently used term for a commonly occurring sequence pattern is __motif__, which we will use from now on.
+A frequently used term for a commonly occurring sequence pattern is {term}`Motif`, which we will use from now on.
 Motifs can be found by summarizing the _columns_ of the multiple sequence alignment, in an attempt to describe commonly occurring residues across all sequences.
 
 ```{admonition} Note 2.5: Multiple sequence alignments vs. motifs
@@ -579,10 +580,10 @@ A key distinction is that a motif always represent a commonly occurring pattern,
 In addition, one multiple sequence alignment can contain multiple motifs.
 ```
 
-The simplest representation of a motif is the __consensus sequence__ ({numref}`motif_concept`B), where every column of the multiple sequence alignment is represented by the most frequently occurring residue (i.e., the majority consensus).
+The simplest representation of a motif is the {term}`Consensus sequence` ({numref}`motif_concept`B), where every column of the multiple sequence alignment is represented by the most frequently occurring residue (i.e., the majority consensus).
 The downside of a consensus sequence is that it does not represent any of the variation present in the motif.
 
-An extension of the consensus sequence that can represent some variation in a motif is the __pattern string__ ({numref}`motif_concept`C).
+An extension of the consensus sequence that can represent some variation in a motif is the {term}`Pattern string` ({numref}`motif_concept`C).
 In pattern strings, unambigous positions are represented by single letters and there is a special syntax for representing variation:
 Positions in the MSA with more than one character are represented by multiple characters in between square brackets.
 A pattern string containing, for example, the pattern `[AG]` indicates that one position in the motif can be either `A` or `G`.
@@ -598,7 +599,7 @@ The entries represent probabilities of observing a specific residue at a specifi
 As a consequence, all columns in a PSSM must sum to one.
 Since a PSSM contains probabilities, it is relatively straightforward to calculate how well an unknown sequence matches an existing PSSM: assuming independence between positions, one simply multiplies the observation probabilities of the characters in the novel sequence.
 
-Finally, __sequence logos__ are a graphical representation of an alignment ({numref}`motif_concept`E).
+Finally, {term}`Sequence logo`s are a graphical representation of an alignment ({numref}`motif_concept`E).
 Every position in the sequence logo represents a position in the MSA.
 The total height of the logo at a position indicates the _information_ that this column contains, i.e., an unambiguous position has a high information content, whereas a position with equal frequencies of characters has a low information content.
 Additionally, the characters are scaled proportional to their probability of being observed at their respective positions.
@@ -616,7 +617,7 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 ### Profile hidden Markov models (pHMMs)
 
 The previous sections on multiple sequence alignments and motifs explained some basics of how collections of similar sequences can be summarized and used.
-In this section we highlight a powerful approach for using the information in MSAs to perform sequence search and comparison: __profile hidden Markov models (pHMMs)__.
+In this section we highlight a powerful approach for using the information in MSAs to perform sequence search and comparison: __profile hidden Markov models__ ({term}`pHMM`s).
 Some of the fundamentals of general hidden Markov models ({term}`HMM`) have been covered in [Chapter 1](#chapter1); here we introduce how a few simple adaptations to the general concept of HMMs unlocks a powerful sequence search approach.
 
 We can think of a profile hidden Markov model as an extension of a position specific scoring matrix.
@@ -847,106 +848,109 @@ You may include up to two figures or tables.
 
 :::{glossary}
 Affine gap costs
-: Alignment scoring scheme that distinguishes between gap opening and gap extension costs
+: Alignment scoring scheme that distinguishes between gap opening and gap extension costs.
 
 Alignment
 : The arrangement of sequences to identify regions of similarity, often used to infer evolutionary relationships.
 
 BLAST
-: Basic Local Alignment Search Tool
+: Basic Local Alignment Search Tool.
 
 BLOSUM
-: BLOck SUbstitution Matrix - a group of protein substitution matrices
+: BLOck SUbstitution Matrix - a group of protein substitution matrices.
 
 Consensus sequence
-: Sequence of most frequently occurring residues in an alignment
+: Sequence of most frequently occurring residues in an alignment.
+
+Deletions
+: Mutations that remove one or more residues from a sequence.
 
 Dot plot
-: A matrix visualization that compares two sequences and marks matching characters; useful for spotting repeats and similarity
+: A matrix visualization that compares two sequences and marks matching characters; useful for spotting repeats and similarity.
 
 E-value
-: Expectation value - the number of hits with the observed score or higher that you expect to see by chance in the database (e.g., with BLAST)
+: Expectation value - the number of hits with the observed score or higher that you expect to see by chance in the database (e.g., with BLAST).
 
 Global alignment
-: Alignment strategy, where the complete sequences are aligned
+: Alignment strategy, where the complete sequences are aligned.
 
 Guide tree
-: A tree based on clustering of the sequences based on their pairwise distances that is used for constructing MSAs
+: A tree based on clustering of the sequences based on their pairwise distances that is used for constructing MSAs.
 
 Heuristic algorithm
-: A method that is not guaranteed to find the solution with the best score, but instead employs rules-of-thumb that generally lead to good results
+: A method that is not guaranteed to find the solution with the best score, but instead employs rules-of-thumb that generally lead to good results.
 
 Homology
-: Homologous sequences share a common ancestor
-
-Identity
-: Percentage of exactly matching residues in an alignment, divided by the alignment length
+: Homologous sequences share a common ancestor.
 
 Insertions
-: Mutations where one or more residues are added to a sequence
+: Mutations where one or more residues are added to a sequence.
 
 Iterative refinement
-: Heuristic to improve an MSA
-
-Jackhmmer
-: A tool in the HMMER suite that iteratively builds hidden Markov models to search for distant homologs in databases
+: Heuristic to improve an MSA.
 
 Local alignment
-: Alignment strategy, where regions of local similarity are identified
+: Alignment strategy, where regions of local similarity are identified.
 
 Match
-: Aligned positions in two sequences that share the same character or residue
+: Aligned positions in two sequences that share the same character or residue.
 
 Mismatch
-: Aligned positions in two sequences with differing characters or residues
+: Aligned positions in two sequences with differing characters or residues.
 
 Motif
-: Commonly occurring sequence pattern
+: Commonly occurring sequence pattern.
 
 MSA
-: **M**ultiple **S**equence **A**lignment - alignment of more than two sequences
+: **M**ultiple **S**equence **A**lignment - alignment of more than two sequences.
+
+Needleman-Wunsch algorithm
+: an algorithm used for calculating optimal global sequence alignments.
 
 PAM
-: Point Accepted Mutation - a group of protein substitution matrices
+: Point Accepted Mutation - a group of protein substitution matrices.
 
 Pairwise sequence alignment
-: Alignment of two sequences by introducing gaps such that a score is maximized
+: Alignment of two sequences by introducing gaps such that a score is maximized.
 
 Pattern string
-: Sequence representation using regular expression-like syntax to describe conserved motifs, e.g. `[AG]` for A or G
+: Sequence representation using regular expression-like syntax to describe conserved motifs, e.g. `[AG]` for A or G.
 
 PCR
-: Polymerase chain reaction
+: Polymerase chain reaction.
 
 pHMM
-: profile hidden Markov model - probabilistic representation of an MSA that allows to search sequences against domain databases
+: profile hidden Markov model - probabilistic representation of an MSA that allows to search sequences against domain databases.
 
 Primers
-: Short fragments of single stranded DNA that are used during PCR to prime the polymerase
+: Short fragments of single stranded DNA that are used during PCR to prime the polymerase.
 
 Progressive alignment
-: Heuristic method of MSA building based on a guide tree
+: Heuristic method of MSA building based on a guide tree.
 
 Protein identity
-: Number of identical amino acids in a pairwise alignment divided by the alignment length
+: Number of identical amino acids in a pairwise alignment divided by the alignment length.
 
 Protein similarity
-: Number of similar and identical amino acids in a pairwise alignment divided by the alignment length
+: Number of similar and identical amino acids in a pairwise alignment divided by the alignment length.
 
 PSSM
-: Position Specific Scoring Matrix
+: Position Specific Scoring Matrix.
+
+Sequence identity
+: Percentage of exactly matching residues in an alignment, divided by the alignment length.
 
 Sequence logo
-: Graphical representation of an alignment showing the information in that column
+: Graphical representation of an alignment showing the information contained in that column by its height.
 
-Similarity
-: Percentage of aligned residues that are either identical or chemically similar
+Sequence similarity
+: Percentage of aligned residues that are either identical or chemically similar.
 
 Smith-Waterman algorithm
-: A dynamic programming algorithm used for calculating optimal local sequence alignments
+: A dynamic programming algorithm used for calculating optimal local sequence alignments.
 
 Substitution matrix
-: A scoring table for matching or replacing amino acids in alignments, e.g. BLOSUM62
+: A scoring table for matching or replacing amino acids in alignments, e.g. BLOSUM62.
 :::
 
 ```{bibliography}
