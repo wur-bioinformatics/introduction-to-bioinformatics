@@ -1668,7 +1668,5 @@ OTU
 : Operational taxonomic unit; a tip (external node) representing an observed sequence or individual
 :::
 
-## References
-
 ```{bibliography}
 ```

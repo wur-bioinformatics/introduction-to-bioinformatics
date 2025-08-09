@@ -949,7 +949,5 @@ Substitution matrix
 : A scoring table for matching or replacing amino acids in alignments, e.g. BLOSUM62
 :::
 
-## References
-
 ```{bibliography}
 ```

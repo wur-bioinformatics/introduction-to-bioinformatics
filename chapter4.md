@@ -1016,7 +1016,5 @@ Transmembrane section
 : Region of a protein that embeds into and passes through a membrane, often as an α-helix or β-strand.
 :::
 
-## References
-
 ```{bibliography}
 ```
