@@ -1525,14 +1525,18 @@ You may include up to two figures or tables.
 3. **Discussion & Conclusion** Do the results make sense? Are they according to your expectation or do you see something surprising? What do the results mean, how can you interpret them? Do different tools agree or not? What can you conclude? Make sure to describe the expectations and assumptions underlying your interpretation.
 :::::
 
-## Glossary
-This glossary contains the most important terms from this chapter.
-```{glossary}
+:::{glossary}
+Additive tree
+: A phylogenetic tree where branch lengths are proportional to the amount of change in the data.
+
 Apomorphy
 : Derived character state
 
 Autapomorphy
-: For a group, all members being derived from one MRCA
+: Uniquely derived character state restricted to a single terminal (taxon)
+
+Bayesian inference
+: A character-based phylogenetic method that estimates posterior probabilities of trees given a model and data
 
 Bifurcating
 : A tree containing nodes that are all connected through three branches
@@ -1540,14 +1544,41 @@ Bifurcating
 Bootstrap
 : A method for measuring node support in a phylogenetic tree
 
+Bootstrap value
+: Group frequency (percentage) with which a clade appears across bootstrap replicate trees
+
 Branch length
 : The length, either in steps (parsimony), distances (clustering) or substitutions per site (maximum likelihood)
+
+Character-based methods
+: Tree reconstruction methods that evaluate site patterns directly (e.g., parsimony, ML, Bayesian)
 
 Clade
 : Monophyletic group, MRCA with all descendants
 
+Cladogram
+: A tree drawing showing topology only; branch lengths are not proportional to change
+
+Consensus tree
+: A summary tree of a set of equally good trees (e.g., strict consensus, 50% majority-rule)
+
+Distance-based methods
+: Tree reconstruction based on pairwise sequence distances (e.g., Neighbor Joining)
+
+Gene duplication
+: An event creating an extra copy of a gene in a lineage
+
+Gene loss
+: The disappearance of a gene copy from a lineage
+
+Gene tree
+: A phylogenetic tree reconstructed from gene (or protein) sequences, which may include paralogs
+
 GTR
 : General time reversible nucleotide substitution model
+
+HTU
+: Hypothetical taxonomic unit; an internal node representing an inferred ancestor
 
 JC
 : Jukes-Cantor nucleotide substitution model
@@ -1556,19 +1587,31 @@ K2P
 : Kimura 2-parameter nucleotide substitution model
 
 LBA
-: long-branch attraction
+: Long-branch attraction
 
-Monophyly
-: For a group, all members being derived from one MRCA
+Maximum likelihood (ML)
+: A character-based method selecting the tree and model parameters that maximize the probability of observing the data
 
 MLE
 : Maximum likelihood estimate
 
+Monophyly
+: For a group, all members being derived from one MRCA
+
 MRCA
 : Most recent common ancestor
 
+Neighbor Joining (NJ)
+: A distance-based tree building algorithm that iteratively joins neighbors to minimize total tree length
+
+Newick
+: A parenthetical text format for encoding tree topology (and optionally branch lengths)
+
 Nodal support
-: The support -by the characters- for a node in the phylogenetic tree
+: The support—by the data—for a node in the phylogenetic tree (often measured by bootstrap values)
+
+Outgroup
+: A reference taxon outside the group of interest used to root a tree
 
 Paraphyly
 : For a group, not all members being derived from one MRCA
@@ -1576,21 +1619,54 @@ Paraphyly
 _p_-difference
 : Proportional difference, uncorrected
 
+Phylogeny
+: The evolutionary history and relationships among organisms or genes.
+
 Polytomy
-: Part of a phylogenetic tree that is collapsed, node is connected through > 3 branches
+: Part of a phylogenetic tree that is collapsed; node is connected through > 3 branches
+
+Reconciled tree
+: A gene tree interpreted alongside a species tree by adding duplications and losses to explain incongruences
 
 Root
-: Reference individual, used for polarising a tree
+: Reference taxon or node used to polarize a tree
+
+Rooting
+: The act of assigning a root to a tree to infer direction of evolution
+
+Sister group
+: Two clades that share an exclusive MRCA with each other
+
+Species tree
+: A phylogenetic tree summarizing species relationships, potentially informed by multiple gene trees
 
 Synapomorphy
 : Shared derived character state
 
+Topology
+: The branching structure of a phylogenetic tree, independent of branch lengths
+
+Trait
+: A distinct phenotypic characteristic of an organism, influenced by genetic and environmental factors.
+
 Transition
-: a substitution among pyrimindes (C,T) or among purines (A,G)
+: A substitution among pyrimidines (C↔T) or among purines (A↔G)
 
 Transversion
-: a pyrimidine ↔ purine substitution
-```
+: A pyrimidine ↔ purine substitution
+
+Ultrametric inequality
+: In any triplet, the two largest pairwise distances are equal
+
+Ultrametric tree
+: A rooted tree in which all paths from root to tips have equal length (interpretable in time units)
+
+Triangle inequality
+: In any triplet, the distance a–b ≤ a–c + c–b
+
+OTU
+: Operational taxonomic unit; a tip (external node) representing an observed sequence or individual
+:::
 
 ## References
 

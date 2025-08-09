@@ -794,76 +794,6 @@ Video introduction by the AlphaFold team:
 
 ---
 
-## Glossary
-This glossary contains the most important terms from this chapter (not mentioned in earlier chapters).
-
-:::{glossary}
-Ab initio approach
-: 3D protein structure prediction approach that are computationally heavy, need human expert input, and model the protein sequence folding process using physicochemical properties of the amino acid residues and their surroundings.
-
-AlphaFold
-: Machine learning-based 3D protein structure prediction approach that uses a deep learning model trained on the entire Protein Data Bank.
-
-AlphaFold Protein Structure Database (AlphaFold DB)
-: Resource that contains over 200 million AlphaFold-predicted 3D protein structure models.
-
-Critical Assessment of protein Structure Prediction (CASP)
-: Community-wide competition where research groups are required to predict 3D structures from protein sequences that do not have any public 3D structure available. It was recently extended with additional challenges such as the prediction of protein-protein interactions, and of protein-ligand interactions.
-
-DeepTMHMM/TMHMM
-: Tools that predict transmembrane sections in proteins using a deep learning model (DeepTMHMM) or hidden markov model (TMHMM) that takes a protein sequence as an input, and then outputs the corresponding per-residue labels.
-
-Expected position error
-: Global error measure predicted by AlphaFold to indicate the confidence in the location of the amino acid residue as compared to all other residues.
-
-Foldseek
-: Tool for large-scale structure-structure based protein alignments based on the 3D-interactions (3Di) alphabet.
-
-Global Distance Test – Total Score (GDT-TS)
-: Evaluation metric for 3D protein structure predictions used by CASP: percentage of α-carbons of the amino acids in the predicted structure are within a threshold distance in Ångstroms percentage of α-carbons of the amino acids in the predicted structure are within a threshold distance in Ångstroms of the known structure, for the best possible alignment of the two.
-
-Homology modelling
-: 3D protein structure prediction approach that uses template structures of experimentally measured protein structures.
-
-NetSurfP
-: Machine learning approach to predict secondary structure elements like α-helices and β-strands using a deep learning model.
-
-Labelling
-: Adding known caterogies to data points, for example the structural state of an amino acid, i.e., α-helix, β-strand, or “random coil”.
-
-Protein sequence-structure-fucntion paradigm
-: This theory postulates that amino acid sequences contain in principle all information to describe their 3D structures, and how protein 3D structures contain in principle all information to define their functions.
-
-Root Mean Squared Error (RMSE)
-: Quality assessment score of how well two 3D protein structures compare to each other, using the difference in position of the α-carbons of the amino acid residues.
-
-SignalP
-: Machine learning based tool that predicts and discriminates between different signal peptides types.
-
-Signalling peptide
-: Peptide recognition signals for the cellular transporter machinery to transport protein to the location of its activity, i.e., the cell membrane or the endoplasmic reticulum.
-
-Per-residue model confidence score (plDDT)
-: Local error measure predicted by AlphaFold to indicate the confidence in the location of the amino acid residue as compared to neighbouring residues in the primary sequence.
-
-Protein Data Bank (PDB)
-: Resource that contains experimentally measured protein 3D structures.
-
-Threading approach
-: 3D protein structure prediction approach that predict the 3D structure of short stretches or folds of proteins, also called fragment-based approach.
-
-Transmembrane section
-: Part of a protein sequence that stretches through the cell membrane.
-
-Transmembrane protein
-: Protein that spans the cell membrane at least once.
-
-Tree zones (of protein tertiary structure prediction)
-: Based on a plot of percentage of sequence identity versus alignment length of a query protein sequence versus database entries, three "zones" can be defined. Depending on in which zone the best match falls for a query sequence, different traditional approaches are required to predict (part of) its 3D structure.
-:::
-
----
-
 ## Practical assignments
 
 This practical contains questions and exercises to help you process the study materials of Chapter 4.
@@ -889,8 +819,6 @@ Use the radio buttons on the side to select the ɸ or ψ bond and increase or de
 6. Can you reason how the above observations lead to the conclusion that steric hinderance is important for secondary and tertiary structure elements of proteins?
 ```
 
-
-
 ```{exercise} Protein structure search and visualisation, 50 minutes
 
 Protein structures are measured using a variety of technologies.
@@ -913,8 +841,6 @@ After completing this assignment, you will be able to inspect protein 3D structu
 12. For a final demonstration, in RCSB PDB move to structure 1HLM, of a sea cucumber globin, and go to the "Macromolecules" section under the "Structure Summary" and find similar proteins by 3D structure (click on the link). To what other structure is (part of) it most similar? Download the PDB files of 1HLM and the most similar structure by clicking on both protein entries and select "PDB format" from the drop-down menu "Download Files" on the right top of the window. Then, compare them using [TM-score](https://seq2fun.dcmb.med.umich.edu//TM-score/). What can you make of the output, are the structures similar? What measure(s) indicate this?
 ```
 
-
-
 ```{exercise} Secondary structure prediction, 50 minutes
 
 1TIM is a prototypic TIM-barrel PDB structure, of the triose phosphate topoisomerase protein.
@@ -933,8 +859,6 @@ After completing this assignment, you will be able to interpret the outcome of p
 10. Finally, we will do transmembrane region predictions. Let us start with predicting the transmembrane topology of SigmaR1 (UniProt ID Q99720), aquaporin (P47865) and 1TIM (P00940) using **[TMHMM](https://services.healthtech.dtu.dk/service.php?TMHMM-2.0)**. For each protein, copy/paste the FASTA sequence from UniProt into TMHMM and press "Submit". Do the predictions make sense, given the protein descriptions and the available 3D structures?
 11. Do the same as before for aquaporin (P47865) and 1TIM (P00940) using the newer version of TMHMM, **[DeepTMHMM](https://services.healthtech.dtu.dk/service.php?DeepTMHMM)**. How do the results compare to those found at 10.?
 ```
-
-
 
 :::::{exercise} AlphaFold 3D structure predictions, 50 minutes
 Most approaches to protein structure modelling are computationally highly demanding and will take too much time to try during this practical.
@@ -978,7 +902,6 @@ Here, we will assess pre-computed ready-made AlphaFold2 models through the [Alph
 7. Go back to the "Probable caffeine synthase MTL3" AlphaFold structure prediction page. With your new knowledge on the global predicted aligned error model, what do you now think of the model? 
 8. Some say that AlphaFold will solve all our problems in structure protein folding.... but it may yet be a bit early to conclude that. Have a look at the structure model for Human Insulin (UniProt P01308)? What is the quality of the proposed model? Can you think of reasons why?
 :::::
-
 
 :::::{exercise} Automated homology modelling, 45 minutes
 Now, we will move to automated homology modelling.
@@ -1027,6 +950,71 @@ You may want to highlight some of your findings with screenshots from the tools 
 We encourage you to discuss your results with fellow students and the TAs and teacher.
 Oftentimes, they may have found different but complementary information, and together you will be able to paint a more complete picture of the protein families.
 :::::
+
+:::{glossary}
+Ab initio approach
+: 3D protein structure prediction approach that is computationally intensive and models folding based on physicochemical principles without relying on known templates.
+
+AlphaFold
+: Machine learning-based 3D protein structure predictor trained on known protein structures and sequence relationships.
+
+AlphaFold Protein Structure Database (AlphaFold DB)
+: A public repository of over 200 million AlphaFold-predicted protein structures across most sequenced organisms.
+
+Critical Assessment of protein Structure Prediction (CASP)
+: Biennial community-wide competition where groups predict 3D structures for protein sequences with withheld experimental structures.
+
+DeepTMHMM/TMHMM
+: Tools for predicting transmembrane segments and signal peptides in proteins; DeepTMHMM uses deep learning, while TMHMM relies on hidden Markov models.
+
+Expected position error
+: AlphaFold’s global confidence metric estimating positional uncertainty for amino acids in a structure model.
+
+Foldseek
+: High-throughput tool for searching and aligning protein 3D structures using a fast 3Di alphabet-based representation.
+
+Global Distance Test – Total Score (GDT-TS)
+: Evaluation metric for structure prediction accuracy, measuring the proportion of residues within threshold distances of a known structure.
+
+Homology modelling
+: A template-based method for predicting protein structures using experimentally solved structures of homologous proteins.
+
+Labelling
+: Annotating amino acids (or data points) with structural categories such as α-helix, β-strand, or random coil.
+
+NetSurfP
+: Deep learning-based tool for predicting secondary structure, solvent accessibility, and other per-residue features from sequence alone.
+
+Per-residue model confidence score (plDDT)
+: AlphaFold’s local error score estimating confidence in amino acid positioning within a 3D structure.
+
+Protein Data Bank (PDB)
+: A curated archive of experimentally determined biomolecular 3D structures.
+
+Protein sequence-structure-function paradigm
+: Concept that an amino acid sequence encodes its 3D fold, which determines its biological function.
+
+Root Mean Squared Error (RMSE)
+: Metric comparing two 3D structures by measuring average distance between corresponding atoms or α-carbons.
+
+SignalP
+: Tool for detecting signal peptides and cleavage sites in protein sequences using deep learning.
+
+Signalling peptide
+: A short N-terminal sequence tag that directs a newly synthesized protein to its destination (e.g., ER, membrane, secretion).
+
+Threading approach
+: Structure prediction method that maps a query sequence onto known structural fragments, identifying plausible local folds.
+
+Three zones (of protein tertiary structure prediction)
+: Framework that categorizes prediction strategies—ab initio, threading, or homology modelling—based on alignment length and sequence identity.
+
+Transmembrane protein
+: A protein that spans the lipid bilayer of a membrane one or more times.
+
+Transmembrane section
+: Region of a protein that embeds into and passes through a membrane, often as an α-helix or β-strand.
+:::
 
 ## References
 

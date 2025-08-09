@@ -845,12 +845,12 @@ You may include up to two figures or tables.
 3. **Discussion & Conclusion** Do the results make sense? Are they according to your expectation or do you see something surprising? What do the results mean, how can you interpret them? Do different tools agree or not? What can you conclude? Make sure to describe the expectations and assumptions underlying your interpretation.
 :::::
 
-## Glossary
-This glossary contains the most important terms from this chapter.
-
 :::{glossary}
 Affine gap costs
 : Alignment scoring scheme that distinguishes between gap opening and gap extension costs
+
+Alignment
+: The arrangement of sequences to identify regions of similarity, often used to infer evolutionary relationships.
 
 BLAST
 : Basic Local Alignment Search Tool
@@ -860,6 +860,9 @@ BLOSUM
 
 Consensus sequence
 : Sequence of most frequently occurring residues in an alignment
+
+Dot plot
+: A matrix visualization that compares two sequences and marks matching characters; useful for spotting repeats and similarity
 
 E-value
 : Expectation value - the number of hits with the observed score or higher that you expect to see by chance in the database (e.g., with BLAST)
@@ -876,11 +879,26 @@ Heuristic algorithm
 Homology
 : Homologous sequences share a common ancestor
 
+Identity
+: Percentage of exactly matching residues in an alignment, divided by the alignment length
+
+Insertions
+: Mutations where one or more residues are added to a sequence
+
 Iterative refinement
 : Heuristic to improve an MSA
 
+Jackhmmer
+: A tool in the HMMER suite that iteratively builds hidden Markov models to search for distant homologs in databases
+
 Local alignment
 : Alignment strategy, where regions of local similarity are identified
+
+Match
+: Aligned positions in two sequences that share the same character or residue
+
+Mismatch
+: Aligned positions in two sequences with differing characters or residues
 
 Motif
 : Commonly occurring sequence pattern
@@ -888,11 +906,14 @@ Motif
 MSA
 : **M**ultiple **S**equence **A**lignment - alignment of more than two sequences
 
+PAM
+: Point Accepted Mutation - a group of protein substitution matrices
+
 Pairwise sequence alignment
 : Alignment of two sequences by introducing gaps such that a score is maximized
 
-PAM
-: Point Accepted Mutation - a group of protein substitution matrices
+Pattern string
+: Sequence representation using regular expression-like syntax to describe conserved motifs, e.g. `[AG]` for A or G
 
 PCR
 : Polymerase chain reaction
@@ -917,6 +938,15 @@ PSSM
 
 Sequence logo
 : Graphical representation of an alignment showing the information in that column
+
+Similarity
+: Percentage of aligned residues that are either identical or chemically similar
+
+Smith-Waterman algorithm
+: A dynamic programming algorithm used for calculating optimal local sequence alignments
+
+Substitution matrix
+: A scoring table for matching or replacing amino acids in alignments, e.g. BLOSUM62
 :::
 
 ## References

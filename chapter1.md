@@ -8,14 +8,18 @@ authors:
 ---
 
 :::{important} Learning outcomes
-- 1
-- 2
-- 3 
+- 1 Understand the biological background, covering the chemical composition and structural differences between DNA and RNA, how these sequences store, replicate and pass genetic information.
+- 2 Learn how genetic information is transcribed and translated into proteins - the central dogma.
+- 3 Know about the physicochemical properties of amino acids.
+- 4 You should be able to explain how amino acid properties drive protein folding and function, and the effect of substitutions.
+- 5 Understand the concepts of genome annotation and gene prediction and how they combine computational methods and biological evidence to decode genomic content.
+- 6 Familiarize yourself with essential databases and file formats that organize and store biological sequence and annotation data.
+- 7 Be aware how standardized ontologies help structure biological metadata and ensure data interoperability and reusability.
 :::
 
 ## Biological background
 
-A large part of bioinformatics deals with the analysis of biological sequences.
+A large part of bioinformatics deals with the analysis of biological {term}`Sequence`s.
 These sequences originate from organic macromolecules that play important roles in cells.
 In the first section of this chapter, we describe these macromolecules, their sequences, and the biological processes involved in generating their active structures and maintaining these.
 
@@ -27,11 +31,11 @@ Later chapters assume you are familiar with this section.
 
 ### Nucleic acids
 
-Deoxyribonucleic acid ({term}`DNA`) carries the genetic information of organisms. Ribonucleic acid ({term}`RNA`) is involved in the protein expression and is also the genetic material of some viruses.
+Deoxyribonucleic acid ({term}`DNA`) carries the genetic information of organisms. Ribonucleic acid ({term}`RNA`) is involved in the {term}`Protein` expression and is also the genetic material of some viruses.
 Thus, these molecules are highly important as the basis of life on Earth.
-The **genome** denotes the cell's entire genetic content and **genomics** is the study of genomes.
+The {term}`Genome` denotes the {term}`Cell`'s entire genetic content and **genomics** is the study of genomes.
 
-DNA and RNA are comprised of monomers called **nucleotides**, which are comprised of three components ({numref}`nucleotide`):
+DNA and RNA are comprised of monomers called {term}`Nucleotide`s, which are comprised of three components ({numref}`nucleotide`):
 
 - A **pentose** sugar, where carbon residues are numbered 1' to 5' (read 1' as "one prime").
   The type of pentose distinguishes RNA and DNA: the sugar is deoxyribose in DNA and ribose in RNA.
@@ -120,7 +124,7 @@ Credits: [BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) {cit
 
 ### RNA, transcription, and splicing
 
-During transcription, RNA polymerase reads the template strand (also called noncoding strand) in the 3' to 5' direction ({numref}`transcription`).
+During {term}`Transcription`, RNA polymerase reads the template strand (also called noncoding strand) in the 3' to 5' direction ({numref}`transcription`).
 This produces an RNA molecule from 5' to 3', which is a copy of the coding strand.
 During transcription thymine is replaced by uracil.
 In contrast to DNA, RNA does not form a stable double helix.
@@ -131,7 +135,7 @@ There are four major types of RNA:
 - Messenger RNA (mRNA): RNA molecules that will later be translated into proteins and therefore serve as a 'messenger' in protein production.
 - Ribosomal RNA (rRNA): the primary component of ribosomes (the 'powerplants' of a cell).
 - Transfer RNA (tRNA): functions as 'adapter molecule' that serve as the physical link between mRNA and the amino acid sequence of a protein during translation.
-- MicroRNA (miRNA): non-coding RNA molecules of 21-23 nucleotides involved in RNA silencing and post-transcriptional regulation of gene expression.
+- MicroRNA (miRNA): non-coding RNA molecules of 21-23 nucleotides involved in RNA silencing and post-transcriptional regulation of {term}`Gene` expression.
 
 :::{figure} images/chapter1/transcription.png
 :alt: Transcription
@@ -163,7 +167,7 @@ Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`sp
 
 ### Translation
 
-During protein translation, ribosomes synthesize polypeptides from messenger RNA (mRNA) ({numref}`translation_alt`).
+During protein {term}`Translation`, ribosomes synthesize polypeptides from messenger RNA (mRNA) ({numref}`translation_alt`).
 During this process tRNAs decode the information on the RNA into amino acids, where a codon consisting of three nucleotides encodes the information for one amino acid.
 
 :::{figure} images/chapter1/translation_alt.jpg
@@ -569,7 +573,7 @@ Consequences of a substitution in hemoglobin β resulting in sickle cell anemia.
 Credits: Rao, A., Tag, A. Ryan, K. and Fletcher, S. Department of Biology, Texas A&M University.
 :::
 
-%#% Figure sicklecell is credited but the image is not found on a specific webpage. Is showing credits enough? - Similar to Pearson imagery (Campbell Biology 11th edition Figure 5.19).
+%#%[Figure sicklecell is credited but the image is not found on a specific webpage. Is showing credits enough? - Similar to Pearson imagery (Campbell Biology 11th edition Figure 5.19).]
 
 ---
 
@@ -585,7 +589,6 @@ For some examples see {numref}`protrep`.
 
 Different representations of the PDB structure 5PEP generated with NGL. Credits: {cite}`rcsb_2000,protrep_1990,ngl_2018`.
 :::
-%#% The citation above does not end up in alphabetical order. This is probably caused by ngl_2018 being referenced earlier in the markdown than protrep_1990. Not sure how to fix without adopting a custom inline citation reference style.
 
 :::{seealso}
 Most of the figures in this section are taken from [OpenStax](https://openstax.org/books/biology-2e/pages/3-4-proteins), where you can also find more information on proteins.
@@ -597,7 +600,7 @@ Most of the figures in this section are taken from [OpenStax](https://openstax.o
 
 ## Genome annotation
 
-Genome annotation is the process of deciphering what information is encoded in an organism's DNA.
+{term}`Annotation` of genomes is the process of deciphering what information is encoded in an organism's DNA.
 It is an ongoing effort in organisms with known genome sequences.
 Even moreso, genome annotation is a critical step in acquiring biological insights from newly sequenced genomes.
 Given the large size of any genome, automated procedures are used to identify various genomic elements such as genes, regulatory regions, transposable elements, or other non-coding elements.
@@ -680,7 +683,7 @@ With the availability of more high quality data (genome sequences and accompanyi
 :::{admonition} Note 1.5: Hidden Markov models (HMMs)
 :class: note
 
-Hidden Markov models (HMMs) are useful for the statistical modelling of general sequence characteristics.
+Hidden Markov models ({term}`HMM`s) are useful for the statistical modelling of general sequence characteristics.
 As such they find widespread adoption in bioinformatics to study biological sequences.
 Providing a full technical description of all aspects of HMMs is outside of the scope of this book.
 Here we will stick to a somewhat simplistic description to provide a first introduction.
@@ -846,7 +849,6 @@ Additionally, transcript and protein records are generated by several processes:
 - Computation via the [eukaryotic](https://www.ncbi.nlm.nih.gov/genome/annotation_euk/) or [prokaryotic](https://www.ncbi.nlm.nih.gov/genome/annotation_prok/) annotation pipeline.
 - Manual curation.
 - Transfer of information from annotated genomes in GenBank.
-  %#% The eukaryotic and prokaryotic RefSeq links lead to soon to be redundant pages. Not sure what to replace this with.
   In contrast to GenBank, RefSeq records are owned by NCBI and can be updated to maintain annotation.
   The current release is 222 from the 8{sup}`th` of January 2024 and contains ~305 million proteins from ~145,000 organisms.
 
@@ -1506,14 +1508,41 @@ You may include up to two figures or tables.
 ## Glossary
 
 :::{glossary}
+Annotation
+: The process of identifying functional elements within a genomic sequence, such as genes, coding regions, and regulatory motifs.
+
+Cell
+: The basic structural and functional unit of all living organisms.
+
 DNA
 : **D**eoxyribo**N**ucleic **A**cid
+
+Gene
+: A segment of DNA that encodes functional products, typically proteins.
+
+Genome
+: The complete set of genes or genetic material present in a cell or organism.
+
+HMM
+: Hidden Markov Model - a statistical model that represents systems where the states are not directly observable (hidden) but can be inferred from observable data.
+
+Nucleotide
+: The basic building block of DNA and RNA, consisting of a base, sugar, and phosphate group.
+
+Protein
+: A molecule composed of amino acids, encoded by genes, and responsible for cellular structure and function.
 
 RNA
 : RiboNucleic Acid
 
-HMM
-: Hidden Markov Model
+Sequence
+: The precise order of nucleotides in a DNA or RNA strand.
+
+Transcription
+: The process of copying a DNA sequence into RNA.
+
+Translation
+: The process of converting RNA sequences into proteins.
 :::
 
 ```{bibliography}
