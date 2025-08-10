@@ -123,9 +123,9 @@ with a final genome in 2003 ({numref}`landmarks_in_genetics`).
 One of the most surprising findings was that the human genome only contained roughly 20,000 genes, far less than the
 estimated 50,000-140,000. The entire project is estimated to have cost [\$3
 billion](https://www.genome.gov/about-genomics/educational-resources/fact-sheets/human-genome-project).
-In 2021 the first true telomere-to-telomere assembly of the human genome was
+In 2021 the first true {term}`Telomere-to-telomere` {term}`Assembly` of the human genome was
 assembled using the third generation technologies described below: [PacBio](#chapter5_pacbio),
-[Oxford Nanopore](#chapter5_nanopore) and Hi-C.
+[Oxford Nanopore](#chapter5_nanopore) and {term}`Hi-C`.
 
 :::{figure} images/chapter5/Fig_Box1_Human_Genome_Project_Timeline.jpg
 :alt: Human Genome Project Timeline
@@ -243,7 +243,7 @@ are three ways of sequencing:
 
 Different technologies vary wildly in the length of DNA sequences they produce
 (the read length) and their throughput, which together determine the
-coverage: the (average) number of times each base in the genome is represented in a read.
+{term}`Coverage`: the (average) number of times each base in the genome is represented in a {term}`Read`.
 For some purposes, such as genome assembly, it is essential that the
 coverage is sufficiently high - depending on read length, between 50x to
 100x. A number of sequencing devices and their
@@ -326,7 +326,7 @@ off automatically. Sanger sequencing produces read lengths between
 700-1,000 nucleotides; after this, the quality of the base calling drops too
 far to be useful. The quality at the beginning of a read is generally too
 low to be used ({numref}`sanger_signal`). Another problem with Sanger sequencing is
-the detection of homopolymers (the same nucleotide occurring multiple
+the detection of {term}`Homopolymer`s (the same nucleotide occurring multiple
 times), as the peak height of the signal decreases the longer the stretch
 is. This makes it difficult to differentiate between 3, 4 and 5 nucleotides
 of the same base. Sanger sequencing machines can sequence 96 fragments in
@@ -469,8 +469,8 @@ One major difference with NGS is that the template is circular instead of
 linear, and that a single template can thus be sequenced multiple times
 consecutively in what is called circular consensus sequencing (CCS). In
 general 3rd generation sequencing techniques suffer from a higher error
-rate, with most errors being indels, short insertions or deletions. This
-has implications for e.g. mapping and assembly. Making use of the CCS
+rate, with most errors being {term}`Indel`s, short insertions or deletions. This
+has implications for e.g. {term}`Mapping` and assembly. Making use of the CCS
 allows for proofreading and higher accuracy, with the most
 recent PacBio HiFi reads reaching 99.99% read accuracy (Q40).
 
@@ -552,7 +552,7 @@ remain challenging. Accuracy is limited to between 85 and 95%, however the lates
 duplex-calling (were both the template and the complement strand are read) reaches
 99% accuracy (Q20). The main advantage over any of the other
 technologies is that the template DNA itself is measured, so base
-modifications like DNA methylation can be detected as well. The sequencer
+modifications like DNA {term}`Methylation` can be detected as well. The sequencer
 is also small enough to fit in the palm of a hand and people have used it in various
 non-traditional conditions, such as arctic expeditions on Svalbard and in
 the International Space Station.
@@ -594,7 +594,7 @@ originally intended to sequence ({numref}`ladybug_aphid`).
 
 
 Sources of errors related to sequencing itself are base calling errors
-(substitution errors), uncalled bases (indels), GC bias, homopolymers, a
+(substitution errors), uncalled bases (indels), {term}`GC bias`, homopolymers, a
 drop of quality towards the 3’end of a read, and duplicates (amplification
 bias). Additional error sources are contamination of the input sample,
 remnants of adapters and sequencing vectors. It is therefore important to
@@ -762,7 +762,7 @@ in combination with Hi-C.
 
 ##### Repeats
 
-Repeat regions (i.e., the boring background) are the main challenge in genome
+{term}`Repeat regions` (i.e., the boring background) are the main challenge in genome
 assembly and most contigs (contiguous sequences, the longest stretches that
 can be assembled unequivocally) stop at the edges of repetitive regions.
 The process is like finding many puzzle pieces containing both bits of fish
@@ -916,11 +916,11 @@ it must be the result of an error, either in the read or in the reference.
 As we have already seen, variants can be real, they can be the result of
 sequencing errors, or represent errors in the reference sequence. The
 process of detecting variants (SNPs and indels) and determining which are
-real or most likely errors is called variant calling. To indicate the
+real or most likely errors is called {term}`Variant calling`. To indicate the
 probability that a variant is real, a quality score is assigned to each
-variant. This considers the read depth and the mapping quality at the
+variant. This considers the {term}`Read depth` and the mapping quality at the
 position of a putative variant. Variant calling software will also report,
-among a whole host of statistics, the so-called allele frequency (AF),
+among a whole host of statistics, the so-called {term}`Allele frequency` (AF),
 determined by the number of reads representing each allele that map. In a
 diploid organism with one reference allele and one alternate allele we
 expect both, on average, to have a frequency of 0.5. When the frequency of
@@ -975,9 +975,9 @@ Credits: [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/) {cite}`BRCA_al
 #### Large-scale genome variation
 
 Above, we discussed small scale variants such as SNPs and indels. In
-contrast, large-scale variants are structural variants where parts of
+contrast, large-scale variants are {term}`Structural variant`s where parts of
 genomes have been rearranged, duplicated or deleted ({numref}`large_scale_variants`). A
-special case is copy number variation, where genes (or exons) have been
+special case is {term}`Copy number variation`, where genes (or exons) have been
 duplicated.
 
 :::{figure} images/chapter5/large-scale-variants.jpg
@@ -1056,7 +1056,7 @@ Credits: [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) {cite}`gene_d
 
 Orientations of paired end reads as well as split reads are good
 indicators to detect the boundaries of inversions, but also substitutions
-and translocations. The rearrangements will result in one read from a pair
+and {term}`Translocation`s. The rearrangements will result in one read from a pair
 mapping to one genomic location and the other read to another location.
 Reads overlapping the breakpoint will be split in the alignment.
 
@@ -1169,7 +1169,7 @@ Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`ep
 ::::
 %#% The original URL in box 5.5 that is credited as the source leads to page that does not exist anymore. Changed to WikiMedia url. - The description is a literal copy paste from the figure description on WikiMedia.
 
-A part of the explanation lies in what is called _epigenetics_,
+A part of the explanation lies in what is called {term}`Epigenetics`,
 modifications of the genome that do not change the DNA sequence but do
 influence gene expression ([Box 5.9](#chapter5_epigenetics)). There are other mechanisms besides
 epigenetics that control how genes are expressed, and how the resulting
@@ -1200,7 +1200,7 @@ measurements as illustrated in {numref}`omics_levels`, although many new omics t
 still being introduced. Next to genomics, the following omics measure:
 
 - Epigenomics: all epigenetic modifications of the genome.
-- Transcriptomics: the expression levels of all genes.
+- Transcriptomics: the {term}`Expression level`s of all genes.
 - Proteomics: the presence/quantity of all proteins.
 - Metabolomics: the presence/quantity of all metabolites.
 - Phenomics: the eventual phenotype(s), i.e., form or behaviour, of a cell or organism.
@@ -1250,7 +1250,7 @@ Where functional genomics uses omics measurements to learn about the role
 of genes and proteins in the cell, individual experiments and measurements
 generally only provide individual pieces of the puzzle, which often do not
 make much sense without understanding other cellular processes. Recognizing
-the need for a more holistic approach, systems biology was proposed as a
+the need for a more holistic approach, {term}`Systems biology` was proposed as a
 scientific approach in which the main goal is to construct models of living
 systems, that are increasingly refined by hypothesis formation,
 experimentation, and model extension or modification.
@@ -1350,12 +1350,12 @@ mRNA levels:
 
 #### How to measure mRNAs?
 
-Just like the study of genomes, transcriptomics has greatly benefitted from
+Just like the study of genomes, {term}`Transcriptomics` has greatly benefitted from
 technological developments that allowed an increase in throughput and
 sensitivity of measurements. [Box 5.11](#chapter5_gelspcr) and
 [Box 5.12](#chapter5_microarrays) provide an overview of technologies that were
 important for the development of the field (such as microarrays), but are
-not widely used anymore; at this time, RNAseq is almost exclusively used to
+not widely used anymore; at this time, {term}`RNAseq` is almost exclusively used to
 measure mRNA levels.
 
 Note that microarrays haves now been mostly superseded by RNAseq as a
@@ -1578,7 +1578,7 @@ Mapping eukaryotic mRNA sequences to a genomic reference is more cumbersome,
 as most genes have introns, which are no longer present in the mature mRNA
 ({numref}`spliced_alignment`). This means that reads might contain an
 exon-exon junction and should be split along the reference. Most aligners
-will not consider this a valid option. Special splice-aware aligners have
+will not consider this a valid option. Special {term}`Splice-aware aligners` have
 been developed for this reason, that are able to map normal reads that map
 contiguously to the reference sequence as well as reads that are split
 across splice sites ({numref}`spliced_alignment`). They also take into
@@ -1649,7 +1649,7 @@ between two samples.
 Until now, most RNAseq experiments have been performed on groups of cells,
 as sequencing devices require large amounts of DNA. This means that cells
 of different cell types or different life stages are included in a single
-sample. While detection of differentially expressed genes is clearly
+sample. While detection of {term}`Differential gene expression` is clearly
 possible with this method, weak or more nuanced variation is averaged out
 across all cells. Recently, methods have become available that separate
 tissues into individual cells and sequence each of these separately. This
@@ -1672,7 +1672,7 @@ As mentioned earlier, transcriptomics is widely applied but does not reflect
 the overall cellular state accurately. The resulting proteins are the workhorses
 of the cell, and knowing their concentrations, modifications and
 interactions provides more insight than gene expression can provide.
-Unfortunately, while major advances have been made in proteomics
+Unfortunately, while major advances have been made in {term}`Proteomics`
 technologies, accurate measurement of proteins is still complex and costly,
 for a number of reasons:
 
@@ -1707,7 +1707,7 @@ presence/absence and levels of proteins) and functional proteomics
 ::::{admonition} Box 5.14: Mass spectrometry
 :class: note
 
-Mass spectrometry (MS) devices have been in constant development and
+{term}`Mass spectrometry (MS)` devices have been in constant development and
 improvement since their inception in the late 19{sup}`th` century. They
 differ in specific setup, but all follow three basic steps:
 
@@ -1914,7 +1914,7 @@ communication, regulation (hormones), defense (antibiotics), and symbiosis.
 Some metabolites also regulate relevant phenotypes. As such, solving the structures of all molecules circulating in cells and measuring the
 concentrations of metabolites as so-called "end points" of cellular
 organization seems highly relevant in studying growth and development of
-organisms and communities. Metabolomics is also important in medicine and
+organisms and communities. {term}`Metabolomics` is also important in medicine and
 pharmacology, in food safety and in uncovering the production repertoire of
 microbes in industrial biotechnology.
 
@@ -1986,7 +1986,7 @@ experiments are set up to exclude as much variation as possible, but there
 will still be differences in abundance levels detected that are not the
 result of the treatment but rather measurement noise. To distinguish
 clearly between real differences and noise, repeated measures of the same
-condition are important ({numref}`compare_conditions`). These are called _replicates_.
+condition are important ({numref}`compare_conditions`). These are called {term}`Replicate`s.
 Underlying the variation in repeated measurements are both biological and
 technical variation; in {numref}`error_vs_conditions` this comparison is made for all
 transcripts detected in the samples, for two replicates (left) and two
@@ -2041,7 +2041,7 @@ can already be detected. A widely used visualization is the so-called
 heatmap, an image of the matrix (genes-by-samples) where each measurement is represented by a
 colour. If the data is clustered along both genes and samples,
 interesting patterns may be easy to spot. A second approach often used in
-initial data exploration is Principal Component Analysis (PCA), which plots
+initial data exploration is {term}`Principal Component Analysis (PCA)`, which plots
 samples (or genes) along the main axes of variation in the data. If colour or
 markers are added, a PCA plot serves very well to detect groups and outliers.
 Both visualizations are illustrated in {numref}`streptococcus_pca_heatmap`.
@@ -2078,11 +2078,11 @@ There are two caveats:
 1. If you perform an individual test for each of thousands of genes, at a
    threshold of 5% you would still incorrectly call many hundreds to thousands
    genes differentially expressed. To solve this, _p_-values are generally
-   _adjusted_ for multiple testing, i.e., made larger.
+   subjected to {term}`Multiple testing correction`, i.e., made larger.
 2. If the variation (standard deviation _s_ in {numref}`t_test`) is low enough, a
    small difference can become significant even if the actual abundance
    difference is small. Therefore, in many experiments an additional
-   requirement to select genes is that the fold change is large enough. Often,
+   requirement to select genes is that the {term}`Fold change` is large enough. Often,
    this is expressed as log2(fold change), where +1 means that a gene is 2x
    more expressed, +2 means 4x more expressed, -1 means 2x less expressed and
    so on.
@@ -2100,8 +2100,8 @@ book.
 :align: center
 :name: time_series
 
-Transcriptomics of various stages of T-cell development, i.e., a time
-series analysis. Left: heatmap of the 446 genes with most variable gene
+Transcriptomics of various stages of T-cell development, i.e., a {term}`Time series analysis`.
+Left: heatmap of the 446 genes with most variable gene
 expression levels, clustered into 15 clusters. Right: average expression
 profiles of each cluster show that different groups of genes peak in
 expression in different development stages. These genes may be regulated in
@@ -2166,7 +2166,7 @@ enrichment test.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
 :::
 
-A final often used analysis is enrichment, in which we use gene functional
+A final often used analysis is {term}`Enrichment`, in which we use gene functional
 annotation to learn about a set of genes, such as a list of differentially
 expressed genes or a cluster. The most widely used annotation for genes is
 the Gene Ontology, a structured dictionary of terms that describe the
@@ -2393,32 +2393,26 @@ You may include up to two figures or tables.
 ## Glossary
 
 :::{glossary}
-1000 Genomes Project
-: A large-scale sequencing project aiming to catalogue human genetic variation from globally representative samples.
-
 Allele frequency
-: The proportion of sequence reads that support a given allele at a variant site.
+: The proportion of sequence reads that support a given allele at a variant site. Abbreviates to AF.
 
 Assembly
 : The process of reconstructing a genome by merging overlapping sequencing reads.
 
-Copy number variation (CNV)
-: Genomic variation where the number of copies of a gene or genomic region differs between individuals.
+Copy number variation
+: Genomic variation where the number of copies of a gene or genomic region differs between individuals. Abbreviates to CNV.
 
 Coverage
 : The average number of times a nucleotide in the genome is represented across sequencing reads.
 
-Differential expression analysis
+Differential gene expression
 : A statistical method for identifying genes whose expression levels differ significantly between experimental conditions.
 
-Enrichment analysis
+Enrichment
 : Identifying biological functions or pathways that occur more frequently in a gene list than expected by chance.
 
 Epigenetics
-: Heritable changes in gene expression not caused by changes in the DNA sequence, often involving DNA methylation or chromatin structure.
-
-Exon
-: A DNA segment in a gene that encodes part of the mature RNA after intron removal.
+: Heritable changes in gene expression **not** caused by changes in the DNA sequence, often involving DNA methylation or chromatin structure.
 
 Expression level
 : A measure of the abundance of RNA transcripts or proteins in a cell.
@@ -2429,9 +2423,6 @@ Fold change
 GC bias
 : Deviation in sequencing coverage due to differences in GC content of DNA.
 
-Genome browser
-: A tool for visually inspecting genomic regions, annotations, and experimental data tracks.
-
 Hi-C
 : A sequencing-based method to study 3D genome organization by capturing DNA–DNA interactions.
 
@@ -2440,12 +2431,6 @@ Homopolymer
 
 Indel
 : A small insertion or deletion in a DNA sequence.
-
-Insertion (variant)
-: A type of indel where extra nucleotides are added compared to a reference.
-
-Integrated Genome Viewer (IGV)
-: A software tool for exploring genomic variation and sequencing alignments.
 
 Mapping
 : Assigning sequencing reads to a reference genome or transcriptome.
@@ -2474,7 +2459,7 @@ Read
 Read depth
 : The number of sequencing reads that overlap a specific genomic position.
 
-Repeat (genomic)
+Repeat regions
 : DNA sequence motif that occurs in multiple identical or near-identical copies.
 
 Replicate
@@ -2483,8 +2468,8 @@ Replicate
 RNAseq
 : High-throughput sequencing-based method for measuring RNA expression levels.
 
-Splice-aware alignment
-: Mapping algorithm that recognizes exon-exon junctions in RNA reads.
+Splice-aware aligners
+: Mapping algorithms that recognize exon-exon junctions in RNA reads.
 
 Structural variant
 : Genomic rearrangement larger than ~1 kb, including deletions, duplications, inversions, and translocations.
@@ -2492,8 +2477,8 @@ Structural variant
 Systems biology
 : Approach aiming to build models of biological systems by integrating omics data and experimental results.
 
-Telomere-to-telomere (T2T)
-: A genome assembly that spans entire chromosomes without gaps, from one telomere to the other.
+Telomere-to-telomere
+: A genome assembly that spans entire chromosomes without gaps, from one telomere to the other. Abbreviates to T2T.
 
 Time series analysis
 : Tracking gene expression changes across time points to study developmental or dynamic processes.
