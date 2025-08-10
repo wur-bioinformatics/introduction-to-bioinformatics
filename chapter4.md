@@ -245,7 +245,7 @@ Such pores can be sealed off with a "switch" in the form of a protein stretch th
 The place where proteins are built in the cell is usually not where they act.
 To exert their function at the right place, proteins need to be transported from where they are folded and formed.
 The cellular machinery has developed a signaling system that use "peptide tags" to enable effective transport of polypeptide chains to their site of action.
-Such "tags" are called {term}`Signal peptides`. These are peptide recognition signals for the cellular transporter machinery.
+Such "tags" are called {term}`Signal peptide`s. These are peptide recognition signals for the cellular transporter machinery.
 Typical sites of actions for which signal peptides exist include the cell membrane and the endoplasmic reticulum.
 Furthermore, signal peptides can steer proteins to be secreted from or imported into lysosomes.
 Typically, after arrival of the protein at its target location, the signal peptide sequence is enzymatically removed from the protein.
