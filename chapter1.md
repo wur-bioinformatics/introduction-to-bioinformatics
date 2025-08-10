@@ -132,10 +132,10 @@ RNA is mainly single stranded, but most RNAs show intramolecular base pairing be
 
 There are four major types of RNA:
 
-- Messenger RNA (mRNA): RNA molecules that will later be translated into proteins and therefore serve as a 'messenger' in protein production.
-- Ribosomal RNA (rRNA): the primary component of ribosomes (the 'powerplants' of a cell).
-- Transfer RNA (tRNA): functions as 'adapter molecule' that serve as the physical link between mRNA and the amino acid sequence of a protein during translation.
-- MicroRNA (miRNA): non-coding RNA molecules of 21-23 nucleotides involved in RNA silencing and post-transcriptional regulation of {term}`Gene` expression.
+- Messenger RNA ({term}`mRNA`): RNA molecules that will later be translated into proteins and therefore serve as a 'messenger' in protein production.
+- Ribosomal RNA ({term}`rRNA`): the primary component of ribosomes (the 'powerplants' of a cell).
+- Transfer RNA ({term}`tRNA`): functions as 'adapter molecule' that serve as the physical link between mRNA and the amino acid sequence of a protein during translation.
+- MicroRNA ({term}`miRNA`): non-coding RNA molecules of 21-23 nucleotides involved in RNA silencing and post-transcriptional regulation of {term}`Gene` expression.
 
 :::{figure} images/chapter1/transcription.png
 :alt: Transcription
@@ -147,7 +147,7 @@ Where DNA contains thymine (T, indicated in blue), RNA contains uracil (U, indic
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_1_2024`.
 :::
 
-In eukaryotes, precursor mRNA molecules undergo splicing.
+In eukaryotes, precursor mRNA molecules undergo {term}`Splicing`.
 During RNA splicing, the spliceosome protein complex removes introns: specific non-coding parts of an mRNA molecule that are not used during translation ({numref}`splicing`), to create mature mRNA.
 Most introns are characterized by a GU and AG dinucleotide motif in the 5' and 3' end respectively.
 
@@ -737,7 +737,7 @@ In [Chapter 2](#chapter2_sequence_search) we will learn about approaches how to 
 
 An example gene model.
 Various visualization conventions can be identified: boxes represent genomic regions that are transcribed.
-Boxes are exons, lines between boxes are introns. Narrow boxes (sometimes with a lighter color) are untranscribed regions (UTRs), wider boxes (sometimes darker colored) are coding sequence regions (CDS).
+Boxes are {term}`Exon`s, lines between boxes are {term}Intron`s. Narrow boxes (sometimes with a lighter color) are untranscribed regions (UTRs), wider boxes (sometimes darker colored) are coding sequence regions (CDS).
 The arrow indicates the direction of transcription.
 In this example a gene on chromosome 1 with two splice variants is shown, where the first variant has a slightly longer 5' UTR and an additional CDS exon in between the first and last exons.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_1_2024`.
@@ -1517,6 +1517,9 @@ Cell
 DNA
 : **D**eoxyribo**N**ucleic **A**cid
 
+Exon
+: A DNA segment in a gene that encodes part of the mature messenger RNA (mRNA) after intron removal.
+
 Gene
 : A segment of DNA that encodes functional products, typically proteins.
 
@@ -1525,6 +1528,15 @@ Genome
 
 HMM
 : Hidden Markov Model - a statistical model that represents systems where the states are not directly observable (hidden) but can be inferred from observable data.
+
+Intron
+: A DNA segment in a gene that is not expressed in the mature messenger RNA (mRNA) product and is removed during the RNA splicing process.
+
+mRNA
+: Mature mRNA, or mature messenger RNA, is a processed form of RNA that has had its introns removed and consists only of exons, making it ready for translation into proteins.
+
+miRNA
+: MicroRNA are small, single-stranded, non-coding RNA molecules containing 21–23 nucleotides.
 
 Nucleotide
 : The basic building block of DNA and RNA, consisting of a base, sugar, and phosphate group.
@@ -1535,14 +1547,23 @@ Protein
 RNA
 : RiboNucleic Acid
 
+rRNA
+: Ribosomal RNA is a type of non-coding RNA that is a key component of ribosomes, which are essential for protein synthesis in all living cells.
+
 Sequence
 : The precise order of nucleotides in a DNA or RNA strand.
+
+Splicing
+: A biological process where non-coding regions (introns) are removed from a precursor messenger RNA (pre-mRNA) transcript, and the coding regions (exons) are joined together to form a mature messenger RNA (mRNA) that can be translated into proteins.
 
 Transcription
 : The process of copying a DNA sequence into RNA.
 
 Translation
 : The process of converting RNA sequences into proteins.
+
+tRNA
+: Transfer RNA, is a type of RNA molecule that helps decode messenger RNA (mRNA) sequences into proteins.
 :::
 
 ```{bibliography}
