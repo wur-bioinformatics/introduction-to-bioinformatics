@@ -213,7 +213,7 @@ These are cross-references and use labels that can be attached to headers.
 The following syntax is used for the creation of header labels:
 
 ```none
-(chpater[#]_label)=
+(chapter[#]_label)=
 
 # Header
 ```
@@ -243,6 +243,46 @@ For more information on translation, see the above section [Translation](#chapte
 This will produce a link on the word Translation that leads to the section label called translation in Chapter 1.
 
 For more information on links and cross-referencing, see the [Jupyter Book 2 documentation](https://next.jupyterbook.org/tutorial/mystmd/#links-cross-references).
+
+---
+### Glossaries and terms
+
+Each chapter in the book has its own glossary containing that chapter's most important terms and definitions. A glossary is created in the following manner:
+```none
+:::{glossary}
+Entry1
+: Definition of Entry1
+
+Entry2
+: Definition of Entry2
+:::
+```
+
+Entries and definitions can be created at will, however, we also use the {term} convention to directly link to entries in glossaries across all chapters.
+This is important because {term} can only link to an exact match in a glossary (case sensitive). Consider the following example:
+
+The glossary of a chapter is structured like this:
+```none
+:::{glossary}
+MSA
+: **M**ultiple **S**equence **A**lignment - alignment of more than two sequences.
+
+DNA
+: **D**eoxyribo**N**ucleic **A**cid
+:::
+```
+
+The first appearance of the word MSA in the chapter then needs to link to the glossary like so:
+```none
+Instead, in cases where we want to compare 3 or more sequences with each other, we use a **multiple sequence alignment** ({term}`MSA`).
+```
+
+This creates a direct link to the MSA entry in the glossary. Not only does this work for terms for that chapter's glossary,
+if a term is found in another chapter's glossary (no duplicate entries allowed),
+it will actually link to that chapter's glossary as well!
+
+Only first time appearances of terms get the {term} cross-reference (unless you would really like to stress the importance of a term that appeared earlier in the reader).
+This way, later chapters don't get overwhelming with the amount of cross-references to glossaries.
 
 ---
 
@@ -282,3 +322,16 @@ For example:
 As we have seen in Section X.X, there are key similarities and differences between α-helices and β-sheets.
 %#%[Not sure what the Section X.X refers to.]
 ```
+
+### Editing and publishing chapters
+
+Since this reader is under iterative development, it is beneficial for all contributors to know how they can update and publish their individual chapters. The repository uses a GitHub workflow, using GitHub actions,
+that fully automates the deployment, release and publishing of the reader. Contributors can initiate this workflow through their commit message to the repository.
+
+When an edit has been made to a chapter, the contributor has to consider the magnitude of their commit. A small update with small fixes or changes should be considered a patch update. A larger revision of a chapter, which could include new sections, removed sections or new imagery should be considered a minor update. A complete overhaul of one or more chapters that affects the reader as a whole should be considered a major update. When a decision according to the above logic has been made, the commit message should end in one of the corresponding categories:
+- #patch (this will increment the version of the reader by 0.0.1 and initiate the deployment, release and publishing workflow).
+- #minor (this will increment the version of the reader by 0.1.0 and initiate the deployment, release and publishing workflow).
+- #major (this will increment the version of the reader by 1.0.0 and intiatie the deployment, release and publishing workflow).
+- Omitting the #category at the end of the commit will add the changes to the repository, but will not initiate the deployment, release and publishing workflow. This is useful if you are planning to stack a bunch of commits, for which you don't want the reader to be re-deployed every single commit. Just make sure that the last commit has a #category at the end of the commit message, so that your changes are published and visible in the reader.
+
+You can check on the progress of the workflow by going to the "Actions" tab in the GitHub repository. The "Deployment" action's "Build HTML" job will print potential error or warning messages that a contributor needs to fix in order for the reader to work properly. 
