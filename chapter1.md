@@ -743,7 +743,7 @@ In this example a gene on chromosome 1 with two splice variants is shown, where 
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_1_2024`.
 ```
 
-**Genome browsers** facilitate interactive visualization of annotations and evidence alignments on genome sequences.
+{term}`Genome browser`s facilitate interactive visualization of annotations and evidence alignments on genome sequences.
 Various implementations exist, but all genome browsers typically provide a linear view of a chromosome that can be scrolled and zoomed.
 In addition, various annotation 'tracks' can often be toggled, to display for instance known gene structures, RNA sequencing alignments, or homologous protein sequence alignments.
 Most visualization elements can be clicked to open pop-up windows with additional information.
@@ -1525,6 +1525,9 @@ Gene
 
 Genome
 : The complete set of genes or genetic material present in a cell or organism.
+
+Genome browser
+: A tool for visually inspecting genomic regions, annotations, and experimental data tracks.
 
 HMM
 : Hidden Markov Model - a statistical model that represents systems where the states are not directly observable (hidden) but can be inferred from observable data.
