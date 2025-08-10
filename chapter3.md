@@ -6,22 +6,17 @@ authors:
 ---
 
 :::{important} Learning outcomes
-- 1
-- 2
-- 3 
+- 1 Understand the purpose and structure of phylogenetic trees.
+- 2 Interpret characters and character states in a multiple sequence alignment ({term}`MSA`).
+- 3 Infer evolutionary relationships from phylogenetic trees.
+- 4 Explain gene tree vs. species tree distinctions.
+- 5 Evaluate tree resolution and identify polytomies.
+- 6 Apply tree rooting concepts to determine directionality.
+- 7 Compare main tree-building approaches.
+- 8 Estimate sequence divergence accurately using substitution models.
+- 9 Interpret bootstrap analysis as a measure of nodal support.
+- 10 Read, write, and visualize trees using Newick notation and tree tools.
 :::
-
-In this chapter you will learn to use a _Multiple Sequence Alignment_ ({term}`MSA`), like the ones you compiled in [chapter 2](#chapter2_multiple_sequence_alignment), and visualize the variation it contains as a phylogenetic tree.
-A phylogenetic tree is considered a highly efficient _data structure_ summarizing the data and its variation contained in your MSA.
-A tree is built from {term}`Characters` which are the individual columns or positions in your MSA.
-Characters have {term}`States`, which are in this case the individual nucleotide or amino acid _substitutions_ occurring in that position (see [Characters & trees](#chapter3_characters_trees) below).
-Invariable characters are columns or positions 'occupied' by just one type of nucleotide or amino acid, whereas variable characters may have up to 4 different nucleotides or up to 20 amino acids per position.
-DNA and amino acid (AA) sequences contain the information necessary for building protein structure, comparing them in an MSA will enable insight how these structures, and their associated functions, may have changed over evolutionary times since they descended from an ancestral sequence.
-The more character state changes (i.e., substitutions) occur between sequences, the more _diverged_ they are and probably also less related (see [Related, diverged](#chapter3_related_diverged) below), and hence the further apart they will occur on your phylogenetic tree.
-The information contained in your tree is hierarchical in nature, meaning that it is built-up as nested sets of subtrees that are also known as _clades_.
-A _clade_ is a group containing an ancestor together with all its descendants and is also referred to as a _monophyletic_ group.
-
----
 
 ## Rationale
 
@@ -64,7 +59,7 @@ Comparing species (or genes) in a phylogenetic tree allows inference of ancestra
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
 
-When a phylogenetic tree is known for a specific group, and it is properly {term}`Root`ed, the _ancestral states_ for its characters can in principle be reconstructed (for instance the ancestral amino acid residues in a protein sequence) for each node in the tree.
+When a phylogenetic tree is known for a specific group, and it is properly {term}`Root`ed, the _ancestral_ {term}`States` for its {term}`Characters` can in principle be reconstructed (for instance the ancestral amino acid residues in a protein sequence) for each node in the tree.
 With that, _evolutionary trends_ (towards current conditions) can be inferred, enabling the study of character evolution, i.e., how things change over time ({numref}`ancestral_states_alt`).
 
 ---
