@@ -147,7 +147,7 @@ Here, the OTUs are GenBank plant chloroplast gene accessions, the names of which
 For the same data, the tree is given as _additive_ tree (top) and as an _ultrametric_ tree (bottom left) with branch lengths corresponding to time.
 On the right, flipped, the same tree as _cladogram_, with branch lengths only indicating the structure of the trees.
 :::
-%#% This figure could be much clearer in depicting additive trees and cladograms.
+%#%[TODO: This figure could be much clearer in depicting additive trees and cladograms.]
 
 ---
 

@@ -103,15 +103,6 @@ This is mainly caused by difficulties in defining the start and end of secondary
 Even as a human, manual annotation of secondary structure elements may pose challenges on which residues are inside or outside secondary structure elements.
 During the practical assignments, you will explore this phenomenon more. 
 
-%:::{figure} images/chapter4/Q3.png
-%:alt: Q{sub}`3` measure
-%:align: center
-%:name: Q3
-%
-%The Q{sub}`3` measure produces useful accuracy predictions when the resulting secondary structure prediction contains a slight shift compared to the actual structure (prediction 1). It is however not useful when the secondary structure elements have been interpreted incorrectly, as the score does not take into account what the actual change is. For example, in prediction 2, the beta strand (E) turned into helix for several residues, making this a worse prediction than prediction 1, but returning the same Q3 score. 
-%:::
-%#% Unable to use figure Q3 due to copyright.
-
 :::{figure} images/chapter4/Q3_alt.png
 :alt: Q{sub}`3` measure
 :align: center
@@ -137,20 +128,6 @@ In particular, we can observe that Proline is a strong breaker of both structure
 This can be explained by the special side group arrangement of Proline: this is fused twice to the backbone of the protein, rendering the amino acid very inflexible when it comes to the phi (φ) and ψ (psi) angles it can render (see [Chapter 1](#chapter1_secondary_structure) for more information on phi and psi angles).
 Another amino acid that that tends to break alpha helices and beta strands is Glycine.
 Whilst now superseded, first by more accurate statistical methods and more recently by machine learning-based methods, the Chou-Fasman approach very elegantly demonstrates how the side groups of amino acids impact their tendency to form specific structures.
-
-%:::{figure} images/chapter4/chou-fasman.png
-%:alt: The Chou-Fasman approach
-%:align: center
-%:name: chou_fasman
-%
-%Chou and Fasman Propensities \(P\).
-%F stands for strong former, f weak former, while B and b stand for strong and weak breaker, respectively.
-%The designation I (indifferent) indicates residues that are neither forming nor breaking helices or strands.
-%We can see that Pro has the lowest propensity for forming a helix and a low one for strands as well.
-%However, many other residues that are either weak or indifferent have been reclassified since the propensities shown here have been reparameterized as more data have become available.
-%Credits: modified from {cite}`chou_fasman_1978`.
-%:::
-%#% Unable to use figure chou_fasman due to copyright.
 
 :::{figure} images/chapter4/chou-fasman_alt.png
 :alt: The Chou-Fasman approach
@@ -546,7 +523,7 @@ To summarize the AlphaFold process, database searches are done to construct MSAs
 Schematic overview of AlphaFold approach.
 Credits: modified from {cite}`alphafold_approach_2021`.
 :::
-%#% The following commented out block is a future replacement for the above paragraph if AlphaFold 3 becomes the norm.
+%#%[The following commented out block could be used as a future replacement for the above paragraph if AlphaFold 3 becomes the norm.]
 %To make a prediction with AlphaFold, all you need is the [AlphaFold server](https://golgi.sandbox.google.com/) and a FASTA file with the protein primary sequence of interest. AlphaFold 3 can also model interactions with other proteins, DNA, RNA, ligands, and ions, which can be supplied in FASTA format or selected from a dropdown list. However, in this chapter we will focus solely on single protein 3D structure prediction.
 %The core of AlphaFold’s working is a sophisticated machine learning model.
 %However, it was not built from scratch: it heavily builds on previously developed approaches to create reliable structure models.
@@ -696,7 +673,7 @@ We are increasingly aware that structure is more conserved than sequence; thus, 
 A recent tool that allows us to do structure-based alignments based on protein structure input in a reasonable time frame is [Foldseek](https://search.foldseek.com/) {cite}`foldseek_2024`.
 {term}`Foldseek` uses a novel 3D-interactions (3Di) alphabet together with an extremely fast BLAST-like sequence search method. This way, the team behind Foldseek overcame the mounting task of doing structure-based comparisons at the very large scale that the availability of >200 million AlphaFold structures requires.
 For example, a traditional structure-based alignment tool would take ~1 month to compare one structure to 100 million ones in the database.
-%#% Add section about the 3Di alphabet and the use of substitution matrices in comparison to Chapter 2 + a figure to visualise this.
+%#%[TODO: Add section about the 3Di alphabet and the use of substitution matrices in comparison to Chapter 2 + a figure to visualise this.]
 During the practical assignments, you will explore how the combination of AlphaFold and Foldseek can be used to explore possible functions for a protein sequence of interest.
 
 ---

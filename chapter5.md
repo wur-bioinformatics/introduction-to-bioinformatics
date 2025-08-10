@@ -145,7 +145,7 @@ Credits: [CC-BY 2.0](https://creativecommons.org/licenses/by/2.0) {cite}`timelin
 :::
 
 ::::
-%#% In the last line of box 5.1 it describes third generation technologies, amongst which Hi-C. However, the section [Chapter5_3rd_generation] lacks information on Hi-C.
+%#%[TODO: In the last line of box 5.1 it describes third generation technologies, amongst which Hi-C. However, the section Chapter5_3rd_generation lacks information on Hi-C.]
 
 ---
 
@@ -1177,7 +1177,6 @@ Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`ep
 :::
 
 ::::
-%#% The original URL in box 5.5 that is credited as the source leads to page that does not exist anymore. Changed to WikiMedia url. - The description is a literal copy paste from the figure description on WikiMedia.
 
 A part of the explanation lies in what is called {term}`Epigenetics`,
 modifications of the genome that do not change the DNA sequence but do
@@ -1295,7 +1294,6 @@ the levels of transcription of genes on the genome to RNA). RNA and its
 role in the cell has already been discussed in [Chapter 1](#chapter1_rna_transcription_splicing). If you want to know
 what other types of RNA exist outside the common mRNA, miRNA, tRNA and rRNA, read
 [Box 5.10](#chapter5_RNA). Here we focus on measuring and counting transcripts (mRNA).
-%#% Chapter 1 does also mention miRNA as one of the main types of RNA.
 For the understanding of transcriptome analysis it is important to remember
 that in eukaryotes most genes contain introns and that one gene can have
 many transcripts.
@@ -1325,7 +1323,7 @@ The generalized RNAi mechanism up to the molecular level depicting the role of v
 - piRNA (piwi interacting RNA): found in animals and slightly longer than miRNAs (26-31nt), they interact with piwi proteins. piRNAs are implicated in epigenetic gene silencing, but not much is known.
 ::::
 
-%#% Figure RNA_types is rather blurry and unclear. Replace image that better depicts the different types of RNA?
+%#%[TODO: Figure RNA_types is rather blurry and unclear. Replace image that better depicts the different types of RNA?]
 
 In transcriptomics, the aim is to measure presence and abundance of
 transcripts. Such measurements are based on a large number of cells, but
