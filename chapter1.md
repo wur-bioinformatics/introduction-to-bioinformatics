@@ -737,7 +737,7 @@ In [Chapter 2](#chapter2_sequence_search) we will learn about approaches how to 
 
 An example gene model.
 Various visualization conventions can be identified: boxes represent genomic regions that are transcribed.
-Boxes are {term}`Exon`s, lines between boxes are {term}Intron`s. Narrow boxes (sometimes with a lighter color) are untranscribed regions (UTRs), wider boxes (sometimes darker colored) are coding sequence regions (CDS).
+Boxes are {term}`Exon`s, lines between boxes are {term}`Intron`s. Narrow boxes (sometimes with a lighter color) are untranscribed regions (UTRs), wider boxes (sometimes darker colored) are coding sequence regions (CDS).
 The arrow indicates the direction of transcription.
 In this example a gene on chromosome 1 with two splice variants is shown, where the first variant has a slightly longer 5' UTR and an additional CDS exon in between the first and last exons.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_1_2024`.
