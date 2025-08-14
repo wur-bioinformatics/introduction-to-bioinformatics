@@ -1,15 +1,10 @@
 # Omics data analysis
 
-:::{figure} images/Week5/omics-levels.png
-:alt: -Omics levels
-:align: center
-:name: omics_levels
+```{epigraph}
 
-Different -ome levels, here illustrated with numbers for _Arabidopsis thaliana_.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
-:::
+-- Judith Risse, Dick de Ridder
+```
 
----
 
 > Etymology (from Wikipedia)
 >
@@ -31,6 +26,23 @@ and metabolomics focus on gene expression, protein, and metabolite levels,
 respectively. Finally, phenomics measures the outward appearance and
 behavior of cells and organisms.
 
+:::{figure} images/Week5/omics-levels.png
+:alt: -Omics levels
+:align: center
+:name: omics_levels
+
+Different -ome levels, here illustrated with estimated numbers for _Arabidopsis thaliana_.
+Genes are expressed as transcripts, under the influence of _epigenetic_
+regulation. Transcripts are translated to proteins, that perform a myriad of
+functions in the cell, among which the enzymatic regulation of metabolic
+reactions that consume and produce compounds. Proteins and metabolites
+regulate interactions between cells involved in growth and development of
+tissues, finally leading to organisms and observable traits. At each level,
+there are now means to measure molecule presence/absence, levels and certain types of
+interactions at a very broad, so-called "genome-wide" scale.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
+:::
+
 The concept of genes is central to the dogma of molecular biology; it
 therefore makes sense that much early research was invested in sequencing
 genomes. These genomes were then annotated for genes, with accompanying
@@ -41,8 +53,8 @@ prediction of structure that were discussed in earlier chapters. However,
 after sequencing the first genomes it became clear that the DNA tells only
 part of the entire story: the expression of genes and proteins and their
 interactions in processes within and between cells govern how cells and
-organisms behave. This led to research in functional genomics and systems
-biology, for which computational data analysis of other omics level data
+organisms behave. This led to research in _functional genomics_ and _systems
+biology_, for which computational data analysis of other omics level data
 have become indispensable.
 
 Below, genomics will first be introduced, along with the most relevant
@@ -65,11 +77,8 @@ Information flow in the cell. \
 Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`central_dogma_2008`.
 :::
 
-DNA is the starting point in the chain of biological information flow. The
-central dogma of molecular biology was postulated by Francis Crick in 1958:
-cellular processes allow information flow away from DNA to RNA and then to
-proteins, not the other way around ({numref}`central_dogma`). From DNA we progress
-through transcription and translation towards whole organisms and their
+DNA is the starting point in the chain of biological information flow ([central dogma](Week1_central_dogma)). 
+From DNA we progress through transcription and translation towards whole organisms and their
 phenotypes. So, it is fitting to start at the beginning. Even before
 people knew about DNA and its role as keeper of hereditary information, they
 were aware that parental characteristics are inherited by offspring. Around
@@ -89,7 +98,8 @@ Project (HGP) and the HGP was the major driver in technology development.
 Everything started in 1977 with the first DNA sequencing method developed
 by Sanger, Maxam, and Gilbert, and this allowed the first genome to be
 sequenced: Phi X bacteriophage.
-Another important mile stone was the development of PCR (Polymerase Chain Reaction)
+Another important mile stone was the development of PCR (Polymerase Chain
+Reaction, see [Chapter 2](Week2_PCR))
 in 1985, which enabled DNA amplification. The first automated sequencer (AB370A)
 appeared in 1986.
 
@@ -110,8 +120,8 @@ One of the most surprising findings was that the human genome only contained rou
 estimated 50,000-140,000. The entire project is estimated to have cost [\$3
 billion](https://www.genome.gov/about-genomics/educational-resources/fact-sheets/human-genome-project).
 In 2021 the first true telomere-to-telomere assembly of the human genome was
-assembled using the third generation technologies described below: [PacBio](Week5_pacbio),
-[Oxford Nanopore](Week5_nanopore) and Hi-C.
+assembled using the third generation technologies described below - [PacBio](Week5_pacbio)
+and [Oxford Nanopore](Week5_nanopore).
 
 :::{figure} images/Week5/Fig_Box1_Human_Genome_Project_Timeline_(26964377742).jpg
 :alt: Human Genome Project Timeline
@@ -121,25 +131,24 @@ Credits: [CC-BY 2.0](https://creativecommons.org/licenses/by/2.0) {cite}`timelin
 :::
 
 ::::
-%#% In the last line of box 5.1 it describes third generation technologies, amongst which Hi-C. However, the section [Week5_3rd_generation] lacks information on Hi-C.
 
 ---
 
 ### Genomes
 
 The history of genome sequencing and the importance of the human genome project
-in the development of sequencing methods is described in [Box 1](w5box1).
-With the rapid evolution of sequencing technology, our understanding of
+in the development of sequencing methods is described in [Box 5.1](w5box1).
+With the rapid development of sequencing technology, our understanding of
 genomes and their content has grown as well. We now know that genomes vary
 greatly in terms of size, chromosome numbers, and ploidy ({numref}`gene_ploidy`),
 as well as gene content ({numref}`w5t1`). Genome sizes range from 100kb in
-bacteria to more than 100Gb (Giga basepairs) in plants. Humans have a genome size of 3.2Gb.
+bacteria to more than 100Gb (Giga bases) in plants. Humans have a genome size of 3.2Gb.
 
 ```{list-table} Genome size and number of genes of model species
 :header-rows: 1
 :name: w5t1
 * - Species
-  - Genome size
+  - Genome size (kb)
   - Number of genes
   - Number of transcript
   - Average gene density (kb)
@@ -175,7 +184,7 @@ bacteria to more than 100Gb (Giga basepairs) in plants. Humans have a genome siz
   - 154.4
 ```
 
-Not only the genome size varies greatly, in eukaryotes the number of chromosomes and chromosomal copies
+Not only the genome size varies greatly between organisms, in eukaryotes the number of chromosomes and chromosomal copies
 (ploidy) do too. Chromosome numbers range from 4 in fruit fly (_Drosophila_)
 to 23 in human to 50 in goldfish and 100+ in some ferns. Similarly, ploidy
 ranges from haploid (single set of chromosome(s), ploidy of N) and diploid
@@ -204,19 +213,23 @@ is that of the bacterial endosymbiont _Nasuia deltocephalinicola_, which
 only consists of 112,091 nucleotides encoding 137 proteins. The largest
 genomes known to date are marbled lungfish and the plant _Fritillaria
 assyriaca_ with 130,000,000,000 nucleotides (130Gb), although the amoeboid
-_Polychaos dubium_ is purported to have a genome size of 670Gb. Genome size
-is not necessarily correlated with the number of genes in the genome (see
-also {numref}`w5t1`). Number of protein coding genes in turn is not
-correlated entirely with organism complexity.
+_Polychaos dubium_ is said to have a genome size of 670Gb. Genome size
+is not necessarily linked to number of genes in the genome (see
+also {numref}`w5t1`). Number of protein coding genes in turn does not
+always increase with organism complexity.
 ::::
 
 ---
 
 #### Genome sequencing technologies
 
-The process of generating a genome starts with DNA sequencing, the detection
-of nucleotides and their order along a strand of DNA. Conceptually, there
-are three ways of sequencing:
+In order to study genomes, we need to have a human readable representation of them. This requires the 'reading' of the DNA molecules as A,C,T and Gs.
+This process of generating a genome starts with DNA sequencing, the detection of nucleotides and their order along a strand of DNA. 
+
+If you work with genome data, it is important to have a basic understanding of the technologies used and their strength and weaknesses. 
+This allows us to better understand the quality of the data we work with and what biological insights we can gain. For interested readers we provide a more detailed description of these technologies in a number of boxes at the end of this chapter.
+
+Conceptually, there are three ways of sequencing:
 
 - Chemical sequencing relies on step-by-step cleaving off the last nucleotide from a chain and identifying it.
  Mainly due to the use of radioactive labels, this method was never widely used.
@@ -225,21 +238,21 @@ are three ways of sequencing:
   This is currently the most widely used method, and various implementations are available.
   It is also referred to as [Next-Generation Sequencing](Week5_ngs) (NGS).
 
-- Direct sequencing involves directly measuring the order of nucleotides in a strand of DNA, which has only recently become feasible and is thus far only implemented in [Oxford Nanopore sequencing](Week5_nanopore).
+- Direct sequencing involves directly measuring the order of nucleotides in a strand of DNA which is thus far only implemented in [Oxford Nanopore sequencing](Week5_nanopore).
 
-Different technologies vary wildly in the length of DNA sequences they produce
+Different technologies vary widely in the length of DNA sequences, called (sequencing) reads, they produce
 (the read length) and their throughput, which together determine the
 coverage: the (average) number of times each base in the genome is represented in a read.
-For some purposes, such as genome assembly, it is essential that the
+For some purposes, such as genome assembly, it is essential that this
 coverage is sufficiently high - depending on read length, between 50x to
 100x. A number of sequencing devices and their
 capabilities in terms of read length and yield per run are shown in
 {numref}`sequencing_technology`.
 
-Sequencing technologies also vary in the accuracy of base-calls. This accuracy is measured using quality
-or Q scores and they represent the probability that a base-call is incorrect. A higher Q-score is better.
-The most commonly used cut-off value is Q30 which corresponds with an incorrect base-call probability
-of 1 in 1000 and therefore an accuracy of 99.9%.
+Sequencing technologies also vary in the accuracy of base-calls (the detected nucleotide at a position). 
+This accuracy is measured using quality or Q scores and they represent the probability that a base-call 
+is incorrect. A higher Q-score is better. The most commonly used cut-off value is Q30 which 
+corresponds to an incorrect base-call probability of 1 in 1000 and therefore an accuracy of 99.9%.
 
 
 :::{figure} images/Week5/sequencing-technology.jpg
@@ -262,68 +275,15 @@ Oxford Nanopore MinION/PromethION and Pacbio Sequel II devices. Credits:
 ##### Sanger sequencing
 
 Sanger sequencing was the first 'high-throughput' method of DNA sequencing.
-For more details on its history and how it works, see [Box 3](w5box3).
+For more details on its history and how it works, see [Box 5.8](w5box3). 
 
-(w5box3)=
-::::{admonition} Box 5.3: Sanger sequencing
-:class: tip
-
-Developed in 1977 by Fred Sanger and colleagues, the protocol was first
-largely manual until it was automated in 1985 by Applied Biosystems. Sanger
-sequencing uses the chain-termination method ({numref}`sanger`).
-
-:::{figure} images/Week5/sanger.svg
-:alt: Sanger sequencing
-:align: center
-:name: sanger
-
-Chain termination (Sanger) sequencing.
-Credits: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) {cite}`sanger_2012`.
-:::
-
-In a first step, genomic DNA is purified and sheared into fragments of the desired length. For Sanger
-sequencing the fragment length is around 1,000 nucleotides. Shearing is
-done either mechanically or chemically, and resulting fragments are not all
-exactly equally long: they are distributed around the target fragment size.
-
-:::{figure} images/Week5/sanger-signal.png
-:alt: Sanger sequencing signal
-:align: center
-:name: sanger_signal
-
-Sanger sequencing signal, with low quality bases at the start of the read.
-Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`sanger_signal_2005`.
-:::
-
-Template DNA fragments are amplified in a PCR reaction using a primer and
-DNA polymerase. Each sample is amplified in 4 separate reactions, one for
-each nucleotide (A, T, C, G). In each of these reactions, a small
-DNA polymerase. In each of these reactions, a small
-proportion of modified nucleotides (ddNTP) is added to the normal
-nucleotides (dNTP). These modified nucleotides are designed to stop the
-elongation of the strand and are linked to a label by which they can be
-identified. This leads to a collection of partially amplified fragments of
-template DNA. The length of each fragment was originally measured by the
-identified. distance the fragment travelled on a gel, in later setups by the time it
-took to pass through a capillary.  The label on the last nucleotide then
-identifies the base at a given position and a peak pattern is generated.
-From a signal of peak patterns ({numref}`sanger_signal`), the sequence can be read
-off automatically. Sanger sequencing produces read lengths between
-700-1,000 nucleotides; after this, the quality of the base calling drops too
-far to be useful. The quality at the beginning of a read is generally too
-low to be used ({numref}`sanger_signal`). Another problem with Sanger sequencing is
-the detection of homopolymers (the same nucleotide occurring multiple
-times), as the peak height of the signal decreases the longer the stretch
-is. This makes it difficult to differentiate between 3, 4 and 5 nucleotides
-of the same base. Sanger sequencing machines can sequence 96 fragments in
-parallel, making it comparatively low throughput.
-
-::::
-
-Sanger sequencing needs many copies of a single DNA fragment to be present in
-the sequencing reaction. This meant that in the sample preparation step
-fragments were cloned using either PCR or other large scale amplification methods.
-The requirement of uniqueness is the biggest drawback of Sanger sequencing.
+In essence Sanger sequencing is a PCR reaction where step-by-step a copy of a DNA fragment is created using
+fluorescent nucleotides of different colors, the light of which is detected and translated to a nucleotide. 
+Sanger sequencing needs many copies of a single, unique DNA fragment to be present in
+the sequencing reaction to ensure the light signal is strong enough to detect. The signal has to also be of a single
+color in each step, so the template sequences have to be all identical.
+This meant that in the sample preparation step fragments were cloned using either normal PCR 
+or other large scale amplification methods. The requirement of uniqueness is the biggest drawback of Sanger sequencing.
 
 (w3imp1)=
 ::::{admonition} Important to know about Sanger sequencing
@@ -332,11 +292,11 @@ The requirement of uniqueness is the biggest drawback of Sanger sequencing.
 - was used to sequence the first human genome
 - it produces reads of up to 1000bp long with a quality of 99.9% (Q30)
 - it is a low throughput method
-- it can only sequence on fragment at a time.
+- it can only sequence one fragment at a time.
 ::::
 
 Sanger sequencing was the main sequencing platform until around 2007. From
-2004 onwards, it was increasingly superseded by the what we call
+2004 onwards, it was increasingly superseded by what we call
 next-generation sequencing (NGS) methods. Today it is still used, among
 others to sequence PCR products to validate variants, to determine the
 orientation of genes in cloned vectors, or in microsatellite studies.
@@ -358,38 +318,8 @@ input DNA fragments to enhance the signal of the actual sequencing step.
 Most sequence data is nowadays generated by Illumina technology (or 3rd
 generation methods, see the next section) which allows for massive parallel
 sequencing of reads. How Sequencing-by-synthesis and Illumina patterned flow
-cells work is explained in [Box 4](w5box4).
-
-(w5box4)=
-::::{admonition} Box 5.4: Illumina sequencing
-:class: tip
-
-Illumina sequencing uses
-bridge-amplification, where the PCR reaction takes place directly on a
-flow-cell surface. In the library preparation step, a
-forward and reverse adapter are ligated to the ends of a single strand
-template fragment. The complementary sequences for the adapters are ligated
-to a flow-cell as PCR primers. The initial template sequence (with
-adapters) will then form a double stranded bond with one of the primers on
-the flow-cell surface. The fragment is next copied in a
-standard PCR reaction, but with the end firmly attached to the surface. The
-DNA is denatured to go from double stranded to single stranded again and the
-original template is washed away, leaving a single fixed copy. The end of
-that strand can then form a bridge with a neighbouring empty primer of the
-other end and the reaction is repeated, ending in first two fixed fragments
-and subsequently thousands of identical fragments near each other. In the
-sequencing step, a final PCR then uses fluorescent dye
-terminated NTPs, which are washed across the surface in each cycle. A
-camera detects the colour, the dye is cleaved off and the steps are repeated
-for the length of the sequencing reaction:
-
-<iframe align="middle" width="560" height="315" src="https://www.youtube.com/embed/fCd6B5HRaZ8?si=1cv89BREdx4HvO9o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-Current models us a so-called patterned flow-cell, were the template fragments
-fall into a tiny well and the amplification step takes place in the wells:
-
-<iframe align="middle" width="560" height="315" src="https://www.youtube.com/embed/pfZp5Vgsbw0?si=rONHDeNRYq_cL0kg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-::::
+cells work is explained in detail in [Box 5.9](w5box4); below we list the main
+characteristics of the data.
 
 (w5imp2)=
 ::::{admonition} Important to know about Illumina sequencing
@@ -406,7 +336,7 @@ that is approximately known
 - it is very high throughput: The number reads obtained in a
 single run range from millions to billions, depending on the model
 - fragments with extreme GC content are less likely to be sequenced, which can
-lead to incomplete genome assemblies or coverage
+lead to incomplete genome assemblies or variance in coverage
 - is good for variant detection (see [Variants](Week5_Variant_Calling))
 ::::
 
@@ -432,44 +362,10 @@ continuous way, there is no need for individual cycles like in NGS.
 The most established method is PacBio single molecule real time (SMRT)
 sequencing. Compared to other methods it does not include a PCR step to
 amplify the signal of the template DNA. Instead, during the sequencing of
-an individual DNA molecule light is emitted when a labelled nucleotide is
-inserted. This light is then amplified so that it can be detected.
+an individual DNA molecule, light is emitted when a labelled nucleotide is
+inserted. This light is then amplified so that it can be detected. More
+detail can be found in [Box 5.10](w5box5).
 
-(w5box5)=
-::::{admonition} Box 5.5: PacBio sequencing
-:class: tip
-PacBio sequencing does not amplify the template fragment prior to sequencing,
-instead it makes clever use of the structure of SMRT-cells to amplify the
-light signal of bases being incorporated with the use of a laser.
-A circularised double stranded piece
-of template is loaded into tiny wells on a SMRT-cell, with the aim of having
-a single molecule in each well. Incorporation of nucleotides is signalled
-by cleavage of a phosphorescent molecule from the nucleotide and recorded
-with a camera.
-
-One major difference with NGS is that the template is circular instead of
-linear, and that a single template can thus be sequenced multiple times
-consecutively in what is called circular consensus sequencing (CCS). In
-general 3rd generation sequencing techniques suffer from a higher error
-rate, with most errors being indels, short insertions or deletions. This
-has implications for e.g. mapping and assembly. Making use of the CCS
-allows for proofreading and higher accuracy, with the most
-recent PacBio HiFi reads reaching 99.99% read accuracy (Q40).
-
-<iframe align="middle" width="560" height="315" src="https://www.youtube.com/embed/_lD8JyAbwEo?si=iIdv7q_1nyK1jqS2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-The read length of this technology is determined by the size of the input
-fragment and the length of time the polymerase functions (the high-energy
-laser light slowly degrades the enzyme over time). Median read lengths vary
-between 15,000 and 20,000 nucleotides for CCS reads and up to 175,000
-nucleotides for continuous long read sequencing. PacBio sequencing has no
-amplification bias like other technologies (there is no PCR step) and is
-least influenced by GC-content. Overall, it gives the most uniform coverage
-across a genome sequence. Unfortunately, it also has much lower throughput
-than e.g. Illumina sequencing and a still significantly higher price per
-base.
-
-::::
 
 (w5imp3)=
 ::::{admonition} Important things to know about PacBio sequencing
@@ -494,7 +390,8 @@ The newest technology is nanopore sequencing, currently provided by Oxford
 Nanopore on the MinION and related devices ({numref}`minion`). This
 technology is completely different to any of the others, in that it directly
 detects the order of nucleotides based on current changes caused by a single DNA strand
-being pulled through a protein nanopore embedded in a membrane. As with Pacbio sequencing
+being pulled through a protein nanopore embedded in a membrane (see [Box
+5.11](w5box6) for more information). As with Pacbio sequencing
 read-length is determined by the length of the DNA template.
 
 :::{figure} images/Week5/MinionSequencer.jpg
@@ -506,46 +403,11 @@ Oxford Nanopore MinION sequencer
 Credits: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) {cite}`minion_2020`
 :::
 
-(w5box6)=
-::::{admonition} Box 5.6: Nanopore sequencing
-:class: tip
-The flow-cell in nanopore sequencing has a number
-of wells. Each of these wells has a sensor at the bottom that detects
-currents. The well itself is covered by a membrane, similar to a cell
-membrane, although in this case it is not a lipid bilayer but a more stable
-polymer. Embedded in this membrane are transmembrane protein pores
-(genetically modified to work optimally) through which a DNA molecule fits.
-A current potential is applied between the top and the bottom of the
-membrane and, as DNA is negatively charged, it wants to travel through the
-pore. This changes the electrical resistance, which is detected by the
-sensor. A problem is that the DNA travels too fast for the sensor to detect
-the nucleotides; the solution is to add a DNA-polymerase, that acts as a
-brake (it is also called motor, as it actively unzips the DNA).
-The polymerase itself does not fit through the pore and sits on top of it.
-
-As with PacBio, the read length is determined by the input DNA fragment size
-and has no theoretical limit: the current read length record stands at 4.2
-Mb, which is enough to sequence a bacterial genome in a single read. Nanopore
-sequencing has a similar error model as PacBio, with insertions and
-deletions most prevalent. In addition to that, long stretches of homopolymers
-remain challenging. Accuracy is limited to between 85 and 95%, however the latest
-duplex-calling (were both the template and the complement strand are read) reaches
-99% accuracy (Q20). The main advantage over any of the other
-technologies is that the template DNA itself is measured, so base
-modifications like DNA methylation can be detected as well. The sequencer
-is also small enough to fit in the palm of a hand and people have used it in various
-non-traditional conditions, such as arctic expeditions on Svalbard and in
-the International Space Station.
-
-<iframe align="middle" width="560" height="315" src="https://www.youtube.com/embed/RcP85JHLmnI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-::::
-
 (w5imp4)=
 ::::{admonition} Important things to know about nanopore sequencing
 :class: important
 - it can sequence very long reads
-- the accuracy is 98-99.9% (Q17-Q30)
+- the accuracy is 96.8-99.9% (Q15-Q30)
 - it can directly detect base modifications (methylation)
 - fragments with extreme GC content can be sequenced as there is no PCR step
 - individual DNA fragments are sequenced one after the other, making it real-time
@@ -557,27 +419,42 @@ the International Space Station.
 
 :::{figure} images/Week5/ladybug_aphid.png
 :alt: Sequencing contamination
-:align: right
+:align: center
 :width: 300px
 :name: ladybug_aphid
 
 Causes for contaminated sequencing \
 samples, using as example the ladybug \
 and its main food source, aphids. \
+Additionally all eukaryotes have a \
+microbiome composed of prokaryotes, \
+viruses, and small eukaryotes and \
+these can also be present as contaminants.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`
 :::
 
-As discussed above, sequencing technology is not perfect and errors will be
-present in the output. Moreover, what we sequence is not always what we
-originally intended to sequence ({numref}`ladybug_aphid`).
+Before we can use the sequencing data for further analysis, we need to make sure the data is good enough.
 
+A first step for quality control is to check the accuracy of the data.
+As sequencing technology is not perfect, errors will be present in the output. 
+To minimize these, we remove poor quality reads or bases.
 
-Sources of errors related to sequencing itself are base calling errors
+Errors related to sequencing itself are the result of base calling errors
 (substitution errors), uncalled bases (indels), GC bias, homopolymers, a
 drop of quality towards the 3’end of a read, and duplicates (amplification
-bias). Additional error sources are contamination of the input sample,
-remnants of adapters and sequencing vectors. It is therefore important to
-assess the quality of the sequencing itself and the output data before
+bias).
+
+Sometimes what we sequence is correct, but not what we originally intended to 
+sequence ({numref}`ladybug_aphid`). Identifying contamination is important
+for genome assembly as we do not want to assign genome sequences to the wrong species.
+Imagine the confusion if the lady bug all of a sudden had genes for red aphid eyes.
+Tools exist to identify reads from contaminant species using sequence homology (e.g. [blast](Week2_blast_algorithm)).
+
+
+In addition to contamination of the input sample, sequence data can also contain 
+remnants of adapters and sequencing vectors, which can be removed with dedicated software.
+
+It is important to assess the quality of the sequencing itself and the output data before
 further analysis.
 
 ---
@@ -586,8 +463,8 @@ further analysis.
 
 When no reference genome is available for a species, we need to assemble
 one, i.e. build one from scratch by putting together DNA sequence reads.
-Here we discuss what to do when a reference genome sequence is not yet
-available. First, we examine why we would want to create a reference
+Here we discuss the steps and considerations:
+First, we examine why we would want to create a reference
 assembly, and what types of references can be created. Next, the assembly
 process and its challenges are introduced. Finally, genome annotation and
 detection of structural variation are discussed.
@@ -601,18 +478,20 @@ detection of structural variation are discussed.
 :::{figure} images/Week5/co-segregation_alt.svg
 :alt: Co-segregation of alleles
 :width: 300px
-:align: right
+:align: center
 :name: co_segregation_alt
 
-Co-segregation of alleles. \
+Co-segregation of alleles: Which parts \
+of the genome were inherited together \
+from either the mother or the father.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`
 :::
 
 Genomes can be reconstructed with different aims, which influence the
 required quality of the final assembly. The human genome, for example, has
 been assembled as far as possible and in 2021, the first telomere-to-telomere
-assembly was published, adding the final 5% of
-bases. It has taken enormous effort, both in terms of finance and labour,
+assembly was published, adding the final 5% of bases. 
+It has taken enormous effort, both in terms of finance and labour,
 to get to this stage. This is neither feasible nor strictly necessary for
 each genome assembly project. Hence, most genome assemblies currently
 available are so-called draft assemblies, and most fully completed genomes
@@ -640,9 +519,10 @@ Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) modified from
 #### Genome assembly strategies
 
 In the early days of DNA sequencing, generating sequencing reads was very
-costly. Much effort was therefore spent on developing methods requiring a
+costly and slow. Much effort was therefore spent on developing methods requiring a
 minimum amount of sequence data to assemble a genome. Moreover, Sanger
-sequencing requires all fragments of DNA in a run to be identical, so some
+sequencing could only sequence on single fragment at a time, which needed to be amplified first.
+% till here is about done
 form of organising the DNA was required. This was initially done by
 sequencing the start of a single large fragment (much longer than the read
 length), and generating sequencing primers from the end of the sequenced
@@ -655,7 +535,7 @@ step. 2nd generation sequencing technology (e.g. Illumina) allows for a
 mixture of fragments to be sequenced at the same time and the volume of
 sequencing data generated is large. So instead of requiring lab work to
 select which section to sequence, everything is sequenced at once and the
-puzzle is solved later by computer.
+puzzle is solved later computationally.
 
 ---
 
@@ -789,7 +669,7 @@ pieces (i.e., longer contigs), we can also understand more about the long
 distance regulatory elements that play a role in regulation of gene
 expression ({numref}`Pax6_locus`).
 
-:::{figure} images/Week5/Pax6_operon.jpg
+:::{figure} images/Week5/PAX6_operon.jpg
 :alt: PAX6 locus
 :align: center
 :name: Pax6_locus
@@ -829,7 +709,7 @@ Credits: modified from [CC BY  4.0](https://creativecommons.org/licenses/by/4.0)
 ---
 
 (Week5_phenotypic_variation)=
-::::{admonition} Box 5.7: Phenotypic variation
+::::{admonition} Box 5.3: Phenotypic variation
 :class: tip
 Small variants can have large phenotypic effects.
 
@@ -971,7 +851,7 @@ Different types of structural variants on chromosome level. Credits: [CC0 1.0](h
 :::
 
 (Week5_cri_du_chat)=
-::::{admonition} Box 5.8: Cri du chat syndrome
+::::{admonition} Box 5.4: Cri du chat syndrome
 :class: tip
 
 :::{figure} images/Week5/cri-du-chat.png
@@ -1124,7 +1004,7 @@ the book of life, it must also contain the information on how to read it.
 
 (Week5_epigenetics)=
 
-::::{admonition} Box 5.9: Epigenetics
+::::{admonition} Box 5.5: Epigenetics
 :class: tip
 
 :::{figure} images/Week5/epigenetics.png
@@ -1154,7 +1034,7 @@ Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`ep
 
 A part of the explanation lies in what is called _epigenetics_,
 modifications of the genome that do not change the DNA sequence but do
-influence gene expression ([Box 5.9](Week5_epigenetics)). There are other mechanisms besides
+influence gene expression ([Box 5.5](Week5_epigenetics)). There are other mechanisms besides
 epigenetics that control how genes are expressed, and how the resulting
 proteins eventually fulfil their function in the cell. The most well-known
 ones are interactions between proteins and DNA (transcription factors and
@@ -1208,8 +1088,8 @@ cellular states and reactions to perturbations, there are a number of
 important limitations:
 
 - Experimental cost: omics devices are often expensive to acquire, and each
-	experiment requires labour and consumables
-- Technical noise: all measurements technologies come with inherent variation and
+  experiment requires labour and consumables
+- Technical noise: all measurement technologies come with inherent variation and
   measurement noise
 - Biological variation: different cells, organs or individuals will differ
   in their biological state and make-up
@@ -1268,41 +1148,41 @@ data analysis is an essential element in systems biology.
 
 ### Transcriptomics
 
-Transcriptomics is concerned with measuring the expression of genes (i.e.,
-the levels of transcription of genes on the genome to RNA). RNA and its
-role in the cell has already been discussed in [chapter 1](Week1_rna_transcription_splicing). If you want to know
-what other types of RNA exist outside the common mRNA, miRNA, tRNA and rRNA, read
-[Box 5.10](Week5_RNA). Here we focus on measuring and counting transcripts (mRNA).
-%#% Chapter 1 does also mention miRNA as one of the main types of RNA.
-For the understanding of transcriptome analysis it is important to remember
-that in eukaryotes most genes contain introns and that one gene can have
-many transcripts.
+Transcriptomics is concerned with measuring transcript levels (i.e., the
+levels of transcription of the genome to RNA).  RNA and its role in the cell
+has already been discussed in [chapter 1](Week1_rna_transcription_splicing). 
+Here, we focus on measuring and counting the expression of genes (i.e. 
+mRNA).  For the understanding of transcriptome analysis it is important to
+remember that in eukaryotes most genes contain introns and that one gene can
+have many alternative transcripts.
+%If you want to know
+%what other types of RNA exist outside the common mRNA, miRNA, tRNA and rRNA, read
+%[Box 5.10](Week5_RNA). 
 
-(Week5_RNA)=
-
-::::{admonition} Box 5.10: The RNA world
-:class: tip
-Many other types of RNA exist in the cell and they perform important regulatory functions:
-
-- miRNA (micro RNA): small (20-21nt) pieces of RNA that are cut from a longer pre-miRNA hairpin.
-  miRNAs bind to target sites in mRNA and prevent binding of the messenger.
-- siRNA (short interfering RNA): are generally 20-24nt long pieces of RNA that work similar to miRNAs but instead of actively preventing translation, the targeted mRNA is cut into pieces and destroyed.
-
-:::{figure} images/Week5/RNA-types.jpg
-:alt: Overview of the different types of RNA
-:align: center
-:width: 100%
-:name: RNA_types
-
-The generalized RNAi mechanism up to the molecular level depicting the role of various cellular proteins and external siRNAs. Credits: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) modified from {cite}`RNA_types_2016`.
-:::
-
-- snoRNA (small nucleolar RNA): guides the methylation and pseudouridylation of ribosomal RNA required in the mature rRNA.
-- lncRNA (long non-coding RNA): >200nt long stretches of RNA that arise from transcription but (appear to) have no open reading frame.
-  How many of these lncRNAs have a specific function and what that function might be is not clear. Most might simply be the result of pervasive transcription.
-- piRNA (piwi interacting RNA): found in animals and slightly longer than miRNAs (26-31nt), they interact with piwi proteins. piRNAs are implicated in epigenetic gene silencing, but not much is known.
-::::
-
+%(Week5_RNA)=
+%
+%::::{admonition} Box 5.10: The RNA world
+%:class: tip
+%Many other types of RNA exist in the cell and they perform important regulatory functions:
+%
+%- miRNA (micro RNA): small (20-21nt) pieces of RNA that are cut from a longer pre-miRNA hairpin.
+%  miRNAs bind to target sites in mRNA and prevent binding of the messenger.
+%- siRNA (short interfering RNA): are generally 20-24nt long pieces of RNA that work similar to miRNAs but instead of actively preventing translation, the targeted mRNA is cut into pieces and destroyed.
+%
+%:::{figure} images/Week5/RNA-types.jpg
+%:alt: Overview of the different types of RNA
+%:align: center
+%:width: 100%
+%:name: RNA_types
+%
+%The generalized RNAi mechanism up to the molecular level depicting the role of various cellular proteins and external siRNAs. Credits: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) modified from {cite}`RNA_types_2016`.
+%:::
+%
+%- snoRNA (small nucleolar RNA): guides the methylation and pseudouridylation of ribosomal RNA required in the mature rRNA.
+%- lncRNA (long non-coding RNA): >200nt long stretches of RNA that arise from transcription but (appear to) have no open reading frame.
+%  How many of these lncRNAs have a specific function and what that function might be is not clear. Most might simply be the result of pervasive transcription.
+%- piRNA (piwi interacting RNA): found in animals and slightly longer than miRNAs (26-31nt), they interact with piwi proteins. piRNAs are implicated in epigenetic gene silencing, but not much is known.
+%::::
 %#% Figure RNA_types is rather blurry and unclear. Replace image that better depicts the different types of RNA?
 
 
@@ -1335,14 +1215,54 @@ mRNA levels:
 - vary with cell cycle, during the day (circadian rhythm) and/or season
 - depend on the environment
 
+(w5box7)=
+::::{admonition} Box 5.6: Large transcriptomics data sets
+:class: tip
+Over the past decades, a number of major international scientific efforts
+have been launched aiming to measure gene expression (and other omics
+levels) at a very large scale.  The hope was that we could gain insight into
+gene expression differences between individuals, tissues, and diseased vs. 
+healthy samples.  Given the use for medical research, most of this work has
+been performed on humans; to name a few:
+
+- The Cancer Genome Atlas
+  ([TCGA](https://www.cancer.gov/ccg/research/genome-sequencing/tcga))
+project ran between 2006 and 2018.  Researchers in
+  20 labs throughout the USA and Canada measured gene expression in 11,000
+  patients with 33 prevalent types of cancer (including 10 rare diseases),
+  both in normal and disease tissue, generating 2.5 Pb (petabytes) of data. 
+  This resulted in various publications on new insights in specific types of
+  cancer, and culminated in the [Pan-Cancer
+  Atlas](https://www.cell.com/pb-assets/consortium/PanCancerAtlas/PanCani3/index.html).
+- The Cancer Cell Line Encyclopedia ([CCLE](https://sites.broadinstitute.org/ccle/)) ran from 2008-2020 and
+  collected various types of -omics data (including transcriptomics) on ~1000 cell lines that are used
+  as models for human cancer research.  This
+  allows users to link variation in DNA to differences in transcripts,
+  proteins and metabolites.
+- The Gene-Tissue Expression
+  ([GTEx](https://www.gtexportal.org/home/aboutAdultGtex)) project started
+  in 2013 and aims to collect genomics and transcriptomics data from many
+  donors in 54 tissues.  This allows researchers to investigate the relation
+  between DNA variation and tissue-specific gene expression variation in
+  great depth.  The latest release (V10) has nearly 20,000 samples from
+  nearly 1,000 donors. 
+
+In non-medical research, similar efforts have been made.  In plant sciences,
+examples include [BAR](https://bar.utoronto.ca/), an expression atlas for
+*Arabidopsis thaliana*, and the 1000 plant transcriptome
+([1KP](https://www.nature.com/articles/s41586-019-1693-2)) project. The far
+broader variation between and within non-human species make it harder to
+generate meaningful data at large scales, however.  
+::::
+
 ---
 
 #### How to measure mRNAs?
 
 Just like the study of genomes, transcriptomics has greatly benefitted from
 technological developments that allowed an increase in throughput and
-sensitivity of measurements.  [Box 5.11](Week5_gelspcr) and
-[Box 5.12](Week5_microarrays) provide an overview of technologies that were
+sensitivity of measurements. If you are interested, [Box 5.12](Week5_gelspcr) and
+[Box 5.13](Week5_microarrays) provide an overview of technologies that were
 important for the development of the field (such as microarrays), but are
 not widely used anymore; at this time, RNAseq is almost exclusively used to
 measure mRNA levels.
@@ -1364,135 +1284,17 @@ level should be interpreted (see box below).
 (w3imp5)=
 ::::{admonition} Important to know about microarrays
 :class: important
+- microarrays are surfaces with specific DNA sequences attached at specific places, 
+  to which sampled strands of DNA can bind if they have a complementary sequence
 - microarrays measure expression indirectly, using fluorescence; as a
   result, measurements can be noisy and have a low dynamic range (i.e., low
   expression levels cannot be measured well)
-- some microarray types compare two samples and thus produce relative expression levels, often log<sub>2</sub>-transformed so that 0 means no change, +1
+- some microarray types compare two samples and thus produce relative expression levels (_fold changes_), often log<sub>2</sub>-transformed so that 0 means no change, +1
   means a 2-fold higher expression, +2 a 4-fold higher expression and so on; negative numbers indicate lower expression
 - other microarray types measure levels that represent absolute expression in a single sample (in arbitrary
   units); normalization is then important when comparing measurements between samples
 ::::
 
-(Week5_gelspcr)=
-
-::::{admonition} Box 5.11: Gels and qPCR
-:class: tip
-
-:::{figure} images/Week5/differential-gel_alt.png
-:alt: Differential display gel
-:width: 184px
-:height: 367px
-:align: right
-:name: differential_gel_alt
-
-Example of differential \
-display gel. Credits: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) \
-modified from \
-{cite}`differential_gel_alt_2014`.
-:::
-
-Early methods of detecting transcripts and expression levels are northern
-blots and differential display ({numref}`differential_gel_alt`).  Both are
-gel-based methods, low throughput and not very accurate.  Northern blots and
-differential displays were superseded by qPCR (quantitative PCR) and
-microarrays (see [Box 5.7](Week5_microarrays)).  Quantitative real-time PCR
-(qPCR) is a PCR (polymerase chain reaction) that measures the abundance of
-each DNA molecule by adding a fluorescent reporter, either a dye that binds
-DNA or fluorescent probes.  The level of fluorescence increases with the
-number of amplified fragments, which in turn is detected.  When the reaction
-passes a threshold at a given cycle, the cycle number is used to deduce the
-original amount of template fragments in the reaction ({numref}`qPCR_alt`).
-qPCR is often used to validate results obtained by other quantitative
-methods.
-
-
-:::{figure} images/Week5/qPCR_alt.svg
-:alt: qPCR amplification graph
-:align: center
-:width: 80%
-:name: qPCR_alt
-
-Amplification plot of a DNA fragment in a qPCR reaction.
-C{sub}`q` corresponds to the cycle were fluorescence passes the detection threshold.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
-:::
-::::
----
-(Week5_microarrays)=
-
-#### Microarrays
-
-::::{admonition} Box 5.12: Microarrays
-:class: tip
-
-The first widely used _high-throughput_ method to measure gene expression
-was the microarray. DNA microarrays are based on the principle that
-complementary strands of DNA bind each other. Microarrays are
-typically flat surfaces (slides of glass or some other material) with
-microscopic spots of single-strand DNA sequences - so-called probes -
-at known locations, ranging from a few thousand to millions. Each
-DNA sequence is chosen to (as best as possible) represent a specific gene,
-i.e., a unique subsequence. This means that microarrays can only be
-designed to detect known genes and are organism-specific, and that gene
-variants (SNPs, splice variants) are hard to detect.
-
-In microarray experiments, mRNA molecules are first selected by looking for
-a poly-A tail, converted into complementary DNA (cDNA), labelled with a
-fluorescent dye and washed over the surface.  Complementary sequences will
-bind, and after some time the unbound material is washed off and
-fluorescence is measured using a microscope.  The light intensity level at a
-certain location on the surface is then an indirect readout for the number
-of sequences that bound, and thus for the relative expression of the
-corresponding gene.
-
----
-
-:::{figure} images/Week5/microarrays_alt.svg
-:alt: cDNA (two-color) vs oligonucleotide (one-color) microarray analysis.
-:align: center
-:name: microarrays_alt
-
-The difference between cDNA (two-color) and oligonucleotide (one-color) microarray analysis.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
-:::
-
-There are two main competing types of microarrays: cDNA and oligonucleotide
-arrays. While the principles are the same, they differ in production and
-use (as illustrated in {numref}`microarrays_alt`):
-
-- __cDNA microarrays__ contain long probes, of several hundreds of
-  nucleotides up to 1000nt. They can be produced in the lab by spotting
-  robots, and so easily be adjusted for specific experiments. This comes
-  with greater variation between microarrays, making it harder to compare
-  different measurements. cDNA microarrays are therefore mostly used for
-  direct comparisons between two samples, in which both samples (for example,
-  healthy and diseased tissue) are labelled with different fluorophores -
-  usually Cy3 (green) and Cy5 (red). The relative number of DNA sequences
-  bound then reflects the relative concentration of an mRNA molecule in sample
-  1 and sample 2, and thus the colour. A green spot means only sample 1
-  contained the corresponding mRNA molecule, a red spot means that it was
-  found in sample 2 and a yellow spot that it was found in both samples. The
-  intensity then reflects the overall expression level: black/dark for low
-  expression in both samples, bright for high expression.
-- __oligonucleotide microarrays__ contain short probes (25nt), which are
-  produced using technology similar to microchip production. This means
-  quality is high and constant, and different arrays can easily be compared.
-  Oligonucleotide arrays therefore usually measure just a single sample using
-  one colour. However, as short probes are less likely to be unique for a gene,
-  transcripts are usually measured by combining multiple probes in so-called
-  probesets.
-
-Overall, microarray measurements are often noisy and cannot distinguish very
-low expression levels, as they do not provide enough fluorescence
-signal. Data normalization is therefore also an important step, to remove
-non-relevant variation between different microarray measurements.
-
-<div class="videoWrapper">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/0ATUjAxNf6U" title="DNA Microarray Methodology" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div
-::::
-
----
 
 %##### Repositories
 %
@@ -1573,7 +1375,7 @@ counting the number of reads per feature.
 
 The advantage of not using probes (compared to qPCR and microarrays) is that
 RNAseq works for species without a reference genome, can identify alternatively spliced
-transcripts, SNPs in transcripts, etc. A downside is that usually large
+transcripts, SNPs in transcripts, etc. A challenge is that usually large
 datasets are generated, which require dedicated analysis workflows.
 
 ---
@@ -1590,20 +1392,21 @@ sequences) or to prokaryotic genomes.
 :align: right
 :name: spliced_alignment
 
-Mapping of mRNA reads to genomic reference with splice aware aligner.
+Spliced mapping of mRNA reads to genomic reference with splice-aware aligner.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
 :::
 
 Mapping eukaryotic mRNA sequences to a genomic reference is more cumbersome,
 as most genes have introns, which are no longer present in the mature mRNA
 ({numref}`spliced_alignment`).  This means that reads might contain an
-exon-exon junction and should be split along the reference.  Most aligners
-will not consider this a valid option.  Special splice-aware aligners have
-been developed for this reason, that are able to map normal reads that map
-contiguously to the reference sequence as well as reads that are split
-across splice sites ({numref}`spliced_alignment`).  They also take into
-account known intron-exon boundaries to determine the point within a read
-where it has to be split and whether the split alignment is correct.
+exon-exon junction and should be split along the reference, so-called
+_spliced mapping_.  Most aligners will not consider this a valid option. 
+Special splice-aware aligners have been developed for this reason, that are
+able to map normal reads that map contiguously to the reference sequence as
+well as reads that are split across splice sites
+({numref}`spliced_alignment`).  They also take into account known
+intron-exon boundaries to determine the point within a read where it has to
+be split and whether the split alignment is correct.
 
 ---
 
@@ -1614,7 +1417,7 @@ transcripts, i.e., the expression levels. Reads assigned to each feature
 (exon or gene) are counted, with the underlying assumption that the number
 of reads mapping to a feature is strongly correlated with the abundance of
 that feature in the experiment. Comparing abundance of transcripts between
-samples, conditions and experiments is not as straight forward as it seems.
+samples, conditions and experiments is not as straightforward as it seems.
 Apart from the bullet points [above](Week5_transcriptomics) that influence mRNA abundance, there is
 variation in each sequencing experiment. The main variation affecting
 comparability of read counts between samples is the total number of reads
@@ -1662,7 +1465,7 @@ RPKM/FPKM or TPM are preferred.  CPM can clearly only be used when there is
 no difference in transcript length, e.g., when comparing one transcript
 between two samples.
 
-::::{admonition} Box 5.13: Ever more detail
+::::{admonition} Box 5.7: Ever more detail
 :class: tip
 
 Until now, most RNAseq experiments have been performed on groups of cells,
@@ -1750,22 +1553,23 @@ for a number of reasons:
   proteins (like PCR for DNA), but such a protocol is not available.
 
 Still, a number of methods to measure proteins and their interactions are in
-use. We distinguish between quantitative proteomics (measuring
-presence/absence and levels of proteins) and functional proteomics
+use. We distinguish between _quantitative proteomics_ (measuring
+presence/absence and levels of proteins) and _functional proteomics_
 (measuring protein interactions with other molecules).
 
 ---
 
-#### Quantitative proteomics
-
 (Week5_mass_spectrometry)=
 
-::::{admonition} Box 5.14: Mass spectrometry
-:class: note
+#### Quantitative proteomics
 
-Mass spectrometry (MS) devices have been in constant development and
-improvement since their inception in the late 19{sup}`th` century.  They
-differ in specific setup, but all follow three basic steps:
+While a number of older, gel-based techniques have been used for to measure
+protein absence/presence and even levels, these have been superseded by _mass
+spectrometry_ (MS) devices.  These have been in constant development and
+improvement since their inception in the late 19{sup}`th` century, and have
+now reached accuracy levels that allow to study molecules of a wide range of
+sizes, also including metabolomics.  They differ in specific setup, but all
+follow three basic steps:
 
 1. Ionize a molecule.
 2. Separate or select molecules based on their mass.
@@ -1822,35 +1626,27 @@ The output of any MS experiment is a mass spectogram, with m/z
 ratios on the x-axis and peaks indicating how many molecules of a certain
 mass have been detected ({numref}`mass_spectrum`).
 
-::::
-
 In theory, if a database of known
-molecule structures (e.g., proteins or peptides) and their calculated masses
+molecule formulas (e.g., proteins or peptides) and their calculated masses
 would be available, one could look up each mass and identify the
 corresponding molecule. A major challenge in interpreting such a
 spectrum is the limited resolution of MS devices, which means that a
 certain peak can still be caused by many different types of molecules. Some
 smaller molecules of interest may even have identical masses (e.g.,
 isoforms) and so cannot be distinguished, which is particularly hard in
-complex mixtures. A number of approaches try to solve this problem:
+complex mixtures. A number of extensions try to solve this problem; these
+are explained in more detail in [Box 5.14](Week5_msms).
 
-- Chromatography: moving the sample through a separation column before entering the MS
-  device, filled with an inert gas (gas chromatography, GC) or liquid
-  (liquid chromatography, LC). Different molecules take different times to travel through these
-  columns, and arrival time at the MS device thus provides extra information.
-- Tandem mass spectrometry or MS/MS: measuring molecules twice, once intact (in a first MS device) and then
-  again after selection and fragmentation (in a second MS device). This depends on the
-  predictability of fragmentation: if a molecule falls apart at specific
-  places, we can get more information from the combination of the overall mass
-  and the masses of the fragments it breaks into.
-- Shotgun proteomics: specifically for proteins, a protocol in which an enzyme is first used to
-  cut the protein at specific places (for example, trypsin cleaves the protein
-  into peptides at arginines and lysines) ({numref}`shotgun_proteomics_alt`). The peptide masses are then
-  measured and compared to the mass spectra of predicted peptides resulting from a
-  database of known proteins, to identify the protein likely being measured.
-  This approach can also be used to measure posttranslation modifications,
-  as they lead to small (known) shifts in the measured spectra for the modified
-  peptides.
+Of particular interest in bioinformatics is shotgun proteomics, essentially
+similar to shotgun genomics.  Specifically for proteins, this is a protocol
+in which an enzyme is first used to cut the protein at specific places (for
+example, trypsin cleaves the protein into peptides at arginines and lysines)
+({numref}`shotgun_proteomics_alt`).  The peptide masses are then measured
+and compared to the mass spectra of predicted peptides resulting from a
+database of known proteins, to identify the protein likely being measured. 
+This approach can also be used to measure posttranslation modifications, as
+they lead to small (known) shifts in the measured spectra for the modified
+peptides.
 
 :::{figure} images/Week5/shotgun-proteomics_alt.svg
 :alt: Schematic overview of shotgun proteomics
@@ -1866,68 +1662,12 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`own
 Next to protein levels, we are also interested in what proteins do in the
 cell: their functions and interactions. Many protocols and analyses have
 been developed for this, with most focusing on protein-protein, protein-DNA
-and protein-metabolite (enzymatic) interactions. [Box 5.14](Week5_funcprot) lists some methods to
+and protein-metabolite (enzymatic) interactions. [Box 5.15](Week5_funcprot) lists some methods to
 measure such interactions. Note that while many of these experiments are
 cumbersome, they are essential to advance functional genomics -
 (bioinformatics) predictions critically depend on high-quality data and
 cannot replace experimental validation.
 
-(Week5_funcprot)=
-
-::::{admonition} Box 5.14: Measuring functional interactions
-:class: tip
-
-:::{figure} images/Week5/chip-protocol_alt.jpg
-:alt: ChIPseq protocol
-:align: center
-:name: chip_protocol_alt
-
-The chromatin immunoprecipitation (ChIP) protocol. Proteins are
-cross-linked to DNA, after which genomic DNA is isolated and sheared. Using
-an antibody, only the protein of interest is selected (the
-immunoprecipitation step), after which the cross-linking is reversed and the
-DNA can be sequenced by PCR (ChIP-PCR) or NGS (ChIPseq). When reads are then
-mapped on the genome, peaks indicate where proteins are bound.
-Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`chip_protocol_alt_2015`.
-:::
-
-For protein-DNA interaction, the ChIPseq method
-({numref}`chip_protocol_alt`) uses RNAseq to learn how proteins modify DNA,
-initiate replication and repair, and regulate expression as transcription
-factors or enhancers.  
-
-:::{figure} images/Week5/experimental-protein-methods_alt.png
-:alt: Experimental protein interaction detection
-:align: center
-:name: experimental_protein_methods_alt
-
-Experimental methods to detect proteins. Top: high-throughput, bottom: low-throughput.
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by/4.0/) Top: {cite}`own_5_2024`. Bottom: {cite}`experimental_protein_methods_bottom_alt_nd`.
-:::
-
-For protein-protein interactions, the main high-throughput protocols
-({numref}`experimental_protein_methods_alt`, top) are:
-
-- Yeast two-hybrid, in which one of the two proteins is attached to a DNA-binding
-  domain and the other to an expression activating domain. Only if the two
-  proteins interact will a reporter gene (e.g., for a fluorescent protein) be
-  expressed.
-- Tandem affinity purification, in which all proteins interacting with a
-  "bait" protein are purified and subsequently measured using MS.
-
-These protocols are noisy and have many false positives and negatives, so
-further experimental validation using low-throughput methods, essentially
-measuring the structure of protein complexes, is often necessary
-({numref}`experimental_protein_methods_alt`, bottom).
-
-Very recently, [AlphaFold 3](https://www.nature.com/articles/s41586-024-07487-w) has been introduced, which promises to predict
-interactions between proteins and other proteins, DNA, small molecules etc.
-computationally (like AlphaFold 2 predicts protein structure). However, it
-still has to be seen whether this tool is reliable enough in practice; the
-fact that it is not fully available to the public does not make that very
-easy.
-
-::::
 
 
 Like transcriptomics data, "interactomics" measurements are stored in
@@ -1987,7 +1727,7 @@ pharmacology, in food safety and in uncovering the production repertoire of
 microbes in industrial biotechnology.
 
 For measuring metabolites, mostly the MS technologies described [above](Week5_mass_spectrometry) are
-employed, in particular GC-MS and LC-MS. As the range of metabolite sizes
+employed, in particular GC-MS and LC-MS (see [Box 5.14](Week5_msms)). As the range of metabolite sizes
 and characteristics is large and many metabolites are still unknown,
 identifying them from mass spectra is still very challenging. An advantage
 is that known metabolic reactions, collected in metabolic networks
@@ -2102,15 +1842,15 @@ condition, both are clustered.
 Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`streptococcus_pca_heatmap_2021`.
 :::
 
-While omics data can be analysed in for example Microsoft Excel, it is very
+While omics data can be inspected in, for example, Microsoft Excel, it is very
 hard to make sense of a data matrix with tens of thousands of genes and
 dozens to hundreds of samples. It is therefore wise to first use methods to
 visualize or summarize the data to see whether major patterns or outliers
 can already be detected. A widely used visualization is the so-called
-heatmap, an image of the matrix (genes-by-samples) where each measurement is represented by a
+_heatmap_, an image of the matrix (genes-by-samples) where each measurement is represented by a
 colour. If the data is clustered along both genes and samples,
 interesting patterns may be easy to spot. A second approach often used in
-initial data exploration is Principal Component Analysis (PCA), which plots
+initial data exploration is _Principal Component Analysis_ (PCA), which plots
 samples (or genes) along the main axes of variation in the data. If colour or
 markers are added, a PCA plot serves very well to detect groups and outliers.
 Both visualizations are illustrated in {numref}`streptococcus_pca_heatmap`.
@@ -2133,12 +1873,12 @@ can be calculated using the _t_-distribution.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
 :::
 
-Perhaps the most widely used analysis on omics data, the goal here is to
+Differential abundance is the most widely used analysis on omics data. The goal is to
 compare abundance levels between two classes, conditions, strains, cell
 types, etc. - for example, healthy vs. diseased tissue, with or without a
 certain drug, in different growth conditions, etc. The simplest approach is
 to collect a number of replicate measurements under both conditions and, for
-each gene perform a simple statistical test such as the _t_-test
+each gene, perform a simple statistical test such as the _t_-test
 ({numref}`t_test`). Each test
 gives a _p_-value, and genes with a _p_-value below a certain
 threshold, say 5%, could then called significantly differentially expressed.
@@ -2263,7 +2003,103 @@ goal, [a systems biology simulation of the living
 cell](https://www.wholecellviz.org/viz.php#replication), is still far from
 reality, but may be reached sooner than we now believe possible.
 
+---
 
+## Glossary
+This glossary contains the most important terms from this chapter (not mentioned in earlier chapters).
+
+:::{admonition} Glossary
+:class: important
+
+```{glossary}
+Classification
+  Predicting an output of interest (e.g. a phenotype) based on -omics data.
+
+Clustering
+  Finding groups in data sets to learn about common factors, i.e. similar diseases (when clustering samples) or similar functions (when clustering genes).
+
+Differential abundance analysis
+  Comparison of levels between conditions, cell types, strains etc., often based on a statistical test.
+
+Enrichment
+  Identifying biological processes/functions that are found significantly more in a set of genes/proteins than expected by chance.
+
+Epigenetics
+  Heritable change in gene expression that occur without changes in the genome sequence.
+
+Epigenomics
+  Measuring the epigenetic state of the entire genome.
+
+Fold change
+  Relative measurement comparing two conditions, often log<sub>2</sub>-transformed for easy interpretation and visualization.
+
+Functional genomics
+  Field of study on gene/protein functions and interactions.
+
+Functional proteomics
+  Measurements of interactions between proteins and other proteins, DNA etc.
+
+Heatmap
+  A visual representation of a data matrix as an image, where cell colors reflect values. Often clustered along one or both axes to help identify groups of samples/genes with similar expression levels.
+
+High-throughput
+  Technology to collect large amounts of measurement data without the need for extensive human intervention.
+
+Mapping
+  Finding locations in the genome that (nearly, allowing for errors) match a given short DNA sequence, such as a sequencing read.
+
+Mass spectrometry (MS)
+  Measurement technology for molecule weight, based on ionization, separation and detection.
+
+Metabolomics
+  Measurements of the presence or levels of metabolites in a cell. 
+
+Microarrays
+  Devices that measure gene expression based on fluorescence of complementary DNA sequences binding to DNA attached to specific spots on a surface. Superseded by RNAseq, but still widely found in databases. 
+
+M/z
+  Unit of measurement of mass spectrometry devices: mass-over-charge ratio.
+
+Omics
+  Studying the totality of something; for example, the expression of all genes (transcriptomics).
+
+Phenomics
+  Measurements on macroscopic phenotypes (traits) of tissues and organisms.
+
+Principal Component Analysis (PCA)
+  Projection of data with many measurements onto the directions which retain as much variation as possible. Often used for projecting onto 2 dimensions in order to visually analyze a given data set.
+
+Proteomics
+  Measurements on proteins in a cell.
+
+Quantitative proteomics
+  Measurements presence/absence or levels of proteins in a cell.
+
+RNAseq
+  Transcriptomics measurements by DNA sequencing technology, after converting RNA to cDNA.
+
+Shotgun proteomics
+  Measuring protein levels by MS after fragmenting into peptides at known cleavage sites, then look up the peptides in protein sequ
+
+Spliced mapping / spliced alignment
+  Mapping of RNAseq reads, taking into account that introns are not present in transcripts and that reads therefore can partly map to two nearby locations..
+
+Systems biology
+  An approach to studying complex biological systems holistically, by constructing and iteratively updating models.
+
+_t_-test
+  Widely used statistical test for difference between means of two distributions. It assumes that data is normally distributed, which in practice is often not the case so more sophisticated tests are used.
+
+Time series analysis
+  Analysing measurements taken over time, to study changes.
+
+Transcript quantification
+  Conversion and normalisation (for gene length, library size etc.) of RNAseq read counts for further analysis.
+
+Transcriptomics
+  Measurements of the expression levels of all genes in a cell.
+
+::::
 ---
 
 ## Practical assignments
@@ -2564,6 +2400,386 @@ You may include up to two figures or tables.
 3. **Discussion & Conclusion** Do the results make sense? Are they according to your expectation or do you see something surprising? What do the results mean, how can you interpret them? Do different tools agree or not? What can you conclude? Make sure to describe the expectations and assumptions underlying your interpretation.
 :::::
 
+
+## Appendix: -omics measurement technology
+
+Much of what we now know about the molecular biology of the cell is based on
+extensive measurements, using a range of ever improving devices.  The amount
+of measurement data and its coverage, reliability, biases etc.  crucially
+depend on the technology underlying these devices and its limitations. 
+Moreover, (lack of) technology influences what we cannot yet measure and are
+thus relatively "blind" to.  This is the most important information to keep
+in mind when analysing the resulting data.  For this reason we limited
+ourselves to listing the main data characteristics in the main text.  Here,
+we provide slightly more background on the most important (historical)
+technologies for the interested reader.
+
+### Genomics
+
+(w5box3)=
+::::{admonition} Box 5.8: Sanger sequencing
+:class: tip
+
+Developed in 1977 by Fred Sanger and colleagues, the protocol was first
+largely manual until it was automated in 1985 by Applied Biosystems. Sanger
+sequencing uses the chain-termination method ({numref}`sanger`).
+
+:::{figure} images/Week5/sanger.svg
+:alt: Sanger sequencing
+:align: center
+:name: sanger
+
+Chain termination (Sanger) sequencing.
+Credits: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) {cite}`sanger_2012`.
+:::
+
+In a first step, genomic DNA is purified and sheared into fragments of the desired length. For Sanger
+sequencing the fragment length is around 1,000 nucleotides. Shearing is
+done either mechanically or chemically, and resulting fragments are not all
+exactly equally long: they are distributed around the target fragment size.
+
+:::{figure} images/Week5/sanger-signal.png
+:alt: Sanger sequencing signal
+:align: center
+:name: sanger_signal
+
+Sanger sequencing signal, with low quality bases at the start of the read.
+Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`sanger_signal_2005`.
+:::
+
+Template DNA fragments are amplified in a PCR reaction using a primer and
+DNA polymerase. Each sample is amplified in 4 separate reactions, one for
+each nucleotide (A, T, C, G). In each of these reactions, a small
+DNA polymerase. In each of these reactions, a small
+proportion of modified nucleotides (ddNTP) is added to the normal
+nucleotides (dNTP). These modified nucleotides are designed to stop the
+elongation of the strand and are linked to a label by which they can be
+identified. This leads to a collection of partially amplified fragments of
+template DNA. The length of each fragment was originally measured by the
+identified. distance the fragment travelled on a gel, in later setups by the time it
+took to pass through a capillary.  The label on the last nucleotide then
+identifies the base at a given position and a peak pattern is generated.
+From a signal of peak patterns ({numref}`sanger_signal`), the sequence can be read
+off automatically. Sanger sequencing produces read lengths between
+700-1,000 nucleotides; after this, the quality of the base calling drops too
+far to be useful. The quality at the beginning of a read is generally too
+low to be used ({numref}`sanger_signal`). Another problem with Sanger sequencing is
+the detection of homopolymers (the same nucleotide occurring multiple
+times), as the peak height of the signal decreases the longer the stretch
+is. This makes it difficult to differentiate between 3, 4 and 5 nucleotides
+of the same base. Sanger sequencing machines can sequence 96 fragments in
+parallel, making it comparatively low throughput.
+::::
+
+(w5box4)=
+::::{admonition} Box 5.9: Illumina sequencing
+:class: tip
+
+Illumina sequencing uses
+bridge-amplification, where the PCR reaction takes place directly on a
+flow-cell surface. In the library preparation step, a
+forward and reverse adapter are ligated to the ends of a single strand
+template fragment. The complementary sequences for the adapters are ligated
+to a flow-cell as PCR primers. The initial template sequence (with
+adapters) will then form a double stranded bond with one of the primers on
+the flow-cell surface. The fragment is next copied in a
+standard PCR reaction, but with the end firmly attached to the surface. The
+DNA is denatured to go from double stranded to single stranded again and the
+original template is washed away, leaving a single fixed copy. The end of
+that strand can then form a bridge with a neighbouring empty primer of the
+other end and the reaction is repeated, ending in first two fixed fragments
+and subsequently thousands of identical fragments near each other. In the
+sequencing step, a final PCR then uses fluorescent dye
+terminated NTPs, which are washed across the surface in each cycle. A
+camera detects the colour, the dye is cleaved off and the steps are repeated
+for the length of the sequencing reaction:
+
+<iframe align="middle" width="560" height="315" src="https://www.youtube.com/embed/fCd6B5HRaZ8?si=1cv89BREdx4HvO9o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+Current models us a so-called patterned flow-cell, were the template fragments
+fall into a tiny well and the amplification step takes place in the wells:
+
+<iframe align="middle" width="560" height="315" src="https://www.youtube.com/embed/pfZp5Vgsbw0?si=rONHDeNRYq_cL0kg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+::::
+
+(w5box5)=
+::::{admonition} Box 5.10: PacBio sequencing
+:class: tip
+PacBio sequencing does not amplify the template fragment prior to sequencing,
+instead it makes clever use of the structure of SMRT-cells to amplify the
+light signal of bases being incorporated with the use of a laser.
+A circularised double stranded piece
+of template is loaded into tiny wells on a SMRT-cell, with the aim of having
+a single molecule in each well. Incorporation of nucleotides is signalled
+by cleavage of a phosphorescent molecule from the nucleotide and recorded
+with a camera.
+
+One major difference with NGS is that the template is circular instead of
+linear, and that a single template can thus be sequenced multiple times
+consecutively in what is called circular consensus sequencing (CCS). In
+general 3rd generation sequencing techniques suffer from a higher error
+rate, with most errors being indels, short insertions or deletions. This
+has implications for e.g. mapping and assembly. Making use of the CCS
+allows for proofreading and higher accuracy, with the most
+recent PacBio HiFi reads reaching 99.99% read accuracy (Q40).
+
+<iframe align="middle" width="560" height="315" src="https://www.youtube.com/embed/_lD8JyAbwEo?si=iIdv7q_1nyK1jqS2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+The read length of this technology is determined by the size of the input
+fragment and the length of time the polymerase functions (the high-energy
+laser light slowly degrades the enzyme over time). Median read lengths vary
+between 15,000 and 20,000 nucleotides for CCS reads and up to 175,000
+nucleotides for continuous long read sequencing. PacBio sequencing has no
+amplification bias like other technologies (there is no PCR step) and is
+least influenced by GC-content. Overall, it gives the most uniform coverage
+across a genome sequence. Unfortunately, it also has much lower throughput
+than e.g. Illumina sequencing and a still significantly higher price per
+base.
+
+::::
+
+(w5box6)=
+::::{admonition} Box 5.11: Nanopore sequencing
+:class: tip
+The flow-cell in nanopore sequencing has a number
+of wells. Each of these wells has a sensor at the bottom that detects
+currents. The well itself is covered by a membrane, similar to a cell
+membrane, although in this case it is not a lipid bilayer but a more stable
+polymer. Embedded in this membrane are transmembrane protein pores
+(genetically modified to work optimally) through which a DNA molecule fits.
+A current potential is applied between the top and the bottom of the
+membrane and, as DNA is negatively charged, it wants to travel through the
+pore. This changes the electrical resistance, which is detected by the
+sensor. A problem is that the DNA travels too fast for the sensor to detect
+the nucleotides; the solution is to add a DNA-polymerase, that acts as a
+brake (it is also called motor, as it actively unzips the DNA).
+The polymerase itself does not fit through the pore and sits on top of it.
+
+As with PacBio, the read length is determined by the input DNA fragment size
+and has no theoretical limit: the current read length record stands at 4.2
+Mb, which is enough to sequence a bacterial genome in a single read. Nanopore
+sequencing has a similar error model as PacBio, with insertions and
+deletions most prevalent. In addition to that, long stretches of homopolymers
+remain challenging. Accuracy is limited to between 96.8-99.7% (Q15-Q25)). The main advantage over any of the other
+technologies is that the template DNA itself is measured, so base
+modifications like DNA methylation can be detected as well. The sequencer
+is also small enough to fit in the palm of a hand and people have used it in various
+non-traditional conditions, such as arctic expeditions on Svalbard and in
+the International Space Station.
+
+<iframe align="middle" width="560" height="315" src="https://www.youtube.com/embed/RcP85JHLmnI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+::::
+
+### Transcriptomics
+
+(Week5_gelspcr)=
+
+::::{admonition} Box 5.12: Gels and qPCR
+:class: tip
+
+:::{figure} images/Week5/differential-gel_alt.png
+:alt: Differential display gel
+:width: 184px
+:height: 367px
+:align: right
+:name: differential_gel_alt
+
+Example of differential \
+display gel. Credits: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) \
+modified from \
+{cite}`differential_gel_alt_2014`.
+:::
+
+Early methods of detecting transcripts and expression levels are northern
+blots and differential display ({numref}`differential_gel_alt`).  Both are
+gel-based methods, low throughput and not very accurate.  Northern blots and
+differential displays were superseded by qPCR (quantitative PCR) and
+microarrays (see [Box 5.13](Week5_microarrays)). qPCR
+is a form of [PCR](Week2_PCR) that measures the abundance of
+each DNA molecule by adding a fluorescent reporter, either a dye that binds
+DNA or fluorescent probes.  The level of fluorescence increases with the
+number of amplified fragments, which in turn is detected.  When the reaction
+passes a threshold at a given cycle, the cycle number is used to deduce the
+original amount of template fragments in the reaction ({numref}`qPCR_alt`).
+qPCR is often used to validate results obtained by other quantitative
+methods.
+
+
+:::{figure} images/Week5/qPCR_alt.svg
+:alt: qPCR amplification graph
+:align: center
+:width: 80%
+:name: qPCR_alt
+
+Amplification plot of a DNA fragment in a qPCR reaction.
+C{sub}`q` corresponds to the cycle were fluorescence passes the detection threshold.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
+:::
+::::
+---
+(Week5_microarrays)=
+
+::::{admonition} Box 5.13: Microarrays
+:class: tip
+
+The first widely used _high-throughput_ method to measure gene expression
+was the microarray. DNA microarrays are based on the principle that
+complementary strands of DNA bind each other. Microarrays are
+typically flat surfaces (slides of glass or some other material) with
+microscopic spots of single-strand DNA sequences - so-called probes -
+at known locations, ranging from a few thousand to millions. Each
+DNA sequence is chosen to (as best as possible) represent a specific gene,
+i.e., a unique subsequence. This means that microarrays can only be
+designed to detect known genes and are organism-specific, and that gene
+variants (SNPs, splice variants) are hard to detect.
+
+In microarray experiments, mRNA molecules are first selected by looking for
+a poly-A tail, converted into complementary DNA (cDNA), labelled with a
+fluorescent dye and washed over the surface.  Complementary sequences will
+bind, and after some time the unbound material is washed off and
+fluorescence is measured using a microscope.  The light intensity level at a
+certain location on the surface is then an indirect readout for the number
+of sequences that bound, and thus for the relative expression of the
+corresponding gene.
+
+---
+
+:::{figure} images/Week5/microarrays_alt.svg
+:alt: cDNA (two-color) vs oligonucleotide (one-color) microarray analysis.
+:align: center
+:name: microarrays_alt
+
+The difference between cDNA (two-color) and oligonucleotide (one-color) microarray analysis.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
+:::
+
+There are two main competing types of microarrays: cDNA and oligonucleotide
+arrays. While the principles are the same, they differ in production and
+use (as illustrated in {numref}`microarrays_alt`):
+
+- __cDNA microarrays__ contain long probes, of several hundreds of
+  nucleotides up to 1000nt. They can be produced in the lab by spotting
+  robots, and so easily be adjusted for specific experiments. This comes
+  with greater variation between microarrays, making it harder to compare
+  different measurements. cDNA microarrays are therefore mostly used for
+  direct comparisons between two samples, in which both samples (for example,
+  healthy and diseased tissue) are labelled with different fluorophores -
+  usually Cy3 (green) and Cy5 (red). The relative number of DNA sequences
+  bound then reflects the relative concentration of an mRNA molecule in sample
+  1 and sample 2, and thus the colour. A green spot means only sample 1
+  contained the corresponding mRNA molecule, a red spot means that it was
+  found in sample 2 and a yellow spot that it was found in both samples. The
+  intensity then reflects the overall expression level: black/dark for low
+  expression in both samples, bright for high expression.
+- __oligonucleotide microarrays__ contain short probes (25nt), which are
+  produced using technology similar to microchip production. This means
+  quality is high and constant, and different arrays can easily be compared.
+  Oligonucleotide arrays therefore usually measure just a single sample using
+  one colour. However, as short probes are less likely to be unique for a gene,
+  transcripts are usually measured by combining multiple probes in so-called
+  probesets.
+
+Overall, microarray measurements are often noisy and cannot distinguish very
+low expression levels, as they do not provide enough fluorescence
+signal. Data normalization is therefore also an important step, to remove
+non-relevant variation between different microarray measurements.
+
+<div class="videoWrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/0ATUjAxNf6U" title="DNA Microarray Methodology" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div
+::::
+
+### Proteomics and metabolomics
+
+(Week5_msms)=
+
+::::{admonition} Box 5.14: Mass spectrometry extensions
+:class: tip
+#### Mass spectrometry extensions
+
+Mass spectrometers can be provide quite accurate m/z measurements, but still
+many molecules will have (nearly) the same mass and thus cannot be
+distinguished using a single MS devices. A number of extensions are
+therefore widely used to separate molecules based on other criteria, 
+
+- Gel electrophoresis: as for [DNA](w5box3) and [RNA](Week5_gelspcr), gels can be used
+  to separate other molecules based on size and charge. Afterwards, specific
+  bands can be cut out of the gel and the molecular content can be measured by
+  an MS device. The combination of gel location and mass spectrum can then
+  help narrow down the exact molecule(s) present. The most widely used type
+  of gel is called 2D-PAGE (polyacrylamide gel electrophoresis), which
+  separates molecules by isoelectric point and molecular weight.
+- Chromatography: moving the sample through a separation column before entering the MS
+  device, filled with an inert gas (gas chromatography, GC-MS) or liquid
+  (liquid chromatography, LC-MS). Different molecules take different times to travel through these
+  columns, and arrival time at the MS device thus provides extra information.
+  The concept is similar to using a gel, but columns can be directly
+  connected to MS devices to allow continuous throughput.
+- Tandem mass spectrometry or MS/MS: measuring molecules twice, once intact (in a first MS device) and then
+  again after selection and fragmentation (in a second MS device). This depends on the
+  predictability of fragmentation: if a molecule falls apart at specific
+  places, we can get more information from the combination of the overall mass
+  and the masses of the fragments it breaks into.
+::::
+
+(Week5_funcprot)=
+
+::::{admonition} Box 5.15: Measuring functional interactions
+:class: tip
+
+:::{figure} images/Week5/chip-protocol_alt.jpg
+:alt: ChIPseq protocol
+:align: center
+:name: chip_protocol_alt
+
+The chromatin immunoprecipitation (ChIP) protocol. Proteins are
+cross-linked to DNA, after which genomic DNA is isolated and sheared. Using
+an antibody, only the protein of interest is selected (the
+immunoprecipitation step), after which the cross-linking is reversed and the
+DNA can be sequenced by PCR (ChIP-PCR) or NGS (ChIPseq). When reads are then
+mapped on the genome, peaks indicate where proteins are bound.
+Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`chip_protocol_alt_2015`.
+:::
+
+For protein-DNA interaction, the ChIPseq method
+({numref}`chip_protocol_alt`) uses RNAseq to learn how proteins modify DNA,
+initiate replication and repair, and regulate expression as transcription
+factors or enhancers.  
+
+:::{figure} images/Week5/experimental-protein-methods_alt.png
+:alt: Experimental protein interaction detection
+:align: center
+:name: experimental_protein_methods_alt
+
+Experimental methods to detect proteins. Top: high-throughput, bottom: low-throughput.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by/4.0/) Top: {cite}`own_5_2024`. Bottom: {cite}`experimental_protein_methods_bottom_alt_nd`.
+:::
+
+For protein-protein interactions, the main high-throughput protocols
+({numref}`experimental_protein_methods_alt`, top) are:
+
+- Yeast two-hybrid, in which one of the two proteins is attached to a DNA-binding
+  domain and the other to an expression activating domain. Only if the two
+  proteins interact will a reporter gene (e.g., for a fluorescent protein) be
+  expressed.
+- Tandem affinity purification, in which all proteins interacting with a
+  "bait" protein are purified and subsequently measured using MS.
+
+These protocols are noisy and have many false positives and negatives, so
+further experimental validation using low-throughput methods, essentially
+measuring the structure of protein complexes, is often necessary
+({numref}`experimental_protein_methods_alt`, bottom).
+
+Very recently, [AlphaFold 3](https://www.nature.com/articles/s41586-024-07487-w) has been introduced, which promises to predict
+interactions between proteins and other proteins, DNA, small molecules etc.
+computationally (like AlphaFold 2 predicts protein structure). However, it
+still has to be seen whether this tool is reliable enough in practice; the
+fact that it is not fully available to the public does not make that very
+easy. Luckily, open source alternatives have recently become available, e.g.
+[Boltz-2](https://pubmed.ncbi.nlm.nih.gaov/40667369/).
+
+::::
 
 ## References
 
