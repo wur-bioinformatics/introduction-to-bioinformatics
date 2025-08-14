@@ -233,6 +233,8 @@ Nevertheless, you do not need to recall it, but can always look it up.
 When needed, it will also be provided in the exam.
 :::
 
+(Week1_central_dogma)=
+
 ### The central dogma of molecular biology
 
 According to the central dogma of molecular biology, the flow of genetic information is essentially in one direction: from DNA via RNA to proteins ({numref}`dogma_alt`).
