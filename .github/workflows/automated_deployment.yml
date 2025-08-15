@@ -3,7 +3,7 @@ name: Deploy reader
 on:
   push:
     branches:
-      - experimental
+      - main
 
 env:
   BASE_URL: /${{ github.event.repository.name }}

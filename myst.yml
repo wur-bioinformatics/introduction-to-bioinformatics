@@ -70,5 +70,5 @@ site:
   github: http://github.com/wur-bioinformatics/introduction-to-bioinformatics
   template: book-theme
   options:
-    logo: BIF logo.png
+    logo: BIF_logo.png
     style: style/custom.css
