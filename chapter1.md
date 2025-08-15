@@ -1004,7 +1004,7 @@ You can find more information on InterPro entry types with examples [here](https
 
 Pfam is an important resource for protein domains.
 In Pfam, domains are classified according to profiles that are modelled as Hidden Markov models (HMMs).
-We will learn more on HMMs in [Chapter 2](#chapter2_phhms).
+We will learn more on HMMs in [Chapter 2](#chapter2_phmms).
 Pfam is now integrated in InterPro.
 Each Pfam domain can be represented with a logo, where the amino acids frequent at a particular position are represented as larger letters ({numref}`pfam-profile`).
 
