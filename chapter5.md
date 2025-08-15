@@ -72,6 +72,8 @@ part of the entire story: the expression of genes and proteins and their
 interactions in processes within and between cells govern how cells and
 organisms behave. This led to research in _functional genomics_ and _systems
 biology_, for which computational data analysis of other omics level data
+organisms behave. This led to research in _functional genomics_ and _systems
+biology_, for which computational data analysis of other omics level data
 have become indispensable.
 
 Below, genomics will first be introduced, along with the most relevant
@@ -159,11 +161,13 @@ genomes and their content has grown as well. We now know that genomes vary
 greatly in terms of size, chromosome numbers, and ploidy ({numref}`gene_ploidy`),
 as well as gene content ({numref}`w5t1`). Genome sizes range from 100kb in
 bacteria to more than 100Gb (Giga bases) in plants. Humans have a genome size of 3.2Gb.
+bacteria to more than 100Gb (Giga bases) in plants. Humans have a genome size of 3.2Gb.
 
 ```{list-table} Genome size and number of genes of model species
 :header-rows: 1
 :name: w5t1
 * - Species
+  - Genome size (kb)
   - Genome size (kb)
   - Number of genes
   - Number of transcript
@@ -200,6 +204,7 @@ bacteria to more than 100Gb (Giga bases) in plants. Humans have a genome size of
   - 154.4
 ```
 
+Not only the genome size varies greatly between organisms, in eukaryotes the number of chromosomes and chromosomal copies
 Not only the genome size varies greatly between organisms, in eukaryotes the number of chromosomes and chromosomal copies
 (ploidy) do too. Chromosome numbers range from 4 in fruit fly (_Drosophila_)
 to 23 in human to 50 in goldfish and 100+ in some ferns. Similarly, ploidy
@@ -245,6 +250,13 @@ If you work with genome data, it is important to have a basic understanding of t
 This allows us to better understand the quality of the data we work with and what biological insights we can gain. For interested readers we provide a more detailed description of these technologies in a number of boxes at the end of this chapter.
 
 Conceptually, there are three ways of sequencing:
+In order to study genomes, we need to have a human readable representation of them. This requires the 'reading' of the DNA molecules as A,C,T and Gs.
+This process of generating a genome starts with DNA sequencing, the detection of nucleotides and their order along a strand of DNA. 
+
+If you work with genome data, it is important to have a basic understanding of the technologies used and their strength and weaknesses. 
+This allows us to better understand the quality of the data we work with and what biological insights we can gain. For interested readers we provide a more detailed description of these technologies in a number of boxes at the end of this chapter.
+
+Conceptually, there are three ways of sequencing:
 
 - Chemical sequencing relies on step-by-step cleaving off the last nucleotide from a chain and identifying it.
  Mainly due to the use of radioactive labels, this method was never widely used.
@@ -256,14 +268,20 @@ Conceptually, there are three ways of sequencing:
 - Direct sequencing involves directly measuring the order of nucleotides in a strand of DNA which is thus far only implemented in [Oxford Nanopore sequencing](#chapter5_nanopore).
 
 Different technologies vary widely in the length of DNA sequences, called (sequencing) reads, they produce
+Different technologies vary widely in the length of DNA sequences, called (sequencing) reads, they produce
 (the read length) and their throughput, which together determine the
 coverage: the (average) number of times each base in the genome is represented in a read.
+For some purposes, such as genome assembly, it is essential that this
 For some purposes, such as genome assembly, it is essential that this
 coverage is sufficiently high - depending on read length, between 50x to
 100x. A number of sequencing devices and their
 capabilities in terms of read length and yield per run are shown in
 {numref}`sequencing_technology`.
 
+Sequencing technologies also vary in the accuracy of base-calls (the detected nucleotide at a position). 
+This accuracy is measured using quality or Q scores and they represent the probability that a base-call 
+is incorrect. A higher Q-score is better. The most commonly used cut-off value is Q30 which 
+corresponds to an incorrect base-call probability of 1 in 1000 and therefore an accuracy of 99.9%.
 Sequencing technologies also vary in the accuracy of base-calls (the detected nucleotide at a position). 
 This accuracy is measured using quality or Q scores and they represent the probability that a base-call 
 is incorrect. A higher Q-score is better. The most commonly used cut-off value is Q30 which 
@@ -309,6 +327,7 @@ or other large scale amplification methods. The requirement of uniqueness is the
 ````
 
 Sanger sequencing was the main sequencing platform until around 2007. From
+2004 onwards, it was increasingly superseded by what we call
 2004 onwards, it was increasingly superseded by what we call
 next-generation sequencing (NGS) methods. Today it is still used, among
 others to sequence PCR products to validate variants, to determine the
@@ -414,6 +433,7 @@ Credits: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) {cite}`m
 ````{important} Important things to know about nanopore sequencing
 - it can sequence very long reads
 - the accuracy is 96.8-99.9% (Q15-Q30)
+- the accuracy is 96.8-99.9% (Q15-Q30)
 - it can directly detect base modifications (methylation)
 - fragments with extreme GC content can be sequenced as there is no PCR step
 - individual DNA fragments are sequenced one after the other, making it real-time
@@ -426,6 +446,7 @@ Credits: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) {cite}`m
 ```{figure} images/chapter5/ladybug_aphid.png
 :alt: Sequencing contamination
 :align: center
+:align: center
 :width: 300px
 :name: ladybug_aphid
 
@@ -436,15 +457,24 @@ Additionally all eukaryotes have a \
 microbiome composed of prokaryotes, \
 viruses, and small eukaryotes and \
 these can also be present as contaminants.
+Additionally all eukaryotes have a \
+microbiome composed of prokaryotes, \
+viruses, and small eukaryotes and \
+these can also be present as contaminants.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`
 ```
 
+Before we can use the sequencing data for further analysis, we need to make sure the data is good enough.
 Before we can use the sequencing data for further analysis, we need to make sure the data is good enough.
 
 A first step for quality control is to check the accuracy of the data.
 As sequencing technology is not perfect, errors will be present in the output. 
 To minimize these, we remove poor quality reads or bases.
+A first step for quality control is to check the accuracy of the data.
+As sequencing technology is not perfect, errors will be present in the output. 
+To minimize these, we remove poor quality reads or bases.
 
+Errors related to sequencing itself are the result of base calling errors
 Errors related to sequencing itself are the result of base calling errors
 (substitution errors), uncalled bases (indels), GC bias, homopolymers, a
 drop of quality towards the 3’end of a read, and duplicates (amplification
@@ -471,6 +501,8 @@ When no reference genome is available for a species, we need to assemble
 one, i.e. build one from scratch by putting together DNA sequence reads.
 Here we discuss the steps and considerations:
 First, we examine why we would want to create a reference
+Here we discuss the steps and considerations:
+First, we examine why we would want to create a reference
 assembly, and what types of references can be created. Next, the assembly
 process and its challenges are introduced. Finally, genome annotation and
 detection of structural variation are discussed.
@@ -484,8 +516,12 @@ detection of structural variation are discussed.
 :alt: Co-segregation of alleles
 :width: 300px
 :align: center
+:align: center
 :name: co_segregation_alt
 
+Co-segregation of alleles: Which parts \
+of the genome were inherited together \
+from either the mother or the father.
 Co-segregation of alleles: Which parts \
 of the genome were inherited together \
 from either the mother or the father.
@@ -495,6 +531,8 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 Genomes can be reconstructed with different aims, which influence the
 required quality of the final assembly. The human genome, for example, has
 been assembled as far as possible and in 2021, the first telomere-to-telomere
+assembly was published, adding the final 5% of bases. 
+It has taken enormous effort, both in terms of finance and labour,
 assembly was published, adding the final 5% of bases. 
 It has taken enormous effort, both in terms of finance and labour,
 to get to this stage. This is neither feasible nor strictly necessary for
@@ -525,7 +563,10 @@ Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) modified from
 
 In the early days of DNA sequencing, generating sequencing reads was very
 costly and slow. Much effort was therefore spent on developing methods requiring a
+costly and slow. Much effort was therefore spent on developing methods requiring a
 minimum amount of sequence data to assemble a genome. Moreover, Sanger
+sequencing could only sequence on single fragment at a time, which needed to be amplified first.
+% till here is about done
 sequencing could only sequence on single fragment at a time, which needed to be amplified first.
 % till here is about done
 form of organising the DNA was required. This was initially done by
@@ -540,6 +581,7 @@ step. 2nd generation sequencing technology (e.g. Illumina) allows for a
 mixture of fragments to be sequenced at the same time and the volume of
 sequencing data generated is large. So instead of requiring lab work to
 select which section to sequence, everything is sequenced at once and the
+puzzle is solved later computationally.
 puzzle is solved later computationally.
 
 ---
@@ -1090,6 +1132,8 @@ important limitations:
 - Experimental cost: omics devices are often expensive to acquire, and each
   experiment requires labour and consumables
 - Technical noise: all measurement technologies come with inherent variation and
+  experiment requires labour and consumables
+- Technical noise: all measurement technologies come with inherent variation and
   measurement noise
 - Biological variation: different cells, organs or individuals will differ
   in their biological state and make-up
@@ -1287,6 +1331,7 @@ level should be interpreted (see box below).
   result, measurements can be noisy and have a low dynamic range (i.e., low
   expression levels cannot be measured well)
 - some microarray types compare two samples and thus produce relative expression levels (_fold changes_), often log<sub>2</sub>-transformed so that 0 means no change, +1
+- some microarray types compare two samples and thus produce relative expression levels (_fold changes_), often log<sub>2</sub>-transformed so that 0 means no change, +1
   means a 2-fold higher expression, +2 a 4-fold higher expression and so on; negative numbers indicate lower expression
 - other microarray types measure levels that represent absolute expression in a single sample (in arbitrary
   units); normalization is then important when comparing measurements between samples
@@ -1372,6 +1417,7 @@ counting the number of reads per feature.
 The advantage of not using probes (compared to qPCR and microarrays) is that
 RNAseq works for species without a reference genome, can identify alternatively spliced
 transcripts, SNPs in transcripts, etc. A challenge is that usually large
+transcripts, SNPs in transcripts, etc. A challenge is that usually large
 datasets are generated, which require dedicated analysis workflows.
 
 ---
@@ -1389,12 +1435,21 @@ sequences) or to prokaryotic genomes.
 :name: spliced_alignment
 
 Spliced mapping of mRNA reads to genomic reference with splice-aware aligner.
+Spliced mapping of mRNA reads to genomic reference with splice-aware aligner.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
 ```
 
 Mapping eukaryotic mRNA sequences to a genomic reference is more cumbersome,
 as most genes have introns, which are no longer present in the mature mRNA
 ({numref}`spliced_alignment`).  This means that reads might contain an
+exon-exon junction and should be split along the reference, so-called
+_spliced mapping_.  Most aligners will not consider this a valid option. 
+Special splice-aware aligners have been developed for this reason, that are
+able to map normal reads that map contiguously to the reference sequence as
+well as reads that are split across splice sites
+({numref}`spliced_alignment`).  They also take into account known
+intron-exon boundaries to determine the point within a read where it has to
+be split and whether the split alignment is correct.
 exon-exon junction and should be split along the reference, so-called
 _spliced mapping_.  Most aligners will not consider this a valid option. 
 Special splice-aware aligners have been developed for this reason, that are
@@ -1548,6 +1603,8 @@ for a number of reasons:
 Still, a number of methods to measure proteins and their interactions are in
 use. We distinguish between _quantitative proteomics_ (measuring
 presence/absence and levels of proteins) and _functional proteomics_
+use. We distinguish between _quantitative proteomics_ (measuring
+presence/absence and levels of proteins) and _functional proteomics_
 (measuring protein interactions with other molecules).
 
 ---
@@ -1619,6 +1676,7 @@ ratios on the x-axis and peaks indicating how many molecules of a certain
 mass have been detected ({numref}`mass_spectrum`).
 
 In theory, if a database of known
+molecule formulas (e.g., proteins or peptides) and their calculated masses
 molecule formulas (e.g., proteins or peptides) and their calculated masses
 would be available, one could look up each mass and identify the
 corresponding molecule. A major challenge in interpreting such a
@@ -1834,13 +1892,16 @@ Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`strept
 ```
 
 While omics data can be inspected in, for example, Microsoft Excel, it is very
+While omics data can be inspected in, for example, Microsoft Excel, it is very
 hard to make sense of a data matrix with tens of thousands of genes and
 dozens to hundreds of samples. It is therefore wise to first use methods to
 visualize or summarize the data to see whether major patterns or outliers
 can already be detected. A widely used visualization is the so-called
 _heatmap_, an image of the matrix (genes-by-samples) where each measurement is represented by a
+_heatmap_, an image of the matrix (genes-by-samples) where each measurement is represented by a
 colour. If the data is clustered along both genes and samples,
 interesting patterns may be easy to spot. A second approach often used in
+initial data exploration is _Principal Component Analysis_ (PCA), which plots
 initial data exploration is _Principal Component Analysis_ (PCA), which plots
 samples (or genes) along the main axes of variation in the data. If colour or
 markers are added, a PCA plot serves very well to detect groups and outliers.
@@ -1865,10 +1926,12 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 ```
 
 Differential abundance is the most widely used analysis on omics data. The goal is to
+Differential abundance is the most widely used analysis on omics data. The goal is to
 compare abundance levels between two classes, conditions, strains, cell
 types, etc. - for example, healthy vs. diseased tissue, with or without a
 certain drug, in different growth conditions, etc. The simplest approach is
 to collect a number of replicate measurements under both conditions and, for
+each gene, perform a simple statistical test such as the _t_-test
 each gene, perform a simple statistical test such as the _t_-test
 ({numref}`t_test`). Each test
 gives a _p_-value, and genes with a _p_-value below a certain
