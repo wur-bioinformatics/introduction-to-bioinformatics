@@ -4,16 +4,19 @@ Information for contributors
 
 ---
 
+## Jupyter Book
+The Introduction to Bioinformatics reader is an open source book written in [MyST Markdown](https://mystmd.org/guide/quickstart), compiled using [Jupyter Book 2](https://next.jupyterbook.org/) and published using [GitHub Pages](https://pages.github.com/). Jupyter Book 2 is still in alpha and many of the conventions below are subject to change.
+
 ## Conventions
 
 Throughout the reader conventions are used to create a uniform whole that is easy to understand by its contributors, making future adjustments an easy task.
-Below, these conventions are described. Remember that the [Jupter Book documentation](https://jupyterbook.org/en/stable/intro.html) contains more information.
+Below, these conventions are described. Remember that the [Jupter Book 2 documentation](https://next.jupyterbook.org/start/) contains more information.
 
 ---
 
 ### Headers & sections
 The reader uses headers (#) to aid with structure. A chapter should always start with one top level header (#), followed by a second level header (##).
-If a section requires sub-sections, third, fourth, fifth, or even sixth level headers can be used (###, ####, #####, ######, respectively).
+If a section requires sub-sections, third, fourth, and at most fifth level headers can be used (###, ####, #####, respectively).
 It is important to realize however, that sub-sections will map under a second level header until another second level header is encountered.
 So a second level header should be used to introduce a broad concept, where sub-sections provide information on the specific parts of that concept.
 Each header is closed by a section divider (---), apart from the references section at the end.
@@ -139,7 +142,7 @@ Citing a source should be done in the text or at the end of the description of a
 The citation name is based on name given to the citation in the references.bib file in root of the repository.
 This file is a BibTex file, which contains BibTex entries for each citation.
 Bibtex citations can usually be downloaded directly from papers, however, an understanding of the general format is beneficial.
-More information on the BibTex format can be found on [BibTex.org](https://www.BibTex.org/Using/).
+More information Jupyter Book 2 citations can be found on the [Jupyter Book 2 Documentation](https://next.jupyterbook.org/tutorial/mystmd/#citations) on the BibTex citations in general can be found on [BibTex.org](https://www.BibTex.org/Using/).
 
 An example of a BibTex file, which contains a single citation:
 
@@ -190,7 +193,7 @@ This ensures that there can be no doubt about the proper usage of imagery in the
 
 Self-created imagery has the preference by the WUR to be published under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) licensing and uses the format:
 ```
-{cite}`own_"chapter number"_2024`.
+{cite}`own_[chapter number]_[year]`.
 ```
 For example:
 ```
@@ -210,7 +213,7 @@ These are cross-references and use labels that can be attached to headers.
 The following syntax is used for the creation of header labels:
 
 ```none
-(Weekx_label)=
+(chapter[#]_label)=
 
 # Header
 ```
@@ -218,13 +221,13 @@ The following syntax is used for the creation of header labels:
 And a label is cross-referenced to using:
 
 ```none
-[Any text](Weekx_label)
+[Any text](#chapter[#]_label)
 ```
 
 For example, when a cross-reference is to be made to a section about translation, you would add the following label above the header that contains information on translation:
 
 ```none
-(Week1_translation)=
+(chapter1_translation)=
 
 # Translation
 
@@ -234,12 +237,52 @@ Information on translation.
 Which you can then reference to using:
 
 ```none
-For more information on translation, see the above section [Translation](Week1_translation).
+For more information on translation, see the above section [Translation](#chapter1_translation).
 ```
 
-This will produce a link on the word Translation that leads to the section label called translation in week 1.
+This will produce a link on the word Translation that leads to the section label called translation in Chapter 1.
 
-For more information on referencing and cross-referencing, see the [Jupyter Book documentation](https://jupyterbook.org/en/stable/content/references.html#references-and-cross-references).
+For more information on links and cross-referencing, see the [Jupyter Book 2 documentation](https://next.jupyterbook.org/tutorial/mystmd/#links-cross-references).
+
+---
+### Glossaries and terms
+
+Each chapter in the book has its own glossary containing that chapter's most important terms and definitions. A glossary is created in the following manner:
+```none
+:::{glossary}
+Entry1
+: Definition of Entry1
+
+Entry2
+: Definition of Entry2
+:::
+```
+
+Entries and definitions can be created at will, however, we also use the {term} convention to directly link to entries in glossaries across all chapters.
+This is important because {term} can only link to an exact match in a glossary (case sensitive). Consider the following example:
+
+The glossary of a chapter is structured like this:
+```none
+:::{glossary}
+MSA
+: **M**ultiple **S**equence **A**lignment - alignment of more than two sequences.
+
+DNA
+: **D**eoxyribo**N**ucleic **A**cid
+:::
+```
+
+The first appearance of the word MSA in the chapter then needs to link to the glossary like so:
+```none
+Instead, in cases where we want to compare 3 or more sequences with each other, we use a **multiple sequence alignment** ({term}`MSA`).
+```
+
+This creates a direct link to the MSA entry in the glossary. Not only does this work for terms for that chapter's glossary,
+if a term is found in another chapter's glossary (no duplicate entries allowed),
+it will actually link to that chapter's glossary as well!
+
+Only first time appearances of terms get the {term} cross-reference (unless you would really like to stress the importance of a term that appeared earlier in the reader).
+This way, later chapters don't get overwhelming with the amount of cross-references to glossaries.
 
 ---
 
@@ -254,12 +297,12 @@ Adding a bibliography to the end of a markdown file is done by adding the follow
 ## References
 
 :::{bibliography}
-:filter: docname in docnames
-:labelprefix: (week number, followed by a capital W), for example: 1W
 :::
 ```
 
 This will add all used citations into a bibliography at the bottom of the page.
+
+NOTE: Bibliography customization is currently not possible in Jupyer Book 2. Using the above syntax will create a standard format reference list that cannot be further adjusted.
 
 ---
 
@@ -267,7 +310,7 @@ This will add all used citations into a bibliography at the bottom of the page.
 
 When writing or reviewing the markdown files, you may want to leave a comment for yourself or other contributors to see.
 The compiler assumes every line that starts with `%` is a comment line.
-However, since percentages are used rather frequently, which makes filtering for comments more difficult, a preference has been given to use `%#%` for commenting.
+However, since percentages are used rather frequently, which makes filtering for comments more difficult, a preference has been given to use `%#%[write your comment here]` for commenting.
 This makes sure that it is easy to search for comments in a markdown file and that they are not included in the actual output of the compiler.
 Comments are put directly beneath a paragraph or figure that you would like to comment on.
 
@@ -277,61 +320,18 @@ For example:
 #### Secondary structure prediction
 
 As we have seen in Section X.X, there are key similarities and differences between α-helices and β-sheets.
-%#% Not sure what the Section X.X refers to.
+%#%[Not sure what the Section X.X refers to.]
 ```
 
-### Custom tags
+### Editing and publishing chapters
 
-Currently, two types of custom tags are used in the markdown files to facilitate the practicals in the reader.
+Since this reader is under iterative development, it is beneficial for all contributors to know how they can update and publish their individual chapters. The repository uses a GitHub workflow, using GitHub actions,
+that fully automates the deployment, release and publishing of the reader. Contributors can initiate this workflow through their commit message to the repository.
 
-`%ANSWER%` is used at the start of all the lines that contain answers in the practical section.
-This tag is used to generate two versions of the reader, one with and one without answers to the practicals.
+When an edit has been made to a chapter, the contributor has to consider the magnitude of their commit. A small update with small fixes or changes should be considered a patch update. A larger revision of a chapter, which could include new sections, removed sections or new imagery should be considered a minor update. A complete overhaul of one or more chapters that affects the reader as a whole should be considered a major update. When a decision according to the above logic has been made, the commit message should end in one of the corresponding categories:
+- #patch (this will increment the version of the reader by 0.0.1 and initiate the deployment, release and publishing workflow).
+- #minor (this will increment the version of the reader by 0.1.0 and initiate the deployment, release and publishing workflow).
+- #major (this will increment the version of the reader by 1.0.0 and intiatie the deployment, release and publishing workflow).
+- Omitting the #category at the end of the commit will add the changes to the repository, but will not initiate the deployment, release and publishing workflow. This is useful if you are planning to stack a bunch of commits, for which you don't want the reader to be re-deployed every single commit. Just make sure that the last commit has a #category at the end of the commit message, so that your changes are published and visible in the reader.
 
-For example:
-
-```none
-%ANSWER%:::{dropdown} Assignment I answers
-%ANSWER%a. Shared electrons
-%ANSWER%b. The C=O and C-N bonds
-%ANSWER%c. Peptide Bonds
-%ANSWER%:::
-```
-
-`%PRACTICAL_SEPARATOR%` is used one line before and one line after a practical section.
-This tag is used to separate practical sections from the rest of the chapter, so that practicals can be generated as separate documents.
-
-For example:
-
-```none
-%PRACTICAL_SEPARATOR%
----
-
-## Practical assignments
-
-This practical contains questions and exercises to help you process the study materials of Week 4.
-
-**Note, the answers will be published after the practical!**
-
-:::::{admonition} **Amino Acid Residues and Peptide Folding**
-
-_Assignment I: peptide folding (20 minutes)_
-
-a. How do you recognize the peptide bonds in the web application?
-
-%ANSWER%:::{dropdown} Assignment I answers
-%ANSWER%a. You can recognize them by the “shared electrons”.
-%ANSWER%:::
-:::::
-
-:::::{admonition} **Protein Structures and Secondary Structure Elements**
-
-_Assignment II: structure search and visualisation (50 minutes)_
-
-a. How many amino acids does the protein have?
-
-%ANSWER%:::{dropdown} Assignment II answers
-%ANSWER%a. The total length is 81 AAs.
-%ANSWER%:::
-:::::
-%PRACTICAL_SEPARATOR%
-```
+You can check on the progress of the workflow by going to the "Actions" tab in the GitHub repository. The "Deployment" action's "Build HTML" job will print potential error or warning messages that a contributor needs to fix in order for the reader to work properly. 

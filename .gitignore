@@ -1,4 +1,9 @@
-_build/*
+build.log
+_build
+_build/cache/*
+_build/execute/*
+_build/html/*
+_build/site/*
 .venv/*
 _answers/*
 

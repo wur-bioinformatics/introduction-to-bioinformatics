@@ -1,14 +1,14 @@
-# Alignment, sequence search, and primer design
-
-```{epigraph}
-
--- Anne Kupczok, Rens Holmer
-```
+---
+title: 2. Alignment, sequence search, and primer design
+label: chapter2
+authors:
+  - annekupczok
+  - rensholmer
+---
 
 In chapter 2 of Introduction to Bioinformatics, you will study sequence alignment.
 
-```{admonition} Learning goals
-:class: important A yellow box
+```{important} Learning goals
 After studying this chapter you should be familiar with what DNA and protein alignments are used for and you can explain the differences between local and global alignments.
 You should have knowledge of concepts related to alignments and sequence search, like dotplots, alignment scores, E-values, and substitution matrices.
 Make sure you understand what multiple alignments are used for and that you can explain the differences between different solutions for the MSA problem.
@@ -25,18 +25,18 @@ Comparing sequences is a key tool in the field of applied bioinformatics.
 By analyzing DNA and protein sequences, researchers can annotate genes in new genomes, build models of protein structures, and investigate gene expression.
 It is important to notice that nature tends to stick with what works, rather than reinventing the wheel for each species.
 Organisms evolve from ancestors and accumulate mutations.
-Here we deal with __small-scale__ mutations, that affect a few characters: substitutions (see also [Chapter 1](Week1_substitutions)) and small insertions and deletions ({numref}`mutations`).
-Later in the book, we will also look at [large-scale genome variations](Week5_large-scale_genome_variation).
+Here we deal with __small-scale__ mutations, that affect a few characters: substitutions (see also [Chapter 1](#chapter1_substitutions)) and small insertions and deletions ({numref}`mutations`).
+Later in the book, we will also look at [large-scale genome variations](#chapter5_large-scale_genome_variation).
 
-:::{figure} images/Week2/mutations.png
+```{figure} images/chapter2/mutations.png
 :alt: Types of mutations
-:align: right
-:width: 60%
+:align: center
+:width: 50%
 :name: mutations
 
 Different types of small-scale mutations.
 Credits: https://evolution.berkeley.edu/, [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
-:::
+```
 
 Via mutations, organisms can gradually develop new traits over time.
 These evolutionary relationships also mean that similar genes can be found in different organisms and the functional annotation can be transferred from one protein to another if both possess a certain degree of similarity.
@@ -44,9 +44,7 @@ However, even though two proteins may look similar, they could have different fu
 Generally, similarities arise because of shared ancestry (divergent evolution), nevertheless, similarities can also appear independently (convergent evolution).
 Before diving into the analysis of whether sequences are related, it is important to understand some key terms.
 
-```{admonition} Homology and similarity
-:class: important
-
+```{important} Homology and similarity
 **Homology** means that sequences share a common evolutionary history and therefore have a common ancestor.
 Homology is not quantifiable.
 If two sequences have a common ancestor, they are __homologous__.
@@ -58,9 +56,7 @@ We can measure the identity or similarity between sequences and we will see how 
 In contrast, we cannot measure homology, but we can only infer it.
 ```
 
-```{admonition} See also
-:class: seealso
-
+```{seealso} See also
 Here is a classic paper, where homologous protein families are introduced: [Tatusov et al., 1997](https://pubmed.ncbi.nlm.nih.gov/9381173/).
 ```
 
@@ -77,30 +73,30 @@ A dot is placed in a cell where the residues are identical.
 In the resulting plot, similar regions appear as diagonal stretches and insertions and deletions appear as discontinuities in the diagonal lines ({numref}`dotsmall`).
 A sequence can also be compared to itself, then the main diagonal will be filled with dots and additional repeats are on the off-diagonal ({numref}`dotlarge`).
 
-:::{figure} images/Week2/dot_small2.png
+```{figure} images/chapter2/dot_small2.png
 :alt: Small dotplot example
-:align: right
-:width: 100%
+:align: center
+:width: 40%
 :name: dotsmall
 
 A small example of a dotplot. \
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
-:::
+```
 
-:::{figure} images/Week2/dot_large.png
+```{figure} images/chapter2/dot_large.png
 :alt: Large dotplot example
 :width: 80%
 :name: dotlarge
 
 An example of a dotplot to compare a sequence with itself. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
-:::
+```
 
 This simple way of marking identical residues comes with a lot of background noise.
 To detect interesting patterns, a filter is typically applied.
 For example, a minimum identity should be present across a certain window size, i.e., consecutive number of residues being considered.
 This feature is implemented in a webserver to visualize dotplots, [dotlet](https://dotlet.vital-it.ch/) {cite}`dotlet_2000` ({numref}`dotweb`).
 
-:::{figure} images/Week2/dot_web.png
+```{figure} images/chapter2/dot_web.png
 :alt: Screenshot of dotlet
 :width: 100%
 :name: dotweb
@@ -112,9 +108,9 @@ A screenshot of [dotlet](https://dotlet.vital-it.ch/) with the following protein
 - (B) The histogram indicates how many hits with a particular similarity are shown; thus the slider can be adjusted to the right tail of the histogram.
 - \(C\) The two sliders that can adjust how the two sequences are positioned against each other.
 - (D) Serves a similar function as the two sliders of C but allows for arrow key navigation of the dotplot.
-- (E) Here you can select the window size of sequence comparison and the scoring matrix (window size is explained [below](Week2_blast_algorithm) and substitution matrices are also explained [below](Week2_substitution_matrices)).
+- (E) Here you can select the window size of sequence comparison and the scoring matrix (window size is explained [below](#chapter2_blast_algorithm) and substitution matrices are also explained [below](#chapter2_substitution_matrices)).
 - Credits: {cite}`dotlet_2000`.
-  :::
+```
 
 ## Pairwise alignment
 
@@ -124,14 +120,14 @@ In an alignment, the two sequences will be placed above each other and gaps can 
 We also say that the two sequences will be **aligned**.
 The resulting alignment contains matches, mismatches, and gaps ({numref}`algterm`)
 
-:::{figure} images/Week2/alg_term.png
+```{figure} images/chapter2/alg_term.png
 :alt: Small alignment example
 :width: 50%
 :name: algterm
 
 A small example of two aligned sequences.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
-:::
+```
 
 ### Alignments of DNA sequences
 
@@ -144,7 +140,7 @@ Then we can compare the scores of different alignments, where alignments with hi
 However, the choice of the scoring parameters has an impact which alignment will have the maximum score.
 To understand the impact of the parameters on the final alignment, fill in table {numref}`algex`.
 
-:::{figure} images/Week2/alg_score.png
+```{figure} images/chapter2/alg_score.png
 :alt: Small alignment example with scoring
 :width: 60%
 :name: algscore
@@ -152,21 +148,19 @@ To understand the impact of the parameters on the final alignment, fill in table
 An example calculation of the alignment score, where matches score 1, mismatches -1 and there is a gap penalty of -1.
 This results in a total score of 1 for this alignment.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
-:::
+```
 
 
-:::{figure} images/Week2/alg_exercise.png
+```{figure} images/chapter2/alg_exercise.png
 :alt: Exercise to score alignments
 :width: 100%
 :name: algex
 
 **Assignment**: Fill the table for the two alignments and the two sets of scoring parameters.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
-:::
+```
 
-```{admonition} Note 2.1: Affine gap costs
-:class: note
-
+```{note} Note 2.1: Affine gap costs
 The DNA and protein sequences that we want to align often have varying lengths, which is the result of insertions and deletions during evolution.
 Insertion and deletion events can affect one or multiple residues, where one event of length 2 is more likely to happen than two independent events of length 1.
 To include this in the scoring scheme, alignment programs use **affine gap costs** that distinguish between opening a gap and extending a gap.
@@ -177,9 +171,7 @@ Gap open (score for the first residue in a gap): -10
 Gap extend (score for each additional residue in a gap): -0.5
 ```
 
-```{admonition} Note 2.2: Finding the best alignment
-:class: note
-
+```{note} Note 2.2: Finding the best alignment
 A huge number of alignments are possible for two sequences, since the gaps can be placed in many different ways.
 However, to find the **optimal alignment**, i.e., the one with the highest score, it is not necessary to explore all these possibilities.
 Efficient algorithms exist that guarantee to find the optimal alignment.
@@ -188,18 +180,18 @@ The Needleman-Wunsch algorithm was the first algorithm and can solve this task i
 
 ### Alignments of protein sequences
 
-(Week2_substitution_matrices)=
+(chapter2_substitution_matrices)=
 
 #### Substitution matrices
 
-In [Chapter 1](Week1_aminoacids), we learned that different amino acids have different chemical properties.
+In [Chapter 1](#chapter1_aminoacids), we learned that different amino acids have different chemical properties.
 When protein structure and function are conserved, it is more likely that an amino acid gets replaced by a chemically similar one than a very different one.
 When aligning protein sequences, we thus want to penalize the substitution of chemically dissimilar amino acids and reward the substitution of chemically similar ones.
 To this end, the score of matches and mismatches is generally determined by a **substitution matrix**, e.g., BLOSUM62 - **BLOSUM (BLOck SUbstitution Matrix)** ({numref}`blosum62`).
 The substitution matrix and the gap parameters then determine the alignment score ({numref}`aa_alg`).
 
 
-:::{figure} images/Week2/blosum62.svg
+```{figure} images/chapter2/blosum62.png
 :alt: Blosum 62 matrix
 :width: 100%
 :name: blosum62
@@ -207,17 +199,15 @@ The substitution matrix and the gap parameters then determine the alignment scor
 The BLOSUM62 amino acid substitution matrix.
 The matrix is ordered and positive values and zero values are highlighted.
 Credits: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) {cite}`blosum62_2022`.
-:::
+```
 
-```{admonition} Box 2.1: Assignment
-:class: tip
-
-Look at the amino acid properties in the table in [Chapter 1](Week1_aminoacids), choose some amino acids with the same properties and some with different properties.
+```{tip} Box 2.1: Assignment
+Look at the amino acid properties in the table in [Chapter 1](#chapter1_aminoacids), choose some amino acids with the same properties and some with different properties.
 Then look up these pairs in the BLOSUM62 matrix.
 What do you observe?
 ```
 
-:::{figure} images/Week2/aa_alg.png
+```{figure} images/chapter2/aa_alg.png
 :alt: A small example to score a protein alignment
 :width: 100%
 :name: aa_alg
@@ -225,10 +215,10 @@ What do you observe?
 Example of a pairwise protein alignment.
 With the BLOSUM62 scoring matrix, a gap opening score of -10, and a gap extension score of -1, the resulting alignment score is 34.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
-:::
+```
 
 Note that we motivated the use of amino acid substitution matrices by the chemical properties of amino acids; however, these properties were not directly used when determining these matrices.
-Instead, the BLOSUM matrix is determined by aligning conserved regions from Swiss-Prot ([Chapter 1](Week1_uniprot)) and clustering them based on identity.
+Instead, the BLOSUM matrix is determined by aligning conserved regions from Swiss-Prot ([Chapter 1](#chapter1_uniprot)) and clustering them based on identity.
 Then, the substitutions between the different pairs of amino acids within a cluster are counted, which is used to compute the BLOSUM scores.
 Thus, these scores reflect directly which amino acids are replaced more often with each other during evolution and we can observe that this frequency is strongly correlated with their chemical properties.
 There are different versions of BLOSUM; for example, BLOSUM62 was derived by clustering sequences with an identity of 62% and is appropriate for comparing protein sequences having around 62% identity.
@@ -239,22 +229,22 @@ The entries in a PAM matrix denote the substitution probabilities of amino acids
 For example, PAM1 represents one substitution per 100 amino acid residues and is thus appropriate for very closely related sequences.
 A commonly used matrix is PAM250, which means that 250 mutations happened over 100 residues; that is, many residues have been affected by more than one mutation.
 
-:::{figure} images/Week2/submat.svg
+```{figure} images/chapter2/submat.jpg
 :alt: Example calculation for identity and similarity
 :width: 80%
 :name: submat
 
 An overview of different available substitution matrices.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
-:::
+```
 
-:::{seealso}
+```{seealso}
 An introduction into PAM and BLOSUM substitution matrices.
 
 <div class="videoWrapper">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/68lF71zEUF8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
-:::
+```
 
 #### Protein identity and similarity
 
@@ -263,7 +253,7 @@ The **protein identity** is given by the number of identical amino acids divided
 The **protein similarity** is given by the number of similar amino acids _and_ the number of identical amino acids divided by the alignment length.
 In the pairwise alignment program [needle](https://www.ebi.ac.uk/jdispatcher/psa/emboss_needle), **identical amino acids** are marked by a vertical line ( | ), **similar amino acids** are marked by a colon (:) and defined by pairs that have a positive score (i.e., >0) in the chosen substitution matrix ({numref}`aa_sim`).
 
-:::{figure} images/Week2/aa_sim.png
+```{figure} images/chapter2/aa_sim.png
 :alt: Example calculation for identity and similarity
 :width: 60%
 :name: aa_sim
@@ -271,14 +261,14 @@ In the pairwise alignment program [needle](https://www.ebi.ac.uk/jdispatcher/psa
 Example protein alignment. The percent identity is 10 / 18 = 55.6% and the percent similarity is 14 / 18 = 77.8%.
 The lengths of the individual sequences are shown on the right.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
-:::
+```
 
 Note that the pairwise alignment method does not directly try to maximize similarity or identity, but these calculated from the best alignment, which is a result of the chosen parameters.
 Especially for distantly related sequences, the parameters can have a big impact on the alignment and thus on the estimated identity and similarity.
 In {numref}`alg_gap`, you can find two alignments, where the same two protein kinases from rice have been aligned with different parameters.
 Depending on the parameters, the identity varies between 17.6% and 26.2%.
 
-:::{figure} images/Week2/alg_gap.png
+```{figure} images/chapter2/alg_gap.png
 :alt: Impact of gap parameters on alignment
 :width: 100%
 :name: alg_gap
@@ -287,13 +277,13 @@ Alignments of the same two sequences (LERK1_ORYSI and XA21_ORYSI) with different
 A) BLOSUM62 matrix, gap open: -10, gap extend: -0.5. Identity = 210/1191 (17.6%), Similarity = 345/1191 (29.0%).
 B) BLOSUM62 matrix, gap open: -5, gap extend: -0.5. Identity = 305/1166 (26.2%), Similarity = 428/1166 (36.7%).
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024` made using [needle](https://www.ebi.ac.uk/jdispatcher/psa/emboss_needle) {cite}`EMBL_tools_2022`.
-:::
+```
 
 Up until now, we have only considered pairwise alignments, where both sequences are aligned completely; these are called **global alignments**.
 
 ### Local alignments
 
-We have seen in [Chapter 1](Week1_Interpro) that many proteins are composed of domains.
+We have seen in [Chapter 1](#chapter1_Interpro) that many proteins are composed of domains.
 Thus, some sequences might not be related over their full length, but only share similarity over parts of their sequences that correspond to domains.
 When comparing such proteins, it is more appropriate to perform a **local alignment**.
 Local alignment is also a good tool for identifying functional sites from which sequence patterns and motifs can be derived ({numref}`alg_local`).
@@ -302,7 +292,7 @@ The aim of a local alignment is to find the best subsequences of both input sequ
 As for global alignment, efficient algorithms exist to solve this task.
 The Smith-Waterman algorithm can solve this task in a time that is quadratic in the length of the input sequences, just like the Needleman-Wunsch algorithm for global alignments.
 
-:::{figure} images/Week2/alg_local.png
+```{figure} images/chapter2/alg_local.png
 :alt: Local alignment
 :width: 100%
 :name: alg_local
@@ -311,20 +301,18 @@ Alignments of the same two sequences, once using the global alignment program [n
 The same alignment parameters were used: [DNAfull matrix](https://rosalind.info/glossary/dnafull/), gap open -10, gap extend -0.5.
 The global identity is 20/71 (28.2%) and the local identity is 12/12 (100.0%).
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
-:::
+```
 
-(Week2_sequence_search)=
+(chapter2_sequence_search)=
 
 ## Search in sequence databases
 
-In Chapter 1, we learned about different [sequence databases](Week1_databases).
+In Chapter 1, we learned about different [sequence databases](#chapter1_databases).
 We often want to search novel sequences in these databases, for example, to learn which other organisms have homologs.
 Two sequences that are highly similar might also share the same function.
-This relationship is used for the [functional annotation](Week1_functional_annotation) of sequences, where the search in databases is an important step.
+This relationship is used for the [functional annotation](#chapter1_functional_annotation) of sequences, where the search in databases is an important step.
 
-```{admonition} Note 2.3: Similarity by chance
-:class: note
-
+```{note} Note 2.3: Similarity by chance
 When all nucleotides occur randomly and at the same frequency, then each sequence of length `x` is expected to occur with a frequency of 1/4{sup}`x`, e.g., a sequence of length 3 has a frequency of 1/64 and a sequence of length 10 has a frequency of about 1 in a million.
 This becomes important since these days, databases are very large: they can contain millions of sequences.
 Due to this large amount of data, some similarities might just be observed by chance, especially if our sequence of interest is short.
@@ -338,9 +326,7 @@ In this task, we have a query sequence and we want to find similar sequences in 
 Although the algorithms that were discussed in the previous section are relatively fast when two sequences are aligned, it would still take too long overall to perform pairwise sequence alignments of the query with all potential subjects from the database.
 We thus need even more efficient algorithms.
 
-```{admonition} Note 2.4: Heuristic algorithms
-:class: note
-
+```{note} Note 2.4: Heuristic algorithms
 The Needleman-Wunsch and the Smith-Waterman algorithm described in the previous section guarantee to find the alignment with the best score for the given sequences and parameters.
 In contrast, a **heuristic algorithm** employs some rules-of-thumb, which generally lead to good results and which make the algorithm much faster.
 However, such a method does not guarantee to find the optimal score anymore.
@@ -352,51 +338,48 @@ Basic Local Alignment Search Tool (**BLAST**) is a heuristic method to find regi
 The program compares nucleotide or protein sequences to sequences in a database and calculates the statistical significance of the matches.
 Both the standalone and web version of BLAST are available from the National Center for Biotechnology Information ([NCBI](https://www.ncbi.nlm.nih.gov)).
 
-(Week2_blast_algorithm)=
-
+(chapter2_blast_algorithm)=
 #### The algorithm
 
 The starting point of BLAST is the set of words that two sequences have in common, where a __word__ is a part of a sequence of a fixed length.
 For protein blast, the default word size is 5 and for nucleotide blast it is 11.
-To find these common words, first a lookup table of the query words is reconstructed ({numref}`blast`A), where neighborhood words are listed as well.
-__Neighborhood words__ are all the words that have a high alignment score with the query word ({numref}`blast`B).
+To find these common words, first a lookup table of the query words is reconstructed ({numref}`blast_overview`A), where neighborhood words are listed as well.
+__Neighborhood words__ are all the words that have a high alignment score with the query word ({numref}`blast_overview`B).
 Then, BLAST scans the database for word matches.
-For protein blast, two matches within 40 residues must be found for BLAST to consider it as an __initial hit__ ({numref}`blast`C).
+For protein blast, two matches within 40 residues must be found for BLAST to consider it as an __initial hit__ ({numref}`blast_overview`C).
 Note that for nucleotides, initial hits are found in a simpler way:
 only one exact match must be found, i.e., no neighborhood is considered.
 
-After finding initial hits, BLAST extends these to local alignments ({numref}`blast`D).
+After finding initial hits, BLAST extends these to local alignments ({numref}`blast_overview`D).
 As this __extension__ happens, the alignment score increases or decreases.
 When the alignment score drops below a set level, extension stops.
 This prevents the alignment from stretching into areas where there is very little similarity between the query and hit sequences.
 If the obtained alignment receives a score above a certain threshold, it will be included in the final BLAST result.
 BLAST is thus a heuristic algorithm (Note 2.4), but its careful process provides a reasonable trade-off between run time and accuracy.
 
-:::{figure} images/Week2/blast.png
+```{figure} images/chapter2/blast.png
 :alt: Blast overview
 :width: 100%
-:name: blast
+:name: blast_overview
 
 An overview of the BLAST algorithm.
 Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`blast_2022`.
-:::
+```
 
 #### BLAST output
 
 The BLAST output contains vast information on the found hits, their alignments, and taxonomy ({numref}`blast_output`).
 
-:::{figure} images/Week2/blast_output.png
+```{figure} images/chapter2/blast_output.png
 :alt: Blast output
 :width: 100%
 :name: blast_output
 
 Top 5 blast hits when searching the rat protein P50745 in the Swiss-Prot 2024_02 release database.
 Credits: {cite}`blast_2009`
-:::
+```
 
-```{admonition} Note 2.5: E-value
-:class: note
-
+```{note} Note 2.5: E-value
 An important output statistic is the expectation value (**E-value**), which is the number of BLAST hits with the observed score or higher that you expect to see by chance in the database.
 Note that due to this definition, the E-value depends on the database size.
 Since it is more likely to find something by chance in a larger database, the E-value for the same hit would be higher compared to a smaller database.
@@ -427,7 +410,7 @@ In addition, the query and/or the database can also be translated in all six rea
 
 Different BLAST types exist for these different kinds of comparisons, where these translations are done automatically ({numref}`blast_types`).
 
-:::{figure} images/Week2/blast_types.png
+```{figure} images/chapter2/blast_types.png
 :alt: Blast types
 :width: 100%
 :name: blast_types
@@ -437,7 +420,7 @@ The input query is marked by a red box.
 Sequences/databases with a blue background originate from protein sequences, wheres sequences/databases with a green background originate from nucleotide sequences.
 Note that some of the latter are automatically translated into all possible proteins (indicated by blue font).
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
-:::
+```
 
 %#%[TODO chapter 1: File formats]
 
@@ -450,11 +433,11 @@ Which DNA fragments are amplified is determined largely by which PCR __primers__
 To design primers that successfully amplify the DNA of interest, several computational steps are combined.
 This section highlights some of these bioinformatic considerations.
 
-:::::{admonition} Box 2.6: The polymerase chain reaction (PCR)
-:class: tip
+(chapter2_PCR)=
+`````{tip} Box 2.6: The polymerase chain reaction (PCR)
 Invented in 1983 by Kary B. Mullis, the polymerase chain reaction was first published in 1985 in a study on sickle cell anemia {cite}`saiki1985enzymatic`. Ten years after its discovery, PCR's many biomedical applications gained its inventor the 1993 Nobel prize (shared with Michael Smith for his work on site-directed mutagenesis).
 
-As a method for amplifying DNA, PCR relies on the naturally occurring process of DNA replication by the polymerase enzyme to duplicate DNA (See [Chapter 1](Week1_replication)).
+As a method for amplifying DNA, PCR relies on the naturally occurring process of DNA replication by the polymerase enzyme to duplicate DNA (See [Chapter 1](#chapter1_replication)).
 The reaction uses so-called primers to select which regions of DNA to amplify, and a temperature-cycling scheme to double the number of reaction products in each cycle ({numref}`PCR`).
 PCR primers are relatively short fragments of single stranded DNA that _prime_ the polymerase: they determine where DNA replication should start.
 Primers always come in pairs: by using a forward and a reverse primer at opposing ends and strands of the desired DNA region, it is ensured that copies of DNA can be made from one original DNA region.
@@ -468,7 +451,7 @@ Repeating this process keeps on doubling the number of copies, which is why it i
 A crucial discovery in the invention of the PCR reaction for biomedical applications is the use of a polymerase enzyme that can withstand the high temperatures of the denaturation phase.
 The first thermostable polymerase was extracted from a species of bacteria living in hot springs: _Thermus aquaticus_ (hence, it is called after this species _Taq_ polymerase).
 
-:::{figure} images/Week2/PCR.jpg
+```{figure} images/chapter2/PCR.jpg
 :alt: PCR reaction product doubling
 :width: 100%
 :name: PCR
@@ -476,8 +459,8 @@ The first thermostable polymerase was extracted from a species of bacteria livin
 The polymerase chain reaction uses primers to select a desired region of DNA, and doubles its reaction products every cycle.
 After the first cycle, $2^1=2$ copies are expected, after the second cycle $2^2=4$, after the third cycle $2^3=8$, ...
 Credits: {cite}`PCR_NHGR`.
-:::
-:::::
+```
+`````
 
 PCR primers typically have to meet several requirements to result in a successful PCR product: they have to be biochemically feasible (i.e. denature, anneal, and extend at the right temperature), they have to be specific (only amplify the region of interest), they should produce a product of a reasonable size (~500-1000 nucleotides, depending on the application), and they should be stable as single stranded DNA.
 The combination of these requirements typically allows primers of ~18-30 nucleotides long.
@@ -485,8 +468,7 @@ To aid in the quick design of potentially successful primers, tools such as [Pri
 For example, Primer-BLAST lets a user upload a sequence of DNA that should be amplified, and can be configured to find primer products of a specific size.
 In addition, putative off-target amplification (to ensure specificity) is checked using BLAST on a database of choice, and several desired temperatures can be configured.
 
-```{admonition} Approximating PCR denaturation temperature $T_m$
-:class: important
+```{important} Approximating PCR denaturation temperature $T_m$
 The temperature at which approximately half of the DNA strands in a solution are in a denatured stated is referred to as the _melting temperature_ $T_m$, and is an important parameter in primer design.
 The exact melting temperature depends on the exact length and nucleotide composition of the DNA fragment, but a useful approximation exists for short sequences.
 This approximation can come in handy for quick checks and predictions.
@@ -499,7 +481,7 @@ where A, C, G, and T are the number of respective nucleotides in the primer.
 ```
 
 ## Comparisons of multiple sequences
-
+(chapter2_multiple_sequence_alignment)=
 ### Multiple sequence alignment
 
 One straightforward observation from a sequence search is that one query sequence is often similar to multiple sequences ({numref}`blast_output`).
@@ -510,13 +492,13 @@ Instead, in cases where we want to compare 3 or more sequences with each other, 
 The objective of performing multiple sequence alignment is to identify matching residues (DNA, RNA, or amino acids) across multiple sequences of potentially differing lengths.
 The resulting alignment can be thought of as a square matrix: rows represent the sequences that we started with, columns represent homologous residues across sequences, and the entries are either residues or gaps ({numref}`msa_concept`).
 
-:::{figure} images/Week2/msa.svg
+```{figure} images/chapter2/msa.png
 :alt: Multiple Sequence Alignment (conceptual)
 :width: 80%
 :name: msa_concept
 
 Conceptual diagram depicting multiple sequence alignment. Colored dots represent similar sequence elements, in the multiple sequence diagram on the right these elements align in vertical columns. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
-:::
+```
 
 %#% INSERT: SOME SECTION ON RELEVANCE OF MSA
 
@@ -532,9 +514,8 @@ Subsequently, the guide tree is used to determine the order in which sequences a
 One way of thinking about this is that progressive alignment creates increasingly large 'blocks' of sequences, where a block is always treated as a unit (e.g., introducing a gap will happen for all sequences in the block).
 By going through the guide tree, this alignment strategy _progresses_ to the final result, hence the name _progressive alignment_.
 
-```{admonition} Box 2.2: Constructing a guide tree
-:class: tip
-The guide tree that is used by the progressive alignment strategy is typically created with a clustering algorithm that takes as input all pairwise distances between sequences (see [Chapter 3](Week3_neighbor_joining)).
+```{tip} Box 2.2: Constructing a guide tree
+The guide tree that is used by the progressive alignment strategy is typically created with a clustering algorithm that takes as input all pairwise distances between sequences (see [Chapter 3](#chapter3_neighbor_joining)).
 Obtaining these pairwise distances can be done through, e.g., local alignment scores, but another common approach is to count the number of subsequences of length $k$ (also known as $k$-mers) that are present in both sequences.
 The downside of this k-mer based strategy is that it provides a crude distance measure (and is therefore not very accurate), the benefit is that it is very fast.
 
@@ -556,11 +537,10 @@ This process is typically repeated until the score no longer increases (or for a
 
 Since iterative refinement methods typically start with a progressive alignment and improve its score, programs that implement an iterative refinement strategy (e.g., the `FFT-NS-i` method in `mafft`) typically perform better, but also need more time, than programs that are based on progressive alignment (e.g., the `FFT-NS-2` method in `mafft` and the Clustal program) {cite}`katoh_mafft_2014`.
 
-```{admonition} Box 2.3: Scoring and rearranging multiple sequence alignments
-:class: tip
+```{tip} Box 2.3: Scoring and rearranging multiple sequence alignments
 For iterative refinement, various scoring and rearranging strategies exist. Here we outline a common approach for both: the weighted sum-of-pairs scoring function and the partitioning rearrangement strategy.
 
-__Weighted sum-of-pairs scoring__: The sum-of-pairs method calculates and sums all possible pairwise alignment scores. The weighted version consists of adding specific weighing factors to each pair, where the weights are determined by the [phylogenetic relationship](chapter3) between the sequences.
+__Weighted sum-of-pairs scoring__: The sum-of-pairs method calculates and sums all possible pairwise alignment scores. The weighted version consists of adding specific weighing factors to each pair, where the weights are determined by the [phylogenetic relationship](#chapter3) between the sequences.
 
 __Partitioning rearrangement__: Following a guide tree, the multiple sequence alignment is partitioned into two sub-alignments (or blocks) along each branch of the tree. Each pair of blocks is then realigned, but the resulting alignment is only kept if the score of the realigned blocks has increased.
 ```
@@ -572,8 +552,7 @@ One possible interpretation is the identification of (and search for) commonly o
 A frequently used term for a commonly occurring sequence pattern is __motif__, which we will use from now on.
 Motifs can be found by summarizing the _columns_ of the multiple sequence alignment, in an attempt to describe commonly occurring residues across all sequences.
 
-```{admonition} Note 2.5: Multiple sequence alignments vs. motifs
-:class: note
+```{note} Note 2.5: Multiple sequence alignments vs. motifs
 Since motifs are based on multiple sequence alignments, it may seem tempting to use the terms interchangeably. A key distinction is that a motif always represent a commonly occurring pattern, whereas a multiple sequence alignment can also contain regions of low conservation/similarity. In addition, one multiple sequence alignment can contain multiple motifs.
 ```
 
@@ -585,7 +564,7 @@ In pattern strings, unambigous positions are represented by single letters and t
 Positions in the MSA with more than one character are represented by multiple characters in between square brackets.
 A pattern string containing, for example, the pattern `[AG]` indicates that one position in the motif can be either `A` or `G`.
 As such, pattern strings take inspiration from [regular expressions](https://en.wikipedia.org/wiki/Regular_expression).
-Various types of pattern strings exist; for example, `PROSITE` __REF__ strings used in the [Prosite database](Week1_prosite) contain the syntax for representing positions in a motif where the residue is irrelevant (marked by an `*`).
+Various types of pattern strings exist; for example, `PROSITE` __REF__ strings used in the [Prosite database](#chapter1_prosite) contain the syntax for representing positions in a motif where the residue is irrelevant (marked by an `*`).
 Pattern strings are capable of representing some variation in the motif, but they cannot express how likely the occurrence of specific variants is (in the example of `[AG]`, both `A` and `G` are equally likely to occur).
 
 To express the likelihood of a specific residue occurring at a specific position, a __Position Specific Scoring Matrix (PSSM)__ can be used ({numref}`motif_concept`D).
@@ -601,21 +580,21 @@ Every position in the sequence logo represents a position in the MSA.
 The total height of the logo at a position indicates the _information_ that this column contains, i.e., an unambiguous position has a high information content, whereas a position with equal frequencies of characters has a low information content.
 Additionally, the characters are scaled proportional to their probability of being observed at their respective positions.
 
-:::{figure} images/Week2/msa-pattern-pssm-logo.svg
+```{figure} images/chapter2/msa-pattern-pssm-logo.png
 :alt: Various representations of a motif
 :width: 60%
 :name: motif_concept
 
 Conceptual diagram depicting various representations of a conserved motif. __A:__ Multiple sequence alignment (MSA) of 5 sequences and 7 positions. __B:__ Consensus sequence. __C:__ Pattern string. __D:__ Position Specific Scoring Matrix (PSSM). __E:__ Sequence logo.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
-:::
+```
 
-
+(chapter2_phmms)=
 ### Profile hidden Markov models (pHMMs)
 
 The previous sections on multiple sequence alignments and motifs explained some basics of how collections of similar sequences can be summarized and used.
 In this section, we highlight a powerful approach for using the information in MSAs to perform sequence search and comparison: __profile hidden Markov models (pHMMs)__.
-Some of the fundamentals of general hidden Markov models have been covered in [Chapter 1](chapter1); here we introduce how a few simple adaptations to the general concept of HMMs unlocks a powerful sequence search approach.
+Some of the fundamentals of general hidden Markov models have been covered in [Chapter 1](#chapter1); here we introduce how a few simple adaptations to the general concept of HMMs unlocks a powerful sequence search approach.
 
 We can think of a profile hidden Markov model as an extension of a position specific scoring matrix.
 Like a PSSM, a pHMM contains probabilities of observing certain characters at certain positions in an MSA.
@@ -626,7 +605,7 @@ A graphical representation of a simple profile HMM can be seen in {numref}`simpl
 Just like for PSSMs, a probabilistic score can be calculated for a novel sequence matching an existing HMM.
 Efficient algorithms for working with pHMMs exist and have been implemented in for example the [HMMer suite](http://hmmer.org/).
 
-:::{figure} images/Week2/hmm.svg
+```{figure} images/chapter2/hmm.png
 :alt: DNA profile HMM with three positions and three states (match, insertion, deletion)
 :width: 60%
 :name: simple_hmm
@@ -635,10 +614,9 @@ Schematic representation of a simple DNA profile HMM containing all model probab
 The model consists of three types of hidden states: match (yellow square), deletion (red circle), and insertion (blue diamond).
 Emission probabilities are indicated inside the hidden states, transition probabilities between hidden states are indicated next to arrows.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
-:::
+```
 
-```{admonition} Box 2.4: Calculating the probability of a sequence
-:class: tip
+```{tip} Box 2.4: Calculating the probability of a sequence
 In principle, the information in {numref}`simple_hmm` is enough to calculate the probability of a sequence belonging to this pHMM.
 For example, the sequence `GAT` represented by match states would get a probability of $(0.8 * 0.6) * (0.4 * 0.7) * (0.3 * 0.4) * 0.8 = 0.013$.
 We arrive at this number by multiplying all relevant transition and emission probabilities.
@@ -648,18 +626,16 @@ Also, we do not expect that you can perform these calculation by hand.
 ```
 
 
-```{admonition} Sequence search with MSAs
-:class: important
+```{important} Sequence search with MSAs
 The ability to convert a multiple sequence alignment into a collection of probabilities (e.g., PSSMs or pHMMs) makes it possible to calculate the probability of a novel sequence _belonging_ to the multiple sequence alignment.
 This technique generally allows for a more sensitive approach than searching based on pairwise alignments (e.g., with BLAST).
 In practice, this means that matching sequences can be identified over larger evolutionary distances.
 Tools that implement some version of this approach are `psiBLAST` (which uses PSSMs) and various `HMMer` tools (all using pHMMs).
 ```
 
-```{admonition} Box 2.5: pHMMs in databases
-:class: tip
+```{tip} Box 2.5: pHMMs in databases
 The ability to group biological sequences based on conserved/co-occurring regions and subsequently using this grouping for sequence search is exploited in a wide range of biological sequence databases.
-Some of these databases have been introduced in [Chapter 1](chapter1); here we briefly outline a few more details on how HMMs are incorporated into many of these resources, using [Pfam](Week1_pfam) as an example.
+Some of these databases have been introduced in [Chapter 1](#chapter1); here we briefly outline a few more details on how HMMs are incorporated into many of these resources, using [Pfam](#chapter1_pfam) as an example.
 All entries in the Pfam database are represented by profile HMMs.
 The entries are subdivided into one of six categories: family, domain, repeat, conserved site, coiled coil, or disordered.
 The main distinction between these six categories is the length of the matching sequences: a _family_ Pfam HMM is expected to match across the entire length of a protein sequence, a _conserved site_ is typically only a small region in a protein.
@@ -670,79 +646,79 @@ As such, multiple Pfam HMMs can match a given protein sequence. The combination 
 
 This glossary contains the most important terms from this chapter.
 
-:::{admonition} Glossary
+`````{admonition} Glossary
 :class: important
 ```{glossary}
 Affine gap costs
-  Alignment scoring scheme that distinguishes between gap opening and gap extension costs
+:  Alignment scoring scheme that distinguishes between gap opening and gap extension costs
 
 BLAST
-  Basic Local Alignment Search Tool
+:  Basic Local Alignment Search Tool
 
 BLOSUM
-  BLOck SUbstitution Matrix - a group of protein substitution matrices
+:  BLOck SUbstitution Matrix - a group of protein substitution matrices
 
 Consensus sequence
-  Sequence of most frequently occurring residues in an alignment
+:  Sequence of most frequently occurring residues in an alignment
 
 E-value
-  Expectation value - the number of hits with the observed score or higher that you expect to see by chance in the database (e.g., with BLAST)
+:  Expectation value - the number of hits with the observed score or higher that you expect to see by chance in the database (e.g., with BLAST)
 
 Global alignment
-  Alignment strategy, where the complete sequences are aligned
+:  Alignment strategy, where the complete sequences are aligned
 
 Guide tree
-  A tree based on clustering of the sequences based on their pairwise distances that is used for constructing MSAs
+:  A tree based on clustering of the sequences based on their pairwise distances that is used for constructing MSAs
 
 Heuristic algorithm
-  A method that is not guaranteed to find the solution with the best score, but instead employs rules-of-thumb that generally lead to good results
+:  A method that is not guaranteed to find the solution with the best score, but instead employs rules-of-thumb that generally lead to good results
 
 Homology
-  Homologous sequences share a common ancestor
+:  Homologous sequences share a common ancestor
 
 Iterative refinement
-  Heuristic to improve an MSA
+:  Heuristic to improve an MSA
 
 Local alignment
-  Alignment strategy, where regions of local similarity are identified
+:  Alignment strategy, where regions of local similarity are identified
 
 Motif
-  Commonly occurring sequence pattern
+:  Commonly occurring sequence pattern
 
 MSA
-  Multiple sequence alignment - alignment of more than two sequences
+:  Multiple sequence alignment - alignment of more than two sequences
 
 Pairwise sequence alignment
-  Alignment of two sequences by introducing gaps such that a score is maximized
+:  Alignment of two sequences by introducing gaps such that a score is maximized
 
 PAM
-  Point Accepted Mutation - a group of protein substitution matrices
+:  Point Accepted Mutation - a group of protein substitution matrices
 
 PCR
-  Polymerase chain reaction
+:  Polymerase chain reaction
 
 pHMM
-  profile hidden Markov model - probabilistic representation of an MSA that allows to search sequences against domain databases
+:  profile hidden Markov model - probabilistic representation of an MSA that allows to search sequences against domain databases
 
 Primers
-  Short fragments of single stranded DNA that are used during PCR to prime the polymerase
+:  Short fragments of single stranded DNA that are used during PCR to prime the polymerase
 
 Progressive alignment
-  Heuristic method of MSA building based on a guide tree
+:  Heuristic method of MSA building based on a guide tree
 
 Protein identity
-  Number of identical amino acids in a pairwise alignment divided by the alignment length
+:  Number of identical amino acids in a pairwise alignment divided by the alignment length
 
 Protein similarity
-  Number of similar and identical amino acids in a pairwise alignment divided by the alignment length
+:  Number of similar and identical amino acids in a pairwise alignment divided by the alignment length
 
 PSSM
-  Position Specific Scoring Matrix
+:  Position Specific Scoring Matrix
 
 Sequence logo
-  Graphical representation of an alignment showing the information in that column
+:  Graphical representation of an alignment showing the information in that column
 ```
-:::
+`````
 ---
 
 ## Practical assignments
@@ -757,7 +733,8 @@ Make sure that you develop your practical skills now, in order to apply them dur
 
 **Note, the answers will be published after the practical!**
 
-:::::{admonition} _Assignment I: Protein sequence BLAST of Vps36 (30 minutes)_
+
+```{exercise} Protein sequence BLAST of Vps36, 30 minutes
 
 Finding homologs of proteins is a common task in biology, since the presence of homologs can tell us something about the function of the protein and in which other species it can be found.  Thus, we first practise finding homologs using BLAST. We want to find homologs of the yeast protein Vps36, the Vacuolar protein-sorting-associated protein 36. To this end, we search in  different databases and compare the results.
 1. Retrieve the protein sequence of Vps36p from the yeast S. cerevisiae (NP_013521.3) from NCBI in fasta format. (Note: you can download it into a file or leave the tab open and use copy/paste). What does the fasta format look like? I.e. how is the sequence and the additional information (name) of the sequence stored?
@@ -768,10 +745,10 @@ Finding homologs of proteins is a common task in biology, since the presence of 
 6. Next, we want to find more homologous sequences; thus we search in the ClusteredNR database. How many hits do you find? Look at the last hit, do you think that all similar sequences in that database have been found?
 7. Perform the same search as in (6), but now allow for finding a larger number of hits (Change Max target sequences under Algorithm parameters to the maximum available). How many hits do you find? Would you consider all of them as homologous to the yeast Vps36?
 8. Go back to the Swissprot results and look at the first hit that is not the query sequence itself. Compare the blast results (score, query coverage, E-value, percent identity, alignment length) to the hit of the same species found in ClusteredNR. What do you observe?
-:::::
+```
 
 
-:::::{admonition} _Assignment II: Some more BLAST, with flavors (60 minutes)_
+```{exercise} Some more BLAST, with flavors, 60 minutes
 
 Blast cannot only be used to search protein sequences in protein databases with blastp, but also offers different blast flavors that either allow to search in databases of different type (see {numref}`blast_types`) or with alternative search strategies and also to restrict the search to particular species.
 Here we explore these strategies by searching for homologs of the yeast Vps36p in fungi and other organisms.
@@ -791,18 +768,18 @@ Generate a multi-fasta file of 10 sequences: The first 9 hits from the previous 
 (Hint: you can mark sequences and save them by clicking on Download -> Fasta (complete sequences); use a text editor to add the original sequence manually).
 12. We will use [M-Coffee](https://tcoffee.crg.eu/apps/tcoffee/do:mcoffee) from the [T-Coffee suite](https://tcoffee.crg.eu/apps/tcoffee/index.html). This program uses multiple other tools to compute several multiple sequence alignments and combines them into one final alignment. The output includes a color code showing the agreement between the methods. Upload your multi-fasta file and run it with default parameters. Look at the estimated alignment. What can you say about the overall alignment quality? Where can you find regions of high and low agreement?
 13. Would you conclude that these sequences are homologous across their entire length? Why/why not?
-:::::
+```
 
-:::::{admonition} _Assignment III: Looking for distant homologs (20 minutes)_
+```{exercise}Looking for distant homologs, 20 minutes
 
 In addition to BLAST, other methods for homology search exist and some of them are particularly useful for finding distant homologs. Here, we want to work with one of these tools, [HMMER](https://www.ebi.ac.uk/Tools/hmmer/home).
 1. We will first perform a search with phmmer. phmmer can be used like BLAST, it searches a sequence against a sequence database. Internally, phmmer builds a profile from your single query sequence using BLOSUM62 and gaps. This way, it is more _sensitive_, i.e., it is expected to find more distant homologs compared to BLAST. Use phmmer to search Vps36p against the Swissprot database. How many hits do you find? How do they compare to the results in Assignment I question 2?
 2. Next we try to find even more distant homologs using the HMM-based tool jackhmmer. Read the first paragraph [here](http://cryptogenomicon.org/interactive-iterative-searches-using-jackhmmer.html) to learn about this tool. How does the method find more hits found in subsequent iterations?
 3. Run jackhmmer with the default database. How many hits do you find and how do they distribute across the taxonomy?
 4. Start the second iteration with the button on top. How many hits do you get now? Compare the taxonomy to the previous iteration. What do you observe?
-:::::
+```
 
-:::::{admonition} _Assignment IV: Analyses of the PLT1 family - part 1 (60 minutes)_
+```{exercise} Analyses of the PLT1 family - part 1, 60 minutes
 
 Stem cells are undifferentiated cells that can differentiate into specialized cells and therefore are crucial during embryonic development of different tissues and for growth.
 In plants, such as the thale cress _Arabidopsis thaliana_, stem cells are found in specific regions in the roots and shoots, thereby providing a continuous supply of specialized cells required for these tissues.
@@ -824,10 +801,10 @@ Here, we will use bioinformatics approaches to analyse PLT1 to discover if it is
   Obtain the amino acid sequence of the first and second AP2 domain of PLT1 that was found in InterPro and perform a pairwise sequence alignment with algorithms you can find on the [EBI website](https://www.ebi.ac.uk/jdispatcher/psa).
   First perform a global alignment using the Needleman-Wunsch algorithm (Needle). Choose protein alignment and add the protein sequence of each of the protein domain sequences of PLT1. What is the overall identity and similarity between the two domains, and why do these two values differ?
 12. Now perform a local alignment using the Smith-Waterman algorithm. Do you expect to observe large differences between the global and the local alignment? Explain why.
-:::::
+```
 
 
-:::::{admonition} _Assignment V: Analyses of the PLT1 family - part 2, finding homologs (30 minutes)_
+```{exercise} Analyses of the PLT1 family - part 2, finding homologs, 30 minutes
 
 After we analysed the PLT1 sequence, we want to find potential homologs of PLT1 in the thale cress _Arabidopsis thaliana_.
 We will use BLAST to identify protein sequences in publicly available databases with sufficiently high similarity scores such that these are likely homologs of PLT1.
@@ -839,10 +816,10 @@ We will use BLAST to identify protein sequences in publicly available databases 
 6. Now we want to focus on homologs in _A. thaliana_ (click on _A. thaliana_ in popular organism). How many hits do you find in _A. thaliana_?
 7. On the right part of the output page, you can find a graphical overview of the alignment (aligned part highlighted as thick bar). You can also click on these to see the aligned regions. If you look at the first ten sequences, what do you observe regarding the aligned region, and what does this suggest? Is this what you would expect from a BLAST search, and why?
 8. Save the first ten database hits in fasta format. Note: UniProt provides an alignment option, which provides the easiest way to get all sequences of interest: Mark them -> click Align -> click Align selected results -> copy the sequences from the window into a text file, take care to copy the whole 10 sequences.
-:::::
+```
 
 
-:::::{admonition} _Assignment VI: Analyses of the PLT1 family - part 3, conservation (30 minutes)_
+```{exercise} Analyses of the PLT1 family - part 3, conservation, 30 minutes
 
 Next, we want to explore the conservation of the PLT1 family identified in the previous assignment.
 To this end, we use multiple sequence alignments.
@@ -853,9 +830,9 @@ To this end, we use multiple sequence alignments.
 5. Display your first multiple sequence alignment (question 1) in an [alignment viewing program](https://www.ebi.ac.uk/jdispatcher/msa/mview). Locate the start of the first AP2 domain in the alignment (Hint: look at the Pfam logo and try to find the first 2 highly conserved positions). Where does the domain start? Look at the first 10 positions of the domain and compare the conservation in the alignment to the Pfam logo. What do you observe?
 6. Next, we try a different alignment tool: [M-Coffee](https://tcoffee.crg.eu/apps/tcoffee/do:mcoffee) from the [T-Coffee suite](https://tcoffee.crg.eu/apps/tcoffee/index.html). Does that tool provide a good global alignment? Why/why not?
 7. The T-Coffee suite also includes a program to extract reliable regions from an alignment: the Core/TCS tool. We want to use this tool to extract reliable columns from our alignment. Use the button under "Send results" -> Core/TCS at the bottom to run it, then click "Submit". A fasta file, where only the well aligned columns are included, can be downloaded at the bottom ("fasta_aln file"). Display this file in mview. What can you say about the quality of this alignment?
-:::::
+```
 
-:::::{admonition} _Assignment VII: Motif discovery in bacteria (20 minutes)_
+```{exercise} Motif discovery in bacteria, 20 minutes
 
 The bacterial immune system CRISPR/Cas encodes the defense sequences to target mobile genetic elements in the CRISPR (clustered regularly interspaced short palindromic repeats) locus, where the defense sequences are located between repeats.
 Here we will use motif discovery to determine the repeat sequences.
@@ -863,9 +840,9 @@ Here we will use motif discovery to determine the repeat sequences.
 2. Go the the first `repeat_region` feature. Where in the genome is it located? Retrieve the sequence of this feature (Hint: click on `repeat_region` and then on `Fasta` in the bottom right).
 3. Use MEME and MAST to discover the motif. Go to the [MEME suite](https://meme-suite.org/) and click on MEME. Under Input, select "Type in sequences" from the dropdown menu to paste your fasta sequence. Choose the correct option under "How do you expect motif sites to be distributed in sequences?" and select one motif to find.
 4. After running the search, retrieve the MAST HTML output. Which motif do you find and how often does it occur in the sequence? Compare the motif to the repeat annotated in RefSeq. What do you observe?
-:::::
+```
 
-:::::{admonition} _Assignment VIII: Primer design for the Phytophthora infestans effector gene Avr1 (30 minutes)_
+```{exercise} Primer design for the Phytophthora infestans effector gene Avr1, 30 minutes
 
 _Phytophthora infestans_ is the causal agent of tomato and potato late blight disease.
 Potato late blight had significant historic impact in Europe and North America as it led to the Great Famine in Ireland in the middle of the 19th century, where one million inhabitants of Ireland died and another million emigrated to the United States of America. _P. infestans_, as many other plant pathogens, utilizes so-called effector proteins to establish themselves in susceptible plant hosts. The _Avr1_ gene in _P. infestans_ encodes an effector _Avr1_ that contributes to virulence in susceptible potato plants, yet is recognized by the plant immune system in some resistant potato varieties. Therefore, to avoid recognition by the plant immune system, some _P. infestans_ isolates lost the _Avr1_ gene. Here, we will look for the presence of _Avr1_ by designing primers for its sequence (XM_002896847.1). Recently, a farmer collected different _P. infestans_ isolates from his fields around Wageningen, and the farmer wants to know if these isolates contain _Avr1_. Here, we aim to design primers that can be used to detect the presence of the _Avr1_ gene in _P. infestans_.  
@@ -877,10 +854,9 @@ Potato late blight had significant historic impact in Europe and North America a
 6. If you place your mouse over the primer pair in the graphical overview, you can save the sequence of the primer and the product as a FASTA formatted file. Moreover, you can also directly search the product in the NCBI databases using BLAST. Why is it useful to save such a primer sequence?
 7. BLAST the product of 'Primer pair 2', set the Max target sequences to the maximum and leave all other settings to default. How many hits do you find in the database that match your product? Can you imagine why PrimerBLAST indicated that your primer pair is specific?
 8. PCR cannot only amplify regions from the genome, but also regions from mRNA (mRNA needs to be first converted into cDNA). When performing this type of PCR, one tries to design primer pairs that span an intron in the gene of interest (this is also an option in PrimerBLAST). Can you speculate why primers spanning an intron can be helpful?
-:::::
+```
 
-:::::{admonition} **Project Preparation Exercise**
-:class: important
+```{important} **Project Preparation Exercise**
 
 We continue the project exercise from chapter 1.
 Both ARF5 and IAA5 belong to large gene families in _A. thaliana_.
@@ -894,11 +870,7 @@ You may include up to two figures or tables.
 1. **Materials & Methods** What did you do? Which data, databases and tools did you use, and why did you choose them? What important settings did you select?
 2. **Results** What did you find, what are the main results? Report the relevant data, numbers, tables/figures, and clearly describe your observations.
 3. **Discussion & Conclusion** Do the results make sense? Are they according to your expectation or do you see something surprising? What do the results mean, how can you interpret them? Do different tools agree or not? What can you conclude? Make sure to describe the expectations and assumptions underlying your interpretation.
-:::::
-
-## References
+```
 
 ```{bibliography}
-:filter: docname in docnames
-:labelprefix: 2W
 ```

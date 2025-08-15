@@ -1,5 +1,16 @@
-# Introduction to bioinformatics
-
+---
+title: Introduction to Bioinformatics
+label: intro
+authors:
+  - dickderidder
+  - annekupczok
+  - rensholmer
+  - freekbakker
+  - justinvanderhooft
+  - judithrisse
+  - jorgenavarro
+  - tomersardjoe
+---
 ## What is bioinformatics?
 
 The field of bioinformatics deals with research, development and application
@@ -13,9 +24,9 @@ The first activities in bioinformatics trace back to the 1950s, when
 researchers such as Frederick Sanger started to experimentally elucidate the
 sequences of proteins and - later - DNA.  Margaret Dayhoff was among the
 first to develop algorithms to analyse such sequences
-{cite}`dayhoff_comprotein_1962`.  The term "bioinformatics" was subsequently coined
+[@dayhoff_comprotein_1962]. The term "bioinformatics" was subsequently coined
 by Paulien Hogeweg and Ben Hesper in 1970
-{cite}`hesper_bioinformatics_2021`, to describe "the study of informatic
+[@hesper_bioinformatics_2021], to describe "the study of informatic
 processes in biotic systems", and gradually became used to denote the entire
 field.
 
@@ -59,7 +70,7 @@ sequence, as illustrated in Figure {numref}`overview`.
 :name: overview
 
 Overview of the chapters in this book.
-Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) {cite}`own_I_2024`.
+Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) [@own_I_2024].
 :::
 
 ## Why a new book?
@@ -81,9 +92,11 @@ The five steps along the journey above are reflected in a setup with five
 chapters, that each contain basic text, various boxes with different types
 of material (see below), practical exercises and references:
 
-```{tableofcontents}
-
-```
+1. [Genes, Proteins, Databases, Genome annotation](#chapter1)
+2. [Alignment, Sequence search, Primer design](#chapter2)
+3. [Pylogenetics and tree building](#chapter3)
+4. [Protein structure prediction](#chapter4)
+5. [Omics data analysis](#chapter5)
 
 After some years of development and streamlining, we have now reached the stage 
 that we feel it is ready to release it to the community as an online textbook, free
@@ -103,10 +116,9 @@ that all material (figures etc.) is only re-used when copyright allows it,
 but if you still find some material that you believe is incorrectly used or
 cited, please let us know.
 
-<div align=right>Dick de Ridder, Anne Kupczok, Rens Holmer, Freek Bakker, Justin van der
-Hooft, Judith Risse, Jorge Navarro and Tomer Sardjoe</div>
-
-<div align=right>Wageningen, September 2024</div>
+```{epigraph}
+-- Dick de Ridder, Anne Kupczok, Rens Holmer, Freek Bakker, Justin van der Hooft, Judith Risse, Jorge Navarro and Tomer Sardjoe (Wageningen, September 2024)
+```
 
 ### Reading guide
 
@@ -115,33 +127,27 @@ information or are used to highlight and clarify important aspects.  Yellow
 and blue boxes are part of the exam material for this course, green boxes
 provide useful additional information or links.
 
-```{admonition} Important information
-:class: important A yellow box
-indicates important information that you should remember and is definitely
+```{attention} Important information
+Indicates important information that you should remember and is definitely
 part of the exam material.
 ```
 
-```{admonition} Note 1: Noteworthy information
-:class: note Highlighted
-information that is considered part of the exam material.  Notes are
+```{note} Note 1: Noteworthy information
+Information that is considered part of the exam material.  Notes are
 numbered for easy reference.
 ```
 
-```{admonition} Box 1: Additional information
-:class: tip Additional
-information, often times provides extra examples to material mentioned in
+```{tip} Box 1: Additional information
+Information, often times provides extra examples to material mentioned in
 the main text.  Not part of the exam material, but might make exam material
 more clear.  Boxes are numbered for easy reference.
 ```
 
-```{admonition} See also
-:class: seealso
+```{seealso} See also
 Link to external information, like videos or blogs. Not exam material, but might make exam material more clear.
 ```
 
 ## References
 
 ```{bibliography}
-:filter: docname in docnames
-:labelprefix: I
 ```

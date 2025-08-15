@@ -1,0 +1,28 @@
+p {
+    text-align: justify;
+}
+
+div.citation p {
+    text-align: left;
+}
+
+.videoWrapper{
+    text-align: center;
+}
+
+/* Dark mode readability improvements */
+@media (prefers-color-scheme: dark) {
+  /* Default text color for all rows */
+  .aminoacidtable tbody tr,
+  .aminoacidtable tbody tr td {
+    color: black !important;
+  }
+
+  /* Hover behavior */
+  .aminoacidtable tbody tr:hover,
+  .aminoacidtable tbody tr:hover td {
+    background-color: #333 !important;
+    color: white !important;
+  }
+}
+/*DO NOT REMOVE THIS LINE*/
