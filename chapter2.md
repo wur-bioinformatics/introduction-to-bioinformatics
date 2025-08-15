@@ -433,6 +433,7 @@ Which DNA fragments are amplified is determined largely by which PCR __primers__
 To design primers that successfully amplify the DNA of interest, several computational steps are combined.
 This section highlights some of these bioinformatic considerations.
 
+(chapter2_PCR)=
 `````{tip} Box 2.6: The polymerase chain reaction (PCR)
 Invented in 1983 by Kary B. Mullis, the polymerase chain reaction was first published in 1985 in a study on sickle cell anemia {cite}`saiki1985enzymatic`. Ten years after its discovery, PCR's many biomedical applications gained its inventor the 1993 Nobel prize (shared with Michael Smith for his work on site-directed mutagenesis).
 

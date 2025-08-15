@@ -7,7 +7,7 @@ authors:
   - tomersardjoe
 ---
 
-:::{important} Learning outcomes
+```{important} Learning outcomes
 - 1 Understand the biological background, covering the chemical composition and structural differences between DNA and RNA, how these sequences store, replicate and pass genetic information.
 - 2 Learn how genetic information is transcribed and translated into proteins - the central dogma.
 - 3 Know about the physicochemical properties of amino acids.
@@ -15,7 +15,7 @@ authors:
 - 5 Understand the concepts of genome annotation and gene prediction and how they combine computational methods and biological evidence to decode genomic content.
 - 6 Familiarize yourself with essential databases and file formats that organize and store biological sequence and annotation data.
 - 7 Be aware how standardized ontologies help structure biological metadata and ensure data interoperability and reusability.
-:::
+```
 
 ## Biological background
 
@@ -43,22 +43,22 @@ DNA and RNA are comprised of monomers called {term}`Nucleotide`s, which are comp
 - A **phosphate** group that is attached to the 5' position of the sugar.
 - A **base** that is attached to the 1' position of the sugar.
 
-:::{figure} images/chapter1/nucleotide.jpg
+```{figure} images/chapter1/nucleotide.jpg
 :alt: Nucleotide overview
 :width: 90%
 :name: nucleotide
 
 The components of a nucleotide.
 Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) {cite}`nucleotide_2018`.
-:::
+```
 
 The bases can be divided into two categories: purines (with a double ring structure) and pyrimidines (with a single ring structure) ({numref}`nucleotide`).
 DNA contains A, T, C, and G; whereas RNA contains A, U, C, and G.
 
-:::{important}
+```{important}
 Nucleotides are central molecules in all life.
 You do not need to remember the exact chemical structure, but you need to know the difference between DNA and RNA, the different bases and their category (purines or pyrimidines).
-:::
+```
 
 ---
 
@@ -69,14 +69,14 @@ The sugar and phosphate are on the outside forming the helix's backbone and the 
 Thereby A pairs with T via two hydrogen bonds and C pairs with G via three hydrogen bonds, they are **complementary** bases.
 These pairings are also called Watson-Crick base-pairing, named after the discoverers of DNA.
 
-:::{figure} images/chapter1/dna_alt.jpg
+```{figure} images/chapter1/dna_alt.jpg
 :alt: DNA structure
 :width: 80%
 :name: dna_alt
 
 The DNA structure.
 Credits: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) {cite}`dna_alt_2013`.
-:::
+```
 
 The two strands of the helix run in opposite directions, also called anti-parallel, i.e., one goes from 5' to 3' and the other from 3' to 5' ({numref}`dna_alt`).
 The nucleotide sequence is typically written in 5' to 3' direction.
@@ -87,14 +87,13 @@ For example, the reverse complement of AAGT is ACTT, where both strands are give
 ---
 
 (chapter1_replication)=
-
 ### DNA replication
 
 As the two DNA strands are only connected via hydrogen bonds, they can be separated relatively easily, for example during DNA replication ({numref}`replication_alt`).
 The separated strands each serve as a template on which a new complementary strand is synthesized by the enzyme DNA polymerase in 5' to 3' direction.
 This mode of replication is called semiconservative.
 
-:::{figure} images/chapter1/replication_alt.png
+```{figure} images/chapter1/replication_alt.png
 :alt: Replication
 :width: 50%
 :name: replication_alt
@@ -103,25 +102,24 @@ A) The process of DNA replication.
 Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`replication_a_2013`.
 B) Semiconservative DNA replication, where the two copies each contain one original strand and one new strand.
 Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) modified from {cite}`replication_b_alt_2009`.
-:::
+```
 
 The error rate of DNA replication is remarkably low, about one erroneous base in 10<sup>9</sup> bases.
 This property preserves the genetic information during cell division, and also over generations.
 It also leads to mutations over evolutionary time ({numref}`dna_mutation`), as we will see later ([Substitutions](#chapter1_substitutions)).
 
-:::{figure} images/chapter1/dna_mutation.png
+```{figure} images/chapter1/dna_mutation.png
 :alt: DNA_mutation
 :width: 50%
 :name: dna_mutation
 
 A DNA mutation that occurs during replication.
 Credits: [BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) {cite}`dna_mutation_2020`.
-:::
+```
 
 ---
 
 (chapter1_rna_transcription_splicing)=
-
 ### RNA, transcription, and splicing
 
 During {term}`Transcription`, RNA polymerase reads the template strand (also called noncoding strand) in the 3' to 5' direction ({numref}`transcription`).
@@ -137,7 +135,7 @@ There are four major types of RNA:
 - Transfer RNA ({term}`tRNA`): functions as 'adapter molecule' that serve as the physical link between mRNA and the amino acid sequence of a protein during translation.
 - MicroRNA ({term}`miRNA`): non-coding RNA molecules of 21-23 nucleotides involved in RNA silencing and post-transcriptional regulation of {term}`Gene` expression.
 
-:::{figure} images/chapter1/transcription.png
+```{figure} images/chapter1/transcription.png
 :alt: Transcription
 :width: 70%
 :name: transcription
@@ -145,13 +143,13 @@ There are four major types of RNA:
 RNA is produced by transcribing DNA: as such, it is a direct copy of the information contained in the DNA.
 Where DNA contains thymine (T, indicated in blue), RNA contains uracil (U, indicated in purple).
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_1_2024`.
-:::
+```
 
 In eukaryotes, precursor mRNA molecules undergo {term}`Splicing`.
 During RNA splicing, the spliceosome protein complex removes introns: specific non-coding parts of an mRNA molecule that are not used during translation ({numref}`splicing`), to create mature mRNA.
 Most introns are characterized by a GU and AG dinucleotide motif in the 5' and 3' end respectively.
 
-:::{figure} images/chapter1/splicing.jpg
+```{figure} images/chapter1/splicing.jpg
 :alt: Splicing
 :width: 70%
 :name: splicing
@@ -159,18 +157,17 @@ Most introns are characterized by a GU and AG dinucleotide motif in the 5' and 3
 During splicing, introns are removed from precursor mRNA moleculus to create mature mRNA.
 Most introns contain several canonical elements that help in recognition by the spliceosome and in creating a specific secondary structure of the intronic RNA that facilitates removal: **(1)** 3' splice site, **(2)** poly pyrimidine tract, **(3)** branch site, **(4)** 5' splice site'.
 Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`splicing_2011`.
-:::
+```
 
 ---
 
 (chapter1_translation)=
-
 ### Translation
 
 During protein {term}`Translation`, ribosomes synthesize polypeptides from messenger RNA (mRNA) ({numref}`translation_alt`).
 During this process tRNAs decode the information on the RNA into amino acids, where a codon consisting of three nucleotides encodes the information for one amino acid.
 
-:::{figure} images/chapter1/translation_alt.jpg
+```{figure} images/chapter1/translation_alt.jpg
 :alt: Translation
 :width: 70%
 :name: translation_alt
@@ -178,14 +175,13 @@ During this process tRNAs decode the information on the RNA into amino acids, wh
 The translation process, where ribosomes with tRNA molecules "read" codons on the mRNA using anticodons, which then get translated into their corresponding amino acids.
 These amino acids are linked together by peptide bonds to form a polypeptide chain.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_1_2024`.
-:::
+```
 
-:::{seealso}
+```{seealso}
 The details of transcription and translation differ between prokaryotes and eukaryotes. You can look up Chapters 15 and 16 of [Biology 2e](https://openstax.org/details/books/biology-2e) to learn more.
-:::
+```
 
 (chapter1_genetic_code)=
-
 ### The genetic code
 
 The genetic code shows the correspondence between codons and amino acids ({numref}`geneticcode`).
@@ -198,34 +194,35 @@ There are three codons that do not encode for an amino acid, but instead signal 
 Furthermore, translation generally starts with the start codon AUG encoding methionine.
 More information of how protein information is encoded in genomes can be found in the section on [genome annotation](#chapter1_genome_annotation).
 
-:::{figure} images/chapter1/geneticcode.jpg
+```{figure} images/chapter1/geneticcode.jpg
 :alt: The genetic code
 :width: 80%
 :name: geneticcode
 
 The universal genetic code. Note that exceptions to this code exist, for example the vertebrate mitochondrial code.
 Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) {cite}`geneticcode_2018`.
-:::
+```
 
-:::{important}
+```{important}
 The universal genetic code is very important to understand how information flows from genes to proteins.
 Nevertheless, you do not need to recall it, but can always look it up.
 When needed, it will also be provided in the exam.
-:::
+```
 
+(chapter1_central_dogma)=
 ### The central dogma of molecular biology
 
 According to the central dogma of molecular biology, the flow of genetic information is essentially in one direction: from DNA via RNA to proteins ({numref}`dogma_alt`).
 Nevertheless, there are also genes that do not code for proteins, but where functional RNA is the end product. Furthermore, mobile genetic elements and viruses can encode reverse transcriptases (which can synthesize DNA from an RNA template) or RNA dependent RNA polymerases (which can replicate RNA).
 
-:::{figure} images/chapter1/dogma_alt.jpg
+```{figure} images/chapter1/dogma_alt.jpg
 :alt: Central dogma
 :width: 80%
 :name: dogma_alt
 
 The central dogma of molecular biology.
 Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) modified from {cite}`dogma_alt_2008`.
-:::
+```
 
 ### Proteins
 
@@ -236,13 +233,12 @@ The basic building blocks of proteins are amino acids.
 ---
 
 (chapter1_aminoacids)=
-
 #### Amino acids
 
 An amino acid contains a central carbon atom (called α-carbon, or C<sub>α</sub>) ({numref}`aminoacid`).
 The α-carbon is bound to an amino group (NH<sub>2</sub>), a carboxyl group (COOH), and a hydrogen atom. In addition, each amino acid has a specific residue \(R) group.
 
-:::{figure} images/chapter1/aminoacid.jpg
+```{figure} images/chapter1/aminoacid.jpg
 :alt: Structure of an amino acid
 :width: 60%
 :name: aminoacid
@@ -250,12 +246,12 @@ The α-carbon is bound to an amino group (NH<sub>2</sub>), a carboxyl group (COO
 The structure of an amino acid.
 Four elements are connected to the α-carbon: an amino group, a hydrogen atom, a carboxyl group, and a side chain (R group).
 Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) {cite}`proteins_2018`.
-:::
+```
 
-:::{important}
+```{important}
 Amino acids differ in their chemical properties, which are determined by their R groups.
 It is important to know (by heart) the amino acids, their one-letter and three-letter abbreviation, and their fundamental properties as given in the table.
-:::
+```
 
 ```{list-table} Amino acids and their abbreviations and basic properties
 :header-rows: 1
@@ -363,21 +359,20 @@ In contrast, proline is an amino acid, where the side chain is bonded to the bac
 ---
 
 (chapter1_protein_structure)=
-
 #### Protein structure
 
 A protein is made up of one or more long, folded chains of amino acids (each called a **polypeptide**).
 The 3D structure of a protein is also called its **conformation**.
 The protein conformation is described on four levels - primary to quaternary structure ({numref}`struclevels_alt`).
 
-:::{figure} images/chapter1/struclevels_alt.jpg
+```{figure} images/chapter1/struclevels_alt.jpg
 :alt: The four levels of protein structure
 :width: 60%
 :name: struclevels_alt
 
 The four levels of protein structure.
 Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`struclevels_alt_2008`.
-:::
+```
 
 The structure of a protein is critical for its function.
 For example, in an enzyme, the active site must be in the correct structure to be able to bind the substrate.
@@ -396,28 +391,27 @@ The sequence of amino acids linked by peptide bonds is called the **primary stru
 The protein sequence is determined by the gene sequence encoding the protein.
 The continuous chain of atoms along the protein is also called the **backbone**, it consists of the three backbone atoms (nitrogen, C<sub>α</sub>, carbon).
 
-:::{figure} images/chapter1/peptidebond.jpg
+```{figure} images/chapter1/peptidebond.jpg
 :alt: Peptide bond
 :width: 40%
 :name: peptidebond
 
 A peptide bond connecting two amino acids.
 Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) {cite}`proteins_2018`.
-:::
+```
 
 Each protein has a free amino group on one end, called the **N terminus**.
 The other end has a free carboxyl group, called the **C terminus**.
 
-:::{admonition} Note 1.1: possible polypeptide chains
+```{admonition} Note 1.1: possible polypeptide chains
 :class: note
 As there are 20 distinct amino acids, there can be a huge number of different polypeptide chains, i.e., 20<sup>n</sup> for a polypeptide of length n.
 Most of these potential sequences do not adopt a stable conformation, thus only a tiny fraction of these possibilities exist in nature.
-:::
+```
 
 ---
 
 (chapter1_secondary_structure)=
-
 ##### Secondary structure
 
 Secondary structures are local conformations in the protein that are stabilized by hydrogen bonds between backbone atoms.
@@ -430,7 +424,7 @@ Every helical turn has 3.6 amino acids residues and the side chains stick out of
 The strands have a direction determined by the N- and C-terminus of the protein and are usually depicted as an arrow pointing towards the C-terminus.
 Depending on the direction, strands can align parallel or antiparallel to each other.
 
-:::{figure} images/chapter1/secstructure_alt.png
+```{figure} images/chapter1/secstructure_alt.png
 :alt: Secondary structure elements
 :width: 80%
 :name: secstructure_alt
@@ -438,12 +432,12 @@ Depending on the direction, strands can align parallel or antiparallel to each o
 α-helices and β-sheets are stablized by hydrogen bonds (the dotted lines) between the backbone of proteins, i.e., the side chains are not involved.
 The hydrogen bonds form between the oxygen atom in the C group in one amino acid and the hydrogen in the N group.
 Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) modified from {cite}`secstructure_alt_nd`.
-:::
+```
 
 **Turns** are short secondary structure elements that are stabilized by hydrogen bonds between amino acids that are 1 to 5 peptide bonds away.
 The most common form are β-turns, which connect antiparallel β-strands.
 
-:::{admonition} Note 1.2: Secondary structure amino acid preference
+```{admonition} Note 1.2: Secondary structure amino acid preference
 :class: note
 
 Although secondary structure elements are formed by hydrogen bonds between the backbone, certain amino acids are favoured in secondary structures and others are disfavoured.
@@ -451,7 +445,7 @@ For example, methionine, alanine, leucine, and glutamic acid are favoured in α-
 Also, valine, isoleucine, tyrosine, cysteine, tryptophan, phenylalanine, and threonine are more frequently found in β-sheets, compared to α-helices.
 In turns, glycine, asparagine, proline, and serine are preferred.
 These preferences are used to predict secondary structure elements in proteins (see [chapter 4](#chapter4_secondary_structure_prediction)).
-:::
+```
 
 The peptide bond is very rigid and planar, i.e., it cannot rotate to form the elements of protein structure.
 However, the N-C<sub>α</sub> and the C<sub>α</sub>-C bonds can freely rotate, being only limited by the size and properties of the R-groups.
@@ -465,7 +459,7 @@ The regular secondary structure elements (α-helix and β-sheet) contain consecu
 These regions are typically highly populated in a Ramachandran plot.
 Thus, the Ramachandran plot can be used to assess how plausible a predicted protein structure is.
 
-:::{figure} images/chapter1/phipsi_alt.jpg
+```{figure} images/chapter1/phipsi_alt.jpg
 :alt: Phi, psi, and Ramachandran plot
 :width: 50%
 :name: phipsi_alt
@@ -473,15 +467,15 @@ Thus, the Ramachandran plot can be used to assess how plausible a predicted prot
 A) The φ, and ψ torsion angles of a polypeptide chain. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_1_2024`.
 B) A typical Ramachandran plot. The red regions marked do not have any steric hindrance, yellow areas represent conformations that have steric hindrance, light yellow areas represent conformations that are generally sterically unfavorable, and white areas do not have any allowed conformations.
 Credits: Ramachandran plot modified from [PROCHECK](https://www.ebi.ac.uk/thornton-srv/software/PROCHECK/index.html) {cite}`procheck_1993`.
-:::
+```
 
-:::::{seealso}
+`````{seealso}
 An illustrative animation on φ and ψ.
 
-:::{iframe} https://www.youtube.com/embed/Q1ftYq13XKk?si=cTdZn2Iq8uW22Kf1
+```{iframe} https://www.youtube.com/embed/Q1ftYq13XKk?si=cTdZn2Iq8uW22Kf1
 :width: 100%
-:::
-:::::
+```
+`````
 
 ---
 
@@ -497,30 +491,30 @@ Different types of interactions stabilize the tertiary structure:
 - Hydrophobic R groups that tend to lie in the protein's interior, stabilized by hydrophobic interactions.
 - Disulfide bonds (i.e., covalent bonds between cysteines).
 
-:::{figure} images/chapter1/terstructure.jpg
+```{figure} images/chapter1/terstructure.jpg
 :alt: Tertiary structure interactions
 :width: 80%
 :name: terstructure
 
 Chemical interactions that stabilize the tertiary structure of proteins.
 Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) {cite}`proteins_2018`.
-:::
+```
 
-:::{admonition} Note 1.3: Denaturation
+```{admonition} Note 1.3: Denaturation
 :class: note
 
 The noncovalent bonds that stabilize the protein structure are broken at high temperature.
 Thus, most proteins unfold above about 60°C.
 This process is called denaturation and is generally irreversible.
 When proteins denature, they lose their function.
-:::
+```
 
 **Domains** are distinct functional and/or structural units in a protein and are typically 50 to 350 amino acids long.
 Usually, a domain is responsible for a particular function or interaction, contributing to the overall role of a protein.
 A domain can exist in different contexts with other domains ({numref}`domains`).
 In a multidomain protein, each domain folds independently of the others.
 
-:::{figure} images/chapter1/domains.jpg
+```{figure} images/chapter1/domains.jpg
 :alt: Domain examples
 :width: 70%
 :name: domains
@@ -529,7 +523,7 @@ A) Example of an Src homology 3 (SH3) domain that is involved in protein-protein
 B) The cytoplasmic protein Nck contains multiple SH3 domains.
 C) Domain composition of phospholipase D1, which has multiple functional domains that contribute to its overall function.
 Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) {cite}`domains_2023`.
-:::
+```
 
 ---
 
@@ -543,7 +537,7 @@ Many functional proteins are composed of multiple subunits, they are also called
 The subunits can originate from the same protein sequence (called a homomer) or from different sequences (called a heteromer).
 Proteins consisting of two subunits are also called dimer.
 
-:::{figure} images/chapter1/oligomers.jpg
+```{figure} images/chapter1/oligomers.jpg
 :alt: Examples of oligomers
 :width: 70%
 :name: oligomers
@@ -551,12 +545,11 @@ Proteins consisting of two subunits are also called dimer.
 Examples of oligomers.
 A) Myoglobin, a heteromer of four subunits (PDB structure 1HV4 colored by chain). Credits: {cite}`rcsb_2000,oligomers_a_2001,ngl_2018`.
 B) UDP-galactose 4-epimerase, a homodimer (PDB structure 1EK5 colored by secondary structure). Credits: {cite}`rcsb_2000,oligomers_b_2000,ngl_2018`.
-:::
+```
 
 ---
 
 (chapter1_substitutions)=
-
 #### Substitutions
 
 Mutations in the gene sequence can lead to changes in the primary structure of the protein, e.g., a substitution of one amino acid by a different one.
@@ -564,14 +557,14 @@ Often, such substitutions still lead to highly similar protein structures that p
 Nevertheless, single amino acid substitutions can have severe consequences.
 A prominent example is sickle cell anemia, where a substitution of valine to glutamic acid in hemoglobin β results in a structural change that leads to a distortion in red blood cells ({numref}`sicklecell`).
 
-:::{figure} images/chapter1/sicklecell.jpg
+```{figure} images/chapter1/sicklecell.jpg
 :alt: Sickle cell anemia
 :width: 70%
 :name: sicklecell
 
 Consequences of a substitution in hemoglobin β resulting in sickle cell anemia.
 Credits: Rao, A., Tag, A. Ryan, K. and Fletcher, S. Department of Biology, Texas A&M University.
-:::
+```
 
 %#%[Figure sicklecell is credited but the image is not found on a specific webpage. Is showing credits enough? - Similar to Pearson imagery (Campbell Biology 11th edition Figure 5.19).]
 
@@ -582,22 +575,21 @@ Credits: Rao, A., Tag, A. Ryan, K. and Fletcher, S. Department of Biology, Texas
 There are many styles to view protein molecular structures. Some styles focus on detailed chemical structure, others are targeted at the protein surface.
 For some examples see {numref}`protrep`.
 
-:::{figure} images/chapter1/protrep.jpg
+```{figure} images/chapter1/protrep.jpg
 :alt: Protein representation
 :width: 60%
 :name: protrep
 
 Different representations of the PDB structure 5PEP generated with NGL. Credits: {cite}`rcsb_2000,protrep_1990,ngl_2018`.
-:::
+```
 
-:::{seealso}
+```{seealso}
 Most of the figures in this section are taken from [OpenStax](https://openstax.org/books/biology-2e/pages/3-4-proteins), where you can also find more information on proteins.
-:::
+```
 
 ---
 
 (chapter1_genome_annotation)=
-
 ## Genome annotation
 
 {term}`Annotation` of genomes is the process of deciphering what information is encoded in an organism's DNA.
@@ -607,13 +599,13 @@ Given the large size of any genome, automated procedures are used to identify va
 Each of these bioinformatic procedures typically focuses on identifying one type of element, and as such a complete genome annotation project can be thought of as a pipeline of various procedures.
 The following section describes the most common steps in genome annotation.
 
-:::{admonition} Note 1.4: Alignment algorithms
+```{admonition} Note 1.4: Alignment algorithms
 :class: note
 
 Several steps in the genome annotation process make use of algorithms that can search or align biological sequences, for example the BLAST algorithm.
 [Chapter 2](#chapter2) covers sequence alignment and search in greater detail.
 For now, it is sufficient to know that these algorithms can quickly search very large collections of biological sequences to identify sequences that look similar (what we mean _exactly_ by 'similar' is also part of [chapter 2](#chapter2)).
-:::
+```
 
 (chapter1_repeat_masking)=
 ### Repeat masking
@@ -680,8 +672,7 @@ Like homology-based prediction, this model-based approach works best for closely
 Examples of tools implementing HMM based ab initio prediction are SNAP, GeneMark, and Augustus.
 With the availability of more high quality data (genome sequences and accompanying annotations), approaches based on deep learning and generative AI have proven to frequently perform better than HMM based approaches.
 
-:::{admonition} Note 1.5: Hidden Markov models (HMMs)
-:class: note
+`````{note} Note 1.5: Hidden Markov models (HMMs)
 
 Hidden Markov models ({term}`HMM`s) are useful for the statistical modelling of general sequence characteristics.
 As such they find widespread adoption in bioinformatics to study biological sequences.
@@ -706,7 +697,7 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 ```
 
 [Chapter 2](#chapter2) and [Chapter 4](#chapter4) cover various other applications of HMMs in bioinformatics, such as defining and prediction sequence domains, or transmembrane properties of proteins.
-:::
+`````
 
 ### Evidence/prediction integration
 
@@ -716,7 +707,6 @@ Typically a weighted consensus approach is used: each individual source of evide
 Typically RNA-seq evidence gets a high weight, and various forms of homology evidence can be weighted depending on how closely related they are to the genome of interest.
 
 (chapter1_functional_annotation)=
-
 ### Functional annotation
 
 So far, all described steps in the genome annotation process have dealt with what genes look like on a structural level.
@@ -725,7 +715,7 @@ This functional annotation step consists of using various sequence alignment and
 Several databases of high-quality known functions are often used, which are described in more detail in the next section of this chapter.
 In [Chapter 2](#chapter2_sequence_search) we will learn about approaches how to search these databases efficiently.
 
-:::{admonition} Note 1.6: Visualizing gene structure
+`````{admonition} Note 1.6: Visualizing gene structure
 :class: note
 
 **Gene models**: the genomic structure of a gene (often referred to as a gene 'model') is typically visualized by a set of lines and rectangles with predefined meaning.
@@ -755,12 +745,11 @@ Most visualization elements can be clicked to open pop-up windows with additiona
 
 A screenshot of the JBrowse genome browser showing _Arabidopsis thaliana_ chromosome 1 with a gene that has multiple splice variants. Credits: {cite}`jbrowse_2016`.
 ```
-:::
+`````
 
 ---
 
 (chapter1_databases)=
-
 ## Databases
 
 ### Introduction
@@ -791,9 +780,9 @@ For example, NC_003070.9 is the latest version (version 9) for _Arabidopsis thal
 
 Database entries often link to each other via **cross links**.
 
-:::{seealso}
+```{seealso}
 [Ten Simple Rules for Developing Public Biological Databases](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5104318/) contains additional reading material on what it takes to properly maintain a public database service.
-:::
+```
 
 ---
 
@@ -804,24 +793,24 @@ A GenBank release usually occurs every two months and the most recent [release](
 The latter are genome assemblies or genomes that were not yet completed.
 The complete database is available for download via FTP, but the most convenient way to access individual entries is via the search on the GenBank website ({numref}`genbank_figure`).
 
-:::{figure} images/chapter1/genbank.png
+```{figure} images/chapter1/genbank.png
 :alt: Genbank website
 :width: 100%
 :name: genbank_figure
 
 A screenshot of the GenBank website. Credits: {cite}`genbank_2012`.
-:::
+```
 
-:::{admonition} Additional information
+```{admonition} Additional information
 :class: tip
 
 These days, it is required for publication in most peer-reviewed journals that scientists submit their sequence data to GenBank or an associated database, alongside sufficiently informative meta-data that describes how the data was generated.
-:::
+```
 
 Since data is directly submitted to GenBank, the information for some loci can be highly redundant.
 The sequence records are owned by the original submitter and cannot be altered by someone else.
 
-:::{admonition} Note 1.7: Database redundancy
+```{admonition} Note 1.7: Database redundancy
 :class: note
 
 'Redundancy' in the context of a database refers to identical data that is present more than once.
@@ -831,7 +820,7 @@ The metadata will be different, but the sequence data will be identical, so thes
 
 NCBI hosts several databases that are classified as 'non-redundant', for example [RefSeq non-redundant proteins](https://www.ncbi.nlm.nih.gov/refseq/about/nonredundantproteins/).
 Here, redundancy is defined so that a 'non-redundant protein record always represents one exact sequence that has been observed once or many times in different strains or species'.
-:::
+```
 
 Genbank is part of the [INSDC](https://www.insdc.org/) (International Nucleotide Sequence Database Collaboration).
 The other two member databases are [ENA](https://www.ebi.ac.uk/ena/browser/home) (European Nucleotide Archive) and [DDBJ](https://www.ddbj.nig.ac.jp/index-e.html) (DNA Data Bank of Japan).
@@ -869,14 +858,14 @@ UniProt contains three databases ({numref}`uniprot`):
 - UniProt Reference Clusters ([UniRef](https://www.uniprot.org/help/uniref) - clusters of protein sequences at 100%, 90%, and 50% identity.
 - UniProt Archive ([UniParc](https://www.uniprot.org/help/uniparc) - non-redundant archive of publicly available protein sequences seen across different databases.
 
-:::{figure} images/chapter1/uniprot.jpg
+```{figure} images/chapter1/uniprot.jpg
 :alt: Overview of UniProt
 :width: 70%
 :name: uniprot
 
 The information flow in Uniprot.
 Credits: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) {cite}`uniprot_2021`.
-:::
+```
 
 **UniProtKB** is the central hub for functional information on proteins.
 For each protein it contains the core data (such as sequence, name, description, taxonomy, citation) and as much annotation information as possible.
@@ -946,7 +935,7 @@ A set of GO terms is also provided, which describe the characteristics of the pr
 
 You can get the InterPro annotation for a protein by running a new sequence search ({numref}`interpro-search`), or by by looking up its UniProt accession ({numref}`interpro-browse`).
 
-:::{figure} images/chapter1/interpro-search.png
+```{figure} images/chapter1/interpro-search.png
 :alt: Searching interpro
 :width: 100%
 :name: interpro-search
@@ -955,18 +944,18 @@ Search fields on the InterPro home page, showing text search field (A) and the s
 Selecting the browse tab in the top menu \(C) allows access to a browse search, (e.g., search for member database signature, InterPro entry type), see also {numref}`interpro-browse`.
 You can also search for a particular domain architecture (D).
 Credits: {cite}`interpro_2022`.
-:::
+```
 
-:::{figure} images/chapter1/interpro-browse.png
+```{figure} images/chapter1/interpro-browse.png
 :alt: Browsing interpro
 :width: 100%
 :name: interpro-browse
 
 Browse the annotated proteins in Interpro and search for a UniProt accession.
 See resulting entry in ({numref}`interpro-prot`). Credits: {cite}`interpro_2022`.
-:::
+```
 
-:::{figure} images/chapter1/interpro-prot.png
+```{figure} images/chapter1/interpro-prot.png
 :alt: A UniProt entry in Interpro
 :width: 100%
 :name: interpro-prot
@@ -974,7 +963,7 @@ See resulting entry in ({numref}`interpro-prot`). Credits: {cite}`interpro_2022`
 The result page when looking up UniProt accession [A0A076FRI5](https://www.ebi.ac.uk/interpro/protein/UniProt/A0A076FRI5/) in InterPro.
 You can see the family and domain annotation and on the right the accessions in InterPro and in the member databases.
 You can click on each of these accessions to get to the entry information. Credits: {cite}`interpro_2022`.
-:::
+```
 
 You may have noticed a colored letter before each InterPro accession, e.g., F before IPR011835 or D before IPR001296 ({numref}`interpro-prot`).
 These icons denote the different InterPro entry types:
@@ -985,18 +974,18 @@ These icons denote the different InterPro entry types:
 - Repeat - typically a short amino acid sequence that is repeated within a protein.
 - Site - a group of amino acids with certain characteristics that may be important for protein function, e.g., active sites or binding sites
 
-:::{figure} images/chapter1/interpro-types.png
+```{figure} images/chapter1/interpro-types.png
 :alt: Interpro types
 :width: 40%
 :name: interpro-types
 
 The icons for the different InterPro entries (homologous superfamily, family, domain, repeat or site).
 Credits: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) {cite}`interpro-types_2020`.
-:::
+```
 
-:::{seealso}
+```{seealso}
 You can find more information on InterPro entry types with examples [here](https://www.ebi.ac.uk/training/online/courses/interpro-functional-and-structural-analysis/what-is-an-interpro-entry/interpro-entry-types/).
-:::
+```
 
 (chapter1_pfam)=
 
@@ -1008,14 +997,14 @@ We will learn more on HMMs in [Chapter 2](#chapter2_phmms).
 Pfam is now integrated in InterPro.
 Each Pfam domain can be represented with a logo, where the amino acids frequent at a particular position are represented as larger letters ({numref}`pfam-profile`).
 
-:::{figure} images/chapter1/pfam-profile.png
+```{figure} images/chapter1/pfam-profile.png
 :alt: Pfam profile
 :width: 70%
 :name: pfam-profile
 
 The Pfam logo for PF12924.
 Credits: {cite}`interpro_2022`.
-:::
+```
 
 ---
 ### File formats
@@ -1046,26 +1035,26 @@ Thus, when creating them on your computer, take care to save in this format, and
 
 On a Windows computer, plain text files can for example be created with the Notepad program ({numref}`notepad`).
 
-:::{figure} images/chapter1/notepad.png
+```{figure} images/chapter1/notepad.png
 :alt: Notepad editor
 :width: 70%
 :name: notepad
 
 A screenshot of Notepad on Windows.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_1_2024`.
-:::
+```
 
 On a Mac, plain text files can for example be created with the TextEdit program ({numref}`textedit`).
 Take care to set the settings to plain text.
 
-:::{figure} images/chapter1/textedit.png
+```{figure} images/chapter1/textedit.png
 :alt: TextEdit editor
 :width: 100%
 :name: textedit
 
 A screenshot of TextEdit on Mac.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_1_2024`.
-:::
+```
 
 ```{admonition} See also
 :class: seealso
@@ -1077,14 +1066,14 @@ A **fasta file** stores a DNA or protein sequence ({numref}`fasta`).
 Information on the sequence is found in the header (starting with `>`), which is on one line and the sequence can go over multiple lines.
 A multi-fasta file stores multiple sequences.
 
-:::{figure} images/chapter1/fasta.png
+```{figure} images/chapter1/fasta.png
 :alt: Fasta file
 :width: 50%
 :name: fasta
 
 A sequence in fasta format.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_1_2024`.
-:::
+```
 
 The **GenBank file format** is a popular format to represent genes or genomes.
 [Here](https://www.ncbi.nlm.nih.gov/Sitemap/samplerecord.html) you can find an example GenBank record with annotations.
@@ -1121,13 +1110,13 @@ Ontologies play a crucial role in bioinformatics because they facilitate:
     They enable computer systems to process data more accurately, leading to more meaningful analyses and discoveries.
 3.  **Scientific reasoning**: by organizing information in a logical and structured way, ontologies help researchers generate hypotheses, design experiments, and validate findings more effectively.
 
-:::{admonition} Note 1.9: FAIR principles
+```{admonition} Note 1.9: FAIR principles
 :class: note
 
 As described above, ontologies facilitate scientific reproducibility.
 A key concept in scientific reproducibility are the FAIR principles, with FAIR standing for Findable, Accessible, Interoperable, and Reusable.
 This reader does not describe them in detail, but you should read the following online resource to familiarize yourself with the [FAIR principles](https://www.go-fair.org/fair-principles/).
-:::
+```
 
 Ontologies typically form a hierarchy, where specific terms point to more generic terms.
 More generally, most ontologies are represented as a graph, where ontology terms are the nodes and relationships between terms are edges.
@@ -1147,12 +1136,12 @@ The [Gene Ontology](http://geneontology.org/) (GO) is a knowledgebase for the fu
   Can be cellular compartments (e.g., [mitochondrion](http://amigo.geneontology.org/amigo/term/GO:0005739)) or macromolecular complexes of which they are part (e.g., the [ribosome](http://amigo.geneontology.org/amigo/term/GO:0005840)).
 - Biological Process: the larger biological programs composed of multiple molecular activities, for example [DNA repair](http://amigo.geneontology.org/amigo/term/GO:0006281) or [signal transduction](http://amigo.geneontology.org/amigo/term/GO:0007165).
 
-:::{admonition} Note 1.10: Molecular pathway?
+```{admonition} Note 1.10: Molecular pathway?
 :class: note
 
 A biological process is not equivalent to a molecular pathway.
 At present, the gene ontology does not represent the dynamics or dependencies that would be required to fully describe a pathway.
-:::
+```
 
 A good example of how ontologies are represented as graphs is the biological process [hexose biosynthetic process](http://amigo.geneontology.org/amigo/term/GO:0019319), which has two parents: [hexose metabolic process](http://amigo.geneontology.org/amigo/term/GO:0019318) and [monosaccharide biosynthetic process](http://amigo.geneontology.org/amigo/term/GO:0046364).
 This reflects that biosynthetic process is a subtype of metabolic process and a hexose is a subtype of monosaccharide. ({numref}`go`).
@@ -1160,14 +1149,14 @@ This reflects that biosynthetic process is a subtype of metabolic process and a 
 Edges between GO terms in the GO hierarchy can represent various relationships between genes and gene products.
 The four main relationship types used in the gene ontology are 'is a', 'part of', 'has part', and 'regulates' (see {numref}`so`).
 
-:::{figure} images/chapter1/go.png
+```{figure} images/chapter1/go.png
 :alt: Go hierarchy
 :width: 55%
 :name: go
 
 An extract of the Gene Ontology hierarchy.
 Credits: {cite}`go_2009`
-:::
+```
 
 (chapter1_sequence_ontology)=
 
@@ -1182,14 +1171,14 @@ The sequence ontology is organized on four main levels:
 - Feature: the most general top-level entry that describes any extent of a continuous biological sequence, for example a [gene](http://sequenceontology.org/browser/current_release/term/SO:0000704) is a [region](http://sequenceontology.org/browser/current_release/term/SO:0000001), which in turn is a sequence feature.
 - Variant: intended to describe genetic variation. The definition of a sequence variant is composed of other entries in the sequence ontology: "A [sequence_variant](http://sequenceontology.org/browser/current_release/term/SO:0001060) is a non-exact copy of a [sequence_feature](http://sequenceontology.org/browser/current_release/term/SO:0000110) or [genome](http://sequenceontology.org/browser/current_release/term/SO:0001026) exhibiting one or more [sequence_alterations](http://sequenceontology.org/browser/current_release/term/SO:0001059)"
 
-:::{figure} images/chapter1/sequence_ontology.png
+```{figure} images/chapter1/sequence_ontology.png
 :alt: SO hierarchy example
 :width: 40%
 :name: so
 
 An extract of the Sequence Ontology hierarchy.
 Credits: {cite}`so_2005`.
-:::
+```
 
 (chapter1_other_ontologies)=
 
@@ -1487,7 +1476,7 @@ Amino acids:           ......................
 
 +++
 
-:::::{admonition} **Project Preparation Exercise**
+`````{admonition} **Project Preparation Exercise**
 :class: important
 
 We want to obtain insights into members of the ARF gene family in _Arabidopsis thaliana_.
@@ -1503,11 +1492,11 @@ You may include up to two figures or tables.
 1. **Materials & Methods** What did you do? Which data, databases and tools did you use, and why did you choose these? What important settings did you select?
 2. **Results** What did you find, what are the main results? Report the relevant data, numbers, tables/figures, and clearly describe your observations.
 3. **Discussion & Conclusion** Do the results make sense? Are they according to your expectation or do you see something surprising? What do the results mean, how can you interpret them? Do different tools agree or not? What can you conclude? Make sure to describe the expectations and assumptions underlying your interpretation.
-:::::
+`````
 
 ## Glossary
 
-:::{glossary}
+```{glossary}
 Annotation
 : The process of identifying functional elements within a genomic sequence, such as genes, coding regions, and regulatory motifs.
 
@@ -1567,7 +1556,7 @@ Translation
 
 tRNA
 : Transfer RNA, is a type of RNA molecule that helps decode messenger RNA (mRNA) sequences into proteins.
-:::
+```
 
 ```{bibliography}
 ```
