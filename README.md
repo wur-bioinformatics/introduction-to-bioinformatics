@@ -8,4 +8,4 @@ The authors use this book to teach a BSc level course Introduction to Bioinforma
 
 The book is is published under a permissive license (CC BY 4.0), which means this material can be freely redistributed and adapted when given proper attribution.
 
-We welcome contributions, for an inital guide on how to contribute see `CONTRIBUTING.md`.
+We welcome contributions, for an inital guide on how to contribute see `CONTRIBUTING.md`. 
