@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+message: Please cite the following works when using this project.
+title: Introduction to Bioinformatics
+authors:
+  - family-names: de Ridder
+    given-names: Dick
+    affiliation: WUR Bioinformatics
+    orcid: 0000-0002-4944-4310
+  - family-names: Kupczok
+    given-names: Anne
+    affiliation: WUR Bioinformatics
+    orcid: 0000-0001-5237-1899
+  - family-names: Holmer
+    given-names: Rens
+    affiliation: WUR Bioinformatics
+    orcid: 0000-0002-1080-1763
+    email: introduction@bioinformatics.nl
+  - family-names: Bakker
+    given-names: Freek
+    affiliation: WUR Biosystematics
+    orcid: 0000-0003-0227-6687
+  - family-names: van der Hooft
+    given-names: Justin
+    affiliation: WUR Bioinformatics
+    orcid: 0000-0002-9340-5511
+  - family-names: Risse
+    given-names: Judith
+    affiliation: WUR Bioinformatics
+    orcid: 0000-0001-9072-8633
+  - family-names: Navarro
+    given-names: Jorge
+    affiliation: WUR Bioinformatics
+    orcid: 0000-0003-2992-1607
+  - family-names: Sardjoe
+    given-names: Tomer
+    affiliation: WUR Bioinformatics
+    orcid: 0009-0006-5393-0908
+contact:
+  - family-names: Holmer
+    given-names: Rens
+    affiliation: WUR Bioinformatics
+    orcid: 0000-0002-1080-1763
+    email: introduction@bioinformatics.nl
+license: CC-BY-NC-4.0
+license-url: https://creativecommons.org/licenses/by-nc/4.0/
+repository: https://github.com/wur-bioinformatics/introduction-to-bioinformatics
