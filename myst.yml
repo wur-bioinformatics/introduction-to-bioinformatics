@@ -52,6 +52,7 @@ project:
     - references.bib
   exports:
     - format: cff
+      type: book
       output: CITATION.cff
     - format: typst
       template: https://github.com/rowanc1/typst-book.git

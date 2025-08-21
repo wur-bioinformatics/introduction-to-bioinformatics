@@ -11,10 +11,10 @@ authors:
 - 1 Understand the biological background, covering the chemical composition and structural differences between DNA and RNA, how these sequences store, replicate and pass genetic information.
 - 2 Learn how genetic information is transcribed and translated into proteins - the central dogma.
 - 3 Know about the physicochemical properties of amino acids.
-- 4 You should be able to explain how amino acid properties drive protein folding and function, and the effect of substitutions.
-- 5 Understand the concepts of genome annotation and gene prediction and how they combine computational methods and biological evidence to decode genomic content.
-- 6 Familiarize yourself with essential databases and file formats that organize and store biological sequence and annotation data.
-- 7 Be aware how standardized ontologies help structure biological metadata and ensure data interoperability and reusability.
+- 4 Explain how amino acid properties drive protein folding and function, and the effect of substitutions.
+- 5 Describe the concepts of genome annotation and gene prediction and how they combine computational methods and biological evidence to decode genomic content.
+- 6 List essential databases and file formats that organize and store biological sequence and annotation data.
+- 7 Describe standardized ontologies help structure biological metadata and ensure data interoperability and reusability.
 ```
 
 ## Biological background
@@ -55,7 +55,7 @@ Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) {cite}`nucleot
 The bases can be divided into two categories: purines (with a double ring structure) and pyrimidines (with a single ring structure) ({numref}`nucleotide`).
 DNA contains A, T, C, and G; whereas RNA contains A, U, C, and G.
 
-```{important}
+```{attention} Nucleotides
 Nucleotides are central molecules in all life.
 You do not need to remember the exact chemical structure, but you need to know the difference between DNA and RNA, the different bases and their category (purines or pyrimidines).
 ```
@@ -145,7 +145,9 @@ Where DNA contains thymine (T, indicated in blue), RNA contains uracil (U, indic
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_1_2024`.
 ```
 
-In eukaryotes, precursor mRNA molecules undergo {term}`Splicing`.
+In eukaryotes, precursor mRNA molecules undergo various postprocessing steps to produce mature mRNA molecules. 
+To stabilize the mRNA, the 5' end of the molecule is capped with a modified guanine nucleotide (more specifically, a 7-methylguanylate) and the 3' end is extended with a long stretch of adenine nucleotides (known as poly-adenylation).
+In addition, many eukaryotic mRNA molecules undergo {term}`Splicing`.
 During RNA splicing, the spliceosome protein complex removes introns: specific non-coding parts of an mRNA molecule that are not used during translation ({numref}`splicing`), to create mature mRNA.
 Most introns are characterized by a GU and AG dinucleotide motif in the 5' and 3' end respectively.
 
@@ -155,7 +157,7 @@ Most introns are characterized by a GU and AG dinucleotide motif in the 5' and 3
 :name: splicing
 
 During splicing, introns are removed from precursor mRNA moleculus to create mature mRNA.
-Most introns contain several canonical elements that help in recognition by the spliceosome and in creating a specific secondary structure of the intronic RNA that facilitates removal: **(1)** 3' splice site, **(2)** poly pyrimidine tract, **(3)** branch site, **(4)** 5' splice site'.
+Most introns contain recognition sequences for the spliceosome and produce specific secondary structures that improve splicing efficiency: **(1)** 3' splice site, **(2)** poly pyrimidine tract, **(3)** branch site, **(4)** 5' splice site'.
 Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`splicing_2011`.
 ```
 
@@ -203,9 +205,9 @@ The universal genetic code. Note that exceptions to this code exist, for example
 Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) {cite}`geneticcode_2018`.
 ```
 
-```{important}
-The universal genetic code is very important to understand how information flows from genes to proteins.
-Nevertheless, you do not need to recall it, but can always look it up.
+```{attention} Genetic code look-up table
+The universal genetic code is vital in understanding how information flows from genes to proteins.
+Nevertheless, you do not need to recall it, but can always look it up (e.g. in {numref}`geneticcode`).
 When needed, it will also be provided in the exam.
 ```
 
@@ -248,9 +250,10 @@ Four elements are connected to the α-carbon: an amino group, a hydrogen atom, a
 Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) {cite}`proteins_2018`.
 ```
 
-```{important}
+```{attention} Amino acid chemical properties
 Amino acids differ in their chemical properties, which are determined by their R groups.
-It is important to know (by heart) the amino acids, their one-letter and three-letter abbreviation, and their fundamental properties as given in the table.
+Because these sequences are ubiquitous in bioinformatics, it is important to develop intuition for how sequence links to structure and function.
+Therefore, you should know (by heart) the amino acids, their one-letter and three-letter abbreviation, and their fundamental properties as given in {numref}`aminoacidtable`.
 ```
 
 ```{list-table} Amino acids and their abbreviations and basic properties
@@ -355,6 +358,7 @@ They can often be found on the surface of proteins or in the interior, when they
 Although amino acids can be classified into these groups based on their properties, some amino acids stand out.
 The smallest amino acid is glycine, which provides great flexibility due to its small size.
 In contrast, proline is an amino acid, where the side chain is bonded to the backbone nitrogen atom, which makes it very rigid.
+Finally, one cysteine amino acid can form a disulfide bridge with another cysteine.
 
 ---
 
@@ -386,7 +390,7 @@ These modifications can be important for protein function.
 ##### Primary structure
 
 In a protein, amino acids are connected by covalent bonds, called peptide bonds.
-A peptide bond connects one amino acid's carobxyl group and the next amino acid's amino group ({numref}`peptidebond`).
+A peptide bond connects one amino acid's carboxyl group and the next amino acid's amino group ({numref}`peptidebond`).
 The sequence of amino acids linked by peptide bonds is called the **primary structure**.
 The protein sequence is determined by the gene sequence encoding the protein.
 The continuous chain of atoms along the protein is also called the **backbone**, it consists of the three backbone atoms (nitrogen, C<sub>α</sub>, carbon).
@@ -509,7 +513,8 @@ This process is called denaturation and is generally irreversible.
 When proteins denature, they lose their function.
 ```
 
-**Domains** are distinct functional and/or structural units in a protein and are typically 50 to 350 amino acids long.
+When studying many different protein structures, various reoccurring substructures can be observed.
+These so-called **Domains** are distinct functional and/or structural units in a protein and are typically 50 to 350 amino acids long.
 Usually, a domain is responsible for a particular function or interaction, contributing to the overall role of a protein.
 A domain can exist in different contexts with other domains ({numref}`domains`).
 In a multidomain protein, each domain folds independently of the others.
@@ -555,7 +560,7 @@ B) UDP-galactose 4-epimerase, a homodimer (PDB structure 1EK5 colored by seconda
 Mutations in the gene sequence can lead to changes in the primary structure of the protein, e.g., a substitution of one amino acid by a different one.
 Often, such substitutions still lead to highly similar protein structures that perform a similar or even the same function, especially when the exchanged amino acids have similar chemical properties.
 Nevertheless, single amino acid substitutions can have severe consequences.
-A prominent example is sickle cell anemia, where a substitution of valine to glutamic acid in hemoglobin β results in a structural change that leads to a distortion in red blood cells ({numref}`sicklecell`).
+A prominent example is sickle cell anemia, where a substitution of glutamic acid to valine in hemoglobin β results in a structural change that leads to a distortion in red blood cells ({numref}`sicklecell`).
 
 ```{figure} images/chapter1/sicklecell.jpg
 :alt: Sickle cell anemia
@@ -599,8 +604,7 @@ Given the large size of any genome, automated procedures are used to identify va
 Each of these bioinformatic procedures typically focuses on identifying one type of element, and as such a complete genome annotation project can be thought of as a pipeline of various procedures.
 The following section describes the most common steps in genome annotation.
 
-```{admonition} Note 1.4: Alignment algorithms
-:class: note
+```{note} Note 1.4: Alignment algorithms
 
 Several steps in the genome annotation process make use of algorithms that can search or align biological sequences, for example the BLAST algorithm.
 [Chapter 2](#chapter2) covers sequence alignment and search in greater detail.
@@ -621,7 +625,7 @@ Masking repeats generally improves:
   Therefore, focusing on non-repetitive regions is a smart choice in understanding the genes and regulatory elements that drive biological processes.
 
 Most repeat masking workflows work by first compiling (or using a precompiled) 'repeat library': a collection of known repetitive elements that have previously been characterized.
-Subsequently, the genome to be annotated is compared against this repeat library using various computational algorithms, such as BLAST or RepeatMasker.
+Subsequently, the genome to be annotated is compared against this repeat library using various computational algorithms, such as (specifically configured versions of) BLAST or RepeatMasker.
 When a match is found, the corresponding region in the genome is 'masked' or annotated as a repetitive element.
 This means that these regions are excluded from further analysis or labeled as repetitive.
 
@@ -629,8 +633,9 @@ This means that these regions are excluded from further analysis or labeled as r
 ### Gene prediction
 
 The process of finding protein coding genes differs between prokaryotic and eukaryotic genomes.
-In both cases the aim is to find open reading frames (ORFs): contiguous stretches of DNA that encode proteins.
-However, since RNA splicing ({numref}`splicing`) is almost absent in prokaryotic genomes, prokaryotic ORFs can be found directly in the genomic DNA.
+In both cases the aim is to find open reading frames (ORFs): contiguous stretches of nucleotides that encode proteins.
+More specifically, an ORF starts with a start codon, ends with a stop codon, and it's length is a multiple of three (Refer to the genetic code in {numref}`geneticcode`).
+Since RNA splicing ({numref}`splicing`) is almost absent in prokaryotic genomes, prokaryotic ORFs can be found directly in the genomic DNA.
 As a result, simply enumerating all possible ORFs in a genome is a common step in prokaryotic genome annotation.
 In contrast, ORFs in eukaryotic genomes are found on _mature_ mRNAs. As such, all eukaryotic gene prediction methods take splicing into account, thereby greatly increasing their computational complexity.
 Both prokaryotic and eukaryotic gene prediction typically can be classified as either evidence based prediction or ab initio prediction, both will be explained below.
@@ -660,10 +665,10 @@ These methods rely on statistics to learn a predictive model from a known annota
 Various forms of ab initio models exist, and whereas implementation details differ, most follow a similar line of reasoning.
 For now, we will stick to a high level description.
 All ab initio models scan through a DNA sequence and at each position give a score for a specific type of annotation.
-In addition, they often take their genomic context into account.
+In addition, they often take the genomic context of a specific position into account.
 For example, the probability of a protein-coding annotation on a nucleotide A is high when the next two observed nucleotides are T and G, producing the ATG start-codon methionine.
 In addition, most methods also take the _predicted annotation_ of the genomic context into account.
-For example: the probibility that ATG actually codes for a start codon is much higher if we can predict an in-frame stop codon.
+For example: the probibility that ATG actually codes for a start codon is much higher if we can also predict an in-frame stop codon.
 In eukaryotic genome prediction these models become quite complex because they have to include splice sites in all three reading frames.
 How _exactly_ a model decides what annotation score to give to which nucleotide is part of the model architecture and parameterization.
 In all cases, the model parameters are chosen to accurately reproduce a known genome annotation.
@@ -839,7 +844,7 @@ Additionally, transcript and protein records are generated by several processes:
 - Manual curation.
 - Transfer of information from annotated genomes in GenBank.
   In contrast to GenBank, RefSeq records are owned by NCBI and can be updated to maintain annotation.
-  The current release is 222 from the 8{sup}`th` of January 2024 and contains ~305 million proteins from ~145,000 organisms.
+  The current release is 231 from the 11{sup}`th` of July 2025 and contains ~418 million proteins from ~167,000 organisms.
 
 The RefSeq accessions directly provide information on [molecule types](https://www.ncbi.nlm.nih.gov/books/NBK21091/table/ch18.T.refseq_accession_numbers_and_mole/?report=objectonly).
 For example, `NC_` accessions denote complete genomes, `NP_` accessions denote proteins in one genome, and `WP_` accessions denote proteins in multiple genomes.
@@ -876,7 +881,7 @@ UniProtKB consists of two sections:
 - [Swiss-Prot](https://web.expasy.org/docs/userman.html#what_is_sprot) - manually-annotated records with information extracted from literature and curated computational analysis.
 - [TrEMBL](https://web.expasy.org/docs/userman.html#what_is_trembl) - automatically annotated records that are not reviewed.
 
-UniProtKB is updated every 8 weeks. The current release has ~570,000 entries in Swiss-Prot and ~248 million entries in TrEMBL.
+UniProtKB is updated every 8 weeks. The current release has ~570,000 entries in Swiss-Prot and ~250 million entries in TrEMBL.
 
 ---
 
@@ -889,13 +894,13 @@ Some regions in protein families are more conserved than others because they are
 Prosite contains motifs and profiles specific for many protein families or domains.
 Searching motifs in new proteins can provide a first hint for protein function.
 
-The current release of Prosite from the 24{sup}`th` of January 2024 contains 1311 patterns, 1386 profiles, and 1400 ProRule entries.
+The current release of Prosite from the 18{sup}`th` of June 2025 contains 1311 patterns, 1403 profiles, and 1421 ProRule entries.
 
 A Prosite **pattern** is typically 10 to 20 amino acids in length.
 These short patterns are usually located in short well-conserved regions, such as catalytic sites in enzymes or binding sites.
 A pattern is represented as a regular expression, where amino acids are separated by hyphens and `x` denotes any letter.
 Repetitions can also be given as the number of repetitions in brackets.
-For example, `[AC]-x-V-x(4)-{ED}` matches sequences that contain the following amino acid sequence: Ala or Cys-any-Val-any-any-any-any-any but Glu or Asp.
+For example, `[AC]-x-V-x(4)-{ED}` matches sequences that contain the following amino acid sequence: `(Alanine or Cysteine)-any-Valine-any-any-any-any-(any but Glutamic acid or Aspartic acid)`.
 Note that this representation is **qualitative**, a sequence either matches a pattern or it does not.
 
 Patterns cannot deal with mismatches and are limited to exact matches to the pattern.
@@ -925,7 +930,7 @@ Additionally, one InterPro entry can integrate entries from the member databases
 InterPro entries are also linked to [Gene Ontology](#chapter1_gene_ontology).
 They are curated before being released.
 
-InterPro is updated every 8 weeks. The current release from the 25{sup}`th` of January 2024 contains ~41,000 entries, which represent different types:
+InterPro is updated every 8 weeks. The current release from the 19{sup}`th` of June 2025 contains ~49,000 entries, which represent different types:
 
 As an example, look at the [InterPro entry](https://www.ebi.ac.uk/interpro/entry/InterPro/IPR010945/) for the type 2 malate dehydrogenase protein family.
 The entry has a name (malate dehydrogenase, type 2) and accession (IPR010945).
@@ -995,7 +1000,7 @@ Pfam is an important resource for protein domains.
 In Pfam, domains are classified according to profiles that are modelled as Hidden Markov models (HMMs).
 We will learn more on HMMs in [Chapter 2](#chapter2_phmms).
 Pfam is now integrated in InterPro.
-Each Pfam domain can be represented with a logo, where the amino acids frequent at a particular position are represented as larger letters ({numref}`pfam-profile`).
+Each Pfam domain can be represented with a logo, where the amino acids occurring more frequently at a particular position are represented as larger letters ({numref}`pfam-profile`).
 
 ```{figure} images/chapter1/pfam-profile.png
 :alt: Pfam profile
@@ -1011,23 +1016,45 @@ Credits: {cite}`interpro_2022`.
 
 There are many different formats for biological data.
 A format is a set of rules about the contents and organization of the data.
-You should be familiar with a couple of common data formats in bioinformatics, which you will experience in the practicals.
+You should be familiar with a couple of common data formats in bioinformatics (See {numref}`fileformats`), which you will experience in the practicals.
 
-```{admonition} Note 1.8: Examples of common data formats in bioinformatics
-:class: note
-* FASTA
-* Genbank
-* GFF (Generic Feature Format)
-* FASTQ
-* SAM/BAM (Sequence Alignment/Map format)
-* VCF (Variant Call Format)
-* PDB (structure data)
+
+```{list-table} Examples of common data formats in bioinformatics. Unless explicitly noted these are plain text formats.
+:label: fileformats
+
+* - File format
+  - Usage
+  - Common extension
+* - FASTA
+  - Nucleotide or amino acid sequences
+  - `.fa`, `.fasta`, `.fna`, `.faa`
+* - Genbank
+  - Sequences, annotations, metadata
+  - `.gb`
+* - Generic Feature Format
+  - Sequence annotations
+  - `.gff`
+* - FASTQ
+  - DNA sequencing data including basecalling quality scores
+  - `.fq`
+* - SAM/BAM (Sequence/Binary Alignment and Map)
+  - Typically alignments between raw sequencing data and a reference, with quality scores
+  - `.sam` (`.bam` for the binary file format)
+* - VCF (Variant Call Format)
+  - (Genetic) variant calls based on sequencing data aligned to a reference
+  - `.vcf` (`.bcf` for the binary file format)
+* - PDB
+  - Protein structure data
+  - `.pdb`
+* - Unstructured text
+  - Miscellaneous
+  - `.txt`
 ```
 
 #### Plain text files
 
-Many of the biological data formats are plain text files, they only contain letters, numbers, and symbols, but no formatting, such as font size or colors.
-As a convention, they usually have the ending `.txt`.
+Many of the biological data formats are plain text files: they only contain letters, numbers, and symbols, but no formatting, such as font size or colors.
+Whereas these filetypes can have various different extensions (e.g. `.fasta`, `.gff`, etc.), they only contain plain text.
 The advantage of plain text files is that they can be opened with any text editor on any computer.
 Plain text differs from rich text format, where the latter can also include formatting.
 Many bioinformatics programs expect plain text files as input.
@@ -1056,8 +1083,7 @@ A screenshot of TextEdit on Mac.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_1_2024`.
 ```
 
-```{admonition} See also
-:class: seealso
+```{seealso} See also
 If you are not yet familiar with plain text editors, then try it now and write and save a plain text file on your computer!
 ```
 
