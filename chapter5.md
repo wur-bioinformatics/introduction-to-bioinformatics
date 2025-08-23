@@ -516,7 +516,6 @@ detection of structural variation are discussed.
 :alt: Co-segregation of alleles
 :width: 300px
 :align: center
-:align: center
 :name: co_segregation_alt
 
 Co-segregation of alleles: Which parts \
