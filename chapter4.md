@@ -196,10 +196,6 @@ Also, the development of 3D structure prediction tools (see [Tertiary protein st
 To predict secondary structure elements like α-helices and β-sheets from primary sequences, several tools have been developed using two main approaches: statistical-based and machine learning-based. Whilst the tools have been improving in their prediction accuracy over the last decades, a prediction accuracy of 80% is generally considered to be perfect, as the boundaries of the secondary structure elements are often hard to define exactly.
 ```
 
-:::{important}
-To predict secondary structure elements like α-helices and β-sheets from primary sequences, several tools have been developed using two main approaches: statistical-based and machine learning-based. Whilst the tools have been improving in their prediction accuracy over the last decades, a prediction accuracy of 80% is generally considered to be perfect, as the boundaries of the secondary structure elements are often hard to define exactly.
-:::
-
 ---
 
 ### Predicting transmembrane protein sections
@@ -347,7 +343,7 @@ The table at the bottom of the page consists of the following elements:
 - Likelihood/probability scores for the different types of signal peptides and the chance of it not being a signal peptide at all (Other).
 
 ```{important}
-Both transmembrane sections and signal peptides are largely defined by the physicochemical properties of the amino acid residues that they constitute, rather than a conserved motif or short sequence of residues. The icnreased amount of labelled training data enabled the training of hidden markov models to predict the presence of transmembrane sections and signal peptide sequences from primary sequences.
+Both transmembrane sections and signal peptides are largely defined by the physicochemical properties of the amino acid residues that they constitute, rather than a conserved motif or short sequence of residues. The increased amount of labelled training data enabled the training of hidden markov models to predict the presence of transmembrane sections and signal peptide sequences from primary sequences.
 ```
 
 ```{seealso}
