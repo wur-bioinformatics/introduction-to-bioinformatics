@@ -8,13 +8,12 @@ authors:
 ---
 
 ```{important} Learning outcomes
-- 1 Understand the biological background, covering the chemical composition and structural differences between DNA and RNA, how these sequences store, replicate and pass genetic information.
-- 2 Learn how genetic information is transcribed and translated into proteins - the central dogma.
-- 3 Know about the physicochemical properties of amino acids.
-- 4 Explain how amino acid properties drive protein folding and function, and the effect of substitutions.
-- 5 Describe the concepts of genome annotation and gene prediction and how they combine computational methods and biological evidence to decode genomic content.
-- 6 List essential databases and file formats that organize and store biological sequence and annotation data.
-- 7 Describe standardized ontologies help structure biological metadata and ensure data interoperability and reusability.
+- Describe the chemical composition and structural differences between DNA and RNA sequences, and how these sequences store, replicate, and pass genetic information.
+- Describe how genetic information is transcribed and translated into proteins - the central dogma.
+- Explain how amino acid physicochemical properties drive protein folding and function, and the effect of substitutions.
+- Describe the concepts of genome annotation and gene prediction and how they combine computational methods and biological evidence to decode genomic content.
+- List essential databases and file formats that organize and store biological sequence and annotation data.
+- Describe standardized ontologies help structure biological metadata and ensure data interoperability and reusability.
 ```
 
 ## Biological background
@@ -407,8 +406,7 @@ Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) {cite}`protein
 Each protein has a free amino group on one end, called the **N terminus**.
 The other end has a free carboxyl group, called the **C terminus**.
 
-```{admonition} Note 1.1: possible polypeptide chains
-:class: note
+```{note} Note 1.1: possible polypeptide chains
 As there are 20 distinct amino acids, there can be a huge number of different polypeptide chains, i.e., 20<sup>n</sup> for a polypeptide of length n.
 Most of these potential sequences do not adopt a stable conformation, thus only a tiny fraction of these possibilities exist in nature.
 ```
@@ -441,9 +439,7 @@ Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) modified from 
 **Turns** are short secondary structure elements that are stabilized by hydrogen bonds between amino acids that are 1 to 5 peptide bonds away.
 The most common form are β-turns, which connect antiparallel β-strands.
 
-```{admonition} Note 1.2: Secondary structure amino acid preference
-:class: note
-
+```{note} Note 1.2: Secondary structure amino acid preference
 Although secondary structure elements are formed by hydrogen bonds between the backbone, certain amino acids are favoured in secondary structures and others are disfavoured.
 For example, methionine, alanine, leucine, and glutamic acid are favoured in α-helices, whereas proline, glycine, and tyrosine are disfavoured.
 Also, valine, isoleucine, tyrosine, cysteine, tryptophan, phenylalanine, and threonine are more frequently found in β-sheets, compared to α-helices.
@@ -504,9 +500,7 @@ Chemical interactions that stabilize the tertiary structure of proteins.
 Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) {cite}`proteins_2018`.
 ```
 
-```{admonition} Note 1.3: Denaturation
-:class: note
-
+```{note} Note 1.3: Denaturation
 The noncovalent bonds that stabilize the protein structure are broken at high temperature.
 Thus, most proteins unfold above about 60°C.
 This process is called denaturation and is generally irreversible.
@@ -605,7 +599,6 @@ Each of these bioinformatic procedures typically focuses on identifying one type
 The following section describes the most common steps in genome annotation.
 
 ```{note} Note 1.4: Alignment algorithms
-
 Several steps in the genome annotation process make use of algorithms that can search or align biological sequences, for example the BLAST algorithm.
 [Chapter 2](#chapter2) covers sequence alignment and search in greater detail.
 For now, it is sufficient to know that these algorithms can quickly search very large collections of biological sequences to identify sequences that look similar (what we mean _exactly_ by 'similar' is also part of [chapter 2](#chapter2)).
@@ -678,19 +671,31 @@ Examples of tools implementing HMM based ab initio prediction are SNAP, GeneMark
 With the availability of more high quality data (genome sequences and accompanying annotations), approaches based on deep learning and generative AI have proven to frequently perform better than HMM based approaches.
 
 `````{note} Note 1.5: Hidden Markov models (HMMs)
+Hidden Markov Models ({term}`HMM`s) are a statistical tool for analyzing sequences.
+They are widely used in bioinformatics to study biological data such as DNA or protein sequences.
 
-Hidden Markov models ({term}`HMM`s) are useful for the statistical modelling of general sequence characteristics.
-As such they find widespread adoption in bioinformatics to study biological sequences.
-Providing a full technical description of all aspects of HMMs is outside of the scope of this book.
-Here we will stick to a somewhat simplistic description to provide a first introduction.
-A hidden Markov model can be used to predict some unobserved labelling across a sequence of observations.
-For example: in genome annotation, coding and non-coding regions of a genome can be treated as an unobserved characteristic, where the nucleotides are the sequence of observations.
-As such, 'hidden' refers to the _unobserved labelling_.
-In addition, 'Markov' refers to some useful statistical assumptions on the nature of independence between observations and labellings that enable efficient computation.
-More formally, the unobserved labellings are referred to as the 'hidden states', and every hidden state contains some probabilities of observing our sequence of interest, called the 'emission probabilities'.
-To complete our HMM definition, we define 'transition probabilities' between hidden states.
-The combination of hidden states, emission probabilities, and transition probabilities enable asking questions such as 'given my current observation and a certain label of my previous observation, what is the most likely label for my current observation?'.
-In the context of genome annotation this would translate to for example 'given that I see a stop-codon, and that my previous label was coding sequence, what is my current most likely label?', the answer to which would be 'non-coding' (See {numref}`coding_hmm`).
+A full technical description is beyond the scope of this book. Instead, we give a simplified introduction.
+
+An HMM predicts hidden labels across a sequence of observations.
+For example, in genome annotation the genome is observed as a sequence of nucleotides, while coding and non-coding regions are hidden labels.
+The word hidden refers to these unobserved labels.
+The word Markov refers to statistical assumptions about dependence between consecutive labels, which make computation efficient.
+
+Formally, an HMM has:
+
+- __Hidden states__: the unobserved labels (e.g. coding or non-coding).
+- __Emission probabilities__: the likelihood of observing a symbol (e.g. a nucleotide) given a hidden state.
+- __Transition probabilities__: the likelihood of moving from one hidden state to another.
+
+Together, these elements allow questions such as:
+
+_Given my current observation (e.g. a nucleotide) and the label of the previous position, what is the most likely label now?_
+
+In genome annotation, this might become:
+
+_Given that I see a stop codon, and the previous label was coding sequence, what is the current label?_
+
+The most likely answer: _non-coding_ (see Figure 20).
 
 ```{figure} images/chapter1/coding_hmm.jpg
 :alt: Coding HMM
@@ -720,9 +725,7 @@ This functional annotation step consists of using various sequence alignment and
 Several databases of high-quality known functions are often used, which are described in more detail in the next section of this chapter.
 In [Chapter 2](#chapter2_sequence_search) we will learn about approaches how to search these databases efficiently.
 
-`````{admonition} Note 1.6: Visualizing gene structure
-:class: note
-
+`````{note} Note 1.6: Visualizing gene structure
 **Gene models**: the genomic structure of a gene (often referred to as a gene 'model') is typically visualized by a set of lines and rectangles with predefined meaning.
 
 ```{figure} images/chapter1/genemodel.png
@@ -806,18 +809,14 @@ The complete database is available for download via FTP, but the most convenient
 A screenshot of the GenBank website. Credits: {cite}`genbank_2012`.
 ```
 
-```{admonition} Additional information
-:class: tip
-
+```{tip} Additional information
 These days, it is required for publication in most peer-reviewed journals that scientists submit their sequence data to GenBank or an associated database, alongside sufficiently informative meta-data that describes how the data was generated.
 ```
 
 Since data is directly submitted to GenBank, the information for some loci can be highly redundant.
 The sequence records are owned by the original submitter and cannot be altered by someone else.
 
-```{admonition} Note 1.7: Database redundancy
-:class: note
-
+```{note} Note 1.7: Database redundancy
 'Redundancy' in the context of a database refers to identical data that is present more than once.
 Typically, _metadata_ is not taken into account when determining redundancy.
 Example: two different labs have determined the DNA sequence of a bacterial gene involved in some disease.
@@ -852,7 +851,6 @@ For example, `NC_` accessions denote complete genomes, `NP_` accessions denote p
 ---
 
 (chapter1_uniprot)=
-
 ### UniProt
 
 There is lots of information available for proteins, such as sequence information, domains, expression, or 3D structure.
@@ -886,7 +884,6 @@ UniProtKB is updated every 8 weeks. The current release has ~570,000 entries in 
 ---
 
 (chapter1_prosite)=
-
 ### Prosite
 
 [Prosite](https://prosite.expasy.org/) is a secondary database of protein domains, families, and functional sites.
@@ -919,7 +916,6 @@ To include that information, **ProRule** contains additional information about P
 ProRule is used to guide curated annotation of UniProtKB/Swiss-Prot.
 
 (chapter1_interpro)=
-
 ### InterPro
 
 The Integrated Resource of Protein Families, Domains and Sites ([InterPro](https://www.ebi.ac.uk/interpro/)) integrates 13 member databases (including [Prosite](#chapter1_prosite) and [Pfam](#chapter1_pfam)) into a comprehensive secondary database.
@@ -993,7 +989,6 @@ You can find more information on InterPro entry types with examples [here](https
 ```
 
 (chapter1_pfam)=
-
 ### Pfam
 
 Pfam is an important resource for protein domains.
@@ -1120,7 +1115,6 @@ For large files, lots of disk space can be saved this way.
 ---
 
 (chapter1_ontologies)=
-
 ## Ontologies
 
 An ontology is a comprehensive and structured vocabulary for a particular domain, such as biology, genetics, or medicine.
@@ -1136,9 +1130,7 @@ Ontologies play a crucial role in bioinformatics because they facilitate:
     They enable computer systems to process data more accurately, leading to more meaningful analyses and discoveries.
 3.  **Scientific reasoning**: by organizing information in a logical and structured way, ontologies help researchers generate hypotheses, design experiments, and validate findings more effectively.
 
-```{admonition} Note 1.9: FAIR principles
-:class: note
-
+```{note} Note 1.9: FAIR principles
 As described above, ontologies facilitate scientific reproducibility.
 A key concept in scientific reproducibility are the FAIR principles, with FAIR standing for Findable, Accessible, Interoperable, and Reusable.
 This reader does not describe them in detail, but you should read the following online resource to familiarize yourself with the [FAIR principles](https://www.go-fair.org/fair-principles/).
@@ -1150,7 +1142,6 @@ As such, one ontology term may have more than one parent term.
 A variety of ontologies are frequently used in the life sciences, some of which are discussed in greater detail below.
 
 (chapter1_gene_ontology)=
-
 ### Gene Ontology
 
 The [Gene Ontology](http://geneontology.org/) (GO) is a knowledgebase for the function of genes and gene products (e.g. proteins). It is organised into three different domains covering various aspects:
@@ -1162,9 +1153,7 @@ The [Gene Ontology](http://geneontology.org/) (GO) is a knowledgebase for the fu
   Can be cellular compartments (e.g., [mitochondrion](http://amigo.geneontology.org/amigo/term/GO:0005739)) or macromolecular complexes of which they are part (e.g., the [ribosome](http://amigo.geneontology.org/amigo/term/GO:0005840)).
 - Biological Process: the larger biological programs composed of multiple molecular activities, for example [DNA repair](http://amigo.geneontology.org/amigo/term/GO:0006281) or [signal transduction](http://amigo.geneontology.org/amigo/term/GO:0007165).
 
-```{admonition} Note 1.10: Molecular pathway?
-:class: note
-
+```{note} Note 1.10: Molecular pathway?
 A biological process is not equivalent to a molecular pathway.
 At present, the gene ontology does not represent the dynamics or dependencies that would be required to fully describe a pathway.
 ```
@@ -1185,7 +1174,6 @@ Credits: {cite}`go_2009`
 ```
 
 (chapter1_sequence_ontology)=
-
 ### Sequence Ontology
 
 The [Sequence Ontology](http://sequenceontology.org) (SO) describes biological sequence elements such as genes or repeats, along with their features and attributes.
@@ -1207,7 +1195,6 @@ Credits: {cite}`so_2005`.
 ```
 
 (chapter1_other_ontologies)=
-
 ### Other ontologies
 
 Many more ontologies exist and are relevant to biomedical research.
@@ -1227,8 +1214,6 @@ Especially the **project preparation exercise** at the end is a good reflection 
 Make sure that you develop your practical skills now, in order to apply them during the project.
 
 **Note, the answers will be made available after the practical!**
-
-+++
 
 `````{exercise} DNA/Genes, 45 minutes
 
@@ -1301,8 +1286,6 @@ Amino acids:           ......................
   -
 ```
 `````
-
-+++
 
 `````{exercise} Proteins, 45 minutes
 
@@ -1440,8 +1423,6 @@ Amino acids:           ......................
 ```
 `````
 
-+++
-
 `````{exercise} Databases, 45 minutes
 
 1. In a web browser, navigate to the Molecular Biology Database Collection of the journal _[Nucleic Acids Research](http://www.oxfordjournals.org/nar/database/c/)_ (NAR). Pick three databases from the list that draw your attention, preferably from different categories, and explore them (approx. 5 min each). \
@@ -1469,8 +1450,6 @@ Amino acids:           ......................
 
 5. A hot topic in biological data management is "FAIR" data. What do the letters in FAIR stand for and what do those terms mean?
 `````
-
-+++
 
 ```{exercise} Genome annotation, 120 minutes
 
@@ -1500,11 +1479,7 @@ Amino acids:           ......................
 
 ```
 
-+++
-
-`````{admonition} **Project Preparation Exercise**
-:class: important
-
+```{important} **Project Preparation Exercise**
 We want to obtain insights into members of the ARF gene family in _Arabidopsis thaliana_.
 ARF5 (UniProt ID P93024) and IAA5 (UniProt ID P33078) are two well-studied _A. thaliana_ proteins that play a role in auxin-mediated regulation of gene expression.
 They are therefore chosen here as the starting points for exploring the plant ARF gene family.
@@ -1518,7 +1493,7 @@ You may include up to two figures or tables.
 1. **Materials & Methods** What did you do? Which data, databases and tools did you use, and why did you choose these? What important settings did you select?
 2. **Results** What did you find, what are the main results? Report the relevant data, numbers, tables/figures, and clearly describe your observations.
 3. **Discussion & Conclusion** Do the results make sense? Are they according to your expectation or do you see something surprising? What do the results mean, how can you interpret them? Do different tools agree or not? What can you conclude? Make sure to describe the expectations and assumptions underlying your interpretation.
-`````
+```
 
 ## Glossary
 
