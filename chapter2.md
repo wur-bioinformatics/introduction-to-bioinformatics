@@ -6,16 +6,20 @@ authors:
   - rensholmer
 ---
 
-In chapter 2 of Introduction to Bioinformatics, you will study sequence alignment.
+In this chapter you will learn about sequence alignment.
+During the practical you will learn how to make pairwise and multiple sequence alignments, perform sequence searches and motif analyses, design primers, and discuss the results.
 
-```{important} Learning goals
-After studying this chapter you should be familiar with what DNA and protein alignments are used for and you can explain the differences between local and global alignments.
-You should have knowledge of concepts related to alignments and sequence search, like dotplots, alignment scores, E-values, and substitution matrices.
-Make sure you understand what multiple alignments are used for and that you can explain the differences between different solutions for the MSA problem.
-You should understand what motifs are and the basics of profile hidden Markov models.
+```{important} Learning outcomes
+:icon: false
+After studying this chapter you should be able to:
+- Describe what DNA and protein alignments are used for 
+- Explain the differences between local and global alignments.
+- Describe concepts related to alignments and sequence search, like dotplots, alignment scores, E-values, and substitution matrices.
+- Explain what multiple alignments are used for and the differences between different solutions for the MSA problem.
+- Describe what motifs are and the basics of profile hidden Markov models.
 ```
 
-During the practical you will learn how to make pairwise and multiple sequence alignments, perform sequence searches and motif analyses, design primers, and discuss the results.
+
 
 ## Introduction
 
@@ -44,7 +48,7 @@ However, even though two proteins may look similar, they could have different fu
 Generally, similarities arise because of shared ancestry (divergent evolution), nevertheless, similarities can also appear independently (convergent evolution).
 Before diving into the analysis of whether sequences are related, it is important to understand some key terms.
 
-```{important} Homology and similarity
+```{attention} Homology and similarity
 **Homology** means that sequences share a common evolutionary history and therefore have a common ancestor.
 Homology is not quantifiable.
 If two sequences have a common ancestor, they are __homologous__.
@@ -468,7 +472,7 @@ To aid in the quick design of potentially successful primers, tools such as [Pri
 For example, Primer-BLAST lets a user upload a sequence of DNA that should be amplified, and can be configured to find primer products of a specific size.
 In addition, putative off-target amplification (to ensure specificity) is checked using BLAST on a database of choice, and several desired temperatures can be configured.
 
-```{important} Approximating PCR denaturation temperature $T_m$
+```{attention} Approximating PCR denaturation temperature $T_m$
 The temperature at which approximately half of the DNA strands in a solution are in a denatured stated is referred to as the _melting temperature_ $T_m$, and is an important parameter in primer design.
 The exact melting temperature depends on the exact length and nucleotide composition of the DNA fragment, but a useful approximation exists for short sequences.
 This approximation can come in handy for quick checks and predictions.
@@ -626,7 +630,7 @@ Also, we do not expect that you can perform these calculation by hand.
 ```
 
 
-```{important} Sequence search with MSAs
+```{attention} Sequence search with MSAs
 The ability to convert a multiple sequence alignment into a collection of probabilities (e.g., PSSMs or pHMMs) makes it possible to calculate the probability of a novel sequence _belonging_ to the multiple sequence alignment.
 This technique generally allows for a more sensitive approach than searching based on pairwise alignments (e.g., with BLAST).
 In practice, this means that matching sequences can be identified over larger evolutionary distances.

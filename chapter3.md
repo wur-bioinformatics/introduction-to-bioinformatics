@@ -5,25 +5,30 @@ authors:
   - freekbakker
 ---
 
-:::{important} Learning outcomes
-- 1 Understand the purpose and structure of phylogenetic trees.
-- 2 Interpret characters and character states in a multiple sequence alignment ({term}`MSA`).
-- 3 Infer evolutionary relationships from phylogenetic trees.
-- 4 Explain gene tree vs. species tree distinctions.
-- 5 Evaluate tree resolution and identify polytomies.
-- 6 Apply tree rooting concepts to determine directionality.
-- 7 Compare main tree-building approaches.
-- 8 Estimate sequence divergence accurately using substitution models.
-- 9 Interpret bootstrap analysis as a measure of nodal support.
-- 10 Read, write, and visualize trees using Newick notation and tree tools.
-:::
+In this chapter you will learn what phylogenetic trees are, how you can interpret these trees, and how you can infer them from multiple sequence alignments of either DNA or amino acid sequences.
+
+
+```{important} Learning outcomes
+:icon: false
+After studying this chapter you should be able to:
+- Describe the purpose and structure of phylogenetic trees.
+- Interpret characters and character states in a multiple sequence alignment ({term}`MSA`).
+- Infer evolutionary relationships from phylogenetic trees.
+- Explain the difference between gene trees and species trees.
+- Evaluate tree resolution and identify polytomies.
+- Apply tree rooting concepts to determine directionality.
+- Compare main tree-building approaches.
+- Estimate sequence divergence accurately using substitution models.
+- Interpret bootstrap analysis as a measure of nodal support.
+- Read, write, and visualize trees using Newick notation and tree tools.
+```
 
 ## Rationale
 
 :::{figure} images/chapter3/tree-of-life_alt.png
 :alt: Simplified Tree of Life
-:width: 400px
-:align: left
+:width: 70%
+:align: center
 :name: tree_of_life_alt
 
 Simplified Tree of Life. Credits: \
@@ -945,7 +950,7 @@ Clustering usually results in a single tree, the optimality criterion approach i
 
 Another useful criterion to classify tree building methods is whether an explicit model of character evolution is applied, versus mere counting (parsimony) of changes. In this course we covered Maximum Likelihood and parsimony, and Neighbor Joining using corrected distances, i.e., applying the character model in pairwise sequence comparison.
 Bayesian Inference, in which probabilities for nodes are calculated, and different models are evaluated simultaneously, is beyond the scope of this course.
-(If you are interested, they are covered in [BIS-40306 Comparative Biology & Systematics](https://wur.osiris-student.nl/onderwijscatalogus/extern/cursus)).
+(If you are interested, they are covered in [BIS-40306 Comparative Biology & Systematics](https://wur.osiris-student.nl/onderwijscatalogus/extern/cursus?cursuscode=BIS40306&collegejaar=2025)).
 
 ```{list-table}
 :header-rows: 1
@@ -1503,8 +1508,7 @@ MAFFT alignment, IQ-TREE:
 
 +++
 
-:::::{admonition} **Project Preparation Exercise**
-:class: important
+```{important} **Project Preparation Exercise**
 
 Using last chapter’s ARF multiple sequence alignment (amino acid sequence),
 aligned in MAFFT, now use MEGA 11 in order to make a NJ tree, using the
@@ -1522,8 +1526,9 @@ You may include up to two figures or tables.
 1. **Materials & Methods** What did you do? Which data, databases and tools did you use, and why did you choose them? What important settings did you select?
 2. **Results** What did you find, what are the main results? Report the relevant data, numbers, tables/figures, and clearly describe your observations.
 3. **Discussion & Conclusion** Do the results make sense? Are they according to your expectation or do you see something surprising? What do the results mean, how can you interpret them? Do different tools agree or not? What can you conclude? Make sure to describe the expectations and assumptions underlying your interpretation.
-:::::
+```
 
+## Glossary
 :::{glossary}
 Additive tree
 : A phylogenetic tree where branch lengths are proportional to the amount of change in the data.
@@ -1667,7 +1672,8 @@ Ultrametric tree
 : A rooted tree in which all paths from root to tips have equal length (interpretable in time units).
 
 Triangle inequality
-: In any triplet, the distance a–b ≤ a–c + c–b.
+: For any triangle with sides $a$, $b$, and $c$, the sum of any two sides must be greater than or equal to the length of the remaining side:
+  $a \le b + c; b \le a +c; c \le a + b$
 :::
 
 ```{bibliography}

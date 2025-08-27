@@ -6,20 +6,24 @@ authors:
   - dickderidder
 ---
 
+In this chapter you will learn about various high-throughput biomolecular measurement techniques.
+
 ```{important} Learning outcomes
-- 1 Understand the omics landscape and why it matters.
-- 2 Compare DNA sequencing technologies and their trade‑offs.
-- 3 Explain genome assembly strategies and challenges.
-- 4 Differentiate structural vs functional genome annotation.
-- 5 Identify and interpret genomic variants.
-- 6 Perform transcriptomics with RNAseq.
-- 7 Interpret proteomics measurements.
-- 8 Probe functional interactions experimentally.
-- 9 Apply metabolomics concepts.
-- 10 Grasp phenomics and genotype–phenotype links.
-- 11 Execute core omics data analyses.
-- 12 Design robust experiments and perform QC.
-- 13 Use public portals and genome browsers effectively.
+:icon: false
+After studying this chapter you should be able to:
+- Understand the omics landscape and why it matters.
+- Compare DNA sequencing technologies and their trade‑offs.
+- Explain genome assembly strategies and challenges.
+- Differentiate structural vs functional genome annotation.
+- Identify and interpret genomic variants.
+- Perform transcriptomics with RNAseq.
+- Interpret proteomics measurements.
+- Probe functional interactions experimentally.
+- Apply metabolomics concepts.
+- Grasp phenomics and genotype–phenotype links.
+- Execute core omics data analyses.
+- Design robust experiments and perform QC.
+- Use public portals and genome browsers effectively.
 ```
 
 

@@ -7,7 +7,11 @@ authors:
   - tomersardjoe
 ---
 
+In this chapter your will learn the basics of molecular biology that are required for understanding bioinformatics approaches. In addition you will learn common approaches for storing and describing biomolecular data. 
+
 ```{important} Learning outcomes
+:icon: false
+After studying this chapter you should be able to:
 - Describe the chemical composition and structural differences between DNA and RNA sequences, and how these sequences store, replicate, and pass genetic information.
 - Describe how genetic information is transcribed and translated into proteins - the central dogma.
 - Explain how amino acid physicochemical properties drive protein folding and function, and the effect of substitutions.
@@ -109,7 +113,7 @@ It also leads to mutations over evolutionary time ({numref}`dna_mutation`), as w
 
 ```{figure} images/chapter1/dna_mutation.png
 :alt: DNA_mutation
-:width: 50%
+:width: 60%
 :name: dna_mutation
 
 A DNA mutation that occurs during replication.
@@ -136,7 +140,7 @@ There are four major types of RNA:
 
 ```{figure} images/chapter1/transcription.png
 :alt: Transcription
-:width: 70%
+:width: 80%
 :name: transcription
 
 RNA is produced by transcribing DNA: as such, it is a direct copy of the information contained in the DNA.
