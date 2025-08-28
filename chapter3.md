@@ -27,12 +27,11 @@ After studying this chapter you should be able to:
 
 :::{figure} images/chapter3/tree-of-life_alt.png
 :alt: Simplified Tree of Life
-:width: 70%
+:width: 100%
 :align: center
 :name: tree_of_life_alt
 
-Simplified Tree of Life. Credits: \
-[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`tree_of_life_alt_2014`.
+Simplified Tree of Life. Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`tree_of_life_alt_2014`.
 :::
 
 Why should we study {term}`Phylogenetics` and what is it about?
@@ -57,7 +56,7 @@ As they happened in the past we cannot _prove_ them, but they are hypotheses (of
 
 :::{figure} images/chapter3/ancestral-states_alt.png
 :alt: A phylogenetic tree with ancestral states
-:width: 50%
+:width: 60%
 :name: ancestral_states_alt
 
 Comparing species (or genes) in a phylogenetic tree allows inference of ancestral states and evolutionary trends.
@@ -151,6 +150,7 @@ A rooted phylogenetic tree with its main parts and characteristics indicated.
 Here, the OTUs are GenBank plant chloroplast gene accessions, the names of which have been condensed.
 For the same data, the tree is given as _additive_ tree (top) and as an _ultrametric_ tree (bottom left) with branch lengths corresponding to time.
 On the right, flipped, the same tree as _cladogram_, with branch lengths only indicating the structure of the trees.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`
 :::
 %#%[TODO: This figure could be much clearer in depicting additive trees and cladograms.]
 
@@ -168,7 +168,7 @@ Polytomies are usually interpreted as _soft_, meaning that the data used does no
 
 :::{figure} images/chapter3/polytomies_alt.png
 :alt: Hard and soft polytomies
-:width: 60%
+:width: 80%
 :name: polytomies_alt
 
 Hard and soft polytomies in a phylogenetic tree.
@@ -269,7 +269,7 @@ Apart from four gene duplications (marked δ{sub}`1`, δ{sub}`2`, δ{sub}`3` and
 
 :::{figure} images/chapter3/IL-reconciled_alt.png
 :alt: A reconciled tree of the species tree and gene tree of mammalian Interleukin-1 genes.
-:width: 60%
+:width: 80%
 :align: center
 :name: IL_reconciled_alt
 
@@ -284,15 +284,12 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 
 ```{figure} images/chapter3/embedded-tree.png
 :alt: Gene trees embedded in a species tree of western pocket gophers (Geomyidae, Thomomys).
-:width: 350px
-:align: left
+:width: 80%
+:align: center
 :name: embedded_tree
 
-Gene trees, in color, embedded in the \
-species tree (black lines) of western \
-pocket gophers (_Geomyidae, Thomomys_). \
-Credits: [CC BY-NC 2.5](http://creativecommons.org/licenses/by-nc/2.5) \
-{cite}`embedded_tree_2009`.
+Gene trees, in color, embedded in the species tree (black lines) of western pocket gophers (_Geomyidae, Thomomys_).
+Credits: [CC BY-NC 2.5](http://creativecommons.org/licenses/by-nc/2.5) {cite}`embedded_tree_2009`.
 ```
 
 When terminals are individuals meant to represent species, we would in principle be inferring a _species tree_.
@@ -492,7 +489,7 @@ The newick notation above was used to reconstruct the tree seen in {numref}`newi
 
 ```{figure} images/chapter3/newick-tree.png
 :alt: Reconstructed tree resulting from the newick notation.
-:width: 80%
+:width: 50%
 :align: center
 :name: newick_tree
 
@@ -518,7 +515,7 @@ This is then repeated with another tree, and again another etc. -_the better the
 
 :::{figure} images/chapter3/characters.png
 :alt: Character-based tree building.
-:width: 100%
+:width: 80%
 :name: characters
 
 Character-based tree building.
@@ -556,7 +553,7 @@ Note: the number of unrooted ('unordered') trees follows the trend of rooted tre
 
 ```{figure} images/chapter3/bifurcating_alt.png
 :alt: A calculation of how many bifurcating trees are possible, given a number of unrooted and rooted trees.
-:width: 100%
+:width: 80%
 :name: bifurcating_alt
 
 Having to assess such large numbers of trees falls under the category of 'NP complete' problems which cannot be solved in a lifetime even with unlimited resources.
@@ -589,7 +586,7 @@ DE occurs only once and gets 33%, which is below the majority of 50% and therefo
 
 :::{figure} images/chapter3/consensus_alt.png
 :alt: Three primary trees with their strict and majority-rule consensus trees.
-:width: 80%
+:width: 90%
 :name: consensus_alt
 
 Consensus trees.
@@ -628,12 +625,11 @@ The tree that minimizes the number of changes also minimizes the number of _ad h
 
 :::{figure} images/chapter3/ockham.jpg
 :alt: William of Ockham
-:width: 310px
-:align: left
+:width: 50%
+:align: center
 :name: ockham
 
-William of Ockham, 'father of parsimony', \
-from the 14{sup}`th` century. \
+William of Ockham, 'father of parsimony', from the 14{sup}`th` century.
 Credits: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) {cite}`ockham_2022`.
 :::
 
@@ -719,8 +715,8 @@ Clustering usually produces one tree, no alternative 'equally good' trees are sh
 
 ```{figure} images/chapter3/distances.png
 :alt: The different distance measures.
-:width: 300px
-:align: left
+:width: 60%
+:align: center
 :name: distances
 
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) \
@@ -729,8 +725,8 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) \
 
 ```{figure} images/chapter3/inequality_alt.png
 :alt: Metric distances adhering to the triangle inequality and ultrametric distances adhering to the ultrametric inequality.
-:width: 300px
-:align: left
+:width: 80%
+:align: center
 :name: inequality_alt
 
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) \
@@ -846,16 +842,12 @@ $$
 
 :::{figure} images/chapter3/K2P.png
 :alt: The Kimura 2-parameter substitution model.
-:width: 300px
-:align: left
+:width: 50%
+:align: center
 :name: K2P
 
-The Kimura 2-parameter substitution \
-model with transitions indicated in \
-orange (parameter _a_) and transversions \
-in blue (parameter _b_). \
-Note that base frequencies f{sub}`N` \
-are considered equal in this model. \
+The Kimura 2-parameter substitution model with transitions indicated in orange (parameter _a_) and transversions in blue (parameter _b_).
+Note that base frequencies f{sub}`N` are considered equal in this model.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
 
@@ -983,14 +975,14 @@ You have two mornings to work your way through the exercises.
 In a single session you should aim to get about halfway through this guide, i.e., assignments I-IV.
 Note that assignment VI is optional.
 
-These practical exercises offer you the best preparation for the project in Week 6 and the tools and their use are also part of the exam material.
+These practical exercises offer you the best preparation for the project in week 6 and the tools and their use are also part of the exam material.
 Thus, make sure that you develop your practical skills now, in order to apply them during the project and to demonstrate your observation and interpretation skills during the exam.
 
 **Note, the answers will be published after the practical!**
 
-:::::{exercise} Make an amino acid based PLT1 tree in MEGA11 & visualize it in iTOL, 30 minutes
+`````{exercise} Make an amino acid based PLT1 tree in MEGA11 & visualize it in iTOL, 30 minutes
 
-As a start, in this assignment you are going to express relationships among a set of 10 PLT1 amino acid sequences for which you generated a multiple sequence alignment (MSA) in the last chapter.
+As a start, in this assignment you are going to express relationships among a set of 10 PLT1 amino acid sequences for which you generated a multiple sequence alignment ({term}`MSA`) in the last chapter.
 You will do this by building a parsimony tree, using _Molecular Evolutionary Genetics Analysis_ (**[MEGA 11](https://www.megasoftware.net/)**).
 You will then visualize your tree using the tree figure software **[FigTree](http://tree.bio.ed.ac.uk/software/figtree/)** and using **[iTOL](https://itol.embl.de/)**, which is a highly useful platform for storing, managing trees and making pretty pictures of them.
 
@@ -1042,11 +1034,11 @@ Important aspects of picturing phylogenetic trees are:
 - Nodal support: usually bootstrap values (group frequencies) are depicted, but these can also be indicated by symbols or by proportional widths of branches subtending that node; see below.
 - Rooting: the effect of outgroup-rooting should be clearly visualized.
 
-**FigTree**
+**FigTree**\
 A stable and practical tree visualisation tool, which is fully freeware, is FigTree which can be obtained from [here](http://tree.bio.ed.ac.uk/software/figtree/).
 A video is included on Brightspace outlining how to use FigTree for a nice visualization of a tree with bootstrap values attached, see tomorrow’s IQ-TREE practical.
 
-**iTOL**
+**iTOL**\
 The iTOL platform provides quite useful solutions to accommodate all these aspects in your tree picture.
 We will run through some of them here.
 Most of iTOL’s functions are free, but for saving results and treeviews a subscription is required.
@@ -1082,11 +1074,11 @@ Therefore, you want to show the tree unrooted by selecting 'Unrooted'.
 
 With these steps you have gone from a tree generated in MEGA 11 to a nice tree picture, a procedure that you can apply to other trees generated in this practical and of course in your project later on in the course.
 Also, use iTOL to store your trees and keep an overview of all trees generated.
-:::::
+`````
 
 +++
 
-:::::{exercise} Estimating sequence divergence: exploring the MSA, 20 minutes
+`````exercise} Estimating sequence divergence: exploring the MSA, 20 minutes
 
 ```{image} images/chapter3/assignment_2_1.png
 :alt: Proteobacterial 16S rDNA.
@@ -1129,11 +1121,11 @@ _Questions:_
 2. What is the % of phylogenetic informative (Pi) sites in this alignment?
 3. How could we try and find a proper outgroup sequence for our alignment?
 4. Given that our trees will be unrooted can we still infer monophyly of the different Proteobacterial classes?
-:::::
+`````
 
 +++
 
-:::::{exercise} Estimating sequence divergence: Pairwise distances, 30 minutes
+```{exercise} Estimating sequence divergence: Pairwise distances, 30 minutes
 
 Now close the Data Explorer and go to `Distance`, for computing a pairwise distance comparison among all sequences in the alignment.
 Select `Compute Pairwise Distances`.
@@ -1173,10 +1165,10 @@ _Questions:_
 2. Can you think of cases where the raw p-difference would be ok for measuring evolutionary distance?
 3. What is Complete deletion (check your Captions) and how does it compare with Pairwise deletion?
 4. In your opinion, what would be the best way of modelling sequence divergence among these sequences?
-:::::
+```
 
 
-:::::{exercise} From sequence divergence to trees: Distance trees, 60 minutes
+`````{exercise} From sequence divergence to trees: Distance trees, 60 minutes
 
 After having computed **Pairwise Distances** among the sequences, you will now perform **distance tree** analysis (NJ), converting pairwise sequence distances into (distance) trees.
 
@@ -1200,18 +1192,18 @@ This is exactly the same tree structure with the same branch lengths, but it is 
 ```{image} images/chapter3/assignment_4_1.png
 :alt: Example of tree result.
 :align: center
-:width: 100%
+:width: 50%
 :name: assignment_4_1
 ```
 
 _Questions:_
 1. Keeping in mind the dependence on root-choice, what can you say about monophyly of the α-, β-, γ-, δ-, and ε- Proteobacteria based on this sequence alignment?
 2. Applying the rooting as above (assigning _Bdellovibrio_ and _Heliobacter_ as outgroup, are your NJ trees congruent with those depicted in that figure? If not, what could be the cause?
-:::::
+`````
 
 +++
 
-:::::{exercise} From sequence divergence to trees: Likelihood trees, 60 minutes
+`````{exercise} From sequence divergence to trees: Likelihood trees, 60 minutes
 
 With the maximum likelihood (ML) approach an explicit model of nucleotide substitution is applied in order to calculate the probability of 'observing the data'.
 This means that the probability of having each site change as observed is calculated _given_ a certain tree topology (out of many such topologies and an explicit model of nucleotide substitution).
@@ -1407,11 +1399,11 @@ The extension 'contree' refers to the fact that you are dealing with a bootstrap
 
 Make a nice tree picture, make sure it is in the same orientation and (un)rooting, after which you can save it by exporting in .svg graphics format.
 Compare this to the figure in assignment II, above, and discuss any differences, both topological and in terms of nodal support, that you may see.
-:::::
+`````
 
 +++
 
-:::::{exercise} _Optional:_ Trees are as good as the MSA they are based on: phylogeny estimation of TDP DNA sequences, 60 minutes
+`````{exercise} _Optional:_ Trees are as good as the MSA they are based on: phylogeny estimation of TDP DNA sequences, 60 minutes
 
 The objective of this assignment is to learn how to use the software package _Mesquite_ for the handling and manipulation of DNA sequence alignments prior to phylogenetic analysis.
 Mesquite does not (really) build trees, but enables you to optimise alignments, edit character matrices, trace characters over phylogenetic trees, and, quite useful, convert from and to an impressive list of file formats.
@@ -1424,7 +1416,7 @@ The idea is to generate a gene tree including functionally and structurally rela
 Obviously, these questions can only be addressed using a phylogenetic perspective.
 
 The sequence alignment that we used today to illustrate this approach includes 38 γ-Proteobacterial sequences (from {cite}`bioinformatics_2007`) from well-known enterobacteria such as _E. coli_, _Salmonella_ and related species.
-The sequences represent a range of enzymatic functions that are described in Fig. 7.22, below.
+The sequences represent a range of enzymatic functions that are described in , {numref}`assignment_6_2` below.
 
 The main question now is how to obtain an accurate multiple sequence alignment and this is indeed what this practical will focus on.
 Although it is not explicitly stated, the alignment given by Zv&B was probably constructed using CLUSTAL, a guide tree-based progressive alignment approach.
@@ -1432,13 +1424,13 @@ Whereas this approach is fast and powerful, there are known problems in case of 
 
 ```{image} images/chapter3/assignment_6_1.png
 :alt: Divide-and-conquer method.
-:align: left
-:width: 400px
+:align: center
+:width: 80%
 :name: assignment_6_1
 ```
 
-Therefore, in this assignment you will, apart from re-creating the patterns as depicted in Zv&B Figs. 7.22A and B, re-align the sequence matrix using MAFFT, with subsequent phylogenetic analysis and interpretation.
-MAFFT has a k-mer based approach, allowing 'breaking-up' of the sequence into highly-conserved and variable parts prior to alignment, followed by 'sticking aligned parts together' afterwards, the divide-and-conquer approach (see Zv&B Fig. 4.9).
+Therefore, in this assignment you will, apart from re-creating the patterns as depicted in {numref}`assignment_6_2`, re-align the sequence matrix using MAFFT, with subsequent phylogenetic analysis and interpretation.
+MAFFT has a k-mer based approach, allowing 'breaking-up' of the sequence into highly-conserved and variable parts prior to alignment, followed by 'sticking aligned parts together' afterwards, the divide-and-conquer approach (see {numref}`assignment_6_2`).
 
 ```{image} images/chapter3/assignment_6_2.png
 :alt: Unrooted neighbor trees.
@@ -1471,7 +1463,7 @@ Now that you have two versions of the TDP sequence matrix you can start comparin
 
 1. Compare the actual MSAs by performing Task 6-9 (previous page) again, with the original TDP sequence matrix. Save a .pdf of the matrix as you did for the MAFFT re-aligned matrix. Compare the two .pdfs, by 'visual inspection' and discuss which one you would consider a 'better alignment'.
 2. Make sure to compare an IQ-TREE from the original with an IQ-TREE from the MAFFT re-aligned analysis and discuss the differences.
-3. You will have noticed that in Zv&B Figs. 7.22A and B no bootstrap support values are given, but you will have these now in your IQ-TREEs. Interpret bootstrap clade support in your IQ-TREES and discuss whether the claims by Zvelebil & Baum with regards functional evolution are supported, or to what extent we can be confident about them.
+3. You will have noticed that in {numref}`assignment_6_2` no bootstrap support values are given, but you will have these now in your IQ-TREEs. Interpret bootstrap clade support in your IQ-TREES and discuss whether the claims by Zvelebil & Baum with regards functional evolution are supported, or to what extent we can be confident about them.
 
 Original:
 ```{image} images/chapter3/assignment_6_3.png
@@ -1504,7 +1496,7 @@ MAFFT alignment, IQ-TREE:
 :width: 80%
 :name: assignment_6_6
 ```
-:::::
+`````
 
 +++
 
@@ -1529,7 +1521,7 @@ You may include up to two figures or tables.
 ```
 
 ## Glossary
-:::{glossary}
+```{glossary}
 Additive tree
 : A phylogenetic tree where branch lengths are proportional to the amount of change in the data.
 
@@ -1674,7 +1666,7 @@ Ultrametric tree
 Triangle inequality
 : For any triangle with sides $a$, $b$, and $c$, the sum of any two sides must be greater than or equal to the length of the remaining side:
   $a \le b + c; b \le a +c; c \le a + b$
-:::
+```
 
 ```{bibliography}
 ```
