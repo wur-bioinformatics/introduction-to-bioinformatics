@@ -80,14 +80,14 @@ techniques, tools and relevant biological insights.  While a number of
 undergraduate text books on the topic are available, they generally struggle
 to keep up with this high rate of change.  As teachers of a BSc-level
 introductory course on bioinformatics, we struggled each year to collect a
-relevant set of reading material on the topics we intend to cover.  Where
+relevant set of reading material on the topics we intend to cover. Where
 one book might fit one week, the chapters relevant to another week might
 have been outdated, forcing us to use different books.  In addition, the
 level of detail in the books did not always correspond with the level of
 understanding we aim to achieve in students.
 
 We therefore decided to bundle current knowledge and our expertise in the
-form of a book, tailored to the level that we aim to achieve in our BSc course. 
+form of a book, tailored to the level that we aim to achieve in our BSc course.
 The five steps along the journey above are reflected in a setup with five
 chapters, that each contain basic text, various boxes with different types
 of material (see below), practical exercises and references:
@@ -98,16 +98,18 @@ of material (see below), practical exercises and references:
 4. [Protein structure prediction](#chapter4)
 5. [Omics data analysis](#chapter5)
 
-After some years of development and streamlining, we have now reached the stage 
+After some years of development and streamlining, we have now reached the stage
 that we feel it is ready to release it to the community as an online textbook, free
 for use. We hope you find it useful!
 
 Be aware that the practical exercises mostly rely on online databases and tools, that
 can be inacessible at times and regularly change their layout, operation or use
 policies; each fall, we revisit these exercises to ensure they work for our
-class, but at other times you may run into issues. 
+class, but at other times you may run into issues. Also note that image enlargement
+is currently not built into the reader. To enlarge images, please right-click an image
+and select "Open image in new tab" (browser dependent).
 
-As with any textbook, you might find errors or omissions. 
+As with any textbook, you might find errors or omissions.
 If you do find any, please contact us at
 [introduction\@bioinformatics.nl](mailto:introduction\@bioinformatics.nl).
 Alternatively, issues and discussions can be opened on the [github repository](https://github.com/wur-bioinformatics/introduction-to-bioinformatics) of this book.
@@ -118,13 +120,13 @@ but if you still find some material that you believe is incorrectly used or
 cited, please let us know.
 
 ```{epigraph}
--- Dick de Ridder, Anne Kupczok, Rens Holmer, Freek Bakker, Justin van der Hooft, Judith Risse, Jorge Navarro and Tomer Sardjoe (Wageningen, September 2024)
+-- Dick de Ridder, Anne Kupczok, Rens Holmer, Freek Bakker, Justin van der Hooft, Judith Risse, Jorge Navarro and Tomer Sardjoe (Wageningen, September 2025)
 ```
 
 ### Reading guide
 
 The text is decorated with different types of boxes that show additional
-information or are used to highlight and clarify important aspects.  Yellow
+information or are used to highlight and clarify important aspects. Yellow
 and blue boxes are part of the exam material for this course, green boxes
 provide useful additional information or links.
 
@@ -134,13 +136,13 @@ part of the exam material.
 ```
 
 ```{note} Note 1: Noteworthy information
-Information that is considered part of the exam material.  Notes are
+Information that is considered part of the exam material. Notes are
 numbered for easy reference.
 ```
 
 ```{tip} Box 1: Additional information
 Information, often times provides extra examples to material mentioned in
-the main text.  Not part of the exam material, but might make exam material
+the main text. Not part of the exam material, but might make exam material
 more clear.  Boxes are numbered for easy reference.
 ```
 
