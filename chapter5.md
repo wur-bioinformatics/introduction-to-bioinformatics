@@ -26,16 +26,21 @@ After studying this chapter you should be able to:
 - Use public portals and genome browsers effectively.
 ```
 
+```{note} -omics
+:class: simple
+:icon: false
 
-> Etymology (from Wikipedia)
->
-> **-ome** ("whole of class") + **-ics**, both via international scientific vocabulary and New Latin ultimately from Ancient Greek
->
-> Suffix
->
-> -omics
->
-> (chiefly biology) Forms nouns meaning "a study of the totality of something".
+Etymology ([from Wikipedia](https://en.wikipedia.org/wiki/Omics))
+
+**-ome** ("whole of class") + **-ics**, both via international scientific vocabulary and New Latin ultimately from Ancient Greek
+
+---
+Suffix
+
+-omics (chiefly biology)
+
+Forms nouns meaning "a study of the totality of something".
+```
 
 This chapter discusses what we call omics measurements: genomics,
 transcriptomics (gene expression), proteomics and metabolomics. Omics
@@ -449,7 +454,6 @@ Credits: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) {cite}`m
 
 ```{figure} images/chapter5/ladybug_aphid.png
 :alt: Sequencing contamination
-:align: center
 :align: center
 :width: 300px
 :name: ladybug_aphid

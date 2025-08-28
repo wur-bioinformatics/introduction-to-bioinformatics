@@ -60,7 +60,7 @@ are available, what their specific uses and limitations are, and how they should
 interpret the outcomes of computational analyses.  
 
 To support life science students to reach these learning goals, we developed
-a BSc course "Introduction to Bioinformatics" at Wageningen University .  We
+a BSc course "Introduction to Bioinformatics" at Wageningen University. We
 structured it around the "journey" a researcher would take to study an unknown
 sequence, as illustrated in Figure {numref}`overview`.
 
@@ -87,7 +87,7 @@ level of detail in the books did not always correspond with the level of
 understanding we aim to achieve in students.
 
 We therefore decided to bundle current knowledge and our expertise in the
-form of a reader, tailored to the level that we aim to achieve in our BSc course. 
+form of a book, tailored to the level that we aim to achieve in our BSc course. 
 The five steps along the journey above are reflected in a setup with five
 chapters, that each contain basic text, various boxes with different types
 of material (see below), practical exercises and references:
@@ -107,11 +107,12 @@ can be inacessible at times and regularly change their layout, operation or use
 policies; each fall, we revisit these exercises to ensure they work for our
 class, but at other times you may run into issues. 
 
-As with any textbook, this first release will likely
-contain errors, omissions etc.; if you do find any, please contact us at
+As with any textbook, you might find errors or omissions. 
+If you do find any, please contact us at
 [introduction\@bioinformatics.nl](mailto:introduction\@bioinformatics.nl).
-We are investigating ways to support the online incorporation of reader
-feedback or even extensions to the reader. We have done our best to ensure
+Alternatively, issues and discussions can be opened on the [github repository](https://github.com/wur-bioinformatics/introduction-to-bioinformatics) of this book.
+We are investigating ways to better support the online incorporation of reader
+feedback or even extensions to the book. We have done our best to ensure
 that all material (figures etc.) is only re-used when copyright allows it,
 but if you still find some material that you believe is incorrectly used or
 cited, please let us know.
