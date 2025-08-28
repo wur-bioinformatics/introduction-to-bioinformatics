@@ -19,8 +19,6 @@ After studying this chapter you should be able to:
 - Describe what motifs are and the basics of profile hidden Markov models.
 ```
 
-
-
 ## Introduction
 
 %#%[TODO: There can be more biological examples in this section]
@@ -213,7 +211,7 @@ What do you observe?
 
 ```{figure} images/chapter2/aa_alg.png
 :alt: A small example to score a protein alignment
-:width: 100%
+:width: 70%
 :name: aa_alg
 
 Example of a pairwise protein alignment.
@@ -259,7 +257,7 @@ In the pairwise alignment program [needle](https://www.ebi.ac.uk/jdispatcher/psa
 
 ```{figure} images/chapter2/aa_sim.png
 :alt: Example calculation for identity and similarity
-:width: 60%
+:width: 70%
 :name: aa_sim
 
 Example protein alignment. The percent identity is 10 / 18 = 55.6% and the percent similarity is 14 / 18 = 77.8%.
@@ -498,7 +496,7 @@ The resulting alignment can be thought of as a square matrix: rows represent the
 
 ```{figure} images/chapter2/msa.png
 :alt: Multiple Sequence Alignment (conceptual)
-:width: 80%
+:width: 100%
 :name: msa_concept
 
 Conceptual diagram depicting multiple sequence alignment. Colored dots represent similar sequence elements, in the multiple sequence diagram on the right these elements align in vertical columns. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
@@ -611,7 +609,7 @@ Efficient algorithms for working with pHMMs exist and have been implemented in f
 
 ```{figure} images/chapter2/hmm.png
 :alt: DNA profile HMM with three positions and three states (match, insertion, deletion)
-:width: 60%
+:width: 80%
 :name: simple_hmm
 
 Schematic representation of a simple DNA profile HMM containing all model probabilities.
