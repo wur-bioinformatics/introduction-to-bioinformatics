@@ -74,7 +74,7 @@ These pairings are also called Watson-Crick base-pairing, named after the discov
 
 ```{figure} images/chapter1/dna_alt.jpg
 :alt: DNA structure
-:width: 80%
+:width: 90%
 :name: dna_alt
 
 The DNA structure.
@@ -98,7 +98,7 @@ This mode of replication is called semiconservative.
 
 ```{figure} images/chapter1/replication_alt.png
 :alt: Replication
-:width: 50%
+:width: 70%
 :name: replication_alt
 
 A) The process of DNA replication.
@@ -140,7 +140,7 @@ There are four major types of RNA:
 
 ```{figure} images/chapter1/transcription.png
 :alt: Transcription
-:width: 80%
+:width: 100%
 :name: transcription
 
 RNA is produced by transcribing DNA: as such, it is a direct copy of the information contained in the DNA.
@@ -156,7 +156,7 @@ Most introns are characterized by a GU and AG dinucleotide motif in the 5' and 3
 
 ```{figure} images/chapter1/splicing.jpg
 :alt: Splicing
-:width: 70%
+:width: 90%
 :name: splicing
 
 During splicing, introns are removed from precursor mRNA moleculus to create mature mRNA.
@@ -222,7 +222,7 @@ Nevertheless, there are also genes that do not code for proteins, but where func
 
 ```{figure} images/chapter1/dogma_alt.jpg
 :alt: Central dogma
-:width: 80%
+:width: 90%
 :name: dogma_alt
 
 The central dogma of molecular biology.
@@ -432,7 +432,7 @@ Depending on the direction, strands can align parallel or antiparallel to each o
 
 ```{figure} images/chapter1/secstructure_alt.png
 :alt: Secondary structure elements
-:width: 80%
+:width: 100%
 :name: secstructure_alt
 
 α-helices and β-sheets are stablized by hydrogen bonds (the dotted lines) between the backbone of proteins, i.e., the side chains are not involved.
@@ -465,7 +465,7 @@ Thus, the Ramachandran plot can be used to assess how plausible a predicted prot
 
 ```{figure} images/chapter1/phipsi_alt.jpg
 :alt: Phi, psi, and Ramachandran plot
-:width: 50%
+:width: 70%
 :name: phipsi_alt
 
 A) The φ, and ψ torsion angles of a polypeptide chain. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_1_2024`.
@@ -542,7 +542,7 @@ Proteins consisting of two subunits are also called dimer.
 
 ```{figure} images/chapter1/oligomers.jpg
 :alt: Examples of oligomers
-:width: 70%
+:width: 90%
 :name: oligomers
 
 Examples of oligomers.
@@ -562,7 +562,7 @@ A prominent example is sickle cell anemia, where a substitution of glutamic acid
 
 ```{figure} images/chapter1/sicklecell.jpg
 :alt: Sickle cell anemia
-:width: 70%
+:width: 80%
 :name: sicklecell
 
 Consequences of a substitution in hemoglobin β resulting in sickle cell anemia.
@@ -703,7 +703,7 @@ The most likely answer: _non-coding_ (see Figure 20).
 
 ```{figure} images/chapter1/coding_hmm.jpg
 :alt: Coding HMM
-:width: 100%
+:width: 90%
 :name: coding_hmm
 
 __A__: Graphical representation of a general hidden Markov model. Shaded circles indicate observations, white circles indicate unobserved labellings (hidden states). Black arrows indicate transition probabilities between hidden states, and emission probabilies for observations from hidden states. Note that there are no arrows between observations! This is one of the properties of HMMs that enable efficient computation. __B__: A (simplified) HMM variant that labels a sequence of DNA codons as either coding or non-coding. Real-world gene predicition HMMs use a more elaborate structure with more hidden states, and six-frame representations of the DNA.
@@ -867,7 +867,7 @@ UniProt contains three databases ({numref}`uniprot`):
 
 ```{figure} images/chapter1/uniprot.jpg
 :alt: Overview of UniProt
-:width: 70%
+:width: 90%
 :name: uniprot
 
 The information flow in Uniprot.
@@ -1003,7 +1003,7 @@ Each Pfam domain can be represented with a logo, where the amino acids occurring
 
 ```{figure} images/chapter1/pfam-profile.png
 :alt: Pfam profile
-:width: 70%
+:width: 100%
 :name: pfam-profile
 
 The Pfam logo for PF12924.
@@ -1093,7 +1093,7 @@ A multi-fasta file stores multiple sequences.
 
 ```{figure} images/chapter1/fasta.png
 :alt: Fasta file
-:width: 50%
+:width: 70%
 :name: fasta
 
 A sequence in fasta format.
@@ -1170,7 +1170,7 @@ The four main relationship types used in the gene ontology are 'is a', 'part of'
 
 ```{figure} images/chapter1/go.png
 :alt: Go hierarchy
-:width: 55%
+:width: 65%
 :name: go
 
 An extract of the Gene Ontology hierarchy.
@@ -1191,7 +1191,7 @@ The sequence ontology is organized on four main levels:
 
 ```{figure} images/chapter1/sequence_ontology.png
 :alt: SO hierarchy example
-:width: 40%
+:width: 70%
 :name: so
 
 An extract of the Sequence Ontology hierarchy.
@@ -1425,9 +1425,10 @@ Amino acids:           ......................
   -
   - Nonpolar/Polar/Acidic/Basic
 ```
+
 `````
 
-`````{exercise} Databases, 45 minutes
+```{exercise} Databases, 45 minutes
 
 1. In a web browser, navigate to the Molecular Biology Database Collection of the journal _[Nucleic Acids Research](http://www.oxfordjournals.org/nar/database/c/)_ (NAR). Pick three databases from the list that draw your attention, preferably from different categories, and explore them (approx. 5 min each). \
   a. What type of data is in there? \
@@ -1453,7 +1454,7 @@ Amino acids:           ......................
   d. Calculate the frequency of individual amino acids in both protein sequences using the [PIR website](http://pir.georgetown.edu/pirwww/search/comp_mw.shtml). Do you notice something remarkable (Hint: look at relative abundance of various amino acids)? Can you relate this to information that is present in Uniprot (Hint: look at family/domains)?
 
 5. A hot topic in biological data management is "FAIR" data. What do the letters in FAIR stand for and what do those terms mean?
-`````
+```
 
 ```{exercise} Genome annotation, 120 minutes
 
