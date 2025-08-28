@@ -928,7 +928,7 @@ Reads overlapping the breakpoint will be split in the alignment.
 ```{figure} images/chapter5/male-morphs.png
 :alt: Inversion leading to phenotypic variation in ruffs
 :align: center
-:wdith: 80%
+:width: 80%
 :name: male_morphs
 
 Orientation of the inversion in the three male morphs.
