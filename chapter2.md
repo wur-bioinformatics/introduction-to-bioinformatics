@@ -17,6 +17,7 @@ After studying this chapter you should be able to:
 - Describe concepts related to alignments and sequence search, like dotplots, alignment scores, E-values, and substitution matrices.
 - Explain what multiple alignments are used for and the differences between different solutions for the MSA problem.
 - Describe what motifs are and the basics of profile hidden Markov models.
+- Design primers for PCR and describe the necessary considerations
 ```
 
 ## Introduction
@@ -28,7 +29,7 @@ By analyzing DNA and protein sequences, researchers can annotate genes in new ge
 It is important to notice that nature tends to stick with what works, rather than reinventing the wheel for each species.
 Organisms evolve from ancestors and accumulate mutations.
 Here we deal with __small-scale__ mutations, that affect a few characters: substitutions (see also [Chapter 1](#chapter1_substitutions)) and small insertions and deletions ({numref}`mutations`).
-Later in the book, we will also look at [large-scale genome variations](#chapter5_large-scale_genome_variation).
+In [chapter 5](#chapter5) we will also look at [large-scale genome variations](#chapter5_large-scale_genome_variation).
 
 ```{figure} images/chapter2/mutations.png
 :alt: Types of mutations
