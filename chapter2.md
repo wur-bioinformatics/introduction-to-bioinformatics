@@ -651,8 +651,8 @@ As such, multiple Pfam HMMs can match a given protein sequence. The combination 
 This practical contains questions and exercises to help you process the study materials of chapter 2.
 There are two supervised practical sessions, one on Wednesday and one on Thursday.
 On the first practical day you should aim to get about halfway through this guide.
-Thus, you should aim to be close to finishing Assignment IV on the first day.
-Use the time indication to make sure that you do not get stuck in one assignment.
+Thus, you should aim to be close to finishing Exercise 4 on the first day.
+Use the time indication to make sure that you do not get stuck in one exercise.
 These practical exercises offer you the best preparation for the project.
 Make sure that you develop your practical skills now, in order to apply them during the project.
 
@@ -698,7 +698,7 @@ Generate a multi-fasta file of 10 sequences: The first 9 hits from the previous 
 ```{exercise}Looking for distant homologs, 20 minutes
 
 In addition to BLAST, other methods for homology search exist and some of them are particularly useful for finding distant homologs. Here, we want to work with one of these tools, [HMMER](https://www.ebi.ac.uk/Tools/hmmer/home).
-1. We will first perform a search with phmmer. phmmer can be used like BLAST, it searches a sequence against a sequence database. Internally, phmmer builds a profile from your single query sequence using BLOSUM62 and gaps. This way, it is more _sensitive_, i.e., it is expected to find more distant homologs compared to BLAST. Use phmmer to search Vps36p against the Swissprot database. How many hits do you find? How do they compare to the results in Assignment I question 2?
+1. We will first perform a search with phmmer. phmmer can be used like BLAST, it searches a sequence against a sequence database. Internally, phmmer builds a profile from your single query sequence using BLOSUM62 and gaps. This way, it is more _sensitive_, i.e., it is expected to find more distant homologs compared to BLAST. Use phmmer to search Vps36p against the Swissprot database. How many hits do you find? How do they compare to the results in Exercise 1 question 2?
 2. Next we try to find even more distant homologs using the HMM-based tool jackhmmer. Read the first paragraph [here](http://cryptogenomicon.org/interactive-iterative-searches-using-jackhmmer.html) to learn about this tool. How does the method find more hits found in subsequent iterations?
 3. Run jackhmmer with the default database. How many hits do you find and how do they distribute across the taxonomy?
 4. Start the second iteration with the button on top. How many hits do you get now? Compare the taxonomy to the previous iteration. What do you observe?
@@ -746,9 +746,9 @@ We will use BLAST to identify protein sequences in publicly available databases 
 
 ```{exercise} Analyses of the PLT1 family - part 3, conservation, 30 minutes
 
-Next, we want to explore the conservation of the PLT1 family identified in the previous assignment.
+Next, we want to explore the conservation of the PLT1 family identified in the previous exercise.
 To this end, we use multiple sequence alignments.
-1. Use the first ten hits from the Swiss-Prot database (see assignment V, question 8.) to perform the multiple sequence alignment using [MAFFT](https://mafft.cbrc.jp/alignment/server/). Download this alignment in FASTA format and save it somewhere you will be able to find it again. You will re-use this alignment in Chapter 3 to build a phylogenetic tree.
+1. Use the first ten hits from the Swiss-Prot database (see exercise 5, question 8.) to perform the multiple sequence alignment using [MAFFT](https://mafft.cbrc.jp/alignment/server/). Download this alignment in FASTA format and save it somewhere you will be able to find it again. You will re-use this alignment in Chapter 3 to build a phylogenetic tree.
 2. Which regions are well aligned, and which not? How can you easily spot these in a multiple-sequence alignment? How does this region relate to the previously identified protein domains?
 3. Look at the iterative refinement methods available as options in MAFFT. Which strategy do you find appropriate for your data set?
 4. Run the strategy that you propose and compare it to the previous alignment. What do you observe? Check the results page of the first run again. Can you find an explanation for your observation?
