@@ -248,7 +248,8 @@ always increase with organism complexity.
 In order to study genomes, we need to have a human readable representation of them. This requires the 'reading' of the DNA molecules as A,C,T and Gs.
 This process of generating a genome starts with DNA sequencing, the detection of nucleotides and their order along a strand of DNA. 
 
-If you work with genome data, it is important to have a basic understanding of the technologies used and their strength and weaknesses.
+If you work with genome data, it is important to have a basic understanding of the technologies used and their strength and weaknesses. 
+
 This allows us to better understand the quality of the data we work with and what biological insights we can gain. For interested readers we provide a more detailed description of these technologies in a number of boxes at the end of this chapter.
 
 Conceptually, there are three ways of sequencing:
@@ -275,6 +276,7 @@ Sequencing technologies also vary in the accuracy of base-calls (the detected nu
 This accuracy is measured using quality or Q scores and they represent the probability that a base-call 
 is incorrect. A higher Q-score is better. The most commonly used cut-off value is Q30 which 
 corresponds to an incorrect base-call probability of 1 in 1000 and therefore an accuracy of 99.9%.
+
 
 ```{figure} images/chapter5/sequencing-technology.jpg
 :alt: Sequencing technology evolution
@@ -506,16 +508,16 @@ best. Fortunately, these regions contain most of the genes, making draft
 assemblies useful for studying mutations or expression patterns. When we
 want to study larger features of the genome itself however, such as
 co-segregation of alleles ({numref}`co_segregation_alt`) or gene order ({numref}`salmonella_alt`),
-we need more contiguous assemblies. 3rd generation sequencing, scaffolding
-and newer technologies such as chromatin conformation capture (Hi-C) etc.
-make chromosome-level assemblies increasingly attainable.
+we need more contiguous assemblies. 3rd generation sequencing, modern assembly techniques
+and other new technologies make chromosome-level assemblies increasingly attainable.
 
 ```{figure} images/chapter5/salmonella_alt.png
 :alt: Salmonella enterica subsp. enterica serovar Stanley genetic organization of virulence factors in SPI-1
 :align: center
 :name: salmonella_alt
 
-Genetic representation of the _Salmonella enterica subsp. enterica_ serovar Stanley pathogenicity island-1.
+Genetic representation of the _Salmonella enterica subsp. enterica_ serovar Stanley pathogenicity island-1.\
+The arrows present genes and their orientation, on the x-axis are the genome coordinates.
 Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) modified from {cite}`salmonella_alt_2019`.
 ```
 
@@ -524,17 +526,16 @@ Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) modified from
 #### Genome assembly strategies
 
 In the early days of DNA sequencing, generating sequencing reads was very
-costly and slow. Much effort was therefore spent on developing methods requiring a
-minimum amount of sequence data to assemble a genome. Moreover, Sanger
-sequencing could only sequence on single fragment at a time, which needed to be amplified first.
-%#%[till here is about done]
-Some form of organising the DNA was required. This was initially done by
-sequencing the start of a single large fragment (much longer than the read
-length), and generating sequencing primers from the end of the sequenced
-part for the next round of sequencing, until the end of the fragment was
+costly and slow. Much effort was therefore spent on developing methods requiring the
+minimum amount of sequence data to assemble a genome. 
+Parts of the genome to be sequenced were cloned into bacterial vectors and amplified that way.
+These large fragments  (much longer than the read length) 
+were then sequenced starting from one end. Next, new sequencing primers were generated
+from the end of the sequenced part for the next round of sequencing, until the end of the fragment was
 reached. This rather tedious approach was not feasible for larger genomes.
 This led to the development of the whole genome shotgun sequencing method,
-made possible by the growth in compute power for assembly. With the advent
+made possible by the growth in compute power for assembly. Here the cloned DNA fragment is sheared into 
+smaller fragments which are sequenced all at once. With the advent
 of 2nd generation sequencing, this was updated by leaving out the cloning
 step. 2nd generation sequencing technology (e.g., Illumina) allows for a
 mixture of fragments to be sequenced at the same time and the volume of
@@ -550,9 +551,10 @@ Nowadays, the most widely employed genome sequencing approach is whole
 genome sequencing (WGS, {numref}`WGS`). As the term implies the whole
 genome is sequenced, without discrimination. DNA is extracted from cells
 and sheared into random fragments. These fragments are then size selected
-and sequenced using Illumina, PacBio or Oxford Nanopore technology. Note
-that WGS generally generates draft genome assemblies; additional steps are
-required to gain a complete, high-quality reference genome assembly.
+and sequenced using Illumina, PacBio or Oxford Nanopore technology, or a combination.
+Note that for larger eukaryote genomes WGS generally generates draft genome assemblies; additional steps are
+required to gain a complete, high-quality reference genome assembly. On the other hand, bacterial assemblies 
+from long reads are usually complete.
 
 ```{figure} images/chapter5/genome_assembly.png
 :alt: WGS using short reads
@@ -560,8 +562,12 @@ required to gain a complete, high-quality reference genome assembly.
 :name: WGS
 
 Whole genome sequencing and assembly. \
-Short reads on the left are generally not used anymore for *de novo* assembly. \
-Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
+Short reads on the left are generally not used anymore for *de novo* assembly, \
+apart from prokaryotes and viruses. Also, many of the available reference genomes \
+have been generated this way. Contigs refer to the longest stretches  of the genome that
+can be assembled without ambiguity (see also [repeats](#chapter5_repeats))\
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`
+
 ```
 
 ---
@@ -569,8 +575,8 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 ##### Assembly challenges
 
 The main challenge of assembly is to reconstruct the original genome
-sequence from the millions or billions of small fragments. Some people have
-likened this process to putting a stack of newspapers (each newspaper
+sequence from the millions or billions of small reads. Some people have
+compared this process to putting a stack of newspapers (each newspaper
 representing one copy of the genome) through a shredder and attempting to
 reconstruct a single original newspaper from the resulting confetti.
 Solving this puzzle has driven the development of dedicated assembly
@@ -599,7 +605,8 @@ If we look at a genome assembly using the analogy of a jigsaw puzzle ({numref}`j
 
 - Some pieces are missing.
  Some parts of the genome do not break as easily as others, and are not included in the sheared fragments.
- Others have extreme GC values and do not amplify as well in the PCR step (3).
+ Others have extreme GC values and do sequence less efficiently. (3)
+
 
 - Some parts of the puzzle contain the same image.
  In genome terms, these are duplicated regions, where some genes may have more than one copy.
@@ -619,15 +626,18 @@ independently without noticing (remember - we have no puzzle box!).
 With long high-quality reads this puzzle challenge becomes simpler, as there
 are fewer pieces in total and fewer featureless parts. Currently,
 chromosome-level assemblies are routinely generated using PacBio HiFi reads
-in combination with Hi-C.
+in combination with other technologies.
 
 ---
-
+(chapter5_repeats)=
 ##### Repeats
 
-Repeat regions (i.e., the boring background) are the main challenge in genome
+Mainly eukaryote genomes contain sequences that have many, near-identical copies along the genome.
+These repeat regions (in the puzzle analogy, the background) are the main challenge in genome
 assembly and most contigs (contiguous sequences, the longest stretches that
-can be assembled unequivocally) stop at the edges of repetitive regions.
+can be assembled without ambiguity) stop at the edges of repetitive regions. Given the near-identical nature
+or repeat sequences it is difficult for assembly software to determine which read belongs to which repeat element
+copy. The evidence used is at the edge of a repetative sequence where it overlaps with non-repetitive sequence.
 The process is like finding many puzzle pieces containing both bits of fish
 and background, and trying to figure out which edge belongs to which fish and
 how much background goes in between. One solution for solving the repeat
@@ -644,7 +654,7 @@ as a first step prior to genome annotation.
 
 When assembling a new genome, we have no way of verifying its quality
 against a known ground truth. We also rarely get a complete genome or
-chromosome as a single contig or scaffold as a result. Therefore, other
+chromosome as a single contig as a result. Therefore, other
 metrics and methods are required to assess the quality of an assembly. We
 can use the experience gained in other assembly projects to gauge the
 quality of an assembly; we can compare it to closely related genomes that
@@ -678,9 +688,10 @@ expression ({numref}`Pax6_locus`).
 :align: center
 :name: Pax6_locus
 
-Physical map of the human PAX6 locus showing long distance regulatory elements.
-Credits: {cite}`pax_locus`.
-
+Physical map of the human PAX6 locus showing long distance regulatory elements. The DRR
+region regulates the expression of PAX6, the red dots show the exact locations of the 
+regulatory elements. The dotted arrows show the distance in kilo bases between those 
+regulatory elements and PAX6. Credits: {cite}`pax_locus`
 ```
 
 As discussed above, the telomere-to-telomere assembly of the human genome
@@ -712,7 +723,7 @@ Credits: modified from [CC BY  4.0](https://creativecommons.org/licenses/by/4.0)
 
 (chapter5_phenotypic_variation)=
 ````{tip} Box 5.3: Phenotypic variation
-Small variants can have large phenotypic effects.
+Small (and large) variants can have large phenotypic effects.
 
 ```{figure} images/chapter5/carrots.jpg
 :alt: carrot phenotypic diversity
@@ -724,11 +735,11 @@ Color variations in carrots.
 Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`carrots_2006`.
 ```
 
-They account for the observable variation in things all around us. In
-agriculture, variants have been actively selected for to create the wide
+They account for the observable variation in organisms all around us. In
+agriculture, variants have been actively selected for in order to create the wide
 varieties of shapes, color and taste we see in our food items today ({numref}`carrots`).
 Historically, variants have been selected purely on these visible phenotypes
-and new ones have been created mainly by chance in large-scale crosses.
+and new combinations have been created mainly by chance in large-scale crosses.
 
 Nowadays genetic information obtained through genome sequencing and variant
 calling is used more and more in plant and animal breeding and selection.
@@ -737,7 +748,7 @@ calling is used more and more in plant and animal breeding and selection.
 (chapter5_variants)=
 ### Variants
 
-When a (nearby) reference genome is already available, reads can also be
+When a (closely related) reference genome is already available, reads can be
 mapped to that genome. Mapping entails finding the location in the genome
 that matches each read, allowing for some small differences - genomic variation. Such variation can help
 explain phenotypic variation (see [Box 5.3](#chapter5_phenotypic_variation)). Genomic variation
@@ -761,15 +772,16 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 ```
 
 Each variant at a particular position of a reference genome is called an
-allele. In our example of an SNP above ({numref}`indels`), we have a reference allele T and an
-alternate allele G. When a sample originates from a single individual, the
+allele. In our example of a SNP above ({numref}`indels`), we have a reference allele T and an
+alternate allele G. With regards to SNPs, when a sample originates from a single individual, the
 theoretical number of alleles at any position of the reference cannot exceed
 the ploidy of that individual: a diploid organism can at most have two
 different alleles (as in our example), a tetraploid can at most have four,
 etc. Given that we only have four different nucleotides, the maximum number
 of possible alleles for a single position is four, for higher ploidy alleles
 get complicated. But if we find more than two alleles in a diploid organism
-it must be the result of an error, either in the read or in the reference.
+it must be the result of an error, either in the read or in the reference. In rare cases
+it can be the consequence of heterogeneity between cells, e.g. in cancer.
 
 ---
 (chapter5_Variant_Calling)=
@@ -780,11 +792,12 @@ sequencing errors, or represent errors in the reference sequence. The
 process of detecting variants (SNPs and indels) and determining which are
 real or most likely errors is called variant calling. To indicate the
 probability that a variant is real, a quality score is assigned to each
-variant. This considers the read depth and the mapping quality at the
+variant. This considers the coverage and the mapping quality 
+(i.e. how well the read matches the reference) at the
 position of a putative variant. Variant calling software will also report,
-among a whole host of statistics, the so-called allele frequency (AF),
-determined by the number of reads representing each allele that map. In a
-diploid organism with one reference allele and one alternate allele we
+among a whole range of statistics, the so-called allele frequency (AF),
+determined by the proportion of reads representing each allele from all reads that map . 
+In a diploid organism with one reference allele and one alternate allele we
 expect both, on average, to have a frequency of 0.5. When the frequency of
 one allele is close to 0, it is an indication that this variant is most
 likely due to an error.
@@ -814,8 +827,8 @@ Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`fl
 SNPs between individuals underly most phenotypic variation. Sometimes a
 single variant causes a different phenotype, like the classical mendelian
 trait of flower color ({numref}`flower_color`).  More often phenotypic traits are
-the result of multiple variants, one example is height. Some variants can
-cause hereditary defects or increase the risk of certain diseases.
+the result of multiple variants, one example is height (in humans, height is determined by \>12000 SNPs {cite}`yengo_saturated_2022`). 
+Some variants can cause hereditary defects or increase the risk of certain diseases.
 Well-studied examples are mutations in the BRCA1 and BRCA2 genes
 ({numref}`BRCA_alt`). A specific mutation in the BRCA1 gene increases the
 chance for that person to develop breast cancer during their lifetime to
@@ -865,7 +878,7 @@ deletion of the short arm of chromosome 5. Babies suffering from the
 condition have a high pitched cry that sounds similar to a cat, which has
 given the condition its name.
 
-Furthermore, they suffer a.o. from delayed growth and poor reflexes.
+Furthermore, they suffer amongst others from delayed growth and poor reflexes.
 Credits: Image modified from [CC-BY 2.0](https://creativecommons.org/licenses/by/2.0) {cite}`cri-du-chat` and [CC-BY SA 4.0](http://creativecommons.org/licenses/by/4.0/) {cite}`chrom5`.
 ````
 
@@ -915,7 +928,8 @@ Gene duplication results in higher coverage than expected in the duplicated regi
 Credits: [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) {cite}`gene_duplication_2009`.
 ```
 
-Orientations of paired end reads as well as split reads are good
+Orientations of paired end reads as well as split reads (reads where on part maps to the inversion
+and the other part to surrounding sequence, similar to {numref}`spliced_alignment`) are good
 indicators to detect the boundaries of inversions, but also substitutions
 and translocations. The rearrangements will result in one read from a pair
 mapping to one genomic location and the other read to another location.
@@ -1028,7 +1042,6 @@ Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`ep
 ```
 
 ````
-%#% The original URL in box 5.5 that is credited as the source leads to page that does not exist anymore. Changed to WikiMedia url. - The description is a literal copy paste from the figure description on WikiMedia.
 
 A part of the explanation lies in what is called _epigenetics_,
 modifications of the genome that do not change the DNA sequence but do
@@ -1089,8 +1102,6 @@ important limitations:
   experiment requires labour and consumables
 - Technical noise: all measurement technologies come with inherent variation and
   experiment requires labour and consumables
-- Technical noise: all measurement technologies come with inherent variation and
-  measurement noise
 - Biological variation: different cells, organs or individuals will differ
   in their biological state and make-up
 - Bias and coverage: most omics technologies are most efficient (or even
@@ -1824,10 +1835,10 @@ dozens to hundreds of samples. It is therefore wise to first use methods to
 visualize or summarize the data to see whether major patterns or outliers
 can already be detected. A widely used visualization is the so-called
 _heatmap_, an image of the matrix (genes-by-samples) where each measurement is represented by a
-color. If the data is clustered along both genes and samples,
+colour. If the data is clustered along both genes and samples,
 interesting patterns may be easy to spot. A second approach often used in
 initial data exploration is _Principal Component Analysis_ (PCA), which plots
-samples (or genes) along the main axes of variation in the data. If color or
+samples (or genes) along the main axes of variation in the data. If colour or
 markers are added, a PCA plot serves very well to detect groups and outliers.
 Both visualizations are illustrated in {numref}`streptococcus_pca_heatmap`.
 
@@ -1856,8 +1867,10 @@ types, etc. - for example, healthy vs. diseased tissue, with or without a
 certain drug, in different growth conditions, etc. The simplest approach is
 to collect a number of replicate measurements under both conditions and, for
 each gene, perform a simple statistical test such as the _t_-test
-({numref}`t_test`). Each test gives a _p_-value, and genes with a _p_-value
-below a certain threshold, say 5%, could then called significantly differentially expressed.
+({numref}`t_test`). Each test
+gives a _p_-value, and genes with a _p_-value below a certain
+threshold, say 5%, could then called significantly differentially expressed.
+
 There are two caveats:
 
 1. If you perform an individual test for each of thousands of genes, at a
@@ -1987,14 +2000,30 @@ This glossary contains the most important terms from this chapter (not mentioned
 :class: important
 
 ```{glossary}
+
+2nd generation sequencing
+:  _see_ next-generation sequencing
+
 Classification
 :  Predicting an output of interest (e.g. a phenotype) based on -omics data.
 
 Clustering
 :  Finding groups in data sets to learn about common factors, i.e. similar diseases (when clustering samples) or similar functions (when clustering genes).
 
+Contig
+:  Part of a genome assembly, contiguous sequence that can be assembled without problems or gaps.
+
+Co-segration
+:  Which parts of the genome were inherited together from either the mother or the father.
+
+Deletion
+:  Deletion of a small number of nucleotides (\<100bp) in a genome compared to the reference.
+
 Differential abundance analysis
 :  Comparison of levels between conditions, cell types, strains etc., often based on a statistical test.
+
+Draft genome
+:  Genome assembly that is the preliminary result of a genome assembly to the level of contigs, contains most genic regions, but is otherwise fragmented.
 
 Enrichment
 :  Identifying biological processes/functions that are found significantly more in a set of genes/proteins than expected by chance.
@@ -2005,8 +2034,14 @@ Epigenetics
 Epigenomics
 :  Measuring the epigenetic state of the entire genome.
 
+Flow-cell
+:  Part of the sequencing device where the DNA is deposited on and the actual sequencing process happens.
+
 Fold change
 :  Relative measurement comparing two conditions, often log<sub>2</sub>-transformed for easy interpretation and visualization.
+
+Functional annotation
+:  Determine the putative function of structurally annotated genes in a genome assembly using homology methods.
 
 Functional genomics
 :  Field of study on gene/protein functions and interactions.
@@ -2020,6 +2055,15 @@ Heatmap
 High-throughput
 :  Technology to collect large amounts of measurement data without the need for extensive human intervention.
 
+Hybridisation
+:  Successful mating between individuals of two different, but closely related species, that generated offspring.
+
+Insertion
+:  Insertion of a small number of nucleotides (\<100bp) in a genome compared to the reference.
+
+Introgression
+:  Parts of a genome that originate from a different species. The result of hybridisation of the two species at some point in the past.
+
 Mapping
 :  Finding locations in the genome that (nearly, allowing for errors) match a given short DNA sequence, such as a sequencing read.
 
@@ -2032,11 +2076,21 @@ Metabolomics
 Microarrays
 :  Devices that measure gene expression based on fluorescence of complementary DNA sequences binding to DNA attached to specific spots on a surface. Superseded by RNAseq, but still widely found in databases. 
 
+MNP
+:  Multiple nucleotide polymorphism, change of a number of adjacent nucleotides in a genome compared to the reference.
+
 M/z
 :  Unit of measurement of mass spectrometry devices: mass-over-charge ratio.
 
+Next-generation sequencing
+:  NGS, also 2nd generation sequencing; Sequencing technologies post Sanger sequencing, mostly refers to Illumina sequencing.
+
 Omics
 :  Studying the totality of something; for example, the expression of all genes (transcriptomics).
+
+Paired-end read
+:  In Illumina sequence, two reads that come from the same fragment of DNA: the first sequenced from one end, and the second in reverse complement from the other end.
+When the original DNA fragment was longer than the two reads, there is a gap between the two reads when aligned to the reference.
 
 Phenomics
 :  Measurements on macroscopic phenotypes (traits) of tissues and organisms.
@@ -2050,6 +2104,12 @@ Proteomics
 Quantitative proteomics
 :  Measurements presence/absence or levels of proteins in a cell.
 
+Q-score
+:  Quality score, used to indicate quality of a base in sequencing, or variant in case of variant calling.
+
+Repeat region
+:  DNA sequence that is repeated many times across a genome. Copies might vary slightly between each other.
+
 RNAseq
 :  Transcriptomics measurements by DNA sequencing technology, after converting RNA to cDNA.
 
@@ -2057,10 +2117,19 @@ Shotgun proteomics
 :  Measuring protein levels by MS after fragmenting into peptides at known cleavage sites, then look up the peptides in protein sequ
 
 Spliced mapping / spliced alignment
-:  Mapping of RNAseq reads, taking into account that introns are not present in transcripts and that reads therefore can partly map to two nearby locations..
+:  Mapping of RNAseq reads, taking into account that introns are not present in transcripts and that reads therefore can partly map to two nearby locations.
+
+Split reads
+:  Reads that are split into two parts during sequence algnment, with both parts aligning to different sections of the reference. _See also_ Spliced alignment.
+
+Structural annotation
+:  Determining the location and features of (protein coding) genes in a genome assembly
 
 Systems biology
 :  An approach to studying complex biological systems holistically, by constructing and iteratively updating models.
+
+Telomere-to-telomere assembly
+:  T2T; genome assembly that covers all sequence of an organism, whithout gaps, assembled to each chromosome from one telomere to the other.
 
 _t_-test
 :  Widely used statistical test for difference between means of two distributions. It assumes that data is normally distributed, which in practice is often not the case so more sophisticated tests are used.
@@ -2073,6 +2142,9 @@ Transcript quantification
 
 Transcriptomics
 :  Measurements of the expression levels of all genes in a cell.
+
+Whole genome shotgun sequencing
+:  WGS. Sequencing of all parts of a genome simultaniously whithout a priory knowing which part is which.
 
 ````
 ---
@@ -2279,7 +2351,7 @@ of measurement data and its coverage, reliability, biases etc.  crucially
 depend on the technology underlying these devices and its limitations. 
 Moreover, (lack of) technology influences what we cannot yet measure and are
 thus relatively "blind" to.  This is the most important information to keep
-in mind when analysing the resulting data.  For this reason we limited
+in mind when analysing the resulting data. For this reason we limited
 ourselves to listing the main data characteristics in the main text.  Here,
 we provide slightly more background on the most important (historical)
 technologies for the interested reader.
