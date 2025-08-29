@@ -326,6 +326,7 @@ The information below the graph in {numref}`signalp_output` consists of the foll
 The table at the bottom of the page consists of the following elements:
 - Likelihood/probability scores for the different types of signal peptides and the chance of it not being a signal peptide at all (Other).
 
+
 ```{attention}
 Both transmembrane sections and signal peptides are largely defined by the physicochemical properties of the amino acid residues that they constitute, rather than a conserved motif or short sequence of residues. The icnreased amount of labelled training data enabled the training of hidden markov models to predict the presence of transmembrane sections and signal peptide sequences from primary sequences.
 ```
