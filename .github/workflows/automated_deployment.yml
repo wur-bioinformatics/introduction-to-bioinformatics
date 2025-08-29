@@ -1,4 +1,4 @@
-name: Deploy reader
+name: Deploy online book
 
 on:
   push:

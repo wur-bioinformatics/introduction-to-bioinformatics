@@ -51,9 +51,19 @@ project:
   bibliography:
     - references.bib
   exports:
+    #- format: cff
+    #  type: book
+    #  output: CITATION.cff
     - format: typst
       template: https://github.com/rowanc1/typst-book.git
       output: exports/BIF20306book.typst.pdf
+      articles:
+       - intro.md
+       - chapter1.md
+       - chapter2.md
+       - chapter3.md
+       - chapter4.md
+       - chapter5.md
     - format: pdf+tex
       template: plain_latex_book
       output: exports/BIF20306book.tex.pdf
