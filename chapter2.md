@@ -781,7 +781,8 @@ Potato late blight had significant historic impact in Europe and North America a
 8. PCR cannot only amplify regions from the genome, but also regions from mRNA (mRNA needs to be first converted into cDNA). When performing this type of PCR, one tries to design primer pairs that span an intron in the gene of interest (this is also an option in PrimerBLAST). Can you speculate why primers spanning an intron can be helpful?
 ```
 
-```{important} **Project Preparation Exercise**
+```{attention} **Project Preparation Exercise**
+:icon: false
 
 We continue the project exercise from chapter 1.
 Both ARF5 and IAA5 belong to large gene families in _A. thaliana_.

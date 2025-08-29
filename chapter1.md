@@ -1484,7 +1484,8 @@ Amino acids:           ......................
 
 ```
 
-```{important} **Project Preparation Exercise**
+```{attention} **Project Preparation Exercise**
+:icon: false
 We want to obtain insights into members of the ARF gene family in _Arabidopsis thaliana_.
 ARF5 (UniProt ID P93024) and IAA5 (UniProt ID P33078) are two well-studied _A. thaliana_ proteins that play a role in auxin-mediated regulation of gene expression.
 They are therefore chosen here as the starting points for exploring the plant ARF gene family.

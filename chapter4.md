@@ -891,7 +891,8 @@ Since for the Q5YGP8 protein no close structural homologs are available, we will
 11. Now, go back to the UniProt page for Q8QGC7. You may remember from the AlphaFold assignment that we can expect an AlphaFold-predicted 3D structure model here as well. Indeed, under the "Structure" tab, there is a predicted structure! How does it compare to the homology modelling predicted structures from 6.?
 `````
 
-```{important} **Project Preparation Exercise**
+```{attention} **Project Preparation Exercise**
+:icon: false
 This assignment is a project-like question: to remind you, the difference is that you will not be guided to the exact tools you need to use, but we rather expect you to use the knowledge and expertise from the reader and practical assignments to find the right tools.
 In other words, this assignment is meant to let you explore the tools you have visited during the assignments I – V (or alternative tools that you may have found) and come to relevant observations about the structure and function of the proteins under study.
 After completing this assignment, you will be able to investigate known properties and predict likely properties of a protein based on its sequence and structure.

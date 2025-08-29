@@ -11,19 +11,10 @@ In this chapter you will learn about various high-throughput biomolecular measur
 ```{important} Learning outcomes
 :icon: false
 After studying this chapter you should be able to:
-- Understand the omics landscape and why it matters.
-- Compare DNA sequencing technologies and their trade‑offs.
-- Explain genome assembly strategies and challenges.
-- Differentiate structural vs functional genome annotation.
-- Identify and interpret genomic variants.
-- Perform transcriptomics with RNAseq.
-- Interpret proteomics measurements.
-- Probe functional interactions experimentally.
-- Apply metabolomics concepts.
-- Grasp phenomics and genotype–phenotype links.
-- Execute core omics data analyses.
-- Design robust experiments and perform QC.
-- Use public portals and genome browsers effectively.
+- Explain the relevance of omics measurements and systems biology
+- Discuss the core principles of measurements by DNA and RNA sequencing, and mass spectrometry, and the limitations on the resulting data
+- List the main quantitative data analysis techniques (clustering, classification, differential expression) and describe their use
+- Describe the applications of sequencing data for genome and transcriptome analyses
 ```
 
 ```{note} -omics
@@ -308,7 +299,7 @@ This meant that in the sample preparation step fragments were cloned using eithe
 or other large scale amplification methods. The requirement of uniqueness is the biggest drawback of Sanger sequencing.
 
 (w3imp1)=
-````{important} Important to know about Sanger sequencing
+````{attention} Important to know about Sanger sequencing
 - It is the original sequencing platform.
 - Was used to sequence the first human genome.
 - It produces reads of up to 1000bp long with a quality of 99.9% (Q30).
@@ -342,7 +333,7 @@ cells work is explained in detail in [Box 5.9](#w5box4); below we list the main
 characteristics of the data.
 
 (w5imp2)=
-````{important} Important to know about Illumina sequencing
+````{attention} Important to know about Illumina sequencing
 - All reads in one run have the same length, defined by the number of cycles (20-350bp).
 - Due to the fixed read length it is possible that the sequenced reads contain
   primer sequences (if the DNA fragment was shorter than the number of
@@ -384,7 +375,7 @@ inserted. This light is then amplified so that it can be detected. More
 detail can be found in [Box 5.10](#w5box5).
 
 (w5imp3)=
-````{important} Important things to know about PacBio sequencing
+````{attention} Important things to know about PacBio sequencing
 - Fragments with extreme GC content can be sequenced as there is no PCR step.
 - Individual DNA fragments are sequenced, in real-time.
 - The same fragment can be sequenced multiple times and used for error correction (Hifi).
@@ -418,7 +409,7 @@ Credits: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) {cite}`m
 ```
 
 (w5imp4)=
-```{important} Important things to know about nanopore sequencing.
+```{attention} Important things to know about nanopore sequencing.
 - It can sequence very long reads.
 - The accuracy is 96.8-99.9% (Q15-Q30).
 - It can directly detect base modifications (methylation).
@@ -1290,7 +1281,7 @@ available. Note that the technology used determines how the expression
 level should be interpreted (see box below).
 
 (w3imp5)=
-````{important} Important to know about microarrays
+````{attention} Important to know about microarrays
 - microarrays are surfaces with specific DNA sequences attached at specific places,
   to which sampled strands of DNA can bind if they have a complementary sequence
 - microarrays measure expression indirectly, using fluorescence; as a
@@ -1993,162 +1984,6 @@ reality, but may be reached sooner than we now believe possible.
 
 ---
 
-## Glossary
-This glossary contains the most important terms from this chapter (not mentioned in earlier chapters).
-
-````{admonition} Glossary
-:class: important
-
-```{glossary}
-
-2nd generation sequencing
-:  _see_ next-generation sequencing
-
-Classification
-:  Predicting an output of interest (e.g. a phenotype) based on -omics data.
-
-Clustering
-:  Finding groups in data sets to learn about common factors, i.e. similar diseases (when clustering samples) or similar functions (when clustering genes).
-
-Contig
-:  Part of a genome assembly, contiguous sequence that can be assembled without problems or gaps.
-
-Co-segration
-:  Which parts of the genome were inherited together from either the mother or the father.
-
-Deletion
-:  Deletion of a small number of nucleotides (\<100bp) in a genome compared to the reference.
-
-Differential abundance analysis
-:  Comparison of levels between conditions, cell types, strains etc., often based on a statistical test.
-
-Draft genome
-:  Genome assembly that is the preliminary result of a genome assembly to the level of contigs, contains most genic regions, but is otherwise fragmented.
-
-Enrichment
-:  Identifying biological processes/functions that are found significantly more in a set of genes/proteins than expected by chance.
-
-Epigenetics
-:  Heritable change in gene expression that occur without changes in the genome sequence.
-
-Epigenomics
-:  Measuring the epigenetic state of the entire genome.
-
-Flow-cell
-:  Part of the sequencing device where the DNA is deposited on and the actual sequencing process happens.
-
-Fold change
-:  Relative measurement comparing two conditions, often log<sub>2</sub>-transformed for easy interpretation and visualization.
-
-Functional annotation
-:  Determine the putative function of structurally annotated genes in a genome assembly using homology methods.
-
-Functional genomics
-:  Field of study on gene/protein functions and interactions.
-
-Functional proteomics
-:  Measurements of interactions between proteins and other proteins, DNA etc.
-
-Heatmap
-:  A visual representation of a data matrix as an image, where cell colors reflect values. Often clustered along one or both axes to help identify groups of samples/genes with similar expression levels.
-
-High-throughput
-:  Technology to collect large amounts of measurement data without the need for extensive human intervention.
-
-Hybridisation
-:  Successful mating between individuals of two different, but closely related species, that generated offspring.
-
-Insertion
-:  Insertion of a small number of nucleotides (\<100bp) in a genome compared to the reference.
-
-Introgression
-:  Parts of a genome that originate from a different species. The result of hybridisation of the two species at some point in the past.
-
-Mapping
-:  Finding locations in the genome that (nearly, allowing for errors) match a given short DNA sequence, such as a sequencing read.
-
-Mass spectrometry (MS)
-:  Measurement technology for molecule weight, based on ionization, separation and detection.
-
-Metabolomics
-:  Measurements of the presence or levels of metabolites in a cell. 
-
-Microarrays
-:  Devices that measure gene expression based on fluorescence of complementary DNA sequences binding to DNA attached to specific spots on a surface. Superseded by RNAseq, but still widely found in databases. 
-
-MNP
-:  Multiple nucleotide polymorphism, change of a number of adjacent nucleotides in a genome compared to the reference.
-
-M/z
-:  Unit of measurement of mass spectrometry devices: mass-over-charge ratio.
-
-Next-generation sequencing
-:  NGS, also 2nd generation sequencing; Sequencing technologies post Sanger sequencing, mostly refers to Illumina sequencing.
-
-Omics
-:  Studying the totality of something; for example, the expression of all genes (transcriptomics).
-
-Paired-end read
-:  In Illumina sequence, two reads that come from the same fragment of DNA: the first sequenced from one end, and the second in reverse complement from the other end.
-When the original DNA fragment was longer than the two reads, there is a gap between the two reads when aligned to the reference.
-
-Phenomics
-:  Measurements on macroscopic phenotypes (traits) of tissues and organisms.
-
-Principal Component Analysis (PCA)
-:  Projection of data with many measurements onto the directions which retain as much variation as possible. Often used for projecting onto 2 dimensions in order to visually analyze a given data set.
-
-Proteomics
-:  Measurements on proteins in a cell.
-
-Quantitative proteomics
-:  Measurements presence/absence or levels of proteins in a cell.
-
-Q-score
-:  Quality score, used to indicate quality of a base in sequencing, or variant in case of variant calling.
-
-Repeat region
-:  DNA sequence that is repeated many times across a genome. Copies might vary slightly between each other.
-
-RNAseq
-:  Transcriptomics measurements by DNA sequencing technology, after converting RNA to cDNA.
-
-Shotgun proteomics
-:  Measuring protein levels by MS after fragmenting into peptides at known cleavage sites, then look up the peptides in protein sequ
-
-Spliced mapping / spliced alignment
-:  Mapping of RNAseq reads, taking into account that introns are not present in transcripts and that reads therefore can partly map to two nearby locations.
-
-Split reads
-:  Reads that are split into two parts during sequence algnment, with both parts aligning to different sections of the reference. _See also_ Spliced alignment.
-
-Structural annotation
-:  Determining the location and features of (protein coding) genes in a genome assembly
-
-Systems biology
-:  An approach to studying complex biological systems holistically, by constructing and iteratively updating models.
-
-Telomere-to-telomere assembly
-:  T2T; genome assembly that covers all sequence of an organism, whithout gaps, assembled to each chromosome from one telomere to the other.
-
-_t_-test
-:  Widely used statistical test for difference between means of two distributions. It assumes that data is normally distributed, which in practice is often not the case so more sophisticated tests are used.
-
-Time series analysis
-:  Analysing measurements taken over time, to study changes.
-
-Transcript quantification
-:  Conversion and normalisation (for gene length, library size etc.) of RNAseq read counts for further analysis.
-
-Transcriptomics
-:  Measurements of the expression levels of all genes in a cell.
-
-Whole genome shotgun sequencing
-:  WGS. Sequencing of all parts of a genome simultaniously whithout a priory knowing which part is which.
-
-````
----
-
 ## Practical assignments
 
 This practical contains questions and exercises to help you process the study materials of Chapter 5.
@@ -2324,12 +2159,8 @@ omics datasets. If you want to dive deeper, you will need to use more advanced
 (statistical) methods which are taught in other courses.
 ```
 
-```{important} **Project Preparation Exercise**
-%
-%An assignment focusing on how to write a good project report is available on BrightSpace.
-%The results will be discussed at the end of the chapter 5 recap lecture
-%
-%---
+```{attention} **Project Preparation Exercise**
+:icon: false
 
 Explore tissue-specific gene expression of ARF5 and IAA5.
 For this, you can use some other (plant-specific) resources than the human-centered ones you used above, e.g., [Expression Atlas](https://www.ebi.ac.uk/gxa/) (also accessible through UniProt, under "Expression") or [BAR](https://bar.utoronto.ca/), the Bio-Analytic Resource for Plant Biology.
@@ -2706,6 +2537,157 @@ easy. Luckily, open source alternatives have recently become available, e.g.
 [Boltz-2](https://pubmed.ncbi.nlm.nih.gaov/40667369/).
 
 ````
+
+## Glossary
+
+```{glossary}
+
+2nd generation sequencing
+:  _see_ next-generation sequencing
+
+Classification
+:  Predicting an output of interest (e.g. a phenotype) based on -omics data.
+
+Clustering
+:  Finding groups in data sets to learn about common factors, i.e. similar diseases (when clustering samples) or similar functions (when clustering genes).
+
+Contig
+:  Part of a genome assembly, contiguous sequence that can be assembled without problems or gaps.
+
+Co-segration
+:  Which parts of the genome were inherited together from either the mother or the father.
+
+Deletion
+:  Deletion of a small number of nucleotides (\<100bp) in a genome compared to the reference.
+
+Differential abundance analysis
+:  Comparison of levels between conditions, cell types, strains etc., often based on a statistical test.
+
+Draft genome
+:  Genome assembly that is the preliminary result of a genome assembly to the level of contigs, contains most genic regions, but is otherwise fragmented.
+
+Enrichment
+:  Identifying biological processes/functions that are found significantly more in a set of genes/proteins than expected by chance.
+
+Epigenetics
+:  Heritable change in gene expression that occur without changes in the genome sequence.
+
+Epigenomics
+:  Measuring the epigenetic state of the entire genome.
+
+Flow-cell
+:  Part of the sequencing device where the DNA is deposited on and the actual sequencing process happens.
+
+Fold change
+:  Relative measurement comparing two conditions, often log<sub>2</sub>-transformed for easy interpretation and visualization.
+
+Functional annotation
+:  Determine the putative function of structurally annotated genes in a genome assembly using homology methods.
+
+Functional genomics
+:  Field of study on gene/protein functions and interactions.
+
+Functional proteomics
+:  Measurements of interactions between proteins and other proteins, DNA etc.
+
+Heatmap
+:  A visual representation of a data matrix as an image, where cell colors reflect values. Often clustered along one or both axes to help identify groups of samples/genes with similar expression levels.
+
+High-throughput
+:  Technology to collect large amounts of measurement data without the need for extensive human intervention.
+
+Hybridisation
+:  Successful mating between individuals of two different, but closely related species, that generated offspring.
+
+Insertion
+:  Insertion of a small number of nucleotides (\<100bp) in a genome compared to the reference.
+
+Introgression
+:  Parts of a genome that originate from a different species. The result of hybridisation of the two species at some point in the past.
+
+Mapping
+:  Finding locations in the genome that (nearly, allowing for errors) match a given short DNA sequence, such as a sequencing read.
+
+Mass spectrometry (MS)
+:  Measurement technology for molecule weight, based on ionization, separation and detection.
+
+Metabolomics
+:  Measurements of the presence or levels of metabolites in a cell. 
+
+Microarrays
+:  Devices that measure gene expression based on fluorescence of complementary DNA sequences binding to DNA attached to specific spots on a surface. Superseded by RNAseq, but still widely found in databases. 
+
+MNP
+:  Multiple nucleotide polymorphism, change of a number of adjacent nucleotides in a genome compared to the reference.
+
+M/z
+:  Unit of measurement of mass spectrometry devices: mass-over-charge ratio.
+
+Next-generation sequencing
+:  NGS, also 2nd generation sequencing; Sequencing technologies post Sanger sequencing, mostly refers to Illumina sequencing.
+
+Omics
+:  Studying the totality of something; for example, the expression of all genes (transcriptomics).
+
+Paired-end read
+:  In Illumina sequence, two reads that come from the same fragment of DNA: the first sequenced from one end, and the second in reverse complement from the other end.
+When the original DNA fragment was longer than the two reads, there is a gap between the two reads when aligned to the reference.
+
+Phenomics
+:  Measurements on macroscopic phenotypes (traits) of tissues and organisms.
+
+Principal Component Analysis (PCA)
+:  Projection of data with many measurements onto the directions which retain as much variation as possible. Often used for projecting onto 2 dimensions in order to visually analyze a given data set.
+
+Proteomics
+:  Measurements on proteins in a cell.
+
+Quantitative proteomics
+:  Measurements presence/absence or levels of proteins in a cell.
+
+Q-score
+:  Quality score, used to indicate quality of a base in sequencing, or variant in case of variant calling.
+
+Repeat region
+:  DNA sequence that is repeated many times across a genome. Copies might vary slightly between each other.
+
+RNAseq
+:  Transcriptomics measurements by DNA sequencing technology, after converting RNA to cDNA.
+
+Shotgun proteomics
+:  Measuring protein levels by MS after fragmenting into peptides at known cleavage sites, then look up the peptides in protein sequ
+
+Spliced mapping / spliced alignment
+:  Mapping of RNAseq reads, taking into account that introns are not present in transcripts and that reads therefore can partly map to two nearby locations.
+
+Split reads
+:  Reads that are split into two parts during sequence algnment, with both parts aligning to different sections of the reference. _See also_ Spliced alignment.
+
+Structural annotation
+:  Determining the location and features of (protein coding) genes in a genome assembly
+
+Systems biology
+:  An approach to studying complex biological systems holistically, by constructing and iteratively updating models.
+
+Telomere-to-telomere assembly
+:  T2T; genome assembly that covers all sequence of an organism, whithout gaps, assembled to each chromosome from one telomere to the other.
+
+_t_-test
+:  Widely used statistical test for difference between means of two distributions. It assumes that data is normally distributed, which in practice is often not the case so more sophisticated tests are used.
+
+Time series analysis
+:  Analysing measurements taken over time, to study changes.
+
+Transcript quantification
+:  Conversion and normalisation (for gene length, library size etc.) of RNAseq read counts for further analysis.
+
+Transcriptomics
+:  Measurements of the expression levels of all genes in a cell.
+
+Whole genome shotgun sequencing
+:  WGS. Sequencing of all parts of a genome simultaniously whithout a priory knowing which part is which.
+
+```
 
 ```{bibliography}
 ```

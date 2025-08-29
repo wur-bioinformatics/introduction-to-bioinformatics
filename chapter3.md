@@ -23,6 +23,20 @@ After studying this chapter you should be able to:
 - Read, write, and visualize trees using Newick notation and tree tools.
 ```
 
+## Introduction
+
+In this chapter you will learn to use a Multiple Sequence Alignment ({term}`MSA`), like the ones you compiled in [chapter 2](chapter2), and visualize the variation it contains as a phylogenetic tree.
+A phylogenetic tree is considered a highly efficient data structure summarizing the data and its variation contained in your MSA.
+A tree is built from characters which are the individual columns or positions in your MSA.
+Characters have states, which are in this case the individual nucleotide or amino acid substitutions occurring in that position (see [characters & trees](#chapter3_characters_trees) below).
+Invariable characters are columns or positions ‘occupied’ by just one type of nucleotide or amino acid, whereas variable characters may have up to 4 different nucleotides or up to 20 amino acids per position.
+
+DNA and amino acid (AA) sequences contain the information necessary for building protein structure.
+Comparing them in an MSA will enable insight how these structures, and their associated functions, may have changed over evolutionary times since they descended from an ancestral sequence.
+The more character state changes (i.e., substitutions) occur between sequences, the more diverged they are and probably also less related (see [related, diverged](#chapter3_related_diverged) below), and hence the further apart they will occur on your phylogenetic tree.
+The information contained in your tree is hierarchical in nature, meaning that it is built-up as nested sets of subtrees that are also known as clades.
+A clade is a group containing an ancestor together with all its descendants and is also referred to as a monophyletic group.
+
 ## Rationale
 
 :::{figure} images/chapter3/tree-of-life_alt.png
@@ -101,7 +115,6 @@ It is important to realise that most phylogenetic reconstruction methods actuall
 ---
 
 (chapter3_related_diverged)=
-
 ### Related, diverged
 
 :::{figure} images/chapter3/MRCA-mammals_alt.png
@@ -125,7 +138,6 @@ In our example, raccoon and dog would be more diverged than raccoon and bear, bu
 ---
 
 (chapter3_cladogram_additive_ultrametric)=
-
 ### Cladogram, additive and ultrametric
 
 Phylogenetic trees come in three flavors: {term}`Ultrametric tree`s_, {term}`Additive tree`s, and {term}`Cladogram`s.
@@ -186,7 +198,6 @@ _Whole genome duplications_ (auto-polyploidisations) are fairly well known, espe
 ---
 
 (chapter3_orthologs_paralogs)=
-
 ### Orthologs & paralogs
 
 When the terminals included are actually _gene_ or _protein sequences_, the tree will be a {term}`Gene tree`, likely containing _homologs_ (derived from a common ancestor gene), possibly also _orthologs_ and _paralogs_.
@@ -301,7 +312,6 @@ Such analysis is beyond the scope of this course, but it is of course important 
 ---
 
 (chapter3_bootstrap)=
-
 ### Nodal support in phylogenetic trees: the bootstrap
 
 Not all parts of a phylogenetic tree will be equally well-supported or strong, as defined by our character data (MSA).
@@ -330,7 +340,6 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 ---
 
 (chapter3_characters_trees)=
-
 ## Characters & trees
 
 As outlined above, phylogenetic trees are not directly observed but _inferred_, and represent hypotheses of evolutionary relationship, grouping individuals on the basis of shared history.
@@ -370,7 +379,6 @@ This phenomenon is referred to as long-branch attraction and is discussed furthe
 ---
 
 (chapter3_rooting_clades)=
-
 ### Rooting & clades
 
 A _clade_ is an ancestral node together with all its descendants, which is also referred to as a _monophyletic group_.
@@ -501,7 +509,6 @@ Credits: [CC BY-NC 4.0] Created using [MEGA](https://www.megasoftware.net/) {cit
 ---
 
 (chapter3_tree_building)=
-
 ## Main approaches to tree building
 
 ### Character based
@@ -533,7 +540,6 @@ There can also be multiple equally parsimonious trees as a result, which leads t
 ---
 
 (chapter3_tree_space)=
-
 #### Tree space and heuristic search methods
 
 The number of possible {term}`Bifurcating` trees increases astronomically with increasing numbers of included taxa (terminals or sequences in your MSA) and cannot be calculated analytically (see [Box 3.3](#chapter3_bifurcating)).
@@ -597,7 +603,6 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 ---
 
 (chapter3_parsimony_analysis)=
-
 #### Parsimony analysis
 
 The simplest method for character-based tree building is _parsimony analysis_ in which, character-by-character, the fit (of each character) onto a candidate tree is counted (see {numref}`parsimony`).
@@ -647,7 +652,6 @@ ML will be discussed in section [Maximum likelihood tree building](#chapter3_ML)
 ---
 
 (chapter3_distance_based)=
-
 ### Distance-based
 
 The other main approach to tree building is _clustering_, which is _distance_-based, and is widely used in several applications, for instance in visualising BLAST searches as Neighbor Joining trees.
@@ -709,7 +713,6 @@ There is no explicit score or optimality criterion, only the minimisation of ove
 Clustering usually produces one tree, no alternative 'equally good' trees are shown; this is due to the clustering algorithm which is designed to produce a single tree.
 
 (chapter3_distances)=
-
 :::{admonition} Box 3.4: Distance measures and their qualities
 :class: tip
 
@@ -743,7 +746,6 @@ In fact, the ultrametric tree ({numref}`ultrametric_distance_alt`) perfectly des
 ---
 
 (chapter3_neighbor_joining)=
-
 #### Neighbor Joining
 
 Probably the most commonly used distance tree building method is {term}`Neighbor Joining (NJ)`, which is fast and effective, especially for large MSAs (with hundreds of sequences).
@@ -786,7 +788,6 @@ Credits: [CC BY 1.0](https://creativecommons.org/licenses/by/1.0/) {cite}`neighb
 ---
 
 (chapter3_estimating_sequence_divergence)=
-
 ## Estimating sequence divergence
 
 In a phylogeny, when there is a combination of long terminal branches combined with short internal ones, phylogenetic reconstruction is usually problematic when using nucleotides and parsimony analysis.
@@ -864,7 +865,6 @@ For amino acid sequence comparisons, instead of estimating parameter values from
 ---
 
 (chapter3_ML)=
-
 ## Maximum likelihood tree building
 
 For character-based approaches these substitution models, as they are based on probabilities, allow us to calculate the _likelihood_ of our data supporting a particular tree and model.
@@ -1076,9 +1076,9 @@ With these steps you have gone from a tree generated in MEGA 11 to a nice tree p
 Also, use iTOL to store your trees and keep an overview of all trees generated.
 `````
 
-+++
 
-`````exercise} Estimating sequence divergence: exploring the MSA, 20 minutes
+
+`````{exercise} Estimating sequence divergence: exploring the MSA, 20 minutes
 
 ```{image} images/chapter3/assignment_2_1.png
 :alt: Proteobacterial 16S rDNA.
@@ -1122,8 +1122,6 @@ _Questions:_
 3. How could we try and find a proper outgroup sequence for our alignment?
 4. Given that our trees will be unrooted can we still infer monophyly of the different Proteobacterial classes?
 `````
-
-+++
 
 ```{exercise} Estimating sequence divergence: Pairwise distances, 30 minutes
 
@@ -1201,7 +1199,7 @@ _Questions:_
 2. Applying the rooting as above (assigning _Bdellovibrio_ and _Heliobacter_ as outgroup, are your NJ trees congruent with those depicted in that figure? If not, what could be the cause?
 `````
 
-+++
+
 
 `````{exercise} From sequence divergence to trees: Likelihood trees, 60 minutes
 
@@ -1401,7 +1399,7 @@ Make a nice tree picture, make sure it is in the same orientation and (un)rootin
 Compare this to the figure in assignment II, above, and discuss any differences, both topological and in terms of nodal support, that you may see.
 `````
 
-+++
+
 
 `````{exercise} _Optional:_ Trees are as good as the MSA they are based on: phylogeny estimation of TDP DNA sequences, 60 minutes
 
@@ -1498,9 +1496,9 @@ MAFFT alignment, IQ-TREE:
 ```
 `````
 
-+++
 
-```{important} **Project Preparation Exercise**
+```{attention} **Project Preparation Exercise**
+:icon: false
 
 Using last chapter’s ARF multiple sequence alignment (amino acid sequence),
 aligned in MAFFT, now use MEGA 11 in order to make a NJ tree, using the
@@ -1521,6 +1519,7 @@ You may include up to two figures or tables.
 ```
 
 ## Glossary
+
 ```{glossary}
 Additive tree
 : A phylogenetic tree where branch lengths are proportional to the amount of change in the data.
