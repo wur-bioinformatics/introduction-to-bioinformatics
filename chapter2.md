@@ -6,16 +6,18 @@ authors:
   - rensholmer
 ---
 
-In chapter 2 of Introduction to Bioinformatics, you will study sequence alignment.
-
-```{important} Learning goals
-After studying this chapter you should be familiar with what DNA and protein alignments are used for and you can explain the differences between local and global alignments.
-You should have knowledge of concepts related to alignments and sequence search, like dotplots, alignment scores, E-values, and substitution matrices.
-Make sure you understand what multiple alignments are used for and that you can explain the differences between different solutions for the MSA problem.
-You should understand what motifs are and the basics of profile hidden Markov models.
-```
-
+In this chapter you will learn about sequence alignment.
 During the practical you will learn how to make pairwise and multiple sequence alignments, perform sequence searches and motif analyses, design primers, and discuss the results.
+
+```{important} Learning outcomes
+:icon: false
+After studying this chapter you should be able to:
+- Describe what DNA and protein alignments are used for 
+- Explain the differences between local and global alignments.
+- Describe concepts related to alignments and sequence search, like dotplots, alignment scores, E-values, and substitution matrices.
+- Explain what multiple alignments are used for and the differences between different solutions for the MSA problem.
+- Describe what motifs are and the basics of profile hidden Markov models.
+```
 
 ## Introduction
 
@@ -44,7 +46,7 @@ However, even though two proteins may look similar, they could have different fu
 Generally, similarities arise because of shared ancestry (divergent evolution), nevertheless, similarities can also appear independently (convergent evolution).
 Before diving into the analysis of whether sequences are related, it is important to understand some key terms.
 
-```{important} Homology and similarity
+```{attention} Homology and similarity
 **Homology** means that sequences share a common evolutionary history and therefore have a common ancestor.
 Homology is not quantifiable.
 If two sequences have a common ancestor, they are __homologous__.
@@ -209,7 +211,7 @@ What do you observe?
 
 ```{figure} images/chapter2/aa_alg.png
 :alt: A small example to score a protein alignment
-:width: 100%
+:width: 70%
 :name: aa_alg
 
 Example of a pairwise protein alignment.
@@ -255,7 +257,7 @@ In the pairwise alignment program [needle](https://www.ebi.ac.uk/jdispatcher/psa
 
 ```{figure} images/chapter2/aa_sim.png
 :alt: Example calculation for identity and similarity
-:width: 60%
+:width: 70%
 :name: aa_sim
 
 Example protein alignment. The percent identity is 10 / 18 = 55.6% and the percent similarity is 14 / 18 = 77.8%.
@@ -468,7 +470,7 @@ To aid in the quick design of potentially successful primers, tools such as [Pri
 For example, Primer-BLAST lets a user upload a sequence of DNA that should be amplified, and can be configured to find primer products of a specific size.
 In addition, putative off-target amplification (to ensure specificity) is checked using BLAST on a database of choice, and several desired temperatures can be configured.
 
-```{important} Approximating PCR denaturation temperature $T_m$
+```{attention} Approximating PCR denaturation temperature $T_m$
 The temperature at which approximately half of the DNA strands in a solution are in a denatured stated is referred to as the _melting temperature_ $T_m$, and is an important parameter in primer design.
 The exact melting temperature depends on the exact length and nucleotide composition of the DNA fragment, but a useful approximation exists for short sequences.
 This approximation can come in handy for quick checks and predictions.
@@ -494,7 +496,7 @@ The resulting alignment can be thought of as a square matrix: rows represent the
 
 ```{figure} images/chapter2/msa.png
 :alt: Multiple Sequence Alignment (conceptual)
-:width: 80%
+:width: 100%
 :name: msa_concept
 
 Conceptual diagram depicting multiple sequence alignment. Colored dots represent similar sequence elements, in the multiple sequence diagram on the right these elements align in vertical columns. Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
@@ -607,7 +609,7 @@ Efficient algorithms for working with pHMMs exist and have been implemented in f
 
 ```{figure} images/chapter2/hmm.png
 :alt: DNA profile HMM with three positions and three states (match, insertion, deletion)
-:width: 60%
+:width: 80%
 :name: simple_hmm
 
 Schematic representation of a simple DNA profile HMM containing all model probabilities.
@@ -626,7 +628,7 @@ Also, we do not expect that you can perform these calculation by hand.
 ```
 
 
-```{important} Sequence search with MSAs
+```{attention} Sequence search with MSAs
 The ability to convert a multiple sequence alignment into a collection of probabilities (e.g., PSSMs or pHMMs) makes it possible to calculate the probability of a novel sequence _belonging_ to the multiple sequence alignment.
 This technique generally allows for a more sensitive approach than searching based on pairwise alignments (e.g., with BLAST).
 In practice, this means that matching sequences can be identified over larger evolutionary distances.
@@ -642,83 +644,6 @@ The main distinction between these six categories is the length of the matching 
 As such, multiple Pfam HMMs can match a given protein sequence. The combination of matching Pfam HMMs on a given sequence can be used to give a fine-grained description of known elements in a sequence.
 ```
 
-## Glossary
-
-This glossary contains the most important terms from this chapter.
-
-`````{admonition} Glossary
-:class: important
-```{glossary}
-Affine gap costs
-:  Alignment scoring scheme that distinguishes between gap opening and gap extension costs
-
-BLAST
-:  Basic Local Alignment Search Tool
-
-BLOSUM
-:  BLOck SUbstitution Matrix - a group of protein substitution matrices
-
-Consensus sequence
-:  Sequence of most frequently occurring residues in an alignment
-
-E-value
-:  Expectation value - the number of hits with the observed score or higher that you expect to see by chance in the database (e.g., with BLAST)
-
-Global alignment
-:  Alignment strategy, where the complete sequences are aligned
-
-Guide tree
-:  A tree based on clustering of the sequences based on their pairwise distances that is used for constructing MSAs
-
-Heuristic algorithm
-:  A method that is not guaranteed to find the solution with the best score, but instead employs rules-of-thumb that generally lead to good results
-
-Homology
-:  Homologous sequences share a common ancestor
-
-Iterative refinement
-:  Heuristic to improve an MSA
-
-Local alignment
-:  Alignment strategy, where regions of local similarity are identified
-
-Motif
-:  Commonly occurring sequence pattern
-
-MSA
-:  Multiple sequence alignment - alignment of more than two sequences
-
-Pairwise sequence alignment
-:  Alignment of two sequences by introducing gaps such that a score is maximized
-
-PAM
-:  Point Accepted Mutation - a group of protein substitution matrices
-
-PCR
-:  Polymerase chain reaction
-
-pHMM
-:  profile hidden Markov model - probabilistic representation of an MSA that allows to search sequences against domain databases
-
-Primers
-:  Short fragments of single stranded DNA that are used during PCR to prime the polymerase
-
-Progressive alignment
-:  Heuristic method of MSA building based on a guide tree
-
-Protein identity
-:  Number of identical amino acids in a pairwise alignment divided by the alignment length
-
-Protein similarity
-:  Number of similar and identical amino acids in a pairwise alignment divided by the alignment length
-
-PSSM
-:  Position Specific Scoring Matrix
-
-Sequence logo
-:  Graphical representation of an alignment showing the information in that column
-```
-`````
 ---
 
 ## Practical assignments
@@ -870,6 +795,79 @@ You may include up to two figures or tables.
 1. **Materials & Methods** What did you do? Which data, databases and tools did you use, and why did you choose them? What important settings did you select?
 2. **Results** What did you find, what are the main results? Report the relevant data, numbers, tables/figures, and clearly describe your observations.
 3. **Discussion & Conclusion** Do the results make sense? Are they according to your expectation or do you see something surprising? What do the results mean, how can you interpret them? Do different tools agree or not? What can you conclude? Make sure to describe the expectations and assumptions underlying your interpretation.
+```
+
+## Glossary
+
+```{glossary}
+Affine gap costs
+:  Alignment scoring scheme that distinguishes between gap opening and gap extension costs
+
+BLAST
+:  Basic Local Alignment Search Tool
+
+BLOSUM
+:  BLOck SUbstitution Matrix - a group of protein substitution matrices
+
+Consensus sequence
+:  Sequence of most frequently occurring residues in an alignment
+
+E-value
+:  Expectation value - the number of hits with the observed score or higher that you expect to see by chance in the database (e.g., with BLAST)
+
+Global alignment
+:  Alignment strategy, where the complete sequences are aligned
+
+Guide tree
+:  A tree based on clustering of the sequences based on their pairwise distances that is used for constructing MSAs
+
+Heuristic algorithm
+:  A method that is not guaranteed to find the solution with the best score, but instead employs rules-of-thumb that generally lead to good results
+
+Homology
+:  Homologous sequences share a common ancestor
+
+Iterative refinement
+:  Heuristic to improve an MSA
+
+Local alignment
+:  Alignment strategy, where regions of local similarity are identified
+
+Motif
+:  Commonly occurring sequence pattern
+
+MSA
+:  Multiple sequence alignment - alignment of more than two sequences
+
+Pairwise sequence alignment
+:  Alignment of two sequences by introducing gaps such that a score is maximized
+
+PAM
+:  Point Accepted Mutation - a group of protein substitution matrices
+
+PCR
+:  Polymerase chain reaction
+
+pHMM
+:  profile hidden Markov model - probabilistic representation of an MSA that allows to search sequences against domain databases
+
+Primers
+:  Short fragments of single stranded DNA that are used during PCR to prime the polymerase
+
+Progressive alignment
+:  Heuristic method of MSA building based on a guide tree
+
+Protein identity
+:  Number of identical amino acids in a pairwise alignment divided by the alignment length
+
+Protein similarity
+:  Number of similar and identical amino acids in a pairwise alignment divided by the alignment length
+
+PSSM
+:  Position Specific Scoring Matrix
+
+Sequence logo
+:  Graphical representation of an alignment showing the information in that column
 ```
 
 ```{bibliography}
