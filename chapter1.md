@@ -1209,7 +1209,7 @@ Examples of other ontologies are the [plant ontology](https://www.ebi.ac.uk/ols/
 
 ## Practical assignments
 
-This practical contains questions and exercises to help you process the study materials of Chapter 1.
+This practical contains questions and exercises to help you process the study materials of Chapter 1.  In some exercises, you can choose between different organisms so that you can work with examples that are more relevant to your field or interests. If you would like additional practice, you are encouraged to solve the same exercise using the other organisms as well. 
 You have 2 mornings to work your way through the exercises.
 In a single session you should aim to get about halfway through this guide (i.e., day 1: assignment 1-3, day 2: assignment 4 and project preparation exercise).
 Use the time indication to make sure that you do not get stuck in one assignment.
