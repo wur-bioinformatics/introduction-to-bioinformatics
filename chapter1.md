@@ -1445,8 +1445,8 @@ Amino acids:           ......................
 3. Ontology \
   a. Describe what an ontology is (use the information in the reader and/or Google to find information). \
   b. The Gene Ontology is one of the most important ontologies in bioinformatics. Which biological domains are covered in the Gene Ontology? \
-  c. Look up the protein from exercise 9 in UniProt (plant: B3H4Y2, animal: P63015). What information do you find about the GO terms associated with this protein? \
-  d. Now look up the well-known gene FRIGIDA (Accession P0DH90) for plants OR INS2 (Accesion P01326) for animals. Which GO terms are associated with this gene? In which cellular component is this protein found and which biological process is it involved in?
+  c. Look up the _Arabidopsis_ protein in UniProt (Accession B3H4Y2). What information do you find about the GO terms associated with this protein?
+d. Now look up the famous _Arabidopsis_ gene FRIGIDA (Accession P0DH90). Which GO terms are associated with this gene? In which cellular component is this protein found and which biological process is it involved in?
 
 4. UniProt \
   a. Look up the two proteins from Q3 in UniProt again. In which of the sections of UniProt is each of them deposited. Which of the two has a higher annotation quality? \
