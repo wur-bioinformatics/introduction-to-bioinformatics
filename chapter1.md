@@ -1249,14 +1249,20 @@ mRNA:                  ......................
 Amino acids:           ......................
 ```
 
-9. On your computer, browse to [UniProt](https://www.uniprot.org/) and search for UniProt ID B3H4Y2. \
+9. On your computer, browse to [UniProt](https://www.uniprot.org/) and search for UniProt ID B3H4Y2 (plant) OR UniProt ID P63015 (animal). \
   a. In which organism is this protein found? What is the length of this protein? What is the corresponding gene ID? \
   b. Write down the first 5 and last 5 amino acids of the protein.
 
 
-10. Browse to [arabidopsis.org](https://www.arabidopsis.org/tools/overview) and click on "JBrowse" (Firefox or Chrome recommended). This will take you to a genome browser of the _Arabidopsis_ genome. Search for the gene ID from question 9 (see screenshot above). Under "Help" -> "General" you can find some information to help you understand what you are looking at. \
-  a. You can see that this gene produces two different mRNA transcripts (indicated by .1 and .2) and thus 2 different proteins. How many exons do these transcripts contain? How many introns? \
-  b. Turn on the track "Light grown seedling" under "RNA-seq based evidence"/"Aligned reads". Do you recognize the splice sites? Are the first two and last two bases of the intron as expected (based on {numref}`splicing`)? \
+10. In this exercise you will examine the genomic context and transcript structure of the gene identified in question 9 using a genome browser. Follow the instructions corresponding to the organism you selected in question 9. \
+For the plant example browse to [arabidopsis.org](https://www.arabidopsis.org/tools/overview) and click on "JBrowse" (Firefox or Chrome recommended). This will take you to a genome browser of the _Arabidopsis_ genome. Search for the gene ID from question 9 (see screenshot above). Under "Help" -> "General" you can find some information to help you understand what you are looking at. \
+
+For the animal example browse to www.ensembl.org and search for the gene ID limiting the search to the found animal? On the left side of the screen under “restrict category” for click gene to filter for genes only. After following the result to the XXX page of the gene, click on “Region in Detail” (found over the gene tracks).  For help navigating the genome browser click the question mark next to Region in Detail. \
+
+  a. You can see that this gene produces multiple different mRNA transcripts (indicated by .1, .2 and so on) and thus multiple different proteins. How many exons do these transcripts contain? How many introns? \
+  b. For the plant example turn on the track "Light grown seedling" under "RNA-seq based evidence"/"Aligned reads".  \
+For the animal example click on “add/remove tracks”(found over the track window). Make sure to add under Genes and transcripts the Comprehensive Gene Annotations from GENCODE M38 track expanded with labels and under mRNA and protein alignments the Vertebrate cDNAs (ENA) track as Normal. \
+ Do you recognize the splice sites? Are the first two and last two bases of the intron as expected (based on {numref}`splicing`)? \
   c. Save the data for transcript 1. Save a fasta file for the whole transcript and one for each coding sequence (CDS). Create a fasta file on your computer that contains the complete coding sequence of the protein. \
   d. Is the length of the coding sequence in line with your expectation (based on your findings in question 9a)? \
   e. Translate the first and last few codons to compare them against the protein sequence (question 9). Do they match? \
