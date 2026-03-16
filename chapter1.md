@@ -763,7 +763,7 @@ A screenshot of the JBrowse genome browser showing _Arabidopsis thaliana_ chromo
 :width: 100%
 :name: uscs
 
-A screenshot of the UCSC genome browser showing _Homo sapiens_ chromosome 11 with a gene that has multiple splice variants. Credits: {cite}`jbrowse_2016`.
+A screenshot of the UCSC genome browser showing _Homo sapiens_ chromosome 11 with the multiple splice variants of the PAX6 gene . Credits: {cite}`ucsc_2026`.
 ```
 `````
 
