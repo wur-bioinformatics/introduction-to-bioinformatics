@@ -1266,7 +1266,7 @@ For the animal example browse to www.ensembl.org and search for the gene ID from
   c. Download the data of transcript 1 for plants and Pax6-207 for animals. Then create another fasta file on you computer (for example in your notepad) that contains all the coding sequences (CDS) of the protein from the whole transcript.  \
   d. Is the length of the coding sequence in line with your expectation (based on your findings in question 9a)? \
   e. Translate the first and last few codons to compare them against the protein sequence (question 9a). Do they match? \
-  f. Look upstream of the gene and zoom in until the nuleotide sequence is visible. Can you find the TATA box? How many nucleotides before the start of transcription?
+  f. Look upstream of the gene and zoom in until the DNA sequence is visible. Can you find the TATA box? How many nucleotides before the start of transcription?
 
 11. GC content \
   a. Find a tool on the internet to calculate the GC content of a gene. Which tool did you find? Use it to calculate the GC content for the whole transcript and for the coding sequence that you created in the previous task. What do you observe? \
