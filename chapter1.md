@@ -757,6 +757,14 @@ Most visualization elements can be clicked to open pop-up windows with additiona
 
 A screenshot of the JBrowse genome browser showing _Arabidopsis thaliana_ chromosome 1 with a gene that has multiple splice variants. Credits: {cite}`jbrowse_2016`.
 ```
+
+```{figure} images/chapter1/gene_browser_UCSC.png
+:alt: USCS gene browser
+:width: 100%
+:name: uscs
+
+A screenshot of the UCSC genome browser showing _Homo sapiens_ chromosome 11 with a gene that has multiple splice variants. Credits: {cite}`jbrowse_2016`.
+```
 `````
 
 ---
