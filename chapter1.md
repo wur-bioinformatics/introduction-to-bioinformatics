@@ -1257,16 +1257,16 @@ Amino acids:           ......................
 10. In this exercise you will examine the genomic context and transcript structure of the gene identified in question 9 using a genome browser. Follow the instructions corresponding to the organism you selected in question 9. \
 For the plant example browse to [arabidopsis.org](https://www.arabidopsis.org/tools/overview) and click on "JBrowse" (Firefox or Chrome recommended). This will take you to a genome browser of the _Arabidopsis_ genome. Search for the gene ID from question 9 (see screenshot above). Under "Help" -> "General" you can find some information to help you understand what you are looking at. \
 
-For the animal example browse to www.ensembl.org and search for the gene ID limiting the search to the found animal? On the left side of the screen under “restrict category” for click gene to filter for genes only. After following the result to the XXX page of the gene, click on “Region in Detail” (found over the gene tracks).  For help navigating the genome browser click the question mark next to Region in Detail. \
+For the animal example browse to www.ensembl.org and search for the gene ID from question 9, limiting the search to the found animal. On the left side of the screen under “restrict category” click gene to filter for genes only. After following the result to the page of the gene, click on “Region in Detail” (found over the gene tracks). Click on “add/remove tracks”(found over the track window) and make sure to add under "Genes and transcripts" the "Comprehensive Gene Annotations from GENCODE 49" track with the "expanded with labels" option if it is not present already. For help navigating the genome browser click the question mark next to Region in Detail. \
 
-  a. You can see that this gene produces multiple different mRNA transcripts (indicated by .1, .2 and so on) and thus multiple different proteins. How many exons do these transcripts contain? How many introns? \
+  a. You can see that this gene produces multiple different mRNA transcripts and thus multiple different proteins. In JBrowse, these are indicated by suffixes such as .1, .2, while in Ensembl they appear as numbers after a hyphen such as GENE-201, GENE-202. How many exons do these transcripts contain? How many introns? \
   b. For the plant example turn on the track "Light grown seedling" under "RNA-seq based evidence"/"Aligned reads".  \
-For the animal example click on “add/remove tracks”(found over the track window). Make sure to add under Genes and transcripts the Comprehensive Gene Annotations from GENCODE M38 track expanded with labels and under mRNA and protein alignments the Vertebrate cDNAs (ENA) track as Normal. \
+    For the animal example click on “add/remove tracks”(found over the track window). Make sure to add under "mRNA and protein alignments" the "Vertebrate cDNAs (ENA)" track with the normal option. \
  Do you recognize the splice sites? Are the first two and last two bases of the intron as expected (based on {numref}`splicing`)? \
-  c. Save the data for transcript 1. Save a fasta file for the whole transcript and one for each coding sequence (CDS). Create a fasta file on your computer that contains the complete coding sequence of the protein. \
+  c. Download the data of transcript 1 for plants and Pax6-207 for animals. Then create another fasta file on you computer (for example in your notepad) that contains all the coding sequences (CDS) of the protein from the whole transcript.  \
   d. Is the length of the coding sequence in line with your expectation (based on your findings in question 9a)? \
-  e. Translate the first and last few codons to compare them against the protein sequence (question 9). Do they match? \
-  f. Look upstream of the gene. Can you find the TATA box? How many nucleotides before the start of transcription?
+  e. Translate the first and last few codons to compare them against the protein sequence (question 9a). Do they match? \
+  f. Look upstream of the gene and zoom in until the nuleotide sequence is visible. Can you find the TATA box? How many nucleotides before the start of transcription?
 
 11. GC content \
   a. Find a tool on the internet to calculate the GC content of a gene. Which tool did you find? Use it to calculate the GC content for the whole transcript and for the coding sequence that you created in the previous task. What do you observe? \
@@ -1454,7 +1454,7 @@ For the animal example click on “add/remove tracks”(found over the track win
   d. Now look up the well-known gene FRIGIDA (Accession P0DH90) for plants OR INS2 (Accesion P01326) for animals. Which GO terms are associated with this gene? In which cellular component is this protein found and which biological process is it involved in?
 
 4. UniProt \
-  a. Look up the two proteins from Q3 in UniProt again. In which of the sections of UniProt is each of them deposited. Which of the two has a higher annotation quality? \
+  a. Look up the two proteins the you worked with in Q3 on UniProt again. In which of the sections of UniProt is each of them deposited. Which of the two has a higher annotation quality? \
   b. How many publications are linked to each of these proteins? Which of these publications contains specific information on the protein (based on the title)? \
   c. For each protein, look up at least one cross-reference to a database that you know and to a database that you do not yet know. Spend a few minutes to browse the information that you can gain in this way. \
   d. Calculate the frequency of individual amino acids in both protein sequences using the [PIR website](http://pir.georgetown.edu/pirwww/search/comp_mw.shtml). Do you notice something remarkable (Hint: look at relative abundance of various amino acids)? Can you relate this to information that is present in Uniprot (Hint: look at family/domains)?
