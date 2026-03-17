@@ -1259,14 +1259,14 @@ For the plant example browse to [arabidopsis.org](https://www.arabidopsis.org/to
 
 For the animal example browse to www.ensembl.org and search for the gene ID from question 9, limiting the search to the found animal. On the left side of the screen under “restrict category” click gene to filter for genes only. After following the result to the page of the gene, click on “Region in Detail” (found over the gene tracks). Click on “add/remove tracks”(found over the track window) and make sure to add under "Genes and transcripts" the "Comprehensive Gene Annotations from GENCODE 49" track with the "expanded with labels" option if it is not present already. For help navigating the genome browser click the question mark next to Region in Detail. \
 
-  a. You can see that this gene produces multiple different mRNA transcripts and thus multiple different proteins. In JBrowse, these are indicated by suffixes such as .1, .2, while in Ensembl they appear as numbers after a hyphen such as GENE-201, GENE-202. How many exons do these transcripts contain? How many introns? \
+  a. You can see that this gene produces multiple different mRNA transcripts and thus multiple different proteins. In JBrowse, these are indicated by suffixes such as .1, .2, while in Ensembl they appear as numbers after a hyphen such       as GENE-201, GENE-202. How many exons do these transcripts contain? How many introns? \
   b. For the plant example turn on the track "Light grown seedling" under "RNA-seq based evidence"/"Aligned reads".  \
     For the animal example click on “add/remove tracks”(found over the track window). Make sure to add under "mRNA and protein alignments" the "Vertebrate cDNAs (ENA)" track with the normal option. \
- Do you recognize the splice sites? Are the first two and last two bases of the intron as expected (based on {numref}`splicing`)? \
-  c. Download the data of transcript 1 for plants and Pax6-207 for animals. Then create another fasta file on you computer (for example in your notepad) that contains all the coding sequences (CDS) of the protein from the whole transcript.  \
+ Do you recognize the splice sites? Are the first two and last two bases of the intron as expected (based on {numref}`splicing`)? You might have to zoom in to see the DNA sequence. \
+  c. Look at the sequence data of transcript 1 for plants and Pax6-207 for animals. Then create a fasta file on your computer (for example in your notepad) that contains the whole transcript and another one with all the coding               sequences (CDS) of the protein.  \
   d. Is the length of the coding sequence in line with your expectation (based on your findings in question 9a)? \
-  e. Translate the first and last few codons to compare them against the protein sequence (question 9a). Do they match? \
-  f. Look upstream of the gene and zoom in until the DNA sequence is visible. Can you find the TATA box? How many nucleotides before the start of transcription?
+  e. Translate the first and last 5 codons to compare them against the protein sequence (question 9a). Do they match? \
+  f. Look upstream of the gene and zoom in until the DNA sequence is visible. Can you find the TATA box? How many nucleotides are there before the start of transcription?
 
 11. GC content \
   a. Find a tool on the internet to calculate the GC content of a gene. Which tool did you find? Use it to calculate the GC content for the whole transcript and for the coding sequence that you created in the previous task. What do you observe? \
