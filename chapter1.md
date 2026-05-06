@@ -134,7 +134,7 @@ RNA is mainly single stranded, but most RNAs show intramolecular base pairing be
 There are four major types of RNA:
 
 - Messenger RNA ({term}`mRNA`): RNA molecules that will later be translated into proteins and therefore serve as a 'messenger' in protein production.
-- Ribosomal RNA ({term}`rRNA`): the primary component of ribosomes, which assambe proteins from amino acids based on mRNA.
+- Ribosomal RNA ({term}`rRNA`): the primary component of ribosomes, which assemble proteins from amino acids based on mRNA.
 - Transfer RNA ({term}`tRNA`): functions as 'adapter molecule' that serve as the physical link between mRNA and the amino acid sequence of a protein during translation.
 - MicroRNA ({term}`miRNA`): non-coding RNA molecules of 21-23 nucleotides involved in RNA silencing and post-transcriptional regulation of {term}`Gene` expression.
 
