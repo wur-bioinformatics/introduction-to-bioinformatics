@@ -802,9 +802,9 @@ Database entries often link to each other via **cross links**.
 ### GenBank
 
 [GenBank](https://www.ncbi.nlm.nih.gov/genbank/) is a popular primary database for nucleotide sequences and is based at the [NCBI](https://www.ncbi.nlm.nih.gov/) (National Center for Biotechnology Information).
-A GenBank release usually occurs every two months and the most recent [release](https://www.ncbi.nlm.nih.gov/genbank/release/current/) from the 3{sup}`rd` of Augustus 2025 contains ~250 million sequences and additionally ~3.7 billion WGS (whole genome shotgun) records.
+A GenBank release usually occurs every two months and the most recent [release](https://www.ncbi.nlm.nih.gov/genbank/release/current/) contains ~260 million sequences and additionally ~6 billion WGS (whole genome shotgun) records.
 The latter are genome assemblies or genomes that were not yet completed.
-The complete database is available for download via  File Transfer Protocol (FTP), but the most convenient way to access individual entries is via the search on the GenBank website ({numref}`genbank_figure`).
+The complete database is available for download via File Transfer Protocol (FTP), but the most convenient way to access individual entries is via the search on the GenBank website ({numref}`genbank_figure`).
 
 ```{figure} images/chapter1/genbank.png
 :alt: Genbank website
@@ -1033,7 +1033,7 @@ You should be familiar with a couple of common data formats in bioinformatics (S
   - `.gb`
 * - Generic Feature Format
   - Sequence annotations
-  - `.gff`, `.gff`
+  - `.gff`, `.gtf`
 * - FASTQ
   - DNA sequencing data including basecalling quality scores
   - `.fq`
