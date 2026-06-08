@@ -802,8 +802,9 @@ Database entries often link to each other via **cross links**.
 ### GenBank
 
 [GenBank](https://www.ncbi.nlm.nih.gov/genbank/) is a popular primary database for nucleotide sequences and is based at the [NCBI](https://www.ncbi.nlm.nih.gov/) (National Center for Biotechnology Information).
-A GenBank release usually occurs every two months and the most recent [release](https://www.ncbi.nlm.nih.gov/genbank/release/current/) contains ~260 million sequences and additionally ~6 billion WGS (whole genome shotgun) records.
-The latter are genome assemblies or genomes that were not yet completed.
+GenBank releases usually occur every two months. As of the 18{sup}`th` of April 2026, GenBank contained ~260 million sequences and an additional ~6 billion WGS (whole-genome shotgun) records. WGS records are genome assemblies or genomes that were not yet completed.
+You can find information on the most recent release [here](https://www.ncbi.nlm.nih.gov/genbank/release/current/).
+
 The complete database is available for download via File Transfer Protocol (FTP), but the most convenient way to access individual entries is via the search on the GenBank website ({numref}`genbank_figure`).
 
 ```{figure} images/chapter1/genbank.png
