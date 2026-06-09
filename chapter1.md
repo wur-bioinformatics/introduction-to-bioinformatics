@@ -621,10 +621,19 @@ Masking repeats generally improves:
 - Biological relevance: repetitive sequences are usually not involved in the coding of proteins of interest.
   Therefore, focusing on non-repetitive regions is a smart choice in understanding the genes and regulatory elements that drive biological processes.
 
-Most repeat masking workflows work by first compiling (or using a precompiled) 'repeat library': a collection of known repetitive elements that have previously been characterized.
+Most repeat masking workflows function by first compiling (or using a precompiled) 'repeat library': a collection of known repetitive elements that have previously been characterized.
 Subsequently, the genome to be annotated is compared against this repeat library using various computational algorithms, such as (specifically configured versions of) BLAST or RepeatMasker.
-When a match is found, the corresponding region in the genome is 'masked' or annotated as a repetitive element.
-This means that these regions are excluded from further analysis or labeled as repetitive.
+When a match is found, the corresponding region in the genome is 'masked' or annotated as a repetitive element by replacing the nucleotides with an 'N' in the case of hard masking or with either a lower-case a, t, g, or c in the case of soft masking ({numref}`hardsoftmasking`). The masking step signals to downstream tools that these regions are repeats. Hard masking is preferred when repeats must be completely excluded from analysis and soft masking is preferred when you want to preserve sequence information but reduce the influence of repeats.
+
+```{figure} images/chapter1/hard_vs_soft_masking.png
+:alt: Hard vs soft masking
+:width: 80%
+:name: hardsoftmasking
+
+Example of the repetitive part of a sequence being hard masked (right) and soft masked (left). 
+Credits: {cite}`own_repeat_masking`. 
+```
+
 
 (chapter1_gene_prediction)=
 ### Gene prediction
