@@ -134,7 +134,7 @@ RNA is mainly single stranded, but most RNAs show intramolecular base pairing be
 There are four major types of RNA:
 
 - Messenger RNA ({term}`mRNA`): RNA molecules that will later be translated into proteins and therefore serve as a 'messenger' in protein production.
-- Ribosomal RNA ({term}`rRNA`): the primary component of ribosomes (the 'powerplants' of a cell).
+- Ribosomal RNA ({term}`rRNA`): the primary component of ribosomes, which assemble proteins from amino acids based on mRNA.
 - Transfer RNA ({term}`tRNA`): functions as 'adapter molecule' that serve as the physical link between mRNA and the amino acid sequence of a protein during translation.
 - MicroRNA ({term}`miRNA`): non-coding RNA molecules of 21-23 nucleotides involved in RNA silencing and post-transcriptional regulation of {term}`Gene` expression.
 
@@ -788,7 +788,8 @@ Each entry in a database has a unique **accession number**.
 This number is permanent and provides an unambiguous way to link to the entry.
 The information that the accession refers to should not change.
 To still allow updates to an entry, the accession number can contain a **version**, usually after a dot.
-For example, NC_003070.9 is the latest version (version 9) for _Arabidopsis thaliana_ chromosome 1 in RefSeq.
+For example, NC_003070.9 is the latest version (version 9) for _Arabidopsis thaliana_ chromosome 1 and NC_000001.11 (version 11) for _Homo sapiens_ chromosome 1
+ in RefSeq.
 
 Database entries often link to each other via **cross links**.
 
@@ -801,9 +802,9 @@ Database entries often link to each other via **cross links**.
 ### GenBank
 
 [GenBank](https://www.ncbi.nlm.nih.gov/genbank/) is a popular primary database for nucleotide sequences and is based at the [NCBI](https://www.ncbi.nlm.nih.gov/) (National Center for Biotechnology Information).
-A GenBank release usually occurs every two months and the most recent [release](https://www.ncbi.nlm.nih.gov/genbank/release/current/) from the 15{sup}`th` of December 2023 contains ~250 million sequences and additionally ~3.7 billion WGS (whole genome shotgun) records.
-The latter are genome assemblies or genomes that were not yet completed.
-The complete database is available for download via FTP, but the most convenient way to access individual entries is via the search on the GenBank website ({numref}`genbank_figure`).
+GenBank releases usually occur every two months. As of the 18{sup}`th` of April 2026, GenBank contained ~260 million sequences and an additional ~6 billion WGS (whole-genome shotgun) records. WGS records are genome assemblies or genomes that were not yet completed.
+You can find information on the most recent release [here](https://www.ncbi.nlm.nih.gov/genbank/release/current/).
+The complete database is available for download via File Transfer Protocol (FTP), but the most convenient way to access individual entries is via the search on the GenBank website ({numref}`genbank_figure`).
 
 ```{figure} images/chapter1/genbank.png
 :alt: Genbank website
@@ -1032,7 +1033,7 @@ You should be familiar with a couple of common data formats in bioinformatics (S
   - `.gb`
 * - Generic Feature Format
   - Sequence annotations
-  - `.gff`
+  - `.gff`, `.gtf`
 * - FASTQ
   - DNA sequencing data including basecalling quality scores
   - `.fq`
