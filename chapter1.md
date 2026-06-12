@@ -134,7 +134,7 @@ RNA is mainly single stranded, but most RNAs show intramolecular base pairing be
 There are four major types of RNA:
 
 - Messenger RNA ({term}`mRNA`): RNA molecules that will later be translated into proteins and therefore serve as a 'messenger' in protein production.
-- Ribosomal RNA ({term}`rRNA`): the primary component of ribosomes, which assambe proteins from amino acids based on mRNA.
+- Ribosomal RNA ({term}`rRNA`): the primary component of ribosomes, which assemble proteins from amino acids based on mRNA.
 - Transfer RNA ({term}`tRNA`): functions as 'adapter molecule' that serve as the physical link between mRNA and the amino acid sequence of a protein during translation.
 - MicroRNA ({term}`miRNA`): non-coding RNA molecules of 21-23 nucleotides involved in RNA silencing and post-transcriptional regulation of {term}`Gene` expression.
 
@@ -628,10 +628,19 @@ Masking repeats generally improves:
 - Biological relevance: repetitive sequences are usually not involved in the coding of proteins of interest.
   Therefore, focusing on non-repetitive regions is a smart choice in understanding the genes and regulatory elements that drive biological processes.
 
-Most repeat masking workflows work by first compiling (or using a precompiled) 'repeat library': a collection of known repetitive elements that have previously been characterized.
+Most repeat masking workflows function by first compiling (or using a precompiled) 'repeat library': a collection of known repetitive elements that have previously been characterized.
 Subsequently, the genome to be annotated is compared against this repeat library using various computational algorithms, such as (specifically configured versions of) BLAST or RepeatMasker.
-When a match is found, the corresponding region in the genome is 'masked' or annotated as a repetitive element.
-This means that these regions are excluded from further analysis or labeled as repetitive.
+When a match is found, the corresponding region in the genome is 'masked' or annotated as a repetitive element by replacing the nucleotides with an 'N' in the case of hard masking or with either a lower-case a, t, g, or c in the case of soft masking ({numref}`hardsoftmasking`). The masking step signals to downstream tools that these regions are repeats. Hard masking is preferred when repeats must be completely excluded from analysis and soft masking is preferred when you want to preserve sequence information but reduce the influence of repeats.
+
+```{figure} images/chapter1/hard_vs_soft_masking.png
+:alt: Hard vs soft masking
+:width: 80%
+:name: hardsoftmasking
+
+Example of the repetitive part of a sequence being hard masked (right) and soft masked (left). 
+Credits: {cite}`own_repeat_masking`. 
+```
+
 
 (chapter1_gene_prediction)=
 ### Gene prediction
@@ -764,6 +773,14 @@ Most visualization elements can be clicked to open pop-up windows with additiona
 
 A screenshot of the JBrowse genome browser showing _Arabidopsis thaliana_ chromosome 1 with a gene that has multiple splice variants. Credits: {cite}`jbrowse_2016`.
 ```
+
+```{figure} images/chapter1/gene_browser_UCSC.png
+:alt: USCS gene browser
+:width: 100%
+:name: uscs
+
+A screenshot of the UCSC genome browser showing _Homo sapiens_ chromosome 11 with the multiple splice variants of the PAX6 gene . Credits: {cite}`ucsc_2026`.
+```
 `````
 
 ---
@@ -809,9 +826,9 @@ Database entries often link to each other via **cross links**.
 ### GenBank
 
 [GenBank](https://www.ncbi.nlm.nih.gov/genbank/) is a popular primary database for nucleotide sequences and is based at the [NCBI](https://www.ncbi.nlm.nih.gov/) (National Center for Biotechnology Information).
-A GenBank release usually occurs every two months and the most recent [release](https://www.ncbi.nlm.nih.gov/genbank/release/current/) from the 15{sup}`th` of December 2023 contains ~250 million sequences and additionally ~3.7 billion WGS (whole genome shotgun) records.
-The latter are genome assemblies or genomes that were not yet completed.
-The complete database is available for download via  File Transfer Protocol (FTP), but the most convenient way to access individual entries is via the search on the GenBank website ({numref}`genbank_figure`).
+GenBank releases usually occur every two months. As of the 18{sup}`th` of April 2026, GenBank contained ~260 million sequences and an additional ~6 billion WGS (whole-genome shotgun) records. WGS records are genome assemblies or genomes that were not yet completed.
+You can find information on the most recent release [here](https://www.ncbi.nlm.nih.gov/genbank/release/current/).
+The complete database is available for download via File Transfer Protocol (FTP), but the most convenient way to access individual entries is via the search on the GenBank website ({numref}`genbank_figure`).
 
 ```{figure} images/chapter1/genbank.png
 :alt: Genbank website
@@ -1040,7 +1057,7 @@ You should be familiar with a couple of common data formats in bioinformatics (S
   - `.gb`
 * - Generic Feature Format
   - Sequence annotations
-  - `.gff`, `.gff`
+  - `.gff`, `.gtf`
 * - FASTQ
   - DNA sequencing data including basecalling quality scores
   - `.fq`

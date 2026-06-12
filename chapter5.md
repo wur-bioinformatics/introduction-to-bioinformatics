@@ -807,17 +807,24 @@ GT sequence required for normal intron processing. In the DNA, exons 6 and
 7 are shown as grey boxes that flank the intron 6 splice donor and acceptor
 sequences. In the RNA, the vertical lines represent exon junctions, and the
 light grey box represents the 8 nucleotide (nt) insertion in the _a_ mRNA
-that results from mis-splicing of intron 6. The red stars show the position
-of the stop codon in the predicted protein, highlighting the premature
-termination in the white flowered cultivar.
+that results from mis-splicing of intron 6. The red stars show where translation terminates in the predicted protein, highlighting the premature truncation of the protein in the white flowered cultivar.
 Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`flower_color_2010`.
+```
+
+```{figure} images\chapter5\variation_fish.png
+:alt: Albino fish deletion
+:align: center
+:name: variation_fish
+
+Variation in the TYRO gene of Oryzias latipes (Japanese medaka), which encodes tyrosinase. Tyrosinase is the enzyme that catalyzes melanin production by converting tyrosine into dopaquinone, which then forms melanin. 
+In the DNA, exons 2 and 3 are shown as grey boxes flanking the splice donor and acceptor sites of intron 2. The red box in genotype _A_ shows the 245 bp deletion in genotype _a_ that disrupts the branch point and acceptor site required for correct intron removal during splicing.
+In the RNA, the vertical lines represent exon junctions. The red stars show where translation terminates in the predicted protein, highlighting the premature truncation of the protein in the albino phenotype.
+Credits: {cite}`own_variation_fish` based on {cite}`source_variation_fish`.
 ```
 
 #### Variants and their effects
 
-SNPs between individuals underly most phenotypic variation. Sometimes a
-single variant causes a different phenotype, like the classical mendelian
-trait of flower color ({numref}`flower_color`).  More often phenotypic traits are
+Sometimes a single variant causes a different phenotype, such as flower color, a classical Mendelian trait caused by a SNP ({numref}`flower_color`) or the albino phenotype of Japanese medaka resulting from a 245 bp deletion ({numref}`variation_fish`).  More often phenotypic traits are
 the result of multiple variants, one example is height (in humans, height is determined by \>12000 SNPs {cite}`yengo_saturated_2022`). 
 Some variants can cause hereditary defects or increase the risk of certain diseases.
 Well-studied examples are mutations in the BRCA1 and BRCA2 genes
