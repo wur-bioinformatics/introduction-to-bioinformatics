@@ -737,7 +737,7 @@ Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`ca
 ```
 
 They account for the observable variation in organisms all around us. 
-These variation can arise naturally through adaptation to different environments. For example, the beak size and shape of Galápagos finches vary according to their food sources ({numref}`flinches`).
+This variation can arise naturally through adaptation to different environments. For example, the beak size and shape of Galápagos finches vary according to their food sources ({numref}`flinches`).
 In agriculture, variants have been artificially selected for in order to create the wide varieties of shapes, color and taste we see in our food items today ({numref}`carrots`).
 Historically, variants have been selected purely on these visible phenotypes
 and new combinations have been created mainly by chance in large-scale crosses.
