@@ -587,6 +587,10 @@ Different representations of the PDB structure 5PEP generated with NGL. Credits:
 ```
 
 ```{seealso}
+You can explore different 3D views of proteins at [RCSB PDB](https://www.rcsb.org/3d-view/5PEP/1) by adding different representation from right-hand menu under Components → Polymer → ... → Add Representation.
+```
+
+```{seealso}
 Most of the figures in this section are taken from [OpenStax](https://openstax.org/books/biology-2e/pages/3-4-proteins), where you can also find more information on proteins.
 ```
 
