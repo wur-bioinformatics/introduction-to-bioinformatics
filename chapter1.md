@@ -558,7 +558,7 @@ B) UDP-galactose 4-epimerase, a homodimer (PDB structure 1EK5 colored by seconda
 Mutations in the gene sequence can lead to changes in the primary structure of the protein, e.g., a substitution of one amino acid by a different one.
 Often, such substitutions still lead to highly similar protein structures that perform a similar or even the same function, especially when the exchanged amino acids have similar chemical properties.
 Nevertheless, single amino acid substitutions can have severe consequences.
-A prominent example in humans is sickle cell anemia, where a substitution of glutamic acid to valine in hemoglobin β results in a structural change that leads to a distortion in red blood cells ({numref}`sicklecell`). In plants a comperable example is the origin of red colouration in _Paeonia_ species, where leucine is switched to arginine and alaine is replaced by threonine, resulting in greatly reduced anthocyanin O-methyltransferase activity and leading to the accumulation of red pigments ({numref}`paeoniared`).
+A prominent example in humans is sickle cell anemia, where a substitution of glutamic acid to valine in hemoglobin β results in a structural change that leads to a distortion in red blood cells ({numref}`sicklecell`). In plants a comparable example is the origin of red colouration in _Paeonia_ species, where leucine is switched to arginine and alaine is replaced by threonine, resulting in greatly reduced anthocyanin O-methyltransferase activity and leading to the accumulation of red pigments ({numref}`paeoniared`).
 
 ```{figure} images/chapter1/sicklecell.jpg
 :alt: Sickle cell anemia
