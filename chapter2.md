@@ -403,6 +403,26 @@ For example, in {numref}`blast_output`, all hits have very low E-values:
 the first hit is to the sequence itself; then there are hits with high identity and high coverage in mouse and human, these might be homologous sequences.
 The 4{sup}`th` and 5{sup}`th` hit are local, since the query cover is ~30%, these sequences might only share a homologous domain with the query protein.
 
+#### BLAST databases
+
+The hits you can find by BLAST depend on the database you search against. 
+First, you can of course only find hits that are present in the database.
+Second, the size of the database influences the run time (the larger the database, the longer the program will run) and the resulting e-value (see Note 2.5).
+
+These days, we collect a lot of sequencing data, resulting in the presence of many sequences in databases, some of which are very similar to each other. 
+However, if protein1 and protein2 have high identity (e.g., 95%) and BLAST finds protein1 as a good hit for your query sequence, then it likely also will find protein2 as a good hit.
+To lower the number of comparisons that need to be done, a specific protein database __ClusteredNR__ is available ({numref}`clustering`). 
+When this database is chosen, only the representatives are included in the blast search and in the output all the cluster members will be available.
+
+```{figure} images/chapter2/cluster.png
+:alt: Clustering
+:width: 100%
+:name: clustering
+
+Scheme of the ClusteredNR database. 
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
+```
+
 #### BLAST types
 
 Different types of BLAST exist to search nucleotides or proteins in the respective databases:
@@ -424,8 +444,6 @@ Sequences/databases with a blue background originate from protein sequences, whe
 Note that some of the latter are automatically translated into all possible proteins (indicated by blue font).
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
 ```
-
-%#%[TODO chapter 1: File formats]
 
 ### PCR primer design
 
@@ -465,7 +483,8 @@ Credits: {cite}`PCR_NHGR`.
 ```
 `````
 
-PCR primers typically have to meet several requirements to result in a successful PCR product: they have to be biochemically feasible (i.e. denature, anneal, and extend at the right temperature), they have to be specific (only amplify the region of interest), they should produce a product of a reasonable size (~500-1000 nucleotides, depending on the application), and they should be stable as single stranded DNA.
+PCR primers typically have to meet several requirements to result in a successful PCR product: 
+they have to be biochemically feasible (i.e. denature, anneal, and extend at the right temperature), they have to be specific (only amplify the region of interest), they should produce a product of a reasonable size (70-1000 nucleotides, depending on the application), and they should be stable as single stranded DNA.
 The combination of these requirements typically allows primers of ~18-30 nucleotides long.
 To aid in the quick design of potentially successful primers, tools such as [Primer-BLAST](https://www.ncbi.nlm.nih.gov/tools/primer-blast/) or [Primer3+](https://www.primer3plus.com/index.html) automatically check most of the mentioned requirements.
 For example, Primer-BLAST lets a user upload a sequence of DNA that should be amplified, and can be configured to find primer products of a specific size.
