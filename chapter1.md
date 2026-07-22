@@ -558,7 +558,7 @@ B) UDP-galactose 4-epimerase, a homodimer (PDB structure 1EK5 colored by seconda
 Mutations in the gene sequence can lead to changes in the primary structure of the protein, e.g., a substitution of one amino acid by a different one.
 Often, such substitutions still lead to highly similar protein structures that perform a similar or even the same function, especially when the exchanged amino acids have similar chemical properties.
 Nevertheless, single amino acid substitutions can have severe consequences.
-A prominent example is sickle cell anemia, where a substitution of glutamic acid to valine in hemoglobin β results in a structural change that leads to a distortion in red blood cells ({numref}`sicklecell`).
+A prominent example in humans is sickle cell anemia, where a substitution of glutamic acid to valine in hemoglobin β results in a structural change that leads to a distortion in red blood cells ({numref}`sicklecell`). In plants a comparable example is the origin of red colouration in _Paeonia_ species, where leucine is switched to arginine and alaine is replaced by threonine, resulting in greatly reduced anthocyanin O-methyltransferase activity and leading to the accumulation of red pigments ({numref}`paeoniared`).
 
 ```{figure} images/chapter1/sicklecell.jpg
 :alt: Sickle cell anemia
@@ -568,7 +568,14 @@ A prominent example is sickle cell anemia, where a substitution of glutamic acid
 Consequences of a substitution in hemoglobin β resulting in sickle cell anemia.
 Credits: Rao, A., Tag, A. Ryan, K. and Fletcher, S. Department of Biology, Texas A&M University.
 ```
+```{figure} images/chapter1/paeonia_substitution.png
+:alt: Paeonia red colour
+:width: 80%
+:name: paeoniared
 
+Consequences of a substitution in anthocyanin O-methyltransferase resulting in reduced activity and red pigment accumulation.
+Credits: {cite}`du_methylation_2015`.
+```
 %#%[Figure sicklecell is credited but the image is not found on a specific webpage. Is showing credits enough? - Similar to Pearson imagery (Campbell Biology 11th edition Figure 5.19).]
 
 ---
@@ -584,6 +591,10 @@ For some examples see {numref}`protrep`.
 :name: protrep
 
 Different representations of the PDB structure 5PEP generated with NGL. Credits: {cite}`rcsb_2000,protrep_1990,ngl_2018`.
+```
+
+```{seealso}
+You can explore different 3D views of proteins at [RCSB PDB](https://www.rcsb.org/3d-view/5PEP/1) by adding different representation from right-hand menu under Components → Polymer → ... → Add Representation.
 ```
 
 ```{seealso}
@@ -1227,7 +1238,7 @@ Examples of other ontologies are the [plant ontology](https://www.ebi.ac.uk/ols/
 
 ## Practical assignments
 
-This practical contains questions and exercises to help you process the study materials of Chapter 1.
+This practical contains questions and exercises to help you process the study materials of Chapter 1.  In some exercises, you can choose between different organisms so that you can work with examples that are more relevant to your field or interests. If you would like additional practice, you are encouraged to solve the same exercise using the other organisms as well. 
 You have 2 mornings to work your way through the exercises.
 In a single session you should aim to get about halfway through this guide (i.e., day 1: assignment 1-3, day 2: assignment 4 and project preparation exercise).
 Use the time indication to make sure that you do not get stuck in one assignment.
@@ -1267,18 +1278,24 @@ mRNA:                  ......................
 Amino acids:           ......................
 ```
 
-9. On your computer, browse to [UniProt](https://www.uniprot.org/) and search for UniProt ID B3H4Y2. \
+9. On your computer, browse to [UniProt](https://www.uniprot.org/) and search for UniProt ID B3H4Y2 (plant) OR UniProt ID P63015 (animal). \
   a. In which organism is this protein found? What is the length of this protein? What is the corresponding gene ID? \
   b. Write down the first 5 and last 5 amino acids of the protein.
 
 
-10. Browse to [arabidopsis.org](https://www.arabidopsis.org/tools/overview) and click on "JBrowse" (Firefox or Chrome recommended). This will take you to a genome browser of the _Arabidopsis_ genome. Search for the gene ID from question 9 (see screenshot above). Under "Help" -> "General" you can find some information to help you understand what you are looking at. \
-  a. You can see that this gene produces two different mRNA transcripts (indicated by .1 and .2) and thus 2 different proteins. How many exons do these transcripts contain? How many introns? \
-  b. Turn on the track "Light grown seedling" under "RNA-seq based evidence"/"Aligned reads". Do you recognize the splice sites? Are the first two and last two bases of the intron as expected (based on {numref}`splicing`)? \
-  c. Save the data for transcript 1. Save a fasta file for the whole transcript and one for each coding sequence (CDS). Create a fasta file on your computer that contains the complete coding sequence of the protein. \
+10. In this exercise you will examine the genomic context and transcript structure of the gene identified in question 9 using a genome browser. Follow the instructions corresponding to the organism you selected in question 9. \
+For the plant example browse to [arabidopsis.org](https://www.arabidopsis.org/tools/overview) and click on "JBrowse" (Firefox or Chrome recommended). This will take you to a genome browser of the _Arabidopsis_ genome. Search for the gene ID from question 9 (see screenshot above). Under "Help" -> "General" you can find some information to help you understand what you are looking at. \
+
+For the animal example browse to www.ensembl.org and search for the gene ID from question 9, limiting the search to the found animal. On the left side of the screen under “restrict category” click gene to filter for genes only. After following the result to the page of the gene, click on “Region in Detail” (found over the gene tracks). Click on “add/remove tracks”(found over the track window) and make sure to add under "Genes and transcripts" the "Comprehensive Gene Annotations from GENCODE 49" track with the "expanded with labels" option if it is not present already. For help navigating the genome browser click the question mark next to Region in Detail. \
+
+  a. You can see that this gene produces multiple different mRNA transcripts and thus multiple different proteins. In JBrowse, these are indicated by suffixes such as .1, .2, while in Ensembl they appear as numbers after a hyphen such       as GENE-201, GENE-202. How many exons do these transcripts contain? How many introns? \
+  b. For the plant example turn on the track "Light grown seedling" under "RNA-seq based evidence"/"Aligned reads".  \
+    For the animal example click on “add/remove tracks”(found over the track window). Make sure to add under "mRNA and protein alignments" the "Vertebrate cDNAs (ENA)" track with the normal option. \
+ Do you recognize the splice sites? Are the first two and last two bases of the intron as expected (based on {numref}`splicing`)? You might have to zoom in to see the DNA sequence. \
+  c. Look at the sequence data of transcript 1 for plants and Pax6-207 for animals. Then create a fasta file on your computer (for example in your notepad) that contains the whole transcript and another one with all the coding               sequences (CDS) of the protein.  \
   d. Is the length of the coding sequence in line with your expectation (based on your findings in question 9a)? \
-  e. Translate the first and last few codons to compare them against the protein sequence (question 9). Do they match? \
-  f. Look upstream of the gene. Can you find the TATA box? How many nucleotides before the start of transcription?
+  e. Translate the first and last 5 codons to compare them against the protein sequence (question 9a). Do they match? \
+  f. Look upstream of the gene and zoom in until the DNA sequence is visible. Can you find the TATA box? How many nucleotides are there before the start of transcription?
 
 11. GC content \
   a. Find a tool on the internet to calculate the GC content of a gene. Which tool did you find? Use it to calculate the GC content for the whole transcript and for the coding sequence that you created in the previous task. What do you observe? \
@@ -1462,11 +1479,11 @@ Amino acids:           ......................
 3. Ontology \
   a. Describe what an ontology is (use the information in the reader and/or Google to find information). \
   b. The Gene Ontology is one of the most important ontologies in bioinformatics. Which biological domains are covered in the Gene Ontology? \
-  c. Look up the _Arabidopsis_ protein in UniProt (Accession B3H4Y2). What information do you find about the GO terms associated with this protein? \
-  d. Now look up the famous _Arabidopsis_ gene FRIGIDA (Accession P0DH90). Which GO terms are associated with this gene? In which cellular component is this protein found and which biological process is it involved in?
+  c. Look up the protein from exercise 9 in UniProt (plant: B3H4Y2, animal: P63015). What information do you find about the GO terms associated with this protein? \
+  d. Now look up the well-known gene FRIGIDA (Accession P0DH90) for plants OR INS2 (Accesion P01326) for animals. Which GO terms are associated with this gene? In which cellular component is this protein found and which biological process is it involved in?
 
 4. UniProt \
-  a. Look up the two proteins from Q3 in UniProt again. In which of the sections of UniProt is each of them deposited. Which of the two has a higher annotation quality? \
+  a. Look up the two proteins the you worked with in Q3 on UniProt again. In which of the sections of UniProt is each of them deposited. Which of the two has a higher annotation quality? \
   b. How many publications are linked to each of these proteins? Which of these publications contains specific information on the protein (based on the title)? \
   c. For each protein, look up at least one cross-reference to a database that you know and to a database that you do not yet know. Spend a few minutes to browse the information that you can gain in this way. \
   d. Calculate the frequency of individual amino acids in both protein sequences using the [PIR website](http://pir.georgetown.edu/pirwww/search/comp_mw.shtml). Do you notice something remarkable (Hint: look at relative abundance of various amino acids)? Can you relate this to information that is present in Uniprot (Hint: look at family/domains)?
