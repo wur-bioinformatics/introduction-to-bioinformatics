@@ -419,7 +419,7 @@ When this database is chosen, only the representatives are included in the blast
 :width: 100%
 :name: clustering
 
-Scheme of the ClusteredNR database. 
+Scheme of clustering and cluster representatives to illustrate ClusteredNR. 
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_2_2024`.
 ```
 
@@ -547,7 +547,7 @@ The often used multiple sequence alignment program `mafft` implements recomputin
 ```
 
 %#% TODO: It would be nice to have a visualization here, all good ones are with copyright, need to redo it
-
+ 
 #### Iterative refinement
 One potential downside of the progressive alignment strategy is that some of the intermediate blocks may represent sub-optimal alignments.
 For example, when a gap is introduced during an early stage of the progressive approach, it is never removed from the alignment.
@@ -566,6 +566,20 @@ __Weighted sum-of-pairs scoring__: The sum-of-pairs method calculates and sums a
 
 __Partitioning rearrangement__: Following a guide tree, the multiple sequence alignment is partitioned into two sub-alignments (or blocks) along each branch of the tree. Each pair of blocks is then realigned, but the resulting alignment is only kept if the score of the realigned blocks has increased.
 ```
+
+#### Reliability of multiple alignments
+
+When using a multiple alignment for downstream applications, such as phylogeny reconstruction as discussed in [chapter 3](#chapter3), you typically want to ensure that you continue with reliable data.
+However, even when the proteins are homologous, there might be variable regions that are difficult to align. 
+When this happens, it can be better to **filter** the alignment for subsequent tasks. 
+This typically involves the **filtering of alignment columns**, removing highly variable alignment positions.
+In addition, you can also consider, the **filtering of sequences**. 
+For example, removing a highly divergent sequence can improve the alignment.
+
+Older methods for filtering alignment columns only look at the pattern of gaps (e.g., Gblocks). 
+Newer methods take alternative alignments into account, which typically improves accurracy (e.g., GUIDANCE, TCS).
+These methods estimate different alignments (e.g., by using different parameters or by including pairwise alignments) and look at the consistency between the estimated alignments.
+Thus, the resulting alignment can be filtered based on the estimated reliability scores. 
 
 ### Motifs
 
@@ -671,7 +685,7 @@ As such, multiple Pfam HMMs can match a given protein sequence. The combination 
 This practical contains questions and exercises to help you process the study materials of chapter 2.
 There are two supervised practical sessions, one on Wednesday and one on Thursday.
 On the first practical day you should aim to get about halfway through this guide.
-Thus, you should aim to be close to finishing Exercise 4 on the first day.
+Thus, you should aim to be working on Exercise 5 by the end of the first day.
 Use the time indication to make sure that you do not get stuck in one exercise.
 These practical exercises offer you the best preparation for the project.
 Make sure that you develop your practical skills now, in order to apply them during the project.
@@ -709,13 +723,13 @@ Here we explore these strategies by searching for homologs of the yeast Vps36p i
 10. Look at the taxonomy report. In which groups of species do you find hits now?
 11. Finally, we want to get an overview how similar these distantly related proteins are.
 To this end, we will download some hits and perform a multiple sequence alignment.
-Generate a multi-fasta file of 10 sequences: The first 9 hits from the previous blast search and the original sequence (NP_013521.1).
+Generate a multi-fasta file of 10 sequences: The first 9 hits from the blast search under (6) and the original sequence (NP_013521.1).
 (Hint: you can mark sequences and save them by clicking on Download -> Fasta (complete sequences); use a text editor to add the original sequence manually).
 12. We will use [M-Coffee](https://tcoffee.crg.eu/apps/tcoffee/do:mcoffee) from the [T-Coffee suite](https://tcoffee.crg.eu/apps/tcoffee/index.html). This program uses multiple other tools to compute several multiple sequence alignments and combines them into one final alignment. The output includes a color code showing the agreement between the methods. Upload your multi-fasta file and run it with default parameters. Look at the estimated alignment. What can you say about the overall alignment quality? Where can you find regions of high and low agreement?
 13. Would you conclude that these sequences are homologous across their entire length? Why/why not?
 ```
 
-```{exercise}Looking for distant homologs, 20 minutes
+```{exercise} Looking for distant homologs, 20 minutes
 
 In addition to BLAST, other methods for homology search exist and some of them are particularly useful for finding distant homologs. Here, we want to work with one of these tools, [HMMER](https://www.ebi.ac.uk/Tools/hmmer/home).
 1. We will first perform a search with phmmer. phmmer can be used like BLAST, it searches a sequence against a sequence database. Internally, phmmer builds a profile from your single query sequence using BLOSUM62 and gaps. This way, it is more _sensitive_, i.e., it is expected to find more distant homologs compared to BLAST. Use phmmer to search Vps36p against the Swissprot database. How many hits do you find? How do they compare to the results in Exercise 1 question 2?
@@ -724,6 +738,58 @@ In addition to BLAST, other methods for homology search exist and some of them a
 4. Start the second iteration with the button on top. How many hits do you get now? Compare the taxonomy to the previous iteration. What do you observe?
 ```
 
+```{exercise} Analyses of the MDHX1 family - part 1, 20 minutes
+
+Malate dehydrogenases are a group of enzymes found in many organisms, including plants, where they are involved in essential metabolic processes. These enzymes help convert malate into oxaloacetate and vice versa, using NAD⁺/NADH as cofactors. This reaction is important for processes such as cellular respiration, where cells break down sugars to produce energy, photosynthesis and for balancing the flow of carbon molecules between different metabolic pathways. For more information, see https://doi.org/10.1042/EBC20230089 .
+Here, we will use bioinformatics approaches to analyse MDHX1 to discover if it is part of a larger gene family and which related sequences exist in A. thaliana.
+
+[UniProt](http://www.uniprot.org) is a publicly available protein database that contains protein sequences and functional annotation for ~150,000,000 protein entries.
+1. Have a look at the UniProt website. Why does UniProtKB-TrEMBL have so many more entries than UniProtKB-Swiss-Prot?
+2. Search for the _Arabidopsis_ protein MDHX1 using the UniProt identifier O82399. The MDHX1 entry provides you with an overview of the protein entry and some functional information. Read the functional description of MDHX1. Does this description fit the information above on MDHX1, and how does UniProt gather this information?
+3. Which functional regions are present in MDHX1? Where in the sequence are they located? Where does this information come from? (Hint: functional regions can be found under Function -> Features).
+4. Towards the end of the entry, you can find the actual protein sequence of MDHX1. You can download the sequence in fasta format by clicking on the Download button.
+5. Interpro also provides a functional analysis of proteins and their domains. Go to the [interpro](https://www.ebi.ac.uk/interpro/) website and look up the entry for MDHX1. How many protein domains have been identified in MDHX1 and where are they located?
+6. Look up both domains in Interpro. What is the function of the identified domains? What information can you find on GO terms and on protein structures?
+7. Look up both domains in Pfam and look at the HMM logo of the domain. Among the first 10 positions, which of them are conserved and which amino acids are preferred there? Which positions are higly variable?
+```
+
+```{exercise} Analyses of the MDHX1 family - part 2, 40 minutes
+
+After we analysed the MDHX1 sequence, we want to find potential homologs of MDHX1 in the thale cress Arabidopsis thaliana. We will use BLAST to identify protein sequences in publicly available databases with sufficiently high similarity scores such that these are likely homologs of MDHX1.
+
+1. Go back to the UniProt database and click on Tools -> BLAST within the UniProt entry. Change the target database to "UniProtKB Swiss-Prot" and perform the search (‘Run BLAST’). What is the ‘best’ hit found (how could you define ‘best’)? Look at the second-best hit, which sequence is that and in which organism is it found? Report the E-value, the identity, and the score.
+2. How many hits do you find with that search? Do you expect to find even more database hits in the UniProtKB database than what your original search showed? Why? 
+3. How could you influence the number of hits you find in the database?
+4. Repeat the search, but only consider hits with an E-value of 1e-4 and up to 1,000 possible matches. How many hits do you find?
+5. Now we want to focus on homologs in _A. thaliana_ (click on _A. thaliana_ in popular organism). How many hits do you find in _A. thaliana_?
+6. On the right part of the output page, you can find a graphical overview of the alignment (aligned part highlighted as thick bar). You can also click on these to see the aligned regions. If you look at the sequences, what do you observe regarding the aligned region, and what does this suggest? Is this what you would expect from a BLAST search, and why?
+7. Next, we want to explore the conservation of the MDHX1 family. To this end, we use multiple sequence alignments. Make an alignment of all the A. thaliana sequences using the UniProt aligner. Mark them -> click Align -> click Align selected results -> press Align. Look at the alignment, do you conclude that these proteins are homologous over their whole length?
+8. A similarity matrix (or percent identity matrix) is a table that shows the pairwise percentage of identical amino acids between every pair of sequences in the multiple sequence alignment. Each value represents how similar two protein sequences are, with higher percentages indicating closer evolutionary relationships and potentially more similar functions. Click on the Percent Identity Matrix option to obtain the identies for the alignment.  Which sequences show the highest and lowest levels of similarity based on the percent identity matrix? How could you group them together?
+9. Investigate the other sequences by accessing their UniProt entries (Hint: Clicking the blue accession code such as P93819 in the sequence label next to the matrix forwards you directly there). What differences can you find based on the descriptions? Does the clustering make sense according to this? 
+10. Are the observed sequence differences consistent with the biological roles of these proteins? Discuss possible reasons why related proteins may differ in their amino acid sequences.
+```
+
+```{exercise} Analysis of human Cyclin-A2 homologs - 60 minutes
+
+Next, we want to investigate a different protein, Cyclin-A2 in humans. 
+
+1. Look up the protein in uniprot (P20248) and read about its function.
+2. Look up the protein interpro and describe its domain structure.
+3. Blast the protein in Uniprot using the "UniProtKB Swiss-Prot" database, an e-value cutoff of 1e-4 and the maximum number of hits. How many hits do you find?
+4. Look at the first 6 hits. From which organisms do they originate? If you want to do an alignment of these organisms, which strategy would you suggest?
+5. Compute a multiple sequence alignment of the first 6 hits in uniprot and look at the percent identity matrix and rank the species according to their similarity to the human sequence. What do you observe? Does this match the evolutionary relationship between these species? 
+6. Look at the alignment and describe variable and conserved regions. How do they correspond to the domains found in interpro?
+7. Go back to the blast results. Now look at the first 12 hits. From which organisms do they originate? Would you conclude that they are full-length homologs?
+8. Next, we do an alignment using [M-Coffee](https://tcoffee.crg.eu/apps/tcoffee/do:mcoffee). To this end, download the sequences from Uniprot. Note: the UniProt alignment option provides the easiest way to get all sequences of interest: Mark them -> click Align -> click Align selected results -> copy the sequences from the window into a text file, take care to copy all the sequences. Use these as input for M-Coffee.
+9. Look at the alignment. Note: you can use a different alignment viewer, e.g., https://www.acacia-bio.nl/. To load the alignment into another viewer, you can download it by clicking on "fasta_aln file". What do you conclude about the alignment? Does it provide a good alignment over its whole length?
+10. The T-Coffee suite also includes a program to extract reliable regions from an alignment: the Core/TCS tool. We want to use this tool to extract reliable columns from our alignment. Use the button under "Send results" -> Core/TCS at the bottom to run it, then click "Submit". The colors of the result indicate reliable regions. Which regions are less reliable and which are more reliable? Is this consistent with your answer to the previous question?
+11. The alignment can also be filtered for reliable regions. A fasta file, where only the well aligned columns are included, can be downloaded at the bottom ("fasta_aln file"). Display this file in acacia-bio. What can you say about the quality of this alignment?
+12. Finally, after investigating the most significant hits, we went to get an overview of all the hits found. In which organisms can you find hits?
+13. Look at the first hit in viruses. How similar are these proteins? Does this hit suggest that both proteins have the same function?
+14. Look up information on the viral protein in Uniprot and Interpro. How does the domain architecture relate to the blast hit? What can you conclude about the function of this protein? 
+```
+
+<!--
 ```{exercise} Analyses of the PLT1 family - part 1, 60 minutes
 
 Stem cells are undifferentiated cells that can differentiate into specialized cells and therefore are crucial during embryonic development of different tissues and for growth.
@@ -731,7 +797,7 @@ In plants, such as the thale cress _Arabidopsis thaliana_, stem cells are found 
 PLT1 is a transcription factor that is required to maintain stem cells in the root ([Aida et al. 2004](https://doi.org/10.1016/j.cell.2004.09.018)).
 Here, we will use bioinformatics approaches to analyse PLT1 to discover if it is part of a larger gene family and which related sequences exist in _A. thaliana_.
 
-[UniProt](http://www.uniprot.org) is a publicly available protein database that contains protein sequences and functional annotation for >200,000,000 protein entries.
+[UniProt](http://www.uniprot.org) is a publicly available protein database that contains protein sequences and functional annotation for ~150,000,000 protein entries.
 1. Have a look at the UniProt website. Why does UniProtKB-TrEMBL have so many more entries than UniProtKB-Swiss-Prot?
 2. Search for the _Arabidopsis_ protein PLT1 using the UniProt identifier Q5YGP8. The PLT1 entry provides you with an overview of the protein entry and some functional information. Read the functional description of PLT1. Does this description fit the information above on PLT1, and how does UniProt gather this information?
 3. Which functional regions are present in PLT1? Where in the sequence are they located? Which database is used for that information? (Hint: functional regions can be found under Function -> Features).
@@ -748,7 +814,6 @@ Here, we will use bioinformatics approaches to analyse PLT1 to discover if it is
 12. Now perform a local alignment using the Smith-Waterman algorithm. Do you expect to observe large differences between the global and the local alignment? Explain why.
 ```
 
-
 ```{exercise} Analyses of the PLT1 family - part 2, finding homologs, 30 minutes
 
 After we analysed the PLT1 sequence, we want to find potential homologs of PLT1 in the thale cress _Arabidopsis thaliana_.
@@ -763,7 +828,6 @@ We will use BLAST to identify protein sequences in publicly available databases 
 8. Save the first ten database hits in fasta format. Note: UniProt provides an alignment option, which provides the easiest way to get all sequences of interest: Mark them -> click Align -> click Align selected results -> copy the sequences from the window into a text file, take care to copy the whole 10 sequences.
 ```
 
-
 ```{exercise} Analyses of the PLT1 family - part 3, conservation, 30 minutes
 
 Next, we want to explore the conservation of the PLT1 family identified in the previous exercise.
@@ -776,6 +840,7 @@ To this end, we use multiple sequence alignments.
 6. Next, we try a different alignment tool: [M-Coffee](https://tcoffee.crg.eu/apps/tcoffee/do:mcoffee) from the [T-Coffee suite](https://tcoffee.crg.eu/apps/tcoffee/index.html). Does that tool provide a good global alignment? Why/why not?
 7. The T-Coffee suite also includes a program to extract reliable regions from an alignment: the Core/TCS tool. We want to use this tool to extract reliable columns from our alignment. Use the button under "Send results" -> Core/TCS at the bottom to run it, then click "Submit". A fasta file, where only the well aligned columns are included, can be downloaded at the bottom ("fasta_aln file"). Display this file in mview. What can you say about the quality of this alignment?
 ```
+-->
 
 ```{exercise} Motif discovery in bacteria, 20 minutes
 
@@ -783,8 +848,9 @@ The bacterial immune system CRISPR/Cas encodes the defense sequences to target m
 Here we will use motif discovery to determine the repeat sequences.
 1. Access the RefSeq database at NCBI to retrieve the genome data for _Streptococcus thermophilus_ (Accession NZ_LR822015.1). Hint: Use Customize view to display all features
 2. Go the the first `repeat_region` feature. Where in the genome is it located? Retrieve the sequence of this feature (Hint: click on `repeat_region` and then on `Fasta` in the bottom right).
-3. Use MEME and MAST to discover the motif. Go to the [MEME suite](https://meme-suite.org/) and click on MEME. Under Input, select "Type in sequences" from the dropdown menu to paste your fasta sequence. Choose the correct option under "How do you expect motif sites to be distributed in sequences?" and select one motif to find.
-4. After running the search, retrieve the MAST HTML output. Which motif do you find and how often does it occur in the sequence? Compare the motif to the repeat annotated in RefSeq. What do you observe?
+3. We will first use dot plots to look at the sequence. We will use the online dot-plot program [Dotlet](http://dotlet.vital-it.ch). Go to the website and add the CRISPR region as sequence 1 and sequence 2 (we want to perform a self-comparison). To filter some of the low scoring alignments, you need to use the sliders below the score histogram. What do the off-diagonal lines mean? 
+4. Use MEME and MAST to discover the motif. Go to the [MEME suite](https://meme-suite.org/) and click on MEME. Under Input, select "Type in sequences" from the dropdown menu to paste your fasta sequence. Choose the correct option under "How do you expect motif sites to be distributed in sequences?" and select one motif to find.
+5. After running the search, retrieve the MAST HTML output. Which motif do you find and how often does it occur in the sequence? Compare the motif to the repeat annotated in RefSeq. What do you observe?
 ```
 
 ```{exercise} Primer design for the Phytophthora infestans effector gene Avr1, 30 minutes
@@ -801,8 +867,7 @@ Potato late blight had significant historic impact in Europe and North America a
 8. PCR cannot only amplify regions from the genome, but also regions from mRNA (mRNA needs to be first converted into cDNA). When performing this type of PCR, one tries to design primer pairs that span an intron in the gene of interest (this is also an option in PrimerBLAST). Can you speculate why primers spanning an intron can be helpful?
 ```
 
-```{attention} **Project Preparation Exercise**
-:icon: false
+```{exercise} Project Preparation Exercise
 
 We continue the project exercise from chapter 1.
 Both ARF5 and IAA5 belong to large gene families in _A. thaliana_.
