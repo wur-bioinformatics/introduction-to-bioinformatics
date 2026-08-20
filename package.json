@@ -1,0 +1,12 @@
+{
+  "name": "introduction-to-bioinformatics",
+  "private": true,
+  "scripts": {
+    "start": "myst start",
+    "build": "myst build --html",
+    "build:pdf": "myst build --pdf"
+  },
+  "devDependencies": {
+    "mystmd": "1.10.1"
+  }
+}

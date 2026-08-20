@@ -321,15 +321,82 @@ As we have seen in Section X.X, there are key similarities and differences betwe
 %#%[Not sure what the Section X.X refers to.]
 ```
 
-### Editing and publishing chapters
+---
 
-Since this reader is under iterative development, it is beneficial for all contributors to know how they can update and publish their individual chapters. The repository uses a GitHub workflow, using GitHub actions,
-that fully automates the deployment, release and publishing of the reader. Contributors can initiate this workflow through their commit message to the repository.
+### Publishing and deployment
 
-When an edit has been made to a chapter, the contributor has to consider the magnitude of their commit. A small update with small fixes or changes should be considered a patch update. A larger revision of a chapter, which could include new sections, removed sections or new imagery should be considered a minor update. A complete overhaul of one or more chapters that affects the reader as a whole should be considered a major update. When a decision according to the above logic has been made, the commit message should end in one of the corresponding categories:
-- #patch (this will increment the version of the reader by 0.0.1 and initiate the deployment, release and publishing workflow).
-- #minor (this will increment the version of the reader by 0.1.0 and initiate the deployment, release and publishing workflow).
-- #major (this will increment the version of the reader by 1.0.0 and intiatie the deployment, release and publishing workflow).
-- Omitting the #category at the end of the commit will add the changes to the repository, but will not initiate the deployment, release and publishing workflow. This is useful if you are planning to stack a bunch of commits, for which you don't want the reader to be re-deployed every single commit. Just make sure that the last commit has a #category at the end of the commit message, so that your changes are published and visible in the reader.
+Changes reach the published reader through pull requests:
 
-You can check on the progress of the workflow by going to the "Actions" tab in the GitHub repository. The "Deployment" action's "Build HTML" job will print potential error or warning messages that a contributor needs to fix in order for the reader to work properly. 
+1. Create a branch and open a pull request against `main`.
+2. Every pull request automatically runs the **Build check** workflow, which builds
+   the book with the exact MyST version pinned in `package.json`. The workflow's
+   summary contains a **Publishing status** notice telling you whether merging will
+   publish, and a downloadable `site-preview` artifact (kept for 7 days) with the
+   rendered HTML.
+3. Merge using **squash merge**. The pull request title becomes the commit message
+   on `main`, which is what controls publishing.
+
+#### Version markers in the pull request title
+
+To publish the reader when your pull request is merged, add one of the following
+markers anywhere in the **pull request title** (not the commit messages):
+
+- `#patch` — small fixes or changes; increments the version by 0.0.1.
+- `#minor` — larger revision of a chapter (new/removed sections, new imagery);
+  increments the version by 0.1.0.
+- `#major` — an overhaul affecting the reader as a whole; increments the version
+  by 1.0.0.
+
+Merging **without** a marker adds your changes to `main` but does not publish them.
+This is useful for stacking several pull requests; the next merge with a marker
+(or a manual deploy) publishes everything merged so far. If a title contains more
+than one marker, the largest one wins.
+
+A successful publish deploys the site, creates a git tag `vX.Y.Z`, and creates a
+GitHub release with automatically generated notes. Each chapter page shows a
+banner with the published version.
+
+#### Manual deploys
+
+If you forgot a marker, or want to publish accumulated changes without a new pull
+request, use the manual deploy: GitHub → **Actions** → **Deploy online book** →
+**Run workflow**, and choose a `bump`:
+
+- `none` — redeploys the current content of `main` without creating a new
+  version; the banner shows the latest existing version tag.
+- `patch` / `minor` / `major` — creates a new version tag and release, then
+  deploys.
+
+#### Verifying a deploy
+
+- The **Actions** tab shows the run; the *Build and deploy* job's **Build HTML**
+  step prints any MyST errors or warnings to fix.
+- The live reader is at <https://introduction.bioinformatics.nl> (served from
+  <https://wur-bioinformatics.github.io/introduction-to-bioinformatics/>).
+- Check the version banner at the top of any chapter and the release list on
+  GitHub.
+
+#### Building locally
+
+You need Node.js 22 (LTS) and npm. Then:
+
+```none
+npm ci            # install the pinned MyST version
+npm run start     # live preview at http://localhost:3000 while editing
+npm run build     # full HTML build into _build/html (same command CI runs)
+```
+
+`make html` and `make start` wrap the same commands.
+
+#### Troubleshooting
+
+- **Build check fails on a PR**: open the failed run's *Build HTML* step; fix the
+  reported MyST errors and push again.
+- **Deploy fails after merging**: no tag or release is created unless the deploy
+  succeeds, so simply fix the cause and re-run the workflow (Actions →
+  *Re-run failed jobs*), or trigger a manual deploy.
+- **Merged with a marker but nothing happened**: markers only work in the pull
+  request *title* (squash merge). Run a manual deploy with the intended bump.
+- **Several marked PRs merged in quick succession**: deploys queue one at a time
+  and only the newest queued run executes; all content is still published, but
+  only that run's marker decides the version bump.

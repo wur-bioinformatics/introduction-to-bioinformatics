@@ -1,24 +1,25 @@
-INPUTS:=*md myst.yml images/**/* plugins/* style/* references.bib BIF_logo.png
+INPUTS:=*.md myst.yml images/**/* plugins/* style/* references.bib BIF_logo.png
 
-.PHONY: all
+.PHONY: all html pdf start clean
 
 all: html
 
-pdf: _build/pdf
-
 html: _build/html
 
-_build/pdf: $(INPUTS)
-	jupyter-book build --pdf
-#	jupyter-book build --builder pdfhtml --all .
-#	mv _build/html _build/pdf_html
+pdf: exports
 
-_build/html: $(INPUTS)
-	jupyter-book build --builder html --all .
-#	sed -i.bak 's/@media/\/*@media/g' _build/html/_static/custom.css
+_build/html: $(INPUTS) node_modules
+	npx myst build --html
 
-#_build/dir_html: $(INPUTS)
-#	jupyter-book build --builder dirhtml --all .
+# Requires typst and/or a LaTeX toolchain installed locally
+exports: $(INPUTS) node_modules
+	npx myst build --pdf
+
+node_modules: package-lock.json
+	npm ci
+
+start: node_modules
+	npx myst start
 
 clean:
 	rm -rf _build exports
