@@ -588,7 +588,7 @@ One possible interpretation is the identification of (and search for) commonly o
 A frequently used term for a commonly occurring sequence pattern is __motif__, which we will use from now on.
 Motifs can be found by summarizing the _columns_ of the multiple sequence alignment, in an attempt to describe commonly occurring residues across all sequences.
 
-```{note} Note 2.5: Multiple sequence alignments vs. motifs
+```{note} Note 2.6: Multiple sequence alignments vs. motifs
 Since motifs are based on multiple sequence alignments, it may seem tempting to use the terms interchangeably. A key distinction is that a motif always represent a commonly occurring pattern, whereas a multiple sequence alignment can also contain regions of low conservation/similarity. In addition, one multiple sequence alignment can contain multiple motifs.
 ```
 
@@ -600,7 +600,7 @@ In pattern strings, unambigous positions are represented by single letters and t
 Positions in the MSA with more than one character are represented by multiple characters in between square brackets.
 A pattern string containing, for example, the pattern `[AG]` indicates that one position in the motif can be either `A` or `G`.
 As such, pattern strings take inspiration from [regular expressions](https://en.wikipedia.org/wiki/Regular_expression).
-Various types of pattern strings exist; for example, `PROSITE` __REF__ strings used in the [Prosite database](#chapter1_prosite) contain the syntax for representing positions in a motif where the residue is irrelevant (marked by an `*`).
+Various types of pattern strings exist; for example, `PROSITE` {cite}`prosite_2026` strings used in the [Prosite database](#chapter1_prosite) contain the syntax for representing positions in a motif where the residue is irrelevant (marked by an `*`).
 Pattern strings are capable of representing some variation in the motif, but they cannot express how likely the occurrence of specific variants is (in the example of `[AG]`, both `A` and `G` are equally likely to occur).
 
 To express the likelihood of a specific residue occurring at a specific position, a __Position Specific Scoring Matrix (PSSM)__ can be used ({numref}`motif_concept`D).

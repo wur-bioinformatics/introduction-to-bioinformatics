@@ -546,7 +546,7 @@ Proteins consisting of two subunits are also called dimer.
 :name: oligomers
 
 Examples of oligomers.
-A) Myoglobin, a heteromer of four subunits (PDB structure 1HV4 colored by chain). Credits: {cite}`rcsb_2000,oligomers_a_2001,ngl_2018`.
+A) Hemoglobin, a heteromer of four subunits (PDB structure 1HV4 colored by chain). Credits: {cite}`rcsb_2000,oligomers_a_2001,ngl_2018`.
 B) UDP-galactose 4-epimerase, a homodimer (PDB structure 1EK5 colored by secondary structure). Credits: {cite}`rcsb_2000,oligomers_b_2000,ngl_2018`.
 ```
 
@@ -719,7 +719,7 @@ In genome annotation, this might become:
 
 _Given that I see a stop codon, and the previous label was coding sequence, what is the current label?_
 
-The most likely answer: _non-coding_ (see Figure 20).
+The most likely answer: _non-coding_ (see {numref}`coding_hmm`).
 
 ```{figure} images/chapter1/coding_hmm.jpg
 :alt: Coding HMM
@@ -759,7 +759,7 @@ In [Chapter 2](#chapter2_sequence_search) we will learn about approaches how to 
 
 An example gene model.
 Various visualization conventions can be identified: boxes represent genomic regions that are transcribed.
-Boxes are {term}`Exon`s, lines between boxes are {term}`Intron`s. Narrow boxes (sometimes with a lighter color) are untranscribed regions (UTRs), wider boxes (sometimes darker colored) are coding sequence regions (CDS).
+Boxes are {term}`Exon`s, lines between boxes are {term}`Intron`s. Narrow boxes (sometimes with a lighter color) are untranslated regions (UTRs), wider boxes (sometimes darker colored) are coding sequence regions (CDS).
 The arrow indicates the direction of transcription.
 In this example a gene on chromosome 1 with two splice variants is shown, where the first variant has a slightly longer 5' UTR and an additional CDS exon in between the first and last exons.
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_1_2024`.
@@ -959,7 +959,7 @@ Additionally, one InterPro entry can integrate entries from the member databases
 InterPro entries are also linked to [Gene Ontology](#chapter1_gene_ontology).
 They are curated before being released.
 
-InterPro is updated every 8 weeks. The current release from the 19{sup}`th` of June 2025 contains ~49,000 entries, which represent different types:
+InterPro is updated every 8 weeks. The current release from the 19{sup}`th` of June 2025 contains ~49,000 entries, which represent [different types](#interpro-types).
 
 As an example, look at the [InterPro entry](https://www.ebi.ac.uk/interpro/entry/InterPro/IPR010945/) for the type 2 malate dehydrogenase protein family.
 The entry has a name (malate dehydrogenase, type 2) and accession (IPR010945).
@@ -1002,18 +1002,18 @@ You can click on each of these accessions to get to the entry information. Credi
 You may have noticed a colored letter before each InterPro accession, e.g., F before IPR011835 or D before IPR001296 ({numref}`interpro-prot`).
 These icons denote the different InterPro entry types:
 
-- (Homologous) Superfamily - a large diverse family, usually with shared protein structure.
-- Family - a group of proteins sharing a common evolutionary origin, reflected by their related functions and similarities in sequence or structure.
-- Domain - a distinct functional or structural unit in a protein, usually responsible for a particular function or interaction.
-- Repeat - typically a short amino acid sequence that is repeated within a protein.
-- Site - a group of amino acids with certain characteristics that may be important for protein function, e.g., active sites or binding sites
+- **H**_omologous superfamily_ - a large diverse family, usually with shared protein structure.
+- **F**_amily_ - a group of proteins sharing a common evolutionary origin, reflected by their related functions and similarities in sequence or structure.
+- **D**_omain_ - a distinct functional or structural unit in a protein, usually responsible for a particular function or interaction.
+- **R**_epeat_ - typically a short amino acid sequence that is repeated within a protein.
+- **S**_ite_ - a group of amino acids with certain characteristics that may be important for protein function, e.g., active sites or binding sites
 
 ```{figure} images/chapter1/interpro-types.png
 :alt: Interpro types
 :width: 40%
 :name: interpro-types
 
-The icons for the different InterPro entries (homologous superfamily, family, domain, repeat or site).
+The icons for the different InterPro entry types (homologous superfamily, family, domain, repeat or site).
 Credits: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) {cite}`interpro-types_2020`.
 ```
 
@@ -1163,7 +1163,7 @@ Ontologies play a crucial role in bioinformatics because they facilitate:
     They enable computer systems to process data more accurately, leading to more meaningful analyses and discoveries.
 3.  **Scientific reasoning**: by organizing information in a logical and structured way, ontologies help researchers generate hypotheses, design experiments, and validate findings more effectively.
 
-```{note} Note 1.9: FAIR principles
+```{note} Note 1.8: FAIR principles
 As described above, ontologies facilitate scientific reproducibility.
 A key concept in scientific reproducibility are the FAIR principles, with FAIR standing for Findable, Accessible, Interoperable, and Reusable.
 This reader does not describe them in detail, but you should read the following online resource to familiarize yourself with the [FAIR principles](https://www.go-fair.org/fair-principles/).
@@ -1186,7 +1186,7 @@ The [Gene Ontology](http://geneontology.org/) (GO) is a knowledgebase for the fu
   Can be cellular compartments (e.g., [mitochondrion](http://amigo.geneontology.org/amigo/term/GO:0005739)) or macromolecular complexes of which they are part (e.g., the [ribosome](http://amigo.geneontology.org/amigo/term/GO:0005840)).
 - Biological Process: the larger biological programs composed of multiple molecular activities, for example [DNA repair](http://amigo.geneontology.org/amigo/term/GO:0006281) or [signal transduction](http://amigo.geneontology.org/amigo/term/GO:0007165).
 
-```{note} Note 1.10: Molecular pathway?
+```{note} Note 1.9: Molecular pathway?
 A biological process is not equivalent to a molecular pathway.
 At present, the gene ontology does not represent the dynamics or dependencies that would be required to fully describe a pathway.
 ```

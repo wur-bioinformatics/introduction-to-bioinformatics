@@ -44,4 +44,9 @@ contact:
 license: CC-BY-NC-4.0
 license-url: https://creativecommons.org/licenses/by-nc/4.0/
 repository: https://github.com/wur-bioinformatics/introduction-to-bioinformatics
-type: book
+preferred-citation:
+  type: book
+  publisher: Wageningen University & Research
+  year: 2026
+  url: https://introduction.bioinformatics.nl
+  repository: https://github.com/wur-bioinformatics/introduction-to-bioinformatics

@@ -483,7 +483,7 @@ Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`un
 Phylogenetic trees are graphical structures ('graphs') that are the outcome of phylogenetic reconstruction of sometimes hundreds or thousands of sequences, and especially when using character-based tree search (see below [Main approaches to tree building](#chapter3_tree_building)) there can be enormous amounts of 'best trees' that all will have to be taken into account, for instance by calculating a consensus tree (see [Tree space and heuristic search methods](#chapter3_tree_space)).
 In any case, handling large numbers of trees in phylogenetical and bioinformatic analytical pipelines requires the tree graphs to be in a format that can be easily read and produced, as a linear statement.
 For this, the {term}`Newick` notation is commonly used in which brackets describe the structure of the tree.
-For instance, the rooted tree in {numref}`hcgob_alt` above would look like `((((H,C)G)O)B)` in Newick notation.
+For instance, the rooted tree in {numref}`hcgob_alt` above would look like `((((H,C),G),O),B);` in Newick notation.
 In case the tree has branch lengths, they can be indicated in this notation as well (see also the Newick tree Activity suggested on Brightspace).
 
 :::{admonition} Box 3.2: Newick notation tree reconstruction.
@@ -707,7 +707,7 @@ Unlike for the character-based trees, in distance-based (clustering) trees it is
 Moreover, invariant characters (MSA positions containing no variation) _do contribute_ to the pairwise distance values.
 This is a main difference with the character-based approach where only variant characters contribute to the tree.
 
-Clustering methods have the advantage that they are fast and do not require vast computational resources (there is no tree space nor NP-completeness as for the character-based trees, outlined above (see Box 3[w3box3_bifurcating])).
+Clustering methods have the advantage that they are fast and do not require vast computational resources (there is no tree space nor NP-completeness as for the character-based trees, outlined above (see [Box 3.3](#chapter3_bifurcating))).
 Clustering methods assign individuals to clusters in such a way that individuals in one cluster are more similar to each other than to those from other clusters.
 There is no explicit score or optimality criterion, only the minimisation of overall distance across all sequences.
 Clustering usually produces one tree, no alternative 'equally good' trees are shown; this is due to the clustering algorithm which is designed to produce a single tree.

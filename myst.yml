@@ -41,6 +41,9 @@ project:
       orcid: 0009-0006-5393-0908
       github: Tomersardjoe
       affiliations: WUR Bioinformatics
+    - name: Mate Zoltai
+      id: matezoltai
+      affiliations: WUR Bioinformatics 
   affiliations:
    - id: wurbif
      institution: Wageningen University & Reseach
@@ -51,9 +54,6 @@ project:
   bibliography:
     - references.bib
   exports:
-    #- format: cff
-    #  type: book
-    #  output: CITATION.cff
     - format: typst
       template: https://github.com/rowanc1/typst-book.git
       output: exports/BIF20306book.typst.pdf

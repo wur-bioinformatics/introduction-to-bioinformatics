@@ -163,10 +163,10 @@ bacteria to more than 100Gb (Giga bases) in plants. Humans have a genome size of
 :header-rows: 1
 :name: w5t1
 * - Species
-  - Genome size (kb)
+  - Genome size (Mb)
   - Number of genes
-  - Number of transcript
-  - Average gene density (kb)
+  - Number of transcripts
+  - Average gene density (Kb)
 * - _E. coli_
   - 4.6
   - 4288
@@ -716,7 +716,7 @@ Credits: modified from [CC BY  4.0](https://creativecommons.org/licenses/by/4.0)
 ````{tip} Box 5.3: Phenotypic variation
 Small (and large) variants can have large phenotypic effects.
 
-```{figure} images\chapter5\darwin_finches.jpg
+```{figure} images/chapter5/darwin_finches.jpg
 :alt: galápagos finches
 :width: 505
 :align: center
@@ -821,7 +821,7 @@ that results from mis-splicing of intron 6. The red stars show where translation
 Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`flower_color_2010`.
 ```
 
-```{figure} images\chapter5\variation_fish.png
+```{figure} images/chapter5variation_fish.png
 :alt: Albino fish deletion
 :align: center
 :name: variation_fish
@@ -2238,15 +2238,13 @@ Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`sa
 Template DNA fragments are amplified in a PCR reaction using a primer and
 DNA polymerase. Each sample is amplified in 4 separate reactions, one for
 each nucleotide (A, T, C, G). In each of these reactions, a small
-DNA polymerase. In each of these reactions, a small
 proportion of modified nucleotides (ddNTP) is added to the normal
 nucleotides (dNTP). These modified nucleotides are designed to stop the
 elongation of the strand and are linked to a label by which they can be
 identified. This leads to a collection of partially amplified fragments of
-template DNA. The length of each fragment was originally measured by the
-identified. distance the fragment travelled on a gel, in later setups by the time it
-took to pass through a capillary.  The label on the last nucleotide then
-identifies the base at a given position and a peak pattern is generated.
+template DNA. The length of each fragment was originally measured by the distance the fragment 
+travelled on a gel, in later setups by the time it took to pass through a capillary. 
+The label on the last nucleotide then identifies the base at a given position and a peak pattern is generated.
 From a signal of peak patterns ({numref}`sanger_signal`), the sequence can be read
 off automatically. Sanger sequencing produces read lengths between
 700-1,000 nucleotides; after this, the quality of the base calling drops too
@@ -2551,7 +2549,7 @@ computationally (like AlphaFold 2 predicts protein structure). However, it
 still has to be seen whether this tool is reliable enough in practice; the
 fact that it is not fully available to the public does not make that very
 easy. Luckily, open source alternatives have recently become available, e.g.
-[Boltz-2](https://pubmed.ncbi.nlm.nih.gaov/40667369/).
+[Boltz-2](https://pubmed.ncbi.nlm.nih.gov/40667369/).
 
 ````
 
@@ -2672,7 +2670,7 @@ RNAseq
 :  Transcriptomics measurements by DNA sequencing technology, after converting RNA to cDNA.
 
 Shotgun proteomics
-:  Measuring protein levels by MS after fragmenting into peptides at known cleavage sites, then look up the peptides in protein sequ
+:  Measuring protein levels by MS after fragmenting into peptides at known cleavage sites, then look up the peptides in protein sequence databases.
 
 Spliced mapping / spliced alignment
 :  Mapping of RNAseq reads, taking into account that introns are not present in transcripts and that reads therefore can partly map to two nearby locations.
