@@ -1,25 +1,56 @@
-name: Check jupyterbook build
+name: Build check
 
-on: pull_request
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-check-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 
 jobs:
   build:
-    name: Build book with jupyterbook
+    name: Build book with MyST
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Publishing status notice
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          {
+            echo "## Publishing status"
+            if echo "$PR_TITLE" | grep -q '#major'; then
+              echo "This PR title contains \`#major\`: squash-merging it **will publish** a new major version of the reader."
+            elif echo "$PR_TITLE" | grep -q '#minor'; then
+              echo "This PR title contains \`#minor\`: squash-merging it **will publish** a new minor version of the reader."
+            elif echo "$PR_TITLE" | grep -q '#patch'; then
+              echo "This PR title contains \`#patch\`: squash-merging it **will publish** a new patch version of the reader."
+            else
+              echo "No version marker in the PR title: squash-merging will merge the changes but **will not publish** them to the live reader."
+              echo ""
+              echo "To publish on merge, add \`#patch\`, \`#minor\` or \`#major\` to the PR title. To publish later, use *Actions → Deploy online book → Run workflow*."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
 
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
         with:
-          node-version: 18.x
+          node-version: 22
+          cache: npm
 
-      - name: Install MyST Markdown
-        run: npm install -g mystmd
+      - name: Install dependencies
+        run: npm ci
 
       - name: Build HTML
-        run: myst build --html
+        run: npx myst build --html
 
-      - name: Upload Artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Upload site preview artifact
+        uses: actions/upload-artifact@v7
         with:
-          path: ./_build/html
+          name: site-preview-pr-${{ github.event.pull_request.number }}
+          path: _build/html
+          retention-days: 7
