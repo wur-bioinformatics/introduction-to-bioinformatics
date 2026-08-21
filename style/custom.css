@@ -10,6 +10,13 @@ div.citation p {
     text-align: center;
 }
 
+figure.epigraph {
+  blockquote {
+    font-style: normal;
+    font-weight: normal;
+  }
+}
+
 /* Dark mode readability improvements */
 @media (prefers-color-scheme: dark) {
   /* Default text color for all rows */

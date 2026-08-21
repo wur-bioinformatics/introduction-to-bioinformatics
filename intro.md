@@ -10,6 +10,7 @@ authors:
   - judithrisse
   - jorgenavarro
   - tomersardjoe
+  - matezoltai
 ---
 ## What is bioinformatics?
 
@@ -120,7 +121,7 @@ but if you still find some material that you believe is incorrectly used or
 cited, please let us know.
 
 ```{epigraph}
--- Dick de Ridder, Anne Kupczok, Rens Holmer, Freek Bakker, Justin van der Hooft, Judith Risse, Jorge Navarro and Tomer Sardjoe (Wageningen, September 2025)
+-- The authors (Wageningen, August 2026)
 ```
 
 ### Reading guide

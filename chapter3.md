@@ -3,6 +3,7 @@ title: 3. Phylogenetics and tree reconstruction
 label: chapter3
 authors:
   - freekbakker
+  - rensholmer
 ---
 
 In this chapter you will learn what phylogenetic trees are, how you can interpret these trees, and how you can infer them from multiple sequence alignments of either DNA or amino acid sequences.
@@ -23,19 +24,32 @@ After studying this chapter you should be able to:
 - Read, write, and visualize trees using Newick notation and tree tools.
 ```
 
+```{epigraph}
+**_Phylogenetics_** (from [Wikipedia](https://en.wikipedia.org/wiki/Phylogenetics))
+
+The study of the evolutionary history of life using observable characteristics or genes.
+
+Etymology (from Greek): **phylon** ("race") + **-geneia** ("origin").
+
+-- Term coined in 1866 by German biologist Ernst Haeckel.
+```
+
 ## Introduction
 
 In this chapter you will learn to use a Multiple Sequence Alignment ({term}`MSA`), like the ones you compiled in [chapter 2](chapter2), and visualize the variation it contains as a phylogenetic tree.
 A phylogenetic tree is considered a highly efficient data structure summarizing the data and its variation contained in your MSA.
-A tree is built from characters which are the individual columns or positions in your MSA.
+As was explained in [chapter2](chapter2), (multiple) sequence alignments let us identify which nucleotides or amino acids between different sequences can be compared.
+The phylogenetic perspective is that individual columns in a multiple sequence alignment can be seen as _characters_, i.e. specific characteristics of the sequences which can be used to identify how sequences are related.
 Characters have states, which are in this case the individual nucleotide or amino acid substitutions occurring in that position (see [characters & trees](#chapter3_characters_trees) below).
-Invariable characters are columns or positions ‘occupied’ by just one type of nucleotide or amino acid, whereas variable characters may have up to 4 different nucleotides or up to 20 amino acids per position.
+Invariable characters are columns or positions 'occupied' by just one type of nucleotide or amino acid, whereas variable characters may have up to 4 different nucleotides or up to 20 amino acids per position.
+A phylogenetic tree is then built from these characters in one of two ways: by first [computing pairwise distances](#chapter3_distance_based), or by using a [tree optimality criterion](#character-based).
+This chapter explains the main differences between these two approaches, and when to use which approach.
 
-DNA and amino acid (AA) sequences contain the information necessary for building protein structure.
-Comparing them in an MSA will enable insight how these structures, and their associated functions, may have changed over evolutionary times since they descended from an ancestral sequence.
-The more character state changes (i.e., substitutions) occur between sequences, the more diverged they are and probably also less related (see [related, diverged](#chapter3_related_diverged) below), and hence the further apart they will occur on your phylogenetic tree.
-The information contained in your tree is hierarchical in nature, meaning that it is built-up as nested sets of subtrees that are also known as clades.
-A clade is a group containing an ancestor together with all its descendants and is also referred to as a monophyletic group.
+Furthermore, remember that DNA and amino acid (AA) sequences contain the information necessary for building protein structure?
+Comparing these sequences in an MSA will give insight into how their structures structures (and associated functions) may have changed over evolutionary times since they descended from an ancestral sequence.
+The more character state changes (i.e. substitutions) occur between sequences, the more diverged - and probably also less related (see [related, diverged](#chapter3_related_diverged) below) - they are.
+Phylogenetic trees allow use to represent this relatedness - and evolutionary history - in a hierarchial manner: it is built-up as nested sets of subtrees (also known as clades).
+In this chapter we explore the biological motivation for using a hierarchical representation of relatedness between sequences, and we look at how evolutionary interpretations can be deduced from specific tree topologies.
 
 ## Rationale
 
