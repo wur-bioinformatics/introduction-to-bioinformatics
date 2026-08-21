@@ -821,7 +821,7 @@ that results from mis-splicing of intron 6. The red stars show where translation
 Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`flower_color_2010`.
 ```
 
-```{figure} images/chapter5variation_fish.png
+```{figure} images/chapter5/variation_fish.png
 :alt: Albino fish deletion
 :align: center
 :name: variation_fish
