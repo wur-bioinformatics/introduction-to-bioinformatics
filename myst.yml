@@ -82,3 +82,5 @@ site:
   options:
     logo: BIF_logo.png
     style: style/custom.css
+    logo_text: Introduction to Bioinformatics
+    analytics_plausible: wur-bioinformatics.github.io/introduction-to-bioinformatics
