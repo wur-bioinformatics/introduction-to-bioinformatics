@@ -75,16 +75,57 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v5
 
+  pdf:
+    name: Build PDF
+    needs: version
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Pinned rather than "latest": typst is a renderer, and an unpinned bump
+      # would change the book's layout without any change to the book.
+      - name: Install typst
+        uses: typst-community/setup-typst@40d32bb6ccb235bd7f5164cb47cfd40a5ea3a314 # v5.2.0
+        with:
+          typst-version: "0.15.1"
+
+      - name: Build PDF
+        run: npm run build:pdf
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: book-pdf
+          path: exports/BIF20306book.pdf
+          if-no-files-found: error
+
   release:
     name: Release
-    needs: deploy
+    # The PDF is a release asset, and the site links to it, so a release is only
+    # cut once both the site is live and the PDF actually built.
+    needs: [deploy, pdf]
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
+      - name: Download PDF artifact
+        uses: actions/download-artifact@v7
+        with:
+          name: book-pdf
+          path: exports
+
       - name: Create GitHub release for the tag
         uses: softprops/action-gh-release@3d0d9888cb7fd7b750713d6e236d1fcb99157228 # v3.0.2
         with:
           tag_name: ${{ github.ref_name }}
           name: ${{ github.ref_name }}
           generate_release_notes: true
+          files: exports/BIF20306book.pdf

@@ -37,10 +37,20 @@ const plugin = {
                   value.startsWith(pattern)
                 )
               ) {
+                // The web theme colours the row from a CSS property...
                 tableRow["style"] = {
                   ...(tableRow["style"] || {}),
                   "background-color": colour,
                 };
+                // ...while myst-to-typst reads `style.backgroundColor` off each
+                // individual cell and turns it into `cellx(fill: rgb("#..."))`.
+                // Set both, so the colour coding survives into the PDF.
+                tableCells.forEach((tableCell) => {
+                  tableCell["style"] = {
+                    ...(tableCell["style"] || {}),
+                    backgroundColor: colour,
+                  };
+                });
               }
             }
           });

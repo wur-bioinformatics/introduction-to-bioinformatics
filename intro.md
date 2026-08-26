@@ -151,6 +151,14 @@ more clear.  Boxes are numbered for easy reference.
 Link to external information, like videos or blogs. Not exam material, but might make exam material more clear.
 ```
 
++++ {"tags": ["no-pdf"]}
+
+The whole book is also available as a single [typeset PDF](https://github.com/wur-bioinformatics/introduction-to-bioinformatics/releases/latest/download/BIF20306book.pdf) for printing and
+offline reading. It is rebuilt for every release, so it always matches this
+website.
+
++++
+
 ## References
 
 ```{bibliography}

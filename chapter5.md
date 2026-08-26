@@ -718,7 +718,7 @@ Small (and large) variants can have large phenotypic effects.
 
 ```{figure} images/chapter5/darwin_finches.jpg
 :alt: galápagos finches
-:width: 505
+:width: 505px
 :align: center
 :name: flinches
 
@@ -728,7 +728,7 @@ Credits: {cite}`darwins_finches`.
 
 ```{figure} images/chapter5/carrots.jpg
 :alt: carrot phenotypic diversity
-:width: 505
+:width: 505px
 :align: center
 :name: carrots
 
