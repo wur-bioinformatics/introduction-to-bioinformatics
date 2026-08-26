@@ -2,18 +2,8 @@ name: Deploy online book
 
 on:
   push:
-    branches:
-      - main
-  workflow_dispatch:
-    inputs:
-      bump:
-        description: >-
-          Version bump. "none" redeploys current main showing the latest
-          existing version tag; patch/minor/major cut a new tag + release.
-        type: choice
-        required: true
-        default: none
-        options: [none, patch, minor, major]
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
 
 env:
   BASE_URL: /${{ github.event.repository.name }}
@@ -27,90 +17,30 @@ concurrency:
 
 jobs:
   version:
-    name: Resolve version
+    name: Check version
     runs-on: ubuntu-latest
-    outputs:
-      new_tag: ${{ steps.resolve.outputs.NEW_TAG }}
-      display_version: ${{ steps.resolve.outputs.DISPLAY_VERSION }}
-      deploy: ${{ steps.resolve.outputs.DEPLOY }}
     steps:
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
-          fetch-tags: true
 
-      - name: Resolve bump, candidate tag and display version
-        id: resolve
-        env:
-          EVENT_NAME: ${{ github.event_name }}
-          BUMP_INPUT: ${{ inputs.bump }}
-          REF: ${{ github.ref }}
+      - name: Check the tag against package.json
+        run: scripts/check-version.sh "$GITHUB_REF_NAME"
+
+      - name: Check the tag is on main
         run: |
           set -euo pipefail
-
-          BUMP=none
-          DEPLOY=false
-          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
-            if [ "$REF" != "refs/heads/main" ]; then
-              echo "::error::Manual deploys are only allowed from main (got $REF)."
-              exit 1
-            fi
-            BUMP="${BUMP_INPUT:-none}"
-            DEPLOY=true
-          else
-            SUBJECT=$(git log -1 --format=%s HEAD)
-            if echo "$SUBJECT" | grep -q '#major'; then BUMP=major; DEPLOY=true
-            elif echo "$SUBJECT" | grep -q '#minor'; then BUMP=minor; DEPLOY=true
-            elif echo "$SUBJECT" | grep -q '#patch'; then BUMP=patch; DEPLOY=true
-            fi
-          fi
-
-          BASE=$(git describe --abbrev=0 --tags --match="v[0-9]*" 2>/dev/null || echo "")
-          NEW_TAG=""
-          DISPLAY=""
-
-          if [ "$BUMP" != "none" ]; then
-            VERSION="${BASE:-v0.0.0}"
-            VNUM1=$(echo "$VERSION" | cut -d. -f1 | sed 's/v//')
-            VNUM2=$(echo "$VERSION" | cut -d. -f2)
-            VNUM3=$(echo "$VERSION" | cut -d. -f3)
-            case "$BUMP" in
-              major) VNUM1=$((VNUM1 + 1)); VNUM2=0; VNUM3=0 ;;
-              minor) VNUM2=$((VNUM2 + 1)); VNUM3=0 ;;
-              patch) VNUM3=$((VNUM3 + 1)) ;;
-            esac
-            NEW_TAG="v$VNUM1.$VNUM2.$VNUM3"
-
-            EXISTING_ON_HEAD=$(git tag --points-at HEAD --list 'v[0-9]*' | head -n1)
-            if [ -n "$EXISTING_ON_HEAD" ]; then
-              echo "HEAD is already tagged as $EXISTING_ON_HEAD; not cutting a new tag."
-              NEW_TAG=""
-              DISPLAY="$EXISTING_ON_HEAD"
-            elif git ls-remote --tags origin | grep -q "refs/tags/$NEW_TAG$"; then
-              echo "::error::Candidate tag $NEW_TAG already exists on origin; refusing to continue."
-              exit 1
-            else
-              DISPLAY="$NEW_TAG"
-            fi
-          else
-            DISPLAY="$BASE"
-          fi
-
-          if [ "$DEPLOY" = "true" ] && [ -z "$DISPLAY" ]; then
-            echo "::error::No existing v* tag found and no bump requested; cannot resolve a version to display."
+          if ! git merge-base --is-ancestor "$GITHUB_SHA" origin/main; then
+            echo "::error::Tag $GITHUB_REF_NAME points at a commit that is not on main; refusing to publish it."
             exit 1
           fi
 
-          {
-            echo "NEW_TAG=$NEW_TAG"
-            echo "DISPLAY_VERSION=$DISPLAY"
-            echo "DEPLOY=$DEPLOY"
-          } >> "$GITHUB_OUTPUT"
+      - name: Report published version
+        run: echo "Publishing **$GITHUB_REF_NAME**." >> "$GITHUB_STEP_SUMMARY"
 
   deploy:
     name: Build and deploy
     needs: version
-    if: needs.version.outputs.deploy == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -133,65 +63,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Prepend version banner to book chapters
-        env:
-          VERSION_TAG: ${{ needs.version.outputs.display_version }}
-        run: |
-          set -euo pipefail
-
-          command -v yq >/dev/null || { echo "::error::yq is not available on this runner."; exit 1; }
-          if ! echo "$VERSION_TAG" | grep -qE '^v[0-9]+\.[0-9]+\.[0-9]+$'; then
-            echo "::error::VERSION_TAG '$VERSION_TAG' is not a vX.Y.Z version."
-            exit 1
-          fi
-
-          mapfile -t FILES < <(yq -r '.project.toc[].file' myst.yml)
-          if [ "${#FILES[@]}" -eq 0 ]; then
-            echo "::error::No files found in myst.yml project.toc."
-            exit 1
-          fi
-
-          echo "📦 Using tag: $VERSION_TAG"
-
-          for file in "${FILES[@]}"; do
-            if [ -z "$file" ] || [ "$file" = "null" ]; then
-              echo "::error::myst.yml toc contains an entry without a file: key."
-              exit 1
-            fi
-            [ -f "$file" ] || { echo "::error::toc entry '$file' does not exist."; exit 1; }
-            [ "$(sed -n 1p "$file")" = "---" ] || { echo "::error::'$file' does not start with YAML frontmatter."; exit 1; }
-            [ "$(grep -c '^---$' "$file")" -ge 2 ] || { echo "::error::'$file' has no closing frontmatter delimiter."; exit 1; }
-
-            awk -v version="$VERSION_TAG" '
-              BEGIN {
-                in_frontmatter = 0
-                banner = "> 📘 Version info unavailable."
-                if (version ~ /^v[0-9]+\.[0-9]+\.[0-9]+$/) {
-                  split(version, parts, ".")
-                  type = (parts[2] == "0" && parts[3] == "0") ? "Major" :
-                         (parts[3] == "0") ? "Minor" : "Patch"
-                  banner = "```\n📘 This content is part of version: " version " (" type " release)" "\n```\n"
-                  if (version ~ /^v0\./) {
-                    banner = banner "\n> ⚠️ This is a pre-1.0 version and may be subject to breaking changes."
-                  }
-                }
-              }
-              /^---$/ {
-                if (++in_frontmatter == 2) {
-                  print "---"
-                  print "\n" banner "\n"
-                  next
-                }
-              }
-              { print }
-            ' "$file" > tmp && mv tmp "$file"
-
-            grep -qF "This content is part of version: $VERSION_TAG" "$file" || {
-              echo "::error::Banner was not injected into '$file'."
-              exit 1
-            }
-          done
-
       - name: Build HTML
         run: npx myst build --html
 
@@ -205,17 +76,15 @@ jobs:
         uses: actions/deploy-pages@v5
 
   release:
-    name: Tag and release
-    needs: [version, deploy]
-    if: needs.version.outputs.new_tag != ''
+    name: Release
+    needs: deploy
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-      - name: Create tag and release
+      - name: Create GitHub release for the tag
         uses: softprops/action-gh-release@3d0d9888cb7fd7b750713d6e236d1fcb99157228 # v3.0.2
         with:
-          tag_name: ${{ needs.version.outputs.new_tag }}
-          name: ${{ needs.version.outputs.new_tag }}
-          target_commitish: ${{ github.sha }}
+          tag_name: ${{ github.ref_name }}
+          name: ${{ github.ref_name }}
           generate_release_notes: true

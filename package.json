@@ -1,6 +1,11 @@
 {
   "name": "introduction-to-bioinformatics",
+  "version": "1.1.4",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wur-bioinformatics/introduction-to-bioinformatics.git"
+  },
   "scripts": {
     "start": "myst start",
     "build": "myst build --html",

@@ -76,6 +76,7 @@ project:
     - file: chapter5.md
   plugins:
     - plugins/table-plugin.mjs
+    - plugins/version-plugin.mjs
 site:
   github: http://github.com/wur-bioinformatics/introduction-to-bioinformatics
   template: book-theme
@@ -84,3 +85,5 @@ site:
     style: style/custom.css
     logo_text: Introduction to Bioinformatics
     analytics_plausible: wur-bioinformatics.github.io/introduction-to-bioinformatics
+  parts:
+    primary_sidebar_footer: components/primary-sidebar-footer.md

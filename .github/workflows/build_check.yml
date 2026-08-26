@@ -2,7 +2,7 @@ name: Build check
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened, edited]
+    types: [opened, synchronize, reopened]
   push:
     branches:
       - main
@@ -19,26 +19,14 @@ jobs:
     name: Build book with MyST
     runs-on: ubuntu-latest
     steps:
-      - name: Publishing status notice
-        env:
-          PR_TITLE: ${{ github.event.pull_request.title }}
-        run: |
-          {
-            echo "## Publishing status"
-            if echo "$PR_TITLE" | grep -q '#major'; then
-              echo "This PR title contains \`#major\`: squash-merging it **will publish** a new major version of the reader."
-            elif echo "$PR_TITLE" | grep -q '#minor'; then
-              echo "This PR title contains \`#minor\`: squash-merging it **will publish** a new minor version of the reader."
-            elif echo "$PR_TITLE" | grep -q '#patch'; then
-              echo "This PR title contains \`#patch\`: squash-merging it **will publish** a new patch version of the reader."
-            else
-              echo "No version marker in the PR title: squash-merging will merge the changes but **will not publish** them to the live reader."
-              echo ""
-              echo "To publish on merge, add \`#patch\`, \`#minor\` or \`#major\` to the PR title. To publish later, use *Actions → Deploy online book → Run workflow*."
-            fi
-          } >> "$GITHUB_STEP_SUMMARY"
-
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: Check package.json against the latest release
+        if: github.event_name == 'pull_request'
+        run: scripts/check-version.sh
 
       - uses: actions/setup-node@v7
         with:

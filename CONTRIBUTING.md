@@ -325,47 +325,39 @@ As we have seen in Section X.X, there are key similarities and differences betwe
 
 ### Publishing and deployment
 
-Changes reach the published reader through pull requests:
+Content reaches `main` through pull requests; a **git tag** is what publishes it.
 
 1. Create a branch and open a pull request against `main`.
 2. Every pull request automatically runs the **Build check** workflow, which builds
-   the book with the exact MyST version pinned in `package.json`. The workflow's
-   summary contains a **Publishing status** notice telling you whether merging will
-   publish, and a downloadable `site-preview` artifact (kept for 7 days) with the
-   rendered HTML.
-3. Merge using **squash merge**. The pull request title becomes the commit message
-   on `main`, which is what controls publishing.
+   the book with the exact MyST version pinned in `package.json` and produces a
+   downloadable `site-preview` artifact (kept for 7 days) with the rendered HTML.
+3. Merge using **squash merge**. Merging does not publish anything.
 
-#### Version markers in the pull request title
+#### Cutting a release
 
-To publish the reader when your pull request is merged, add one of the following
-markers anywhere in the **pull request title** (not the commit messages):
+Releases are cut with `npm version`, on `main`, by a maintainer:
 
-- `#patch` — small fixes or changes; increments the version by 0.0.1.
-- `#minor` — larger revision of a chapter (new/removed sections, new imagery);
-  increments the version by 0.1.0.
-- `#major` — an overhaul affecting the reader as a whole; increments the version
-  by 1.0.0.
+```none
+git checkout main && git pull
+npm version patch          # 1.2.3 -> 1.2.4: small fixes or changes
+npm version minor          # 1.2.3 -> 1.3.0: larger revision of a chapter
+npm version major          # 1.2.3 -> 2.0.0: overhaul affecting the whole reader
+git push --follow-tags
+```
 
-Merging **without** a marker adds your changes to `main` but does not publish them.
-This is useful for stacking several pull requests; the next merge with a marker
-(or a manual deploy) publishes everything merged so far. If a title contains more
-than one marker, the largest one wins.
+`npm version` bumps `version` in `package.json`, commits that, and creates the
+matching `vX.Y.Z` tag in one step; `--follow-tags` pushes the commit and the tag
+together. Do not create version tags by hand — `npm version` is what keeps the tag
+and `package.json` in step, and CI rejects a tag that disagrees with either.
 
-A successful publish deploys the site, creates a git tag `vX.Y.Z`, and creates a
-GitHub release with automatically generated notes. Each chapter page shows a
-banner with the published version.
+Pushing the tag triggers the **Deploy online book** workflow: it checks the tag
+against `package.json`, checks the tagged commit is on `main`, builds the book,
+deploys it to GitHub Pages, and creates a GitHub release with automatically
+generated notes. That version is what the sidebar footer shows, because the footer
+reads `version` from `package.json` (see `plugins/version-plugin.mjs`).
 
-#### Manual deploys
-
-If you forgot a marker, or want to publish accumulated changes without a new pull
-request, use the manual deploy: GitHub → **Actions** → **Deploy online book** →
-**Run workflow**, and choose a `bump`:
-
-- `none` — redeploys the current content of `main` without creating a new
-  version; the banner shows the latest existing version tag.
-- `patch` / `minor` / `major` — creates a new version tag and release, then
-  deploys.
+Everything merged since the previous tag is published together, so several pull
+requests can be stacked and released in one go.
 
 #### Verifying a deploy
 
@@ -373,8 +365,7 @@ request, use the manual deploy: GitHub → **Actions** → **Deploy online book*
   step prints any MyST errors or warnings to fix.
 - The live reader is at <https://introduction.bioinformatics.nl> (served from
   <https://wur-bioinformatics.github.io/introduction-to-bioinformatics/>).
-- Check the version banner at the top of any chapter and the release list on
-  GitHub.
+- Check the version in the sidebar footer and the release list on GitHub.
 
 #### Building locally
 
@@ -392,11 +383,17 @@ npm run build     # full HTML build into _build/html (same command CI runs)
 
 - **Build check fails on a PR**: open the failed run's *Build HTML* step; fix the
   reported MyST errors and push again.
-- **Deploy fails after merging**: no tag or release is created unless the deploy
-  succeeds, so simply fix the cause and re-run the workflow (Actions →
-  *Re-run failed jobs*), or trigger a manual deploy.
-- **Merged with a marker but nothing happened**: markers only work in the pull
-  request *title* (squash merge). Run a manual deploy with the intended bump.
-- **Several marked PRs merged in quick succession**: deploys queue one at a time
-  and only the newest queued run executes; all content is still published, but
-  only that run's marker decides the version bump.
+- **Build check fails on the version**: the pull request hand-edits `version` in
+  `package.json`. Revert that; the version is bumped by `npm version` when the
+  release is cut, not in a content pull request.
+- **`npm version` refuses with "Git working directory not clean"**: commit or stash
+  your local changes first. Releases are cut from a clean, up-to-date `main`.
+- **Deploy fails after pushing a tag**: the tag already exists, so fix the cause and
+  re-run the workflow (Actions → *Re-run failed jobs*). If the tag itself was wrong,
+  delete it locally and on the remote (`git tag -d vX.Y.Z && git push origin
+  :refs/tags/vX.Y.Z`) before cutting the release again.
+- **"Tag does not match package.json"**: the tag was created by hand rather than by
+  `npm version`. Delete it as above and use `npm version`.
+- **"Tag points at a commit that is not on main"**: the release was cut from a
+  branch. Delete the tag, merge to `main` first, then cut the release there.
+- **Merged but nothing was published**: merging never publishes. Cut a release.
