@@ -847,7 +847,7 @@ The Jukes Cantor model (left), transitions (blue) and transversions (red) and ho
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_3_2024`.
 :::
 
-The first two substitution types listed above are {term}`transition`s_ (substitutions among the pyrimidines T and C, and among the purines A and G), whereas the other four occur between purines and pyrimidines and are referred to as {term}`transversion`s_.
+The first two substitution types listed above are {term}`transition`s (substitutions among the pyrimidines T and C, and among the purines A and G), whereas the other four occur between purines and pyrimidines and are referred to as {term}`transversion`s.
 The rate of transitions (_ti_) has a different dynamic, and hence build-up of substitutions, compared with the rate of transversions (_tv_) (see {numref}`JC_alt`).
 In the Kimura 2-parameter ({term}`K2P`) model ({numref}`K2P`) this is accounted for by adding an extra parameter  _b_.
 Parameter _a_ now estimates _ti_ ($P$) and parameter $b$ estimates _tv_ ($Q$); in the Kimura 2 Parameter formula, $P$ and $Q$ are the proportions of _ti_ and _tv_, respectively:
