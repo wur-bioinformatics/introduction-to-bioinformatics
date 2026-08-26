@@ -1384,11 +1384,11 @@ Try finding the LnL values in the cells marked with 'o' below.
   - MEGA
   - MEGA
   - IQ-TREE
-* - #
+* - \#
   - Pairwise deletion
   - Complete deletion
   - Use all sites
-  - #
+  - \#
 * - TN+I+G
   - o
   - -11895.49

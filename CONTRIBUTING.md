@@ -5,6 +5,8 @@
 ## Jupyter Book
 The Introduction to Bioinformatics reader is an open source book written in [MyST Markdown](https://mystmd.org/guide/quickstart), compiled using [Jupyter Book 2](https://next.jupyterbook.org/) and published using [GitHub Pages](https://pages.github.com/). Jupyter Book 2 is still in alpha and many of the conventions below are subject to change.
 
+The same sources also build a typeset PDF of the whole book via [typst](https://typst.app/); see [Building the PDF](#building-the-pdf).
+
 ## Conventions
 
 Throughout the reader conventions are used to create a uniform whole that is easy to understand by its contributors, making future adjustments an easy task.
@@ -288,6 +290,7 @@ This way, later chapters don't get overwhelming with the amount of cross-referen
 
 It is essential that each citation is also included in a bibliography, otherwise the citations will not work.
 Bibliographies are included at the end of each chapter, containing only the citations that were used in that chapter.
+(The PDF drops these per-chapter lists in favour of a single bibliography in the back matter; nothing needs doing for that, it is handled by the print plugin.)
 
 Adding a bibliography to the end of a markdown file is done by adding the following:
 
@@ -351,10 +354,16 @@ together. Do not create version tags by hand — `npm version` is what keeps the
 and `package.json` in step, and CI rejects a tag that disagrees with either.
 
 Pushing the tag triggers the **Deploy online book** workflow: it checks the tag
-against `package.json`, checks the tagged commit is on `main`, builds the book,
-deploys it to GitHub Pages, and creates a GitHub release with automatically
-generated notes. That version is what the sidebar footer shows, because the footer
-reads `version` from `package.json` (see `plugins/version-plugin.mjs`).
+against `package.json` and checks the tagged commit is on `main`, then builds the
+book two ways in parallel — the website, which it deploys to GitHub Pages, and the
+PDF, which it attaches to a GitHub release created with automatically generated
+notes. That version is what the sidebar footer shows, because the footer reads
+`version` from `package.json` (see `plugins/version-plugin.mjs`).
+
+The release is only cut once *both* the site and the PDF have built, so a broken
+PDF blocks the release rather than publishing one without the download the site
+links to. The site is still deployed at that point — if the *Build PDF* job is the
+only failure, fix it and re-run the failed jobs rather than re-tagging.
 
 Everything merged since the previous tag is published together, so several pull
 requests can be stacked and released in one go.
@@ -362,10 +371,13 @@ requests can be stacked and released in one go.
 #### Verifying a deploy
 
 - The **Actions** tab shows the run; the *Build and deploy* job's **Build HTML**
-  step prints any MyST errors or warnings to fix.
+  step prints any MyST errors or warnings to fix, and the *Build PDF* job's
+  **Build PDF** step prints any typst ones.
 - The live reader is at <https://introduction.bioinformatics.nl> (served from
   <https://wur-bioinformatics.github.io/introduction-to-bioinformatics/>).
 - Check the version in the sidebar footer and the release list on GitHub.
+- Check the release has `BIF20306book.pdf` attached, and that the sidebar's
+  **Download the PDF** link fetches it.
 
 #### Building locally
 
@@ -378,6 +390,97 @@ npm run build     # full HTML build into _build/html (same command CI runs)
 ```
 
 `make html` and `make start` wrap the same commands.
+
+#### Building the PDF
+
+The book also builds as a single typeset PDF. This additionally needs the
+[typst](https://github.com/typst/typst) CLI — `brew install typst`, or a release
+binary from that page. Then:
+
+```none
+npm run build:pdf  # writes exports/BIF20306book.pdf
+```
+
+`make pdf` wraps the same command. The build also leaves the generated typst
+source in `exports/`, which is where to look when something renders oddly: the
+`.typ` files there are what `typst compile` actually saw. On the first run typst
+downloads a few packages it needs; after that the build is offline. `exports/` is
+gitignored and rebuilt from scratch every time.
+
+CI builds the PDF too — see [Publishing and deployment](#publishing-and-deployment).
+
+##### How the PDF build differs from the website
+
+Three pieces work together, and it is worth knowing which one to reach for:
+
+- **`templates/bif-book/`** — the typst book template, vendored from
+  [plain_typst_book](https://github.com/myst-templates/plain_typst_book) (MIT) so
+  it is versioned with the book. `style.typ` holds the page layout, title page,
+  chapter openers and numbering; `bif_style.typ` holds everything specific to
+  this book — admonition colours, exercise boxes, the video QR macro, the index.
+  Page size, fonts, margins and the colophon are set from `options:` under the
+  export in `myst.yml`.
+- **`plugins/print-plugin.mjs`** — transforms that rewrite the document into the
+  subset MyST's typst renderer handles: glossaries, term links, video embeds,
+  labels MyST does not emit. Every one of them is inert unless `MYST_PRINT=1`, so
+  the website is unaffected; `npm run build:pdf` sets it. Each transform carries a
+  comment explaining which MyST gap it works around.
+- **`myst.yml`** — the `exports:` block. Chapter titles are overridden there to
+  drop the "1. ", "2. " prefixes the web version carries, because typst numbers
+  the chapters itself and the introduction is front matter rather than chapter 1.
+  The `downloads:` block above it is the other direction: it is what puts the PDF
+  in the website's download menu.
+
+##### How readers find the PDF
+
+The built PDF is attached to each GitHub release rather than served from the site.
+It is around 65 MB, and release assets do not count against the GitHub Pages
+bandwidth allowance, which a cohort of students downloading a copy each otherwise
+would. `releases/latest/download/BIF20306book.pdf` always resolves to the newest
+release — the same release the deployed site was built from — so the link never
+needs updating.
+
+Three places point at it, all using that URL:
+
+- `myst.yml` `downloads:` — the download menu in the page toolbar.
+- `components/primary-sidebar-footer.md` — a visible link under the version.
+- `intro.md`, at the end of the reading guide.
+
+There is a short window just after a tag is pushed where the site is deployed but
+the release is not yet created, and the link 404s. It resolves as soon as the
+*Release* job finishes.
+
+##### Writing with the PDF in mind
+
+Almost everything works in both outputs, but two habits matter:
+
+- **Use `{sub}` and `{sup}` roles rather than raw `<sub>`/`<sup>` HTML.** Raw HTML
+  happens to survive today, but MyST strips most of it before the typst renderer
+  sees it, so it is a silent way to lose content in print.
+- **Use the `{iframe}` directive rather than a raw `<iframe>` for videos.** Both
+  are turned into a scannable QR code in the PDF, but the directive lets you give
+  the video a real title (and a `:placeholder:` still image if you prefer that to
+  a QR code). A raw `<iframe>` only offers its `title` attribute, and the ones
+  copied from YouTube all say "YouTube video player", which the PDF has to fall
+  back to a bare "Video" for.
+
+Cross-references, citations, figures, tables, admonitions, exercises, glossaries
+and math all work in both without any special handling.
+
+To keep something out of the PDF entirely — the "download the PDF" note at the end
+of the introduction, for instance — wrap it in a block tagged `no-pdf`, which MyST
+honours natively:
+
+```none
++++ {"tags": ["no-pdf"]}
+
+This paragraph appears on the website but not in the PDF.
+
++++
+```
+
+The bare `+++` afterwards ends the tagged block; without it everything to the end
+of the file inherits the tag.
 
 #### Troubleshooting
 

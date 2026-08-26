@@ -53,20 +53,66 @@ project:
      department: Biosystematics
   bibliography:
     - references.bib
+  # The typeset PDF is attached to each GitHub release rather than served from
+  # the site: it is ~65 MB, and release assets do not count against the Pages
+  # bandwidth allowance. "releases/latest/download" always resolves to the newest
+  # release, which is also what the deployed site is built from.
+  downloads:
+    - url: https://github.com/wur-bioinformatics/introduction-to-bioinformatics/releases/latest/download/BIF20306book.pdf
+      title: Download the whole book as a PDF
+      filename: BIF20306book.pdf
+      static: false
   exports:
-    - format: typst
-      template: https://github.com/rowanc1/typst-book.git
-      output: exports/BIF20306book.typst.pdf
+    # Building this needs the typst CLI: `brew install typst`, then
+    # `npm run build:pdf`. Output is written next to the .typ source so the
+    # generated typst can be inspected when something renders oddly.
+    - id: book
+      format: typst
+      template: templates/bif-book
+      output: exports/BIF20306book.typ
+      # The titles drop the "1. ", "2. " prefixes the web version carries: typst
+      # numbers the chapters itself, and the introduction is front matter rather
+      # than chapter 1. level: 1 makes each title a chapter heading.
       articles:
-       - intro.md
-       - chapter1.md
-       - chapter2.md
-       - chapter3.md
-       - chapter4.md
-       - chapter5.md
-    - format: pdf+tex
-      template: plain_latex_book
-      output: exports/BIF20306book.tex.pdf
+       - file: intro.md
+         level: 1
+       - file: chapter1.md
+         level: 1
+         title: Genes, Proteins, Databases, Genome annotation
+       - file: chapter2.md
+         level: 1
+         title: Alignment, sequence search, and primer design
+       - file: chapter3.md
+         level: 1
+         title: Phylogenetics and tree reconstruction
+       - file: chapter4.md
+         level: 1
+         title: Protein structure prediction
+       - file: chapter5.md
+         level: 1
+         title: Omics data analysis
+      options:
+        papersize: a4
+        fontsize: 10
+        fontstyle: Libertinus Serif
+        linespacing: 0.65
+        justification: true
+        margin_top: 2.2
+        margin_bottom: 2.2
+        margin_left: 15
+        margin_right: 15
+        colortheme: rgb("#34862b")
+        colorheadings: rgb("#1a1a1a")
+        show_pagenumber: true
+        show_ToC: true
+        ToC_depth: 2
+        cover: BIF_logo.png
+        cover_width: 9
+        coverposition: 3
+        institution: Wageningen University & Research
+        book_url: https://introduction.bioinformatics.nl
+        book_doi: 10.5281/zenodo.16920734
+        license_text: This work is licensed under CC BY-NC 4.0.
   toc:
     - file: intro.md
     - file: chapter1.md
@@ -77,6 +123,7 @@ project:
   plugins:
     - plugins/table-plugin.mjs
     - plugins/version-plugin.mjs
+    - plugins/print-plugin.mjs
 site:
   github: http://github.com/wur-bioinformatics/introduction-to-bioinformatics
   template: book-theme

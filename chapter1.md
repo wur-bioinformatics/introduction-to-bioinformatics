@@ -1394,7 +1394,7 @@ For the animal example browse to www.ensembl.org and search for the gene ID from
 :header-rows: 1
 :name: assignment_2_9_quiz
 
-* - #
+* - \#
   - 1-letter
   - 3-letter
   - Full name
