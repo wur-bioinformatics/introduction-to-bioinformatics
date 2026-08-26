@@ -21,16 +21,16 @@ After studying this chapter you should be able to:
 ## Protein structure and function
 
 A lot of sequences have become available over the past decades.
-However, for most of them, we do not yet know what proteins they represent, and what functionality they have.
+However, for most of them, we do not yet know what proteins they represent, what other proteins or biomolecules interact with them, and what functionality they have.
 
 Proteins are essential for life on earth.
 They have many kinds of protein functions in organisms such as supporting tissue, organ, or cell structure (e.g., keratin in our skin), performing enzymatic reactions (e.g., Ribulose-1,5-bisphosphate carboxylase-oxygenase, a.k.a. Rubisco, in plants), or receptors for transduction of signals that mediate cell-to-cell communication.
-As discussed in [chapter 1](#chapter1_genetic_code), a very small amount of ~20 amino acid building blocks form the basis of a structurally very diverse protein repertoire in all life forms. Whilst amino acid sequences are abundantly available these days, either directly through proteomics measurements, or indirectly through translated genomic sequences. 
-In [chapter 1](#chapter1_protein_structure) you have also learned that proteins are created as a chain of amino acids held together by peptide bonds, i.e., a polypeptide chain (the primary structure), that folds into a three-dimensional (tertiary) structure, based on various types of interactions between amino acid side groups.
+As discussed in [chapter 1](#chapter1_genetic_code), a very small amount of ~20 amino acid building blocks form the basis of a structurally very diverse protein repertoire in all life forms. Whilst amino acid sequences are abundantly available these days, either directly through proteomics measurements, or indirectly through translated genomic sequences, experimental protein structure data of these folded sequences is still relatively scarce. 
+In [chapter 1](#chapter1_protein_structure), you have also learned that proteins are created as a chain of amino acids held together by peptide bonds, i.e., a polypeptide chain (the primary structure), that folds into a three-dimensional (tertiary) structure, based on various types of interactions between amino acid side groups.
 Usually, during this folding process, shorter stretches of local 2D (secondary) structures form first, held together by hydrogen bonds.
 Interestingly, whereas the amino acid sequence of proteins may differ, their folding may still result in comparable 3D structures of the polypeptide chain – with comparable or even similar functionality that is conserved at a evolutionary timescale (see {numref}`myoglobin`).
 Finally, several folded polypeptide chains may form a quaternary complex.
-The protein folding process is important, as it determines the 3D structure of polypeptide chains, and misfolding can lead to misfunctioning of the protein, for example by non-specific binding to other proteins, causing a disease in humans, or a less-performing mutant in plants. Altogether, to understand the function of proteins, knowing their 3D structures is key. Consequently, predicting protein structures based on protein sequence information has been a topic of high interest and relevance to biochemists and scientists in general for many decades.
+The protein folding process is important, as it determines the 3D structure of polypeptide chains, and misfolding can lead to misfunctioning of the protein, for example by non-specific binding to other proteins or reduced recognition for specific metabolites to biotransform, causing a disease in humans, or a less-performing mutant in plants. Altogether, to understand the function of proteins, knowing their 3D structures is key. Consequently, predicting protein structures based on protein sequence information has been a topic of high interest and relevance to biochemists and scientists in general for many decades.
 
 ```{figure} images/chapter4/myoglobin.png
 :alt: Different protein structures
@@ -51,12 +51,12 @@ The main traditional experimental analytical techniques used are nuclear magneti
 The former results in useful but often noisy measurements as multiple structural conformations (i.e., the spatial arrangement of its constituent amino acids that together form the 3D shape) are generated; whereas the latter is more accurate, but also more expensive. Furthermore, it can take a year or even longer to fully elucidate the protein 3D structure from the data, and some structures cannot be measured at all, for example due to crystallization problems of the involved protein.
 Fortunately, fueled by recent technical advances, biological sequence data has become widely available, mostly in the form of genomic sequences.
 By translating these DNA sequences into possible amino acid sequences using the genetic code you have learned about in [chapter 1](#chapter1_genetic_code), amino acid sequences can be inferred and theoretical proteins can be predicted.
-However, the sheer number of different biological sequences makes manual analysis of such predicted protein sequences too daunting. Thus, alternative methods to derive 3D protein structures are needed to interpret the large amount of biological sequence data that has become available in the recent decades.
+However, the sheer number of different biological sequences makes manual analysis of such predicted protein sequences too daunting. Thus, alternative methods to derive 3D protein structures from these sequences are needed to interpret the large amount of biological sequence data that has become available in the recent decades.
 
 ### The sequence-structure-function paradigm
 
 The sequence-structure-function paradigm states that, _in principle_, all information to predict the folding of a protein, and thus its 3D structure and ultimately its function, is stored in its primary sequence.
-In practice, however, predicting structure from its sequence turned out to be a very complex and challenging task. One of the reasons that predicting the structure and function of proteins based on their sequence is more complex than the paradigm states is due to the occurrence of both short- and long-range interactions between protein local, secondary (2D) structure elements. These interactions typically form anchor points upon which the tertiary (3D) structure is based.
+In practice, however, predicting structure from its sequence turned out to be a very complex and challenging task. One of the reasons that predicting the structure and function of proteins based on their sequence is more complex than the paradigm states is due to the occurrence of both short- and long-range interactions between protein local, secondary (2D) structure elements or between single amino acids. These interactions typically form anchor points upon which the tertiary (3D) structure is based.
 This chapter first describes 2D structure assignment and prediction, after which 3D structure prediction approaches are discussed, including the main challenges and the three zones of tertiary structure prediction.
 It ends with the most recent approaches to predict and compare tertiary structures: AlphaFold and Foldseek.
 
@@ -82,7 +82,7 @@ As these 2D elements fold locally, they can initiate folding of more complex ter
 As a result, databases exist that categorize proteins according to specific fold types, in a categorized, hierarchical way.
 Therefore, the assignment of amino acid residues to either α-helix, β-strand, or "random coil" (i.e., "other"), based on the 3D structure of a protein chain, can be seen as a first step to understand the protein structural configuration.
 Also, when we need training data to predict secondary structure elements based on the primary (1D) sequence, we would need sufficient training data with labels based on actual structural assignments.
-Hence, several assignment tools were developed to replace the previously discussed daunting task of manual assignment of secondary structure elements based on known 3D information.
+Hence, several automated assignment tools were developed to replace the previously discussed daunting task of manual assignment of secondary structure elements based on known 3D information.
 
 The three options for an amino acid residue as mentioned above would translate into a so-called "three-state model", (α-helix, β-strand, or other) used by secondary structure assignment tools such as DSSP, PALSSE, and Stride. These tools use 3D structures as an input to assign three secondary structure labels.
 You will get hands-on experience with the interpretation of the outcome of these tools during the practical assignments. Please note that there are additional – less frequently occurring – secondary structure elements that could be recognized, such as the β-turn, a sharp bend in the protein chain, and several special helices.
@@ -117,7 +117,7 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 Here, we will describe approaches that have emerged over the past decades to predict secondary structure elements on the basis of sequence data alone.
 As these approaches form the foundation for tertiary structure prediction tools, we will study them first.
 
-One of the first methods to predict secondary structures used statistics to infer a residue’s secondary structure and was the so-called Chou-Fasman approach. Since the 1970s, this strategy has been using an increasing set of reference protein 3D structures and 2D structure assignments to determine the natural tendency (propensity) for each amino acid type to either form, break, or be indifferent to form or break an α-helix or β-strand (see {numref}`chou_fasman_alt`).
+One of the first methods to predict secondary structures used statistics to infer a residue’s secondary structure and was the so-called Chou-Fasman approach. Since the 1970s, this strategy has been using an increasing set of reference protein 3D structures and 2D structure assignments to determine the natural tendency (i.e., the propensity) for each amino acid type to either form, break, or be indifferent to form or break an α-helix or β-strand (see {numref}`chou_fasman_alt`).
 If we consider a stretch of amino acids, these propensities help to determine if and where an α-helix or β-strand starts or stops.
 For example, some amino acids have a strong tendency to form α-helices (e.g., Alanine) or β-strands (e.g., Isoleucine), whereas others tend to break these local structures.
 In particular, we can observe that Proline is a strong breaker of both structure elements.
@@ -285,7 +285,7 @@ Credits: {cite}`deeptmhmm_2022`.
 
 ### SignalP
 
-In the previous section it was covered how DeepTMHMM can be used to predict the presence of signal peptides; however, more dedicated tools exist for the discrimination between signal peptide types, such as SignalP 6.0.
+In the previous section it was covered how DeepTMHMM can be used to predict the presence of signal peptides; however, dedicated tools such as SignalP 6.0 exist that can discriminate between signal peptide types.
 This tool can predict signal peptides from sequence data for all known types of signal peptides in Archea, Eukaryota, and Bacteria.
 Additionally, SignalP 6.0 predicts the regions of signal peptides. Depending on the type, the positions of n-, h- and c-regions as well as of other distinctive features are predicted.
 
@@ -317,7 +317,7 @@ Therefore, amino acids of the mature protein have a low signal peptide score.
 
 The standard secretory signal peptide is called Sec/SPI and it is transported by the Sec translocon and cleaved by Signal Peptidase I (Lep).
 There are four other signal peptide types (see also box below) but they are beyond the scope of this course.
-However, it is important to know that tools like signalP are able to distinguish between the different signal peptide types and make accurate predictions about their probabilities, based on probabilities.
+However, it is important to know that tools like signalP are able to distinguish between the different signal peptide types and make accurate predictions about their regions, based on probabilities.
 
 The information below the graph in {numref}`signalp_output` consists of the following elements:
 - The prediction indicates the most probable type of signal peptide for the given sequence.
@@ -328,7 +328,7 @@ The table at the bottom of the page consists of the following elements:
 
 
 ```{attention}
-Both transmembrane sections and signal peptides are largely defined by the physicochemical properties of the amino acid residues that they constitute, rather than a conserved motif or short sequence of residues. The icnreased amount of labelled training data enabled the training of hidden markov models to predict the presence of transmembrane sections and signal peptide sequences from primary sequences.
+Both transmembrane sections and signal peptides are largely defined by the physicochemical properties of the amino acid residues that they constitute, rather than a conserved motif or short sequence of residues. The increased amount of labelled training data enabled the training of hidden markov models to predict and differentiate the presence of transmembrane sections and signal peptide sequences from primary sequences.
 ```
 
 ```{seealso}
