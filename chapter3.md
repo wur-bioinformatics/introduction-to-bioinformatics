@@ -36,13 +36,13 @@ Etymology (from Greek): **phylon** ("race") + **-geneia** ("origin").
 
 ## Introduction
 
-In this chapter you will learn to use a Multiple Sequence Alignment ({term}`MSA`), like the ones you compiled in [chapter 2](chapter2), and visualize the variation it contains as a phylogenetic tree.
+In this chapter you will learn to use a Multiple Sequence Alignment ({term}`MSA`), like the ones you compiled in [chapter 2](#chapter2), and visualize the variation it contains as a phylogenetic tree.
 A phylogenetic tree is considered a highly efficient data structure summarizing the data and its variation contained in your MSA.
-As was explained in [chapter2](chapter2), MSA's let us assess which nucleotides or amino acids are homologous between different sequences, and hence can be compared.
+As was explained in [chapter2](#chapter2), MSA's let us assess which nucleotides or amino acids are homologous between different sequences, and hence can be compared.
 The phylogenetic perspective is that individual columns in a multiple sequence alignment can be seen as _characters_, i.e. specific characteristics of the sequences which can be used to identify how sequences are related.
 Characters have states, which are in this case the individual nucleotide or amino acid substitutions occurring across the sequences in that position (see [characters & trees](#chapter3_characters_trees) below).
 Invariable characters are columns or positions 'occupied' by just one type of nucleotide or amino acid, whereas variable characters may have up to 4 different nucleotides or up to 20 amino acids per position.
-A phylogenetic tree is built from these characters in one of two ways: by first [computing pairwise distances](#chapter3_distance_based), and then using the distances to build the tree, or by using the characters (the MSA columns) directly and applying a [optimality criterion](#character-based) for selecting the best tree.
+A phylogenetic tree is built from these characters in one of two ways: by first [computing pairwise distances](#chapter3_distance_based), and then using the distances to build the tree, or by using the characters (the MSA columns) directly and applying a [optimality criterion](#chapter3_character_based) for selecting the best tree.
 This chapter explains the main differences between these two approaches, and when to use which approach.
 
 Furthermore, remember that DNA and amino acid (AA) sequences contain the information necessary for building protein structure?
@@ -525,6 +525,7 @@ Credits: [CC BY-NC 4.0] Created using [MEGA](https://www.megasoftware.net/) {cit
 (chapter3_tree_building)=
 ## Main approaches to tree building
 
+(chapter3_character_based)=
 ### Character based
 
 Tree building is about finding clades and reconstructing phylogenetic relationships among a group of individuals.
