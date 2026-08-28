@@ -353,7 +353,7 @@ It will also be high if a signal peptide has been predicted.
 ## Tertiary protein structure prediction
 
 First, it is good to realize that the prediction of secondary structure elements has formed the foundation of tools that predict 3D structures of proteins.
-We will first explore the three traditional structure prediction approaches, which will be followed up by the most prominent new approach in 3D structure prediction ([AlphaFold](#chapter4_alphafold)) that relies on several concepts of the traditional approaches.
+We will first explore the three traditional structure prediction approaches, which will be followed up by the most prominent new approach in 3D structure prediction ([AlphaFold](#chapter4_alphafold)) that relies on several concepts of the traditional approaches and is therefore easier to understand if you study them first.
 
 ```{figure} images/chapter4/three-zones.png
 :alt: The three zones of tertiary structure prediction approaches
@@ -367,7 +367,7 @@ Credits: [CC BY-NC 4.0] {cite}`own_4_2024`.
 
 Various approaches including _ab initio_, threading (also called fragment-based modelling), and homology modelling have been proposed and used to go from sequence to structure, with both sequence identity and alignment length as the most important factors to decide which approach to choose.
 To make an effective choice between these three traditional structure prediction approaches, a so-called three zones concept was proposed ({numref}`three_zones`).
-According to the figure, as we can observe, below 20% sequence identity between the query protein sequence and sequences with experimentally derived structures, one needs to refer to _ab initio_ approaches, literally translating as: from the start.
+As we can observe in the figure, below 20% sequence identity between the query protein sequence and sequences with experimentally derived structures, one needs to refer to _ab initio_ approaches, literally translating as: from the start.
 As such approaches are computationally heavy and as they also require a lot of expert knowledge, they are not widely used.
 In essence, such approaches aim to model the protein sequence folding process using physicochemical properties of the amino acid residues and their surroundings.
 As the sequence length used increases, ever-increasing possible folds occur for the entire 3D structure, making it a computationally intensive task.
@@ -375,11 +375,11 @@ For example, consider 100 amino acid residues that each have their psi, phi, and
 If each fold would take just 1 second to assess its likelihood to be realistic and energy-favorable, it would take us 10^126 years to analyze and come up with a suggested 3D structure, and that is just 100 amino acids under severe constraints.
 
 Fortunately, the database of experimentally derived protein 3D structures is constantly growing.
-Therefore, there is a good chance of having >20% sequence identity of your query sequence.
+Therefore, there is a decent chance of having >20% sequence identity of your query sequence.
 As we can see in {numref}`three_zones`, the length of the sequence alignment is another crucial factor: if a shorter stretch is matching, the threading (or fragment-based) approach can be used.
 This approach focuses on matching these stretches to known folds, i.e., local structure often consisting of secondary structure elements.
 This can already help to hypothesize on the protein’s function, if a functional domain is matched to the query sequence.
-As this approach is also relatively computationally demanding, and newer approaches as discussed below (i.e., [AlphaFold](#chapter4_alphafold)) excel in recognizing such folds, we will not gain practical experience with the threading approach during this course. 
+As this approach is also relatively computationally demanding, and newer approaches as discussed below (i.e., [AlphaFold](#chapter4_alphafold)) excel in recognizing such folds, we will not gain practical experience with the threading approach during this course. It is good to realise though that the prediction of such functional domains is a key part of modern tertiary structure predictors.
 
 If both the query sequence identity and length of the alignment are large enough, homology modelling can be attempted to create a structure model.
 So-called "template sequences" have to be found in the protein structure database that are "similar enough" to serve as a structural blueprint for the 3D prediction.
@@ -390,7 +390,7 @@ Still, new protein sequences that with little 3D structural resemblance to exist
 Hence, the scientific community has been adopting various artificial intelligence-based approaches of which AlphaFold is the most prominent one to date.
 
 ```{attention}
-The prediction of protein structures with amino acid sequences that bear very little resemblence to known protein sequences stored in databases remains the hardest task. The more sequence similarity protein sequences have to database entries, the more structural and functional properties can be inferred from them.
+The prediction of protein structures with amino acid sequences that bear very little resemblence to known protein sequences stored in databases remains the hardest task. The more sequence similarity protein sequences have to database entries, the more structural and functional properties can be reliably inferred from them.
 ```
 
 ---
@@ -422,7 +422,7 @@ By now, ~218,000 PDB entries are available of ~150,000 unique protein sequences 
 The latter number is important, as a sufficiently diverse set of examples will ensure that there are enough examples in the training data to recognize relevant patterns of various protein folds and other structural features.
 
 As input for their most recent machine learning model, the DeepMind team predicted the structure of many protein sequences, and after filtering for high-quality and reliable predictions, 100,000 protein sequences were added to the training data, a technique called data augmentation.
-Thus, at the time of model training, the team could use around 300,000 protein sequences - 3D structure combinations to train their AlphaFold model that uses a FASTA file as input and outputs a 3D structure model that is described in the [Assessing a protein structure model quality](#chapter4_model_quality) section.
+Thus, at the time of model training, the team could use around 300,000 protein sequence - 3D structure combinations to train their AlphaFold model that uses a FASTA file as input and outputs a 3D structure model that is described in the [Assessing a protein structure model quality](#chapter4_model_quality) section.
 
 ---
 
@@ -450,9 +450,9 @@ It measures what percentage of α-carbons ({numref}`casp`, right) of the amino a
 {numref}`casp` shows how after years of stagnation, in 2018 AlphaFold clearly made a substantial improvement over the results of earlier years, thereby showing the general impact on the field that AlphaFold has made. Furthermore, the progress of the subsequent AlphaFold models is also visible in the increase in GDT-TS.
 In 2020, the prediction results of their updated system, AlphaFold 2, were so accurate that the structure prediction problem had been dubbed as 'solved' by some.
 In May 2024, the Google DeepMind team released AlphaFold 3.
-Although the results of the next iteration of CASP (CASP16) are known at the time of writing, there are no figures yet available of comparisons between AlphaFold 3 and its predecessors together with other approaches. It is expected that the results are still dominated by AlphaFold, and in the meantime new challenges include protein-ligand docking, something that AlphaFold 3 has started to predict as well.
+Although the results of the next iteration of CASP (CASP16) are known and published at the time of writing, there are no clear summary figures available of comparisons between AlphaFold 3 and its predecessors together with other approaches. It is clear though that the results are still dominated by AlphaFold, and in the meantime new challenges include protein-protein interactions and protein-ligand docking, something that AlphaFold 3 has started to predict as well.
 It is good to note that a score of 100 is not feasible by any predictive method, since there are areas in the protein structure that are inherently difficult to model, i.e., very flexible parts or transitions between, e.g., helix and a random coil.
-Hence, a score between 90-95% is considered equally well as an experimentally derived 3D structure, a score that AlphaFold 2 nearly reached.
+Hence, a score between 90-95% is considered equally well as an experimentally derived 3D structure, a score that AlphaFold 2 nearly reached, and AlphaFold 3 has reached in several instances.
 
 With the above in mind, let us look at {numref}`casp` again.
 The maximum average GDT-TS score in 2020 has more than doubled since pre-2018 editions.
@@ -490,14 +490,15 @@ The concept of co-evolution implies that if two interacting residues are importa
 In other words, if one of them changes into a different amino acid, the other will likely have to change as well to maintain the interaction to support the protein’s 3D structure.
 Such genomic signals can only be extracted when we compare many protein sequences with each other.
 Therefore, a deep MSA of high quality is essential for good predictions.
-Here, AlphaFold uses MSA to extract evolutionary signals and predict co-evolution of residues.
+Hence, AlphaFold uses MSA to extract evolutionary signals and predict co-evolution of residues.
 
 The second module uses the representations from the first module and aims to find restrictions in how the protein sequence folds into its 3D structure.
 This part is the actual machine learning model, and we will consider it largely as a black box.
-The model uses deep learning to learn which input features are important to predict the protein folding based on data-driven pattern recognition.
+To capture inherent variation in the predictions, several instances of the model are initiated, using the same input from the first module.
+Each model uses deep learning to learn which input features are important to predict the protein folding based on data-driven pattern recognition.
 The model passes information back and forth between the sequence-residue (MSA) and residue-residue (contact map) representations.
 This part requires a lot of computation time and effort and thus needs a good infrastructure that is not available to all laboratories.
-The DeepMind team had the powerful resources needed to train the extensive machine learning model.
+At the time of its initial development, the DeepMind team had the powerful resources needed to train the extensive machine learning model.
 
 The third and final module is the structure builder where the actual folding and refinement of the structure model takes place using the phi, psi, and omega angles of the amino acid atomic bonds (see also [chapter 1](#chapter1_secondary_structure)).
 Furthermore, local and global confidence scores are determined.
@@ -582,7 +583,7 @@ In other words, how do we know if we can be confident in the 3D structure models
 :name: alphafolddb
 
 The most recent release includes predicted protein structures for plants, bacteria, animals, and other organisms, opening up many new opportunities for researchers to use AlphaFold to advance their work on important issues, including sustainability, food insecurity, and neglected diseases.
-Note that PDB contains experimentally validated structures (~218K nowadays) and AlphaFold produces predicted structure models.
+Note that PDB contains experimentally validated structures (~258K nowadays) and AlphaFold produces predicted structure models.
 Credits: {cite}`alphafolddb_2022`.
 ```
 
@@ -605,8 +606,8 @@ Credits: {cite}`blopig_2021`.
 Predictive models only have true value when they produce some measure of confidence, because without any idea of certainty about the predictions, it is hard to interpret the results and draw meaningful conclusions.
 To get an idea of how well predictions fit the reality, one needs to compare the model with the true situation.
 {numref}`7mbf` shows how this can be done by manual visual inspection of two super-imposed structures, the "real" (experimentally derived) one and a predicted one.
-However, to quantitatively assess differences between models, some sort of numeric score is needed. Here, we will list several of them that you will encounter during this week.
-In this reader, we have seen one such comparative measure for 3D protein structure models in the CASP section: the Global Distance Test – Total Score ({numref}`casp`).
+However, to quantitatively assess differences between models at scale, some sort of numeric score is needed. Here, we will list several of them that you will encounter during this week.
+In this reader, we have seen one such comparative measure for 3D protein structure models in the CASP section: the Global Distance Test – Total Score, where higher scores mean a better performance ({numref}`casp`).
 Another score you may encounter is the root mean squared error (RMSE), based on the difference in position of the α-carbons as input to calculate the score.
 In principle, the smaller the RMSE of a model is, the better.
 When doing homology modelling, the QMEAN-DISCO score used by SWISS-MODEL is used as a quality measure.
@@ -617,7 +618,7 @@ AlphaFold comes with its own local and global error predictions that the machine
 Where the local error focuses on individual positions of amino acids, the global error describes how confident the predictions are for various protein parts that can interact through residue-residue interactions.
 The local error is also used to color-code the residues of the model in the 3D structure viewer.
 In this way, it is easier to observe which parts of the structure model are more reliable than others.
-You will study these two different error scores more during the practical assignment.
+You will study these two different error scores more during the practical assignments.
 
 ```{figure} images/chapter4/arf16.png
 :alt: Auxin Response Factor 16 structural prediction
@@ -642,7 +643,7 @@ The above-described confidence measures are also useful in highlighting limitati
 In the AlphaFold-related practical assignment, you will see some examples of this.
 The main lesson is that you must treat a prediction as a prediction: it is a model of reality and may not accurately represent it.
 Also, keep in mind that there are parts of the 3D protein structure that we can naturally be more confident about.
-For example, secondary structure oftentimes supports the 3D protein structure, and parts of the protein that are naturally more disordered, such as random loops, are harder to predict correctly.
+For example, as previously mentioned, secondary structure oftentimes supports the 3D protein structure, and parts of the protein that are naturally more disordered, such as random loops, are harder to predict correctly.
 Such parts can typically represent parts of the protein structure that are more flexible in their biological environment and any prediction of (very) flexible parts should therefore be considered as a snapshot of the protein structure.
 If you study {numref}`7mbf` in more detail, you will see this reflected in the superimposed image of the PDB (experimental) 3D structure and the AlphaFold structure model. In figure {numref}`arf16` you can see the prediction model is more confident with the less flexible parts in the center of the protein and less confident with the flexible parts on the outer edges of the protein.
 
@@ -662,7 +663,7 @@ We are increasingly aware that structure is more conserved than sequence; thus, 
 
 ### Foldseek
 
-A recent tool that allows us to do structure-based alignments based on protein structure input in a reasonable time frame is [Foldseek](https://search.foldseek.com/) {cite}`foldseek_2024`.
+A tool that allows us to do structure-based alignments based on protein structure input in a reasonable time frame is [Foldseek](https://search.foldseek.com/) {cite}`foldseek_2024`.
 Foldseek uses a novel 3D-interactions (3Di) alphabet together with an extremely fast BLAST-like sequence search method. This way, the team behind Foldseek overcame the mounting task of doing structure-based comparisons at the very large scale that the availability of >200 million AlphaFold structures requires.
 For example, a traditional structure-based alignment tool would take ~1 month to compare one structure to 100 million ones in the database.
 %#% Add section about the 3Di alphabet and the use of substitution matrices in comparison to chapter 2 + a figure to visualise this.
@@ -765,7 +766,7 @@ In a single session you should aim to get about halfway through this block, i.e.
 These practical exercises offer you the best preparation for the project in chapter 6 and the tools and their use are also part of the exam material.
 Thus, make sure that you develop your practical skills now, in order to apply them during the project and to demonstrate your observation and interpretation skills during the exam.
 
-**Note, the answers will be published after the practical!**
+**Note, the answers will be published after the practical sessions!**
 
 ```{exercise} Peptide folding, 20 minutes
 
@@ -816,7 +817,7 @@ After completing this assignment, you will be able to interpret the outcome of p
 2. Check the structure alignments in the results file. Does this confirm the reason for the differences you hypothesized under question 1.? 
 3. Based on your results, how many helices do you think there are? And how many sheets? Does that match with the information from [Wikipedia](https://en.wikipedia.org/wiki/TIM_barrel)? 
 4. To assess the quality of the secondary structure predictions, there are several scoring metrics. The most direct and easy one to calculate is the Q3 score. The Q3 value is the fraction of residues predicted correctly in the secondary structure states, namely helix, strand, and coil. You can find more information in {numref}`Q3_alt`. Calculate – by hand – the Q3 of the DSSP predictions of Chain A, thereby assuming the consensus is the actual secondary structure (i.e., the "ground truth"). 
-5. To gain more information about a protein’s properties, you can predict local hydrophobicity (Kyte-Doolittle, averaged over a 9-residue window) of the studied 1TIM 3D structure by uploading the corresponding protein sequence, UniProt ID P00940, using the [server](http://web.expasy.org/protscale/) (select the full 2-248). Compare the output to the DSSP secondary structure prediction of question a. Do you expect the core to be made up of helices or sheets? How did you get to that answer? How can you verify this? 
+5. To gain more information about a protein’s properties, you can predict local hydrophobicity (Kyte-Doolittle, averaged over a 9-residue window) of the studied 1TIM 3D structure by uploading the corresponding protein sequence, UniProt ID P00940, using the [server](http://web.expasy.org/protscale/) (select the full 2-248 chain). Compare the output to the DSSP secondary structure prediction of question a. Do you expect the core to be made up of helices or sheets? How did you get to that answer? How can you verify this? 
 6. We can predict the secondary structure using a state-of-the-art algorithm, [**NetSurfP-3.0**](https://services.healthtech.dtu.dk/services/NetSurfP-3.0/). Copy and paste the FASTA protein sequence of the triose phosphate topoisomerase protein (P00940) in the allocated field (or upload the FASTA file) and NetSurfP-3.0 uses a machine learning approach that treats the protein sequences as sentences of a language. By training a large model based on known protein 3D structures from PDB and DSSP-calculated properties thereof, NetSurfP-3.0 predicts secondary structure properties from primary sequences. What is the advantage of combining the information from several sequences for the secondary structure prediction? 
 7. Based on the NetSurfP-3.0 results page, how do the number of helices and sheets as found by the SS3 results displayed in the graphical overview compare to your previous answer under question 3.? And how does the picture compare to the results from 1.? 
 8. Investigate the prediction for the 45{sup}`th` residue, a serine, for the SS3 and SS8 predictions by hovering over the residue in the graphical overview. Can you speculate why the SS3 prediction is "coil" while the SS8 prediction is "3{sub}`10` helix"? To further explore this phenomenon, we will look at results files of 2StructCompare, available through BrightSpace (Practicals_Files), together with the 3D structure displayed in the PDB using the `Mol*` viewer. If you look at those screenshots and with the 3D viewer, do you think the residue is a helix or coil? Furthermore, investigate the "split" in the 4{sup}`th` helix around AA residue 100 in the available screenshot and 3D viewer. Do you think this is a split or not? 
