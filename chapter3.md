@@ -627,7 +627,7 @@ When all characters in the MSA have been evaluated, the overall score of the fit
 Then, another candidate tree is assumed and the process is carried out again.
 More and more trees are compared this way until either a single best or a group of _equally most parsimonious_ reconstructions remains.
 Given the vastness of tree spaces for even moderate numbers of terminals (see [Box 3.3](#chapter3_bifurcating)) this process may take some time to complete.
-Usually only heuristic search methods (see [Tree space and heuristic search methods](#chapter3_tree_space)) are applied in case of >15 terminals.
+Usually only heuristic search methods (see [Tree space and heuristic search methods](#chapter3_tree_space)) are applied in case of ->15 terminals.
 
 :::{figure} images/chapter3/parsimony.png
 :alt: Parsimony analysis, in which character state changes in the MSA are indicated on the resulting trees.
@@ -995,9 +995,9 @@ Thus, make sure that you develop your practical skills now, in order to apply th
 
 **Note, the answers will be published after the practical!**
 
-`````{exercise} Make an amino acid based PLT1 tree in MEGA11 & visualize it in iTOL, 30 minutes
+`````{exercise} Make an amino acid based Cyclin tree in MEGA12 & visualize it in iTOL, 30 minutes
 
-As a start, in this assignment you are going to express relationships among a set of 10 PLT1 amino acid sequences for which you generated a multiple sequence alignment ({term}`MSA`) in the last chapter.
+As a start, in this assignment you are going to express relationships among a set of 12 Cyclin amino acid sequences for which you generated a multiple sequence alignment ({term}`MSA`) in [chapter 2](#chapter2) ('ccna2-12prot-mcoffee-tcs.fasta').
 You will do this by building a parsimony tree, using _Molecular Evolutionary Genetics Analysis_ (**[MEGA 11](https://www.megasoftware.net/)**).
 You will then visualize your tree using the tree figure software **[FigTree](http://tree.bio.ed.ac.uk/software/figtree/)** and using **[iTOL](https://itol.embl.de/)**, which is a highly useful platform for storing, managing trees and making pretty pictures of them.
 
@@ -1005,15 +1005,15 @@ First, Start MEGA 11 and open and have a look at the standard MEGA 11 dashboard 
 The open white field works as a canvas on which each analysis performed will appear as a pinned note.
 Apart from 'PHYLOGENY' there are many interesting tools available, some of which you will be using today.
 
-Using File > Open, open your PLT1 MSA from the last chapter; this file should be a FASTA file, with the extension .fasta in the file name.
+Using `File -> Open`, open your Cyclin MSA from the last chapter; this file should be a FASTA file, with the extension .fasta in the file name.
 When presented with a choice between `Analyze` and `Align`, select `Analyze` (as the sequences are aligned already).
 Next, select the correct data type.
 
-- Have a look at your alignment by selecting `Data > Explore Active Data` (or hit the `TA` button), which will bring you into the DataExplorer.
-- Using the settings `Display > Color Cells` you can see clearly how the amino acids align, and how stretches of high conservation alternate with highly-variable parts of the alignment.
+- Have a look at your alignment by selecting `Data -> Explore Active Data` (or hit the `TA` button), which will bring you into the DataExplorer.
+- Using the settings `Display -> Color Cells` you can see clearly how the amino acids align, and how stretches of high conservation alternate with highly-variable parts of the alignment.
 - Clicking the `TA` button enables you to highlight non-identical amino acids per alignment position, which can be useful especially in big alignments of 100+ sequences.
 
-Now close the Data Explorer which will return you to the MEGA dashboard and click `Phylogeny > Construct/Test Maximum Parsimony Tree(s)`.
+Now close the Data Explorer which will return you to the MEGA dashboard and click `Phylogeny -> Construct/Test Maximum Parsimony Tree(s)`.
 Leave the default setting, which includes 'no test of phylogeny' (bootstrapping) and 'MP search Method' is the SPR branch swap.
 
 - Confirm and use default settings for computing the tree;
@@ -1025,16 +1025,16 @@ Select 'Branch lengths' and you see the average number of amino acid replacement
 
 One good thing of MEGA is that upon clicking `Caption` (bottom left) you will get complete info on all the settings that were used in this analysis as well as on results; for instance, how many most parsimonious reconstructions there were (in this case a single one), how starting trees were calculated and how many sites were in the MSA.
 
-- Now save your tree by selecting `File > Export Current Tree` (Newick), tick the 'Branch length' box, and click 'Ok'. The Newick notation will be shown in the Text File editor, select `File > Save as` and give it a logical name and replace the .nwk extension by .tre.
+- Now save your tree by selecting `File -> Export Current Tree` (Newick), tick the 'Branch length' box, and click 'Ok'. The Newick notation will be shown in the Text File editor, select `File -> Save as` and give it a logical name and replace the .nwk extension by .tre.
 - You may repeat the Maximum parsimony analysis, but now selecting, at 'Phylogeny Test', `Bootstrap method`. This will perform a bootstrap analysis of 500 replicates.
 - After it is completed you see two tabs on top of the tree window: 'Original Tree' shows the initial parsimony result now with bootstrap values superimposed on (some of) the nodes. The other tab, named 'Bootstrap consensus tree' shows the actual bootstrap analysis.
-- Use Layout > `Toggle scaling of the tree` in order to see the average branch lengths.
+- Use `Layout -> Toggle scaling of the tree` in order to see the average branch lengths.
 - Save your bootstrap tree as above, now with ticking the `Bootstrap Values` box.
 
 We have seen in the lectures that boostrap values of < 50% are actually rather uninformative, as a single synapomorphy already can have 62% as a result.
 Therefore, it will be good to take a look at the 'condensed' version of our tree.
 
-- Make sure you are in the Original tree tab and go to `Compute > Compute condensed tree` button (top-left). You will be given 'Tree Cutoff options' and type 62 in the % cutoff box. See how your tree changes?
+- Make sure you are in the Original tree tab and go to `Compute -> Compute condensed tree` button (top-left). You will be given 'Tree Cutoff options' and type 62 in the % cutoff box. See how your tree changes?
 
 _Questions:_
 
@@ -1050,8 +1050,8 @@ Important aspects of picturing phylogenetic trees are:
 - Rooting: the effect of outgroup-rooting should be clearly visualized.
 
 **FigTree**\
-A stable and practical tree visualisation tool, which is fully freeware, is FigTree which can be obtained from [here](http://tree.bio.ed.ac.uk/software/figtree/).
-A video is included on Brightspace outlining how to use FigTree for a nice visualization of a tree with bootstrap values attached, see tomorrow’s IQ-TREE practical.
+A stable and practical tree visualisation tool, which is fully freeware, is PearTree which can be obtained from [here](https://peartree.live) and does most of the issues listed.
+
 
 **iTOL**\
 The iTOL platform provides quite useful solutions to accommodate all these aspects in your tree picture.
@@ -1068,24 +1068,24 @@ N.B.: the Control panel can be dragged to the side in order to see the entire tr
 Although no outgroup was included or selected in your PLT1 MSA, the tree appears rooted because in the Control Panel under `Mode` 'Rectangular' is selected by default in iTOL.
 Therefore, you want to show the tree unrooted by selecting 'Unrooted'.
 
-- Under `Branch options > Line style` increase the line thickness to up to for instance 20 px in order to make the tree structure more clearly visible.
+- Under `Branch options -> Line style` increase the line thickness to up to for instance 20 px in order to make the tree structure more clearly visible.
 - Under `Labels` toggle between Display and Hide in order to see tree structure-only; use the + tool (top-right corner of the screen) to zoom in.
-- Under `Mode options > Rotation` you can rotate your tree.
-- Now make sure to select your bootstrap consensus tree and go to `Advanced > Branch metadata > Display > Bootstraps / metadata` and select 'Display' and then 'Text'. Increase font size to like 60px, Round to 2 decimals and you see your bootstrap values appear at your tree.
-- Go to `Advanced > Node options` and select 'Display' for both your Leaf nodes and Internal nodes. Choose a symbol and colour, increase the symbol size to like 50px or more.
-- Now switch to your 'Original tree' and use `Advanced > Branch metadata display > Branch lengths` and select 'Display'. Increase font size to like 60px and Round decimals to 2; this way you can read your branch lengths from your tree.
-- Go back to `Basic`, make sure ‘Mode’ is either Circular or Rectangular (not Unrooted) and then select `Branch options >  Connections between nodes are curves`.
-- Go to `Basic > Mode options` and select 'Ignore' at branch lengths in order to see a cladogram version of your tree, i.e., without proportional branch lengths. N.B.: this will not work for your bootstrap consensus tree as it has no branch lengths. (trees _with_ branch lengths are much more interesting!)
-- Click on any internal node in your tree and select `Branches > This node > Colour` in order to colour a branch in your tree.
-- Explore the other functions of tree visualisation that iTOL offers; when you are happy with your tree, use `Export > Full image > Export` and save in .svg format, for use in Word or PowerPoint documents.
+- Under `Mode options -> Rotation` you can rotate your tree.
+- Now make sure to select your bootstrap consensus tree and go to `Advanced -> Branch metadata -> Display -> Bootstraps / metadata` and select 'Display' and then 'Text'. Increase font size to like 60px, Round to 2 decimals and you see your bootstrap values appear at your tree.
+- Go to `Advanced -> Node options` and select 'Display' for both your Leaf nodes and Internal nodes. Choose a symbol and colour, increase the symbol size to like 50px or more.
+- Now switch to your 'Original tree' and use `Advanced -> Branch metadata display -> Branch lengths` and select 'Display'. Increase font size to like 60px and Round decimals to 2; this way you can read your branch lengths from your tree.
+- Go back to `Basic`, make sure ‘Mode’ is either Circular or Rectangular (not Unrooted) and then select `Branch options ->  Connections between nodes are curves`.
+- Go to `Basic -> Mode options` and select 'Ignore' at branch lengths in order to see a cladogram version of your tree, i.e., without proportional branch lengths. N.B.: this will not work for your bootstrap consensus tree as it has no branch lengths. (trees _with_ branch lengths are much more interesting!)
+- Click on any internal node in your tree and select `Branches -> This node -> Colour` in order to colour a branch in your tree.
+- Explore the other functions of tree visualisation that iTOL offers; when you are happy with your tree, use `Export -> Full image -> Export` and save in .svg format, for use in Word or PowerPoint documents.
 ```{image} images/chapter3/assignment_1_1.png
 :alt: Tree visualization.
 :align: center
 :width: 100%
 :name: assignment_1_1
 ```
-- Switching the terminal labels back on (using Basic > Labels > Display) it is clear that for this picture the sequence names are too long. This is best edited manually in the .fasta file you started with.
-- Last but not least: placing a root on your tree, in case you do have outgroup information, is possible by selecting a node or branch (can be internal and terminal ones) and selecting `Editing > Tree structure > Re-root the tree here`. In case you would want to re-root again you need to Reset the tree first (in Control panel the yellow button bottom-right).
+- Switching the terminal labels back on (using Basic -> Labels -> Display) it is clear that for this picture the sequence names are too long. This is best edited manually in the .fasta file you started with.
+- Last but not least: placing a root on your tree, in case you do have outgroup information, is possible by selecting a node or branch (can be internal and terminal ones) and selecting `Editing -> Tree structure -> Re-root the tree here`. In case you would want to re-root again you need to Reset the tree first (in Control panel the yellow button bottom-right).
 
 With these steps you have gone from a tree generated in MEGA 11 to a nice tree picture, a procedure that you can apply to other trees generated in this practical and of course in your project later on in the course.
 Also, use iTOL to store your trees and keep an overview of all trees generated.
@@ -1108,10 +1108,10 @@ In this practical you will estimate sequence divergence and then phylogenetic re
 
 First you are going to explore divergence in a multiple sequence alignment (MSA), and how to make corrections to the crude, proportional _p_-differences between sequences, in order to estimate their 'true' evolutionary divergence.
 
-Start MEGA 11 and open the 16S rDNA sequence alignment provided on BrightSpace (by selecting `Data > Open A File/Session`) and select `Analyze`.
+Start MEGA 11 and open the 16S rDNA sequence alignment provided on BrightSpace (by selecting `Data -> Open A File/Session`) and select `Analyze`.
 Then select the appropriate data type, keeping in mind that 16S rDNA is not protein coding sequence.
-Now explore the SSU sequence alignment using the DataExplorer (`Data > Explore Active Data`).
-Using the settings `Display > Color Cells` you can see clearly how the nucleotides align, and how stretches of high conservation alternate with highly-variable parts of the alignment.
+Now explore the SSU sequence alignment using the DataExplorer (`Data -> Explore Active Data`).
+Using the settings `Display -> Color Cells` you can see clearly how the nucleotides align, and how stretches of high conservation alternate with highly-variable parts of the alignment.
 (This is relevant later on for choosing the right nucleotide substitution model when calculating a likelihood tree).
 
 ```{image} images/chapter3/assignment_2_2.png
@@ -1190,16 +1190,16 @@ Can you see a difference in (tree) result?
 
 Now repeat the _best model_+Gamma analysis, this time using `Pairwise deletion` (instead of `Complete deletion`).
 There should be a _Heliobacter_/_Campylobacter_ + _Desulfo/Geobacter Bdellovibrio_ clade.
-You can root with this clade by I) clicking its stem-branch, and II) use `Subtree > Root tree`.
+You can root with this clade by (1) clicking its stem-branch, and (2) use `Subtree -> Root tree`.
 Check how your tree topology may have changed now.
 
 On the same tree, in the Tree Explorer now use the `Options` button (at the top of the window, left from the `i` button) to display the tree formatting tools, used to make your two trees look pretty.
-(You can also use `TaxonNames > ShowTaxonMarkers > Markers`).
+(You can also use `TaxonNames -> ShowTaxonMarkers -> Markers`).
 Use the Tree, Branch and Labels tabs and explore the various options.
 For instance, change the appearance of your tree, switch branch lengths on/off as you prefer and use the `Labels` tab to mark the α, β, γ, δ, and ε Proteobacteria with their own colour and shape (for an example, see the figure in assignment II, above).
-Save an image of your tree using `Image > Save as PNG file`.
+Save an image of your tree using `Image -> Save as PNG file`.
 
-Remember this analysis is actually unrooted, therefore also produce an unrooted visualisation of your trees by selecting `Radiation` from `View > Tree/Branch Style`.
+Remember this analysis is actually unrooted, therefore also produce an unrooted visualisation of your trees by selecting `Radiation` from `View -> Tree/Branch Style`.
 This is exactly the same tree structure with the same branch lengths, but it is not 'polarised' and therefore the existence of clades in it dependent on root-choice.
 
 ```{image} images/chapter3/assignment_4_1.png
@@ -1222,37 +1222,16 @@ With the maximum likelihood (ML) approach an explicit model of nucleotide substi
 This means that the probability of having each site change as observed is calculated _given_ a certain tree topology (out of many such topologies and an explicit model of nucleotide substitution).
 Branch lengths on ML trees are rates, expressed as nucleotide substitutions per site.
 
-You will first calculate an ML tree using MEGA and compare this to a commonly used online tool, IQ-TREE.
-
-In MEGA use the Phylogeny button to select Construct/test Maximum Likelihood Tree and compute a tree using the following settings:
-
-- Test of Phylogeny = None.
-- Model/Method = General Time Reversible model.
-- Rates among Sites = Gamma Distributed (G).
-- Gaps/Missing Data Treatment = Complete deletion.
-- ML heuristic method = SPR level 5.
-- Initial tree for ML = NeighborJoining.
-- Branch swap filter = None.
-
-_ML heuristic method_: a branch swapper used to 'jump' from tree to tree during the ML search; 'Initial tree for ML': the starting tree for this search.
-
-After the analysis has finished (usually a few minutes) make your ML tree look pretty and produce an unrooted version (as you did before), and check the Caption for the log likelihood value obtained for this analysis.
-You may want to de-select 'Branch Lengths'.
-How do the five Proteobacterial classes group in this analysis?
-Is the ML tree topology different from the NJ tree you calculated under at the start of assignment IV?
-
-For comparison, now go to [IQ-TREE](http://iqtree.cibiv.univie.ac.at/) where you will see three modules:
-
-'Tree Inference', 'Model Selection' and 'Analysis Result'.
-Select 'Tree Inference' and simply upload your original Proteobacterial SSU sequence alignment FASTA file and for now just use default options, i.e., do not change anything further.
-
 IQ-TREE is most likely the best and most powerful tool currently around for calculating ML phylogenetic trees, and their associated bootstrap analyses.
-In case of delays, or when the analysis is taking too long, you can also use [IQ-TREE webserver](http://www.iqtree.org/) and select Vienna and/or Los Alamos of the 3 Web servers listed there at the top of the page (CIPRES is a pay-site).
 
-Depending on the server load (see top left corner), after an amazingly short time (minutes?) check your status in `Analysis Results > Run Log`, and keep re-freshing your screen.
-When your analysis is finished, proceed straight away to `DOWNLOAD SELECTED JOBS` button at the bottom-left, and extract the resulting .zip in your own space.
-At the `Summary` tab you can already see your tree result with on the nodes the actual bootstrap support values indicated. At the `Analysis Result` tab you can see something like this:
+Go to [IQ-TREE](https://www.hiv.lanl.gov/content/sequence/IQTREE/iqtree.html) where you will see a form to upload your MSA and select relevant parameters.
 
+Upload your original Proteobacterial SSU sequence alignment FASTA file and make sure to select `Options -> Substitution Model -> Sequence type/Model -> 'Nucleotides'/'Find best and apply'`.
+If you select `Options -> E-mail results` you will receive an email once your IQTree job has finished, otherwise the page automatically updates to the results once your job is finished.
+
+When your analysis is finished you briefly inspect the results on the web page, and you can download all the IQTree results by clicking `Download all files` and extracting the resulting .zip in your own space.
+
+If you click on `Full Result`, you will see something like this:
 ```
 ModelFinder
 -----------
@@ -1371,39 +1350,9 @@ This so far is model-selection, followed by the actual tree search and Maximum L
 Open the .log file that is included in your .zip bundle from IQ-TREE and find the 'Best score found' after finilazing tree search.
 How does it compare with the model testing best Ln score? Can you explain the difference?
 
-Now compare the best LogL score of your IQ-TREE analysis with the best log likelihood value that you found in MEGA 11 in before.
-Are they the same?
-Try finding the LnL values in the cells marked with 'o' below.
-
-```{list-table}
-:header-rows: 1
-:name: assignment_5_quiz
-
-* - Model
-  - MEGA
-  - MEGA
-  - MEGA
-  - IQ-TREE
-* - \#
-  - Pairwise deletion
-  - Complete deletion
-  - Use all sites
-  - \#
-* - TN+I+G
-  - o
-  - -11895.49
-  - o
-  - o
-* - GTR+G
-  - -13847.07
-  - o
-  - -19330.23
-  - o
-```
-
 _Questions:_
 
-1. Why are the LnL values so different among character sets (deletion treatments) but not among models?
+1. Why are the LnL values different among models?
 2. Why don’t we just go straight to the most complex model, surely that one would fit any data set best?
 
 In order to visualise your IQ-TREE ML tree with bootstrap values on, use **iTOL** as explained above in Assignment I.
@@ -1459,16 +1408,16 @@ _Tasks:_ **Alignment & MAFFT re-alignment**
 3. Take a look at all options available but use defaults as set, i.e., do not change any of the settings. Click `Submit` and wait, probably a minute or so.
 4. You will see some analysis progress information as well as dotplots indicating co-linearity of all sequences. Depending on the load on the server, clicking the `Check now` link will return your re-aligned sequence alignment.
 5. Click `Reformat` and select PAUP|NEXUS as Output sequence format, and `Download to file` and click `Submit`.
-6. Now start Mesquite which you just installed on your laptop. Once it is ready, open the file you just downloaded from the MAFFT server. Click `Display > Widths > Thin Rows` and select `Display > Bird’s Eye View` in order to get a better view on the alignment.
+6. Now start Mesquite which you just installed on your laptop. Once it is ready, open the file you just downloaded from the MAFFT server. Click `Display -> Widths -> Thin Rows` and select `Display -> Bird’s Eye View` in order to get a better view on the alignment.
 7. You now want to infer a reading-frame in these sequences, i.e., what are the 1{sup}`st`, 2{sup}`nd` and 3{sup}`rd` codon positions. We do that as follows:
-- Click `Characters > List of characters`.
+- Click `Characters -> List of characters`.
 - type Ctrl-A in order to select all sites.
-- Select the column header `Codon position` and then `Set codon position > Minimise stop codons`.
+- Select the column header `Codon position` and then `Set codon position -> Minimise stop codons`.
 - Return to the Matrix tab.
-8. The sequence alignment is now structured according to codons; in order to visualise this more clearly select `Display > Color Matrix Cells > Color nucleotide by amino acid`.
-9. Click `Display > Show Color Legend` in order to interpret the amino acid-level patterns. Ideally, no or only a few stop codons (black) should show.
-10. Save this file under a logical name and give it the `.nex` extension (for nexus file format). Also select `File > Save Matrix as PDF` and save to your own space.
-11. Select `File > Export > Simplified NEXUS` so that this MAFFT-aligned matrix can be imported in IQ-TREE.
+8. The sequence alignment is now structured according to codons; in order to visualise this more clearly select `Display -> Color Matrix Cells -> Color nucleotide by amino acid`.
+9. Click `Display -> Show Color Legend` in order to interpret the amino acid-level patterns. Ideally, no or only a few stop codons (black) should show.
+10. Save this file under a logical name and give it the `.nex` extension (for nexus file format). Also select `File -> Save Matrix as PDF` and save to your own space.
+11. Select `File -> Export -> Simplified NEXUS` so that this MAFFT-aligned matrix can be imported in IQ-TREE.
 
 _Tasks:_ **Comparing original vs. MAFFT IQ-TREES and clade support**
 
@@ -1636,7 +1585,7 @@ Phylogenetics
 : The study of the evolutionary history and relationships among organisms or genes.
 
 Polytomies
-: Parts of phylogenetic trees that are collapsed; nodes are connected through > three branches.
+: Parts of phylogenetic trees that are collapsed; nodes are connected through -> three branches.
 
 Reconciled tree
 : A gene tree interpreted alongside a species tree by adding duplications and losses to explain incongruences.
