@@ -834,7 +834,9 @@ Credits: {cite}`own_variation_fish` based on {cite}`source_variation_fish`.
 
 #### Variants and their effects
 
-Sometimes a single variant causes a different phenotype, such as flower color, a classical Mendelian trait caused by a SNP ({numref}`flower_color`) or the albino phenotype of Japanese medaka resulting from a 245 bp deletion ({numref}`variation_fish`).  More often phenotypic traits are
+Sometimes a single variant causes a different phenotype, such as flower color, 
+a classical Mendelian trait caused by a SNP ({numref}`flower_color`), which 
+results in the loss of a splice site or the albino phenotype of Japanese medaka resulting from a 245 bp deletion ({numref}`variation_fish`).  More often phenotypic traits are
 the result of multiple variants, one example is height (in humans, height is determined by \>12000 SNPs {cite}`yengo_saturated_2022`). 
 Some variants can cause hereditary defects or increase the risk of certain diseases.
 Well-studied examples are mutations in the BRCA1 and BRCA2 genes
@@ -1115,9 +1117,6 @@ important limitations:
 - Bias and coverage: most omics technologies are most efficient (or even
   only work) for measuring specific types of molecules or interactions
 
-%#%	Moreover, omics measurements are often indirect, measuring the effects of certain molecules or interactions through other readouts (for example, by imaging fluorescent markers, or by translating RNA to DNA for subsequent sequencing) or measuring only parts of molecules. Such technologies require steps in data analysis to translate the measurements back to what we actually wanted to measure, which also introduces noise.
-%#% when studying the effect of a mutation or intervention by comparing two samples, ideally all other biological circumstances should be identical. In practice, cells are dynamic (e.g., cell cycle) and sensitive to environmental influence. Similarly, molecule levels and interactions are dynamic: molecules are produced, transported, modified, and degraded continuously, and a measurement at a specific time point is only a snapshot.
-%#%, or work best for certain ranges of levels. It is often also hard to take the many different functional forms of a molecule, such as modified proteins, into account. Some technologies are even limited to measuring a subset of all possible molecules or interactions. This means that care must be taken when analyzing the resulting data; in particular, _not_ measuring something does not mean it is not there.
 Typically, functional genomics experiments involve studying the effect of
 genetic variation on certain omics levels.  Such variation can be natural,
 for example comparing omics data measured on two organisms with known
@@ -1128,8 +1127,6 @@ also be introduced in the environment, e.g. by changing the
 temperature, adding or removing nutrients, introducing drugs etc. The effects of
 such interventions at a specific omics level then provide information on the
 function of the manipulated gene(s) or the effect of the environment.
-
-%#% Ideally we would measure different omics levels at the same time (multi-omics) and even in the same sample (paired omics), but this is often experimentally too complex and costly. Some omics technologies are more acccessible than others, in terms of cost, data quality, and interpretation and are therefore most widely used - in particular, gene expression levels (transcriptomics) are often measured and assumed to reflect the overall state of a cell. However, as discussed [below](#chapter5_omics), we should be careful with this.
 
 #### From functional genomics to systems biology
 
@@ -1426,6 +1423,7 @@ RPKM/FPKM or TPM are preferred. CPM can clearly only be used when there is
 no difference in transcript length, e.g., when comparing one transcript
 between two samples.
 
+(chapter5_box7)=
 ````{tip} Box 5.7: Ever more detail
 
 Until now, most RNAseq experiments have been performed on groups of cells,
@@ -2059,11 +2057,12 @@ After completing this assignment, you should be able to explain the main types o
 
 <b><center>Optional (20 minutes)</b></center>
 
-7. Look up BCL11B in [GTEx](https://gtexportal.org/), the gene-tissue expression compendium. GTEx is similar to CCLE, but profiles expression in healthy tissues, collected from donors (directly after they passed away). Under the menu item "Expression", search for the BCL11B gene. In the resulting plot, play around to figure out in which tissue BCL11B is normally expressed most highly.
-8. While at GTEx, you can inspect some PCA plots of the samples. PCA, or **Principal Component Analysis**, is often used to visualize high-dimensional data. It finds directions in the data along which the samples differ mostly: PC1 is the direction with most variation, PC2 the next direction perpendicular to PC1, and so on. Using the top menu, go to "Expression" -> "Expression PCA". Select the "Hardy Scale" to color the samples. What do you think this scale measures? Hint: look at the legend beneath the plots, the colors correspond to the Hardy Scale.
-9. In what tissue do you expect to see differences in expression for "Ventilator case" donors? Check this by selecting the tissue from the "Select a tissue" drop down box to create a tissue-specific PCA plot.
-10. Return to the CCLE and plot BCL11B expression versus BCL11B proteomics. Do you expect a correlation, and do you see one?
-11. Plot BCL11B expression versus its methylation and check what DNA methylation does (https://en.wikipedia.org/wiki/DNA_methylation). Are the results what you would expect?
+7. Look up BCL11B in [GTEx](https://gtexportal.org/), the gene-tissue expression compendium. GTEx is similar to CCLE, but profiles expression in healthy tissues, collected from donors (directly after they passed away). Under the menu item "Expression", search for the BCL11B gene. In the plot shown under the Bulk Gene Expression tab, find out in which tissue BCL11B is expressed most highly (in these 'healthy' patients).
+8. GTEx also provides results from single cell expression experiments. These are explained in [Box 5.7](#chapter5_box7). Go to the Single-Cell Expression tab. In the tissue where BCL11B is most highly expressed, do all cell types cause the high expression level?
+9. Overall, in which cell type is BCL11B most highly expressed? Does the make sense given what you already know about BCL11B?
+10. While at GTEx, you can inspect some PCA plots of the samples. PCA, or **Principal Component Analysis**, is often used to visualize high-dimensional data. It finds directions in the data along which the samples differ mostly: PC1 is the direction with most variation, PC2 the next direction perpendicular to PC1, and so on. Using the top menu, go to "Expression" -> "Expression PCA". Select the "Hardy Scale" to color the samples. What do you think this scale measures? Hint: look at the legend beneath the plots, the colors correspond to the Hardy Scale.
+11. In what tissue do you expect to see differences in expression for "Ventilator case" donors? Check this by selecting the tissue from the "Select a tissue" drop down box to create a tissue-specific PCA plot.
+12. Return to the CCLE and plot BCL11B expression versus BCL11B proteomics. Do you expect a correlation, and do you see one?
 
 ---
 ```
