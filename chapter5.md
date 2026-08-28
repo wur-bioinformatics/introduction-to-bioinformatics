@@ -1992,12 +1992,12 @@ After completing this exercise, you should be able to explain how genome assembl
 
 In this brief hands-on tutorial, you will use a genome browser to learn more about a specific gene and its sequence variants; then you will work with IGV, the Integrated Genome Viewer, to inspect a number of different NGS datasets.
 Note that in most of the environments discussed below, you can get additional information on plot elements (boxplots, points etc.) by hovering your mouse over it.
-Please <u>**use Google Chrome or Firefox**</u> as other browsers may not display all websites well.
+Please <u>**use Google Chrome or Firefox**</u> as other browsers may not display all websites well. Also make sure to use the hg19/GGRCh37 version of the human genome.
 
 After completing this exercise, you should be able to explain how next-generation sequencing data is used to study genomic conservation, genetic variation and genome function.
 1. This tour of genome browsers will be based on a gene called BCL11B. First, look up some information on this gene in the [GeneCards database](https://www.genecards.org/). How did it get its name?
-2. Visit the [UCSC Genome Browser](https://genome-euro.ucsc.edu/) and go to the Genome Browser (below "Tools"). Below "Human Assembly", select the "hg19" genome assembly and search for BCL11B. If you get a list of possible locations, please choose the correct link corresponding to the BCL11B gene. What chromosome is the gene on, how long is it (in bp), and how many exons does it have? At what position does the gene start (hint: check the arrows in the gene model)?
-3. Click on the top gene variant in the top of your figure panel to visit a page with information on the gene model. How long is the coding region? How long is the ORF (in bp and in amino acids)?
+2. Visit the [UCSC Genome Browser](https://genome-euro.ucsc.edu/) and go to the Genome Browser (below "Tools"). Below "Human Assembly", select the "hg19" genome assembly and search for BCL11B. If you get a list of possible locations, please choose the link corresponding to the BCL11B gene. What chromosome is the gene on, how long is it (in bp), and how many exons does it have? At what position does the gene start (hint: check the arrows in the gene model)?
+3. Click on the top gene variant in the top of your figure panel to visit a page with information on the gene model. How long is the coding region? How long is the protein in aa? Why is the coding region so much longer than the number of nucleotides you need based on the protein length?
 4. Go back to the genome view. Genome browsers work with "tracks", i.e., various sources of information aligned to the genome. What does the "100 Vert. cons" track contain? Do you see a correlation of this track with another track?
 5. You can also add tracks to the view yourself. Below the main genome window, lookup (but do not yet click on) "ClinVar Variants" under "Phenotype and Literature", select "pack" using the drop-down menu below it, and press the "refresh" button on the right. ClinVar is a database of mutations that have a proven clinical effect (i.e. lead to a disease). Find the red T>G SNP in the fourth exon – under "ClinVar Short Variants" – and zoom in to the nucleotide level ('base') to check whether it is synonymous or not (hint: use the "--->" at the top to select the correct strand). Does this match your expectations?
 6. Is the position conserved in other genomes?
@@ -2007,20 +2007,21 @@ For that we move to IGV, the [Integrated Genome Viewer](https://igv.org/app).
 Have a look at the documentation (under "Help" in the top menu) to get somewhat acquainted with the user interface.
 
 Once you are familiar with IGV, first select the hg19 human genome assembly under the "Genomes" menu item.
-Then look up BCL11B using the search box and load some additional tracks.
-First, select "Tracks -> Variants", then choose "1KG Phase 3 SNPs" from the list; these are genotypes found in the 1000 Human Genomes project (which eventually sequenced approximately 2500 genomes).
-Also select "Tracks -> Platinum Genomes" and choose "NA12878"; this is short read data of one of six genomes which have been sequenced in depth using different technologies, a lymphoblast cell line to be precise.
+Then look up BCL11B using the search box and load some additional tracks. While IGV provides a number of preloaded tracks, we will import data using URLs and local files.
 
-7. Zoom in on the last exon (on the left). What do you notice in the NA12878 read data and the coverage plot at the top of that track?
+First, select "Tracks -> URL", in the track URL field paste 'https://1000genomes.s3.amazonaws.com/release/20130502/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5b.20130502.sites.vcf.gz' and in the Index URL field paste 'https://1000genomes.s3.amazonaws.com/release/20130502/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5b.20130502.sites.vcf.gz.tbi. This dataset contains SNP and structural variant genotypes found in the 1000 Human Genomes project (which eventually sequenced approximately 2500 genomes).
+Also select "Tracks -> URL" and paste http://www.bioinformatics.nl/courses/BIF-20306/NA12878_30x_subset.bam into the track field and http://www.bioinformatics.nl/courses/BIF-20306/NA12878_30x_subset.bam.bai into the index field. This is short read data of the genome of NA12878, one of six genomes which have been sequenced in depth using different technologies, a lymphoblast cell line to be precise.
+
+7. Zoom in on the last exon (on the left). What do you notice in the NA12878 read data and the coverage plot at the top of that track? (Hint: look at the colors)
 8. Zoom in on position 99,639,270. What does the 1KG genotype track tell about this position? Click on track elements to get more information.
 9. What genotype does NA12878 have at this position? How many reads support that genotype?
-10. Next, load regulatory transcription data from the ENCODE project. The ENCODE project was a large functional genomics project that delivered a wide variety of datasets on how the human genome is used: transcription activity, histone modifications, DNA accessibility, etc. Download a file with [RNAseq data for NA12878](http://www.bioinformatics.nl/courses/BIF-20306/wgEncodeRegTxnCaltechRnaSeqGm12878R2x75Il200SigPooled_small.bigWig) and load it as a track in the IGV web app using "Tracks -> Local File...". If you look carefully at this track over the full length of BCL11B, is it in concordance with the gene model? What may cause this?
+10. Zoom back out, so that you can see the whole gene again. Next, load transcription data from the ENCODE project. The ENCODE project was a large functional genomics project that delivered a wide variety of datasets on how the human genome is used: transcription activity, histone modifications, DNA accessibility, etc. Download a file with [RNAseq data for NA12878](http://www.bioinformatics.nl/courses/BIF-20306/wgEncodeRegTxnCaltechRnaSeqGm12878R2x75Il200SigPooled_small.bigWig) and load it as a track in the IGV web app using "Tracks -> Local File...". If you look carefully at this track over the full length of BCL11B, is it in concordance with the gene model? What may cause this?
 
 Structural variants are another type of variation found in genomes that can be inspected in IGV.
 
-11. Go to chr1:85,974,000-85,993,000 (copy and paste the coordinates into the search box). Have a closer look at the read data track of NA12878. What type of structural variant does the read coverage suggest here? Take a look at [Figure 3A](https://genome.cshlp.org/content/27/1/157) in the paper on the platinum genomes. Does this match your observation? From the "Tracks -> Variants..." menu, load the "1KG Phase 3 SVs" to verify this.
+11. Go to chr1:85,974,000-85,993,000 (copy and paste the coordinates into the search box). Have a closer look at the read data track of NA12878. What type of structural variant does the read coverage suggest here? Take a look at [Figure 3A](https://genome.cshlp.org/content/27/1/157) in the paper on the platinum genomes. Does this match your observation? Click on the wheel next to the track showing the 1000 genomes variants and select color by structural variant. Does this verify the findings?
 12. Locate the other end of the structural variant. What is its size?
-13. In IGV a gene overlaps the structural variant. What is the name of the gene? Do you think the structural variant affects the protein sequence of the gene?
+13. In IGV a gene overlaps the structural variant (Hint: If you can't see the gene, scroll down in the Refseq All track). What is the name of the gene? Do you think the structural variant affects the protein sequence of the gene?
 
 ---
 
