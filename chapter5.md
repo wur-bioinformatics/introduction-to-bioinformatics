@@ -1173,35 +1173,6 @@ Here, we focus on measuring and counting the expression of genes (i.e.
 mRNA).  For the understanding of transcriptome analysis it is important to
 remember that in eukaryotes most genes contain introns and that one gene can
 have many alternative transcripts.
-%If you want to know
-%what other types of RNA exist outside the common mRNA, miRNA, tRNA and rRNA, read
-%[Box 5.10](#chapter5_RNA). 
-
-%(chapter5_RNA)=
-%
-%````{admonition} Box 5.10: The RNA world
-%:class: tip
-%Many other types of RNA exist in the cell and they perform important regulatory functions:
-%
-%- miRNA (micro RNA): small (20-21nt) pieces of RNA that are cut from a longer pre-miRNA hairpin.
-%  miRNAs bind to target sites in mRNA and prevent binding of the messenger.
-%- siRNA (short interfering RNA): are generally 20-24nt long pieces of RNA that work similar to miRNAs but instead of actively preventing translation, the targeted mRNA is cut into pieces and destroyed.
-%
-%```{figure} images/chapter5/RNA-types.jpg
-%:alt: Overview of the different types of RNA
-%:align: center
-%:width: 100%
-%:name: RNA_types
-%
-%The generalized RNAi mechanism up to the molecular level depicting the role of various cellular proteins and external siRNAs. Credits: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) modified from {cite}`RNA_types_2016`.
-%```
-%
-%- snoRNA (small nucleolar RNA): guides the methylation and pseudouridylation of ribosomal RNA required in the mature rRNA.
-%- lncRNA (long non-coding RNA): >200nt long stretches of RNA that arise from transcription but (appear to) have no open reading frame.
-%  How many of these lncRNAs have a specific function and what that function might be is not clear. Most might simply be the result of pervasive transcription.
-%- piRNA (piwi interacting RNA): found in animals and slightly longer than miRNAs (26-31nt), they interact with piwi proteins. piRNAs are implicated in epigenetic gene silencing, but not much is known.
-%````
-%#% Figure RNA_types is rather blurry and unclear. Replace image that better depicts the different types of RNA?
 
 In transcriptomics, the aim is to measure presence and abundance of
 transcripts. Such measurements are based on a large number of cells, but
@@ -1277,25 +1248,24 @@ generate meaningful data at large scales, however.
 
 Just like the study of genomes, transcriptomics has greatly benefitted from
 technological developments that allowed an increase in throughput and
-sensitivity of measurements. If you are interested, [Box 5.12](#chapter5_gelspcr) and
-[Box 5.13](#chapter5_microarrays) provide an overview of technologies that were
-important for the development of the field (such as microarrays), but are
-not widely used anymore; at this time, RNAseq is almost exclusively used to
+sensitivity of measurements. If you are interested, [Box 5.12](#chapter5_gelspcr) 
+and [Box 5.13](#chapter5_microarrays) provide an overview of technologies that 
+were important for the development of the field (such as microarrays), but are 
+not widely used anymore; at this time, RNAseq is almost exclusively used to 
 measure mRNA levels.
 
-Note that microarrays haves now been mostly superseded by RNAseq as a
-cheaper and better quality alternative (see [below](#chapter5_rnaseq)).
-However, there are many microarray samples still available for re-use in
-databases, as submission of measurement data to such databases is compulsory
-upon publication of a scientific paper. The most well-known repositories
-are the NCBI Gene Expression Omnibus
-([GEO](https://www.ncbi.nlm.nih.gov/geo/)), with as of March 2024 ~7.1
-million samples, and [EBI
+Note that microarrays haves now been mostly superseded by RNAseq as a cheaper
+and better quality alternative (see [below](#chapter5_rnaseq)). However, there
+are many microarray samples still available for re-use in databases, as
+submission of measurement data to such databases is compulsory upon publication
+of a scientific paper. The most well-known repositories are the NCBI Gene
+Expression Omnibus ([GEO](https://www.ncbi.nlm.nih.gov/geo/)), with as of March
+2024 ~7.1 million samples, and [EBI
 ArrayExpress](https://www.ebi.ac.uk/biostudies/arrayexpress). If you are
-interested in a certain question that may be answered using transcriptomics,
-it makes sense to look here first to see what experimental data is already
-available. Note that the technology used determines how the expression
-level should be interpreted (see box below).
+interested in a certain question that may be answered using transcriptomics, it
+makes sense to look here first to see what experimental data is already
+available. Note that the technology used determines how the expression level
+should be interpreted (see box below).
 
 (w3imp5)=
 ````{attention} Important to know about microarrays
@@ -1304,24 +1274,15 @@ level should be interpreted (see box below).
 - microarrays measure expression indirectly, using fluorescence; as a
   result, measurements can be noisy and have a low dynamic range (i.e., low
   expression levels cannot be measured well)
-- some microarray types compare two samples and thus produce relative expression levels (_fold changes_), often log<sub>2</sub>-transformed so that 0 means no change, +1
-  means a 2-fold higher expression, +2 a 4-fold higher expression and so on; negative numbers indicate lower expression
-- other microarray types measure levels that represent absolute expression in a single sample (in arbitrary
-  units); normalization is then important when comparing measurements between samples
+- some microarray types compare two samples and thus produce relative expression
+  levels (_fold changes_), often log<sub>2</sub>-transformed so that 0 means 
+  no change, +1 means a 2-fold higher expression, +2 a 4-fold higher expression 
+  and so on; negative numbers indicate lower expression
+- other microarray types measure levels that represent absolute expression in a
+  single sample (in arbitrary units); normalization is then important when 
+  comparing measurements between samples
 ````
 
-%##### Repositories
-%
-%While popular in the 1990s and early 2000s, microarrays haves now been
-%mostly superseded by RNAseq as a cheaper and better quality alternative (see
-%[below](#chapter5_rnaseq)). However, there are many microarray samples still available for
-%re-use in databases, as submission of measurement data to such databases is
-%compulsory upon publication of a scientific paper. The most well-known
-%repositories are the NCBI Gene Expression Omnibus ([GEO](https://www.ncbi.nlm.nih.gov/geo/)),
-%with as of March 2024 ~7.1 million samples, and [EBI ArrayExpress](https://www.ebi.ac.uk/biostudies/arrayexpress).
-%If you are interested in a certain question that may be answered using transcriptomics,
-%it makes sense to look here first to see what experimental data is already available.
-%
 ---
 
 (chapter5_rnaseq)=
@@ -1334,21 +1295,6 @@ principle be sequenced and it is not necessary to have prior knowledge of
 transcript sequences. While RNAseq is mainly used to study transcript
 abundance, it can also be used to detect transcript isoforms (and their
 abundance), as well as variants (see [Variants](#chapter5_variants) above).
-
-%```{admonition} Box 5.11: Ever more detail
-%:class: tip
-%
-%Until now, most RNAseq experiments have been performed on groups of cells,
-%as sequencing devices require large amounts of DNA. This means that cells
-%of different cell types or different life stages are included in a single
-%sample. While detection of differentially expressed genes is clearly
-%possible with this method, weak or more nuanced variation is averaged out
-%across all cells. Recently, methods have become available that separate
-%tissues into individual cells and sequence each of these separately. This
-%does require PCR amplification of RNA to reach the amounts required for
-%sequencing, as well as sophisticated bioinformatics and statistical methods
-%to deal with the resulting data. For a review, see this [paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0927-y).
-%```
 
 ---
 
@@ -1373,11 +1319,12 @@ The RNA is then converted to stable double stranded cDNA.
 The resulting cDNA library is then sequenced, usually as paired end reads of 100-150bp.
 A standard sequencing run results in 30 million or more reads per sample.
 
-The read lengths currently used are relatively short and complicated methods
-are required to assign reads to exons and isoforms. New developments in this
-field are long cDNA conversions that allow sequencing of full-length
-transcripts on [PacBio](#chapter5_pacbio) and direct sequencing of RNA on [Oxford Nanopore](#chapter5_nanopore).
-This allows the detection of the actual isoforms present in samples.
+The read lengths currently used are relatively short and complicated methods are
+required to assign reads to exons and isoforms. New developments in this field
+are long cDNA conversions that allow sequencing of full-length transcripts on
+[PacBio](#chapter5_pacbio) and direct sequencing of RNA on [Oxford
+Nanopore](#chapter5_nanopore). This allows the detection of the actual isoforms
+present in samples.
 
 Next, the reads need to be assigned to their corresponding transcripts. For
 this there are two options: mapping of the reads to an existing reference,
@@ -1427,18 +1374,18 @@ be split and whether the split alignment is correct.
 #### Transcript quantification
 
 After sequencing and mapping, the next step is to quantify the abundance of
-transcripts, i.e., the expression levels. Reads assigned to each feature
-(exon or gene) are counted, with the underlying assumption that the number
-of reads mapping to a feature is strongly correlated with the abundance of
-that feature in the experiment. Comparing abundance of transcripts between
-samples, conditions and experiments is not as straightforward as it seems.
-Apart from the bullet points [above](#chapter5_transcriptomics) that influence mRNA abundance, there is
-variation in each sequencing experiment. The main variation affecting
+transcripts, i.e., the expression levels. Reads assigned to each feature (exon
+or gene) are counted, with the underlying assumption that the number of reads
+mapping to a feature is strongly correlated with the abundance of that feature
+in the experiment. Comparing abundance of transcripts between samples,
+conditions and experiments is not as straightforward as it seems. Apart from the
+bullet points [above](#chapter5_transcriptomics) that influence mRNA abundance,
+there is variation in each sequencing experiment. The main variation affecting
 comparability of read counts between samples is the total number of reads
 sequenced in each sample. Also, not all transcripts are the same length,
-affecting the number of reads detected per transcript. So, some
-normalisation is required to take into account these differences and make
-data comparable. The main methods are:
+affecting the number of reads detected per transcript. So, some normalisation is
+required to take into account these differences and make data comparable. The
+main methods are:
 
 - __Simple counting__: this is the starting point of every analysis. We
   count the number of reads that map to each exon or gene.
@@ -1457,11 +1404,11 @@ data comparable. The main methods are:
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
 ```
 
-- __RPKM, FPKM and TPM__: when comparing expression of two different transcripts, we
-  also have to take into account the characteristics of the transcripts we
-  are comparing and normalise accordingly. RPKM and FPKM (Reads/Fragments
-  per kilobase transcript per million) normalise the counts per feature
-  length and the total number of reads. TPM (transcripts per million
+- __RPKM, FPKM and TPM__: when comparing expression of two different
+  transcripts, we also have to take into account the characteristics of the
+  transcripts we are comparing and normalise accordingly. RPKM and FPKM
+  (Reads/Fragments per kilobase transcript per million) normalise the counts per
+  feature length and the total number of reads. TPM (transcripts per million
   transcripts) normalises per transcript. TPM uses a calculation to give a
   measurement of which proportion of the total number of transcripts in the
   original sample is represented by each transcript.
@@ -1480,58 +1427,61 @@ no difference in transcript length, e.g., when comparing one transcript
 between two samples.
 
 ````{tip} Box 5.7: Ever more detail
+
 Until now, most RNAseq experiments have been performed on groups of cells,
 as sequencing devices require large amounts of DNA. This means that cells
 of different cell types or different life stages are included in a single
 sample. While detection of differentially expressed genes is clearly
 possible with this method, weak or more nuanced variation is averaged out
-across all cells. Recently, methods have become available that separate
-tissues into individual cells and sequence each of these separately. This
-does require PCR amplification of RNA to reach the amounts required for
-sequencing, as well as sophisticated bioinformatics and statistical methods
-to deal with the resulting data. Other recent technology allows to measure
-transcription spatially (e.g., in a tissue), at specific locations on a grid.
+across all cells. One method that attempts to solve this is single-cell 
+RNAseq (scRNAseq). Using this protocol, tissue is first separated into 
+individual cells and followed by the standard RNAseq steps, with the addition 
+that reads originating from each single cell are labelled with a unique barcode 
+({numref}`scRNAseq_workflow`).
+This allows reads to be attributed to individual cells in the downstream analysis.
+
+```{figure} images/chapter5/scRNA-Seq_workflow.jpg
+:alt: Figure showing separation of cells prior to cDNA creation followed by a standard RNAseq workflow 
+:align: center
+:name: scRNAseq_workflow
+
+Workflow for single cell RNAseq
+Credits: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) {cite}`scRNAseq_workflow`
+```
+The data from a scRNAseq experiment differs from bulk RNAseq in one important way: 
+A single cell only contains very small amounts of RNA and for lowly expressed 
+transcript, this RNA is often lost during the process. This means that many 
+genes appear to have no expression in individual cells (technical dropout).
+All downstream analysis methods have to take this into account.
+
+Using scRNAseq data, researchers can cluster cells into different cell types and 
+compare their response under different conditions. Examples of methods are 
+dimensional reduction like PCA (_Principal Componant Analysis_, 
+see [~omics visualisation](#chapter5_omics_visualisation)) or
+[clustering](#chapter5_clustering).
+It is also possible to follow the change of cells or cell types over time, for 
+example in maturing tissues. For this all cells across all timepoints are 
+clustered in a such a way that more similar cells cluster closely together 
+allowing the inference of a trajectory. {numref}`pseudotime` shows an example.
+
+```{figure} images/chapter5/Slingshot-pseudotime.png
+:alt: Figure showing clustering of cells with different timepoints next to each other from which a developmental trajectory can be inferred 
+:align: center
+:name: pseudotime
+
+Concept of pseudo time inference of cell trajectories. Panel a shows steps using 
+simulated data, panel b for olfactory epithelium. Description simplified from paper.
+Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`slingshot_pseudotime`
+```
 For a review on single-cell transcriptomics, see this
 [paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0927-y);
-a recent review on spatial transcriptomics can be found
+
+Another recent technology called spatial transcriptomics measures transcription 
+spatially (e.g., in a tissue), at specific locations on a grid. 
+A recent review on spatial transcriptomics can be found
 [here](https://www.nature.com/articles/s41587-022-01448-2).
+
 ````
----
-
-%#### ChIPseq and other protocols
-%
-%```{figure} images/chapter5/chip-protocol_alt.jpg
-%:alt: ChIPseq protocol
-%:align: center
-%:name: chip_protocol_alt
-%
-%The chromatin immunoprecipitation (ChIP) protocol. Proteins are
-%cross-linked to DNA, after which genomic DNA is isolated and sheared. Using
-%an antibody, only the protein of interest is selected (the
-%immunoprecipitation step), after which the cross-linking is reversed and the
-%DNA can be sequenced by PCR (ChIP-PCR) or NGS (ChIPseq). Similar protocols
-%are available for protein-RNA and protein-protein interactions, the latter
-%using two antibodies.
-%Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`chip_protocol_alt_2015`.
-%```
-%
-%RNAseq is a clever protocol that uses the attractive cheap, high-throughput
-%DNA sequencing technology to measure something else – in this case, gene
-%expression levels. The trick is to first translate the mRNA into DNA,
-%measure the DNA, and then reconstruct the desired measurement by transcript
-%quantification. Many more such protocols have been developed to measure
-%other molecule levels and interactions of interest. Three well-known
-%protocols are:
-%
-%- ChIPseq, for chromatin immunoprecipitation sequencing: for a given protein
-%  – for example, a transcription factor or a histone – this can detect where
-%  it binds DNA.
-%  {numref}`chip_protocol_alt` illustrates this.
-%  After sequencing, the DNA can be mapped against the genome: peaks of mapped
-%  reads indicate regions where the protein of interest binds.
-%- Hi-C, to study 3D proximity of chromosome parts in the nucleus.
-%- Bisulfite sequencing, to assess methylation of DNA.
-
 ---
 
 (chapter5_proteomics)=
@@ -1817,6 +1767,7 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 
 ---
 
+(chapter5_omics_visualisation)=
 #### Visualization
 
 ```{figure} images/chapter5/streptococcus-pca-heatmap.png
