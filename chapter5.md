@@ -821,22 +821,29 @@ that results from mis-splicing of intron 6. The red stars show where translation
 Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`flower_color_2010`.
 ```
 
-```{figure} images/chapter5/variation_fish.png
-:alt: Albino fish deletion
+```{figure} images/chapter5/CLCN1_myotonic_goat.png
+:alt: Image of SNP and amino acid change in sequence of CLCN1 and 3D structure of protein and paralysed myotonic goat
 :align: center
-:name: variation_fish
+:name: myotonic_goat
 
-Variation in the TYRO gene of Oryzias latipes (Japanese medaka), which encodes tyrosinase. Tyrosinase is the enzyme that catalyzes melanin production by converting tyrosine into dopaquinone, which then forms melanin. 
-In the DNA, exons 2 and 3 are shown as grey boxes flanking the splice donor and acceptor sites of intron 2. The red box in genotype _A_ shows the 245 bp deletion in genotype _a_ that disrupts the branch point and acceptor site required for correct intron removal during splicing.
-In the RNA, the vertical lines represent exon junctions. The red stars show where translation terminates in the predicted protein, highlighting the premature truncation of the protein in the albino phenotype.
-Credits: {cite}`own_variation_fish` based on {cite}`source_variation_fish`.
+Myotonic goats have a genetic defect that paralises their muscles when 
+frightened. The underlying cause is a non-synonymous SNP in the CLCN1 gene, 
+which encodes the skeletal muscle chloride channel. The image 
+shows the mutation from G to C, which results in a substitution from 
+alanine to proline at position 880 in the protein. The arrow points to the 
+location of the mutation in the predicted AlphaFold structure. The mutation 
+was first described in {cite}`myotonic_goat_1996`.
+The structural change of the protein significantly alters the flow of CL-ions the channel, 
+slowing the recovery of muscle fibers after contraction. This in turn causes the goats to fall over.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_variation_goat` incorporating {cite}`myotonic_goats_2006` (public domain).
 ```
+
 
 #### Variants and their effects
 
 Sometimes a single variant causes a different phenotype, such as flower color, 
 a classical Mendelian trait caused by a SNP ({numref}`flower_color`), which 
-results in the loss of a splice site or the albino phenotype of Japanese medaka resulting from a 245 bp deletion ({numref}`variation_fish`).  More often phenotypic traits are
+results in the loss of a splice site or the myotonic goats resulting from a SNP causing an amino acid change ({numref}`myotonic_goat`).  More often phenotypic traits are
 the result of multiple variants, one example is height (in humans, height is determined by \>12000 SNPs {cite}`yengo_saturated_2022`). 
 Some variants can cause hereditary defects or increase the risk of certain diseases.
 Well-studied examples are mutations in the BRCA1 and BRCA2 genes
