@@ -821,20 +821,29 @@ that results from mis-splicing of intron 6. The red stars show where translation
 Credits: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) {cite}`flower_color_2010`.
 ```
 
-```{figure} images/chapter5/variation_fish.png
-:alt: Albino fish deletion
+```{figure} images/chapter5/CLCN1_myotonic_goat.png
+:alt: Image of SNP and amino acid change in sequence of CLCN1 and 3D structure of protein and paralysed myotonic goat
 :align: center
-:name: variation_fish
+:name: myotonic_goat
 
-Variation in the TYRO gene of Oryzias latipes (Japanese medaka), which encodes tyrosinase. Tyrosinase is the enzyme that catalyzes melanin production by converting tyrosine into dopaquinone, which then forms melanin. 
-In the DNA, exons 2 and 3 are shown as grey boxes flanking the splice donor and acceptor sites of intron 2. The red box in genotype _A_ shows the 245 bp deletion in genotype _a_ that disrupts the branch point and acceptor site required for correct intron removal during splicing.
-In the RNA, the vertical lines represent exon junctions. The red stars show where translation terminates in the predicted protein, highlighting the premature truncation of the protein in the albino phenotype.
-Credits: {cite}`own_variation_fish` based on {cite}`source_variation_fish`.
+Myotonic goats have a genetic defect that paralises their muscles when 
+frightened. The underlying cause is a non-synonymous SNP in the CLCN1 gene, 
+which encodes the skeletal muscle chloride channel. The image 
+shows the mutation from G to C, which results in a substitution from 
+alanine to proline at position 880 in the protein. The arrow points to the 
+location of the mutation in the predicted AlphaFold structure. The mutation 
+was first described in {cite}`myotonic_goat_1996`.
+The structural change of the protein significantly alters the flow of CL-ions the channel, 
+slowing the recovery of muscle fibers after contraction. This in turn causes the goats to fall over.
+Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_variation_goat` incorporating {cite}`myotonic_goats_2006` (public domain).
 ```
+
 
 #### Variants and their effects
 
-Sometimes a single variant causes a different phenotype, such as flower color, a classical Mendelian trait caused by a SNP ({numref}`flower_color`) or the albino phenotype of Japanese medaka resulting from a 245 bp deletion ({numref}`variation_fish`).  More often phenotypic traits are
+Sometimes a single variant causes a different phenotype, such as flower color, 
+a classical Mendelian trait caused by a SNP ({numref}`flower_color`), which 
+results in the loss of a splice site or the myotonic goats resulting from a SNP causing an amino acid change ({numref}`myotonic_goat`).  More often phenotypic traits are
 the result of multiple variants, one example is height (in humans, height is determined by \>12000 SNPs {cite}`yengo_saturated_2022`). 
 Some variants can cause hereditary defects or increase the risk of certain diseases.
 Well-studied examples are mutations in the BRCA1 and BRCA2 genes
@@ -1115,9 +1124,6 @@ important limitations:
 - Bias and coverage: most omics technologies are most efficient (or even
   only work) for measuring specific types of molecules or interactions
 
-%#%	Moreover, omics measurements are often indirect, measuring the effects of certain molecules or interactions through other readouts (for example, by imaging fluorescent markers, or by translating RNA to DNA for subsequent sequencing) or measuring only parts of molecules. Such technologies require steps in data analysis to translate the measurements back to what we actually wanted to measure, which also introduces noise.
-%#% when studying the effect of a mutation or intervention by comparing two samples, ideally all other biological circumstances should be identical. In practice, cells are dynamic (e.g., cell cycle) and sensitive to environmental influence. Similarly, molecule levels and interactions are dynamic: molecules are produced, transported, modified, and degraded continuously, and a measurement at a specific time point is only a snapshot.
-%#%, or work best for certain ranges of levels. It is often also hard to take the many different functional forms of a molecule, such as modified proteins, into account. Some technologies are even limited to measuring a subset of all possible molecules or interactions. This means that care must be taken when analyzing the resulting data; in particular, _not_ measuring something does not mean it is not there.
 Typically, functional genomics experiments involve studying the effect of
 genetic variation on certain omics levels.  Such variation can be natural,
 for example comparing omics data measured on two organisms with known
@@ -1128,8 +1134,6 @@ also be introduced in the environment, e.g. by changing the
 temperature, adding or removing nutrients, introducing drugs etc. The effects of
 such interventions at a specific omics level then provide information on the
 function of the manipulated gene(s) or the effect of the environment.
-
-%#% Ideally we would measure different omics levels at the same time (multi-omics) and even in the same sample (paired omics), but this is often experimentally too complex and costly. Some omics technologies are more acccessible than others, in terms of cost, data quality, and interpretation and are therefore most widely used - in particular, gene expression levels (transcriptomics) are often measured and assumed to reflect the overall state of a cell. However, as discussed [below](#chapter5_omics), we should be careful with this.
 
 #### From functional genomics to systems biology
 
@@ -1173,35 +1177,6 @@ Here, we focus on measuring and counting the expression of genes (i.e.
 mRNA).  For the understanding of transcriptome analysis it is important to
 remember that in eukaryotes most genes contain introns and that one gene can
 have many alternative transcripts.
-%If you want to know
-%what other types of RNA exist outside the common mRNA, miRNA, tRNA and rRNA, read
-%[Box 5.10](#chapter5_RNA). 
-
-%(chapter5_RNA)=
-%
-%````{admonition} Box 5.10: The RNA world
-%:class: tip
-%Many other types of RNA exist in the cell and they perform important regulatory functions:
-%
-%- miRNA (micro RNA): small (20-21nt) pieces of RNA that are cut from a longer pre-miRNA hairpin.
-%  miRNAs bind to target sites in mRNA and prevent binding of the messenger.
-%- siRNA (short interfering RNA): are generally 20-24nt long pieces of RNA that work similar to miRNAs but instead of actively preventing translation, the targeted mRNA is cut into pieces and destroyed.
-%
-%```{figure} images/chapter5/RNA-types.jpg
-%:alt: Overview of the different types of RNA
-%:align: center
-%:width: 100%
-%:name: RNA_types
-%
-%The generalized RNAi mechanism up to the molecular level depicting the role of various cellular proteins and external siRNAs. Credits: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) modified from {cite}`RNA_types_2016`.
-%```
-%
-%- snoRNA (small nucleolar RNA): guides the methylation and pseudouridylation of ribosomal RNA required in the mature rRNA.
-%- lncRNA (long non-coding RNA): >200nt long stretches of RNA that arise from transcription but (appear to) have no open reading frame.
-%  How many of these lncRNAs have a specific function and what that function might be is not clear. Most might simply be the result of pervasive transcription.
-%- piRNA (piwi interacting RNA): found in animals and slightly longer than miRNAs (26-31nt), they interact with piwi proteins. piRNAs are implicated in epigenetic gene silencing, but not much is known.
-%````
-%#% Figure RNA_types is rather blurry and unclear. Replace image that better depicts the different types of RNA?
 
 In transcriptomics, the aim is to measure presence and abundance of
 transcripts. Such measurements are based on a large number of cells, but
@@ -1277,25 +1252,24 @@ generate meaningful data at large scales, however.
 
 Just like the study of genomes, transcriptomics has greatly benefitted from
 technological developments that allowed an increase in throughput and
-sensitivity of measurements. If you are interested, [Box 5.12](#chapter5_gelspcr) and
-[Box 5.13](#chapter5_microarrays) provide an overview of technologies that were
-important for the development of the field (such as microarrays), but are
-not widely used anymore; at this time, RNAseq is almost exclusively used to
+sensitivity of measurements. If you are interested, [Box 5.12](#chapter5_gelspcr) 
+and [Box 5.13](#chapter5_microarrays) provide an overview of technologies that 
+were important for the development of the field (such as microarrays), but are 
+not widely used anymore; at this time, RNAseq is almost exclusively used to 
 measure mRNA levels.
 
-Note that microarrays haves now been mostly superseded by RNAseq as a
-cheaper and better quality alternative (see [below](#chapter5_rnaseq)).
-However, there are many microarray samples still available for re-use in
-databases, as submission of measurement data to such databases is compulsory
-upon publication of a scientific paper. The most well-known repositories
-are the NCBI Gene Expression Omnibus
-([GEO](https://www.ncbi.nlm.nih.gov/geo/)), with as of March 2024 ~7.1
-million samples, and [EBI
+Note that microarrays haves now been mostly superseded by RNAseq as a cheaper
+and better quality alternative (see [below](#chapter5_rnaseq)). However, there
+are many microarray samples still available for re-use in databases, as
+submission of measurement data to such databases is compulsory upon publication
+of a scientific paper. The most well-known repositories are the NCBI Gene
+Expression Omnibus ([GEO](https://www.ncbi.nlm.nih.gov/geo/)), with as of March
+2024 ~7.1 million samples, and [EBI
 ArrayExpress](https://www.ebi.ac.uk/biostudies/arrayexpress). If you are
-interested in a certain question that may be answered using transcriptomics,
-it makes sense to look here first to see what experimental data is already
-available. Note that the technology used determines how the expression
-level should be interpreted (see box below).
+interested in a certain question that may be answered using transcriptomics, it
+makes sense to look here first to see what experimental data is already
+available. Note that the technology used determines how the expression level
+should be interpreted (see box below).
 
 (w3imp5)=
 ````{attention} Important to know about microarrays
@@ -1304,24 +1278,15 @@ level should be interpreted (see box below).
 - microarrays measure expression indirectly, using fluorescence; as a
   result, measurements can be noisy and have a low dynamic range (i.e., low
   expression levels cannot be measured well)
-- some microarray types compare two samples and thus produce relative expression levels (_fold changes_), often log<sub>2</sub>-transformed so that 0 means no change, +1
-  means a 2-fold higher expression, +2 a 4-fold higher expression and so on; negative numbers indicate lower expression
-- other microarray types measure levels that represent absolute expression in a single sample (in arbitrary
-  units); normalization is then important when comparing measurements between samples
+- some microarray types compare two samples and thus produce relative expression
+  levels (_fold changes_), often log<sub>2</sub>-transformed so that 0 means 
+  no change, +1 means a 2-fold higher expression, +2 a 4-fold higher expression 
+  and so on; negative numbers indicate lower expression
+- other microarray types measure levels that represent absolute expression in a
+  single sample (in arbitrary units); normalization is then important when 
+  comparing measurements between samples
 ````
 
-%##### Repositories
-%
-%While popular in the 1990s and early 2000s, microarrays haves now been
-%mostly superseded by RNAseq as a cheaper and better quality alternative (see
-%[below](#chapter5_rnaseq)). However, there are many microarray samples still available for
-%re-use in databases, as submission of measurement data to such databases is
-%compulsory upon publication of a scientific paper. The most well-known
-%repositories are the NCBI Gene Expression Omnibus ([GEO](https://www.ncbi.nlm.nih.gov/geo/)),
-%with as of March 2024 ~7.1 million samples, and [EBI ArrayExpress](https://www.ebi.ac.uk/biostudies/arrayexpress).
-%If you are interested in a certain question that may be answered using transcriptomics,
-%it makes sense to look here first to see what experimental data is already available.
-%
 ---
 
 (chapter5_rnaseq)=
@@ -1334,21 +1299,6 @@ principle be sequenced and it is not necessary to have prior knowledge of
 transcript sequences. While RNAseq is mainly used to study transcript
 abundance, it can also be used to detect transcript isoforms (and their
 abundance), as well as variants (see [Variants](#chapter5_variants) above).
-
-%```{admonition} Box 5.11: Ever more detail
-%:class: tip
-%
-%Until now, most RNAseq experiments have been performed on groups of cells,
-%as sequencing devices require large amounts of DNA. This means that cells
-%of different cell types or different life stages are included in a single
-%sample. While detection of differentially expressed genes is clearly
-%possible with this method, weak or more nuanced variation is averaged out
-%across all cells. Recently, methods have become available that separate
-%tissues into individual cells and sequence each of these separately. This
-%does require PCR amplification of RNA to reach the amounts required for
-%sequencing, as well as sophisticated bioinformatics and statistical methods
-%to deal with the resulting data. For a review, see this [paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0927-y).
-%```
 
 ---
 
@@ -1373,11 +1323,12 @@ The RNA is then converted to stable double stranded cDNA.
 The resulting cDNA library is then sequenced, usually as paired end reads of 100-150bp.
 A standard sequencing run results in 30 million or more reads per sample.
 
-The read lengths currently used are relatively short and complicated methods
-are required to assign reads to exons and isoforms. New developments in this
-field are long cDNA conversions that allow sequencing of full-length
-transcripts on [PacBio](#chapter5_pacbio) and direct sequencing of RNA on [Oxford Nanopore](#chapter5_nanopore).
-This allows the detection of the actual isoforms present in samples.
+The read lengths currently used are relatively short and complicated methods are
+required to assign reads to exons and isoforms. New developments in this field
+are long cDNA conversions that allow sequencing of full-length transcripts on
+[PacBio](#chapter5_pacbio) and direct sequencing of RNA on [Oxford
+Nanopore](#chapter5_nanopore). This allows the detection of the actual isoforms
+present in samples.
 
 Next, the reads need to be assigned to their corresponding transcripts. For
 this there are two options: mapping of the reads to an existing reference,
@@ -1427,18 +1378,18 @@ be split and whether the split alignment is correct.
 #### Transcript quantification
 
 After sequencing and mapping, the next step is to quantify the abundance of
-transcripts, i.e., the expression levels. Reads assigned to each feature
-(exon or gene) are counted, with the underlying assumption that the number
-of reads mapping to a feature is strongly correlated with the abundance of
-that feature in the experiment. Comparing abundance of transcripts between
-samples, conditions and experiments is not as straightforward as it seems.
-Apart from the bullet points [above](#chapter5_transcriptomics) that influence mRNA abundance, there is
-variation in each sequencing experiment. The main variation affecting
+transcripts, i.e., the expression levels. Reads assigned to each feature (exon
+or gene) are counted, with the underlying assumption that the number of reads
+mapping to a feature is strongly correlated with the abundance of that feature
+in the experiment. Comparing abundance of transcripts between samples,
+conditions and experiments is not as straightforward as it seems. Apart from the
+bullet points [above](#chapter5_transcriptomics) that influence mRNA abundance,
+there is variation in each sequencing experiment. The main variation affecting
 comparability of read counts between samples is the total number of reads
 sequenced in each sample. Also, not all transcripts are the same length,
-affecting the number of reads detected per transcript. So, some
-normalisation is required to take into account these differences and make
-data comparable. The main methods are:
+affecting the number of reads detected per transcript. So, some normalisation is
+required to take into account these differences and make data comparable. The
+main methods are:
 
 - __Simple counting__: this is the starting point of every analysis. We
   count the number of reads that map to each exon or gene.
@@ -1457,11 +1408,11 @@ data comparable. The main methods are:
 Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`own_5_2024`.
 ```
 
-- __RPKM, FPKM and TPM__: when comparing expression of two different transcripts, we
-  also have to take into account the characteristics of the transcripts we
-  are comparing and normalise accordingly. RPKM and FPKM (Reads/Fragments
-  per kilobase transcript per million) normalise the counts per feature
-  length and the total number of reads. TPM (transcripts per million
+- __RPKM, FPKM and TPM__: when comparing expression of two different
+  transcripts, we also have to take into account the characteristics of the
+  transcripts we are comparing and normalise accordingly. RPKM and FPKM
+  (Reads/Fragments per kilobase transcript per million) normalise the counts per
+  feature length and the total number of reads. TPM (transcripts per million
   transcripts) normalises per transcript. TPM uses a calculation to give a
   measurement of which proportion of the total number of transcripts in the
   original sample is represented by each transcript.
@@ -1479,59 +1430,63 @@ RPKM/FPKM or TPM are preferred. CPM can clearly only be used when there is
 no difference in transcript length, e.g., when comparing one transcript
 between two samples.
 
+(chapter5_box7)=
 ````{tip} Box 5.7: Ever more detail
+
 Until now, most RNAseq experiments have been performed on groups of cells,
 as sequencing devices require large amounts of DNA. This means that cells
 of different cell types or different life stages are included in a single
 sample. While detection of differentially expressed genes is clearly
 possible with this method, weak or more nuanced variation is averaged out
-across all cells. Recently, methods have become available that separate
-tissues into individual cells and sequence each of these separately. This
-does require PCR amplification of RNA to reach the amounts required for
-sequencing, as well as sophisticated bioinformatics and statistical methods
-to deal with the resulting data. Other recent technology allows to measure
-transcription spatially (e.g., in a tissue), at specific locations on a grid.
+across all cells. One method that attempts to solve this is single-cell 
+RNAseq (scRNAseq). Using this protocol, tissue is first separated into 
+individual cells and followed by the standard RNAseq steps, with the addition 
+that reads originating from each single cell are labelled with a unique barcode 
+({numref}`scRNAseq_workflow`).
+This allows reads to be attributed to individual cells in the downstream analysis.
+
+```{figure} images/chapter5/scRNA-Seq_workflow.jpg
+:alt: Figure showing separation of cells prior to cDNA creation followed by a standard RNAseq workflow 
+:align: center
+:name: scRNAseq_workflow
+
+Workflow for single cell RNAseq
+Credits: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) {cite}`scRNAseq_workflow`
+```
+The data from a scRNAseq experiment differs from bulk RNAseq in one important way: 
+A single cell only contains very small amounts of RNA and for lowly expressed 
+transcript, this RNA is often lost during the process. This means that many 
+genes appear to have no expression in individual cells (technical dropout).
+All downstream analysis methods have to take this into account.
+
+Using scRNAseq data, researchers can cluster cells into different cell types and 
+compare their response under different conditions. Examples of methods are 
+dimensional reduction like PCA (_Principal Componant Analysis_, 
+see [~omics visualisation](#chapter5_omics_visualisation)) or
+[clustering](#chapter5_clustering).
+It is also possible to follow the change of cells or cell types over time, for 
+example in maturing tissues. For this all cells across all timepoints are 
+clustered in a such a way that more similar cells cluster closely together 
+allowing the inference of a trajectory. {numref}`pseudotime` shows an example.
+
+```{figure} images/chapter5/Slingshot-pseudotime.png
+:alt: Figure showing clustering of cells with different timepoints next to each other from which a developmental trajectory can be inferred 
+:align: center
+:name: pseudotime
+
+Concept of pseudo time inference of cell trajectories. Panel a shows steps using 
+simulated data, panel b for olfactory epithelium. Description simplified from paper.
+Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`slingshot_pseudotime`
+```
 For a review on single-cell transcriptomics, see this
 [paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0927-y);
-a recent review on spatial transcriptomics can be found
+
+Another recent technology called spatial transcriptomics measures transcription 
+spatially (e.g., in a tissue), at specific locations on a grid. 
+A recent review on spatial transcriptomics can be found
 [here](https://www.nature.com/articles/s41587-022-01448-2).
+
 ````
----
-
-%#### ChIPseq and other protocols
-%
-%```{figure} images/chapter5/chip-protocol_alt.jpg
-%:alt: ChIPseq protocol
-%:align: center
-%:name: chip_protocol_alt
-%
-%The chromatin immunoprecipitation (ChIP) protocol. Proteins are
-%cross-linked to DNA, after which genomic DNA is isolated and sheared. Using
-%an antibody, only the protein of interest is selected (the
-%immunoprecipitation step), after which the cross-linking is reversed and the
-%DNA can be sequenced by PCR (ChIP-PCR) or NGS (ChIPseq). Similar protocols
-%are available for protein-RNA and protein-protein interactions, the latter
-%using two antibodies.
-%Credits: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) {cite}`chip_protocol_alt_2015`.
-%```
-%
-%RNAseq is a clever protocol that uses the attractive cheap, high-throughput
-%DNA sequencing technology to measure something else – in this case, gene
-%expression levels. The trick is to first translate the mRNA into DNA,
-%measure the DNA, and then reconstruct the desired measurement by transcript
-%quantification. Many more such protocols have been developed to measure
-%other molecule levels and interactions of interest. Three well-known
-%protocols are:
-%
-%- ChIPseq, for chromatin immunoprecipitation sequencing: for a given protein
-%  – for example, a transcription factor or a histone – this can detect where
-%  it binds DNA.
-%  {numref}`chip_protocol_alt` illustrates this.
-%  After sequencing, the DNA can be mapped against the genome: peaks of mapped
-%  reads indicate regions where the protein of interest binds.
-%- Hi-C, to study 3D proximity of chromosome parts in the nucleus.
-%- Bisulfite sequencing, to assess methylation of DNA.
-
 ---
 
 (chapter5_proteomics)=
@@ -1817,6 +1772,7 @@ Credits: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) {cite}`
 
 ---
 
+(chapter5_omics_visualisation)=
 #### Visualization
 
 ```{figure} images/chapter5/streptococcus-pca-heatmap.png
@@ -2043,12 +1999,12 @@ After completing this exercise, you should be able to explain how genome assembl
 
 In this brief hands-on tutorial, you will use a genome browser to learn more about a specific gene and its sequence variants; then you will work with IGV, the Integrated Genome Viewer, to inspect a number of different NGS datasets.
 Note that in most of the environments discussed below, you can get additional information on plot elements (boxplots, points etc.) by hovering your mouse over it.
-Please <u>**use Google Chrome or Firefox**</u> as other browsers may not display all websites well.
+Please <u>**use Google Chrome or Firefox**</u> as other browsers may not display all websites well. Also make sure to use the hg19/GGRCh37 version of the human genome.
 
 After completing this exercise, you should be able to explain how next-generation sequencing data is used to study genomic conservation, genetic variation and genome function.
 1. This tour of genome browsers will be based on a gene called BCL11B. First, look up some information on this gene in the [GeneCards database](https://www.genecards.org/). How did it get its name?
-2. Visit the [UCSC Genome Browser](https://genome-euro.ucsc.edu/) and go to the Genome Browser (below "Tools"). Below "Human Assembly", select the "hg19" genome assembly and search for BCL11B. If you get a list of possible locations, please choose the correct link corresponding to the BCL11B gene. What chromosome is the gene on, how long is it (in bp), and how many exons does it have? At what position does the gene start (hint: check the arrows in the gene model)?
-3. Click on the top gene variant in the top of your figure panel to visit a page with information on the gene model. How long is the coding region? How long is the ORF (in bp and in amino acids)?
+2. Visit the [UCSC Genome Browser](https://genome-euro.ucsc.edu/) and go to the Genome Browser (below "Tools"). Below "Human Assembly", select the "hg19" genome assembly and search for BCL11B. If you get a list of possible locations, please choose the link corresponding to the BCL11B gene. What chromosome is the gene on, how long is it (in bp), and how many exons does it have? At what position does the gene start (hint: check the arrows in the gene model)?
+3. Click on the top gene variant in the top of your figure panel to visit a page with information on the gene model. How long is the coding region? How long is the protein in aa? Why is the coding region so much longer than the number of nucleotides you need based on the protein length?
 4. Go back to the genome view. Genome browsers work with "tracks", i.e., various sources of information aligned to the genome. What does the "100 Vert. cons" track contain? Do you see a correlation of this track with another track?
 5. You can also add tracks to the view yourself. Below the main genome window, lookup (but do not yet click on) "ClinVar Variants" under "Phenotype and Literature", select "pack" using the drop-down menu below it, and press the "refresh" button on the right. ClinVar is a database of mutations that have a proven clinical effect (i.e. lead to a disease). Find the red T>G SNP in the fourth exon – under "ClinVar Short Variants" – and zoom in to the nucleotide level ('base') to check whether it is synonymous or not (hint: use the "--->" at the top to select the correct strand). Does this match your expectations?
 6. Is the position conserved in other genomes?
@@ -2058,20 +2014,21 @@ For that we move to IGV, the [Integrated Genome Viewer](https://igv.org/app).
 Have a look at the documentation (under "Help" in the top menu) to get somewhat acquainted with the user interface.
 
 Once you are familiar with IGV, first select the hg19 human genome assembly under the "Genomes" menu item.
-Then look up BCL11B using the search box and load some additional tracks.
-First, select "Tracks -> Variants", then choose "1KG Phase 3 SNPs" from the list; these are genotypes found in the 1000 Human Genomes project (which eventually sequenced approximately 2500 genomes).
-Also select "Tracks -> Platinum Genomes" and choose "NA12878"; this is short read data of one of six genomes which have been sequenced in depth using different technologies, a lymphoblast cell line to be precise.
+Then look up BCL11B using the search box and load some additional tracks. While IGV provides a number of preloaded tracks, we will import data using URLs and local files.
 
-7. Zoom in on the last exon (on the left). What do you notice in the NA12878 read data and the coverage plot at the top of that track?
+First, select "Tracks -> URL", in the track URL field paste 'https://1000genomes.s3.amazonaws.com/release/20130502/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5b.20130502.sites.vcf.gz' and in the Index URL field paste 'https://1000genomes.s3.amazonaws.com/release/20130502/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5b.20130502.sites.vcf.gz.tbi. This dataset contains SNP and structural variant genotypes found in the 1000 Human Genomes project (which eventually sequenced approximately 2500 genomes).
+Also select "Tracks -> URL" and paste http://www.bioinformatics.nl/courses/BIF-20306/NA12878_30x_subset.bam into the track field and http://www.bioinformatics.nl/courses/BIF-20306/NA12878_30x_subset.bam.bai into the index field. This is short read data of the genome of NA12878, one of six genomes which have been sequenced in depth using different technologies, a lymphoblast cell line to be precise.
+
+7. Zoom in on the last exon (on the left). What do you notice in the NA12878 read data and the coverage plot at the top of that track? (Hint: look at the colors)
 8. Zoom in on position 99,639,270. What does the 1KG genotype track tell about this position? Click on track elements to get more information.
 9. What genotype does NA12878 have at this position? How many reads support that genotype?
-10. Next, load regulatory transcription data from the ENCODE project. The ENCODE project was a large functional genomics project that delivered a wide variety of datasets on how the human genome is used: transcription activity, histone modifications, DNA accessibility, etc. Download a file with [RNAseq data for NA12878](http://www.bioinformatics.nl/courses/BIF-20306/wgEncodeRegTxnCaltechRnaSeqGm12878R2x75Il200SigPooled_small.bigWig) and load it as a track in the IGV web app using "Tracks -> Local File...". If you look carefully at this track over the full length of BCL11B, is it in concordance with the gene model? What may cause this?
+10. Zoom back out, so that you can see the whole gene again. Next, load transcription data from the ENCODE project. The ENCODE project was a large functional genomics project that delivered a wide variety of datasets on how the human genome is used: transcription activity, histone modifications, DNA accessibility, etc. Download a file with [RNAseq data for NA12878](http://www.bioinformatics.nl/courses/BIF-20306/wgEncodeRegTxnCaltechRnaSeqGm12878R2x75Il200SigPooled_small.bigWig) and load it as a track in the IGV web app using "Tracks -> Local File...". If you look carefully at this track over the full length of BCL11B, is it in concordance with the gene model? What may cause this?
 
 Structural variants are another type of variation found in genomes that can be inspected in IGV.
 
-11. Go to chr1:85,974,000-85,993,000 (copy and paste the coordinates into the search box). Have a closer look at the read data track of NA12878. What type of structural variant does the read coverage suggest here? Take a look at [Figure 3A](https://genome.cshlp.org/content/27/1/157) in the paper on the platinum genomes. Does this match your observation? From the "Tracks -> Variants..." menu, load the "1KG Phase 3 SVs" to verify this.
+11. Go to chr1:85,974,000-85,993,000 (copy and paste the coordinates into the search box). Have a closer look at the read data track of NA12878. What type of structural variant does the read coverage suggest here? Take a look at [Figure 3A](https://genome.cshlp.org/content/27/1/157) in the paper on the platinum genomes. Does this match your observation? Click on the wheel next to the track showing the 1000 genomes variants and select color by structural variant. Does this verify the findings?
 12. Locate the other end of the structural variant. What is its size?
-13. In IGV a gene overlaps the structural variant. What is the name of the gene? Do you think the structural variant affects the protein sequence of the gene?
+13. In IGV a gene overlaps the structural variant (Hint: If you can't see the gene, scroll down in the Refseq All track). What is the name of the gene? Do you think the structural variant affects the protein sequence of the gene?
 
 ---
 
@@ -2108,11 +2065,12 @@ After completing this assignment, you should be able to explain the main types o
 
 <b><center>Optional (20 minutes)</b></center>
 
-7. Look up BCL11B in [GTEx](https://gtexportal.org/), the gene-tissue expression compendium. GTEx is similar to CCLE, but profiles expression in healthy tissues, collected from donors (directly after they passed away). Under the menu item "Expression", search for the BCL11B gene. In the resulting plot, play around to figure out in which tissue BCL11B is normally expressed most highly.
-8. While at GTEx, you can inspect some PCA plots of the samples. PCA, or **Principal Component Analysis**, is often used to visualize high-dimensional data. It finds directions in the data along which the samples differ mostly: PC1 is the direction with most variation, PC2 the next direction perpendicular to PC1, and so on. Using the top menu, go to "Expression" -> "Expression PCA". Select the "Hardy Scale" to color the samples. What do you think this scale measures? Hint: look at the legend beneath the plots, the colors correspond to the Hardy Scale.
-9. In what tissue do you expect to see differences in expression for "Ventilator case" donors? Check this by selecting the tissue from the "Select a tissue" drop down box to create a tissue-specific PCA plot.
-10. Return to the CCLE and plot BCL11B expression versus BCL11B proteomics. Do you expect a correlation, and do you see one?
-11. Plot BCL11B expression versus its methylation and check what DNA methylation does (https://en.wikipedia.org/wiki/DNA_methylation). Are the results what you would expect?
+7. Look up BCL11B in [GTEx](https://gtexportal.org/), the gene-tissue expression compendium. GTEx is similar to CCLE, but profiles expression in healthy tissues, collected from donors (directly after they passed away). Under the menu item "Expression", search for the BCL11B gene. In the plot shown under the Bulk Gene Expression tab, find out in which tissue BCL11B is expressed most highly (in these 'healthy' patients).
+8. GTEx also provides results from single cell expression experiments. These are explained in [Box 5.7](#chapter5_box7). Go to the Single-Cell Expression tab. In the tissue where BCL11B is most highly expressed, do all cell types cause the high expression level?
+9. Overall, in which cell type is BCL11B most highly expressed? Does the make sense given what you already know about BCL11B?
+10. While at GTEx, you can inspect some PCA plots of the samples. PCA, or **Principal Component Analysis**, is often used to visualize high-dimensional data. It finds directions in the data along which the samples differ mostly: PC1 is the direction with most variation, PC2 the next direction perpendicular to PC1, and so on. Using the top menu, go to "Expression" -> "Expression PCA". Select the "Hardy Scale" to color the samples. What do you think this scale measures? Hint: look at the legend beneath the plots, the colors correspond to the Hardy Scale.
+11. In what tissue do you expect to see differences in expression for "Ventilator case" donors? Check this by selecting the tissue from the "Select a tissue" drop down box to create a tissue-specific PCA plot.
+12. Return to the CCLE and plot BCL11B expression versus BCL11B proteomics. Do you expect a correlation, and do you see one?
 
 ---
 ```
