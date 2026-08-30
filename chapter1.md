@@ -5,6 +5,7 @@ authors:
   - rensholmer
   - annekupczok
   - tomersardjoe
+  - matezoltai
 ---
 
 In this chapter you will learn the basics of molecular biology that are required for understanding bioinformatics approaches. In addition you will learn common approaches for storing and describing biomolecular data. 
@@ -1290,7 +1291,7 @@ For the **_{sc}`plant`_** example browse to [arabidopsis.org](https://www.arabid
 For the **_{sc}`animal`_** example browse to [Ensembl](https://jun2026.archive.ensembl.org/index.html) [^ensembl_footnote] and search for the gene ID from question 9, limiting the search to the found animal. On the left side of the screen under `restrict category` click `gene` to filter for genes only. After following the result to the page of the gene, click on `Region in Detail` (found over the gene tracks). Click on `add/remove tracks` (found over the track window) and make sure to add under `Genes and transcripts` the `Comprehensive Gene Annotations from GENCODE` track with the `expanded with labels` option if it is not present already. Ensembl names this track after the current GENCODE release, so the exact number you see (for mouse, an M-series number such as M39) will depend on when you do this exercise. For help navigating the genome browser click the question mark next to Region in Detail. \
   a. You can see that this gene produces multiple different mRNA transcripts and thus multiple different proteins. In JBrowse, these are indicated by suffixes such as .1, .2, while in Ensembl they appear as numbers after a hyphen such as GENE-201, GENE-202. How many exons do these transcripts contain? How many introns? \
   b. For the plant example turn on the track `Light grown seedling` under `RNA-seq based evidence -> Aligned reads`.  \
-    For the animal example click on `add/remove tracks` (found over the track window). Make sure to add under `mRNA and protein alignments` the `Vertebrate cDNAs (ENA)` track with the normal option. \
+    For the animal example click on `add/remove tracks` (found over the track window). Make sure to add under `mRNA and protein alignments` the `Vertebrate cDNAs (ENA)` track with the `normal` option. \
  Do you recognize the splice sites? Are the first two and last two bases of the intron as expected (based on {numref}`splicing`)? You might have to zoom in to see the DNA sequence. \
   c. Look at the sequence data of transcript 1 for plants and Pax6-207 for animals. Then create a fasta file on your computer (for example in your notepad) that contains the whole transcript and another one with all the coding sequences (CDS) of the protein.  \
   d. Is the length of the coding sequence in line with your expectation (based on your findings in question 9a)? \

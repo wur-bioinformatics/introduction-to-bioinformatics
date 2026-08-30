@@ -4,6 +4,7 @@ label: chapter5
 authors:
   - judithrisse
   - dickderidder
+  - matezoltai
 ---
 
 In this chapter you will learn about various high-throughput biomolecular measurement techniques.
