@@ -609,7 +609,7 @@ Most of the figures in this section are taken from [OpenStax](https://openstax.o
 
 {term}`Annotation` of genomes is the process of deciphering what information is encoded in an organism's DNA.
 It is an ongoing effort in organisms with known genome sequences.
-Even moreso, genome annotation is a critical step in acquiring biological insights from newly sequenced genomes.
+Even more so, genome annotation is a critical step in acquiring biological insights from newly sequenced genomes.
 Given the large size of any genome, automated procedures are used to identify various genomic elements such as genes, regulatory regions, transposable elements, or other non-coding elements.
 Each of these bioinformatic procedures typically focuses on identifying one type of element, and as such a complete genome annotation project can be thought of as a pipeline of various procedures.
 The following section describes the most common steps in genome annotation.

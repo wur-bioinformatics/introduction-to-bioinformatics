@@ -154,7 +154,7 @@ In our example, raccoon and dog would be more diverged than raccoon and bear, bu
 (chapter3_cladogram_additive_ultrametric)=
 ### Cladogram, additive and ultrametric
 
-Phylogenetic trees come in three flavors: {term}`ultrametric tree`s_, {term}`additive tree`s, and {term}`cladogram`s.
+Phylogenetic trees come in three flavors: {term}`ultrametric tree`s, {term}`additive tree`s, and {term}`cladogram`s.
 When all paths starting from the root to each external node are of equal length, you could interpret the length of a path through the tree as proportional to time and thus equally old as other paths; the ages of nodes can then in principle be inferred.
 Such a tree is known as an _ultrametric_ tree, which can be easily recognised by its topology in which all terminal branches line up, usually to the right.
 Another, more common type of phylogenetic tree is the _additive_ tree, in which branch lengths are proportional not to time but to the amount of change occurring in your data set (the MSA).
@@ -1185,7 +1185,7 @@ _Questions:_
 
 After having computed **Pairwise Distances** among the sequences, you will now perform **distance tree** analysis (NJ), converting pairwise sequence distances into (distance) trees.
 
-Using MEGA 11, under the `Phylogeny` menu construct two Neighbor Joining trees: one based on _p_-difference and use `Uniform rates` (for 'Rates among Sites'), `Complete deletion` (for 'Gaps/Missing Data Treatment') and one based on what you consider the best model/treatment given your answer to assignment III, question 4 above, including 'Gamma Distributed' rates.
+Using MEGA 11, under the `Phylogeny` menu, construct two Neighbor Joining trees: one based on _p_-difference and use `Uniform rates` (for 'Rates among Sites'), `Complete deletion` (for 'Gaps/Missing Data Treatment') and one based on what you consider the best model/treatment given your answer to assignment III, question 4 above, including 'Gamma Distributed' rates and `Complete deletion`.
 Can you see a difference in (tree) result?
 
 Now repeat the _best model_+Gamma analysis, this time using `Pairwise deletion` (instead of `Complete deletion`).
