@@ -93,7 +93,7 @@ jobs:
       # Pinned rather than "latest": typst is a renderer, and an unpinned bump
       # would change the book's layout without any change to the book.
       - name: Install typst
-        uses: typst-community/setup-typst@40d32bb6ccb235bd7f5164cb47cfd40a5ea3a314 # v5.2.0
+        uses: typst-community/setup-typst@fee4b65b091cc546f02ce3be15fad8760f38a108 # v5.3.0
         with:
           typst-version: "0.15.1"
 
